@@ -4,15 +4,15 @@ nav_exclude: true
 search_exclude: true
 ---
 
-# Okta Theory
+# Okta Theory Teaching
 
 Follow the people, accounts, and decisions behind a workforce identity environment. Each lesson connects a business situation to the identity data, sign-in behavior, application access, and evidence that explain it.
 
-**[Read the published course](https://tedxharry.github.io/Okta_Theory/)**
+**[Start at the course home](index.md)**
 
 Start with [Day 1: People, identities, and access](lessons/day-01-people-identities-access.md).
 
-Use the [learning path](learning-path.md) to see how the concepts connect. Product explanations use Okta Identity Engine; older Classic Engine terminology is distinguished where it matters.
+Use the [learning path](learning-path.md) to see how the concepts connect. Product explanations use Okta Identity Engine; older Classic Engine terminology is distinguished where it matters. Attempt the exercises and assessments before reading their answers or recaps. The fictional case evidence supports reasoning practice; predictions and proposed changes are distinct from verified outcomes.
 
 ## Lessons
 
@@ -31,6 +31,8 @@ Use the [learning path](learning-path.md) to see how the concepts connect. Produ
 - [Day 13: Policies, sessions, and another authentication check](lessons/day-13-policies-and-sessions.md)
 - [Day 14: Requirements, responsibility, and recovery](lessons/day-14-requirements-and-responsibilities.md)
 - [Day 15: Investigate Northbridge as a connected system](lessons/day-15-integrated-case.md)
+
+The optional [Day 16 practice bridge](lessons/day-16-safe-practice-plan.md) follows the 15-day core course. Its predictions and practice record are included in the lesson; you can complete the written plan without a tenant.
 
 ## Exercises and references
 
@@ -76,5 +78,7 @@ Use the [learning path](learning-path.md) to see how the concepts connect. Produ
 - [Your learning notebook](notebook/guide.md)
 - [Optional extensions](reference/optional-extensions.md)
 
-[Course repository](https://github.com/TedxHarry/Okta_Theory)
+[Course home](index.md) · [Lesson index](lessons/index.md) · [Recaps](revision/index.md) · [Working through requests](requests/index.md)
+
+[Course repository](https://github.com/TedxHarry/Okta_Theory_Teaching)
 

@@ -56,6 +56,8 @@ A useful closure note reads:
 
 > Lena's approved Purchasing access was missing because the production portal was assigned to the legacy group. The approved current-group relationship is restored. Her existing target account, production entry, and supplier-record access are verified. The reviewed excluded user remains outside this assignment path.
 
+The excluded-user finding covers the reviewed nonmember and that changed assignment path. It does not establish the state of every ineligible person or every other access path. Keep any broader verification tied to its required scope.
+
 Now change one fact: suppose a contractor appears among the 18 group members. What should happen before the group assignment is changed?
 
 <details markdown="1">

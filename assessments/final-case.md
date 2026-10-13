@@ -8,6 +8,8 @@ nav_order: 3
 
 All records, identifiers, and operation summaries are synthetic. These are investigation snapshots, not raw product logs or executable requests. No corrective results are supplied unless explicitly stated.
 
+Record your investigation before opening the model answers or recap. For each ticket, use its evidence labels to distinguish confirmed findings, possible explanations, proposed actions, and outcomes still awaiting verification.
+
 Use this packet with the [Day 15 tasks](../exercises/day-15.md). The current case follows Maya's effective move to Finance and Jordan's departure. Each ticket supplies its own observations; it does not claim that every earlier example occurred in one production history. Ticket F is an archived incident before Jordan departed.
 
 ## Environment and ownership

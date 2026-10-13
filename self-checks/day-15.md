@@ -8,6 +8,8 @@ nav_order: 15
 
 Attempt the [tasks](../exercises/day-15.md) before reading. Equivalent reasoning is acceptable when it follows the packet. A missing approval or cause should remain missing in the answer.
 
+Compare one ticket at a time with your recorded attempt. Mark a conclusion as supported only when you can name its evidence label. If your correction differs from the model, check whether it addresses the demonstrated gap, preserves approved access, and includes a way to verify the result. Rewrite any unsupported conclusion in your own words before consulting the debrief.
+
 ## 1. Explain the environment and priorities
 
 Workday controls the employee profile through the user's applicable association and the configured source order. AD is second, but it explicitly controls designated employee work email. That field exception does not transfer employee lifecycle ownership to AD. AD also validates passwords on the delegated path through the agent; importing data and validating a password are separate operations.

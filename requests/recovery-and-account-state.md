@@ -60,7 +60,7 @@ The label “cannot sign in” can describe several situations. Read the state a
 
 For AD-delegated users, check the AD account and returned credential result as well as the Okta state. Do not assume an Okta-side action clears an AD-side condition.
 
-Now consider Eli, a different Okta-managed user. His account is locked after repeated password failures. There is no evidence that he lost his authenticator. Explain why Nora's enrollment-reset action should not be copied into his ticket, and what you would establish before an authorized unlock or password-recovery action.
+Now consider Eli, a different Okta-managed user. His account is locked after repeated password failures. There is no evidence that he lost his authenticator. Nora's successful recovery supplies no identity-verification or recovery result for Eli. Explain why Nora's enrollment-reset action should not be copied into his ticket, and what you would establish before an authorized unlock or password-recovery action.
 
 <details markdown="1">
 <summary>Check Eli's situation</summary>

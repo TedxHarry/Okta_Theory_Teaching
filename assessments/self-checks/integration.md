@@ -52,7 +52,7 @@ No evidence supports changing a working password or a federation setting as the 
 
 ## Assess your reasoning
 
-For each criterion, mark **independent**, **with guidance**, or **needs review**. Independent means you explained it before the debrief; with guidance means a reference helped; needs review means the distinction remains unclear.
+For each criterion, mark **independent**, **with guidance**, or **needs review**. Independent means you explained that point without consulting an explanation or reference for it; with guidance means a reference helped; needs review means the distinction remains unclear.
 
 | Criterion | Evidence of understanding | Revisit |
 |---|---|---|

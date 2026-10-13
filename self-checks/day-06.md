@@ -36,6 +36,8 @@ The demonstrated failure is the timed-out connection attempt from the handling a
 
 Request connection evidence for that agent/DC path during J-1. A confirmed route problem would support a network correction; a confirmed unavailable directory service would lead to a different responsible component. The timeout alone does not choose a root cause. Name-resolution evidence can help assess the destination, but the packet does not establish a DNS failure.
 
+A specific handoff could say: “For Jordan's J-1 attempt, the handling agent received Okta's request but its connection to the selected DC timed out. No credential result was obtained. Please check that agent-to-DC path at the attempt time and provide the corresponding reachability and service evidence.” Include the known agent, DC, and timestamp; the handoff does not require Jordan's password.
+
 A password reset is not supported as a correction for the demonstrated connectivity failure. Revisit **Investigate Jordan's failed attempt** if you treated lack of a result as an explicit rejection.
 
 ## 5. A different response
@@ -52,7 +54,7 @@ A precise update is:
 
 > The network team corrected the identified route problem. In the new correlated attempt J-3, the agent reached AD and AD accepted Jordan's credentials. The remaining Okta requirements and Salesforce access have not yet been verified.
 
-This reports supported recovery without claiming complete sign-in or application access. J-3 is new evidence, not a reason to rewrite J-1 as if it had received a password result.
+This reports supported recovery without claiming complete sign-in or application access. J-3 is new evidence, not a reason to rewrite J-1 as if it had received a password result. The independent J-2 rejection still has no established cause. J-3 does not prove that J-2 involved a mistyped password or the repaired route problem.
 
 Revisit **Know what a successful follow-up proves** and Day 1's assignment/account/sign-in distinctions.
 

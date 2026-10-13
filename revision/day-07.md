@@ -24,11 +24,11 @@ nav_order: 7
 
 ## Return to Daniel's three situations
 
-In the first, Daniel's password is accepted, but he has not enrolled Okta Verify for Northbridge. An enrollment step is consistent with that state.
+In D-1, Daniel's password is accepted, but he has not enrolled Okta Verify for Northbridge. An enrollment step is consistent with that state.
 
-In the second, he is enrolled and a Push challenge is issued, but there is no accepted proof. Investigate that challenge's outcome. Re-enrollment is not automatically the answer.
+In D-2, he is enrolled and a Push challenge is issued, but there is no accepted proof. Investigate that challenge's outcome. Re-enrollment is not automatically the answer.
 
-In the third, the supplied evidence confirms the required password and Push proof were accepted. You can say the stated authentication requirement was met. You still cannot infer successful application entry or an approval permission.
+Exercise 7 supplies a separate synthetic follow-up, D-3, with accepted password and Push results and a recorded decision that the requirement was satisfied. You can say the stated authentication requirement was met. You still cannot infer successful application entry or an approval permission. The D-3 result does not establish the cause of D-2's missing accepted response.
 
 Also remember that a FastPass attempt does not establish that an AD password was checked. Follow the method actually used, rather than borrowing evidence from another sign-in path.
 
@@ -37,6 +37,8 @@ Also remember that a FastPass attempt does not establish that an AD password was
 Inspect the enrolled organization and method before resetting anything. Replacement requires the approved recovery checks, a new enrollment, and a permitted sign-in. An issued challenge alone does not establish successful proof.
 
 ## Check your understanding
+
+From memory, explain the different evidence in D-1, D-2, and the exercise's D-3 packet. For each, separate enrollment, accepted proof for the attempt, and application access. Then name the next check where a result is still missing.
 
 - What is missing between “enrolled” and “successfully authenticated”?
 - Why do two prompts not necessarily mean two factor types?

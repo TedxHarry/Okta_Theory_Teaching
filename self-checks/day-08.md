@@ -24,7 +24,7 @@ Delivery therefore does not establish valid content. Revisit **The two sides nee
 
 The issuer is the identity.northbridge.example IdP identifier. NameID is maya.rao@northbridge.example. The audience ends in /entity/test, while the expected value ends in /entity/prod.
 
-The excerpt supports this field comparison. It does not supply complete signature material, validity fields, authentication statements, response/request correlation, or all other required content. It is not sufficient to validate an actual response.
+The excerpt supports this field comparison. It does not supply complete signature material, validity fields, authentication statements, response/request correlation, or all other required content. It is not sufficient to validate an actual response. The later S-1 application report supplies the stated validation results; those results cannot be inferred from the three visible fields alone.
 
 Revisit **Read a small piece of XML** and **What the application must validate** if readable structure became proof of authenticity.
 
@@ -32,7 +32,7 @@ Revisit **Read a small piece of XML** and **What the application must validate**
 
 The assertion has the wrong audience for the checked production connection, and the report confirms that mismatch as the rejection reason. Compare the approved settings on both sides and correct the setting responsible for the emitted test audience.
 
-Then collect a new assertion and application result for the same intended user and instance. Confirm the production audience, accepted validation, and entry into the intended account. Check application permissions separately as needed.
+Then collect a new assertion and application result for the same intended user and instance. Confirm the production audience, accepted validation, and entry into the intended account. Check application permissions separately as needed. Review the intended production integration and the users who share it before changing its setting; do not apply a test connection's value to production simply because the labels look similar. The initial S-1 packet establishes the defect, not a completed correction.
 
 Changing the correct username affects a different field. Disabling validation would remove a required check instead of correcting the mismatch. Revisit **Establish the audience defect**.
 
@@ -54,7 +54,7 @@ Even a valid signature does not settle whether the assertion is intended for thi
 
 Application validation and entry into Maya's intended account succeeded. The remaining question concerns the denied action: compare its permission requirement, Maya's actual permissions, and application-side denial evidence. Do not infer a bad password or audience mismatch from that later denial.
 
-The account was stated to exist beforehand, so the packet does not show SAML creating it. JIT is a separately supported and configured account-management capability that may run during sign-in; its occurrence and result need evidence.
+The account was stated to exist beforehand, so the packet does not show SAML creating it. JIT is a separately supported and configured account-management capability that may run during sign-in; its occurrence and result need evidence. The S-3 observations concern the new attempt and its existing account. They do not supply the configuration-change history or explain which repair was performed.
 
 Revisit **Authentication does not define the account lifecycle** and Day 1's authentication/authorization distinction.
 

@@ -18,7 +18,7 @@ Revisit **Separate the stages**.
 
 A meets the selected employeeNumber comparison and Northbridge's additional ownership and uniqueness checks. B is a different person's record. The supported proposal is to confirm A against Maya's existing identity through the approved process; M-1 alone does not prove that confirmation happened.
 
-M-2 supplies successful confirmation, the checked association, and the target's current account state. It still supplies no sign-in. Revisit **Work through Maya's existing account**.
+M-2 supplies successful confirmation, the checked association, and the target's current account state. It still supplies no sign-in. M-2 is an explicit follow-up to M-1; it neither resolves the separate M-3 ambiguity nor establishes the history behind Day 10's create conflict. Revisit **Work through Maya's existing account**.
 
 ## 3. Handle conflicting identifiers
 
@@ -42,7 +42,7 @@ A global priority change can affect other users without correcting the mistaken 
 
 ## 6. Read incomplete and denied evidence
 
-The first result is one page of Okta users with another page available. It does not establish Priya is absent. Follow the service's next link and consider the query's scope before a completeness claim.
+The first result is one page of Okta users with another page available. It does not establish Priya is absent. Follow the service's next link and consider the query's scope before a completeness claim. You need the complete returned sequence for the relevant successful read, together with the intended endpoint and query scope. Even a complete Okta Users result does not become a Projects account inventory.
 
 The second attempt is a denied read with a supplied permission cause, not a successful empty list. Request an appropriately authorized read. Neither result is a Projects account inventory or a record of Priya's account association. Revisit **Read the whole result, not just its first page**.
 

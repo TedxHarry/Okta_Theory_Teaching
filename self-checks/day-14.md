@@ -16,7 +16,7 @@ Revisit **Turn the request into observable outcomes**. A reasonable alternative 
 
 ## 2. Explain the approved model
 
-Maya qualifies for the normal Finance path but does not gain approval permission merely from department. Daniel uses that path and has separately approved application authority. Priya does not meet the employee condition; an exception requires its own supplied approval and maintenance. Jordan's departure requires access removal regardless of retained attributes or memberships.
+Maya qualifies for the normal Finance path but does not gain approval permission merely from department. Daniel uses that path and has separately approved application authority. Priya does not meet the employee condition; an exception requires its own supplied approval and maintenance. Jordan's departure requires access removal regardless of retained attributes or memberships. R-14 does not supply Priya's exception approval. The separate lost-phone scenario supplies approval for that scenario; do not carry it backward as proof that the proposed R-14 exception was decided.
 
 The group rule handles only the stated population comparison. Effective lifecycle processing, exceptions, app assignment, target readiness, business roles, and sessions require their own controls and evidence. Revisit **Translate the requirement without changing its meaning**.
 
@@ -37,6 +37,8 @@ Revisit **Separate approval from technical authority**. Reading the supplied exc
 ## 5. Define acceptance and change recovery
 
 A positive case is a current eligible Finance employee gaining intended submission access. Negative cases include a contractor without approval and an ordinary Finance user attempting an unapproved approval action. Change cases include an employee leaving Finance, an exception ending, and a departure requiring account and session removal.
+
+Test the two conditions separately: a Finance contractor without an exception meets only Finance, and a Sales employee with no other approved path meets only Employee. Neither should receive the normal Finance-employee assignment through the AND rule. OR would include both. An eligible Finance employee meets both conditions and would qualify under either version, so that positive test alone cannot distinguish the mistake.
 
 Restoring AND repairs the population condition but does not prove unintended effects were reversed. Identify affected users and remaining assignments, target accounts, roles, and sessions. Remove only the access that violates the approved requirement, preserving legitimate records and access, then verify the results.
 

@@ -8,6 +8,8 @@ nav_order: 7
 
 Use these reminders after the corresponding lessons. For first explanations, follow the [learning path](../learning-path.md); for unfamiliar terms, use the [glossary](glossary.md).
 
+Use a row to check your conclusion, rather than as a substitute for the case evidence. Name the person, application instance and operation before deciding which distinction matters.
+
 ## Easily confused pairs
 
 | This | Is not this | The difference in one line |
@@ -50,7 +52,9 @@ These are distinct API statuses, not required steps in one sequence. Active alon
 | An import job reports completion | That job completed within its reported scope | That a particular user was included, correctly matched, or can sign in |
 | A "200 OK" on a page | The request was handled | That the person authenticated |
 
-Keep the right-hand column in mind. Most wrong conclusions come from treating one green result as proof of the whole flow.
+Keep the right-hand column in mind. A successful result belongs to the action that produced it. Enrollment still needs accepted authentication proof; membership still needs the intended assignment; a target-account result still needs separate sign-in and permission evidence.
+
+After a correction, verify the requested outcome rather than only the saved setting. Restoring a rule does not by itself establish that unintended assignments, accounts or sessions have been cleaned up. When a result has not been checked, keep it marked as unknown.
 
 
 [Course home](../index.md)

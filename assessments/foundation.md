@@ -6,7 +6,7 @@ nav_order: 1
 
 # Foundation checkpoint: From identity data to access
 
-Explain Northbridge's access decisions using Days 1 to 5. Write your reasoning before opening the [separate debrief](self-checks/foundation.md). You may use your notebook and references; record where you needed help.
+Explain Northbridge's access decisions using Days 1 to 5. Write your reasoning before opening the [separate debrief](self-checks/foundation.md). You may use your notebook and references; record where you needed help. When a task asks you to predict a result, label it as expected until the packet supplies an observation. Support findings with the packet and evidence row rather than an earlier lesson's outcome.
 
 All packets are synthetic. B, C, and D are independent variations on A, not consecutive incidents. Maya remains a Sales employee except in D's explicitly hypothetical move.
 

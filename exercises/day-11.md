@@ -8,6 +8,8 @@ nav_order: 11
 
 Use the [lesson's](../lessons/day-11-imports-and-matching.md) stated integration and review policy. The packets are synthetic.
 
+Try the questions before opening the answers. Name the discovered record, the proposed relationship, the ownership evidence, and the confirmation result separately. Only carry a result between packets when the scenario explicitly supplies that connection.
+
 ## 1. Separate the outcomes
 
 An import finds an external account and proposes an existing Okta user as its match. Confirmation is pending. What has happened, and what must not yet be claimed about association, activation, or application entry?
@@ -30,7 +32,7 @@ Contrast two cases: Maya's confirmed Projects association when Projects is not a
 
 ## 6. Read incomplete and denied evidence
 
-The first Okta Users API page contains Maya and Daniel and a next link. Priya is absent from that page. A separate attempt receives 403, with confirmed insufficient caller permission. State a supported conclusion for each. Do either of these results show which Projects account belongs to Priya?
+The first Okta Users API page contains Maya and Daniel and a next link. Priya is absent from that page. A separate attempt receives 403, with confirmed insufficient caller permission. State a supported conclusion for each. Do either of these results show which Projects account belongs to Priya? What would you need before making a complete-result claim about the Okta read?
 
 ## 7. Compare import, JIT, and reconciliation
 

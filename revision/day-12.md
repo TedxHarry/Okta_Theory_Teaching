@@ -32,13 +32,15 @@ Projects shows the confirmed `FIN` update on the retained account. That verifies
 
 Jordan's Okta deactivation and AD disablement are confirmed. Projects returned a failed deactivation response and still shows an active account. His existing Expense session also receives a new protected response.
 
-Those are two outstanding target issues. Blocking a fresh Okta sign-in does not close either one. Verify the Projects correction and the Expense access outcome separately; do not reactivate Jordan or delete accounts merely to make the workflow easier.
+Those are two outstanding target issues: the Projects account state and the checked Expense session. The packet supplies no successful correction for either one. Blocking a fresh Okta sign-in does not close either one. Verify the Projects correction and the Expense access outcome separately; do not reactivate Jordan or delete accounts merely to make the workflow easier.
 
 ## When a request reaches you
 
 Choose activation, unlocking, password recovery, authenticator replacement, suspension, or deactivation according to the actual state and approved event. Keep a separate verified outcome for every affected target.
 
 ## Check your understanding
+
+From memory, give Maya and Jordan separate updates. For each, name a completed change, a remaining discrepancy, and the specific result needed for closure. Include the access Maya must keep, and keep Jordan's Projects and Expense outcomes separate.
 
 - Why is receiving the HR event insufficient evidence of lifecycle completion?
 - What remained wrong after Maya left the Sales group?

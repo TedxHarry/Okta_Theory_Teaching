@@ -6,7 +6,7 @@ nav_order: 1
 
 # Day 1: Self-check answers
 
-The important part is your reasoning. Different wording is fine if you keep the records, decisions, and evidence separate.
+The important part is your reasoning. Different wording is fine if you keep the records, decisions, and evidence separate. Compare these explanations with your own attempt, then explain any correction in your own words. You do not need to list every possible cause; you need to distinguish what is observed from what still needs checking.
 
 ## 1. One person, several records
 
@@ -58,6 +58,8 @@ These are alternatives, not three facts established by the packet.
 
 Request assignment evidence, the configured account-management approach and relevant results, and target account/identifier information as needed. If accounts are created separately, ask for the responsible process's record rather than assuming an Okta provisioning failure.
 
+For example, inspecting the expected assignment can distinguish an absent assignment from a present one. If it is present, the account-management and matching questions remain open. A proposed next check is stronger when you explain how its result would change the investigation.
+
 Avoid creating a duplicate account, granting access without approval, or changing a working sign-in credential before establishing the cause. A correction becomes justified when the evidence identifies the relevant gap and the requirement is clear.
 
 **Revisit:** "Investigating Maya's ticket" if you treated "not inspected" as "missing" or presented a possible cause as confirmed.
@@ -91,7 +93,7 @@ Your answer need not reproduce this paragraph. It should preserve the distinct r
 | Not inspected versus confirmed absent? | Missing evidence is not an observed negative result; even a negative result has a defined search scope. |
 | What should Alex request next? | Expected assignment, account-management approach/results, and relevant target identity/account evidence. |
 
-If you can explain these without relying on copied definitions, you have the distinctions needed to follow the next flow. If a distinction is unclear, revisit the linked section and try a changed example: an existing disabled account instead of a missing one, or a denied application action instead of failed sign-in.
+If you can explain these without relying on copied definitions, you have the distinctions needed to follow the next flow. If a distinction is unclear, return to the relevant section of the lesson and try a changed example: an existing disabled account instead of a missing one, or a denied application action instead of failed sign-in.
 
 [Return to the exercises](../exercises/day-01.md) · [Return to the lesson](../lessons/day-01-people-identities-access.md)
 

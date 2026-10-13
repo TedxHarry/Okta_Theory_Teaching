@@ -26,17 +26,19 @@ With SAML, Salesforce does not simply take Okta's word for it because a message 
 
 In an SP-initiated flow, Salesforce sends an authentication request through the browser to Okta. After the required authentication, Okta returns the response through the browser to Salesforce's ACS. In an IdP-initiated launch, the starting sequence differs; do not invent the same preceding SP request.
 
-The lesson's failing packet targets the production Salesforce connection but supplies the test audience. The rejection identifies that mismatch, while the supplied evidence supports the other stated checks. Correct the emitted audience for the intended connection and verify a new attempt. Disabling audience validation would remove a trust check rather than repair the relationship.
+The lesson's failing packet S-1 targets the production Salesforce connection but supplies the test audience. The rejection identifies that mismatch, while the supplied evidence supports the other stated checks. Correct the emitted audience for the intended connection and verify a new attempt. Disabling audience validation would remove a trust check rather than repair the relationship. S-1 supplies the defect and the proposed verification steps; it does not supply a successful retest.
 
-A separate packet has an outdated NameID. Investigate the application's actual matching field. The main example uses username, but another connection may use Federation ID.
+A separate packet, S-2, has an outdated NameID. Investigate the application's actual matching field. The main example uses username, but another connection may use Federation ID.
 
-Finally, accepted SAML does not automatically create an account. Just-in-time creation needs its own supported configuration. Successful entry also leaves application permissions to check.
+Finally, accepted SAML does not automatically create an account. Just-in-time creation needs its own supported configuration. Successful entry also leaves application permissions to check. Exercise 7 supplies S-3: accepted validation and entry into an existing account, followed by a denied action. That packet supports an authorization investigation without demonstrating account creation or supplying a configuration-change history.
 
 ## When a request reaches you
 
 Compare the saved connection with the actual SAML message and target trust. A newly generated signing certificate is not automatically trusted by the application. Verify a coordinated transition with a fresh SAML attempt.
 
 ## Check your understanding
+
+From memory, give ACS, audience, and NameID one job each. Then explain what the shortened S-1 XML shows, what the application report adds, and what a fresh attempt would need to establish before you call the proposed correction verified.
 
 - How do ACS, audience, and NameID serve different purposes?
 - Why does visible XML or a signature element not prove validation succeeded?

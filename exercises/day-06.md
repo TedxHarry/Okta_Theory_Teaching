@@ -44,7 +44,7 @@ What is established? What additional evidence distinguishes possible causes? Why
 
 The network team identifies and corrects a route problem from the handling agent to the DC. In J-3, AD accepts Jordan's credentials. Remaining Okta checks, Salesforce assignment, and Salesforce acceptance have not been inspected.
 
-Write a precise incident update. Which recovery can you report, and which broader claim would exceed the evidence?
+Write a precise incident update. Which recovery can you report, and which broader claim would exceed the evidence? Does J-3 establish why the separate J-2 attempt was rejected?
 
 ## 7. Explain two architectures
 

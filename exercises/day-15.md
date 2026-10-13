@@ -8,6 +8,8 @@ nav_order: 15
 
 Read the [case evidence](../assessments/final-case.md) before answering. Refer to evidence labels and separate facts, hypotheses, proposals, and completed outcomes.
 
+Record your first attempt before opening the model answers or recap. For each ticket, write the approved outcome, the observation that supports your conclusion, the remaining unknown, and the next action with its verification. Use the facts supplied for that ticket; an earlier lesson's successful example is not a missing result in this case.
+
 ## 1. Explain the environment and priorities
 
 Explain Northbridge's employee and contractor sourcing, source priority, the AD email exception, and delegated authentication. Distinguish assignment, SAML/OIDC sign-in, SCIM provisioning, and application sessions. Rank the tickets by the supplied impact, explaining which owners could act in parallel. Give a short overall handoff without claiming unsupplied resolutions.

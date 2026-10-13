@@ -30,15 +30,17 @@ The AD-led teaching example is a separate arrangement. If AD is the applicable s
 
 ## When you investigate a disagreement
 
-Check the user's source associations, the effective source, any field-specific source, and the mapping direction. Editing an externally owned field in Okta may be restricted or overwritten by a later source update. Correct the authoritative information or the ownership design as appropriate.
+Check the user's source associations, the effective source, any field-specific source, and the mapping direction. Editing an externally owned field in Okta may be restricted or overwritten by a later source update. Choose a correction only after identifying the demonstrated gap. If the authoritative value already matches the approved requirement, investigate the mapping or update path rather than changing that correct value. An ownership-design change needs its own justification and a review of affected users.
 
-Profile ownership also does not tell you who validates a password. That is a separate sign-in path.
+Profile ownership also does not tell you who validates a password. That is a separate sign-in path. In the supplied Northbridge example, Workday can own Maya's department while AD validates her password through the agent. Success on that password path does not verify delivery of a department update.
 
 ## When a request reaches you
 
 If a corrected value returns to its old state, inspect the field owner and intervening writes before editing again. A shared source-priority change can affect other associated users.
 
 ## Check your understanding
+
+From memory, explain who controls Maya's department, Maya's work email, and Priya's department. For each, name the association or field setting that supports your answer. Then explain why those answers do not establish a target update or password result.
 
 - Why does Workday's first position not make Priya Workday-managed?
 - How can AD own work email while Workday leads an employee's profile?

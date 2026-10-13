@@ -19,4 +19,6 @@ These terms may appear in wider Okta discussions. They are not required for the 
 
 Availability and supported integrations must be checked in the relevant documentation and environment. These descriptions do not imply that Northbridge has enabled or licensed each capability.
 
+Choose a capability only after stating the problem it needs to solve. Does the process need notification of an event, a decision during a supported flow, or an access review? Then establish the responsible owner, supported behavior, failure handling and target evidence. An automation result or a review decision still needs verification of the required account or access outcome.
+
 [Day 15](../lessons/day-15-integrated-case.md) · [Course home](../index.md)

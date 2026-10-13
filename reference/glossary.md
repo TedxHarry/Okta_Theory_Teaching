@@ -6,7 +6,9 @@ nav_order: 3
 
 # Course glossary
 
-Use these short reminders alongside the examples. The linked lessons explain the relationships and limits.
+Use these short reminders when a term interrupts your reading or you need to explain a result in your own words. Terms are grouped by the lesson that develops them; you do not need to memorize this page before starting the course. The linked lessons explain the relationships and limits.
+
+Read a definition with its system, operation and evidence. A familiar word such as source, client, scope or active can describe different responsibilities in different contexts. Knowing the label helps you locate the question; it does not establish the answer for a ticket.
 
 ## Course context
 
@@ -84,6 +86,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 
 [Day 3 explanations](../lessons/day-03-profiles-and-mappings.md) · [Day 4 explanations](../lessons/day-04-sources-and-ownership.md)
 
+Keep ownership, calculation and delivery separate. The source governs a value, the mapping prepares its representation, and operation evidence shows what reached the target. A correct preview is not a target-state result.
+
 ## From attributes to access (Day 5)
 
 | Term | Meaning |
@@ -132,6 +136,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 
 [Day 7 explanations](../lessons/day-07-authenticators-enrollment-mfa.md) · [Course home](../index.md)
 
+Enrollment makes an authentication method available to the account. Issuing a challenge asks for proof. An accepted response establishes the recorded authentication result. Neither an installed app nor an issued prompt substitutes for that accepted result, and several prompts do not necessarily mean several factor types.
+
 ## Federation (Day 8)
 
 | Term | Meaning |
@@ -172,6 +178,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 
 [Day 9 explanations](../lessons/day-09-oidc.md) · [Course home](../index.md)
 
+In the server-side Expense example, the browser returns the authorization code and the backend exchanges it. The ID token, access token and application session have different jobs. State is checked on the returned browser response, PKCE at code exchange, and nonce in the ID token; passing one check does not replace the others. The PKCE code verifier is the transaction secret retained for exchange; the code challenge is the derived value sent earlier.
+
 ## Application account management (Day 10)
 
 | Term | Meaning |
@@ -188,6 +196,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 | 400 invalidValue | Rejection for a value incompatible with the operation or schema, or a missing required value; inspect the details. |
 
 [Day 10 explanations](../lessons/day-10-scim.md) · [Course home](../index.md)
+
+Name the protocol role as well as the product. Okta is the SCIM client for the Projects account-management exchange; Expense is the OIDC client for its sign-in. In the SCIM creation response, meta.resourceType names the resource type and meta.location gives its address. Neither replaces the provider's resource identifier or the association to the intended account.
 
 ## Record matching (Day 11)
 
@@ -220,6 +230,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 
 [Day 12 explanations](../lessons/day-12-joiners-movers-leavers.md) · [Course home](../index.md)
 
+The other Okta states in Day 12 include ACTIVE, RECOVERY, PASSWORD_EXPIRED and LOCKED_OUT: an enabled account, password recovery, a required password update and a lockout condition. None proves the state of an application account or an existing application session. Always name the account and system being checked.
+
 ## Authentication decisions and sessions (Day 13)
 
 | Term | Meaning |
@@ -238,6 +250,8 @@ Use these short reminders alongside the examples. The linked lessons explain the
 
 [Day 13 explanations](../lessons/day-13-policies-and-sessions.md) · [Course home](../index.md)
 
+For correlation, event uuid identifies an occurrence, transaction.id connects events within an operation, and authenticationContext.externalSessionId relates an Okta user session. authenticationContext.rootSessionId supplies related-session context when available. These are not the application's local session identifier. Keep a successful Okta action separate from the application's recorded outcome.
+
 ## Access decisions and responsibility (Day 14)
 
 | Term | Meaning |
@@ -254,3 +268,5 @@ Use these short reminders alongside the examples. The linked lessons explain the
 | Microsoft Entra ID | Microsoft's cloud identity service used with Microsoft 365. |
 
 [Day 14 explanations](../lessons/day-14-requirements-and-responsibilities.md) · [Course home](../index.md)
+
+Import scope selects a population to read. Administrative scope limits which resources or users an operator may manage. An OAuth scope names requested access or information. Similar wording does not make those controls interchangeable. Likewise, business approval does not itself grant administrative permission to implement a change.

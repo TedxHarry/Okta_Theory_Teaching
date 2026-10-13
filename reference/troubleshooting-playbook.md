@@ -17,6 +17,8 @@ Start every ticket the same way:
 
 Then pick the matching path below. Each path tells you where to look first, not what to change blindly. Confirm the cause with evidence before you fix anything.
 
+Treat a diagram as a way to organize evidence, not a mandatory processing order. If the packet demonstrates continuing access after its approved end, escalate that outcome to the responsible owners while the other checks proceed. A missing cause does not erase an observed exposure, and a successful result in one system does not close another system's open result.
+
 ## The person cannot use an application
 
 ```mermaid
@@ -121,7 +123,9 @@ flowchart TD
 
 An earlier import is not universal proof or a universal prerequisite for every configured AD sign-in route. Just-in-time (JIT) creation, where enabled and applicable, is another route to inspect. Import success does not establish delegated-authentication health. See [Day 6](../lessons/day-06-active-directory.md).
 
-A last reminder. "Not checked yet" is not the same as "not there." If you have not looked at the assignment, do not report it as missing. Look, then report what the evidence shows.
+Before handing off a proposed correction, name the affected record, its owner and the observation that would establish success. Include other users, application instances or assignment paths if the change is shared. Keep the proposal separate from an action that was actually performed.
+
+"Not checked yet" is not the same as "not there." If you have not looked at the assignment, do not report it as missing. Look, then report what the evidence shows.
 
 
 [Course home](../index.md)

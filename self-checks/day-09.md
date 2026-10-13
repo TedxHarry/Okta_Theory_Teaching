@@ -36,7 +36,7 @@ Here PKCE complements backend client authentication. None of these checks replac
 
 The application's emitted URI differs from the approved registered callback. Correct the stale request configuration, then verify the new request, callback correlation, exchange, ID token validation, and actual entry as appropriate.
 
-No code was issued in the failing attempt. A token from another attempt cannot explain its nonexistent token-processing stage. Resetting a password does not repair the wrong return URI. Revisit **Find the redirect mismatch**.
+No code was issued in the failing attempt. A token from another attempt cannot explain its nonexistent token-processing stage. Resetting a password does not repair the wrong return URI. The identity service must not redirect to the unregistered address even to deliver an error; it can display the error instead. The approved callback and registration already agree, so the application's stale request configuration is the demonstrated discrepancy. Revisit **Find the redirect mismatch**.
 
 ## 6. Interpret a decoded excerpt
 
@@ -48,7 +48,7 @@ The subject is interpreted within its issuer. The same subject text from another
 
 O-2 completed the stated OIDC sign-in and reached Maya's intended Expense account. It does not establish an expense-approval permission or account-provisioning operation.
 
-The SAML example carried an assertion inside a browser-delivered response. This OIDC example carries a code through the browser and returns tokens to the backend in a separate exchange. Both require application-side validation and account interpretation.
+The SAML example carried an assertion inside a browser-delivered response. This OIDC example carries a code through the browser and returns tokens to the backend in a separate exchange. Both require application-side validation and account interpretation. In O-2, the successful exchange is one recorded step; the supplied ID token validation, account association, and actual entry support the broader sign-in conclusion. Without those later observations, a successful exchange alone would be insufficient.
 
 Revisit **Compare with SAML** and Day 1's authentication/authorization distinction.
 

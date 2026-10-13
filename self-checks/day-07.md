@@ -36,7 +36,7 @@ Revisit **Two requirements with different jobs** if required enrollment became �
 
 The packet establishes accepted password evidence, enrollment, and an issued Push request. It does not establish delivery, approval, or successful response validation.
 
-Possible explanations include delivery failure or a received request that Daniel denied. Request the relevant delivery/device and response evidence for D-2. A recorded denial would support a different investigation from evidence that the notification never reached the selected device. Neither cause is proven by the packet.
+Possible explanations include delivery failure or a received request that Daniel denied. Request the relevant delivery/device and response evidence for D-2. A recorded denial would support a different investigation from evidence that the notification never reached the selected device. Neither cause is proven by the packet. Describe the gap as “Push issued; no accepted response recorded,” rather than “Daniel denied it” or “the phone never received it,” until the distinguishing evidence is supplied.
 
 The accepted password result does not support a wrong-password correction. Revisit **Enrollment does not answer a challenge**.
 
@@ -62,13 +62,13 @@ A supported update is:
 
 > Your enrollment is complete, and the password and Push checks satisfied the stated requirement for D-3. We still need to establish what Expense accepted and which application permissions you have. If you can enter Expense but cannot approve, we will compare the approval requirement with your permissions and the application's denial evidence.
 
-If application entry itself is unknown, obtain that observation before treating the problem as a proven permission issue. Authentication success does not establish provisioning, target account state, or approval authority.
+If application entry itself is unknown, obtain that observation before treating the problem as a proven permission issue. Authentication success does not establish provisioning, target account state, or approval authority. D-3 verifies the stated requirement for the new attempt; it does not explain D-2's missing accepted response or prove that a particular repair was made.
 
 Revisit Day 1's Daniel example and **Keep the evidence tied to the question** if you inferred full access from completed authentication.
 
 ## Ready to continue
 
-Explain available → enrolled → required for this attempt → accepted result, then name the remaining application checks. If any arrow depends on an assumption, identify it. That prepares you to examine the sign-in information an application receives in Day 8.
+Explain available → enrolled → required for this attempt → accepted result, then name the remaining application checks. If any arrow depends on an assumption, identify it. Also name the method: accepted TOTP, Push, and FastPass evidence should not be substituted for one another when explaining a method-specific requirement. That prepares you to examine the sign-in information an application receives in Day 8.
 
 [Return to Day 7](../lessons/day-07-authenticators-enrollment-mfa.md) · [Course home](../index.md)
 

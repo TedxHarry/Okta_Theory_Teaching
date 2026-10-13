@@ -6,21 +6,19 @@ nav_order: 7
 
 # Day 7: Authenticators, enrollment, and MFA
 
-Daniel opens Northbridge Expense. His password is accepted, but he is asked to set up Okta Verify before continuing. His manager asks:
+This is a separate sign-in attempt from Daniel's earlier expense-approval problem. Daniel opens Northbridge Expense. His password is accepted, but he is asked to set up Okta Verify before continuing. His manager asks:
 
 > We already enabled Okta Verify. Why does Daniel need to set it up?
 
-Enabling a capability for the organization and connecting that capability to Daniel are different actions. Using it successfully for a particular sign-in is another step.
+Daniel has supplied a password the system accepts, yet he still cannot continue. The setup request concerns another way to prove his identity: Okta Verify, an app he can register for his Northbridge account. His manager's question combines making that option available with completing Daniel's own setup. Using it successfully during a sign-in is a further step.
 
-Recall Day 6: an accepted password result does not establish that all sign-in requirements have been met. Now follow the additional proof the company requires.
-
-Your goal is to separate an authenticator being available, Daniel enrolling it, and an accepted result for the current attempt.
+Recall Day 6: an accepted password result does not establish that all sign-in requirements have been met. Today, follow Daniel from the available option through registration and then to the evidence required for a particular attempt. Your goal is to explain which step he has reached and choose the next check from that evidence. You can follow the case without installing the app or using an Okta tenant.
 
 ## Why a password may not be enough
 
-A password is something Daniel knows. Someone else who obtains it might try to use it. Northbridge can require another kind of evidence, such as proof involving a registered device Daniel possesses.
+A password is something Daniel knows. Someone else who obtains it might try to use it. Asking that person to enter the stolen password again would add little reassurance. Northbridge can instead require another kind of evidence, such as proof involving a registered device Daniel possesses. The purpose of the extra check is to require evidence that knowing his password alone does not supply.
 
-An **authenticator** is a means of providing authentication evidence. A password, a supported security key, and Okta Verify are examples. Authenticators can support different **methods**, or ways of authenticating. The authenticator's name alone does not describe every method or security property it supports.
+An **authenticator** is a means of providing authentication evidence. A password, a supported security key, and Okta Verify are examples. Authenticators can support different **methods**, or ways of authenticating. For example, Daniel might respond to an Okta Verify notification on his registered phone. That tells us more about the interaction than simply saying he used Okta Verify. The authenticator's name alone does not describe every method or security property it supports.
 
 A **factor type** describes the kind of evidence:
 
@@ -34,7 +32,9 @@ A **factor type** describes the kind of evidence:
 
 Count the kinds of evidence, not the screens. Asking for two passwords is still asking for knowledge twice. Two prompts do not automatically establish two factors. Conversely, a supported authenticator interaction may establish more than one factor, such as device possession together with biometric verification.
 
-MFA and authorization remain different. Stronger authentication does not grant Daniel an Expense approval role or create his application account.
+In a successful password-plus-device attempt, accepted password evidence supplies knowledge, and the validated registered-device method supplies possession. Both results matter. The fact that he owns a phone, without the relevant registration and accepted proof, does not complete the device check.
+
+MFA and authorization remain different. Stronger authentication does not grant Daniel an Expense approval role or create his application account. His Finance manager title alone does not establish the application permissions needed for his work.
 
 Keep the three terms connected: Okta Verify is the **authenticator**; Push is one **method** it supports; a successfully validated registered-device interaction can supply **possession** evidence. The authenticator names the means, the method names how it is used, and the factor type names the kind of proof. [Okta's Verify reference](https://help.okta.com/oie/en-us/content/topics/identity-engine/authenticators/configure-okta-verify.htm) describes its supported methods.
 
@@ -42,7 +42,9 @@ Keep the three terms connected: Okta Verify is the **authenticator**; Push is on
 
 Imagine Northbridge has made Okta Verify available for its users. Daniel installs the app on his phone. Is that enough to authenticate to Northbridge with it?
 
-The app still needs the relevant registration linking an authenticator to Daniel's Northbridge account. This is **enrollment**. Installing software is not evidence that this account-specific setup is complete.
+Installation puts the software on his phone. Northbridge still needs the registration that associates this authenticator with Daniel's account. Completing that account-specific setup is **enrollment**. During the approved setup, Daniel adds his Northbridge account to Okta Verify so the registered authenticator can be used for that identity. Merely installing the app leaves that association unestablished.
+
+Alex can turn the manager's broad question into checks with different evidence:
 
 | Question | Evidence to inspect |
 |---|---|
@@ -51,18 +53,18 @@ The app still needs the relevant registration linking an authenticator to Daniel
 | Is the method acceptable for this attempt? | The stated authentication requirement and supported method. |
 | Did Daniel complete it successfully? | The authentication result for the identified attempt. |
 
-An enrollment is not a successful sign-in result. A previous successful use is not automatic proof that the current attempt meets its requirements.
+Read the table as four questions about Daniel, rather than four names for the same state. Available means the configuration permits the authenticator. Enrolled means the relevant registration exists. Acceptable means the method meets this attempt's requirement. Completed means the identified attempt has an accepted result. A previous successful use is not automatic proof that the current attempt meets its requirements.
 
 Keep device context in view. Enrollment on Daniel's old phone does not establish that a replacement phone is ready. Likewise, an account in Okta Verify for another organization does not establish a Northbridge enrollment.
 
 ## Two requirements with different jobs
 
-A **policy** expresses configured requirements for a population or situation. For now, distinguish these two purposes:
+Northbridge needs to decide both what Daniel must set up and what an access attempt must prove. A **policy** expresses configured requirements for a population or situation. These two purposes guide different decisions:
 
 - An **authenticator enrollment policy** governs which authenticators users may or must enroll and when enrollment is required.
 - An **authentication requirement** describes what proof is needed for an access attempt.
 
-Required enrollment does not mean that every application must ask for that authenticator on every visit. Optional enrollment does not mean that an authenticator can never be needed to satisfy an application's requirement.
+Requiring Daniel to register a method prepares him to use it when needed. It does not, by itself, decide how often every application must challenge him. Likewise, making enrollment optional does not mean that the method can never be needed to satisfy a particular application's requirement. Alex must inspect the requirement for the access attempt as well as the enrollment rule.
 
 For the example below, Northbridge has made the following decisions. These are supplied assumptions, not universal Okta defaults:
 
@@ -73,7 +75,7 @@ For the example below, Northbridge has made the following decisions. These are s
 | Method availability | Push is enabled and supported on Daniel's mobile device. |
 | Prior authentication | No earlier verification is being reused to satisfy the Push requirement in this packet. |
 
-These facts let us reason about the example without learning the full policy evaluation sequence. Day 13 examines policy selection and session behavior.
+Under these supplied conditions, Daniel needs a completed enrollment and, for this fresh attempt, accepted password and Push evidence. There is no earlier Push verification to count and no enrollment postponement to explain the setup request away. Keep those conditions with this example; another application's requirements could differ. Day 13 examines how policies and sessions determine the requirements for an attempt.
 
 ## Follow Daniel's enrollment question
 
@@ -90,9 +92,9 @@ Alex collects this synthetic packet for attempt D-1. It is a plain-language summ
 
 Predict the explanation before reading on: which two facts did the manager combine?
 
-The manager treated organization-level availability as proof of Daniel's enrollment. The packet shows the first but not the second. The setup request is consistent with the supplied requirement and missing enrollment.
+The enabled setting answers the organization's configuration question. Daniel's enrollment row answers a different question: this Northbridge account has no completed registration. Because enrollment is required now, the setup request fits the supplied evidence. Alex can explain that Northbridge has made the option available, but Daniel still needs to connect it to his own account through the approved setup.
 
-Alex should explain the approved enrollment path and verify that Daniel completes the association for the correct Northbridge account and supported device. There is no evidence here that a password reset or a change to Daniel's department would help.
+The next useful action is to guide Daniel through that approved enrollment path and verify the resulting association with the correct Northbridge account and supported device. The password result is already accepted in D-1. Resetting it would address a different part of the sign-in, while changing his department would not establish the missing registration.
 
 Enrollment itself is security-sensitive: it establishes a means of proving identity. If Daniel cannot complete it, the next question concerns the actual enrollment failure and approved assistance process, rather than removing the requirement just to make the prompt disappear.
 
@@ -100,7 +102,7 @@ Enrollment itself is security-sensitive: it establishes a means of proving ident
 
 Suppose Daniel subsequently completes the approved enrollment. In a new attempt D-2, the same stated Expense requirement applies. His password is accepted, and a Push request is issued to the registered device. No accepted response is yet recorded.
 
-A **challenge** is a request for authentication proof during an interaction. For Push, Daniel responds through the registered device; the system must receive and accept the relevant response.
+Now the missing fact has changed. Daniel is enrolled, but this attempt still needs his response. A **challenge** is a request for authentication proof during an interaction. For Push, Daniel responds through the registered device; the system must receive and accept the relevant response. Completing setup makes that interaction possible. It does not answer every future request on his behalf. Daniel should approve only a Push request that belongs to a sign-in he is intentionally completing. Receiving a notification is not a reason to approve it automatically.
 
 ```mermaid
 flowchart TD
@@ -109,13 +111,13 @@ flowchart TD
   C -->|"relevant response received and validated"| D["Requirement satisfied, if the result is accepted"]
 ```
 
-This is a conceptual relationship, not a claim that every authenticator displays the same sequence of screens.
+Start at the top with what Northbridge makes available, then follow Daniel's registration to the challenge for a particular attempt. The final arrow requires a response to be received and validated. That is why a record saying the challenge was issued cannot establish the result at the bottom. The diagram shows a conceptual relationship; authenticators can present different screens and interactions.
 
-For D-2, enrollment is established but accepted Push evidence is not. “Issued” is also not proof that Daniel received or approved the notification. Investigate delivery, the selected enrollment/device, and the response outcome before choosing a cause.
+For D-2, enrollment is established but accepted Push evidence is not. Before reading further, choose what you would ask Daniel and what you would inspect for this attempt. “Issued” does not prove that he received or approved the notification. His experience, the selected enrollment/device, and the response outcome help locate the gap between sending a challenge and obtaining accepted proof.
 
-An expired challenge, a user denial, and an undelivered notification are different findings. None is established merely by the absence of an accepted response. A broad “MFA failed” description hides those distinctions.
+An expired challenge, a user denial, and an undelivered notification are different findings. If the selected device is an old phone, that points to a different next check than a recorded denial on the intended phone. These are possible explanations, not findings supplied for D-2. A broad “MFA failed” description hides the distinction Alex needs before choosing a correction.
 
-For a successful follow-up, the investigator obtains an accepted response tied to the current attempt and confirms that the stated authentication requirement is satisfied. Application entry and permissions still need their own evidence.
+For a successful follow-up, the investigator obtains an accepted response tied to the current attempt and confirms that the stated authentication requirement is satisfied. That is the result needed to close this authentication question. Application entry and permissions still need their own evidence; this follow-up does not resolve Daniel's separate Expense cases from earlier lessons.
 
 ## Okta Verify methods are not interchangeable
 
@@ -127,17 +129,21 @@ Okta Verify supports several authentication experiences, subject to configuratio
 | Push | Responds to a notification on a registered mobile device. |
 | FastPass | Uses a device-based cryptographic authentication flow through Okta Verify. |
 
-Knowing Daniel has Okta Verify does not tell us which method an attempt used or whether it meets the stated requirement. A TOTP result is not a Push result. Two methods from the same app also do not automatically prove two different factor types.
+The table describes different interactions. With TOTP, Daniel supplies a changing code from the app. With Push, he responds to a notification. FastPass uses cryptographic proof associated with the device, which we will examine next. Knowing he has Okta Verify does not identify which interaction took place.
+
+A TOTP result is not a Push result, and two methods from the same app do not automatically prove two different factor types. Check both the method used and the kind of evidence it supplies.
 
 In Northbridge's supplied Push example, inspect the Push outcome. Do not substitute an unrelated code result or an older event because it also says Okta Verify.
 
 ## Where FastPass fits
 
-**Okta FastPass** provides passwordless authentication through Okta Verify using cryptographic proof associated with an enrolled device. Instead of treating a typed password as the proof in that flow, the system validates a response to its challenge.
+Suppose a separate, permitted sign-in flow lets Daniel use his enrolled device to provide proof without typing a password. **Okta FastPass** uses Okta Verify to respond to a challenge from Okta with a cryptographic key associated with the device's registration. Okta checks the response as evidence that the enrolled key was used for this attempt. Daniel does not type a password in this example.
+
+The key used to create the response's signature is a **private key**, a cryptographic secret. Okta verifies the signature and checks that the response matches its challenge. You do not need the mathematics here; keep the request, device response, and verification in view. For FastPass, Okta Verify must be set up on the supported device being used to access the application. That differs from a Push example in which Daniel can respond on a registered phone while signing in on a computer.
 
 FastPass is not another name for approving a Push notification. It can provide phishing-resistant authentication in supported, correctly configured flows. **Phishing resistance** helps prevent authentication proof from being used through an impostor site. It does not mean every flow bearing the Okta Verify name has the same protection or that all forms of account compromise are impossible.
 
-A flow can also require **user verification**, such as a supported device biometric or passcode check. Whether the required proof was provided depends on the method, device, configuration, and actual result. “FastPass enabled” does not prove those conditions were met for an attempt.
+A flow can also require **user verification**, such as a supported device biometric or passcode check. This adds a check of the person using the device; having a registered device and completing a required local check are distinct facts. Whether the required proof was provided depends on the method, device, configuration, and actual result. “FastPass enabled” does not prove those conditions were met for an attempt.
 
 Passwordless means the flow does not require a password; it does not mean “no authentication” or “automatically single-factor.” Do not infer factor count from whether a password field appeared.
 
@@ -152,15 +158,17 @@ For Northbridge, an AD password attempt still follows Day 6's delegated path. A 
 | “A notification was sent, so MFA worked.” | Challenge issuance versus accepted response. |
 | “Password accepted, so Expense must work.” | One authentication result versus all requirements and target access. |
 
-Do not reset every authenticator because the ticket says MFA. A reset changes enrollment state and may require setup again; it does not explain the original failure. Use the supplied evidence to choose the next investigation. Recovery and administrative responsibilities are developed later.
+Use the distinction in each row to choose the next investigation. Missing enrollment in D-1 calls for checking setup; missing accepted proof in D-2 calls for checking that attempt. A reset changes enrollment state and may require setup again, so it is a consequential action rather than a diagnosis. Recovery and administrative responsibilities are developed later.
 
 ## Read the enrollment before choosing a reset
 
 The user's authenticator information answers which enrollments are associated with that identity. The organization's authenticator configuration answers which methods are available. Inspect both before interpreting a report that “Verify is installed but does not work.” An installation may belong to another organization or lack the needed enrollment.
 
-For an issued Push with no accepted response, first establish what the user experienced and read the attempt's outcome. A notification failure, an expired request, and an unavailable old phone call for different next checks. Removing an enrollment does not explain which of those happened.
+For an issued Push with no accepted response, first establish what the user experienced and read the attempt's outcome. If an old phone is unavailable, inspect which enrollment was selected and what approved recovery is needed. If the expected phone was used, inspect the relevant response result. Removing the enrollment before understanding the evidence can create a setup task while leaving the original cause unknown.
 
 If replacement is necessary, follow the approved identity-verification and recovery process with the required authority. The completion evidence is a replacement enrollment and a permitted subsequent sign-in, not merely a completed reset action. Keep the detailed [replacement-phone situation](../requests/recovery-and-account-state.md) for after Day 14, when recovery responsibilities have been introduced.
+
+Daniel's story turns on the step that has evidence. Availability explains what Northbridge offers; enrollment connects the authenticator to his account; the current result establishes whether the required proof was accepted. Explain the missing step before proposing a change, then keep the application outcome as its own check.
 
 ## Before moving on
 

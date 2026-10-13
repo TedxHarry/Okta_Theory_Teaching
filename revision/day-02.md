@@ -24,7 +24,7 @@ When someone says “Okta worked, but the app failed,” slow the story down. Wh
 
 ## Follow Maya's evidence
 
-In the Expense example, the browser follows a redirect, receives a sign-in form, and completes authentication. An Okta SSO event reports success. Expense then returns a refusal about the sign-in information.
+This is a separate Expense attempt; Day 1's Salesforce account findings do not explain it. In the supplied Expense example, the browser follows a redirect, receives a sign-in form, and completes authentication. An Okta SSO event, connected to this attempt by the training packet, reports success. Expense then returns a refusal about the sign-in information.
 
 That sequence places the first observed failure at Expense. It does not yet identify the root cause. A password reset would be a guess when the supplied evidence already shows authentication completed.
 
@@ -35,6 +35,8 @@ Build your explanation around the last confirmed successful step and the next ob
 Choose a log window and time zone, then correlate the person and application. Keep successful preceding steps in view. An empty filtered search does not prove that no attempt occurred.
 
 ## Check your understanding
+
+Without looking back, tell Maya's Expense story in order. Name a successful step, the first demonstrated failure, and one piece of evidence still needed. Then use the questions below to check your explanation.
 
 - Why does receiving a page with status `200` not prove authentication succeeded?
 - What does the Okta success event establish in Maya's sequence, and what remains unknown?

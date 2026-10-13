@@ -10,7 +10,7 @@ Use this after attempting the [case tasks](../../exercises/day-15.md) and compar
 
 ## Assess the reasoning you used
 
-Mark each row **independent**, **with guidance**, or **needs review**. Independent means you explained it before consulting the answer; with guidance means a reference helped you reconstruct it; needs review means a distinction remains unclear.
+Mark each row **independent**, **with guidance**, or **needs review**. Independent means you explained that point without consulting an explanation or reference for it; with guidance means a reference helped you reconstruct it; needs review means a distinction remains unclear.
 
 | Criterion | Evidence in your response | Targeted review |
 |---|---|---|
@@ -111,6 +111,8 @@ For your proposed action, mark each point as explained independently, explained 
 | Verify | Supplies evidence of the intended outcome and keeps unresolved checks assigned to an owner. |
 
 Try the [independent requests](../../requests/index.md) without opening their reasoning first. Explain both the correction and what would make you keep the request open.
+
+When you are ready to plan a training activity, the optional [Day 16 practice bridge](../../lessons/day-16-safe-practice-plan.md) turns these distinctions into predictions and an evidence record. Completing the theory assessment does not make that practice activity tested or verify a deployment.
 
 
 [Case evidence](../final-case.md) · [Day 15](../../lessons/day-15-integrated-case.md) · [Course home](../../index.md)

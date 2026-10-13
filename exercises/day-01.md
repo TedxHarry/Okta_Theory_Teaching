@@ -8,6 +8,8 @@ nav_order: 1
 
 Use the facts supplied in each question. State what you know, what you do not know, and what you would check next. You do not need menu paths or protocol details.
 
+Try the questions before opening the answers. For an investigation, use three short sentences: “The evidence shows…”, “We still do not know…”, and “I would check… because…”. A possible explanation becomes more useful when you name a check that could support or rule it out.
+
 ## 1. One person, several records
 
 Maya has an employee record in Workday, an Okta user, an AD account, and a Salesforce account.

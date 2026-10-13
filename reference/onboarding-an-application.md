@@ -10,6 +10,8 @@ nav_order: 6
 
 Use this framework after [Day 14](../lessons/day-14-requirements-and-responsibilities.md). It is a theory exercise in explaining a proposed design and its evidence. No tenant or configuration work is required.
 
+Follow one requirement through the framework. Explain who needs which capability, how the intended account will be identified, and what would show that access starts and ends correctly. Keep unanswered owner decisions visible instead of hiding them behind a connector choice.
+
 ```mermaid
 flowchart TD
   A["Define people and required access"] --> B["Choose supported sign-in and account management"]
@@ -69,7 +71,7 @@ For this fictional design variant, Northbridge Projects is intended for Sales em
 | Existing account or rehire | Verify ownership and intended reuse before assuming a new account is needed. |
 | Departure or exception expiry | Explain the Okta action, per-app removal results and separate session outcome. |
 
-One successful example supports only its observed path. It does not establish the negative, exception or lifecycle cases.
+One successful example supports only its observed path. It does not establish the negative, exception or lifecycle cases. Choose cases that can expose a mistaken condition: a Sales employee alone would qualify under both Sales AND Employee and the broader Sales OR Employee condition. A Sales contractor and a Finance employee distinguish the intended population from that mistake. These are design predictions, not supplied test results.
 
 ## 7. Explain maintenance, shared impact and recovery
 

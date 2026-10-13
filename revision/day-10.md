@@ -24,11 +24,11 @@ SCIM helps answer “what happened to the application account?” Keep that ques
 
 ## Read the outcome before choosing a correction
 
-In the successful create, the response is followed by a target read confirming the resource. That is stronger evidence of destination state than the request alone.
+In the successful create C-1, the response is followed by a target read confirming the resource. That is stronger evidence of destination state than the request alone.
 
-The separate `409` uniqueness conflict means the requested username conflicts with existing state. It does not prove who owns the conflicting resource. Inspect the lookup and resource ownership before retrying, linking, deleting, or inventing a different username.
+The independent C-2 packet's `409` uniqueness conflict means the requested username conflicts with existing state. It does not prove who owns the conflicting resource. Inspect the lookup and resource ownership before retrying, linking, deleting, or inventing a different username.
 
-Daniel's `400` response identifies an invalid department value: the request sends `Finance` where Projects expects `FIN`. Fix the transformation rather than changing the authoritative business department.
+Independent C-3 concerns Daniel. Its `400` response identifies an invalid department value: the request sends `Finance` where Projects expects `FIN`. Fix the transformation rather than changing the authoritative business department. C-3 does not supply a successful retest. The lesson's separate PUT example verifies FIN in the linked prj-1020 resource, but is not evidence that C-3 was corrected.
 
 For deactivation, the example's `204` response has no body. A later read showing `active: false` verifies the retained resource's state. Keep session termination as a separate check. Also, removing one assignment path may leave another, so it need not produce deactivation at all.
 
@@ -37,6 +37,8 @@ For deactivation, the example's `204` response has no body. A later read showing
 Read the supported and enabled provisioning operation, its linked target, and its result. A successful connection test does not prove the failed account update completed. Check uncertain create outcomes before retrying.
 
 ## Check your understanding
+
+From memory, compare C-1's successful create, C-2's conflict, C-3's rejected value, and the hypothetical deactivation. For each, state the checked target outcome or unresolved question. Explain why none of these results alone establishes application entry, permissions, or termination of an existing session.
 
 - What does the target resource ID help you preserve across updates?
 - Why do the uniqueness conflict and invalid-value response need different investigations?

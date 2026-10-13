@@ -24,11 +24,11 @@ An AD import succeeded this morning, but Jordan cannot sign in now. Those facts 
 
 ## Read Jordan's result carefully
 
-The first packet shows a timeout between the agent and the domain controller. There is no acceptance or rejection from AD. Saying “Jordan entered the wrong password” would go beyond the evidence.
+In attempt J-1, the first packet shows a timeout between the agent and the selected domain controller. There is no acceptance or rejection from AD. Saying “Jordan entered the wrong password” would go beyond the evidence.
 
-A different packet contains an explicit credential rejection. Now the validation path returned a negative result, but the precise reason still needs investigation. Check the identity submitted and relevant account restrictions rather than assuming a typo. A user principal name (UPN), an AD sign-in identifier often written in an email-like form, is not automatically the person's mailbox address.
+A different packet, for independent attempt J-2, contains an explicit credential rejection. Now the validation path returned a negative result, but the precise reason still needs investigation. Check the identity submitted and relevant account restrictions rather than assuming a typo. A user principal name (UPN), an AD sign-in identifier often written in an email-like form, is not automatically the person's mailbox address.
 
-When a later packet confirms the route is repaired and AD accepts the credential, that resolves the demonstrated password-path issue. It does not prove MFA, application entry, or application permissions succeeded.
+The linked follow-up J-3 confirms that the identified route is repaired and AD accepts Jordan's credentials. This supports recovery of the checked connection and password validation in J-3. It does not establish the cause of the independent J-2 rejection. It does not prove MFA, application entry, or application permissions succeeded.
 
 Priya has no AD account in Northbridge's contractor model. Do not put her into Jordan's delegated path just because both use Okta.
 
@@ -37,6 +37,8 @@ Priya has no AD account in Northbridge's contractor model. Do not put her into J
 Give the directory owner the identity, time, agent, domain controller, and observed result. A repaired route needs a fresh credential-validation result; agent availability alone does not close the user's request.
 
 ## Check your understanding
+
+Without looking back, compare J-1, J-2, and J-3. For each, say whether AD returned a credential result, what that result establishes, and what remains unknown. Then explain why the earlier successful import cannot answer those password questions.
 
 - What does an import prove that a delegated-authentication result does not, and vice versa?
 - Why is a timeout different from a rejected credential?

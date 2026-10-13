@@ -8,6 +8,8 @@ nav_order: 4
 
 Use the [lesson](../lessons/day-04-sources-and-ownership.md) and explain your reasoning before opening the [answers](../self-checks/day-04.md).
 
+For each person, first identify the applicable source associations, then the effective profile source, then any field-specific exception. Compare the observed values only after establishing those responsibilities. A correct ownership decision still leaves the update result to be checked.
+
 ## 1. Apply the order to a person
 
 Workday is first and AD second. Maya is associated with both. Priya is associated with neither and is maintained in Okta.

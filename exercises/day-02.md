@@ -8,6 +8,8 @@ nav_order: 2
 
 The addresses, messages, and records below are fictional training examples. They are supplied evidence, not instructions to visit or operate a system.
 
+Try each question before opening the answers. For every result, name the request or event it belongs to, say what that result establishes, and identify what remains unknown. When you propose a next check, explain which uncertainty it would help resolve. No tenant or memorized protocol fields are needed.
+
 ## 1. Read the destination
 
 ```text

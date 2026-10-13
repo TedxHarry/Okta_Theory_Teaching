@@ -9,7 +9,7 @@ has_toc: false
 
 Coming back after a break? Choose the day you want to revisit. Each recap explains the main concepts, brings them together in a familiar example, and gives you a few questions to check your understanding.
 
-Try explaining the example in your own words, then answer the three questions. Open “Compare your reasoning” to check your answers on the same page. If a step still feels unclear, follow the link to the full lesson. You do not need to start the whole course again to work through one gap.
+Try explaining the example in your own words, then answer the questions. Open “Compare your reasoning” to check your answers on the same page. If a step still feels unclear, follow the link to the full lesson. You do not need to start the whole course again to work through one gap.
 
 - **[1: People, identities, and access](day-01.md)**: Accounts, authentication, authorization, SSO, and provisioning.
 
@@ -43,3 +43,6 @@ Try explaining the example in your own words, then answer the three questions. O
 
 
 [Course home](../index.md) · [Full learning path](../learning-path.md)
+
+
+For Day 15, attempt the final case before using its recap. The optional [Day 16 practice plan](../lessons/day-16-safe-practice-plan.md) has its planning activity and record in the lesson rather than a separate recap.

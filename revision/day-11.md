@@ -24,11 +24,11 @@ Finding a record that looks like Maya is the start of a decision. Before connect
 
 ## Work through Maya's candidates
 
-Two records look like Maya. The evidence confirms that candidate A, with employee number `NB-1042`, belongs to her; candidate B belongs to another person. That supports the proposed choice, but the pending proposal still needs confirmation before you describe it as linked.
+In M-1, two records look like Maya. The evidence confirms that candidate A, with employee number `NB-1042`, belongs to her; candidate B belongs to another person. That supports the proposed choice, but the pending proposal still needs confirmation before you describe it as linked.
 
-After association is confirmed, a Projects record showing `SAL` and `active: true` tells you its observed account state. It does not establish that Maya can sign in.
+The explicit follow-up M-2 confirms the association. Its Projects record showing `SAL` and `active: true` tells you its observed account state. It does not establish that Maya can sign in.
 
-In the separate duplicate-identifier packet, ownership is unresolved. Keep it unresolved while obtaining evidence. Choosing the first result would turn uncertainty into an identity mistake.
+In the separate duplicate-identifier packet M-3, ownership is unresolved. M-2's confirmed relationship does not supply ownership evidence for this independent case. Keep it unresolved while obtaining evidence. Choosing the first result would turn uncertainty into an unsupported identity decision. These matching packets also do not establish the history behind Day 10's separate create conflict.
 
 An accidental association can also change which source rules apply. For example, linking Priya to an AD record deserves an impact review; changing global source priority is not a substitute for correcting the relationship.
 
@@ -39,6 +39,8 @@ Just-in-time creation is another distinct process. It occurs during a supported,
 An unexpected import-removal count deserves investigation before processing continues. Check source scope and business changes. Import safeguards have specific coverage and do not protect every group-rule or assignment change.
 
 ## Check your understanding
+
+From memory, explain what M-1 supports, what M-2 adds, and why M-3 remains unresolved. Then contrast a successful partial read with a denied read. State what evidence you would request before claiming an association or an account's absence.
 
 - What changes between a proposed match and a confirmed association?
 - Why do matching employee numbers still need trustworthy ownership evidence?

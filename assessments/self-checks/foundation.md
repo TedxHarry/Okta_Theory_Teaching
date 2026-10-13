@@ -54,7 +54,7 @@ For B, add that the current mapping is demonstrably wrong and needs correction a
 
 ## Assess your explanation
 
-For each row, choose **independent**, **with guidance**, or **needs review**. Independent means you explained it before consulting this debrief. With guidance means a reference helped you reconstruct it. Needs review means a distinction is still unclear or your explanation depends on an unsupported assumption.
+For each row, choose **independent**, **with guidance**, or **needs review**. Independent means you explained that point without consulting an explanation or reference for it. With guidance means a reference helped you reconstruct it. Needs review means a distinction is still unclear or your explanation depends on an unsupported assumption.
 
 | Criterion | Evidence of understanding | Revisit if needed |
 |---|---|---|

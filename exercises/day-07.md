@@ -46,6 +46,6 @@ Can you infer that no authentication occurred, that only one factor was used, or
 
 A new correlated attempt D-3 has completed enrollment, accepted password and Push results, and a recorded decision that the stated authentication requirement is satisfied. Expense account state, application acceptance, and approval permissions are not supplied.
 
-Write an update to Daniel. State what has succeeded and what evidence is needed if he still cannot approve an expense. Do not claim the application outcome from the authentication results alone.
+Write an update to Daniel. State what has succeeded and what evidence is needed if he still cannot approve an expense. Do not claim the application outcome from the authentication results alone. Does this successful new attempt establish why D-2 had no accepted Push response?
 
 [Self-check answers](../self-checks/day-07.md) · [Course home](../index.md)

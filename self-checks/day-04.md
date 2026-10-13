@@ -12,7 +12,7 @@ Compare the reasoning, not exact wording. Return to the [exercises](../exercises
 
 Workday is Maya's effective profile source because both associations apply and Workday has higher priority. Priya is Okta-managed in the supplied configuration because neither external source applies.
 
-The claim about Priya skips source applicability. An integration's presence and priority do not establish her association with it.
+Check whether your explanation follows the associations before the priority list. The claim about Priya skips source applicability. An integration's presence and priority do not establish her association with it.
 
 Revisit **First ask which sources apply to this person** if you applied the list to everyone without checking their links.
 
@@ -69,13 +69,15 @@ A useful next request is the relevant Projects account-update record, including 
 - If the configuration shows department updates are disabled and the relevant history confirms no update occurred, investigate whether updates should be enabled under the approved requirement. That differs from troubleshooting a target rejection.
 - If a recorded operation sent SAL and Projects rejected it, inspect the stated rejection and target requirements. Do not change the correct HR department to work around the rejection.
 
+A concise handoff could say: “Maya's Workday department and Okta user profile contain Sales; the saved Projects mapping evaluates to SAL and the app user profile contains SAL. Her linked Projects account contains FIN. Please provide the relevant department-update record, including the value sent and the target response.” This identifies the discrepancy without inventing a failed operation.
+
 Neither finding is supplied by the initial packet. Other evidence requests are acceptable if you explain what competing explanations they distinguish. A success response would still need comparison with target state, sequence, and possible later writes, as Day 3 shows.
 
 Revisit Day 3's **A preview is a calculation, not delivery evidence** for the data boundary; Day 4's **Then check the particular attribute** for authority; or Day 2's **Match the evidence to the right attempt** if you treated the password result as an account-update result.
 
 ## Ready to continue
 
-You should be able to identify a person's applicable sources, read the priority order, and check field-level ownership before judging conflicting values. You should also be able to leave delivery and password-path conclusions unproven when the evidence only concerns profile data.
+You should be able to identify a person's applicable sources, read the priority order, and check field-level ownership before judging conflicting values. You should also be able to leave delivery and password-path conclusions unproven when the evidence only concerns profile data. If your answer recommends changing source order, name the ownership requirement that justifies it; a stale value alone is insufficient.
 
 [Return to the lesson](../lessons/day-04-sources-and-ownership.md) · [Course home](../index.md)
 

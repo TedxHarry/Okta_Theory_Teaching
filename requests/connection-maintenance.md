@@ -61,6 +61,8 @@ The final packet explicitly confirms both independent outcomes: a fresh SAML ass
 
 > The signing transition is verified by a fresh accepted SAML attempt in the production instance. The provisioning credential replacement is verified by the connection check and the completed account update with a matching target read. The two operations were checked separately.
 
+These findings cover the checked signing transition and linked account update. They do not establish that every Records user, provisioning operation, or application permission has been verified. Broader acceptance checks depend on the approved change scope.
+
 Now remove one piece of evidence: the connection test succeeds, but the account update still reports a permission denial. What remains unresolved?
 
 <details markdown="1">

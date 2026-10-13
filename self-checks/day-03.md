@@ -6,7 +6,7 @@ nav_order: 3
 
 # Day 3: Self-check answers
 
-Check the relationships in your explanation. Exact wording and expression syntax are not required.
+Check the relationships in your explanation. Exact wording and expression syntax are not required. If you claimed a value reached Projects, identify the operation and target observation supporting that claim. If those are missing, revise the claim to describe what is expected or still needs verification.
 
 ## 1. Locate the records
 
@@ -38,6 +38,8 @@ The outbound rule always returns SAL, even when its input is Finance. The previe
 
 Propose correcting the mapping and assess the other users it affects. Then verify the evaluated result, app user value, relevant update operation, and actual target state. A preview alone does not establish delivery.
 
+For the shared rule, test Sales → SAL, Finance → FIN, and IT → IT. Missing or unrecognized input should receive the required review rather than an invented department code. These checks assess the proposed conversion; each affected account still needs appropriately scoped delivery evidence.
+
 Daniel's HR department should not be changed to compensate for the defect. It is already correct. The target snapshot also does not establish the complete historical sequence of writes; that would require operation evidence.
 
 **Revisit:** "Find the first wrong representation" if you proposed changing the correct source or claimed the entire write history was proven.
@@ -67,11 +69,11 @@ Request the relevant full source/profile evidence, source ownership, mapping beh
 
 ## 7. Tell the full data story
 
-A sound explanation is:
+A sound explanation of the intended flow is:
 
 > Workday holds Daniel's Finance department. The incoming mapping represents it in his Okta user profile. The outgoing Projects mapping converts Finance to FIN in the application-specific profile. The configured account-update process must then send and apply the value to the linked Projects account. The target record confirms what the application actually stores.
 
-Mapping defines how a value is represented or transformed between profiles. Source ownership determines which system controls it. Delivery evidence establishes whether a supported update occurred and was accepted. These are separate questions.
+Mapping defines how a value is represented or transformed between profiles. Source ownership determines which system controls it. Delivery evidence establishes whether a supported update occurred and was accepted. These are separate questions. A later, correlated update result and target read can verify a correction for the checked account; neither should be assumed from this description of the intended flow.
 
 **Revisit:** "Mapping and ownership answer different questions" if your explanation used a mapping as proof of authority or delivery.
 

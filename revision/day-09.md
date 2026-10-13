@@ -28,15 +28,19 @@ Keep one picture in mind: the browser brings a code back to Expense, and Expense
 
 The browser visits the authorization endpoint and returns a code to Expense's callback. Expense's backend exchanges it with the required client authentication and PKCE verifier. Expense validates the ID token and handles its account and local session.
 
-In the first lesson packet, the request uses an old callback instead of the registered callback. It is rejected before a code or tokens are issued. Fix the request against the approved design rather than resetting the user's password or casually registering the old address.
+In the first lesson packet, O-1, the request uses an old callback instead of the registered callback. It is rejected before a code or tokens are issued. Fix the request against the approved design rather than resetting the user's password or casually registering the old address. The identity service must not send even an error response to that unregistered callback.
 
-In the successful packet, the exchange, validation, and application entry are confirmed. Approval permissions and provisioning are still separate. An accepted sign-in does not prove that a new account was created by this flow.
+In the linked successful follow-up O-2, the approved request, correlated code return, backend exchange, ID token validation, and application entry are confirmed. Approval permissions and provisioning are still separate. An accepted sign-in does not prove that a new account was created by this flow.
+
+The self-check's optional O-3 packet is separate: its exchange succeeds, but Expense rejects the ID token because its audience names another client. That is a later validation failure, not evidence that O-1's callback problem returned.
 
 ## When a request reaches you
 
 Compare the actual request with the approved client registration. Fix an obsolete callback request rather than casually adding it. An exchange failure needs backend evidence; preserve secrets when collecting it.
 
 ## Check your understanding
+
+From memory, trace what the browser carries and what the backend exchanges and validates. Then compare where O-1 stops, how far O-2 is verified, and where the optional O-3 fails. Name the evidence for each boundary.
 
 - Which part travels through the browser, and which exchange happens at the backend?
 - Why are state, PKCE, and nonce complementary?

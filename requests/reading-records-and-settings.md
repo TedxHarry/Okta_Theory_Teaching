@@ -8,7 +8,7 @@ nav_order: 1
 
 Before opening a setting, say what you want to learn from it. “I want to find out why this user still has this application” is a better starting point than “I will look around the console.”
 
-The Okta Admin Console contains several views of the same relationship. A user view, a group view, and an application view can each be correct while answering different questions. Available controls also depend on the integration, enabled features, and your permissions. A control you cannot see is not automatically a capability the organization lacks.
+The Okta Admin Console contains several views of the same relationship. A user view, a group view, and an application view can each be correct while answering different questions. Available controls also depend on the integration, enabled features, and your permissions. A control you cannot see is not automatically a capability the organization lacks. State the question first, then choose the view that can answer it; finding a setting is not a reason to change it.
 
 ## Start with identity and assignment
 
@@ -51,6 +51,6 @@ It does not select only successful outcomes or prove application acceptance. Ins
 
 Imagine the profile update setting is enabled, the mapping preview produces the expected value, and a colleague says “it should be fixed.” You still need the operation and target result. Configuration describes intended behavior. Execution evidence shows which operation occurred. A target read or relevant application action shows the checked outcome.
 
-Record all three when closing a request. If the target owner has not supplied the result, leave that check with a named owner. The absence of a visible error in Okta is not evidence of every target outcome.
+Record all three when closing a request. If the target owner has not supplied the result, leave that check with a named owner. The absence of a visible error in Okta is not evidence of every target outcome. Keep the saved configuration, actual operation, and checked result tied to the same intended record and sequence. A result from a different user or earlier attempt cannot fill a missing outcome.
 
 [Working through requests](index.md) · [Next: The application is missing](missing-application.md)

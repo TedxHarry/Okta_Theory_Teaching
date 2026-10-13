@@ -12,6 +12,8 @@ Try the [exercises](../exercises/day-05.md) first. Equivalent explanations are w
 
 Only Maya meets both conditions. With OR, all three qualify: Maya meets both conditions, Priya is in Sales, and Daniel is an employee. That broader population conflicts with the stated requirement.
 
+The additional Finance/Contractor user meets neither condition, so neither AND nor OR includes that user. Together, these examples check both conditions true, each condition true on its own, and neither condition true. Predicting the result still does not replace observing the actual membership.
+
 An unknown classification does not establish employment. Request the approved classification and its source/mapping evidence rather than granting access through a guessed default.
 
 Revisit **Predict who matches** if you evaluated only department.
@@ -42,7 +44,7 @@ Neither case justifies changing correct HR data. Revisit **A matching condition 
 
 ## 5. Contractor assignment
 
-The individual assignment is a separate path, so it does not demonstrate a group-rule failure. Missing approval evidence leaves the exception's authorization unresolved.
+The individual assignment is a separate path, so it does not demonstrate a group-rule failure. Missing approval evidence leaves the exception's authorization unresolved. It does not establish either an approved exception or a confirmed unauthorized assignment. Obtain the approval evidence before making that judgment.
 
 Ask for the approved need, accountable owner, and review/removal condition. Keep Priya's true classification. Changing it to Employee would corrupt data to fit an access decision rather than document a legitimate exception.
 

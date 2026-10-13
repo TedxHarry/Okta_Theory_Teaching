@@ -21,4 +21,6 @@ The records and follow-up results are fictional. These situations are independen
 
 For each request, write the expected outcome, the supplied facts, the next useful check, the proposed action, and the evidence needed afterward. The reasoning sections explain acceptable conclusions; your wording does not need to match them.
 
+Work through one stage at a time. Record your next check before expanding its reasoning or reading the next observation. When a follow-up supplies a result, update that case using the new evidence. When a changed situation replaces a fact, start a separate explanation rather than retroactively changing the original closure.
+
 [Learning path](../learning-path.md) · [Revision Guide](../revision/index.md)

@@ -22,9 +22,11 @@ You now have several ways to explain an access problem. The skill is choosing th
 
 ## Revisit the six cases
 
+Use this recap after attempting the case. The tickets supply separate investigation snapshots; their proposed corrections are not completed results. Keep the remaining approval, ownership, failure-cause, and verification questions open where the packet leaves them open.
+
 **Maya's Projects department.** Workday and Okta show Finance, but a fixed mapping sends `SAL`, which Projects stores. Entry is confirmed, while the report is wrong. Correct the mapping, check who else it affects, and verify the target value and reporting outcome. If the mapping were already correct, the investigation would instead need delivery and target evidence.
 
-**Priya's Salesforce access.** The normal employee rule excludes her, but a direct assignment permits entry. The packet does not supply its exception approval. Review that path promptly without declaring it unauthorized solely because the approval is missing from the packet. Her separately approved Expense access does not approve Salesforce or Projects.
+**Priya's Salesforce access.** The normal employee rule excludes her, but a direct assignment permits entry. The packet does not supply its exception approval. Review that path promptly without declaring it unauthorized solely because the approval is missing from the packet. Her separately approved Expense access does not approve Salesforce or Projects. Ticket E supplies its own Projects exception; that approval does not resolve Ticket B's missing Salesforce decision.
 
 **Daniel's Salesforce rejection.** His stated authentication checks succeed, but the SAML assertion has the test audience for a production connection. Correct the connection mismatch and verify a fresh attempt. A matching NameID does not repair the audience. If an earlier authentication requirement had failed instead, later SAML evidence could not be assumed.
 
@@ -39,6 +41,8 @@ You now have several ways to explain an access problem. The skill is choosing th
 A closure note connects the expected outcome, observed discrepancy, justified action, and verified result. Name the owner of anything still unresolved instead of hiding it behind a general success statement.
 
 ## Check your understanding
+
+Close the model answers and choose one current ticket and the archived AD ticket. Explain each from memory using its evidence labels, then check whether you accidentally carried an outcome or approval from another case. For a current ticket, name the owner and evidence needed for the next unresolved result.
 
 - Which current case demonstrates continuing access after departure, and why does it deserve priority?
 - What evidence would close each target issue rather than merely show that a correction was attempted?

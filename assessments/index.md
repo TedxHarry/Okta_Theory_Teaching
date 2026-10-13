@@ -16,4 +16,6 @@ Three checkpoints that test whether the connections between topics hold together
 
 Use the packet's stated facts and keep independent variations separate. References and notes are allowed. Mark where they helped, compare the reasoning rather than exact wording, and revisit the linked lesson when a distinction remains unclear. No tenant access is needed.
 
+Keep your first attempt so you can see which conclusions changed during review. After the debrief, try a changed-condition question before opening its explanation. Mark a point as independent only if you explained it without help for that point; using a reference is useful practice and belongs under with guidance.
+
 [Learning path](../learning-path.md) · [Course home](../index.md)

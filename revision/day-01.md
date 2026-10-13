@@ -24,17 +24,19 @@ Think back to Maya. She can sign in to Okta, but that alone does not tell us whe
 
 ## Put the pieces back together
 
-For Maya, keep five statements separate: her Okta user exists, she is assigned Salesforce, her Salesforce account exists, her sign-in succeeds, and her permissions allow the intended work.
+For Maya, keep five statements separate: her Okta user exists, she is assigned Salesforce, her Salesforce account exists and has an appropriate state, her Salesforce sign-in succeeds, and her permissions allow the intended work.
 
 The Day 1 search found no account matching her approved identifier **in the checked Salesforce instance**. That is useful evidence with a defined scope. Assignment and provisioning were not yet inspected. We therefore have more to check before deciding that an account must be created.
 
-When you see a tile or an “Active” status, ask which of those five statements it actually supports. Avoid turning one observation into a claim about the whole journey.
+When you see a tile or an “Active” status, ask which of those five statements it actually supports. An Active Okta user is evidence about the Okta record; a disabled Salesforce account is evidence about the Salesforce record. Avoid turning one observation into a claim about the whole journey.
 
 ## When a request reaches you
 
 Start with the intended person and application instance. The user record, assignment, and target account answer different questions. Agree on the requested capability before proposing a change.
 
 ## Check your understanding
+
+Before looking at the answers, explain Maya's situation aloud or write a few sentences from memory. Include one confirmed fact, one unknown, and the next check you would choose.
 
 - Why could Maya authenticate successfully but still lack usable Salesforce access?
 - What would you inspect when Daniel can enter an app but cannot approve an item?

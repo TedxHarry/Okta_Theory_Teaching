@@ -30,13 +30,15 @@ Revisit **A conflict requires an ownership decision**.
 
 ## 4. Correct the representation
 
-The current outbound mapping sends a full name where the contract requires a code. Preserve the correct Finance source value; correct the conversion to FIN. Verify the app profile, actual request, accepted response, and intended target record. Assess other users sharing the mapping. The status code alone would not identify this field, but the combined packet does.
+The current outbound mapping sends a full name where the contract requires a code. Preserve the correct Finance source value; correct the conversion to FIN. Verify the app profile, actual request, accepted response, and intended target record. Assess other users sharing the mapping. The supplied rejected operation demonstrates the defect; a successful correction still needs its own new, correlated operation and target evidence. The status code alone would not identify this field, but the combined packet does.
 
 Revisit **A rejected value points to a different correction**.
 
 ## 5. Separate an update from a new account
 
 The operation updates an existing linked resource. It does not create a new identity. PUT is a replacement operation under the supported schema, so an incomplete body can affect omitted values; use the actual connector contract and complete expected representation when reasoning about the update.
+
+The separate successful PUT verifies the checked update to prj-1020. It is not supplied as a retest of Question 4's C-3 rejection, so do not use it to close that investigation.
 
 Revisit **Updating is not creating again**. This course asks you to interpret the operation, not send a replacement request.
 

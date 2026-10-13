@@ -14,6 +14,8 @@ The active rule requires department Sales AND workerType Employee. Maya is Sales
 
 Who qualifies? How would replacing AND with OR change these results? Why should an unknown worker type not be treated as Employee?
 
+Now consider an additional hypothetical Finance/Contractor user with the same Active, processed, nonexcluded conditions. Does either rule include this user? Explain which conditions are true or false rather than relying on a group name.
+
 ## 2. A group without an application connection
 
 Maya belongs to NB-Sales-Employees. Salesforce is not assigned to that group. There is no other Salesforce assignment path for her.

@@ -8,6 +8,8 @@ nav_order: 2
 
 Use Days 1 to 10 to explain the following independent synthetic packets. Write your conclusions before opening the [debrief](self-checks/integration.md). Each packet names its own application, attempt, and target evidence. Do not transfer success from one application to another.
 
+For each conclusion, name the packet, person, operation, and receiving system. If the packet supplies no result for a later stage, leave that stage unverified. Record the first attempt before using the debrief to revise it.
+
 ## Packet A: Salesforce rejects a SAML audience
 
 Daniel has an approved Salesforce assignment and an existing active Salesforce account. For attempt A-1, Okta's record reports a successful SAML response issuance. These are selected fields from that response, not a complete assertion:

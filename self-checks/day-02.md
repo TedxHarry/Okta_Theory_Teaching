@@ -6,7 +6,7 @@ nav_order: 2
 
 # Day 2: Self-check answers
 
-Use these to check the distinctions in your reasoning. You do not need to repeat the wording or memorize the example routes.
+Use these to check the distinctions in your reasoning. You do not need to repeat the wording or memorize the example routes. If your answer turns a successful step into a successful whole journey, identify the missing evidence and rewrite that sentence before moving on.
 
 ## 1. Read the destination
 
@@ -84,6 +84,8 @@ Priya's success is a different person's event. It neither proves Maya's sign-in 
 
 Request the detailed refusal and corresponding sign-in-exchange evidence. Explain what each record proves and does not prove before proposing a correction.
 
+A useful handoff could say: “For Maya's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.
+
 **Revisit:** "Follow Maya's attempt one step at a time" if your story jumped from Okta SUCCESS to application success.
 
 ## Before-moving-on questions from the lesson
@@ -97,6 +99,8 @@ Request the detailed refusal and corresponding sign-in-exchange evidence. Explai
 | What does the event's SUCCESS prove? | Okta recorded success for the identified SSO event; downstream acceptance and the business outcome need separate evidence. |
 | Cookie versus account? | Browser-held data versus a system record; a session is another distinct concept. |
 | Why match person, application, and attempt? | A record from another person, application, or attempt does not establish this ticket's outcome. |
+
+Compare Questions 6 and 7: the selected event in Question 6 cannot independently establish the reported attempt; Question 7 explicitly supplies that connection. Use supplied facts, but do not silently add missing ones.
 
 In your notebook, record one successful request that did not complete the business goal. Add the observed failure boundary and the evidence that would be needed to identify the cause.
 

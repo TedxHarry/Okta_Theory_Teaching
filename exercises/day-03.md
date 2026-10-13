@@ -8,6 +8,8 @@ nav_order: 3
 
 These are fictional Northbridge observations. The intended Projects codes are Sales → SAL, Finance → FIN, and IT → IT. Missing or unrecognized department values require review.
 
+Try the questions before opening the answers. In each investigation, name the record and field, compare its observed value with the expected value, and explain what the next check would establish. You can reason through the supplied conversions without writing an Okta expression.
+
 ## 1. Locate the records
 
 Daniel has an Okta user profile, a Projects app user profile, and a Projects account.
@@ -32,6 +34,8 @@ Daniel's source department and Okta department are both Finance. The configured 
 
 Identify the demonstrated mapping defect, a justified correction to propose, and the evidence still needed before claiming that every downstream record is corrected. Should Daniel's HR department be changed?
 
+Before applying a shared correction, which inputs would you test, and what should happen for each? Include a missing or unrecognized department.
+
 ## 5. Correct preview, stale target
 
 The corrected preview returns FIN. The Projects app user profile also contains FIN, but the target account still contains SAL. No update result is supplied.
@@ -46,7 +50,7 @@ Identify the unsupported conclusions. Explain how an omitted field differs from 
 
 ## 7. Tell the full data story
 
-Explain how Daniel's Finance value becomes the Projects code FIN, covering the source, central profile, app user profile, and target account.
+Explain how Daniel's Finance value becomes the Projects code FIN, covering the source, central profile, app user profile, and target account. Describe the intended flow; do not assume these steps have completed unless their results are supplied.
 
 Then explain why a mapping tells you neither which source wins when systems disagree nor whether a target update succeeded.
 

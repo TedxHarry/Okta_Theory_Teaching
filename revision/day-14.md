@@ -24,11 +24,13 @@ Before turning “give Finance access” into a group rule, make the request pre
 
 ## Make the Expense request concrete
 
-Northbridge's approved normal population is Finance employees. Submission access does not automatically confer approval authority; Daniel's approval capability is a separate decision. Executives receive no unstated extra capability.
+R-14 is an approved proposed model, not a verified deployment. Northbridge's approved normal population is Finance employees. Submission access does not automatically confer approval authority; Daniel's approval capability is a separate decision. Executives receive no unstated extra capability.
 
-Contractors need the defined sponsor and Expense-owner exception approval. Priya's Okta-managed profile remains distinct from Workday-led employees. The normal Finance-and-Employee rule is not, by itself, a complete employment-state or departure control.
+Contractors need the defined sponsor and Expense-owner exception approval. Priya's Okta-managed profile remains distinct from Workday-led employees. The normal Finance-and-Employee rule is not, by itself, a complete employment-state or departure control. R-14 leaves Priya's specific exception undecided; the separate lost-phone scenario supplies its own access approval.
 
 Expense's account process belongs to the application owner in this model. Do not invent SCIM support because another application has it. Likewise, Microsoft 365 awareness in this course includes the documented Office 365 methods: Secure Web Authentication (SWA), which uses stored application credentials, and WS-Federation, which exchanges identity information for federated sign-in. That guidance recommends WS-Federation when possible. Do not relabel that connector OIDC or assume its provisioning is SCIM; Entra identity, licensing, and permissions need their own consideration.
+
+Test both sides of the eligibility condition: a Finance contractor without an exception and a Sales employee without another approved path should not receive the normal assignment. Testing only a Finance employee would not reveal an OR mistake.
 
 ## Keep recovery deliberate
 
@@ -39,6 +41,8 @@ For Priya's lost-phone situation, verify the caller through the approved process
 Name the owner of each business decision, configuration change, target permission, and remaining check. Recovering configuration does not automatically undo accounts, permissions, or sessions.
 
 ## Check your understanding
+
+From memory, explain who decides eligibility, who may configure the change, and what verifies the caller in an authenticator-recovery request. Then name one positive eligibility test, two tests that distinguish AND from OR, and an outcome that restoring configuration alone cannot verify.
 
 - What must be settled before implementing a contractor exception?
 - Why does a successful eligible-user test leave important requirements untested?

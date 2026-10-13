@@ -6,7 +6,7 @@ has_children: true
 
 # Reference
 
-Supporting material used throughout the course: the fictional company, who owns which identity data, a plain-language glossary, and optional extension topics.
+Choose a reference for the question you are answering. The company and ownership pages establish the Northbridge context, the glossary and cheat sheets help recall terms, and the playbook and onboarding framework help organize investigation and design evidence. Optional extension topics introduce capabilities beyond the assessed theory course.
 
 | Use | Reference |
 |---|---|
@@ -19,5 +19,7 @@ Supporting material used throughout the course: the fictional company, who owns 
 | Recognize topics beyond the assessed course | [Optional extensions](optional-extensions.md) |
 
 Follow the [learning path](../learning-path.md) for first explanations. These references support the lessons; the optional extensions are not prerequisites for the final case.
+
+After the capstone, the optional [practice bridge](../lessons/day-16-safe-practice-plan.md) helps you plan a small training experiment. Its predictions do not establish that an experiment was run, and it does not change the requirements in the main Northbridge cases.
 
 [Working through requests](../requests/index.md) follows missing access, changed departments, recovery, and connection maintenance. Each situation names the lessons to read first and keeps the reasoning hidden until you choose your checks.

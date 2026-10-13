@@ -8,6 +8,8 @@ nav_order: 8
 
 Use the fictional configuration in the [lesson](../lessons/day-08-saml.md). These excerpts and reports are teaching evidence, not material to submit to a live system.
 
+Try the questions before opening the answers. Keep the expected connection settings, observed message fields, and application validation report separate. When you say a check passed or failed, name which evidence supports that conclusion.
+
 ## 1. Follow the participants
 
 Maya starts at Salesforce, travels to Okta, completes required checks, and returns with a SAML response. Name the IdP and SP, explain the browser's role, and distinguish the authentication request from the assertion. Does Salesforce receive Maya's AD password in this flow?
@@ -26,7 +28,7 @@ In S-1's XML, identify issuer, NameID, and audience. Compare the audience with t
 
 The S-1 application report explicitly rejects the test audience in the production connection. Its signature and validity checks passed. Maya's intended active account has the correct username.
 
-What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Maya's username or disabling audience validation is not supported.
+What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Maya's username or disabling audience validation is not supported. What affected users or connection scope should be reviewed before changing a shared setting?
 
 ## 5. A different identity rule
 

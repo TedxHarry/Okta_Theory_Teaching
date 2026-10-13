@@ -6,23 +6,25 @@ nav_order: 6
 
 # Day 6: AD imports and password validation
 
-Jordan Lee is an active Northbridge employee. His later departure has not occurred. An AD import completed successfully, and Alex confirmed that Jordan's directory record is associated with the correct Okta user.
+Jordan Lee is an active Northbridge employee. An AD import completed successfully, and Alex confirmed that Jordan's directory record is associated with the correct Okta user.
 
 Jordan now reports:
 
 > My directory account is in Okta, but I cannot sign in with my AD password.
 
-The import and the sign-in attempted different operations. To investigate, follow each path separately.
+When Jordan says his directory account is in Okta, he means Okta holds information associated with his AD account. The directory account itself remains in AD. The successful record import does not establish that his AD password was copied into Okta or tested.
 
-Your goal is to explain why reading Jordan's directory record does not prove his password was accepted, and to distinguish no response from an explicit rejection.
+From Jordan's point of view, this sounds contradictory. If Okta can see his directory account, why can he not use its password? Alex needs to find out what the successful import actually did, then follow the failed sign-in on its own path. Reading an account record and checking a submitted password ask AD to do different work.
+
+By the end of this lesson, you should be able to explain that difference to Jordan and choose the next useful check. You will also distinguish an unanswered password request from one that AD explicitly rejects. You can reason through both paths without installing an agent or using a live directory.
 
 ## Locate the directory, the server, and the agent
 
-Northbridge uses **Active Directory Domain Services**, often shortened here to AD, for its employee directory. It holds objects such as users, groups, and computers. A user object contains information about a directory account; a group represents a collection used for access or administration.
+Start with the place that holds Jordan's directory account. Northbridge uses **Active Directory Domain Services**, often shortened here to AD, for its employee directory. It holds objects such as users, groups, and computers. An object is a directory record representing one of those things. Jordan's user object contains information about his directory account; a group represents a collection used for access or administration. The directory account is one representation of Jordan, alongside the Workday and Okta records you have already learned to distinguish.
 
 An AD **domain** is a directory and administration boundary containing these objects. A **domain controller**, or **DC**, is a server running the directory service. It can respond to directory queries and validate domain credentials. **Credentials** are the information used to prove identity; on this password path, they include the submitted account name and password. A domain can have more than one domain controller.
 
-An **organizational unit**, or **OU**, is a container inside a domain that helps organize objects and delegate administration. An OU is not a group: placing a user inside an OU does not make that user a member of a same-named group.
+Administrators also need to organize the directory. An **organizational unit**, or **OU**, is a container inside a domain that helps organize objects and delegate administration. Think about an employee user record stored in an employee OU. Its location tells you where administrators have organized it. Membership in a group is a separate relationship, like the membership you inspected on Day 5. Placing a user inside an OU does not make that user a member of a same-named group.
 
 The **Okta AD agent** is separate software in the company's environment. It connects Okta with AD for supported operations. It is neither the AD directory database nor the domain controller itself. It can run on a separate server.
 
@@ -32,7 +34,11 @@ flowchart TD
   B <-->|"directory operations"| C["AD domain controller"]
 ```
 
-These arrows describe communication relationships, not a requirement to expose a domain controller directly to the internet. The agent's connection to Okta and its ability to perform a particular AD operation are separate things to verify.
+Read the diagram as a route between components. Okta communicates with the agent, and the agent performs directory operations with a domain controller inside Northbridge's environment. The agent connects the two systems; the DC runs the directory service and can evaluate the domain credentials. Keeping those jobs separate will help you locate Jordan's failure.
+
+The arrows show information moving in both directions. The AD agent initiates outbound connectivity to Okta and receives work and returns results through that communication path. Okta does not need to open a new inbound connection through Northbridge's firewall to the agent. The agent separately needs network access to the relevant domain controllers.
+
+An agent that can communicate with Okta may still be unable to complete its request to a DC. These are separate connections to investigate; the diagram does not require exposing a domain controller directly to the internet.
 
 ## Northbridge is still HR-led
 
@@ -47,13 +53,15 @@ These responsibilities do not conflict:
 | Who validates his password on the configured AD password path? | AD, through the agent. |
 | Who makes the remaining Okta sign-in decisions? | Okta, using the applicable requirements and context. |
 
-The sign-in path does not promote AD above Workday as the HR profile source. Recall Day 4: password validation and attribute ownership answer different questions.
+Notice that the table asks a different question in each row. Workday can determine Jordan's department while AD determines whether the submitted directory credentials are acceptable. Neither responsibility replaces the other. If his password attempt fails, changing which source controls his department would address a different decision. Recall Day 4: password validation and attribute ownership answer different questions.
+
+The import direction also fits this architecture. Reading information back from an existing AD account does not make AD the owner of every employee attribute. The configured source and mapping decisions still govern which values control the Okta profile.
 
 Priya's Okta-managed contractor identity has no AD assignment in this architecture. Do not assume that her sign-in uses Jordan's AD path merely because both people use Okta.
 
 ## What an import establishes
 
-An **import** brings directory records and changes into Okta for processing. The relevant flow is:
+Alex first checks the operation that already succeeded. An **import** brings directory records and changes into Okta for processing. It asks for directory information so Okta can represent and process the selected records. The relevant flow is:
 
 ```mermaid
 flowchart TD
@@ -63,17 +71,17 @@ flowchart TD
 
 Import scope matters. The integration selects which user and group OUs to include. A successful import of the selected population is not a statement that every object in AD was included.
 
-Imagine the employee user OU is included, but a separate group OU is not. The import might supply Jordan's user record without supplying a group the investigator expected. Check scope before concluding that the group does not exist in AD.
+Imagine the employee user OU is included, but a separate group OU is not. The import might supply Jordan's user record without supplying a group the investigator expected. That missing group tells you something about the imported results; it does not yet tell you whether the group exists in AD. Compare the group's actual directory location with the selected group OUs and the import result. This check separates an object outside the chosen scope from one that was expected to be read but was not processed as expected.
 
 Matching and confirmation matter too. Discovering a record is not the same as establishing the correct identity association. For Jordan's incident, the packet explicitly supplies that association; Day 11 examines how to reason about uncertain matches.
 
-Importing profile information does not demonstrate that Jordan entered a valid password, that AD accepted a password-validation request, or that a later sign-in path remained available.
+Now return to Jordan's claim. The import found and processed his selected directory information, and Alex separately confirmed the correct association. Those are useful facts. Neither is a password-validation result. Importing profile information does not demonstrate that Jordan entered a valid password, that AD accepted a password-validation request, or that a later sign-in path remained available. A result belongs to the operation that produced it.
 
 It also does not turn every imported AD attribute into the controlling value for an HR-led user. Source and mapping settings still apply.
 
 ## Follow delegated authentication
 
-When a system asks another system to validate a user's credentials, it is **delegating authentication**. On Northbridge's configured AD password path, Okta asks AD to check Jordan's submitted credentials through the agent.
+Jordan now enters his directory sign-in information at Okta. For this configured path, the question is whether AD accepts those submitted credentials. Okta asks AD to perform that check through the agent. When a system asks another system to validate a user's credentials, it is **delegating authentication**. Northbridge uses that arrangement for Jordan's AD password path.
 
 The following is a simplified logical flow:
 
@@ -82,7 +90,9 @@ flowchart TD
   A["Jordan submits sign-in information to Okta"] --> B["Okta sends the delegated request to an AD agent"] --> C["The agent passes the credentials to a domain controller"] --> D["AD evaluates the credentials and account conditions"] --> E["The result returns through the agent to Okta"] --> F["Okta continues or refuses the attempt under its requirements"]
 ```
 
-A successful password result is one sign-in step. Additional authentication or policy requirements may remain, and application assignment and application-side acceptance are still separate. Not every sign-in method uses this password path.
+Follow the request to AD, then follow the result back. The request must reach the agent and the DC before there can be a returned AD validation result. Okta then uses that result within the applicable sign-in process. An arrow in this simplified diagram describes the next logical step; the incident evidence tells you which steps actually occurred.
+
+A successful password result is one sign-in step. Additional authentication or policy requirements may remain, and application assignment and application-side acceptance are still separate. AD accepting Jordan's password is therefore a narrower conclusion than Jordan successfully opening Salesforce. Not every sign-in method uses this password path.
 
 The incident evidence should identify the affected user, the directory association, the relevant attempt, and the agent/DC path involved. A successful password event for another person does not resolve Jordan's attempt.
 
@@ -94,11 +104,13 @@ The incident evidence should identify the affected user, the directory associati
 | Delegated password authentication | Did AD accept the credentials for this attempt through the agent? | That every later requirement or application action succeeded. |
 | Password synchronization | Did a configured process propagate a password change to a supported destination? | That a later authentication attempt succeeded. |
 
-Password synchronization transfers password changes through a supported, configured process; delegation asks AD to validate credentials during the sign-in path. They are different capabilities even when a deployment uses both for different purposes.
+Use the main question in each table row to name the work. An import reads directory data. Delegated authentication asks for a credential decision during an attempt. Password synchronization transfers a password change through a supported, configured process. A password-validation request is not itself evidence that a password change was copied anywhere. A deployment may use both capabilities for different purposes, but each requires its own configuration and result.
+
+For a separate hypothetical example, suppose Jordan changes his password in AD. A configured password-synchronization process can propagate that change to a supported destination. That process transfers a change; the delegated request in Jordan's incident asks AD to validate the password he submitted. The incident supplies no password-change or synchronization event.
 
 Okta documents a separate **AD Password Sync Agent** for relevant synchronization scenarios. Do not treat its name as another name for the ordinary AD agent. The required components and direction depend on the synchronization use case. Northbridge's incident uses delegated authentication; a successful import is not evidence of password synchronization.
 
-Keep the question concrete: which password operation, in which direction, for which destination? A general statement that “passwords are integrated” leaves those decisions unanswered.
+If a colleague says that Jordan's password is synchronized, ask which password operation, in which direction, and for which destination. That gives you something you can inspect. A general statement that passwords are integrated leaves those decisions unanswered. At this stage, you need to distinguish the operations and components; you do not need to memorize installation procedures for every synchronization use case.
 
 ## Investigate Jordan's failed attempt
 
@@ -117,25 +129,27 @@ The following synthetic evidence is a plain-language investigation summary, not 
 
 Before reading on, locate the first demonstrated failure. Did AD reject Jordan's password?
 
-The demonstrated failure is the unsuccessful agent-to-DC connection attempt. The packet does not show AD rejecting the password. It does not establish that the password was correct either: no credential result was obtained.
+Start with the two observations for J-1. The handling agent received the delegated request from Okta. Its connection attempt to the selected DC then timed out before it obtained a credential-validation response. That is the first demonstrated failure in the supplied path.
+
+The packet does not show AD rejecting Jordan's password. It does not establish that the password was correct either: no credential result was obtained. Both conclusions would require an answer that this attempt did not supply.
 
 A **timeout** means the operation did not obtain the expected result within its allowed wait. Compare “I did not receive an answer” with “I received an answer saying no.” They lead to different investigations even when Jordan sees a sign-in failure in both cases.
 
-The earlier import shows that its own data operation completed. It does not prove the later path was healthy. Likewise, the handling agent received a request from Okta, but that does not prove it could reach the domain controller.
+Keep the time and operation labels beside your conclusions. I-1 shows that the earlier import completed; J-1 describes the later authentication attempt. The successful earlier operation cannot fill in a missing result for the later one. Likewise, receiving Okta's request establishes one part of the communication path, while the timed-out DC connection identifies the part that still needs investigation.
 
 Alex should request the relevant agent and directory/network evidence for J-1: the selected DC, name resolution, reachability, and service availability. **Name resolution**, introduced as DNS on Day 2, is the lookup that connects a host name with a network address. Failure to resolve a name and a connection timeout are different observations; neither should be invented from the other.
 
-A routing problem, a network control, or an unavailable service could help explain the timeout. The packet does not choose among them. Resetting Jordan's password would not explain the demonstrated connectivity failure.
+A routing problem, a network control, or an unavailable service could help explain the timeout. The packet does not choose among them. The next check should help distinguish those explanations on this agent/DC path at the time of J-1. Resetting Jordan's password would change a credential while leaving the demonstrated connectivity failure unexplained. Alex needs evidence about the failed connection before choosing its correction.
 
 ## Contrast a credential rejection
 
 In a separate attempt, J-2, suppose the handling agent reaches the DC and receives an explicit credential-validation rejection.
 
-That evidence moves the investigation. AD responded to the validation request, so the unanswered question concerns the rejected identity or credentials and relevant account conditions. Check the detailed directory result and the actual username/account involved.
+Pause before choosing the same next check as for J-1. In J-2, AD has supplied an answer: it rejected credential validation. The path obtained a response for this attempt. The unanswered question now concerns the rejected identity or credentials and relevant account conditions. Check the detailed directory result and the actual username/account involved. A result from J-2 does not retroactively supply the missing answer for J-1.
 
 Do not translate every rejection into “the user mistyped the password.” A generic rejection may not distinguish an incorrect identifier, a password issue, or an account restriction. Ask for the detail that separates them before choosing a correction.
 
-An AD sign-in name can differ from a work email address. A **user principal name**, or **UPN**, is a directory sign-in name often written in an email-like form. Its appearance does not prove it is the person's mailbox address. Check the configured identifier and associated account rather than assuming identical strings across systems.
+The identifier deserves attention as well as the password. An AD sign-in name can differ from a work email address. A **user principal name**, or **UPN**, is a directory sign-in name often written in an email-like form. Its appearance does not prove it is the person's mailbox address. Compare the configured identifier with the intended account, just as you compared identifiers across systems in earlier lessons. This packet does not supply a mismatch; it gives you a reason to check one rather than assume identical strings.
 
 ## Know what a successful follow-up proves
 
@@ -146,7 +160,9 @@ Here is a synthetic follow-up to J-1, with new evidence:
 - The agent reaches the DC, and AD returns an accepted credential result for Jordan.
 - Evidence of the remaining Okta checks and application entry is not supplied.
 
-The new evidence supports recovery of the checked connection and successful password validation in J-3. It does not establish complete application access. The confirmed routing finding belongs to this follow-up; it was only a possible explanation in the original packet.
+Read the follow-up in two parts. The network team has now established a route problem and corrected it. The new, correlated attempt J-3 then supplies the credential result that was missing in J-1: AD accepts Jordan's credentials. Together, those observations support recovery of the checked connection and successful password validation in J-3.
+
+The remaining Okta checks and application entry are still unverified. Alex can report the recovered password-validation step and explain what remains to be checked. The confirmed routing finding belongs to this follow-up; it was only a possible explanation in the original packet.
 
 This is how an investigation progresses: keep the first conclusion within the initial evidence, then update it when additional evidence establishes the cause and recovery.
 
@@ -166,15 +182,19 @@ flowchart LR
   end
 ```
 
-That differs from Northbridge's Workday-led profile flow. Import and authentication remain distinct in both architectures. Neither a source-priority decision nor a successful import replaces authentication evidence.
+Compare the two halves of the diagram. The upper path carries profile data from AD toward Okta and applications. The lower path sends a password-validation request toward AD and receives a result. AD has responsibilities in both paths at this separate company, but the operations still ask different questions.
+
+Northbridge keeps Workday at the start of its employee profile flow. Import and authentication remain distinct in both architectures. Neither a source-priority decision nor a successful import replaces authentication evidence.
 
 ## Hand the directory team a specific question
 
 For J-1, identify the configured AD integration, the agent involved, the selected domain controller, and the time of the failed request. The directory integration's status and agent information help locate the path. The directory and network owners may need to provide evidence that is unavailable in Okta.
 
-Compare the extent of the failure. One affected user can suggest a different investigation from several users failing through the same agent, but neither pattern proves the cause. Pair the pattern with the actual timeout or returned credential result.
+Alex also needs to know how widely the problem is occurring. Are several users failing through the same agent, or is Jordan the only affected person in the checked period? A shared failure makes that shared path useful to inspect. A single reported failure still needs its own account and attempt evidence. Neither pattern proves the cause, so pair it with the actual timeout or returned credential result.
 
-A useful escalation says: “This delegated request through this agent did not obtain a DC result; please check the corresponding reachability and service evidence.” It avoids asking for an unexplained password reset. After the path is repaired, obtain a new credential-validation result and continue through the remaining sign-in requirements. An agent showing available is not a substitute for that user's successful attempt.
+A useful escalation says: "This delegated request through this agent did not obtain a DC result; please check the corresponding reachability and service evidence." The identity, time, and component details give the directory team a specific operation to trace. Ask for the relevant result and connection evidence; the investigation does not require putting Jordan's password in the incident handoff.
+
+After the path is repaired, obtain a new credential-validation result and continue through the remaining sign-in requirements. An agent showing available is not a substitute for that user's successful attempt. When you explain the outcome to Jordan, connect each conclusion to its result: his account was imported, his first password request received no DC result, and the later checked attempt was accepted by AD. Any broader access claim still needs its own evidence.
 
 ## Before moving on
 

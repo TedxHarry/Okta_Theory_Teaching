@@ -5,7 +5,9 @@ nav_order: 3
 
 # Learning path
 
-Follow the numbered lessons in order. Each begins with a Northbridge situation, explains the relevant concepts, and asks you to reason from supplied evidence. Try the exercises before reading their separate answers. If an answer exposes a missed distinction, revisit the named lesson section and explain the example again in your own words.
+Follow the 15 core lessons in order, at your own pace. Days 1–14 teach through Northbridge situations; Day 15 asks you to investigate a supplied case independently. The optional Day 16 practice bridge comes afterward and is outside the theory core.
+
+The sequence builds three connected skills: following identity data and access relationships, interpreting authentication and account-management results, and making justified decisions about changes and unfinished work. Try each day's exercises before reading the separate answers. If an answer exposes a missed distinction, revisit the named lesson section and explain the example again in your own words.
 
 ## Build the foundations
 
@@ -25,6 +27,8 @@ After Day 5, attempt the [foundation checkpoint](assessments/foundation.md). Its
 
 ## Continue the connected story
 
+Days 6–10 follow directory authentication, authentication proof, federation and application-account operations. Days 11–14 bring those relationships into account matching, employment changes, policy decisions and access design. Keep asking which system produced the evidence and which outcome still needs a separate check.
+
 | Day | Question |
 |---|---|
 | [6](lessons/day-06-active-directory.md) | Why can an AD import succeed while AD password sign-in fails? |
@@ -38,13 +42,15 @@ After Day 5, attempt the [foundation checkpoint](assessments/foundation.md). Its
 | [14](lessons/day-14-requirements-and-responsibilities.md) | How do you turn a business request into a clear access requirement? |
 | [15](lessons/day-15-integrated-case.md) | Can you explain and investigate the connected Northbridge environment? Includes the [final case](assessments/final-case.md). |
 
+After Day 10, attempt the integration checkpoint before continuing to matching and lifecycle changes. At Day 15, read the case evidence and attempt all seven tasks before opening the model investigation. Use references when needed, and note which explanations you could produce independently.
+
 ## Use the references at the right point
 
 Read [Okta at a glance](overview.md) before Day 1. Use the [cheat sheets](reference/cheat-sheets.md) to recall distinctions after learning them. The [troubleshooting playbook](reference/troubleshooting-playbook.md) links each investigation to its lesson; protocol and lifecycle branches assume those lessons have been read. After Day 14, use [application onboarding](reference/onboarding-an-application.md) and its changed-condition exercise to connect requirements, matching, access and removal evidence.
 
 ## Read the examples consistently
 
-Maya starts in Sales; her move to Finance belongs to the later lifecycle story. Daniel is already a Finance manager. An explicitly labelled alternative packet changes the evidence for a question; it does not silently change everyone's history.
+Maya is in Sales through Day 11; her approved Finance move takes effect in Day 12. Jordan's departure also takes effect in Day 12, while explicitly archived incidents describe his earlier employed state. Daniel is already a Finance manager, but his title alone does not establish a permission. An explicitly labelled alternative packet changes the evidence for a question; it does not silently change everyone's history.
 
 A lesson or exercise may state that an account exists even when an earlier ticket left its existence unknown. Use the facts of that labelled scenario. Do not treat a hypothetical account or a supplied follow-up as proof of an unshown production event.
 
@@ -55,6 +61,8 @@ Use the [company reference](reference/northbridge-company.md) for people and sys
 Use the [final skills checklist](assessments/self-checks/final-case.md) to identify what you can explain independently and what still needs a reference. Reattempt the changed-condition questions after revisiting any weak area. A different packet may require a different conclusion even when the symptom sounds familiar.
 
 Keep three reusable explanations in [your notebook](notebook/guide.md): Northbridge's architecture, one evidence-based investigation, and one access-decision record. When the evidence changes, explain which part of your conclusion changes with it.
+
+When you are ready to plan practice, use the optional [Day 16: Safe practice plan](lessons/day-16-safe-practice-plan.md). Predict a small training experiment, test whether its cases distinguish the intended rule from a mistake, and define the evidence and cleanup you would need. The written plan requires no tenant. Executing it requires an authorized training environment; a prediction is not a completed lab result.
 
 [Course home](index.md)
 

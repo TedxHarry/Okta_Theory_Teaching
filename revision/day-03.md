@@ -26,6 +26,8 @@ Daniel belongs to Finance, yet Projects shows the Sales code. Before changing hi
 
 The original example shows Finance in Workday and Okta, while the mapping preview produces `SAL`. That establishes a transformation problem. Correcting the mapping to produce `FIN` addresses that defect, but you still need to verify the resulting destination state.
 
+The lesson also supplies a separate follow-up: the saved mapping evaluates to FIN, the app user profile contains FIN, an update to Daniel's linked account reports success, and a later target read shows FIN. Together, those observations verify his department correction at that checked point. They do not verify every other user or establish application sign-in and permissions.
+
 Now change the evidence: suppose the preview and app user profile both show `FIN`, while Projects still shows `SAL`. You cannot blame the same mapping defect without further evidence. Check whether an update was supported and enabled, what was sent, what response came back, which target record was addressed, and whether a later write changed it.
 
 Keep ownership and formatting separate. Workday can own Daniel's department while the outbound mapping determines how Projects receives that department.
@@ -35,6 +37,8 @@ Keep ownership and formatting separate. Workday can own Daniel's department whil
 Check when the mapping applies, as well as its expression. Creation-only behavior can leave an existing app-profile value unchanged; that stored value may still appear in later full-profile pushes. Verify recalculation and delivery separately.
 
 ## Check your understanding
+
+From memory, follow Finance through Workday, the Okta user profile, the Projects app user profile, and the target account. Say where you would expect Finance or FIN, and name the evidence needed to show that the target was updated.
 
 - Where does an app user profile live?
 - What does a correct preview prove, and what does it leave unverified?

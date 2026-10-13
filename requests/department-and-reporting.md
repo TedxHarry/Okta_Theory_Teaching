@@ -57,6 +57,8 @@ The follow-up confirms the report-reader role, successful Finance-report access,
 
 > Omar's department update and sign-in were already correct. Ledger required a separately maintained report-reader role. The application owner applied the approved role and removed the obsolete Operations role. Finance-report access is verified, and payment approval remains unavailable.
 
+The follow-up supplies the role and removal results that were unknown earlier. Those later observations justify the closure; the initial permission denial alone did not establish the missing role or the state of the obsolete Operations permission.
+
 Now suppose the original target read had still shown `OPS`, and no role evidence was available. Would the same role diagnosis be established?
 
 <details markdown="1">

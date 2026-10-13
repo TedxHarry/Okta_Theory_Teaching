@@ -34,7 +34,7 @@ Address that remaining assignment under the approved removal requirement, check 
 
 M5 confirms FIN and an active Projects account. It does not show a Projects sign-in or the required application permissions. Continuing access is the approved requirement; actual entry still needs separate evidence.
 
-Revisit **Follow Maya's evidence**. No supplied follow-up proves the Salesforce correction is complete.
+Revisit **Follow Maya's evidence**. No supplied follow-up proves the Salesforce correction is complete. A complete Maya handoff therefore keeps two goals visible: end the obsolete Salesforce access and preserve her approved Projects access. Do not turn an unresolved Projects entry check into a reason to deactivate its correctly retained account.
 
 ## 5. Separate Jordan's completed and failed outcomes
 
@@ -62,7 +62,7 @@ An acceptable Jordan handoff:
 
 > His departure is effective, Okta is deactivated, and the checked AD account is disabled. Projects remains active after a failed deactivation request, and Expense accepts the checked existing session. Resolve those application outcomes with their owners and verify target state and protected-access results before reporting the departure requirement complete.
 
-A successful Projects deactivation resolves only that account-state issue. Expense's observed session and any other required access paths need separate evidence. Revisit **Decide what evidence closes the ticket**.
+A successful Projects deactivation resolves only that account-state issue. Expense's observed session and any other required access paths need separate evidence. Keep separate closure findings for Okta, AD, Projects, and Expense, with each unresolved result assigned to its responsible owner. “Okta deactivated” is a completed finding, not a substitute for those remaining outcomes. Revisit **Decide what evidence closes the ticket**.
 
 ## Optional changed condition
 

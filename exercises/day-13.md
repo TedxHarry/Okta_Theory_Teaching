@@ -22,7 +22,7 @@ P-2 supplies accepted current proof, satisfied Okta requirements, completed OIDC
 
 ## 4. Locate the configuration problem
 
-In P-3, a broad matching rule appears above the approved restrictive rule and is recorded as the applied rule. What is wrong? What must be checked before changing it, and how should the intended selection be verified? Is this profile-source priority?
+In P-3, a broad matching rule appears above the approved restrictive rule and is recorded as the applied rule. What is wrong? What must be checked before changing it, and how should the intended selection be verified? Is this profile-source priority? If Daniel enters Expense through the broad rule, does that establish compliance with the approved authentication design?
 
 ## 5. Correlate the evidence
 

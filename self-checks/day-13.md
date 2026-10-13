@@ -30,6 +30,8 @@ Revisit **Follow Daniel's expected challenge** and the SSO/provisioning distinct
 
 The observed order allows the broad rule to match before the intended restrictive rule. Check the approved design, policy-to-app associations, rule conditions, and populations affected by a shared policy. Restore the approved behavior and verify a request that should match the restrictive rule and another that should take a different path.
 
+Entry through the broad rule would not establish compliance with the approved restrictive requirement. Judge the applied rule and accepted proof against the intended design, rather than treating any successful entry as a correct result. P-3 supplies the defect, but no verified corrective follow-up.
+
 This is authentication-rule selection, not profile-source priority. Revisit **Identify the policy that actually applies** and **Contrast a genuine policy-selection problem**.
 
 ## 5. Correlate the evidence
@@ -46,7 +48,7 @@ An ID token and the session created after its validation are different objects. 
 
 ## 7. Define the sign-out outcome
 
-Okta-session termination is verified. The Expense owner must complete the supported local-session termination and verify that the old session no longer authorizes a protected request. Distinguish a newly created session from continued use of the old one, and check other sessions if the requirement includes them.
+Okta-session termination is verified. The Expense owner must complete the supported local-session termination and verify that the old session no longer authorizes a protected request. Distinguish a newly created session from continued use of the old one, and check other sessions if the requirement includes them. S-13 supplies no successful Expense termination result, so keep that part of the requirement open.
 
 Local logout concerns the application's session. SLO coordinates supported participating integrations under their configuration; its scope and results still need evidence. A remaining Okta session can support another app sign-in when applicable requirements are satisfied, so a prompt-free return is not by itself proof of failed local logout.
 

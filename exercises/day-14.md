@@ -28,7 +28,7 @@ An administrator manages Expense but not Projects. Both apps use the same authen
 
 ## 5. Define acceptance and change recovery
 
-A mistaken Finance OR Employee rule grants unintended assignments. Describe positive, negative, and lifecycle acceptance cases for the intended AND rule. If the prior configuration is restored, what consequences still need investigation and correction?
+A mistaken Finance OR Employee rule grants unintended assignments. Describe positive, negative, and lifecycle acceptance cases for the intended AND rule. If the prior configuration is restored, what consequences still need investigation and correction? Include a Finance contractor without an exception and a Sales employee with no other approved path. Why do these cases expose an OR mistake more effectively than testing only an eligible Finance employee?
 
 ## 6. Reason about account recovery
 

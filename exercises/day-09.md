@@ -8,6 +8,8 @@ nav_order: 9
 
 Use the [lesson's](../lessons/day-09-oidc.md) confidential web-client architecture throughout. All observations are synthetic.
 
+Try the questions before opening the answers. Locate the last completed stage before choosing the next evidence: request validation, code return, backend exchange, ID token validation, or application entry. A result from one stage does not establish the next.
+
 ## 1. OAuth and identity
 
 A colleague says an access token is all Expense needs to establish an OIDC sign-in. Explain OAuth's purpose, OIDC's addition, and why ID and access tokens are not interchangeable.
@@ -28,7 +30,7 @@ Explain the purpose of state, nonce, and the PKCE verifier/challenge relationshi
 
 The approved and registered URI ends in /oidc/callback. The application sends /oidc/callback-old. Request validation rejects it and issues no code.
 
-Locate the defect, propose a correction, and name the next verification steps. Why would a token from another attempt or a password reset be irrelevant to this demonstrated failure?
+Locate the defect, propose a correction, and name the next verification steps. Why would a token from another attempt or a password reset be irrelevant to this demonstrated failure? Should the identity service redirect to the unregistered callback-old address just to deliver the error?
 
 ## 6. Interpret a decoded excerpt
 
