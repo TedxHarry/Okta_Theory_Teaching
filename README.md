@@ -10,6 +10,8 @@ Follow the people, accounts, and decisions behind a workforce identity environme
 
 **[Start at the course home](index.md)**
 
+**[Read the course online](https://tedxharry.github.io/Okta_Theory_Teaching/)**
+
 Start with [Day 1: People, identities, and access](lessons/day-01-people-identities-access.md).
 
 Use the [learning path](learning-path.md) to see how the concepts connect. Product explanations use Okta Identity Engine; older Classic Engine terminology is distinguished where it matters. Attempt the exercises and assessments before reading their answers or recaps. The fictional case evidence supports reasoning practice; predictions and proposed changes are distinct from verified outcomes.
