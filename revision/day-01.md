@@ -10,7 +10,7 @@ Think back to Maya. She can sign in to Okta, but that alone does not tell us whe
 
 ## The concepts to keep with you
 
-**Identity and account.** Maya is a person. Her identity information describes her, such as her name and department. An account is a record in a particular system through which she may receive access. A Workday record, Okta user, Active Directory (AD) account, and Salesforce account would each be a separate record about her. Finding one does not prove the others exist.
+**Identity and account.** Maya is a person. Her identity information describes her, such as her name and department. An account is a record in a particular system through which she may receive access. Finding that record does not tell you whether it is enabled or which tasks it permits. A Workday record, Okta user, Active Directory (AD) account, and Salesforce account would each be a separate record about her. Finding one does not prove the others exist.
 
 **Directory, profile, and attribute.** A directory stores and organizes identity records. Okta's Universal Directory is its directory layer. A profile holds information about a user; each named piece, such as `department`, is an attribute. A correct department in Workday does not prove another system holds the same value.
 
@@ -26,7 +26,7 @@ Think back to Maya. She can sign in to Okta, but that alone does not tell us whe
 
 For Maya, keep five statements separate: her Okta user exists, she is assigned Salesforce, her Salesforce account exists and has an appropriate state, her Salesforce sign-in succeeds, and her permissions allow the intended work.
 
-The Day 1 search found no account matching her approved identifier **in the checked Salesforce instance**. That is useful evidence with a defined scope. Assignment and provisioning were not yet inspected. We therefore have more to check before deciding that an account must be created.
+The Day 1 search found no account matching her expected application username or other approved search value **in the checked Salesforce environment**. That is useful evidence with a defined scope. Assignment and provisioning were not yet inspected. We therefore have more to check before deciding that an account must be created.
 
 When you see a tile or an “Active” status, ask which of those five statements it actually supports. An Active Okta user is evidence about the Okta record; a disabled Salesforce account is evidence about the Salesforce record. Avoid turning one observation into a claim about the whole journey.
 

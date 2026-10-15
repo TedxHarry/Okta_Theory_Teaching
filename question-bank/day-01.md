@@ -18,9 +18,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Each system has a different job. Workday records Maya's employment information. Active Directory holds her directory account. Okta represents her for identity and access decisions. Salesforce needs its own account for her work there.</p>
-<p>These records represent the same person in different places. They do not create four different people, and finding one record does not establish what is stored in another.</p>
-<p>When investigating a problem, start by naming the system and record you checked. “Her Workday employment record exists” answers a different question from “her Salesforce account is ready.”</p>
+<p>Think of HR opening Maya's employment record and the Sales team opening Salesforce. They need different information for different work. Workday records her employment details; AD holds a workplace directory account; Okta represents her for identity and access decisions; Salesforce holds the account she uses there.</p>
+<p>The records all refer to Maya. Having several records does not create several people. Each system keeps the representation it needs.</p>
+<p>That is why 'her account exists' needs a system name beside it. Finding her Workday record tells you about HR's record. You would still check Salesforce to find out whether her application account is ready.</p>
 </div>
 </details>
 
@@ -82,9 +82,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. An employee number, Okta login, and application username serve different purposes. Different systems can use different identifiers for the same person.</p>
-<p>What matters is the approved value for each operation and reliable evidence that the records belong to Maya. Similar text alone does not establish that link, and different text alone does not disprove it.</p>
-<p>Before searching or changing an account, identify the intended system and its matching value. Do not substitute a familiar email address or employee number without checking how that system identifies its users.</p>
+<p>No. NB-1042 can identify Maya's employment record while a different login or username identifies her in another system. The text does not have to be identical.</p>
+<p>Imagine looking up a person by employee number in HR and by username in an application. Both searches can lead to the same person if the company has established which record belongs to them. 'Approved value' means the identifier the company expects for that particular lookup or connection.</p>
+<p>Before choosing an account, check the intended system, the identifier it uses, and evidence that the record belongs to Maya. Different text is not automatically a mistake, and a familiar-looking email address is not enough to prove a match.</p>
 </div>
 </details>
 
@@ -296,9 +296,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Provisioning concerns creating or maintaining the application account through a supported, configured process. SSO connects the application's sign-in to the established identity relationship so Maya need not treat each connected application as an entirely separate sign-in.</p>
-<p>The application still validates the information it receives. A prepared account does not prove accepted sign-in, and sign-in setup does not prove account creation.</p>
-<p>Follow both questions separately: is the intended account ready, and did the application accept the actual sign-in?</p>
+<p>Start with two ordinary questions: 'Does Maya have the right Salesforce account?' and 'Can she sign in to it through Okta?' Provisioning helps create or maintain the account. SSO supports the connected sign-in.</p>
+<p>Imagine the Salesforce owner has prepared her account, but nobody has checked her sign-in through Okta. The account work can be complete while sign-in still needs checking. Now reverse it: setting up the sign-in connection does not show that anyone created Maya's account.</p>
+<p>For Maya to use Salesforce, follow both results. Check the intended account and its state, then check whether Salesforce accepts her actual sign-in. Permissions for her work remain another application decision.</p>
 </div>
 </details>
 
@@ -444,9 +444,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A is a confirmed finding. D identifies missing evidence. C is a hypothesis, a possible explanation that needs checking. B is not established because the assignment was not inspected.</p>
-<p>Notice the difference between an unanswered question and an observed absence. They call for different next steps.</p>
-<p>Keep those categories in your notes: findings support conclusions, hypotheses guide distinguishing checks, and missing evidence identifies what to request. Mixing them can make an unjustified correction look necessary.</p>
+<p>A is a confirmed finding: the checked Okta sign-in worked. D tells us what nobody has inspected yet. C is a hypothesis, meaning a possible explanation to investigate. B goes too far: we cannot call the assignment missing when nobody has checked it.</p>
+<p>The account search and the assignment check are different pieces of work. Support searched Salesforce and found no account under the expected identifier. Support has not yet inspected the assignment relationship in Okta. A negative result from the first check cannot fill in the missing result of the second.</p>
+<p>You could write: 'Okta sign-in succeeded. The Salesforce search found no expected match. Assignment is still unknown, and an account under another identifier is one possibility to investigate.' That keeps the useful findings without turning a possibility into a cause.</p>
 </div>
 </details>
 
@@ -492,9 +492,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>First, request Maya's actual assignment to the production Salesforce integration. That answers whether the intended Okta access relationship is present or absent.</p>
-<p>Second, identify how that Salesforce instance prepares accounts and request the relevant process result. Automated operations and a separate owner's manual preparation need different records.</p>
-<p>Then inspect the intended target account. These checks distinguish an absent assignment from a present relationship with unfinished account preparation, rather than asking vaguely for more logs.</p>
+<p>Ask first, 'Can you show Maya's assignment to the production Salesforce integration in Okta?' That answers whether the expected application relationship is actually recorded. We currently have no result for that check.</p>
+<p>Then ask, 'Who or what prepares accounts in this Salesforce environment, and what happened to Maya's account request?' If an automated connection does the work, inspect its relevant result. If an application owner creates accounts manually, ask for that preparation record instead.</p>
+<p>These requests give us a way forward. If the approved assignment is absent, we have found one gap to address. If it is present, we still need to understand the account search: was preparation completed, and could an existing account use another identifier? Check the intended account before creating a new one.</p>
 </div>
 </details>
 
@@ -656,9 +656,9 @@ nav_order: 1
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “Your Okta sign-in worked in the attempt we checked. We still need to confirm your Salesforce assignment and how its account is prepared. The account search did not find a match under the expected identifier in the environment checked, so we will investigate that before choosing a fix.”</p>
-<p>Then explain that changing the password would not answer those relationship and account questions.</p>
-<p>The update acknowledges her experience and gives a concrete next step, without claiming an unknown cause or a result nobody verified.</p>
+<p>You could say: 'Your Okta sign-in worked in the attempt we checked. Salesforce keeps a separate account for you, and we have not yet found the expected match there. We are checking whether Okta assigns Salesforce to you and how your Salesforce account is prepared. Those checks will help us choose the right fix.'</p>
+<p>If Maya asks about the password, connect the explanation to what she already experienced: 'You were able to sign in to Okta. Changing that password would not tell us whether your Salesforce account is ready.'</p>
+<p>This gives Maya a clear update without asking her to learn investigation terminology. It explains what worked, what support is doing next, and why the proposed password reset does not address the unanswered account questions.</p>
 </div>
 </details>
 

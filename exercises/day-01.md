@@ -16,7 +16,7 @@ Explain why these are separate records for one person. If the Salesforce account
 
 ## 2. Sign-in works; an action fails
 
-Daniel is a Finance manager. He completes Okta sign-in, enters Northbridge Expense, and receives "not permitted" when attempting to approve an expense. His approved Expense role has not been checked.
+Daniel is a Finance manager. He completes Okta sign-in, enters Northbridge Expense, and receives "not permitted" when attempting to approve an expense. Nobody has checked whether he is approved to perform that action or whether his Expense account has the permission for it.
 
 Which distinction matters here? What evidence would you request before proposing a correction?
 
@@ -45,7 +45,7 @@ Write:
 
 ## 6. Assignment and a tile
 
-Alex sees that Maya is assigned Northbridge Projects in Okta and has a tile for it. There is no target account or provisioning-result evidence in the packet.
+Alex sees that Maya is assigned Northbridge Projects in Okta and has a tile, a clickable application shortcut, for it. There is no target account or provisioning-result evidence in the packet.
 
 Can Alex conclude that her Projects account was created successfully? Explain what the assignment proves and what else is needed.
 

@@ -10,7 +10,7 @@ The important part is your reasoning. Different wording is fine if you keep the 
 
 ## 1. One person, several records
 
-The records represent Maya for different system purposes: employment in Workday, identity and access decisions in Okta, directory needs in AD, and application use in Salesforce.
+Think of each team opening the record it needs for its own work. HR opens Maya's Workday employment record. The directory team checks her AD workplace account. Alex checks her Okta user and application assignments. The Salesforce owner checks the account she uses inside Salesforce. They are all looking at records about Maya, but each record answers a different question.
 
 A disabled Salesforce account establishes a Salesforce account-state fact. It does not, by itself, establish whether Maya's Okta user or AD account is enabled or disabled. You need their state evidence separately.
 
@@ -18,9 +18,9 @@ A disabled Salesforce account establishes a Salesforce account-state fact. It do
 
 ## 2. Sign-in works; an action fails
 
-Authentication and authorization are different. The supplied observations show successful sign-in and application entry; they do not establish permission to approve expenses.
+Daniel has already reached Expense, so we know his sign-in worked in this example. The refusal happens when he tries to approve an expense. That moves our attention to **authorization**: is he allowed to perform this action?
 
-Request the approval requirement, Daniel's application permissions or role, and evidence for the denied action. His Finance manager title is not proof of a configured application permission.
+Ask the Finance owner whether Daniel should be able to approve expenses. Then compare that decision with the permissions on his Expense account and the result of the refused action. A **role** is a named set of permissions; his job title alone does not show which application role or permissions he has.
 
 The evidence does not support resetting his Okta password as the correction. You also should not automatically grant an approval permission before confirming the authorized business requirement.
 
@@ -36,9 +36,9 @@ An SSO connection does not prove that automatic account provisioning is availabl
 
 ## 4. A value is correct in one system
 
-The Workday record proves that the observed source value is Sales. It does not prove that the value has reached Okta or any particular application.
+We can say, 'Workday shows Sales.' To say, 'Salesforce also shows Sales,' someone needs to open Maya's Salesforce record and check. Even if an information-sharing connection is configured, we still need to check what this record holds now.
 
-Compare the relevant Okta profile and target-side value, then inspect the connecting data path if the observations differ. At this point, either value may already be correct; the statement lacks the evidence to claim it.
+Compare the department in Workday, Okta and the intended Salesforce account. If they differ, follow how that department is maintained between those places. If they agree, keep that successful finding. We do not have to assume something is wrong just because it has not been checked yet.
 
 An explanation that requests source, intermediate, and destination evidence is sound even without knowing the mapping mechanism yet.
 

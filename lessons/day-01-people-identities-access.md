@@ -6,7 +6,7 @@ nav_order: 1
 
 # Day 1: People, identities, and access
 
-Maya Rao has joined the Sales team at Northbridge Services. Human Resources (**HR**), the team responsible for employee records, has recorded her employment details. Her manager expects her to start using Salesforce. At Northbridge, Okta is the identity platform that helps manage employee sign-in and access to business applications such as Salesforce.
+Maya Rao has joined the Sales team at Northbridge Services. Human Resources (**HR**), the team responsible for employee records, has recorded her employment details. Her manager expects her to start using Salesforce, where the Sales team works with customer information. At Northbridge, Okta is the identity platform that helps manage employee sign-in and access to business applications such as Salesforce.
 
 From Maya's point of view, that sounds straightforward: she has joined the company, she has work to do, and Salesforce is the application she needs. She opens her laptop, signs in to Okta, and then reports:
 
@@ -14,7 +14,7 @@ From Maya's point of view, that sounds straightforward: she has joined the compa
 
 It is understandable to expect a successful sign-in to mean Maya is ready to work. But her report leaves several questions open. **What does her successful Okta sign-in tell us, and what does it leave unanswered?**
 
-To investigate, Alex, Northbridge's identity and access management administrator, needs to separate five questions. Does Maya have an Okta user? Is Salesforce assigned to her? Does the intended Salesforce account exist? Can she complete Salesforce sign-in? And does she have the permissions needed for her work?
+Alex is Northbridge's **identity and access management (IAM)** administrator. His work includes helping the company manage who its users are and which systems they may use. To investigate Maya's report, he needs to separate five questions. Does Maya have an Okta user? Is Salesforce assigned to her? Does the intended Salesforce account exist? Can she complete Salesforce sign-in? And does she have the permissions needed for her work?
 
 Alex cannot choose a correction yet. Separating these questions helps him decide which record to inspect next. They describe different facts to check, rather than a fixed order in which every company's systems operate. An application account, for example, might already exist before its sign-in connection is configured.
 
@@ -22,7 +22,7 @@ You do not need an Okta tenant or knowledge of its menus to follow the reasoning
 
 ## Maya is one person; the systems hold different records
 
-Think about the work each team needs to do for Maya. HR needs her employee number, department, and manager. Active Directory (**AD**) needs a directory account. Okta needs a user record it can use in its identity and access decisions. Salesforce needs an application account that represents her inside the Sales application.
+Think about the work each team needs to do for Maya. HR needs her employee number, department, and manager. Active Directory (**AD**) holds a workplace account that directory-connected services can use. We will look at directories shortly; for now, think of this as another record about Maya, with its own job. Okta needs a user record it can use in its identity and access decisions. Salesforce needs an application account that represents her inside the Sales application.
 
 Why keep records in several places? These systems support different work. Workday maintains employment information for HR. AD supports directory-related sign-in and access needs. Okta connects identity information with application assignments and sign-in. Salesforce manages the account and permissions Maya uses inside Salesforce. Keeping Maya's information in Okta does not replace the work those other systems perform.
 
@@ -39,7 +39,7 @@ Maya is one person represented by several records. Each record belongs to a part
 
 In identity and access management, an **identity** is the representation of who someone is. An **account** is a system-specific record through which that person may sign in or receive access. Some identities represent services or software rather than people; our starting examples follow employees and contractors.
 
-An account can exist without being ready for use. It might be disabled, waiting for activation, or missing a required permission. Saying “the account exists” therefore does not establish that Maya can do her job. Follow the diagram from the person to the conditions for access, noticing the additional question at each step:
+An account can exist without being ready for use. It might be **disabled**, meaning the record is kept but is not enabled for ordinary sign-in. It might be waiting for activation, or it might lack permission for a particular task. Saying “the account exists” therefore does not establish that Maya can do her job. Follow the diagram from the person to the conditions for access, noticing the additional question at each step:
 
 ```mermaid
 flowchart TD
@@ -67,7 +67,7 @@ Think about the useful question each record helps answer:
 - What kind of worker are they?
 - What groups are associated with them?
 
-Imagine Alex opens Maya's Okta user record and reads her name and department. These individual details are called **attributes**. The collection of details in that record is her **profile**. Her department is one attribute; her profile holds that attribute alongside her other details. Alex can compare the department recorded here with the department in Workday before investigating how an update reached Okta.
+Imagine Alex opens Maya's Okta user record and reads her name and department. These individual details are called **attributes**. The collection of details in that record is her **profile**. Think of a form: Department is the field, Sales is the value written in it, and the completed set of fields makes up the profile. Alex can compare the department recorded here with the department in Workday before investigating how an update reached Okta.
 
 Here is a small fictional example of information about Maya:
 
@@ -170,7 +170,7 @@ Knowing who Maya is does not, by itself, express which applications she should r
 
 For example, an assignment connects Maya's Okta user to the particular Salesforce integration she is meant to use. Alex can inspect that relationship in Okta without assuming that Salesforce has already created her account. For Maya's ticket, whether that assignment exists is still unknown. How Northbridge manages assignments comes later; today, keep the relationship separate from account creation and successful sign-in.
 
-For today, separate these statements:
+Keep these statements separate:
 
 1. Maya exists as an Okta user.
 2. Maya is assigned Salesforce in Okta.
@@ -192,11 +192,11 @@ We can now return to Maya's report with more useful questions:
 
 > I can sign in to Okta, but I cannot use Salesforce.
 
-Alex, the identity and access management (IAM) administrator, collects the following information. This is a fictional training snapshot, not a captured production record.
+Alex collects the following information. This is a fictional training snapshot, not a captured production record.
 
-Before reading the findings, establish how Alex identifies the right records. An **identifier** distinguishes a record, such as an employee number or application username. The approved identifier here means the value Northbridge expects to use when finding Maya's Salesforce account; it need not be identical to her employee number.
+Before reading the findings, establish how Alex identifies the right records. An **identifier** distinguishes a record, such as an employee number or application username. The approved identifier here means the value Northbridge expects to use when finding Maya's Salesforce account. For example, an employee number might identify her HR record while a username identifies her application account. Those values can be different and still refer to Maya.
 
-He must also identify the intended **application instance**. An Okta app integration instance is the particular configured integration in Okta; the Salesforce environment it connects to is a separate thing. Alex needs to confirm both. In the findings below, the target-side account check concerns the particular Salesforce environment inspected. Checking a test environment does not establish what exists in production. The expected identifier and the environment checked tell us exactly what the finding covers.
+He must also identify the intended **application instance**. An application can have a **production** environment used for everyday work and a separate **test** environment used to try changes. An Okta app integration instance is one particular configured connection; Alex checks which Salesforce environment that connection leads to. Searching test would not tell him whether Maya has an account in production. In the findings below, he has identified the environment he searched and the identifier he used.
 
 | Observation | Evidence available |
 |---|---|
@@ -210,9 +210,9 @@ He must also identify the intended **application instance**. An Okta app integra
 
 The first four rows establish Maya's employment, Okta user, sign-in result, and AD association. The Salesforce row identifies a gap: the check did not find a matching account under the expected identifier in that instance.
 
-The last two rows describe missing evidence. **Not inspected** does not mean **not assigned**. Likewise, **no matching account in the checked Salesforce environment** does not establish that no similarly named account exists elsewhere. Alex needs to carry those limits into his explanation.
+The last two rows describe missing evidence. **Not inspected** means Alex has not checked yet. **Confirmed absent** means he checked a specified place and did not find the expected item there. The scope of that check matters.
 
-Alex cannot find the expected Salesforce account using the approved identifier in the environment checked. This is the account-matching gap. He has not yet established whether an account was never created or whether an existing account has a different identifier.
+For an everyday comparison, searching one folder for a filename and finding no match does not prove the file is absent from the whole computer. Maya's account search has the same limit: no account matched the expected identifier in the checked Salesforce environment. An account might be missing, or it might exist under another identifier. Neither explanation is confirmed yet. Her assignment is a different unknown because Alex has not inspected it at all.
 
 Pause before following Alex's next step. With assignment and account-management results still unknown, which check would you choose next, and what would its result help you distinguish? Consider why creating another account immediately could be premature.
 
