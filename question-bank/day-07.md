@@ -696,4 +696,4 @@ nav_order: 7
 </div>
 </details>
 
-[Day 7 lesson](../lessons/day-07-authenticators-enrollment-mfa.md) · [Day 7 recap](../revision/day-07.md) · [Question bank](index.md)
+[Day 7 lesson](../lessons/day-07-authenticators-enrollment-mfa.md) · [Reasoning exercises](../exercises/day-07.md) · [Day 7 recap](../revision/day-07.md) · [Question bank](index.md)

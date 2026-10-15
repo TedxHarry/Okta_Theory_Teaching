@@ -58,3 +58,5 @@ From memory, give ACS, audience, and NameID one job each. Then explain what the 
 [Full lesson](../lessons/day-08-saml.md) · [Exercises](../exercises/day-08.md) · [Lesson exercise answers](../self-checks/day-08.md) · [All recaps](index.md)
 
 [Previous recap: Day 7](day-07.md) · [Next recap: Day 9](day-09.md)
+
+[Practice questions with explanations](../question-bank/day-08.md)

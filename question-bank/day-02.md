@@ -730,4 +730,4 @@ nav_order: 2
 </div>
 </details>
 
-[Day 2 lesson](../lessons/day-02-requests-and-evidence.md) · [Day 2 recap](../revision/day-02.md) · [Question bank](index.md)
+[Day 2 lesson](../lessons/day-02-requests-and-evidence.md) · [Reasoning exercises](../exercises/day-02.md) · [Day 2 recap](../revision/day-02.md) · [Question bank](index.md)

@@ -255,13 +255,9 @@ Keep three questions separate as you explain Daniel's ticket: who controls the v
 
 ## Tell Daniel's story
 
-Explain the complete flow in ordinary language:
+Daniel asks why Projects still describes him as Sales when his HR and Okta profiles say Finance. Explain how the outgoing mapping and app user profile connect to the target account. The current mapping always returns SAL, while Finance should become FIN. Identify the first demonstrated wrong representation, the input that should remain unchanged, and the evidence needed to verify correction through the target.
 
-> Daniel belongs to Finance in the HR record. His Okta user profile also contains Finance. Projects needs a department code, so an outbound mapping prepares an application-specific value in Okta. The intended value is FIN. The target account must then receive and store that value through the configured update process.
-
-Add the failure: the current mapping always returns SAL. Where should Alex investigate, which input should remain unchanged, and what evidence would confirm a successful correction?
-
-Then change the condition: the mapping and app user profile now contain FIN, but the target still contains SAL. Explain why the next investigation is different.
+In a separate variation, the mapping and app user profile contain FIN, but the target still contains SAL. Explain why your next check would change. This variation does not supply a correction to the original case.
 
 ## Before moving on
 
@@ -280,6 +276,8 @@ Try the [Day 3 reasoning exercises](../exercises/day-03.md), then compare with t
 In [your notebook](../notebook/guide.md), draw the four data layers and label each observed value. Record the first proven discrepancy and the additional evidence needed to verify delivery to the target.
 
 [Day 4](day-04-sources-and-ownership.md) asks who controls the profile and individual attributes when more than one source is connected.
+
+For more examples, open the [Day 3 practice bank](../question-bank/day-03.md). Each question includes its own context and an expandable teaching explanation.
 
 [Previous: Day 2](day-02-requests-and-evidence.md) · [Course home](../index.md)
 

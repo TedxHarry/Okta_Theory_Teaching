@@ -213,6 +213,8 @@ In [your notebook](../notebook/guide.md), draw the browser flow and annotate the
 
 [Day 9](day-09-oidc.md) follows Northbridge Expense through OIDC, a different sign-in protocol.
 
+For more examples, open the [Day 8 practice bank](../question-bank/day-08.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 7](day-07-authenticators-enrollment-mfa.md) · [Course home](../index.md)
 
 [Revise Day 8](../revision/day-08.md): revisit the concepts, example, and questions without rereading the full lesson.

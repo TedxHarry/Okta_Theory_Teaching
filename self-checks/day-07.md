@@ -14,7 +14,7 @@ Both passwords represent knowledge. Two knowledge checks do not establish differ
 
 The number of screens does not identify the kinds of proof. A supported interaction may also establish multiple factors without multiple separate prompts.
 
-Revisit **Why a password may not be enough** if your answer counted screens instead of evidence.
+Revisit [Why a password may not be enough](../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough) if your answer counted screens instead of evidence.
 
 ## 2. Installed but not enrolled
 
@@ -22,7 +22,7 @@ Availability and installation are established; the required Northbridge account 
 
 Verify completion through the approved enrollment process for Daniel's correct account and supported device. There is no password or department defect in the supplied evidence.
 
-Revisit **Separate availability, enrollment, and use** if you treated installed software as an enrolled credential.
+Revisit [Separate availability, enrollment, and use](../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use) if you treated installed software as an enrolled credential.
 
 ## 3. Required enrollment
 
@@ -30,7 +30,7 @@ Enrollment governs registration. Authentication requirements govern the proof ne
 
 Inspect the actual applicable requirement, relevant prior-authentication/session context, and the attempt's decision and results. Detailed policy mechanics are not required for this answer.
 
-Revisit **Two requirements with different jobs** if required enrollment became “challenge on every visit.”
+Revisit [Two requirements with different jobs](../lessons/day-07-authenticators-enrollment-mfa.md#two-requirements-with-different-jobs) if required enrollment became “challenge on every visit.”
 
 ## 4. Issued is not accepted
 
@@ -40,13 +40,15 @@ Possible explanations include delivery failure or a received request that Daniel
 
 The accepted password result does not support a wrong-password correction. Revisit **Enrollment does not answer a challenge**.
 
+**Revisit:** [Enrollment does not answer a challenge](../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge)
+
 ## 5. Same app, different method
 
 TOTP is not Push, and an unrelated event is not evidence for the identified attempt. The supplied requirement explicitly calls for Push; a generic Okta Verify label does not satisfy that reasoning gap.
 
 Obtain the accepted Push result tied to the relevant user, enrollment, and attempt, together with the decision that the stated requirement was satisfied.
 
-Revisit **Okta Verify methods are not interchangeable** and Day 2's event-context explanation.
+Revisit [Okta Verify methods are not interchangeable](../lessons/day-07-authenticators-enrollment-mfa.md#okta-verify-methods-are-not-interchangeable) and Day 2's event-context explanation.
 
 ## 6. FastPass without a password
 
@@ -54,7 +56,7 @@ None of those conclusions follows. FastPass uses cryptographic authentication th
 
 Inspect the actual method, supported flow, required properties, user-verification evidence where relevant, and validation result. FastPass and Push are distinct experiences; neither an enabled setting nor a product name proves a particular requirement was met.
 
-Revisit **Where FastPass fits** if passwordless became synonymous with single-factor or no authentication.
+Revisit [Where FastPass fits](../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits) if passwordless became synonymous with single-factor or no authentication.
 
 ## 7. Write a precise update
 
@@ -64,7 +66,7 @@ A supported update is:
 
 If application entry itself is unknown, obtain that observation before treating the problem as a proven permission issue. Authentication success does not establish provisioning, target account state, or approval authority. D-3 verifies the stated requirement for the new attempt; it does not explain D-2's missing accepted response or prove that a particular repair was made.
 
-Revisit Day 1's Daniel example and **Keep the evidence tied to the question** if you inferred full access from completed authentication.
+Revisit Day 1's Daniel example and [Keep the evidence tied to the question](../lessons/day-07-authenticators-enrollment-mfa.md#keep-the-evidence-tied-to-the-question) if you inferred full access from completed authentication.
 
 ## Ready to continue
 
@@ -73,3 +75,5 @@ Explain available → enrolled → required for this attempt → accepted result
 [Return to Day 7](../lessons/day-07-authenticators-enrollment-mfa.md) · [Course home](../index.md)
 
 [Revise Day 7](../revision/day-07.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-07.md) · [Day 7 recap](../revision/day-07.md) · [Reasoning exercises](../exercises/day-07.md)

@@ -16,7 +16,7 @@ The additional Finance/Contractor user meets neither condition, so neither AND n
 
 An unknown classification does not establish employment. Request the approved classification and its source/mapping evidence rather than granting access through a guessed default.
 
-Revisit **Predict who matches** if you evaluated only department.
+Revisit [Predict who matches](../lessons/day-05-groups-and-assignments.md#predict-who-matches) if you evaluated only department.
 
 ## 2. A group without an application connection
 
@@ -24,7 +24,7 @@ The group-to-Salesforce assignment is missing. Membership alone does not define 
 
 A justified proposal is to establish the approved group assignment after checking its affected members and required application settings. Verify Maya's resulting assignment separately from target account creation or sign-in.
 
-Revisit **Manage a shared need through a group** if you treated the group name as configuration.
+Revisit [Manage a shared need through a group](../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group) if you treated the group name as configuration.
 
 ## 3. Right source, wrong rule input
 
@@ -32,7 +32,7 @@ The first demonstrated discrepancy is the Okta department: Finance instead of th
 
 Inspect Maya's source association, incoming department mapping, and import/update results. A mapping error or an unapplied update is possible; the packet does not select between them. Broadening the rule to include Finance would change who receives access and conceal the data problem.
 
-Revisit **Read the current profile, not just the source record**, then Day 3's mapping discussion.
+Revisit [Read the current profile, not just the source record](../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record), then Day 3's mapping discussion.
 
 ## 4. A match without membership
 
@@ -42,13 +42,15 @@ Packet B supplies a different explanation: an explicit user exclusion. Investiga
 
 Neither case justifies changing correct HR data. Revisit **A matching condition is not observed membership** if you treated a true condition as proof of membership.
 
+**Revisit:** [A matching condition is not observed membership](../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership)
+
 ## 5. Contractor assignment
 
 The individual assignment is a separate path, so it does not demonstrate a group-rule failure. Missing approval evidence leaves the exception's authorization unresolved. It does not establish either an approved exception or a confirmed unauthorized assignment. Obtain the approval evidence before making that judgment.
 
 Ask for the approved need, accountable owner, and review/removal condition. Keep Priya's true classification. Changing it to Employee would corrupt data to fit an access decision rather than document a legitimate exception.
 
-Revisit **An individual assignment is a separate path** if you assumed nonmembership means no possible assignment.
+Revisit [An individual assignment is a separate path](../lessons/day-05-groups-and-assignments.md#an-individual-assignment-is-a-separate-path) if you assumed nonmembership means no possible assignment.
 
 ## 6. One group path is gone
 
@@ -56,7 +58,7 @@ The checked second group still provides a Salesforce assignment. Removing the Sa
 
 Compare the second group's purpose and Maya's membership with the approved post-move access requirement. Then check target account state, relevant account-management results, sign-in, and application permissions as needed. The packet does not establish those outcomes.
 
-Revisit **Removing one path does not settle every path** if you inferred complete removal from one membership change.
+Revisit [Removing one path does not settle every path](../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path) if you inferred complete removal from one membership change.
 
 ## 7. Assignment, provisioning, and Group Push
 
@@ -64,7 +66,7 @@ The packet proves group membership and an Okta-side Salesforce assignment. It do
 
 A matching target group is another claim. Group Push, where supported and configured, manages downstream groups and memberships. It is separate from assigning an application to an Okta group. Okta requires separate groups for assignment and Group Push; the packet does not establish that Group Push is configured for Salesforce.
 
-Revisit **Group membership has an owner too** and Day 1's five distinct access statements.
+Revisit [Group membership has an owner too](../lessons/day-05-groups-and-assignments.md#group-membership-has-an-owner-too) and Day 1's five distinct access statements.
 
 ## Before-moving-on guide
 
@@ -73,3 +75,5 @@ If you can predict the population but cannot explain where the input came from, 
 [Return to Day 5](../lessons/day-05-groups-and-assignments.md) · [Foundation checkpoint](../assessments/foundation.md)
 
 [Revise Day 5](../revision/day-05.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-05.md) · [Day 5 recap](../revision/day-05.md) · [Reasoning exercises](../exercises/day-05.md)

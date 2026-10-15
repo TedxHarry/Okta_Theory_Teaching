@@ -177,6 +177,8 @@ Try the [exercises](../exercises/day-13.md), then the [answers](../self-checks/d
 
 [Day 14](day-14-requirements-and-responsibilities.md) turns business requests into clear access requirements and administrative responsibilities.
 
+For more examples, open the [Day 13 practice bank](../question-bank/day-13.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 12](day-12-joiners-movers-leavers.md) · [Course home](../index.md)
 
 [Revise Day 13](../revision/day-13.md): revisit the concepts, example, and questions without rereading the full lesson.

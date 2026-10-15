@@ -56,3 +56,5 @@ From memory, follow Maya from her current Okta profile through the rule, actual 
 [Full lesson](../lessons/day-05-groups-and-assignments.md) · [Exercises](../exercises/day-05.md) · [Lesson exercise answers](../self-checks/day-05.md) · [All recaps](index.md)
 
 [Previous recap: Day 4](day-04.md) · [Next recap: Day 6](day-06.md)
+
+[Practice questions with explanations](../question-bank/day-05.md)

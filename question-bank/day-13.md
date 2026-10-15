@@ -654,4 +654,4 @@ nav_order: 13
 </div>
 </details>
 
-[Day 13 lesson](../lessons/day-13-policies-and-sessions.md) · [Day 13 recap](../revision/day-13.md) · [Question bank](index.md)
+[Day 13 lesson](../lessons/day-13-policies-and-sessions.md) · [Reasoning exercises](../exercises/day-13.md) · [Day 13 recap](../revision/day-13.md) · [Question bank](index.md)

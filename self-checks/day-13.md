@@ -12,7 +12,7 @@ Attempt the [exercises](../exercises/day-13.md) first. Explain each result in th
 
 Enrollment establishes the account's authenticator association. The valid Okta session establishes the supplied session state. Assignment establishes the relationship permitting the application access path in Okta. Current authentication evidence must still satisfy the actual app rule. Expense's internal authorization decides the relevant business permission.
 
-Revisit **Give each policy a specific job**.
+Revisit [Give each policy a specific job](../lessons/day-13-policies-and-sessions.md#give-each-policy-a-specific-job).
 
 ## 2. Explain the expected challenge
 
@@ -20,11 +20,13 @@ The existing session does not make the older possession evidence fresh enough. T
 
 Investigate the selected enrollment, challenge delivery, response, and correlated outcome if completion fails. Do not infer a wrong password, missing enrollment, or policy defect from P-1. Revisit **Follow Daniel's expected challenge**.
 
+**Revisit:** [Follow Daniel's expected challenge](../lessons/day-13-policies-and-sessions.md#follow-daniels-expected-challenge)
+
 ## 3. Judge the successful follow-up
 
 Daniel completed the stated authentication and reached his intended Expense account in P-2. This does not establish an expense-approval permission or success of another attempt. It also does not demonstrate a new account-provisioning operation.
 
-Revisit **Follow Daniel's expected challenge** and the SSO/provisioning distinction.
+Revisit [Follow Daniel's expected challenge](../lessons/day-13-policies-and-sessions.md#follow-daniels-expected-challenge) and the SSO/provisioning distinction.
 
 ## 4. Locate the configuration problem
 
@@ -34,17 +36,23 @@ Entry through the broad rule would not establish compliance with the approved re
 
 This is authentication-rule selection, not profile-source priority. Revisit **Identify the policy that actually applies** and **Contrast a genuine policy-selection problem**.
 
+**Revisit:** [Contrast a genuine policy-selection problem](../lessons/day-13-policies-and-sessions.md#contrast-a-genuine-policy-selection-problem)
+
 ## 5. Correlate the evidence
 
 A success in another application's transaction does not establish the current Expense outcome. A missing session identifier does not by itself make a record irrelevant; examine actor, targets, transaction, sequence, context, and other available correlation evidence.
 
 Event uuid identifies an individual event. transaction.id connects events in an operation. externalSessionId relates events within an Okta user session, not Expense's local session. A journey can span multiple transactions. Revisit **Build a correlated evidence trail**.
 
+**Revisit:** [Build a correlated evidence trail](../lessons/day-13-policies-and-sessions.md#build-a-correlated-evidence-trail)
+
 ## 6. Explain the two sessions
 
 The checked Okta session ended successfully, while Expense continued accepting its independently managed local session. The supplied application evidence supports that explanation for this packet. No user deactivation occurred in S-13.
 
 An ID token and the session created after its validation are different objects. Account administrative state is another object again. Neither token expiration nor active false alone demonstrates the result of a subsequent protected request through an existing session. Revisit **Explain why two sessions matter**.
+
+**Revisit:** [Explain why two sessions matter](../lessons/day-13-policies-and-sessions.md#explain-why-two-sessions-matter)
 
 ## 7. Define the sign-out outcome
 
@@ -53,6 +61,8 @@ Okta-session termination is verified. The Expense owner must complete the suppor
 Local logout concerns the application's session. SLO coordinates supported participating integrations under their configuration; its scope and results still need evidence. A remaining Okta session can support another app sign-in when applicable requirements are satisfied, so a prompt-free return is not by itself proof of failed local logout.
 
 Jordan's record remains a separate investigation. Daniel's mechanism offers an explanation to investigate, not evidence establishing Jordan's cause. Revisit **Define what signing out must accomplish**.
+
+**Revisit:** [Define what signing out must accomplish](../lessons/day-13-policies-and-sessions.md#define-what-signing-out-must-accomplish)
 
 ## Optional changed condition
 
@@ -68,3 +78,5 @@ No. Determine which service issued the prompt and correlate the actual request, 
 [Return to Day 13](../lessons/day-13-policies-and-sessions.md) · [Course home](../index.md)
 
 [Revise Day 13](../revision/day-13.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-13.md) · [Day 13 recap](../revision/day-13.md) · [Reasoning exercises](../exercises/day-13.md)

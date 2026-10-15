@@ -49,3 +49,5 @@ A new correlated attempt D-3 has completed enrollment, accepted password and Pus
 Write an update to Daniel. State what has succeeded and what evidence is needed if he still cannot approve an expense. Do not claim the application outcome from the authentication results alone. Does this successful new attempt establish why D-2 had no accepted Push response?
 
 [Self-check answers](../self-checks/day-07.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-07.md) · [Day 7 recap](../revision/day-07.md)

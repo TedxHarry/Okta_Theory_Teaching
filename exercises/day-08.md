@@ -8,7 +8,7 @@ nav_order: 8
 
 Use the fictional configuration in the [lesson](../lessons/day-08-saml.md). These excerpts and reports are teaching evidence, not material to submit to a live system.
 
-Try the questions before opening the answers. Keep the expected connection settings, observed message fields, and application validation report separate. When you say a check passed or failed, name which evidence supports that conclusion.
+Keep the expected connection settings, observed message fields, and application validation report separate. When you say a check passed or failed, name which evidence supports that conclusion.
 
 ## 1. Follow the participants
 
@@ -49,3 +49,5 @@ A new correlated attempt S-3 has accepted application validation and confirmed e
 What succeeded, and what question remains? Does the evidence show that SAML created her account? Explain how a separately configured JIT capability would differ from that assumption.
 
 [Self-check answers](../self-checks/day-08.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-08.md) · [Day 8 recap](../revision/day-08.md)

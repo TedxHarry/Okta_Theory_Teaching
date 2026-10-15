@@ -8,7 +8,7 @@ nav_order: 11
 
 Use the [lesson's](../lessons/day-11-imports-and-matching.md) stated integration and review policy. The packets are synthetic.
 
-Try the questions before opening the answers. Name the discovered record, the proposed relationship, the ownership evidence, and the confirmation result separately. Only carry a result between packets when the scenario explicitly supplies that connection.
+Name the discovered record, the proposed relationship, the ownership evidence, and the confirmation result separately. Only carry a result between packets when the scenario explicitly supplies that connection.
 
 ## 1. Separate the outcomes
 
@@ -39,3 +39,5 @@ The first Okta Users API page contains Maya and Daniel and a next link. Priya is
 Explain how an import-based association differs from supported JIT account creation during sign-in. For each, name the system in which an account or association would be created. Why does successful SSO not settle this? Describe what reconciliation would check after a confirmed match.
 
 [Self-check answers](../self-checks/day-11.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-11.md) · [Day 11 recap](../revision/day-11.md)

@@ -57,3 +57,5 @@ Separate the claims. Name the evidence or capability needed for each, and explai
 Explain the full chain once without the lesson: authoritative values → Okta profile → rule → membership → assignment → separate target checks. Add where a direct assignment could give a different path.
 
 [Self-check answers](../self-checks/day-05.md) · [Foundation checkpoint](../assessments/foundation.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-05.md) · [Day 5 recap](../revision/day-05.md)

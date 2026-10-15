@@ -58,3 +58,5 @@ From memory, compare C-1's successful create, C-2's conflict, C-3's rejected val
 [Full lesson](../lessons/day-10-scim.md) · [Exercises](../exercises/day-10.md) · [Lesson exercise answers](../self-checks/day-10.md) · [All recaps](index.md)
 
 [Previous recap: Day 9](day-09.md) · [Next recap: Day 11](day-11.md)
+
+[Practice questions with explanations](../question-bank/day-10.md)

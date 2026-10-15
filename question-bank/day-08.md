@@ -730,4 +730,4 @@ nav_order: 8
 </div>
 </details>
 
-[Day 8 lesson](../lessons/day-08-saml.md) · [Day 8 recap](../revision/day-08.md) · [Question bank](index.md)
+[Day 8 lesson](../lessons/day-08-saml.md) · [Reasoning exercises](../exercises/day-08.md) · [Day 8 recap](../revision/day-08.md) · [Question bank](index.md)

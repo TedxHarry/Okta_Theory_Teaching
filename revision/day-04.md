@@ -60,3 +60,5 @@ From memory, explain who controls Maya's department, Maya's work email, and Priy
 [Full lesson](../lessons/day-04-sources-and-ownership.md) · [Exercises](../exercises/day-04.md) · [Lesson exercise answers](../self-checks/day-04.md) · [All recaps](index.md)
 
 [Previous recap: Day 3](day-03.md) · [Next recap: Day 5](day-05.md)
+
+[Practice questions with explanations](../question-bank/day-04.md)

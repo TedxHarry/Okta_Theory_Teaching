@@ -60,3 +60,5 @@ From memory, give Maya and Jordan separate updates. For each, name a completed c
 [Full lesson](../lessons/day-12-joiners-movers-leavers.md) · [Exercises](../exercises/day-12.md) · [Lesson exercise answers](../self-checks/day-12.md) · [All recaps](index.md)
 
 [Previous recap: Day 11](day-11.md) · [Next recap: Day 13](day-13.md)
+
+[Practice questions with explanations](../question-bank/day-12.md)

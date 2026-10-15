@@ -662,4 +662,4 @@ nav_order: 1
 </div>
 </details>
 
-[Day 1 lesson](../lessons/day-01-people-identities-access.md) · [Day 1 recap](../revision/day-01.md) · [Question bank](index.md)
+[Day 1 lesson](../lessons/day-01-people-identities-access.md) · [Reasoning exercises](../exercises/day-01.md) · [Day 1 recap](../revision/day-01.md) · [Question bank](index.md)

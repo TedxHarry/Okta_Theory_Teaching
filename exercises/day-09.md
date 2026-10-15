@@ -8,7 +8,7 @@ nav_order: 9
 
 Use the [lesson's](../lessons/day-09-oidc.md) confidential web-client architecture throughout. All observations are synthetic.
 
-Try the questions before opening the answers. Locate the last completed stage before choosing the next evidence: request validation, code return, backend exchange, ID token validation, or application entry. A result from one stage does not establish the next.
+Locate the last completed stage before choosing the next evidence: request validation, code return, backend exchange, ID token validation, or application entry. A result from one stage does not establish the next.
 
 ## 1. OAuth and identity
 
@@ -43,3 +43,5 @@ O-2 has accepted request validation, a correlated code, successful backend excha
 Write a short supported conclusion and explain what remains unknown. Compare the message route with Day 8's SAML flow.
 
 [Self-check answers](../self-checks/day-09.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-09.md) · [Day 9 recap](../revision/day-09.md)

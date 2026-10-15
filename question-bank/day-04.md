@@ -664,4 +664,4 @@ nav_order: 4
 </div>
 </details>
 
-[Day 4 lesson](../lessons/day-04-sources-and-ownership.md) · [Day 4 recap](../revision/day-04.md) · [Question bank](index.md)
+[Day 4 lesson](../lessons/day-04-sources-and-ownership.md) · [Reasoning exercises](../exercises/day-04.md) · [Day 4 recap](../revision/day-04.md) · [Question bank](index.md)

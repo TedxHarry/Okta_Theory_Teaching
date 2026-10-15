@@ -56,3 +56,5 @@ Without looking back, tell Maya's Expense story in order. Name a successful step
 [Full lesson](../lessons/day-02-requests-and-evidence.md) · [Exercises](../exercises/day-02.md) · [Lesson exercise answers](../self-checks/day-02.md) · [All recaps](index.md)
 
 [Previous recap: Day 1](day-01.md) · [Next recap: Day 3](day-03.md)
+
+[Practice questions with explanations](../question-bank/day-02.md)

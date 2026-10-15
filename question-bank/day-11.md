@@ -656,4 +656,4 @@ nav_order: 11
 </div>
 </details>
 
-[Day 11 lesson](../lessons/day-11-imports-and-matching.md) · [Day 11 recap](../revision/day-11.md) · [Question bank](index.md)
+[Day 11 lesson](../lessons/day-11-imports-and-matching.md) · [Reasoning exercises](../exercises/day-11.md) · [Day 11 recap](../revision/day-11.md) · [Question bank](index.md)

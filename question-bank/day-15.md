@@ -624,4 +624,4 @@ nav_order: 15
 </div>
 </details>
 
-[Day 15 lesson](../lessons/day-15-integrated-case.md) · [Day 15 recap](../revision/day-15.md) · [Question bank](index.md)
+[Day 15 lesson](../lessons/day-15-integrated-case.md) · [Reasoning exercises](../exercises/day-15.md) · [Day 15 recap](../revision/day-15.md) · [Question bank](index.md)

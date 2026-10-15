@@ -58,3 +58,5 @@ From memory, explain the different evidence in D-1, D-2, and the exercise's D-3 
 [Full lesson](../lessons/day-07-authenticators-enrollment-mfa.md) · [Exercises](../exercises/day-07.md) · [Lesson exercise answers](../self-checks/day-07.md) · [All recaps](index.md)
 
 [Previous recap: Day 6](day-06.md) · [Next recap: Day 8](day-08.md)
+
+[Practice questions with explanations](../question-bank/day-07.md)

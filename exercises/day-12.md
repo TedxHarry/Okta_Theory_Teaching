@@ -8,7 +8,7 @@ nav_order: 12
 
 Use the [lesson's](../lessons/day-12-joiners-movers-leavers.md) approved requirements and synthetic timelines. Maya's move and Jordan's departure have now taken effect.
 
-Try the questions before opening the answers. For each affected system, compare the approved outcome with the observed result. Name what is complete, what remains unresolved, and the evidence needed to close that part of the case.
+For each affected system, compare the approved outcome with the observed result. Name what is complete, what remains unresolved, and the evidence needed to close that part of the case.
 
 ## 1. Interpret the state
 
@@ -41,3 +41,5 @@ L6 shows a new authenticated Expense response through Jordan's existing session 
 Write one short handoff for Maya and one for Jordan. Each should state the approved outcome, completed changes, remaining discrepancy, responsible owner or next action, and closure evidence. Then explain why a later successful Projects deactivation would not close Jordan's entire case by itself. Keep any proposed correction separate from a result actually supplied by the packet.
 
 [Self-check answers](../self-checks/day-12.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-12.md) · [Day 12 recap](../revision/day-12.md)

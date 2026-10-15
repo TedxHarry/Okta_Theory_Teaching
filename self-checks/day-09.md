@@ -12,7 +12,7 @@ Attempt the [exercises](../exercises/day-09.md) first. Keep the server-side web-
 
 OAuth concerns authorized resource access. OIDC adds defined user-authentication information and ID token validation. An access token is intended for a resource server under its authorization contract; an ID token is intended for the client to validate authentication information. Readable user data does not make the two interchangeable.
 
-Revisit **OAuth and OIDC answer related questions**.
+Revisit [OAuth and OIDC answer related questions](../lessons/day-09-oidc.md#oauth-and-oidc-answer-related-questions).
 
 ## 2. Trace the participants
 
@@ -20,11 +20,13 @@ Expense's backend exchanges the code at the token endpoint, using its configured
 
 Code receipt precedes exchange, validation, account association, and session establishment. It does not establish application entry. Revisit **Follow one successful journey**.
 
+**Revisit:** [Fix the client type before tracing the flow](../lessons/day-09-oidc.md#fix-the-client-type-before-tracing-the-flow)
+
 ## 3. Read the request
 
 The request asks for a code, includes the openid scope for OIDC and profile for supported profile information, and specifies the return location. Requested scopes are not proof of granted permissions or the presence of every claim in every response.
 
-Revisit **Read the request's purpose** if scope and claim became synonyms.
+Revisit [Read the request's purpose](../lessons/day-09-oidc.md#read-the-requests-purpose) if scope and claim became synonyms.
 
 ## 4. Distinguish the checks
 
@@ -32,11 +34,15 @@ State links the returned browser response to the client's transaction. Nonce lin
 
 Here PKCE complements backend client authentication. None of these checks replaces all token validation or application authorization. Revisit **What PKCE adds**.
 
+**Revisit:** [Three artifacts, three purposes](../lessons/day-09-oidc.md#three-artifacts-three-purposes)
+
 ## 5. Correct the return address
 
 The application's emitted URI differs from the approved registered callback. Correct the stale request configuration, then verify the new request, callback correlation, exchange, ID token validation, and actual entry as appropriate.
 
 No code was issued in the failing attempt. A token from another attempt cannot explain its nonexistent token-processing stage. Resetting a password does not repair the wrong return URI. The identity service must not redirect to the unregistered address even to deliver an error; it can display the error instead. The approved callback and registration already agree, so the application's stale request configuration is the demonstrated discrepancy. Revisit **Find the redirect mismatch**.
+
+**Revisit:** [Find the redirect mismatch](../lessons/day-09-oidc.md#find-the-redirect-mismatch)
 
 ## 6. Interpret a decoded excerpt
 
@@ -44,13 +50,15 @@ The excerpt supplies claimed issuer, subject, and audience values that can be co
 
 The subject is interpreted within its issuer. The same subject text from another issuer is not automatically the same identity. Revisit **Read claims without claiming validation**.
 
+**Revisit:** [Read claims without claiming validation](../lessons/day-09-oidc.md#read-claims-without-claiming-validation)
+
 ## 7. State the successful outcome precisely
 
 O-2 completed the stated OIDC sign-in and reached Maya's intended Expense account. It does not establish an expense-approval permission or account-provisioning operation.
 
 The SAML example carried an assertion inside a browser-delivered response. This OIDC example carries a code through the browser and returns tokens to the backend in a separate exchange. Both require application-side validation and account interpretation. In O-2, the successful exchange is one recorded step; the supplied ID token validation, account association, and actual entry support the broader sign-in conclusion. Without those later observations, a successful exchange alone would be insufficient.
 
-Revisit **Compare with SAML** and Day 1's authentication/authorization distinction.
+Revisit [Compare with SAML](../lessons/day-09-oidc.md#compare-with-saml) and Day 1's authentication/authorization distinction.
 
 ## Optional comparison: a later failure
 
@@ -66,3 +74,5 @@ O-1 failed before code issuance because of the redirect mismatch. O-3 reached to
 [Return to Day 9](../lessons/day-09-oidc.md) · [Course home](../index.md)
 
 [Revise Day 9](../revision/day-09.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-09.md) · [Day 9 recap](../revision/day-09.md) · [Reasoning exercises](../exercises/day-09.md)

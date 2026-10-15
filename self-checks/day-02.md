@@ -17,7 +17,7 @@ Use these to check the distinctions in your reasoning. You do not need to repeat
 
 The query value is information sent with the request. It does not prove the server changed Maya's stored profile or accepted Finance as her department.
 
-**Revisit:** "Read the destination before interpreting the result" if you treated a query parameter as a confirmed profile update.
+**Revisit:** [Read the destination before interpreting the result](../lessons/day-02-requests-and-evidence.md#read-the-destination-before-interpreting-the-result) if you treated a query parameter as a confirmed profile update.
 
 ## 2. Follow the redirect
 
@@ -27,7 +27,7 @@ This establishes a redirect instruction, not completed authentication or target 
 
 A provisioning request instead asks the target for an account-management operation. It may be sent directly by the configured integration without using the user's browser. A method such as POST does not, by itself, distinguish these purposes.
 
-**Revisit:** "A response can send the browser elsewhere" and "Compare a redirect with account management" if you equated browser movement with provisioning.
+**Revisit:** [A response can send the browser elsewhere](../lessons/day-02-requests-and-evidence.md#a-response-can-send-the-browser-elsewhere) and [Compare a redirect with account management](../lessons/day-02-requests-and-evidence.md#compare-a-redirect-with-account-management) if you equated browser movement with provisioning.
 
 ## 3. A successful page request
 
@@ -35,7 +35,7 @@ The sign-in page request succeeded and returned the form. Authentication has not
 
 HTTPS protects communication in transit. It does not grant authorization, create an account, or establish that sign-in succeeded.
 
-**Revisit:** "A status code describes a request's result" if you treated 200 as a universal sign-in success indicator.
+**Revisit:** [A status code describes a request's result](../lessons/day-02-requests-and-evidence.md#a-status-code-describes-a-requests-result) if you treated 200 as a universal sign-in success indicator.
 
 ## 4. An application refusal
 
@@ -45,7 +45,7 @@ An incorrect identity message is a possible explanation. A wrong password or mis
 
 Request the detailed application rejection evidence and the relevant sign-in exchange, matched to the same person, application instance, and attempt. These may show a problem originating earlier even though the refusal is observed at the application.
 
-**Revisit:** "Follow Maya's attempt one step at a time" if you concluded that the component reporting the error necessarily created the defect.
+**Revisit:** [Follow Maya's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-mayas-attempt-one-step-at-a-time) if you concluded that the component reporting the error necessarily created the defect.
 
 ## 5. Cookie, session, and account
 
@@ -55,7 +55,7 @@ Its continued presence also does not prove a valid session. The server may no lo
 
 An answer distinguishing the three concepts is sufficient. You do not need detailed session expiry or policy mechanics here.
 
-**Revisit:** "A remembered sign-in is not an account" if you treated browser data as the system's account record.
+**Revisit:** [A remembered sign-in is not an account](../lessons/day-02-requests-and-evidence.md#a-remembered-sign-in-is-not-an-account) if you treated browser data as the system's account record.
 
 ## 6. Read the event
 
@@ -72,7 +72,7 @@ The event is not evidence that the separate application accepted the information
 
 The selected excerpt lacks the full identifiers and timing/context needed to establish a particular attempt independently. Display names alone are insufficient. In the main lesson's timeline, a matching attempt is supplied as a fact of the training packet; outside it, that relationship must be established.
 
-**Revisit:** "Read an event as a sentence first" and "Match the evidence to the right attempt" if you used SUCCESS without identifying its action and scope.
+**Revisit:** [Read an event as a sentence first](../lessons/day-02-requests-and-evidence.md#read-an-event-as-a-sentence-first) and [Match the evidence to the right attempt](../lessons/day-02-requests-and-evidence.md#match-the-evidence-to-the-right-attempt) if you used SUCCESS without identifying its action and scope.
 
 ## 7. Tell the story using the right evidence
 
@@ -86,7 +86,7 @@ Request the detailed refusal and corresponding sign-in-exchange evidence. Explai
 
 A useful handoff could say: “For Maya's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.
 
-**Revisit:** "Follow Maya's attempt one step at a time" if your story jumped from Okta SUCCESS to application success.
+**Revisit:** [Follow Maya's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-mayas-attempt-one-step-at-a-time) if your story jumped from Okta SUCCESS to application success.
 
 ## Before-moving-on questions from the lesson
 
@@ -107,3 +107,5 @@ In your notebook, record one successful request that did not complete the busine
 [Return to the exercises](../exercises/day-02.md) · [Return to Day 2](../lessons/day-02-requests-and-evidence.md)
 
 [Revise Day 2](../revision/day-02.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-02.md) · [Day 2 recap](../revision/day-02.md) · [Reasoning exercises](../exercises/day-02.md)

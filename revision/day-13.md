@@ -62,3 +62,5 @@ From memory, explain why P-1's challenge is expected, what P-2 verifies, and why
 [Full lesson](../lessons/day-13-policies-and-sessions.md) · [Exercises](../exercises/day-13.md) · [Lesson exercise answers](../self-checks/day-13.md) · [All recaps](index.md)
 
 [Previous recap: Day 12](day-12.md) · [Next recap: Day 14](day-14.md)
+
+[Practice questions with explanations](../question-bank/day-13.md)

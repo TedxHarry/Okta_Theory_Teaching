@@ -728,4 +728,4 @@ nav_order: 10
 </div>
 </details>
 
-[Day 10 lesson](../lessons/day-10-scim.md) · [Day 10 recap](../revision/day-10.md) · [Question bank](index.md)
+[Day 10 lesson](../lessons/day-10-scim.md) · [Reasoning exercises](../exercises/day-10.md) · [Day 10 recap](../revision/day-10.md) · [Question bank](index.md)

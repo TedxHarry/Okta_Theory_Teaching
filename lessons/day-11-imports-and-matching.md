@@ -166,6 +166,8 @@ Try the [exercises](../exercises/day-11.md), then the [answers](../self-checks/d
 
 [Day 12](day-12-joiners-movers-leavers.md) follows an approved move and departure through these connected records.
 
+For more examples, open the [Day 11 practice bank](../question-bank/day-11.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 10](day-10-scim.md) · [Course home](../index.md)
 
 [Revise Day 11](../revision/day-11.md): revisit the concepts, example, and questions without rereading the full lesson.

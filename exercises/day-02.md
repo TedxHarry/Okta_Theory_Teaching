@@ -8,7 +8,7 @@ nav_order: 2
 
 The addresses, messages, and records below are fictional training examples. They are supplied evidence, not instructions to visit or operate a system.
 
-Try each question before opening the answers. For every result, name the request or event it belongs to, say what that result establishes, and identify what remains unknown. When you propose a next check, explain which uncertainty it would help resolve. No tenant or memorized protocol fields are needed.
+For every result, name the request or event it belongs to, say what that result establishes, and identify what remains unknown. When you propose a next check, explain which uncertainty it would help resolve. No tenant or memorized protocol fields are needed.
 
 ## 1. Read the destination
 
@@ -83,19 +83,8 @@ Maya reports an Expense sign-in failure. The evidence packet states:
 
 Tell the flow in order. Identify the first demonstrated failure, distinguish it from the root cause, explain why Priya's event does not resolve Maya's ticket, and name the next evidence needed.
 
-## Your understanding check
-
-Mark each distinction as **I can explain it**, **I need the example**, or **I need to revisit it**:
-
-- Request versus response.
-- Destination versus result.
-- Redirect versus account management.
-- Page load versus authentication.
-- Event success versus end-to-end success.
-- Account versus session versus cookie.
-- Observed failure boundary versus underlying cause.
-
 Compare your reasoning with the [self-check answers](../self-checks/day-02.md) after attempting the questions.
 
 [Return to Day 2](../lessons/day-02-requests-and-evidence.md) · [Course home](../index.md)
 
+[Practice questions with explanations](../question-bank/day-02.md) · [Day 2 recap](../revision/day-02.md)

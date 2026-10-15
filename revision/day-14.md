@@ -62,3 +62,5 @@ From memory, explain who decides eligibility, who may configure the change, and 
 [Full lesson](../lessons/day-14-requirements-and-responsibilities.md) · [Exercises](../exercises/day-14.md) · [Lesson exercise answers](../self-checks/day-14.md) · [All recaps](index.md)
 
 [Previous recap: Day 13](day-13.md) · [Next recap: Day 15](day-15.md)
+
+[Practice questions with explanations](../question-bank/day-14.md)

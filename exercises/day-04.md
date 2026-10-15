@@ -69,3 +69,5 @@ Choose the next evidence you would request. Say how two different possible findi
 For each answer, distinguish a stated business rule, observed configuration, observed value, and operation result. If a result is absent, say what you still need to establish.
 
 [Day 4 answers](../self-checks/day-04.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-04.md) · [Day 4 recap](../revision/day-04.md)

@@ -170,6 +170,8 @@ Try the [exercises](../exercises/day-12.md), then the [answers](../self-checks/d
 
 [Day 13](day-13-policies-and-sessions.md) examines authentication policies and separate Okta and application sessions.
 
+For more examples, open the [Day 12 practice bank](../question-bank/day-12.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 11](day-11-imports-and-matching.md) · [Course home](../index.md)
 
 [Revise Day 12](../revision/day-12.md): revisit the concepts, example, and questions without rereading the full lesson.

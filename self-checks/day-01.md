@@ -14,7 +14,7 @@ The records represent Maya for different system purposes: employment in Workday,
 
 A disabled Salesforce account establishes a Salesforce account-state fact. It does not, by itself, establish whether Maya's Okta user or AD account is enabled or disabled. You need their state evidence separately.
 
-**Revisit:** "Maya is one person; the systems hold different records" if you treated all account states as one state.
+**Revisit:** [Maya is one person; the systems hold different records](../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records) if you treated all account states as one state.
 
 ## 2. Sign-in works; an action fails
 
@@ -24,7 +24,7 @@ Request the approval requirement, Daniel's application permissions or role, and 
 
 The evidence does not support resetting his Okta password as the correction. You also should not automatically grant an approval permission before confirming the authorized business requirement.
 
-**Revisit:** "Signing in and having permission are different" if you treated every denial as a credential failure.
+**Revisit:** [Signing in and having permission are different](../lessons/day-01-people-identities-access.md#signing-in-and-having-permission-are-different) if you treated every denial as a credential failure.
 
 ## 3. SSO without account creation
 
@@ -32,7 +32,7 @@ The arrangement is possible. SSO handles the connected sign-in relationship, whi
 
 An SSO connection does not prove that automatic account provisioning is available or configured. Some applications support other account-creation arrangements; the selected application's behavior must be checked.
 
-**Revisit:** "SSO helps with sign-in; provisioning manages accounts" if you assumed SSO necessarily creates every account.
+**Revisit:** [SSO helps with sign-in; provisioning manages accounts](../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts) if you assumed SSO necessarily creates every account.
 
 ## 4. A value is correct in one system
 
@@ -42,7 +42,7 @@ Compare the relevant Okta profile and target-side value, then inspect the connec
 
 An explanation that requests source, intermediate, and destination evidence is sound even without knowing the mapping mechanism yet.
 
-**Revisit:** "What a directory does" and the mapping-related observations if you inferred destination state from source state.
+**Revisit:** [What a directory does](../lessons/day-01-people-identities-access.md#what-a-directory-does) if you inferred destination state from source state.
 
 ## 5. An incomplete account investigation
 
@@ -62,7 +62,7 @@ For example, inspecting the expected assignment can distinguish an absent assign
 
 Avoid creating a duplicate account, granting access without approval, or changing a working sign-in credential before establishing the cause. A correction becomes justified when the evidence identifies the relevant gap and the requirement is clear.
 
-**Revisit:** "Investigating Maya's ticket" if you treated "not inspected" as "missing" or presented a possible cause as confirmed.
+**Revisit:** [Investigating Maya's ticket](../lessons/day-01-people-identities-access.md#investigating-mayas-ticket) if you treated "not inspected" as "missing" or presented a possible cause as confirmed.
 
 ## 6. Assignment and a tile
 
@@ -70,7 +70,7 @@ No. The assignment shows an Okta-side relationship to the application. The tile 
 
 Inspect the target account state and the relevant account-management outcome. If provisioning is not configured, identify how the account is expected to be created or matched.
 
-**Revisit:** "Being assigned an application is another fact to check" if you equated assignment with a usable target account.
+**Revisit:** [Being assigned an application is another fact to check](../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check) if you equated assignment with a usable target account.
 
 ## 7. Tell the whole story
 
@@ -98,3 +98,5 @@ If you can explain these without relying on copied definitions, you have the dis
 [Return to the exercises](../exercises/day-01.md) · [Return to the lesson](../lessons/day-01-people-identities-access.md)
 
 [Revise Day 1](../revision/day-01.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[More practice questions with explanations](../question-bank/day-01.md)

@@ -235,6 +235,8 @@ In [your notebook](../notebook/guide.md), annotate the data flow with the person
 
 [Day 5](day-05-groups-and-assignments.md) connects these identity attributes to groups and application assignments.
 
+For more examples, open the [Day 4 practice bank](../question-bank/day-04.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 3](day-03-profiles-and-mappings.md) · [Course home](../index.md)
 
 [Revise Day 4](../revision/day-04.md): revisit the concepts, example, and questions without rereading the full lesson.

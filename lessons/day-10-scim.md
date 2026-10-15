@@ -203,7 +203,7 @@ Record the operation, target identifier, sanitized response, correction, and ver
 
 ## Tell the investigation story
 
-For each ticket, connect the approved requirement, assignment, prepared value, transmitted operation, response, and checked target record. C-1 establishes creation and checked state. C-2 leaves ownership and the lookup discrepancy unresolved. C-3 demonstrates the full-name mapping defect but still needs a verified correction. The hypothetical deactivation confirms a retained inactive account while leaving existing sessions unverified.
+Explain each ticket to its application owner. Connect the approved requirement, assignment, prepared value, transmitted operation, response, and checked target record. For C-1, say how far creation is verified. For C-2, identify the missing ownership and lookup evidence. For C-3, explain which representation needs correction and what remains unverified. For the separate deactivation example, distinguish account state from existing sessions.
 
 The useful habit is to name the operation, the account it concerns, and the result the evidence supports. Name what is missing instead of treating the last visible green status as the whole outcome.
 
@@ -220,6 +220,8 @@ Before moving on, explain:
 Try the [exercises](../exercises/day-10.md), then the [answers](../self-checks/day-10.md). Complete the [integration checkpoint](../assessments/integration.md) before reading its separate debrief. In [your notebook](../notebook/guide.md), record the first demonstrated failure and the evidence needed to verify a correction.
 
 [Day 11](day-11-imports-and-matching.md) follows discovered accounts into matching and association decisions.
+
+For more examples, open the [Day 10 practice bank](../question-bank/day-10.md). Each question includes its own context and an expandable teaching explanation.
 
 [Previous: Day 9](day-09-oidc.md) · [Course home](../index.md)
 

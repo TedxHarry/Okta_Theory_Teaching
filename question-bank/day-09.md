@@ -730,4 +730,4 @@ nav_order: 9
 </div>
 </details>
 
-[Day 9 lesson](../lessons/day-09-oidc.md) · [Day 9 recap](../revision/day-09.md) · [Question bank](index.md)
+[Day 9 lesson](../lessons/day-09-oidc.md) · [Reasoning exercises](../exercises/day-09.md) · [Day 9 recap](../revision/day-09.md) · [Question bank](index.md)

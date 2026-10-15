@@ -58,3 +58,5 @@ From memory, follow Finance through Workday, the Okta user profile, the Projects
 [Full lesson](../lessons/day-03-profiles-and-mappings.md) · [Exercises](../exercises/day-03.md) · [Lesson exercise answers](../self-checks/day-03.md) · [All recaps](index.md)
 
 [Previous recap: Day 2](day-02.md) · [Next recap: Day 4](day-04.md)
+
+[Practice questions with explanations](../question-bank/day-03.md)

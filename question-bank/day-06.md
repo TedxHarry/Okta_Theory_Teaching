@@ -666,4 +666,4 @@ nav_order: 6
 </div>
 </details>
 
-[Day 6 lesson](../lessons/day-06-active-directory.md) · [Day 6 recap](../revision/day-06.md) · [Question bank](index.md)
+[Day 6 lesson](../lessons/day-06-active-directory.md) · [Reasoning exercises](../exercises/day-06.md) · [Day 6 recap](../revision/day-06.md) · [Question bank](index.md)

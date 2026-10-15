@@ -8,8 +8,6 @@ nav_order: 1
 
 Use the facts supplied in each question. State what you know, what you do not know, and what you would check next. You do not need menu paths or protocol details.
 
-Try the questions before opening the answers. For an investigation, use three short sentences: “The evidence shows…”, “We still do not know…”, and “I would check… because…”. A possible explanation becomes more useful when you name a check that could support or rule it out.
-
 ## 1. One person, several records
 
 Maya has an employee record in Workday, an Okta user, an AD account, and a Salesforce account.
@@ -18,7 +16,7 @@ Explain why these are separate records for one person. If the Salesforce account
 
 ## 2. Sign-in works; an action fails
 
-Daniel completes Okta sign-in, enters Northbridge Expense, and receives "not permitted" when attempting to approve an expense.
+Daniel is a Finance manager. He completes Okta sign-in, enters Northbridge Expense, and receives "not permitted" when attempting to approve an expense. His approved Expense role has not been checked.
 
 Which distinction matters here? What evidence would you request before proposing a correction?
 
@@ -57,18 +55,7 @@ Explain how HR information, an Okta user, an application assignment, an applicat
 
 Then change the situation: the Salesforce account exists but is disabled. Explain which fact is now known and what remains unanswered.
 
-## Before moving on: your assessment
-
-Mark each of these as **I can explain it**, **I need the example**, or **I need to revisit it**:
-
-- Identity versus account.
-- Authentication versus authorization.
-- SSO versus provisioning.
-- Assignment versus a usable target account.
-- Evidence from one system versus evidence of the whole flow.
-- A confirmed finding versus a possible cause.
-
 Compare your reasoning with the [self-check answers](../self-checks/day-01.md) after attempting the questions.
 
-[Return to the lesson](../lessons/day-01-people-identities-access.md) · [Course home](../index.md)
+[More practice questions](../question-bank/day-01.md) · [Day 1 recap](../revision/day-01.md) · [Return to the lesson](../lessons/day-01-people-identities-access.md) · [Course home](../index.md)
 

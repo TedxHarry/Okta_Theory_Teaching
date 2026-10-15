@@ -60,3 +60,5 @@ From memory, trace what the browser carries and what the backend exchanges and v
 [Full lesson](../lessons/day-09-oidc.md) · [Exercises](../exercises/day-09.md) · [Lesson exercise answers](../self-checks/day-09.md) · [All recaps](index.md)
 
 [Previous recap: Day 8](day-08.md) · [Next recap: Day 10](day-10.md)
+
+[Practice questions with explanations](../question-bank/day-09.md)

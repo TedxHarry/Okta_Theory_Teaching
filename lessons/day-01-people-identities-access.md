@@ -22,7 +22,7 @@ You do not need an Okta tenant or knowledge of its menus to follow the reasoning
 
 ## Maya is one person; the systems hold different records
 
-Think about the work each team needs to do for Maya. HR needs her employee number, department, and manager. Active Directory needs a directory account. Okta needs a user record it can use in its identity and access decisions. Salesforce needs an application account that represents her inside the Sales application.
+Think about the work each team needs to do for Maya. HR needs her employee number, department, and manager. Active Directory (**AD**) needs a directory account. Okta needs a user record it can use in its identity and access decisions. Salesforce needs an application account that represents her inside the Sales application.
 
 Why keep records in several places? These systems support different work. Workday maintains employment information for HR. AD supports directory-related sign-in and access needs. Okta connects identity information with application assignments and sign-in. Salesforce manages the account and permissions Maya uses inside Salesforce. Keeping Maya's information in Okta does not replace the work those other systems perform.
 
@@ -58,7 +58,7 @@ A company needs an organized place to keep information about users. Imagine tryi
 
 An organized collection of user information is a **directory**. It can also store groups, which are collections of users. Their access behavior is the subject of Day 5.
 
-Active Directory, often shortened to **AD**, is one such directory. Northbridge uses it for directory accounts and groups. Okta also keeps identity information in a directory layer called **Universal Directory**. For now, focus on the role they share: holding organized information that systems can use. Their different responsibilities will become clearer as we follow the course.
+Active Directory is one such directory. Northbridge uses it for directory accounts and groups. Okta also keeps identity information in a directory layer called **Universal Directory**. For now, focus on the role they share: holding organized information that systems can use. Their different responsibilities will become clearer as we follow the course.
 
 Think about the useful question each record helps answer:
 
@@ -162,7 +162,7 @@ The upper flow concerns Maya's sign-in. The lower flow changes an application ac
 
 An application might have SSO configured while its accounts are created separately. An account might already exist before SSO is connected. An automatic provisioning attempt might fail even though the user can sign in to Okta. Each arrangement is a reason to ask how this particular application's accounts are managed.
 
-Do not assume Salesforce uses SCIM because another application does. SCIM is an account-management protocol we will explore with Northbridge Projects. You do not need its details to investigate today's question. For Maya's Salesforce ticket, we first need the account and assignment facts; the connector details come afterward.
+Different applications can use different account-management methods. For Maya's Salesforce ticket, we first need the account and assignment facts; the connection's technical details come afterward.
 
 ## Being assigned an application is another fact to check
 
@@ -257,13 +257,9 @@ Carry three habits into the next lesson: name the record and the system that hol
 
 ## Tell Maya's story
 
-Explain this in your own words before moving on:
+Maya asks, “Why do we need to check Salesforce if my Okta sign-in worked?” Explain the separate records and access decisions in your own words, as though you were answering her.
 
-> Maya is one person represented by different records. HR records her employment information. Okta has a user representing her. AD and Salesforce have separate account responsibilities. Her successful Okta sign-in answers one question, but we still need to check Salesforce assignment, the target account, and application access.
-
-Now change one fact: a Salesforce account already exists, but it is disabled. Which question has been answered, and which questions still need checking?
-
-Do not try to solve it by naming a menu. Explain the facts and the missing evidence.
+Now consider a separate variation: the intended Salesforce account is found, but it is disabled. Explain what that finding establishes, what you would check next, and why enabling it immediately still needs an approved requirement. This variation does not change the original ticket's findings.
 
 ## Before moving on
 
@@ -277,6 +273,8 @@ Can you explain these without looking up a definition?
 - What additional evidence would help Alex choose a correction for Maya?
 
 Try the [Day 1 reasoning exercises](../exercises/day-01.md), then compare your explanation with the [separate self-check answers](../self-checks/day-01.md).
+
+For more examples, open the [Day 1 practice bank](../question-bank/day-01.md). Each question includes its own context and an expandable teaching explanation.
 
 In [your notebook](../notebook/guide.md), record the five separate statements about Maya's user, assignment, application account, sign-in, and permissions. Add one observation and what it cannot prove.
 

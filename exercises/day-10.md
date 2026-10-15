@@ -8,7 +8,7 @@ nav_order: 10
 
 Use the [lesson's Projects contract](../lessons/day-10-scim.md). All packets are synthetic and independent unless a follow-up is stated.
 
-Try the questions before opening the answers. Name the operation, linked target resource, response, and subsequent target observation where supplied. If one is missing, explain what that limits rather than borrowing a result from another packet.
+Name the operation, linked target resource, response, and subsequent target observation where supplied. If one is missing, explain what that limits rather than borrowing a result from another packet.
 
 ## 1. Locate the missing boundary
 
@@ -39,3 +39,5 @@ An approved hypothetical removal generates active false. Projects returns 204; a
 Maya completed MFA for a sign-in attempt, but the Projects SCIM request receives an authorization rejection from Projects. Explain why successful user authentication does not repair or prove the connector's authorization. Does an Expense ID token belong in that SCIM request?
 
 [Self-check answers](../self-checks/day-10.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-10.md) · [Day 10 recap](../revision/day-10.md)

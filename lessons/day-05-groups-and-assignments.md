@@ -204,6 +204,8 @@ In [your notebook](../notebook/guide.md), extend the ownership flow with the rul
 
 [Day 6](day-06-active-directory.md) separates AD imports from AD password validation.
 
+For more examples, open the [Day 5 practice bank](../question-bank/day-05.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 4](day-04-sources-and-ownership.md) · [Course home](../index.md)
 
 [Revise Day 5](../revision/day-05.md): revisit the concepts, example, and questions without rereading the full lesson.

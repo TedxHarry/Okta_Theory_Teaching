@@ -24,6 +24,8 @@ B also warrants prompt approval review because contractor access is working with
 
 Other orderings among B, C, A, and E are defensible if tied to stated impact and unresolved risk. Do not invent a financial deadline, active attack, or discovered approval to justify the ranking. A useful handoff says which outcomes are confirmed, which access remains, and which decisions or technical fixes are outstanding.
 
+**Case evidence:** [Environment and ownership](../assessments/final-case.md#environment-and-ownership)
+
 ## 2. Investigate Maya's move
 
 A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong representation: the fixed outbound mapping produces SAL. A4 confirms that SAL was sent and stored; the target did not reject it. A5 is consistent with that wrong stored value and does not turn this into a sign-in incident.
@@ -31,6 +33,8 @@ A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong
 Replace the fixed value with the approved department-to-code conversion. Keep correct HR and Okta data unchanged. Verify the saved mapping with Finance and other supported inputs, Maya's app profile, the actual update to prj-1042, the target FIN value, and the corrected report outcome. Preserve her intended existing account and approved access.
 
 Review the other users sharing the mapping and identify which actually received incorrect values. Recovery needs a known approved configuration and a plan to correct affected target values; reverting configuration alone would not establish that previous writes were reversed. A functioning login neither validates department data nor proves the required reporting result.
+
+**Case evidence:** [Ticket A: Maya's department differs in Projects](../assessments/final-case.md#ticket-a-mayas-department-differs-in-projects)
 
 ## 3. Investigate Priya's Salesforce access
 
@@ -42,6 +46,8 @@ If a valid scoped exception is confirmed, check that the observed access fits it
 
 B5 proves its supplied Expense authentication, validation, account association, and entry outcome. It does not authorize Salesforce, prove Projects account creation, or establish all internal permissions. A valid approval for one application is not a transferable approval for another.
 
+**Case evidence:** [Ticket B: Priya's individual Salesforce assignment](../assessments/final-case.md#ticket-b-priyas-individual-salesforce-assignment)
+
 ## 4. Investigate Daniel's SAML failure
 
 C1 establishes the applicable Okta authentication requirements were met. C2 establishes response issuance. C3 to C4 identify the audience mismatch and Salesforce's rejection: test was sent where production was expected. The signature and time checks are independently reported as accepted. C5 supplies a matching configured user identifier, but the attempt still fails validation before a Salesforce session is established.
@@ -49,6 +55,8 @@ C1 establishes the applicable Okta authentication requirements were met. C2 esta
 Review and correct the emitted audience configuration for the intended production integration against the approved expected value. Check shared impact, then verify a new correlated response, target acceptance, correct account association, actual entry, and the required reporting permission.
 
 The packet does not demonstrate bad credentials or a missing target account. Resetting Daniel's password or creating a second account would not fix the audience mismatch. Decoded assertion fields alone would not prove signature validity; here the separate validation report supplies that result.
+
+**Case evidence:** [Ticket C: Daniel's Salesforce sign-in fails](../assessments/final-case.md#ticket-c-daniels-salesforce-sign-in-fails)
 
 ## 5. Investigate Jordan's departure
 
@@ -62,6 +70,8 @@ Deleting the Okta identity is a separate irreversible action and does not prove 
 
 A suitable leaver explanation follows the source event, Okta state, assignments, linked target states, failed operation, and observed session. It ends with the actual remaining work, not a claim that all access ended.
 
+**Case evidence:** [Ticket D: Jordan's departure is not fully resolved](../assessments/final-case.md#ticket-d-jordans-departure-is-not-fully-resolved)
+
 ## 6. Investigate the Projects conflict
 
 E3 establishes that Projects reported a uniqueness conflict for the create. It does not identify the conflicting account's owner or prove a correctly linked Priya account exists. E2's earlier no-match result does not explain the discrepancy by itself.
@@ -71,6 +81,8 @@ Request the full lookup filter/result, exact instance and sequence, competing cr
 The proposed numbered username is not an approved correction. It might create a duplicate for the same person or conceal another person's conflicting record. If the record belongs to Priya, evaluate supported existing-account handling. If it belongs to someone else, correct the approved naming or data problem through its owner. Confirm the association, applicable operation result, target state, and eventual access before closing the ticket.
 
 Priya's approved Projects exception establishes an access requirement, not permission to take over an unverified account or evidence of a Salesforce exception.
+
+**Case evidence:** [Ticket E: Projects reports a username conflict](../assessments/final-case.md#ticket-e-projects-reports-a-username-conflict)
 
 ## 7. Interpret the historical AD incident
 
@@ -85,3 +97,7 @@ Use the [final debrief and skills checklist](../assessments/self-checks/final-ca
 [Case evidence](../assessments/final-case.md) · [Day 15](../lessons/day-15-integrated-case.md) · [Course home](../index.md)
 
 [Revise Day 15](../revision/day-15.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-15.md) · [Day 15 recap](../revision/day-15.md) · [Reasoning exercises](../exercises/day-15.md)
+
+**Case evidence:** [Ticket F: Archived AD password incident](../assessments/final-case.md#ticket-f-archived-ad-password-incident)

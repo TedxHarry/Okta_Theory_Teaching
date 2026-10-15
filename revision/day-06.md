@@ -58,3 +58,5 @@ Without looking back, compare J-1, J-2, and J-3. For each, say whether AD return
 [Full lesson](../lessons/day-06-active-directory.md) · [Exercises](../exercises/day-06.md) · [Lesson exercise answers](../self-checks/day-06.md) · [All recaps](index.md)
 
 [Previous recap: Day 5](day-05.md) · [Next recap: Day 7](day-07.md)
+
+[Practice questions with explanations](../question-bank/day-06.md)

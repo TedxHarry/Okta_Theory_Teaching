@@ -93,4 +93,6 @@ Before moving on, explain why a correct group result would not prove a target ac
 
 Use [your notebook](../notebook/guide.md) for the plan. Review [application onboarding](../reference/onboarding-an-application.md) for the design questions and [the troubleshooting playbook](../reference/troubleshooting-playbook.md) for locating evidence. Their examples do not replace your training environment's actual contract.
 
+For more examples, open the [Day 16 practice bank](../question-bank/day-16.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 15](day-15-integrated-case.md) · [Course home](../index.md)

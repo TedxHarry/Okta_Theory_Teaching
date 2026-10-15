@@ -53,3 +53,5 @@ In Northbridge, Workday controls Jordan's employee profile and AD validates his 
 Draw each employee's profile and authentication paths. Explain why neither company's successful import proves password acceptance and why Jordan's AD result does not establish Priya's sign-in outcome.
 
 [Self-check answers](../self-checks/day-06.md) · [Course home](../index.md)
+
+[Practice questions with explanations](../question-bank/day-06.md) · [Day 6 recap](../revision/day-06.md)

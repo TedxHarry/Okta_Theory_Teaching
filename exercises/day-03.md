@@ -8,7 +8,7 @@ nav_order: 3
 
 These are fictional Northbridge observations. The intended Projects codes are Sales → SAL, Finance → FIN, and IT → IT. Missing or unrecognized department values require review.
 
-Try the questions before opening the answers. In each investigation, name the record and field, compare its observed value with the expected value, and explain what the next check would establish. You can reason through the supplied conversions without writing an Okta expression.
+In each investigation, name the record and field, compare its observed value with the expected value, and explain what the next check would establish. You can reason through the supplied conversions without writing an Okta expression.
 
 ## 1. Locate the records
 
@@ -54,17 +54,6 @@ Explain how Daniel's Finance value becomes the Projects code FIN, covering the s
 
 Then explain why a mapping tells you neither which source wins when systems disagree nor whether a target update succeeded.
 
-## Your understanding check
-
-Mark each distinction as **I can explain it**, **I need the example**, or **I need to revisit it**:
-
-- Schema versus profile value.
-- Okta user profile versus app user profile versus target account.
-- Mapping direction versus reverse synchronization.
-- Correct transformation versus identical text.
-- Preview result versus target update.
-- Missing data versus missing evidence.
-- Mapping versus ownership.
-
 [Self-check answers](../self-checks/day-03.md) · [Return to Day 3](../lessons/day-03-profiles-and-mappings.md)
 
+[Practice questions with explanations](../question-bank/day-03.md) · [Day 3 recap](../revision/day-03.md)

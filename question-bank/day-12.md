@@ -652,4 +652,4 @@ nav_order: 12
 </div>
 </details>
 
-[Day 12 lesson](../lessons/day-12-joiners-movers-leavers.md) · [Day 12 recap](../revision/day-12.md) · [Question bank](index.md)
+[Day 12 lesson](../lessons/day-12-joiners-movers-leavers.md) · [Reasoning exercises](../exercises/day-12.md) · [Day 12 recap](../revision/day-12.md) · [Question bank](index.md)

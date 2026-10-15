@@ -65,6 +65,8 @@ Distinguish a proposed next action from an action already performed. Record the 
 
 The [optional extension reference](../reference/optional-extensions.md) introduces terms you may encounter beyond these investigations. It is not required to answer the case.
 
+For more examples, open the [Day 15 practice bank](../question-bank/day-15.md). Each question includes its own context and an expandable teaching explanation.
+
 [Previous: Day 14](day-14-requirements-and-responsibilities.md) · [Course home](../index.md)
 
 [Revise Day 15](../revision/day-15.md): revisit the concepts, example, and questions without rereading the full lesson.

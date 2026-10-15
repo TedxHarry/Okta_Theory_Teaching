@@ -53,6 +53,6 @@ Before looking at the answers, explain Maya's situation aloud or write a few sen
 
 </details>
 
-[Full lesson](../lessons/day-01-people-identities-access.md) · [Exercises](../exercises/day-01.md) · [Lesson exercise answers](../self-checks/day-01.md) · [All recaps](index.md)
+[Full lesson](../lessons/day-01-people-identities-access.md) · [Exercises](../exercises/day-01.md) · [Lesson exercise answers](../self-checks/day-01.md) · [Practice questions with explanations](../question-bank/day-01.md) · [All recaps](index.md)
 
 [Next recap: Day 2](day-02.md)

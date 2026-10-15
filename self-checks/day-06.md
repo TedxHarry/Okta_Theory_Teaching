@@ -12,7 +12,7 @@ Attempt the [exercises](../exercises/day-06.md) first. Explain the operation and
 
 The agent is integration software that connects Okta with AD for supported operations. A domain controller runs the directory service and can handle directory queries and credential validation. The agent can run on a separate server and is not the directory database.
 
-Revisit **Locate the directory, the server, and the agent** if your flow has Okta itself acting as the AD domain controller.
+Revisit [Locate the directory, the server, and the agent](../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent) if your flow has Okta itself acting as the AD domain controller.
 
 ## 2. A successful scoped import
 
@@ -20,7 +20,7 @@ The result concerns the selected population. It does not prove the excluded grou
 
 An OU is an administrative container; a group has a membership relationship. Matching names do not establish that relationship. Check membership evidence separately.
 
-Revisit **What an import establishes** if you read a successful scan as proof of complete directory coverage.
+Revisit [What an import establishes](../lessons/day-06-active-directory.md#what-an-import-establishes) if you read a successful scan as proof of complete directory coverage.
 
 ## 3. Name the operation
 
@@ -28,7 +28,7 @@ The observations describe import, delegated authentication, and password synchro
 
 The ordinary AD agent and the AD Password Sync Agent are distinct components. Do not infer which synchronization components a deployment uses from an import result. Inspect the use case and configuration.
 
-Revisit **Three operations that should not be confused** if “synchronized” was your explanation for every operation.
+Revisit [Three operations that should not be confused](../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused) if “synchronized” was your explanation for every operation.
 
 ## 4. No credential result
 
@@ -40,13 +40,15 @@ A specific handoff could say: “For Jordan's J-1 attempt, the handling agent re
 
 A password reset is not supported as a correction for the demonstrated connectivity failure. Revisit **Investigate Jordan's failed attempt** if you treated lack of a result as an explicit rejection.
 
+**Revisit:** [Investigate Jordan's failed attempt](../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt)
+
 ## 5. A different response
 
 AD responded and rejected credential validation. The supplied generic result does not establish why. Request the detailed directory response, the submitted identifier's intended account association, and relevant account conditions for that attempt.
 
 A UPN is a sign-in name, even when it looks like an email address. Compare the actual configured identifiers; do not invent a mismatch or assume email equality.
 
-Revisit **Contrast a credential rejection** if your answer concludes “wrong password” without the distinguishing evidence.
+Revisit [Contrast a credential rejection](../lessons/day-06-active-directory.md#contrast-a-credential-rejection) if your answer concludes “wrong password” without the distinguishing evidence.
 
 ## 6. A narrower successful outcome
 
@@ -56,7 +58,7 @@ A precise update is:
 
 This reports supported recovery without claiming complete sign-in or application access. J-3 is new evidence, not a reason to rewrite J-1 as if it had received a password result. The independent J-2 rejection still has no established cause. J-3 does not prove that J-2 involved a mistyped password or the repaired route problem.
 
-Revisit **Know what a successful follow-up proves** and Day 1's assignment/account/sign-in distinctions.
+Revisit [Know what a successful follow-up proves](../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves) and Day 1's assignment/account/sign-in distinctions.
 
 ## 7. Explain two architectures
 
@@ -66,7 +68,7 @@ The separate AD-led company's profile flow starts in AD and continues to Okta an
 
 Priya has no AD account assignment in Northbridge and uses her applicable Okta authentication configuration. Jordan's result concerns another person and a different path; it does not establish her outcome.
 
-Revisit Day 4's source applicability and **Northbridge is still HR-led** if you made every Okta user depend on AD.
+Revisit Day 4's source applicability and [Northbridge is still HR-led](../lessons/day-06-active-directory.md#northbridge-is-still-hr-led) if you made every Okta user depend on AD.
 
 ## Ready to continue
 
@@ -75,3 +77,5 @@ You should be able to trace both paths, explain what each component contributes,
 [Return to Day 6](../lessons/day-06-active-directory.md) · [Course home](../index.md)
 
 [Revise Day 6](../revision/day-06.md): revisit the concepts, example, and questions without rereading the full lesson.
+
+[Practice questions with explanations](../question-bank/day-06.md) · [Day 6 recap](../revision/day-06.md) · [Reasoning exercises](../exercises/day-06.md)

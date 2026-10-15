@@ -684,4 +684,4 @@ nav_order: 14
 </div>
 </details>
 
-[Day 14 lesson](../lessons/day-14-requirements-and-responsibilities.md) · [Day 14 recap](../revision/day-14.md) · [Question bank](index.md)
+[Day 14 lesson](../lessons/day-14-requirements-and-responsibilities.md) · [Reasoning exercises](../exercises/day-14.md) · [Day 14 recap](../revision/day-14.md) · [Question bank](index.md)

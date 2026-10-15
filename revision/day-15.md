@@ -64,3 +64,5 @@ Your notebook's architecture explanation, incident investigation, and access dec
 [Full lesson](../lessons/day-15-integrated-case.md) · [Exercises](../exercises/day-15.md) · [Lesson exercise answers](../self-checks/day-15.md) · [All recaps](index.md)
 
 [Previous recap: Day 14](day-14.md)
+
+[Practice questions with explanations](../question-bank/day-15.md)

@@ -60,3 +60,5 @@ From memory, explain what M-1 supports, what M-2 adds, and why M-3 remains unres
 [Full lesson](../lessons/day-11-imports-and-matching.md) · [Exercises](../exercises/day-11.md) · [Lesson exercise answers](../self-checks/day-11.md) · [All recaps](index.md)
 
 [Previous recap: Day 10](day-10.md) · [Next recap: Day 12](day-12.md)
+
+[Practice questions with explanations](../question-bank/day-11.md)
