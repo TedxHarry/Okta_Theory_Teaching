@@ -34,9 +34,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Yes. Authoritative means responsible for controlling the information, not guaranteed to contain perfect data.</p>
-<p>The approved business department and recorded value disagree, so the correction belongs through the responsible HR maintenance process. The source designation does not make Finance accurate.</p>
-<p>Keep two checks separate: who owns the field and what its legitimate value should be. After correcting the source, verify any required downstream results rather than assume the new value reached every destination.</p>
+<p>Yes. Authoritative tells us which system is responsible for the information. It does not guarantee that every entry in that system is accurate.</p>
+<p>Here the approved department is Sales, but the responsible HR record says Finance. The business-data correction belongs through the authorized HR maintenance process. Calling Workday the source does not make the incorrect Finance value right.</p>
+<p>After that correction, follow any required updates into Okta and the relevant applications. Fixing the source gives those processes the right input; it does not prove that every destination has received it.</p>
 </div>
 </details>
 
@@ -148,9 +148,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Priority chooses among designated sources that actually apply to a user. The order does not create source associations for everyone.</p>
-<p>Maya's two confirmed relationships make the Workday-first order relevant to her. Priya's checked model has no external source association, so her effective source is Okta.</p>
-<p>Read the person's associations before using the ranking. The same configured list can lead to different maintenance processes for different people.</p>
+<p>Start with Maya, not the top of the list. She has checked associations with both Workday and AD, so the configured Workday-first order matters to her. Workday is the selected profile source in this example.</p>
+<p>Now look at Priya. Neither external association is present, and her checked configuration says Okta manages her profile. Workday's first position does not create a connection to her record.</p>
+<p>The useful sequence is 'Which sources apply to this user?' and then 'Which of those has priority?' The same list can support different maintenance processes because different people have different source relationships.</p>
 </div>
 </details>
 
@@ -182,9 +182,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Import brings the records or changes into processing. Matching compares incoming information with known users. A source association is the resulting link between the Okta user and that integration's record.</p>
-<p>Information arriving does not itself prove correct matching. A familiar name is not enough to establish ownership of the linked account.</p>
-<p>Check each stage's relevant evidence. Knowing which relationship exists helps explain where later sourced values should come from.</p>
+<p>Import is the arrival of the employee record or its changes for processing. Matching asks, 'Does this incoming record represent a user we already know?' The source association is the resulting link between that Okta user and the record in the HR integration.</p>
+<p>Think of following one employee through those steps. Receiving a record is not enough to show it was linked to the right person. A familiar display name does not establish that relationship either.</p>
+<p>Inspect the relevant result at each step. Once the link is verified, you can use it to identify which source record should supply this user's information. The association makes the relationship inspectable; it does not prove every later update succeeded.</p>
 </div>
 </details>
 
@@ -280,9 +280,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Inheritance follows the effective source of the particular user. Maya's department therefore follows Workday, while Priya's follows her authorized Okta-maintenance process.</p>
-<p>The field setting is not globally pinned to Workday for every identity. Its meaning depends on the person-level source decision.</p>
-<p>This allows different populations to coexist in one environment. Route a correction through the applicable owner rather than copy another person's maintenance path.</p>
+<p>Read the setting as 'use this user's effective profile source.' It does not say 'use Workday for every user.'</p>
+<p>For Maya, the selected source is Workday, so department follows Workday. For Priya, the selected source is Okta, so department follows her approved Okta-maintenance process. One inherited field setting can therefore lead to two appropriate edit locations.</p>
+<p>Check the person-level source before interpreting the field setting. Copying Maya's HR maintenance route to Priya would ignore the different source relationship supplied for her.</p>
 </div>
 </details>
 
@@ -312,9 +312,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The work-email setting is an attribute-level exception. It governs that particular field while Workday remains the overall profile source.</p>
-<p>Reading only the global source ranking would miss the explicit exception. Inspect both the person-level profile decision and the field's source configuration.</p>
-<p>This does not make AD owner of department, every identifier, or lifecycle processing. Keep each responsibility attached to the scope the company actually designated.</p>
+<p>Workday is Maya's usual profile source, but work email has its own explicit AD designation. Follow that specific setting when deciding where the email value comes from.</p>
+<p>That is a field-level exception, not a second overall profile source. AD can supply work email while department continues to follow Workday. Reading only 'Workday first' would miss the exception.</p>
+<p>Keep the scope of the decision: this setting concerns work email. It does not tell us her Okta login, every application's username, or which process handles her departure. Those need their own relevant settings and evidence.</p>
 </div>
 </details>
 
@@ -428,9 +428,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The receiving profile disagrees with its correct source. Verify the linked records, inspect how the incoming field is mapped, and check whether the applicable import or update occurred and succeeded.</p>
-<p>Those checks distinguish gaps without assuming which caused the discrepancy. Ownership tells you where the value should come from, not whether the latest value arrived.</p>
-<p>Changing correct HR information would introduce another error. Investigate the boundary between the source and its intended representation.</p>
+<p>The approved Sales value is already in Workday. The problem we can see is that the receiving Okta profile says Finance. Changing the correct HR value would add an error rather than explain that mismatch.</p>
+<p>Follow the intended route into Okta. Confirm the linked records, inspect how the incoming department is mapped, and look for the relevant import or update result. Did it use the expected source value, and what did the receiving profile hold afterward?</p>
+<p>Those checks can distinguish a mapping issue from an update that did not complete or another event affecting the value. The question does not establish which explanation is true. Ownership tells us where to start; the operation evidence helps explain what happened.</p>
 </div>
 </details>
 
@@ -494,9 +494,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The sponsor makes a business decision, not a software-source contribution through a connected integration. Their approval does not itself grant administrative permissions.</p>
-<p>The authorized administrator maintains the approved information in the Okta-managed record.</p>
-<p>Keep three roles distinct: who approves the information, who may perform the maintenance, and which system controls the field. That makes the process clear without inventing a technical association or permission.</p>
+<p>No. Priya's sponsor supplies the business approval: this is the department information that should be recorded. The sponsor is not another software integration sending profile data to Okta.</p>
+<p>The authorized administrator performs the approved maintenance in Priya's Okta-managed profile. Approval and permission to edit are separate. The scenario does not grant the sponsor an administrator role.</p>
+<p>You can explain the process in three parts: who approves the information, who may record it, and which system controls the field. Keeping those parts separate makes Okta maintenance understandable without inventing another technical source.</p>
 </div>
 </details>
 
@@ -642,9 +642,9 @@ nav_order: 4
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It is a possible explanation, not a supplied finding. The two visible values do not reconstruct which operations occurred between them.</p>
-<p>Inspect the person's associations, the field's owner, and the relevant update timing and events before repeating the edit. Configuration explains the intended source; operation evidence explains actual writes.</p>
-<p>Keep the hypothesis useful by naming the evidence that would support it. A likely story is not yet a verified cause.</p>
+<p>Not yet. We know the administrator saw one value after the edit and an older value later. That does not identify the operation that changed it between those observations.</p>
+<p>A source update replacing the local edit is one possibility. To support that explanation, inspect the user's source associations, the field's owner, and the relevant update records and times. The configuration tells us who is meant to supply the value; the operation evidence helps show who actually wrote it.</p>
+<p>Repeating the edit before that check may repeat the symptom without explaining it. Keep the overwrite as a hypothesis until the evidence connects an actual write to the value that returned.</p>
 </div>
 </details>
 

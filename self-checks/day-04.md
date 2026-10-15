@@ -10,15 +10,15 @@ Compare the reasoning, not exact wording. Return to the [exercises](../exercises
 
 ## 1. Apply the order to a person
 
-Workday is Maya's effective profile source because both associations apply and Workday has higher priority. Priya is Okta-managed in the supplied configuration because neither external source applies.
+For Maya, we have two checked links: one to Workday and one to AD. The priority list is relevant because both sources apply, and Workday comes first. That explains her effective profile source.
 
-Check whether your explanation follows the associations before the priority list. The claim about Priya skips source applicability. An integration's presence and priority do not establish her association with it.
+For Priya, those external links are absent and the supplied configuration says she is Okta-managed. There is no Workday association for the ranking to select. The missing step in the claim is checking whether Workday actually applies to her.
 
 Revisit [First ask which sources apply to this person](../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person) if you applied the list to everyone without checking their links.
 
 ## 2. Separate profile and attribute authority
 
-The difference alone is not proof of an error. Maya's work email has an explicit AD source, so the AD value is expected in Okta under the stated configuration.
+For this field, follow the specific AD designation rather than Maya's usual Workday profile source. Okta contains the address supplied by the chosen email source, so the different Workday address alone does not show that Okta is wrong.
 
 Check the approved address requirement, the correct linked AD account, the field's source configuration, and the relevant mapping and update evidence. A designated source can itself contain a business error; authority is not proof that every value is correct.
 
@@ -44,7 +44,7 @@ Revisit [Why Priya can be maintained in Okta](../lessons/day-04-sources-and-owne
 
 ## 5. Challenge a fallback assumption
 
-First, omission from an excerpt does not establish that the source field is empty. Second, even a confirmed empty value does not by itself establish automatic selection of AD's value.
+There are two jumps in that conclusion. First, the excerpt may simply leave department out; we have not yet seen an empty source field. Second, even if the field is empty, that does not tell us that AD supplies a replacement. A missing input and a change of source are different findings.
 
 Obtain the actual source value, the applicable association and attribute-sourcing configuration, and the mapping/update behavior for the missing-value condition. Also check the observed destination and operation result. No fallback rule was supplied in this example.
 
@@ -73,7 +73,7 @@ A concise handoff could say: “Maya's Workday department and Okta user profile 
 
 Neither finding is supplied by the initial packet. Other evidence requests are acceptable if you explain what competing explanations they distinguish. A success response would still need comparison with target state, sequence, and possible later writes, as Day 3 shows.
 
-Revisit Day 3's **A preview is a calculation, not delivery evidence** for the data boundary; Day 4's [Then check the particular attribute](../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute) for authority; or Day 2's **Match the evidence to the right attempt** if you treated the password result as an account-update result.
+Revisit Day 3's [A preview is a calculation, not delivery evidence](../lessons/day-03-profiles-and-mappings.md#a-preview-is-a-calculation-not-delivery-evidence) for the data boundary; Day 4's [Then check the particular attribute](../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute) for authority; or Day 2's [Match the evidence to the right attempt](../lessons/day-02-requests-and-evidence.md#match-the-evidence-to-the-right-attempt) if you treated the password result as an account-update result.
 
 ## Ready to continue
 

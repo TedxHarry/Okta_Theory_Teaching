@@ -10,13 +10,13 @@ When two systems disagree about a person, the first question is who owns the fie
 
 ## The concepts to keep with you
 
-**Profile source.** This is the system responsible for a user's sourced profile information. A user has one effective profile source, although particular attributes can have separately designated sources.
+**Profile source.** This is the system responsible for a user's sourced profile information. The effective profile source is the source currently selected for that user. A user has one at a time, although particular attributes can have separately designated sources.
 
 **Source priority.** When a user has multiple applicable source associations, their order helps determine the effective profile source. Having Workday configured in the organization does not make it the source for every user. Priority is also not an automatic emergency fallback when a source becomes unavailable.
 
 **Attribute-level sourcing.** A particular field can have a different owner from the broader profile. At Northbridge, Workday owns department and worker type for its employees, while AD supplies work email for the relevant AD-linked employees. This needs an intentional mapping design so another outbound flow does not compete for the same field.
 
-**Scope and association.** Scope determines which records enter an integration's processing. Matching and association determine which records are linked to an Okta user. These relationships make the source rules applicable to that person.
+**Scope and association.** Scope selects which records enter processing. Matching determines whether an incoming record belongs to an Okta user; an association is the resulting link to the record in that source integration. These relationships make the source rules applicable to that person.
 
 ## Remember Northbridge's actual arrangement
 

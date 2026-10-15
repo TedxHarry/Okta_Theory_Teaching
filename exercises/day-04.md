@@ -12,7 +12,7 @@ For each person, first identify the applicable source associations, then the eff
 
 ## 1. Apply the order to a person
 
-Workday is first and AD second. Maya is associated with both. Priya is associated with neither and is maintained in Okta.
+The configured external profile-source order is Workday first and Active Directory (AD) second. Maya has a verified source association with both. Priya has neither association and is confirmed Okta-managed.
 
 Who is the effective profile source for each? What is missing from the claim “Workday is first, so Workday owns Priya”?
 

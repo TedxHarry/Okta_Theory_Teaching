@@ -6,7 +6,7 @@ nav_order: 4
 
 # Day 4: Sources, priority, and ownership
 
-Maya Rao is still a Sales employee at Northbridge Services. Workday says Sales, but an AD record says Finance. Priya Shah is a Sales contractor whose department is maintained in Okta after her sponsor approves it.
+Maya Rao is a Sales employee at Northbridge Services. Workday, the HR system, says Sales, but Active Directory (**AD**), the company's directory, says Finance. Priya Shah is a Sales contractor whose department is maintained in Okta after her sponsor, the employee confirming her business need, approves it.
 
 Alex receives two questions:
 
@@ -22,12 +22,14 @@ Your goal is to explain why Maya and Priya can follow different maintenance proc
 
 Day 3 followed a value through profiles and mappings. Now imagine two connected systems supply different departments for Maya. A rule that copies each value cannot, by itself, tell Alex which department the company intends to maintain. A mapping describes where a value goes and how it changes format; ownership identifies which system controls it.
 
-A **profile source** is the system designated to control a user's profile. Older material may call this a profile master. A user has one effective profile source at a time, although individual attributes can have separately designated sources. Okta's [profile sourcing documentation](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-profile-sourcing.htm) makes this distinction important when several sources are connected.
+A **profile source** is the system designated to control a user's profile. Older material may call this a profile master. A user has one **effective profile source** at a time: the source currently selected to control that user's profile. Individual attributes can have separately designated sources. Okta's [profile sourcing documentation](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-profile-sourcing.htm) makes this distinction important when several sources are connected.
 
 Think of two questions:
 
 - Who normally controls this person's profile?
 - Does this particular attribute follow that source, or have an explicit source of its own?
+
+For example, 'Workday controls Maya's profile' gives us the usual maintenance route. 'AD controls her work email' gives us a specific exception. We need both facts before choosing where to investigate an email correction.
 
 Those answers can lead to different actions. An employee department correction may belong in HR, while a field explicitly controlled by AD follows its directory maintenance process. Before editing either, Alex checks the approved business value and the actual evidence. The source decision tells him where responsibility sits; it does not prove an update worked.
 
@@ -63,9 +65,11 @@ The list tells Alex the configured order, but it does not yet tell him which sou
 
 ## First ask which sources apply to this person
 
-Consider an employee record arriving from Workday. Bringing that record or its changes into Okta for processing is an **import**. Okta must also determine whether the incoming record represents a user it already knows; that decision is **matching**. The resulting link between an Okta user and their record in a source integration is a **source association**. These are different parts of the process: information arrives, its relationship to an Okta user is determined, and the link can be inspected. Similar names alone do not establish that the correct records are linked. Detailed matching rules come later; today, use the association evidence supplied.
+Consider an employee record arriving from Workday. Bringing that record or its changes into Okta for processing is an **import**. Okta must also determine whether it represents a user already known there; that decision is **matching**. The resulting link between the Okta user and the record in that source integration is a **source association**.
 
-**Import scope** is the set of records the integration is configured to include. Selecting employee records for import does not mean every contractor or administrative identity is included too. Scope determines which records enter processing; matching determines their proposed relationships with Okta users.
+For Maya, the association lets Alex follow her Okta user to the Workday record linked to it. Finding a Workday record with a familiar name is not enough to establish that link. Information arriving, the matching decision, and the resulting association are separate things to check. Detailed matching rules come later; use the checked associations in the next table.
+
+**Import scope** is the set of records the integration is configured to include. Think of choosing which records go into the incoming batch. Matching then asks whether an included record belongs to an existing Okta user. Selecting employees for import does not establish that every contractor or administrative identity is included too.
 
 For the following fictional evidence, the associations have been checked:
 
@@ -76,7 +80,7 @@ For the following fictional evidence, the associations have been checked:
 | Priya, contractor | None | None | Okta |
 | Alex's administrative identity | None | None | Okta |
 
-Read Maya's row before the priority list: both associations are present. Of those applicable sources, Workday has higher priority, so it is her effective profile source. Then read Priya's row: neither external association is present, and her checked profile source is Okta. The same priority list therefore leads to different answers for these two people.
+Start with Maya's row: both associations are present. Now use the priority list to choose between those applicable sources; Workday comes first, so it controls her profile. For Priya, neither external association is present, and the checked configuration says her source is Okta. Workday's position on the list does not create a Workday link for her.
 
 For an investigation, read the association evidence before applying the priority list. Do not infer an association from a department, a contractor label, or the fact that a connector is enabled.
 
@@ -98,7 +102,7 @@ Think of Maya's profile source as the usual owner and her work-email setting as 
 
 The field's source setting explains the mechanism. **Inherit from profile source** means the field follows the user's effective profile source. **Inherit from Okta** designates Okta for the field. **Override profile source** designates another source for that field. These are ownership choices, not mapping formulas. See [Okta's attribute source definitions](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-define-attribute-profile-source.htm).
 
-Apply inheritance to each person. Maya's profile source is Workday, so her department follows Workday. Priya's profile source is Okta, so her department follows approved Okta maintenance. The same inherited field setting supports both processes. It is not globally pinned to Workday for every user, and the explicit AD work-email exception remains a separate decision.
+Read **inherit from profile source** as 'use the profile source selected for this user.' For Maya, that means Workday supplies department. For Priya, it means approved Okta maintenance supplies department. The setting is the same; the person-level source is different. It does not mean 'use Workday for everybody,' and Maya's explicit AD work-email setting remains a separate exception.
 
 Now follow the possible write back toward AD. If AD controls email but a competing Okta-to-AD mapping writes an older email over it, the systems can undo the intended maintenance. Northbridge avoids that competing write for the AD-owned field. Arrows in both directions describe different supported responsibilities; they do not authorize both systems to overwrite the same attribute.
 
@@ -144,7 +148,7 @@ This changes the next investigation: the controlling source is correct, but the 
 
 If HR itself had the wrong approved value, the correction should follow the HR maintenance process. If HR is correct but Okta is stale, changing HR to compensate would damage the authoritative record.
 
-A direct Okta edit is not a durable general solution for an externally controlled attribute. Editability depends on the field's configuration, and a later source update may replace a locally changed value. Being an administrator does not settle which business system should own it.
+Changing the visible Okta value can be tempting, but it does not explain why it disagrees with the expected source value. The field's configuration may prevent that edit; if it permits one, a later source update may replace it. A lasting correction needs to address the demonstrated gap in the intended maintenance path. Being an administrator does not settle which business system should own it.
 
 ## Why Priya can be maintained in Okta
 
