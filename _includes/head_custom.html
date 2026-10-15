@@ -182,22 +182,39 @@
 </script>
 
 <style>
-/* Question-bank reading distinction */
-.qb-question, .qb-question strong { color: #173f78; }
-.qb-question { font-weight: 600; }
-.qb-explanation, .qb-explanation p, .qb-explanation strong { color: #245946; }
-.qb-explanation { margin-bottom: 1.4rem; }
+/* Practice-bank reading hierarchy */
+.main-content:has(.qb-question) { max-width: 780px; }
+.main-content:has(.qb-question) h1 { color: #142b49; }
+.main-content:has(.qb-question) h2 {
+  color: #17615e; font-size: 1.4rem; line-height: 1.4;
+  margin-top: 2.5rem; margin-bottom: 1.4rem;
+}
+.main-content:has(.qb-question) h3 {
+  color: #142b49; font-size: 1.15rem; line-height: 1.45;
+  margin-top: 1.8rem; margin-bottom: .65rem;
+}
+.main-content .qb-question { color: #29343e; font-weight: 400; line-height: 1.8; }
+.main-content .qb-question strong { color: #1f4b7a; font-weight: 700; }
+.main-content .qb-answer {
+  border-bottom: 1px solid #d8e1df; padding: .7rem 0 1.2rem;
+  margin: 0 0 .5rem;
+}
+.main-content .qb-answer > summary { color: #1f4b7a; font-weight: 600; cursor: pointer; line-height: 1.6; }
+.main-content .qb-answer[open] > summary { margin-bottom: 1rem; }
+.main-content .qb-answer > summary:focus-visible { outline: 2px solid #1f4b7a; outline-offset: 4px; }
+.main-content .qb-explanation {
+  background: #f2f8f5; border-left: 3px solid #34735d;
+  padding: 1rem 1.25rem; margin: .9rem 0 .25rem;
+}
+.main-content .qb-explanation, .main-content .qb-explanation p { color: #29343e; font-weight: 400; line-height: 1.8; }
+.main-content .qb-explanation strong { color: #24624e; font-weight: 700; }
+.main-content .qb-explanation p:first-child { margin-top: 0; }
+.main-content .qb-explanation p:last-child { margin-bottom: 0; }
 .main-content .qb-question code, .main-content .qb-explanation code {
   white-space: normal;
   overflow-wrap: anywhere;
 }
-</style>
-
-<style>
-.qb-answer { border-bottom: 1px solid #d8e1df; margin: 0; padding: 0.7rem 0; }
-.qb-answer > summary { color: #173f78; font-weight: 600; cursor: pointer; }
-.qb-answer[open] > summary { margin-bottom: 1rem; }
-.qb-answer > summary:focus-visible { outline: 2px solid #173f78; outline-offset: 4px; }
+@media(max-width: 480px) { .main-content .qb-explanation { padding: .85rem .9rem; } }
 </style>
 
 <script>
