@@ -21,9 +21,9 @@ The query value is information sent with the request. It does not prove the serv
 
 ## 2. Follow the redirect
 
-The browser is directed to request the location supplied by the Expense response. The next destination is the identity service's sign-in page.
+Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in `Location`; Expense is not making that next browser request on Maya's behalf.
 
-This establishes a redirect instruction, not completed authentication or target account creation. The next request and response are separate evidence.
+The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Maya authenticated or an account was created, we would need evidence of those separate actions.
 
 A provisioning request instead asks the target for an account-management operation. It may be sent directly by the configured integration without using the user's browser. A method such as POST does not, by itself, distinguish these purposes.
 
@@ -31,7 +31,9 @@ A provisioning request instead asks the target for an account-management operati
 
 ## 3. A successful page request
 
-The sign-in page request succeeded and returned the form. Authentication has not been established because the user has not submitted the form or completed the required interaction.
+The server did what this request asked: it returned a sign-in form. Maya has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.
+
+Here, `200 OK` describes the page request. We would look for the later authentication result before saying Maya successfully signed in.
 
 HTTPS protects communication in transit. It does not grant authorization, create an account, or establish that sign-in succeeded.
 
@@ -39,7 +41,7 @@ HTTPS protects communication in transit. It does not grant authorization, create
 
 ## 4. An application refusal
 
-The application refused the checked request and reported that it could not accept the sign-in information. That is a demonstrated failure boundary, not a complete explanation of its cause.
+We know where the problem became visible: the application refused this request and said it could not accept the sign-in information. We do not yet know why. Finding where a failure is reported and finding what caused it are different parts of the investigation.
 
 An incorrect identity message is a possible explanation. A wrong password or missing role is not established by the status code either. Do not choose a correction from those possibilities alone.
 
@@ -49,9 +51,9 @@ Request the detailed application rejection evidence and the relevant sign-in exc
 
 ## 5. Cookie, session, and account
 
-A cookie is browser-held data, not the account itself. Removing it can affect how that browser presents session information to the website; it does not delete the application's account record.
+Daniel removed something stored in his browser. His Expense account is a separate record kept by the application. Deleting the cookie does not send an instruction to delete that account.
 
-Its continued presence also does not prove a valid session. The server may no longer accept the associated state. Not every cookie is a session cookie.
+If Expense used the cookie to recognize his session, removing it can affect that browser's next visit. Keeping it is no guarantee either: the browser can still hold a value after the service stops accepting the associated session. The service's response tells us more than the stored value alone. Not every cookie is used for sign-in.
 
 An answer distinguishing the three concepts is sufficient. You do not need detailed session expiry or policy mechanics here.
 

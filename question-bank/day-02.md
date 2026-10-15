@@ -100,9 +100,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The scheme is https, telling the browser how to communicate. The host is expenses.northbridge.example, naming the destination. The path is /start, identifying the requested resource there. The query parameter is view with value home, supplying additional information.</p>
-<p>Read the pieces as directions rather than a completed result. They describe what the browser is asking and where it is asking it.</p>
-<p>The server's reply is still needed to establish how that request was handled.</p>
+<p>Start at the left. The scheme is https: the browser will use an encrypted HTTP connection. Next comes expenses.northbridge.example, the host it will contact. The /start path names what it requests at that host. After the question mark, view=home supplies a query parameter named view with the value home.</p>
+<p>You can read the address aloud as, 'Contact this host using HTTPS, request /start, and send view set to home.' That describes the request without needing to memorize the whole address.</p>
+<p>Now wait for the reply. Sending directions to a server does not tell us whether it returned the page Maya expected or accepted her sign-in.</p>
 </div>
 </details>
 
@@ -214,9 +214,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Headers carry information about the message. The body carries content such as returned page data or submitted form values.</p>
-<p>For the redirect, Location gives the next address. In a refusal, the body might contain a detailed explanation needed to understand the result.</p>
-<p>You do not need to memorize every field before investigating. Read the parts that answer what was requested and what the receiver reported, keeping each value attached to its role.</p>
+<p>Think about the reply in two parts. The headers describe the message or supply instructions. The body carries its content, such as the page the browser displays.</p>
+<p>In this redirect example, the Location header says where the browser should go next. In the other reply, the page content is in the body. A refusal could also include explanatory text there, so the body can help us understand what happened.</p>
+<p>Neither part replaces the other. Read the relevant headers and content beside the request they answer, rather than trying to infer the whole result from a single field.</p>
 </div>
 </details>
 
@@ -264,9 +264,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The browser sends it. Expense supplies the direction in its reply, and the browser follows that direction by requesting the new destination.</p>
-<p>Follow the participants step by step: browser to Expense, Expense back to browser, then browser to the identity service.</p>
-<p>That sequence is different from a backend account-management request sent directly between systems. Naming the sender on each step keeps a sign-in journey from being mistaken for an account update.</p>
+<p>The browser makes the next request. Expense replies to it with a direction: 'Visit the identity service at this address.' The browser follows that direction.</p>
+<p>Trace three messages: the browser asks Expense, Expense replies to the browser, and the browser asks the identity service. Keeping the browser in the middle helps explain why Maya sees the destination change.</p>
+<p>A separate account-management connection could send a request directly between systems. That is different work. Following this redirect does not show that either system created or updated Maya's account.</p>
 </div>
 </details>
 
@@ -314,9 +314,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Loading the form succeeded. The 200 response concerns that page request, not an authentication interaction that has not occurred.</p>
-<p>Authentication means establishing evidence about who is signing in. Maya still needs to complete the applicable proof, and the relevant system must accept it.</p>
-<p>Keep the task beside the status. A successful reply delivering a form is not a universal statement that the user is authenticated or can already use the business application.</p>
+<p>The form loaded successfully. Maya has not completed authentication in the supplied example.</p>
+<p>Ask what the server was asked to do: return a sign-in page. The 200 response reports success for that request. Returning a form that asks for identity proof is different from checking the proof Maya later provides.</p>
+<p>To say she authenticated, look for the result of that later interaction. The useful reading is 'the sign-in form loaded,' rather than 'every part of sign-in and application access worked.'</p>
 </div>
 </details>
 
@@ -362,9 +362,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It locates where failure was observed, not necessarily where the cause began. The application might reject information produced earlier, or its own configuration might disagree with that information.</p>
-<p>Neither explanation is established here. Compare the relevant exchange with the application's requirements and detailed rejection evidence.</p>
-<p>The boundary is useful progress without being a complete diagnosis. Keep it clear while requesting the evidence needed to locate the actual defect.</p>
+<p>It tells us where the failure became visible. It does not yet tell us where the cause began.</p>
+<p>The application may have received information it could not accept, or its own checking configuration may disagree with that information. Both are possibilities here. A rejection alone does not choose between them.</p>
+<p>Ask for the application's detailed rejection and the corresponding sign-in information for this attempt, then compare them with its requirements. That turns 'the app showed an error' into a question we can investigate without blaming a system before the evidence supports it.</p>
 </div>
 </details>
 
@@ -380,9 +380,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Braces group fields into an object. Square brackets contain a list. Actor is an object with displayName Maya Rao. Target is a list containing an object with displayName Expense.</p>
-<p>Read the nesting as organized information, not code to memorize. The structure tells you which value belongs to which field.</p>
-<p>An event records an occurrence, so the next investigation needs its action, outcome, identifiers, and context. Structure helps locate those facts but does not supply omitted results.</p>
+<p>Start with actor. Its value is inside braces, so it is an object: a group of related named details. Inside it, displayName has the value Maya Rao.</p>
+<p>Now move to target. The square brackets mean it holds a list. This list contains one object, and that object's displayName is Expense. The same field name appears twice, but its position tells us whether it describes the actor or a target.</p>
+<p>You can read this as, 'The actor shown is Maya Rao, and the target shown is Expense.' The excerpt does not include an action or outcome, so we cannot add 'sign-in succeeded' to that sentence. Reading the structure helps us find information; it does not fill in information that is missing.</p>
 </div>
 </details>
 
@@ -510,9 +510,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Establish the relationship first. The same person can try the same application several times, and similar clock displays can describe different moments when time zones differ.</p>
-<p>Compare the actual timestamps, zones, available identifiers, and sequence. Correlation means connecting records belonging to the same activity.</p>
-<p>It does not mean selecting entries that look alike. A supported connection lets each result contribute without borrowing success or failure from another attempt.</p>
+<p>No. Maya may have tried Expense more than once. Two familiar names and similar clock displays do not tell us which attempt each record describes.</p>
+<p>Check the time zones as well as the clock times. UTC is a common reference time; UTC+02:00 means two hours ahead of it. For example, 09:00 UTC and 09:00 UTC+02:00 are different moments even though both displays say 09:00. Then compare the available attempt or request identifiers and the sequence of events.</p>
+<p>Correlation means establishing that these records belong to the same activity. If the available evidence does not establish that connection, keep it open. We should not borrow a success from another attempt to explain the one that failed.</p>
 </div>
 </details>
 
@@ -576,9 +576,9 @@ nav_order: 2
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The account is the application's record representing Daniel. The session concerns his established interaction that the service can recognize. The cookie is browser-held data sent with matching requests and can help identify that interaction.</p>
-<p>They are related but not interchangeable. The browser holds information while the application maintains the account and decides whether it accepts the session.</p>
-<p>Name the object being checked. That prevents a change in browser storage from being described as a change to the whole user account.</p>
+<p>Daniel's account is the application's record about him. It can exist before he opens the website. After accepted sign-in, the session lets Expense recognize his ongoing interaction across requests. The cookie is data kept by his browser that can help Expense recognize those requests.</p>
+<p>Imagine he opens another page in Expense during that visit. His browser can send the cookie with a matching request, and Expense checks the associated session. The browser-held value helps connect the request to the interaction; it is not Daniel's account record.</p>
+<p>That distinction explains why deleting a cookie does not delete the account. It also explains why finding a cookie in the browser does not prove Expense still accepts the session. Check the object and result you actually want to know about.</p>
 </div>
 </details>
 

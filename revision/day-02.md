@@ -14,13 +14,13 @@ When someone says “Okta worked, but the app failed,” slow the story down. Wh
 
 **URL.** The scheme names the communication method, such as HTTPS; the host names the destination; the path identifies a resource or operation; and the query carries parameters after a question mark. HTTPS protects communication in transit. It does not prove that the user is entitled to access the destination.
 
-**HTTP methods and status codes.** `GET` generally retrieves a resource; `POST` submits information for processing. Read the endpoint and body to understand the actual operation. A `200` response can simply deliver a sign-in form. A `302` with a `Location` header directs the browser elsewhere. A `403` tells you the request was refused, but you still need evidence of the reason.
+**HTTP methods and status codes.** `GET` generally retrieves a resource; `POST` submits information for processing. Read the destination and message content to understand the actual operation. An **endpoint** is an address for a particular operation. A `200` response can simply deliver a sign-in form. A `302` with a `Location` header directs the browser elsewhere. A `403` tells you the request was refused, but you still need evidence of the reason.
 
 **JSON and log fields.** JSON organizes data into named values, objects, and lists. Read a field in its context: an event's `outcome.result` describes that event, not every later step. The actor, target, event type, and time help establish what happened.
 
 **Correlation.** This means connecting records that belong to the same attempt. Compare the person, application instance, timestamps and time zones, and relevant identifiers. Two records mentioning Maya are not automatically part of the same sign-in.
 
-**Cookies and sessions.** A cookie is data the browser stores and sends according to its rules. A session represents an ongoing interaction recognized by a system. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.
+**Cookies and sessions.** A cookie is data the browser stores and sends according to its rules. A session lets a system recognize an ongoing interaction across requests, such as Maya moving between pages after signing in. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.
 
 ## Follow Maya's evidence
 

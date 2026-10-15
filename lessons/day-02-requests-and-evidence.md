@@ -10,7 +10,7 @@ Maya opens Northbridge Expense, the application she uses for expenses. Her brows
 
 > We could not accept the sign-in information. Contact support.
 
-Alex finds an Okta event whose outcome says `SUCCESS`.
+Alex finds an Okta **event**, a recorded occurrence such as a sign-in action, whose outcome says `SUCCESS`.
 
 Should he tell Maya that everything worked?
 
@@ -34,7 +34,7 @@ flowchart LR
 
 Follow the diagram in both directions: the browser sends the request, and the server sends the response. This describes one exchange. A page can involve many exchanges: loading it, submitting a form, and retrieving its data need not be the same request. Alex therefore avoids treating everything Maya sees on the screen as the result of one message.
 
-**HTTP**, short for Hypertext Transfer Protocol, provides rules for these web messages. **HTTPS** is HTTP over an encrypted connection. Encryption protects the communication in transit; it does not prove that the application granted access or that its business operation succeeded.
+**HTTP**, short for Hypertext Transfer Protocol, provides rules for these web messages. A **protocol** is an agreed set of communication rules, so the sender and receiver can understand how a message is organized. **HTTPS** is HTTP over an encrypted connection. Encryption protects the communication in transit; it does not prove that the application granted access or that its business operation succeeded.
 
 For each message, ask three questions:
 
@@ -52,7 +52,7 @@ Here is a fictional address Maya opens. All addresses in this lesson use reserve
 https://expenses.northbridge.example/start?view=home
 ```
 
-The address is a **URL**. Read it as instructions for contacting a destination: use this communication scheme, contact this host, request this path, and include this query information. The table separates those instructions so Alex can identify which system was asked to do what.
+The address is a **URL**, the web address the browser uses. Read it in pieces: how to communicate, which host to contact, what to request there, and what extra information to send. The table separates those instructions so Alex can identify which system was asked to do what.
 
 | Part | Meaning in this example |
 |---|---|
@@ -76,13 +76,13 @@ Two common examples are:
 
 The method alone does not tell you the business operation. A POST could submit sign-in information or ask an application to create an account. Read the destination and the request's purpose before deciding which flow it belongs to.
 
-Requests and responses can also contain **headers**, which carry message information, and a **body**, which carries content such as form values or returned data. You do not need every header to understand the first example. One will matter for the redirect: `Location`.
+Requests and responses can also contain **headers**, named fields that describe the message, and a **body**, its content. In a reply containing a page, the page content goes in the body. A header can instead give an instruction about where the browser should go next. You do not need every header to understand the first example. One will matter for the redirect: `Location`.
 
 ## A response can send the browser elsewhere
 
 Northbridge Expense needs Maya to use the configured sign-in connection. Rather than immediately returning her expense page, it tells her browser to visit the identity service. Maya does not have to type the second address herself; her browser can follow the instruction.
 
-This is a **redirect**: the response tells the browser where to go next. The browser then makes another request to that destination.
+This is a [**redirect**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections): the response tells the browser where to go next. The browser then makes another request to that destination.
 
 Look at this simplified training exchange. The paths are fictional explanatory routes, not documented Okta endpoints.
 
@@ -100,7 +100,7 @@ HTTP/1.1 302 Found
 Location: https://identity.northbridge.example/signin
 ```
 
-The `302` is a redirect status. The `Location` header supplies the next address.
+The `302` is a redirect status. Although its label says Found, it does not mean 'Maya's account was found' or 'sign-in worked.' Here, the `Location` header supplies the next address for the browser to request.
 
 Read the exchange as a short conversation between systems: “The browser asks Expense for its start page. Expense replies: go to this sign-in address.” `HTTP/1.1` identifies the protocol version used in the example; it is not an account state or the outcome of authentication.
 
@@ -133,9 +133,11 @@ You do not need to memorize the full status-code catalog. Start by identifying w
 
 ## Follow Maya's attempt one step at a time
 
-First picture a successful sign-in journey: Expense directs the browser to the identity service, and Maya completes the required checks. The configured sign-in flow then brings her browser back to Expense, where the application checks the information it receives before allowing her in. We will examine the exact messages in the federation lessons. This is an illustrative journey, not a statement that her present attempt succeeded.
+First picture a successful sign-in journey: Expense directs the browser to the identity service, and Maya completes the required checks. The configured sign-in flow then brings her browser back to Expense, where the application checks the information it receives before allowing her in. We will examine the exact messages in the later sign-in lessons. This is an illustrative journey, not a statement that her present attempt succeeded.
 
-The following is a synthetic training timeline. It shows selected observations, not every network request in a real integration. Sign-in messages and their validation will be examined in the federation lessons. For now, follow each sender, destination, and reported result.
+In this connected journey, **single sign-on (SSO)** lets Expense rely on the configured identity service for sign-in information. Expense still checks what it receives. The application's **sign-in return route** is the address where the browser comes back with information for that check; reaching it is not the same as reaching Maya's expense page.
+
+The following is a synthetic training timeline. It shows selected observations, not every network request in a real integration. For now, follow each sender, destination, and reported result.
 
 | Step | Observation | What is established? |
 |---|---|---|
@@ -207,13 +209,13 @@ Check the person, application instance, relevant attempt, and available identifi
 
 Do not assume Okta and the application automatically share one identifier. Connecting their observations may require request context, application-side references, and a consistent sequence. Detailed correlation belongs later; the habit starts now.
 
-Here, **correlation** simply means establishing which records belong to the same activity. Two records mentioning Maya and Expense could still describe two different attempts.
+Here, **correlation** means establishing which records belong to the same activity. Suppose Maya tries Expense at 10:05, sees an error, and retries at 10:07. A success recorded for the second attempt would not explain the first refusal. The person and application match, but we still need to connect the records to the attempt being investigated. This is a separate example, not an extra fact about her ticket.
 
 ## A remembered sign-in is not an account
 
-Maya returns to a website and is not immediately asked to sign in again. How can the website recognize an ongoing interaction when her browser sends a new request? It may use a previously established **session**: state associated with that interaction. The system can recognize the session without treating every page request as a completely new visit.
+Maya returns to a website and is not immediately asked to sign in again. How can the website recognize an ongoing interaction when her browser sends a new request? It may use a previously established **session**, a way to remember an ongoing interaction across requests. For example, after Maya signs in, the site may recognize her next page request as part of that same visit instead of asking her to start again.
 
-A **cookie** is a small piece of data a website can ask the browser to store and send back on matching requests. Imagine the website asks the browser to keep a value after establishing a session. On a later matching request, the browser sends that value back, helping the server associate the request with the session. A session cookie commonly supports this relationship. Not every cookie represents a sign-in session, and the cookie is not the account itself.
+A [**cookie**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies) is a small piece of data a website can ask the browser to store and send back on matching requests. Imagine the website asks the browser to keep a value after establishing a session. On a later matching request, the browser sends that value back, helping the server associate the request with the session. A session cookie commonly supports this relationship. Not every cookie represents a sign-in session, and the cookie is not the account itself.
 
 Keep these separate:
 
@@ -231,7 +233,7 @@ A redirect asks the browser to visit another address as part of a web flow.
 
 A provisioning request asks a target system to perform an account-management operation, such as creating or updating an account. Recall Day 1: preparing an account and signing in are separate responsibilities. Here, a configured integration can send the account request and receive the target's reply without Maya's browser carrying either message. Maya does not need to open the sign-in page for those systems to communicate.
 
-An **API** is an interface through which software can ask another system for information or an operation. Many web APIs use HTTP requests and responses. A browser opening a sign-in page and Okta sending an account-management request are both message exchanges, but they solve different problems.
+An **API**, short for application programming interface, is a defined way for software to ask another system for information or an operation. Think of an application offering supported requests such as 'read this account' or 'update this detail,' along with rules for sending them. Many web APIs use HTTP requests and responses. A browser opening a sign-in page and Okta sending an account-management request are both message exchanges, but they solve different problems.
 
 ```mermaid
 flowchart TD

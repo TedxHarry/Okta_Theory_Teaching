@@ -37,7 +37,7 @@ What succeeded? What has not been established? Would HTTPS on this request estab
 
 ## 4. An application refusal
 
-The application returns `403 Forbidden` to the sign-in return request. The message says: "We could not accept the sign-in information." No detailed rejection reason is supplied.
+The browser comes back to the application after visiting the identity service. The application returns `403 Forbidden` to that sign-in return request. The message says: "We could not accept the sign-in information." No detailed rejection reason is supplied.
 
 Can you conclude the user entered a wrong password, lacks an application role, or received an incorrect identity message? Explain the observation, the unknown cause, and the next evidence to request.
 
