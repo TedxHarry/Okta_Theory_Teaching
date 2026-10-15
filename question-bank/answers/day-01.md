@@ -16,7 +16,7 @@ nav_order: 1
 <p>These records represent the same person in different places. They do not create four different people, and finding one record does not establish what is stored in another.</p>
 <p>When investigating a problem, start by naming the system and record you checked. “Her Workday employment record exists” answers a different question from “her Salesforce account is ready.”</p>
 </div>
-<p><a href="../day-01.md#q01">Return to Q01</a> · <a href="../../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q01">Return to Q01</a> · <a href="../../lessons/day-01-people-identities-access.html#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>Maya's name and employee number help represent her identity. Her Salesforce account represents her in Salesforce and has its own state and permissions. Disabling it changes that application's account state, not the existence of Maya as a person.</p>
 <p>This is why an account investigation should name the system. A problem with one representation does not automatically mean every other record or access path changed.</p>
 </div>
-<p><a href="../day-01.md#q02">Return to Q02</a> · <a href="../../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q02">Return to Q02</a> · <a href="../../lessons/day-01-people-identities-access.html#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>Imagine a disabled account. It can still appear in a search while refusing access. Even an enabled account needs a successful sign-in and the permissions for Maya's particular work.</p>
 <p>Treat existence, state, and usable access as separate checks. That lets you describe progress accurately instead of asking one successful lookup to prove several outcomes.</p>
 </div>
-<p><a href="../day-01.md#q03">Return to Q03</a> · <a href="../../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q03">Return to Q03</a> · <a href="../../lessons/day-01-people-identities-access.html#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Next, establish whether Maya is approved to use Salesforce now and which owner or process manages that account state. A disabled account may need a justified correction, but the two labels alone do not explain why it was disabled.</p>
 <p>The goal is the appropriate state in each system. Changing a correct Okta record just to make the labels agree would not answer the Salesforce requirement.</p>
 </div>
-<p><a href="../day-01.md#q04">Return to Q04</a> · <a href="../../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q04">Return to Q04</a> · <a href="../../lessons/day-01-people-identities-access.html#maya-is-one-person-the-systems-hold-different-records">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>What matters is the approved value for each operation and reliable evidence that the records belong to Maya. Similar text alone does not establish that link, and different text alone does not disprove it.</p>
 <p>Before searching or changing an account, identify the intended system and its matching value. Do not substitute a familiar email address or employee number without checking how that system identifies its users.</p>
 </div>
-<p><a href="../day-01.md#q05">Return to Q05</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q05">Return to Q05</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>Establish the intended application environment, its approved user identifier, and evidence of who owns each candidate record. Those facts should support the relationship before a state or permission change is made.</p>
 <p>Choosing the first familiar-looking result could affect another person's account. The next useful step is to identify the right record, not to guess which result the ticket meant.</p>
 </div>
-<p><a href="../day-01.md#q06">Return to Q06</a> · <a href="../../lessons/day-01-people-identities-access.md#start-with-the-right-record">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q06">Return to Q06</a> · <a href="../../lessons/day-01-people-identities-access.html#start-with-the-right-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>The next check belongs in the intended production environment using the approved production identifier. If Okta is connected to Salesforce, verify that you are inspecting the integration for that same instance.</p>
 <p>“No match in test” is a useful scoped finding. Expanding it to “no Salesforce account exists” would discard the context needed to make the next search accurate.</p>
 </div>
-<p><a href="../day-01.md#q07">Return to Q07</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q07">Return to Q07</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>Storing the record does not complete every access outcome. An application assignment connects a user to an application, account management prepares the target account, authentication checks sign-in, and permissions govern actions.</p>
 <p>Those jobs can use directory data, but their results still need verification. A record being present is the starting point for following the relationships, not proof that every application works.</p>
 </div>
-<p><a href="../day-01.md#q08">Return to Q08</a> · <a href="../../lessons/day-01-people-identities-access.md#what-a-directory-does">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q08">Return to Q08</a> · <a href="../../lessons/day-01-people-identities-access.html#what-a-directory-does">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>This vocabulary helps you make a precise observation. “Her profile is wrong” leaves the affected field unclear. “Her Okta department is Sales” identifies the record, field, and observed value.</p>
 <p>That statement is easier to compare with another system and avoids changing unrelated information when only one detail needs attention.</p>
 </div>
-<p><a href="../day-01.md#q09">Return to Q09</a> · <a href="../../lessons/day-01-people-identities-access.md#what-a-directory-does">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q09">Return to Q09</a> · <a href="../../lessons/day-01-people-identities-access.html#what-a-directory-does">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>Its department might be correct, stale, or maintained through a different process. Those are possibilities, not findings supplied by this question.</p>
 <p>Compare the relevant records first. If a discrepancy appears, investigate how the information reaches the destination. A correct source is useful evidence, but it cannot provide a result from a record nobody has checked.</p>
 </div>
-<p><a href="../day-01.md#q10">Return to Q10</a> · <a href="../../lessons/day-01-people-identities-access.md#what-a-directory-does">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q10">Return to Q10</a> · <a href="../../lessons/day-01-people-identities-access.html#what-a-directory-does">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>These labels describe a particular direction, not a permanent identity for a product. Okta can receive data in one relationship and supply it in another.</p>
 <p>Name both sides before comparing results. That helps you investigate the correct boundary.</p>
 </div>
-<p><a href="../day-01.md#q11">Return to Q11</a> · <a href="../../lessons/day-01-people-identities-access.md#why-northbridge-uses-okta">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q11">Return to Q11</a> · <a href="../../lessons/day-01-people-identities-access.html#why-northbridge-uses-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Check Maya's current destination value and the relevant update evidence if it differs from the approved source. The integration's existence does not show that this particular change was processed.</p>
 <p>Keep two questions apart: how is information intended to move, and what happened to this update? The first locates the investigation; the second needs actual observations.</p>
 </div>
-<p><a href="../day-01.md#q12">Return to Q12</a> · <a href="../../lessons/day-01-people-identities-access.md#why-northbridge-uses-okta">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q12">Return to Q12</a> · <a href="../../lessons/day-01-people-identities-access.html#why-northbridge-uses-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>For Priya, follow her approved Okta-maintenance process and the records relevant to her request. Her sponsor's approval is a business decision, not another software integration.</p>
 <p>That approval also does not automatically authorize every application. Identify the person, applicable maintenance model, and particular access requirement rather than copying Maya's employee path.</p>
 </div>
-<p><a href="../day-01.md#q13">Return to Q13</a> · <a href="../../lessons/day-01-people-identities-access.md#why-northbridge-uses-okta">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q13">Return to Q13</a> · <a href="../../lessons/day-01-people-identities-access.html#why-northbridge-uses-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>Check whether the person is approved to perform that action and what permission the application actually grants. The refusal alone does not tell you whether a role is incorrectly missing or the restriction is intended.</p>
 <p>Sign-in success is useful because it locates the problem beyond entry. Recognizing a person does not automatically permit every action.</p>
 </div>
-<p><a href="../day-01.md#q14">Return to Q14</a> · <a href="../../lessons/day-01-people-identities-access.md#signing-in-and-having-permission-are-different">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q14">Return to Q14</a> · <a href="../../lessons/day-01-people-identities-access.html#signing-in-and-having-permission-are-different">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>This question establishes successful entry and a denied action. A password reset addresses sign-in credentials, not the permission needed for approval.</p>
 <p>Do not invent authority from the title or grant a broad role just to remove the denial. The appropriate correction depends on the approved capability and application evidence.</p>
 </div>
-<p><a href="../day-01.md#q15">Return to Q15</a> · <a href="../../lessons/day-01-people-identities-access.md#apply-the-distinction-to-daniel">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q15">Return to Q15</a> · <a href="../../lessons/day-01-people-identities-access.html#apply-the-distinction-to-daniel">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>For Maya, inspect the intended Salesforce assignment and target account, then the relevant sign-in result. For Daniel, establish the approval requirement and inspect his application permission and denial.</p>
 <p>Both are access complaints, but that phrase does not name one universal failure. Locate what worked and where the requested outcome remains unverified before choosing a correction.</p>
 </div>
-<p><a href="../day-01.md#q16">Return to Q16</a> · <a href="../../lessons/day-01-people-identities-access.md#apply-the-distinction-to-daniel">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q16">Return to Q16</a> · <a href="../../lessons/day-01-people-identities-access.html#apply-the-distinction-to-daniel">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>She may already have the intended account and need only an approved permission, or an account may still need preparation. The vague request does not choose between those conditions.</p>
 <p>A clear requirement supplies a test for success. It also keeps a configuration change from becoming an access decision nobody actually authorized.</p>
 </div>
-<p><a href="../day-01.md#q17">Return to Q17</a> · <a href="../../lessons/day-01-people-identities-access.md#start-with-the-right-record">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q17">Return to Q17</a> · <a href="../../lessons/day-01-people-identities-access.html#start-with-the-right-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>The application still validates the information it receives. A prepared account does not prove accepted sign-in, and sign-in setup does not prove account creation.</p>
 <p>Follow both questions separately: is the intended account ready, and did the application accept the actual sign-in?</p>
 </div>
-<p><a href="../day-01.md#q18">Return to Q18</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q18">Return to Q18</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>For a missing account, request the owner's preparation result and inspect the intended target record. Do not diagnose a failed automated provisioning operation when no such mechanism is supplied.</p>
 <p>Judge the arrangement against its requirement and results. The user needs the right account through the expected process and an accepted sign-in, even though those tasks use different mechanisms.</p>
 </div>
-<p><a href="../day-01.md#q19">Return to Q19</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q19">Return to Q19</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Check the relevant update response and the intended account's stored department. Those observations establish what was attempted and what the destination holds.</p>
 <p>The account may exist and even allow sign-in while the update remains incomplete. Each result belongs to its operation, so successful entry cannot substitute for evidence that the department change arrived.</p>
 </div>
-<p><a href="../day-01.md#q20">Return to Q20</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q20">Return to Q20</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>Deletion removes the record; disabling changes its state. Confirm the approved requirement and verify the actual destination result rather than assuming the two actions are equivalent.</p>
 <p>Account state also needs to be interpreted under the application's behavior. A removal request alone does not establish its completion or every access outcome.</p>
 </div>
-<p><a href="../day-01.md#q21">Return to Q21</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q21">Return to Q21</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>The actual experience depends on the application's connection, applicable requirements, and current context. Another authentication check can be appropriate even after an earlier successful sign-in.</p>
 <p>Explain the benefit without an unlimited guarantee: connected applications can use the established identity relationship, while each relevant interaction still has requirements and an outcome to verify.</p>
 </div>
-<p><a href="../day-01.md#q22">Return to Q22</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q22">Return to Q22</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>An assignment may initiate configured account-management work, but initiating and completing that work are different findings. Some designs also prepare accounts through a separate owner.</p>
 <p>Follow the actual process and inspect the intended Salesforce record. The Okta relationship answers the assignment question; it cannot supply a destination result that has not been observed.</p>
 </div>
-<p><a href="../day-01.md#q23">Return to Q23</a> · <a href="../../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q23">Return to Q23</a> · <a href="../../lessons/day-01-people-identities-access.html#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>Inspect the actual application relationship and relevant destination evidence. Maya could click the shortcut and still be refused by Salesforce.</p>
 <p>A visible interface element is useful context, not the complete access result. Name what the observation shows and keep the untested application outcomes separate.</p>
 </div>
-<p><a href="../day-01.md#q24">Return to Q24</a> · <a href="../../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q24">Return to Q24</a> · <a href="../../lessons/day-01-people-identities-access.html#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>Check Maya's actual assignment to the intended Salesforce integration. If it is absent, compare that finding with the approved requirement. If it is present, investigate the visible shortcut and reported application outcome separately.</p>
 <p>The missing tile is a symptom. It cannot answer the relationship question merely because it is the first thing Maya notices.</p>
 </div>
-<p><a href="../day-01.md#q25">Return to Q25</a> · <a href="../../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q25">Return to Q25</a> · <a href="../../lessons/day-01-people-identities-access.html#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>The expected process may continue from assignment, but expectation is not completion. Each claim must match an observation actually supplied.</p>
 <p>A useful update says the Okta state and assignment are confirmed while the target outcomes remain unverified. That describes real progress without turning two checked facts into five assumed successes.</p>
 </div>
-<p><a href="../day-01.md#q26">Return to Q26</a> · <a href="../../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q26">Return to Q26</a> · <a href="../../lessons/day-01-people-identities-access.html#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>Notice the difference between an unanswered question and an observed absence. They call for different next steps.</p>
 <p>Keep those categories in your notes: findings support conclusions, hypotheses guide distinguishing checks, and missing evidence identifies what to request. Mixing them can make an unjustified correction look necessary.</p>
 </div>
-<p><a href="../day-01.md#q27">Return to Q27</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q27">Return to Q27</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>An account might exist under another identifier or elsewhere, but neither possibility is confirmed. Obtain evidence of the intended record relationship before claiming more.</p>
 <p>The scoped result is still useful. It tells the next investigator exactly which expected match was not found. Narrow evidence can justify another check without proving an unlimited absence.</p>
 </div>
-<p><a href="../day-01.md#q28">Return to Q28</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q28">Return to Q28</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>To support a mismatch, find a record reliably shown to belong to Maya, establish its actual identifier, and compare it with the approved value for the intended relationship. A similar display name is not enough.</p>
 <p>The comparison could demonstrate a specific discrepancy. Until then, keep it as a hypothesis and request evidence that distinguishes alternatives.</p>
 </div>
-<p><a href="../day-01.md#q29">Return to Q29</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q29">Return to Q29</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>Second, identify how that Salesforce instance prepares accounts and request the relevant process result. Automated operations and a separate owner's manual preparation need different records.</p>
 <p>Then inspect the intended target account. These checks distinguish an absent assignment from a present relationship with unfinished account preparation, rather than asking vaguely for more logs.</p>
 </div>
-<p><a href="../day-01.md#q30">Return to Q30</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q30">Return to Q30</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>A password reset changes credentials without explaining the scoped no-match result or establishing account preparation. Follow the assignment and account-management evidence first.</p>
 <p>A later separate credential finding could call for another action. It is not supplied here. Choose a correction that follows the observed gap rather than use the same reset for every access complaint.</p>
 </div>
-<p><a href="../day-01.md#q31">Return to Q31</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q31">Return to Q31</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Creating another account could duplicate an existing record or bypass the approved process. First identify the correct relationship, account-management approach, and ownership evidence.</p>
 <p>Creation can become appropriate when the requirement and findings support it. The aim is the correct account outcome, not simply an additional record that makes one search succeed.</p>
 </div>
-<p><a href="../day-01.md#q32">Return to Q32</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q32">Return to Q32</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Ask why it was disabled and which owner or process can appropriately change it. Assignment and sign-in results may also need checks.</p>
 <p>Do not assume disabled means broken. It may reflect an intended decision. A second account would also address the wrong question when the correct existing record is already identified.</p>
 </div>
-<p><a href="../day-01.md#q33">Return to Q33</a> · <a href="../../lessons/day-01-people-identities-access.md#tell-mayas-story">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q33">Return to Q33</a> · <a href="../../lessons/day-01-people-identities-access.html#tell-mayas-story">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>It does not establish whether an account exists or is enabled in Salesforce. Check expected account handling, the resulting assignment, any operation it triggers, and the intended destination record.</p>
 <p>The unknown relationship has become a confirmed discrepancy. That makes the next action more specific while leaving the uninspected target outcome open.</p>
 </div>
-<p><a href="../day-01.md#q34">Return to Q34</a> · <a href="../../lessons/day-01-people-identities-access.md#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q34">Return to Q34</a> · <a href="../../lessons/day-01-people-identities-access.html#being-assigned-an-application-is-another-fact-to-check">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>Ask the responsible owner whether Maya's approved account request was received and completed, then inspect the intended Salesforce account. That follows the process actually used.</p>
 <p>Assignment is useful evidence but not the owner's preparation result. A precise update says the relationship is present and the manual target-account outcome remains unverified, instead of inventing a failed automation.</p>
 </div>
-<p><a href="../day-01.md#q35">Return to Q35</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q35">Return to Q35</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>Application sign-in and the permissions for her required work remain unverified. A correctly prepared account can still encounter another condition when the person uses it.</p>
 <p>Tell Maya the account preparation is confirmed and the next check concerns actual use. Keep the successful work without stretching it into a claim that every business capability is ready.</p>
 </div>
-<p><a href="../day-01.md#q36">Return to Q36</a> · <a href="../../lessons/day-01-people-identities-access.md#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q36">Return to Q36</a> · <a href="../../lessons/day-01-people-identities-access.html#sso-helps-with-sign-in-provisioning-manages-accounts">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>It does not establish unrelated capabilities, such as administrative changes or a restricted approval. Those would have their own requirements and permission evidence.</p>
 <p>A good closure states the successful task precisely. That is more useful than either refusing to recognize any progress or claiming unlimited access from one verified action.</p>
 </div>
-<p><a href="../day-01.md#q37">Return to Q37</a> · <a href="../../lessons/day-01-people-identities-access.md#start-with-the-right-record">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q37">Return to Q37</a> · <a href="../../lessons/day-01-people-identities-access.html#start-with-the-right-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>Those are connected responsibilities, not a mandatory account-creation order. The target might have been prepared earlier.</p>
 <p>Explain who does what and check each relevant record or operation. The same reasoning works with automated preparation or a separate application owner.</p>
 </div>
-<p><a href="../day-01.md#q38">Return to Q38</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q38">Return to Q38</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>Try: “Maya's checked Okta sign-in succeeded. No Salesforce account matched her approved identifier in the intended environment. Assignment and account-management history remain uninspected. Support will obtain those records and the relevant target-account evidence before proposing a correction.”</p>
 <p>That update leaves the case open for a concrete reason. It provides the next owner with findings and evidence requests rather than unsupported certainty.</p>
 </div>
-<p><a href="../day-01.md#q39">Return to Q39</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q39">Return to Q39</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>Then explain that changing the password would not answer those relationship and account questions.</p>
 <p>The update acknowledges her experience and gives a concrete next step, without claiming an unknown cause or a result nobody verified.</p>
 </div>
-<p><a href="../day-01.md#q40">Return to Q40</a> · <a href="../../lessons/day-01-people-identities-access.md#investigating-mayas-ticket">Revisit the lesson</a></p>
+<p><a href="../day-01.html#q40">Return to Q40</a> · <a href="../../lessons/day-01-people-identities-access.html#investigating-mayas-ticket">Revisit the lesson</a></p>
 </details>
 
 [All Day 1 questions](../day-01.md) · [Question bank](../index.md) · [Course home](../../index.md)

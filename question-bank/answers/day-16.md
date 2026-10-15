@@ -15,7 +15,7 @@ nav_order: 1
 <p>It identifies one relationship and a result you can predict. Membership can be checked against inputs and rule processing without changing several account and access boundaries at once.</p>
 <p>A small experiment is useful when its conclusion stays small. Correct membership teaches something concrete even though it does not establish account creation, application entry, or permissions. Start with the defined comparison, then add another relationship as a separate question.</p>
 </div>
-<p><a href="../day-16.md#q01">Return to Q01</a> · <a href="../../lessons/day-16-safe-practice-plan.md#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q01">Return to Q01</a> · <a href="../../lessons/day-16-safe-practice-plan.html#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -26,7 +26,7 @@ nav_order: 1
 <p>Only Casey meets both conditions. Morgan meets neither, Riley meets Finance only, and Taylor meets Employee only. AND requires both parts to be true.</p>
 <p>These are predicted results, not observed memberships. Actual testing still needs the intended fields, applicable user states, active rule, exclusions, and processing evidence. Write the expectation first so later results can be compared with the requirement instead of deciding what should happen after seeing the screen.</p>
 </div>
-<p><a href="../day-16.md#q02">Return to Q02</a> · <a href="../../lessons/day-16-safe-practice-plan.md#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q02">Return to Q02</a> · <a href="../../lessons/day-16-safe-practice-plan.html#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -37,7 +37,7 @@ nav_order: 1
 <p>Casey, Riley, and Taylor satisfy OR; Morgan does not. OR requires at least one condition, while AND requires both.</p>
 <p>Riley and Taylor expose the broader population because each meets just one part. Casey and Morgan have the same predictions under both expressions. This is a hypothetical comparison, not a direction to activate the wrong rule. It helps explain which profiles can reveal an error in the intended logic.</p>
 </div>
-<p><a href="../day-16.md#q03">Return to Q03</a> · <a href="../../lessons/day-16-safe-practice-plan.md#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q03">Return to Q03</a> · <a href="../../lessons/day-16-safe-practice-plan.html#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -48,7 +48,7 @@ nav_order: 1
 <p>Both results are predicted under AND and OR. Neither tests a profile that meets exactly one part of the expression.</p>
 <p>Riley tests Finance without Employee, and Taylor tests Employee without Finance. Their intended exclusions distinguish the approved condition from the broader mistake. Choose negative cases that challenge the boundary, not merely easy exclusions. A limited test can pass even when the population logic is wrong.</p>
 </div>
-<p><a href="../day-16.md#q04">Return to Q04</a> · <a href="../../lessons/day-16-safe-practice-plan.md#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q04">Return to Q04</a> · <a href="../../lessons/day-16-safe-practice-plan.html#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -59,7 +59,7 @@ nav_order: 1
 <p>Riley should fail the normal condition. Changing the classification would misrepresent the training requirement and remove a useful boundary case.</p>
 <p>If an exception exercise is wanted later, define its own approval, scope, owner, and end condition. Classification and access exceptions answer different questions. Test the agreed condition against the supplied person rather than changing the person until the rule produces the desired membership.</p>
 </div>
-<p><a href="../day-16.md#q05">Return to Q05</a> · <a href="../../lessons/day-16-safe-practice-plan.md#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q05">Return to Q05</a> · <a href="../../lessons/day-16-safe-practice-plan.html#begin-with-a-question-you-can-answer">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -70,7 +70,7 @@ nav_order: 1
 <p>Identify the training organization, application integration instance, and target environment if one is involved. Confirm who may change them and who can restore the prior state.</p>
 <p>A familiar tab or name is not environment evidence. The written plan can be completed without a tenant; execution needs the authorized training destination and synthetic identities. Naming those facts keeps the experiment's observations tied to the place where its actions are actually permitted.</p>
 </div>
-<p><a href="../day-16.md#q06">Return to Q06</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q06">Return to Q06</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -81,7 +81,7 @@ nav_order: 1
 <p>No. It tests the central-profile input and membership relationship using entered training data. It does not supply an HR source operation or import result.</p>
 <p>Label that boundary clearly. If the environment has an existing source connection, check field ownership and supported update behavior before editing sourced values. Success from one setup should not be described as verification of a different architecture that the experiment never exercised.</p>
 </div>
-<p><a href="../day-16.md#q07">Return to Q07</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q07">Return to Q07</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -92,7 +92,7 @@ nav_order: 1
 <p>The intended attributes must exist, contain the supplied values, and be the fields actually referenced by the rule. A field written in a plan is not evidence of its definition or data in the organization.</p>
 <p>Inspect the schema, central profiles, and rule references. Then a mismatch can be traced to its demonstrated boundary. Otherwise missing input or a wrong field reference might be mistaken for faulty comparison logic.</p>
 </div>
-<p><a href="../day-16.md#q08">Return to Q08</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q08">Return to Q08</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -103,7 +103,7 @@ nav_order: 1
 <p>An inactive profile can make absence misleading when the evaluation is scoped to Active users. Record state so the department and classification comparison is tested within the intended processing context.</p>
 <p>Still check rule state, exclusions, evaluation, and stored membership. Matching profile values alone do not establish the result. Holding the relevant conditions clear helps the learner isolate the comparison instead of diagnosing a logic defect from an unexplained absence.</p>
 </div>
-<p><a href="../day-16.md#q09">Return to Q09</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q09">Return to Q09</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -114,7 +114,7 @@ nav_order: 1
 <p>Check activation and the relevant evaluation. Saving the rule does not establish that the mechanism operated under its intended conditions.</p>
 <p>Keep expression, rule state, processing, and stored membership separate. No change after saving can reflect an inactive mechanism rather than a bad comparison. Only once the applicable execution conditions are established can the observed membership meaningfully test the condition.</p>
 </div>
-<p><a href="../day-16.md#q10">Return to Q10</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q10">Return to Q10</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -125,7 +125,7 @@ nav_order: 1
 <p>No. The written population and actual configuration scope are different. Review other profiles the condition could include and preview the planned cases before activation.</p>
 <p>The group has no application assignments here, keeping the outcome focused on membership. That does not make its evaluation scope four named users. Understand both the test cases and wider condition so observations and possible effects are interpreted within the actual organization.</p>
 </div>
-<p><a href="../day-16.md#q11">Return to Q11</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q11">Return to Q11</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>Record relevant profile values, group memberships, assignment sources, and target-account associations before the intended change. This is the baseline for comparison.</p>
 <p>An existing direct assignment could make an application available even if the new group did nothing. The starting state is evidence for explaining cause, not setup for its own sake. Keep it beside the later result so a pre-existing relationship is not credited to the new action.</p>
 </div>
-<p><a href="../day-16.md#q12">Return to Q12</a> · <a href="../../lessons/day-16-safe-practice-plan.md#define-the-environment-before-the-action">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q12">Return to Q12</a> · <a href="../../lessons/day-16-safe-practice-plan.html#define-the-environment-before-the-action">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -147,7 +147,7 @@ nav_order: 1
 <p>Record each profile's inputs, the intended Finance AND Employee condition, and the expected membership. Identify the rule-state and processing evidence needed to interpret actual results.</p>
 <p>That gives the experiment a clear question before the interface supplies an answer. Keep the action as planned until it occurs, and record real results afterward, including mismatches. Predictions should not quietly become success claims because they seem obvious on paper.</p>
 </div>
-<p><a href="../day-16.md#q13">Return to Q13</a> · <a href="../../lessons/day-16-safe-practice-plan.md#predict-before-observing">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q13">Return to Q13</a> · <a href="../../lessons/day-16-safe-practice-plan.html#predict-before-observing">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -158,7 +158,7 @@ nav_order: 1
 <p>Not yet. Establish that Morgan had the relevant opportunity to be evaluated under the intended rule and context. Absence could otherwise reflect a mechanism that never ran.</p>
 <p>Record the inputs, active state, applicable processing, and membership observation. Those findings make exclusion meaningful. A negative result needs evidence of the tested operation, not merely a screen that already looked unchanged.</p>
 </div>
-<p><a href="../day-16.md#q14">Return to Q14</a> · <a href="../../lessons/day-16-safe-practice-plan.md#predict-before-observing">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q14">Return to Q14</a> · <a href="../../lessons/day-16-safe-practice-plan.html#predict-before-observing">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -169,7 +169,7 @@ nav_order: 1
 <p>Simultaneous changes make it harder to explain which one produced the result. Preserve a clear before-and-after comparison around the intended input.</p>
 <p>State the changed training requirement, predict membership, change that input, and observe the relevant processing and membership. Add another relationship as its own question later. One changed condition makes an unexpected result easier to trace without filling missing evidence with a guessed cause.</p>
 </div>
-<p><a href="../day-16.md#q15">Return to Q15</a> · <a href="../../lessons/day-16-safe-practice-plan.md#predict-before-observing">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q15">Return to Q15</a> · <a href="../../lessons/day-16-safe-practice-plan.html#predict-before-observing">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -180,7 +180,7 @@ nav_order: 1
 <p>No. Keep the approved expectation and locate the earliest demonstrated discrepancy. Inspect actual inputs, condition, exclusions, state, processing, and membership evidence.</p>
 <p>A mismatch can teach where the relationship differs from the plan. Rewriting the prediction hides that learning. Record the finding and next evidence needed rather than forcing a tidy success. The purpose is an explainable comparison, which remains useful even when its initial result is unexpected.</p>
 </div>
-<p><a href="../day-16.md#q16">Return to Q16</a> · <a href="../../lessons/day-16-safe-practice-plan.md#predict-before-observing">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q16">Return to Q16</a> · <a href="../../lessons/day-16-safe-practice-plan.html#predict-before-observing">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -191,7 +191,7 @@ nav_order: 1
 <p>The checked profiles produced the intended membership in this rule context. That is a verified result for the defined question.</p>
 <p>Application assignment, target accounts, entry, and business permissions were not tested. The narrow setup helps isolate membership without pretending it covers every access boundary. Report the scoped success precisely, then plan another relationship with its own prediction and evidence when the learner is ready.</p>
 </div>
-<p><a href="../day-16.md#q17">Return to Q17</a> · <a href="../../lessons/day-16-safe-practice-plan.md#predict-before-observing">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q17">Return to Q17</a> · <a href="../../lessons/day-16-safe-practice-plan.html#predict-before-observing">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -202,7 +202,7 @@ nav_order: 1
 <p>The new question is whether the group supplies the intended user's application assignment. User-to-group membership and group-to-application assignment are separate relationships.</p>
 <p>Record the connection and verify the actual user assignment in the intended instance. Add that boundary deliberately with its own prediction and evidence. The earlier membership result remains useful, but cannot establish a relationship the first experiment never tested.</p>
 </div>
-<p><a href="../day-16.md#q18">Return to Q18</a> · <a href="../../lessons/day-16-safe-practice-plan.md#add-the-application-boundary-separately">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q18">Return to Q18</a> · <a href="../../lessons/day-16-safe-practice-plan.html#add-the-application-boundary-separately">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -213,7 +213,7 @@ nav_order: 1
 <p>Another path could provide the assignment independently. Inspect the actual assignment source and starting state for the intended instance.</p>
 <p>A visible tile helps locate the application but does not establish which relationship caused it. Removing one path also does not show every path ended. The experiment should explain the source of the observed result rather than crediting a pre-existing assignment to the connection it just added.</p>
 </div>
-<p><a href="../day-16.md#q19">Return to Q19</a> · <a href="../../lessons/day-16-safe-practice-plan.md#add-the-application-boundary-separately">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q19">Return to Q19</a> · <a href="../../lessons/day-16-safe-practice-plan.html#add-the-application-boundary-separately">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -224,7 +224,7 @@ nav_order: 1
 <p>No. Inspect the actual connector's supported and enabled behavior. The owner may prepare the target account through a separate process.</p>
 <p>The example's contract belongs to that application; federation also does not automatically establish account creation. Decide whether account management is part of this exercise and name its supported process. A known manual responsibility is better evidence than an invented automation based on another integration.</p>
 </div>
-<p><a href="../day-16.md#q20">Return to Q20</a> · <a href="../../lessons/day-16-safe-practice-plan.md#add-the-application-boundary-separately">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q20">Return to Q20</a> · <a href="../../lessons/day-16-safe-practice-plan.html#add-the-application-boundary-separately">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -235,7 +235,7 @@ nav_order: 1
 <p>Identify the intended linked record and instance, prepared values, generated request, response, and checked target state. Interpret the response against the actual contract.</p>
 <p>Preparation and transmission are separate observations, as are the requested state and stored result. Follow the evidence through those boundaries. Membership, assignment, or accepted user authentication cannot supply the missing account-management outcome for an operation that has not been verified.</p>
 </div>
-<p><a href="../day-16.md#q21">Return to Q21</a> · <a href="../../lessons/day-16-safe-practice-plan.md#add-the-application-boundary-separately">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q21">Return to Q21</a> · <a href="../../lessons/day-16-safe-practice-plan.html#add-the-application-boundary-separately">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -246,7 +246,7 @@ nav_order: 1
 <p>No. A limited question can have a complete answer when its conclusion remains within the stated scope. Verify the assignment relationship it actually tests.</p>
 <p>Do not claim target creation or usable entry from that result. A later exercise can add those outcomes with appropriate owners and evidence. Completeness means answering the defined question; it does not require adding every capability to the first experiment.</p>
 </div>
-<p><a href="../day-16.md#q22">Return to Q22</a> · <a href="../../lessons/day-16-safe-practice-plan.md#add-the-application-boundary-separately">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q22">Return to Q22</a> · <a href="../../lessons/day-16-safe-practice-plan.html#add-the-application-boundary-separately">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -257,7 +257,7 @@ nav_order: 1
 <p>Start with the expected authentication requirement and evidence for this attempt. Then follow the actual protocol exchange, application validation, intended account selection, and receiving application response.</p>
 <p>The connection determines which checks matter. One Okta event cannot stand in for the target's acceptance. Record entry separately from account state and business permissions so a later failure can be located at the boundary its evidence actually demonstrates.</p>
 </div>
-<p><a href="../day-16.md#q23">Return to Q23</a> · <a href="../../lessons/day-16-safe-practice-plan.md#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q23">Return to Q23</a> · <a href="../../lessons/day-16-safe-practice-plan.html#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Entry does not establish submission. Ask the application owner to define the appropriate action and evidence for the intended account under its approved capability.</p>
 <p>Keep the accepted login as a success while testing the business result. A denial after entry is not automatically a password problem. The experiment's acceptance evidence must reach the action it was meant to enable rather than stopping when the first page opens.</p>
 </div>
-<p><a href="../day-16.md#q24">Return to Q24</a> · <a href="../../lessons/day-16-safe-practice-plan.md#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q24">Return to Q24</a> · <a href="../../lessons/day-16-safe-practice-plan.html#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -279,7 +279,7 @@ nav_order: 1
 <p>The negative test checks that the unapproved capability is not supplied. Successful submission would not reveal excessive approval permissions.</p>
 <p>The owner defines the exact action and evidence for this application's implementation. Both findings matter: intended work should succeed and excluded work should not be allowed. This is a clearer acceptance test than merely asking whether the user got in or one business action worked.</p>
 </div>
-<p><a href="../day-16.md#q25">Return to Q25</a> · <a href="../../lessons/day-16-safe-practice-plan.md#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q25">Return to Q25</a> · <a href="../../lessons/day-16-safe-practice-plan.html#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -290,7 +290,7 @@ nav_order: 1
 <p>The examples do not establish the new application's supported operations or permission model. Ask its owner to identify the intended capability and observable result.</p>
 <p>Keep account state, authentication proof, and business permission evidence separate. Apply the investigation method to the actual environment rather than assuming copied request shapes work everywhere. A familiar example helps form questions; it does not supply another application's implementation contract.</p>
 </div>
-<p><a href="../day-16.md#q26">Return to Q26</a> · <a href="../../lessons/day-16-safe-practice-plan.md#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q26">Return to Q26</a> · <a href="../../lessons/day-16-safe-practice-plan.html#test-entry-and-permission-as-different-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -301,7 +301,7 @@ nav_order: 1
 <p>Name the paths to remove, required target-account state where applicable, sessions that must end, responsible owners, and observations demonstrating each outcome.</p>
 <p>Match the cleanup scope to what the exercise introduces. A membership-only test differs from an application-access experiment. Planning the end condition beforehand makes removal an agreed, verifiable requirement rather than a vague instruction to undo everything after results have already changed.</p>
 </div>
-<p><a href="../day-16.md#q27">Return to Q27</a> · <a href="../../lessons/day-16-safe-practice-plan.md#include-an-end-condition">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q27">Return to Q27</a> · <a href="../../lessons/day-16-safe-practice-plan.html#include-an-end-condition">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -312,7 +312,7 @@ nav_order: 1
 <p>No. Configuration recovery restores settings. Effects already produced need their own evidence and corrective operations where required.</p>
 <p>Identify the changed relationships and target outcomes included in the exercise, then involve their responsible owners and verify the required end state. A correct-looking rule cannot certify all downstream access ended. Report restoration and cleanup separately so the configuration result does not replace missing application findings.</p>
 </div>
-<p><a href="../day-16.md#q28">Return to Q28</a> · <a href="../../lessons/day-16-safe-practice-plan.md#include-an-end-condition">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q28">Return to Q28</a> · <a href="../../lessons/day-16-safe-practice-plan.html#include-an-end-condition">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -323,7 +323,7 @@ nav_order: 1
 <p>Check whether old E still authorizes the new protected request. Distinguish that from a later sign-in establishing a different session.</p>
 <p>A displayed prompt or previously visible page cannot alone decide the old session's authority. Use the receiving application's relevant request and session evidence. Keep identity, session, termination action, and result correlated so the cleanup conclusion answers the requirement instead of a different later access question.</p>
 </div>
-<p><a href="../day-16.md#q29">Return to Q29</a> · <a href="../../lessons/day-16-safe-practice-plan.md#include-an-end-condition">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q29">Return to Q29</a> · <a href="../../lessons/day-16-safe-practice-plan.html#include-an-end-condition">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -334,7 +334,7 @@ nav_order: 1
 <p>No. Establish which records are involved and what the approved retention and cleanup requirement permits. Deletion cannot replace a missing ownership decision.</p>
 <p>Keep the evidence needed to explain the exercise while excluding credentials and unnecessary personal data. Synthetic data still needs a clear record of what happened. Verify the agreed end state rather than treating cleanup as disappearance of every visible object regardless of its purpose.</p>
 </div>
-<p><a href="../day-16.md#q30">Return to Q30</a> · <a href="../../lessons/day-16-safe-practice-plan.md#include-an-end-condition">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q30">Return to Q30</a> · <a href="../../lessons/day-16-safe-practice-plan.html#include-an-end-condition">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -345,7 +345,7 @@ nav_order: 1
 <p>Connect the question, authorized environment, synthetic population, approved outcome, starting state, predictions, intended actions, evidence, owners, and recovery or cleanup requirements.</p>
 <p>Keep planned actions distinct from performed ones. The owner should understand what counts as success and what must happen afterward. This record gives the experiment reviewable boundaries without claiming any configuration or target result before observations establish it.</p>
 </div>
-<p><a href="../day-16.md#q31">Return to Q31</a> · <a href="../../lessons/day-16-safe-practice-plan.md#write-the-practice-record">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q31">Return to Q31</a> · <a href="../../lessons/day-16-safe-practice-plan.html#write-the-practice-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -356,7 +356,7 @@ nav_order: 1
 <p>Yes. Write the predictions, evidence requests, responsibilities, and cleanup plan on paper. Label the artifact as a plan, with actual results Not tested.</p>
 <p>Reasoning about expected boundaries is useful practice even without execution. If the exercise runs later, add real observations, mismatches, and unfinished outcomes. Do not replace that evidence with the original predictions simply because the planned logic seems correct.</p>
 </div>
-<p><a href="../day-16.md#q32">Return to Q32</a> · <a href="../../lessons/day-16-safe-practice-plan.md#write-the-practice-record">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q32">Return to Q32</a> · <a href="../../lessons/day-16-safe-practice-plan.html#write-the-practice-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -367,7 +367,7 @@ nav_order: 1
 <p>No. The people, environments, and questions are separate. The training exercise supplies no corrective outcome for those business incidents.</p>
 <p>Apply the same evidence habits without borrowing results across cases. Casey's successful membership concerns its own inputs and observed relationship. Keep purpose and environment beside every conclusion so familiar concepts do not make independent experiments appear to share a production history.</p>
 </div>
-<p><a href="../day-16.md#q33">Return to Q33</a> · <a href="../../lessons/day-16-safe-practice-plan.md#write-the-practice-record">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q33">Return to Q33</a> · <a href="../../lessons/day-16-safe-practice-plan.html#write-the-practice-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -378,7 +378,7 @@ nav_order: 1
 <p>No. The OR column illustrates why Riley and Taylor are useful boundary cases. It is a prediction comparison rather than an instruction to activate an inappropriate condition.</p>
 <p>The intended authorized experiment uses AND. Actual results remain Not tested until observations are obtained. Keeping predictions distinct from actions allows the logic example to teach the difference without turning a hypothetical mistake into a configuration requirement.</p>
 </div>
-<p><a href="../day-16.md#q34">Return to Q34</a> · <a href="../../lessons/day-16-safe-practice-plan.md#write-the-practice-record">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q34">Return to Q34</a> · <a href="../../lessons/day-16-safe-practice-plan.html#write-the-practice-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -389,7 +389,7 @@ nav_order: 1
 <p>Try: “The checked profiles produced the predicted membership under the active rule and relevant evaluation. This exercise verified LAB-Finance-Employees membership only. Application assignment, target accounts, entry, and permissions were not tested.”</p>
 <p>That is a complete conclusion for the defined experiment. It names the evidence and scope. A next exercise can add one relationship with its own prediction, responsible owner, and verification plan.</p>
 </div>
-<p><a href="../day-16.md#q35">Return to Q35</a> · <a href="../../lessons/day-16-safe-practice-plan.md#write-the-practice-record">Revisit the lesson</a></p>
+<p><a href="../day-16.html#q35">Return to Q35</a> · <a href="../../lessons/day-16-safe-practice-plan.html#write-the-practice-record">Revisit the lesson</a></p>
 </details>
 
 [All Day 16 questions](../day-16.md) · [Question bank](../index.md) · [Course home](../../index.md)

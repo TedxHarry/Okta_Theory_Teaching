@@ -16,7 +16,7 @@ nav_order: 1
 <p>Who belongs in the group still needs an accurate maintenance mechanism. The group's connection to Salesforce is another relationship to configure and verify.</p>
 <p>The benefit is managing the common assignment without repeating the normal decision independently for each user. It does not replace eligibility checks or prove usable application access.</p>
 </div>
-<p><a href="../day-05.md#q01">Return to Q01</a> · <a href="../../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q01">Return to Q01</a> · <a href="../../lessons/day-05-groups-and-assignments.html#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>The group could be empty, contain unexpected users, or have no application connected. Inspect and configure the actual relationships according to the approved requirement.</p>
 <p>A useful name helps locate an object. It cannot establish what that object does or whether a person's application assignment was produced through it.</p>
 </div>
-<p><a href="../day-05.md#q02">Return to Q02</a> · <a href="../../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q02">Return to Q02</a> · <a href="../../lessons/day-05-groups-and-assignments.html#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>Either fact alone leaves part of the path unanswered. Maya could belong to a group that has no Salesforce connection, or Salesforce could be connected to a group she does not belong to.</p>
 <p>Check both relationships and the resulting user assignment for the intended application instance. They are connected responsibilities with separate evidence.</p>
 </div>
-<p><a href="../day-05.md#q03">Return to Q03</a> · <a href="../../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q03">Return to Q03</a> · <a href="../../lessons/day-05-groups-and-assignments.html#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Compare that gap with the approved requirement and inspect the intended application instance. A membership rule that already placed Maya correctly is not the demonstrated problem.</p>
 <p>Other paths and target outcomes need their own evidence if relevant. This question establishes one absent connection rather than every possible access result.</p>
 </div>
-<p><a href="../day-05.md#q04">Return to Q04</a> · <a href="../../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q04">Return to Q04</a> · <a href="../../lessons/day-05-groups-and-assignments.html#manage-a-shared-need-through-a-group">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>The rule is not itself a command to create an account inside Salesforce. Its membership result supplies an assignment path only because the separate application connection exists.</p>
 <p>Follow the responsibilities: profile inputs, rule processing and membership, assignment, then the supported target account and sign-in work. Each outcome requires evidence rather than being assumed from the preceding step.</p>
 </div>
-<p><a href="../day-05.md#q05">Return to Q05</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q05">Return to Q05</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>An Active user can be a Contractor. A stored Employee value does not independently establish that the account is enabled.</p>
 <p>Read each field according to its purpose. Confusing classification with status could change who qualifies for a rule or hide a processing condition that still needs checking.</p>
 </div>
-<p><a href="../day-05.md#q06">Return to Q06</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q06">Return to Q06</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>If information is wrong, correct it through the legitimate source or process. Changing Contractor to Employee simply to qualify would misrepresent the person and undermine the access requirement.</p>
 <p>Eligibility relies on governed data. A desired application outcome should not become a reason to invent the identity facts feeding the rule.</p>
 </div>
-<p><a href="../day-05.md#q07">Return to Q07</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q07">Return to Q07</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>Rule state, exclusions, and processing matter to actual membership. Application assignment and target use have additional checks.</p>
 <p>Explain the condition in ordinary language: Sales and Employee must both be present. Then compare the prediction with the observed membership and relevant downstream results.</p>
 </div>
-<p><a href="../day-05.md#q08">Return to Q08</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q08">Return to Q08</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-rule-decides-membership-an-assignment-connects-the-application">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>The supplied processing conditions let the example connect those inputs to the expected rule-managed membership. Sharing one detail is not enough when AND requires both.</p>
 <p>Those results implement the employee-only Sales population. Application assignment and actual use remain separate outcomes unless their evidence is also supplied.</p>
 </div>
-<p><a href="../day-05.md#q09">Return to Q09</a> · <a href="../../lessons/day-05-groups-and-assignments.md#predict-who-matches">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q09">Return to Q09</a> · <a href="../../lessons/day-05-groups-and-assignments.html#predict-who-matches">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>That broadens eligibility beyond the approved Sales employees. The changed condition would include a contractor and a Finance employee in this set.</p>
 <p>Compare logic with the actual business decision before applying it. A small wording change can create additional access paths for a much larger population.</p>
 </div>
-<p><a href="../day-05.md#q10">Return to Q10</a> · <a href="../../lessons/day-05-groups-and-assignments.md#predict-who-matches">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q10">Return to Q10</a> · <a href="../../lessons/day-05-groups-and-assignments.html#predict-who-matches">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>Read the relevant inputs, any exclusion, and processing and membership evidence. Account state is also a meaningful condition for rule behavior, not a synonym for qualification.</p>
 <p>Keep the two facts separate. The same word appears in their labels while describing different objects and leaving the intended relationship unverified.</p>
 </div>
-<p><a href="../day-05.md#q11">Return to Q11</a> · <a href="../../lessons/day-05-groups-and-assignments.md#predict-who-matches">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q11">Return to Q11</a> · <a href="../../lessons/day-05-groups-and-assignments.html#predict-who-matches">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Investigate the legitimate source, mapping, or approved maintenance process for the field. Do not supply the classification that would make access convenient.</p>
 <p>Accurate data supports the approved population. An unknown input needs resolution, not a broader rule or an invented fact about the person.</p>
 </div>
-<p><a href="../day-05.md#q12">Return to Q12</a> · <a href="../../lessons/day-05-groups-and-assignments.md#predict-who-matches">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q12">Return to Q12</a> · <a href="../../lessons/day-05-groups-and-assignments.html#predict-who-matches">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>Workday can be correct while the current input in Okta differs. Compare the approved source and actual rule input before changing the condition.</p>
 <p>That can reveal a data-arrival discrepancy rather than a logic defect. The source you expect and the value the rule actually receives are different evidence questions.</p>
 </div>
-<p><a href="../day-05.md#q13">Return to Q13</a> · <a href="../../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q13">Return to Q13</a> · <a href="../../lessons/day-05-groups-and-assignments.html#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>Investigate source associations, mappings, and the import or update results explaining the discrepancy. The two values alone do not establish which operation failed.</p>
 <p>Repair the intended data path instead of assuming the access condition must be wrong. Correct logic cannot make inaccurate input represent the approved person.</p>
 </div>
-<p><a href="../day-05.md#q14">Return to Q14</a> · <a href="../../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q14">Return to Q14</a> · <a href="../../lessons/day-05-groups-and-assignments.html#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>Investigate why the approved Sales value is not represented in the central profile and preserve the employee-only Sales requirement.</p>
 <p>A workaround can remove one symptom while creating unrelated assignments. Choose the correction at the demonstrated data discrepancy instead of changing the business access decision to accommodate it.</p>
 </div>
-<p><a href="../day-05.md#q15">Return to Q15</a> · <a href="../../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q15">Return to Q15</a> · <a href="../../lessons/day-05-groups-and-assignments.html#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>An app user profile is another layer: application-specific information prepared in Okta, distinct from the central profile and target account. Name the exact object and field being checked.</p>
 <p>A correct-looking downstream value cannot certify an uninspected upstream input. Read the rule's actual source before explaining its result.</p>
 </div>
-<p><a href="../day-05.md#q16">Return to Q16</a> · <a href="../../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q16">Return to Q16</a> · <a href="../../lessons/day-05-groups-and-assignments.html#read-the-current-profile-not-just-the-source-record">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>Check the rule state, target group, applicable exclusions, relevant account context, and actual processing and membership results.</p>
 <p>The expression can be correct while the intended automatic path has not acted. Saving configuration and verifying its outcome are different observations.</p>
 </div>
-<p><a href="../day-05.md#q17">Return to Q17</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q17">Return to Q17</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>The supported proposal is to activate the approved rule after reviewing its population and exclusions. Then verify membership and the resulting application assignment, followed by required target outcomes.</p>
 <p>Changing correct HR data would address the wrong boundary. The configuration gap explains the demonstrated missing normal path without supplying a completed correction.</p>
 </div>
-<p><a href="../day-05.md#q18">Return to Q18</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q18">Return to Q18</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>Activation is a configuration change with wider consequences. A single matching profile does not establish that every included user is intended.</p>
 <p>After the appropriate change, compare actual membership and assignments with the predicted population. The investigation's initiating ticket and the change's scope can differ.</p>
 </div>
-<p><a href="../day-05.md#q19">Return to Q19</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q19">Return to Q19</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Review the exclusion and intended requirement before proposing a change. The mechanism is known; its authorization is not established.</p>
 <p>Other membership or assignment paths still need separate checks if relevant. An exclusion from one rule does not describe every possible way the person could receive application access.</p>
 </div>
-<p><a href="../day-05.md#q20">Return to Q20</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q20">Return to Q20</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>Inspect the intended target group, account state, exclusions, and processing evidence. Those facts can distinguish why the expected relationship is absent.</p>
 <p>Report the observed gap and next checks rather than declare a failed rule or deliberate exception without evidence. The missing result is clear even before its explanation is known.</p>
 </div>
-<p><a href="../day-05.md#q21">Return to Q21</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q21">Return to Q21</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Rule state, exclusions, and processing can matter between that calculation and the result. Check them when membership is absent.</p>
 <p>This is a useful distinction wherever systems calculate a proposed outcome: the calculation and the completed action are separate evidence. Keep the successful preview while requesting the actual membership result.</p>
 </div>
-<p><a href="../day-05.md#q22">Return to Q22</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q22">Return to Q22</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>Inspect the resulting exclusion and management mechanism instead of assuming the original processing context stayed unchanged.</p>
 <p>A test needs understood effects and scope. Repeating removal or waiting for re-addition can miss the very exception introduced by the test action.</p>
 </div>
-<p><a href="../day-05.md#q23">Return to Q23</a> · <a href="../../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q23">Return to Q23</a> · <a href="../../lessons/day-05-groups-and-assignments.html#a-matching-condition-is-not-observed-membership">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>The target account, accepted application sign-in, and required permissions remain unverified. An assignment can initiate configured work, but it is not the target's completion receipt.</p>
 <p>Report the verified relationships and follow the missing outcomes separately. Do not minimize the progress or stretch it into a claim that the whole application is usable.</p>
 </div>
-<p><a href="../day-05.md#q24">Return to Q24</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q24">Return to Q24</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>The supplied absence of other assignment paths also supports their Salesforce-assignment absence in this snapshot. That wider conclusion depends on the explicit path check.</p>
 <p>A correct requirement can intentionally produce different outcomes for people sharing one attribute. Do not broaden the condition merely to make every profile qualify.</p>
 </div>
-<p><a href="../day-05.md#q25">Return to Q25</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q25">Return to Q25</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>An assignment is a relationship in Okta. It does not demonstrate those separate results inside Salesforce.</p>
 <p>State where the evidence stops so the next owner can inspect the actual missing boundary rather than repeat already verified assignment checks. The business requirement gives each verification a specific purpose.</p>
 </div>
-<p><a href="../day-05.md#q26">Return to Q26</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q26">Return to Q26</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-successful-assignment-as-far-as-the-evidence-goes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>Trace the actual assignment source and request its business justification. The unresolved issue is the exception decision, not an instruction to include all contractors in the normal group.</p>
 <p>The path is observed; its approval is not. Keep those facts separate before proposing a correction.</p>
 </div>
-<p><a href="../day-05.md#q27">Return to Q27</a> · <a href="../../lessons/day-05-groups-and-assignments.md#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q27">Return to Q27</a> · <a href="../../lessons/day-05-groups-and-assignments.html#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>Request the applicable requirement, accountable approver, current decision, scope, owner, and removal or review condition. Missing evidence in this review is not confirmed lack of approval in reality.</p>
 <p>Describe the open decision precisely. That gives the responsible owner a useful action without inventing a permitted exception or a demonstrated violation.</p>
 </div>
-<p><a href="../day-05.md#q28">Return to Q28</a> · <a href="../../lessons/day-05-groups-and-assignments.md#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q28">Return to Q28</a> · <a href="../../lessons/day-05-groups-and-assignments.html#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>Priya can remain Okta-managed while having an individual Salesforce assignment. The facts concern different responsibilities.</p>
 <p>Name the relationship when saying source. Otherwise an application-access detail can be mistaken for a new data owner that the evidence never supplied.</p>
 </div>
-<p><a href="../day-05.md#q29">Return to Q29</a> · <a href="../../lessons/day-05-groups-and-assignments.md#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q29">Return to Q29</a> · <a href="../../lessons/day-05-groups-and-assignments.html#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>Investigate the legitimate exception decision and path instead. The normal rule can correctly exclude contractors while a justified individual or separate group assignment exists.</p>
 <p>Preserve accurate identity data. The desired access outcome should be implemented through its approved model, not by rewriting the person until a rule accepts them.</p>
 </div>
-<p><a href="../day-05.md#q30">Return to Q30</a> · <a href="../../lessons/day-05-groups-and-assignments.md#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q30">Return to Q30</a> · <a href="../../lessons/day-05-groups-and-assignments.html#an-individual-assignment-is-a-separate-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>That is the predicted result; inspect actual membership and processing evidence to verify it. Then check application assignment paths separately.</p>
 <p>A department change can end one qualifying relationship without establishing every target outcome. Keep the new input, rule result, remaining assignments, and application state as distinct observations.</p>
 </div>
-<p><a href="../day-05.md#q31">Return to Q31</a> · <a href="../../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q31">Return to Q31</a> · <a href="../../lessons/day-05-groups-and-assignments.html#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Inspect all relevant assignment sources before claiming the final assignment has ended. Individual assignments can also be separate paths when present.</p>
 <p>Ask which relationship stopped and which remain. A removed membership is useful evidence but cannot describe an independent relationship that still supplies the application.</p>
 </div>
-<p><a href="../day-05.md#q32">Return to Q32</a> · <a href="../../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q32">Return to Q32</a> · <a href="../../lessons/day-05-groups-and-assignments.html#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Follow the supported account-management behavior and inspect the intended target record. If the requirement includes ending existing sessions, obtain the relevant application-side session result too.</p>
 <p>The assignment can be removed while downstream work remains unknown or incomplete. Keep each required result open until the receiving system's evidence establishes it.</p>
 </div>
-<p><a href="../day-05.md#q33">Return to Q33</a> · <a href="../../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q33">Return to Q33</a> · <a href="../../lessons/day-05-groups-and-assignments.html#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>That follows the dependency flow and helps locate whether the gap is data arrival, membership action, another surviving assignment, or downstream account/access behavior.</p>
 <p>The sequence organizes investigation, not proof that the steps already occurred. Keep the identity and application instance consistent when joining their results.</p>
 </div>
-<p><a href="../day-05.md#q34">Return to Q34</a> · <a href="../../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q34">Return to Q34</a> · <a href="../../lessons/day-05-groups-and-assignments.html#removing-one-path-does-not-settle-every-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>Determine the specific group's management mechanism before proposing an edit. A directory-sourced group follows a different path from a rule-managed or manually maintained group.</p>
 <p>The name cannot establish the owner either. Actual configuration and relationship evidence explain how the current members were maintained.</p>
 </div>
-<p><a href="../day-05.md#q35">Return to Q35</a> · <a href="../../lessons/day-05-groups-and-assignments.md#group-membership-has-an-owner-too">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q35">Return to Q35</a> · <a href="../../lessons/day-05-groups-and-assignments.html#group-membership-has-an-owner-too">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>The application assignment provides a relationship through which Okta members receive Salesforce. It does not automatically create the group inside Salesforce.</p>
 <p>If target-group management is required, inspect supported configuration and actual destination evidence. Sharing a name cannot establish an object or link nobody has verified.</p>
 </div>
-<p><a href="../day-05.md#q36">Return to Q36</a> · <a href="../../lessons/day-05-groups-and-assignments.md#group-membership-has-an-owner-too">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q36">Return to Q36</a> · <a href="../../lessons/day-05-groups-and-assignments.html#group-membership-has-an-owner-too">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>They are different relationships. Where Group Push is used, separate groups are required for application assignment and Group Push. Inspect the actual supported integration rather than assume the target capability exists.</p>
 <p>An assignment result cannot prove target-group creation. Define the desired outcome and verify the relationship that actually implements it.</p>
 </div>
-<p><a href="../day-05.md#q37">Return to Q37</a> · <a href="../../lessons/day-05-groups-and-assignments.md#group-membership-has-an-owner-too">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q37">Return to Q37</a> · <a href="../../lessons/day-05-groups-and-assignments.html#group-membership-has-an-owner-too">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>Investigate the original gap and record the exception's owner and removal condition. Once the normal path is corrected, review whether the exception is still needed.</p>
 <p>Keep workaround and repair as separate results. One visible improvement should not hide the unresolved relationship or verification.</p>
 </div>
-<p><a href="../day-05.md#q38">Return to Q38</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q38">Return to Q38</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>Those facts distinguish possible explanations instead of assuming a failed rule or total assignment absence.</p>
 <p>If an urgent exception is approved, track it separately with its end condition. Its existence does not supply the missing normal-path result or application verification.</p>
 </div>
-<p><a href="../day-05.md#q39">Return to Q39</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q39">Return to Q39</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>A separately approved exception could use another path if supplied; the rule alone does not describe every possible assignment. Here no such path is established for Priya.</p>
 <p>The relationships explain normal assignments, not target-account readiness, completed sign-in, or business permissions. Those outcomes still need their own checks.</p>
 </div>
-<p><a href="../day-05.md#q40">Return to Q40</a> · <a href="../../lessons/day-05-groups-and-assignments.md#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
+<p><a href="../day-05.html#q40">Return to Q40</a> · <a href="../../lessons/day-05-groups-and-assignments.html#follow-a-missing-application-from-the-user-to-the-assignment">Revisit the lesson</a></p>
 </details>
 
 [All Day 5 questions](../day-05.md) · [Question bank](../index.md) · [Course home](../../index.md)

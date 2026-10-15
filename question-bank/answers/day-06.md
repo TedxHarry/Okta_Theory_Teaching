@@ -16,7 +16,7 @@ nav_order: 1
 <p>One person can have linked records in different systems without those records becoming one object. Reading a source does not relocate its database.</p>
 <p>Name the record being checked. The imported information and confirmed link are useful results, but they do not prove that every other operation involving Jordan's directory account succeeded.</p>
 </div>
-<p><a href="../day-06.md#q01">Return to Q01</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q01">Return to Q01</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>A domain can have more than one controller. Evidence about one server or path may not describe another.</p>
 <p>Identify the selected DC for the actual attempt. That makes a connection or credential-result request more useful than simply reporting that AD failed.</p>
 </div>
-<p><a href="../day-06.md#q02">Return to Q02</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q02">Return to Q02</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>In this path, it handles work from Okta, communicates with the controller, and returns the result. The controller evaluates the credentials.</p>
 <p>Keep those jobs separate. A request reaching the agent does not prove its directory connection completed or that a credential answer was obtained.</p>
 </div>
-<p><a href="../day-06.md#q03">Return to Q03</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q03">Return to Q03</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Jordan can have both a directory location and membership relationships. The OU location does not supply the group result.</p>
 <p>Read location for a scope question and membership for a group question. Similar names do not make those objects or relationships interchangeable.</p>
 </div>
-<p><a href="../day-06.md#q04">Return to Q04</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q04">Return to Q04</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>The shared name can make them look equivalent, but the name does not add Jordan as a member. Inspect the actual group if membership matters.</p>
 <p>His OU can help explain whether an import selected his record. It cannot independently establish the access or administration relationship provided by the group.</p>
 </div>
-<p><a href="../day-06.md#q05">Return to Q05</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q05">Return to Q05</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>The agent separately needs access to the relevant domain controllers. That connection has its own configuration and result.</p>
 <p>Do not infer network requirements just from a two-way arrow. This route does not require exposing a directory controller directly to the internet.</p>
 </div>
-<p><a href="../day-06.md#q06">Return to Q06</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q06">Return to Q06</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>An agent can receive work while failing to complete its request to a controller. Obtain evidence for that actual path and attempt.</p>
 <p>Follow each connection separately. General availability or progress to an intermediate component is useful context, but it cannot fill in an unobserved response from the next system.</p>
 </div>
-<p><a href="../day-06.md#q07">Return to Q07</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q07">Return to Q07</a> · <a href="../../lessons/day-06-active-directory.html#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>The agent connects the identity service to the directory for that operation. Its password result does not change who controls department.</p>
 <p>Keep maintenance and authentication separate. A correct department does not prove accepted credentials, and successful password validation does not establish that a current HR update reached the profile.</p>
 </div>
-<p><a href="../day-06.md#q08">Return to Q08</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q08">Return to Q08</a> · <a href="../../lessons/day-06-active-directory.html#northbridge-is-still-hr-led">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>Inspect the owner of the particular attribute before deciding which value should control it. A successful read and authority over a field are different facts.</p>
 <p>Use the import result for what it establishes: data was read and processed under its scope. It does not transfer every maintenance responsibility to the directory.</p>
 </div>
-<p><a href="../day-06.md#q09">Return to Q09</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q09">Return to Q09</a> · <a href="../../lessons/day-06-active-directory.html#northbridge-is-still-hr-led">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>Inspect Priya's own configuration and attempt evidence before asking for directory results. Jordan's delegation facts belong to his stated model.</p>
 <p>Do not turn one architecture example into a universal rule for all users. Different populations can coexist while using different maintenance and authentication arrangements.</p>
 </div>
-<p><a href="../day-06.md#q10">Return to Q10</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q10">Return to Q10</a> · <a href="../../lessons/day-06-active-directory.html#northbridge-is-still-hr-led">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>That is not a password-validation result. Credentials are the information used to prove identity, and testing them asks the directory to do different work from reading account data.</p>
 <p>Report the import precisely. A later sign-in needs its own attempt and returned result before acceptance can be claimed.</p>
 </div>
-<p><a href="../day-06.md#q11">Return to Q11</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q11">Return to Q11</a> · <a href="../../lessons/day-06-active-directory.html#what-an-import-establishes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Compare an expected record's actual location with the selected scope and processed results. A missing object could be outside the read population rather than absent from the directory.</p>
 <p>Carry scope with the result. The operation can succeed while leaving other directory records completely uninspected.</p>
 </div>
-<p><a href="../day-06.md#q12">Return to Q12</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q12">Return to Q12</a> · <a href="../../lessons/day-06-active-directory.html#what-an-import-establishes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>Find the group in the correct directory and compare its location with the selected group OUs. Scope can explain an excluded record without a failed read or deleted object.</p>
 <p>A missing imported result and a missing source record are different findings. Inspect the relevant source before treating them as the same outcome.</p>
 </div>
-<p><a href="../day-06.md#q13">Return to Q13</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q13">Return to Q13</a> · <a href="../../lessons/day-06-active-directory.html#what-an-import-establishes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>The resulting association still needs evidence of the correct relationship. Similar display names do not independently establish ownership.</p>
 <p>Do not treat a found record as a verified link. Obtain the identifier and relationship evidence before relying on that association for maintenance or authentication work.</p>
 </div>
-<p><a href="../day-06.md#q14">Return to Q14</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q14">Return to Q14</a> · <a href="../../lessons/day-06-active-directory.html#what-an-import-establishes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>Those operations can produce different results, especially at different times. The import does not verify the password or prove the later connection stayed available.</p>
 <p>Keep the earlier success and current failure together without calling them contradictory. Follow the password request and its missing result to locate the next useful check.</p>
 </div>
-<p><a href="../day-06.md#q15">Return to Q15</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q15">Return to Q15</a> · <a href="../../lessons/day-06-active-directory.html#what-an-import-establishes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>The account name matters alongside the password. Delegation identifies who checks the proof; it does not establish that the request arrived or was accepted.</p>
 <p>Follow the actual attempt and remaining requirements. A configured validation path is not itself a successful authentication outcome.</p>
 </div>
-<p><a href="../day-06.md#q16">Return to Q16</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q16">Return to Q16</a> · <a href="../../lessons/day-06-active-directory.html#follow-delegated-authentication">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>That describes the intended logical sequence. Actual records establish which stages occurred in a particular attempt.</p>
 <p>An arrow or predicted next step is not a completion result.</p>
 </div>
-<p><a href="../day-06.md#q17">Return to Q17</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q17">Return to Q17</a> · <a href="../../lessons/day-06-active-directory.html#follow-delegated-authentication">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>Remaining Okta requirements may apply. Assignment, target acceptance, and the application's permissions also need evidence where relevant to the task.</p>
 <p>The narrow success is useful progress. Report it clearly, then continue to the outcomes required for the business goal rather than make password acceptance stand in for every later result.</p>
 </div>
-<p><a href="../day-06.md#q18">Return to Q18</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q18">Return to Q18</a> · <a href="../../lessons/day-06-active-directory.html#follow-delegated-authentication">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>The event can become comparison evidence once the paths and context are understood. Jordan still needs records tied to his identity, directory association, attempt, and relevant components.</p>
 <p>Keep people and operations separate even when timestamps look close. Success elsewhere is not confirmation that the affected request completed.</p>
 </div>
-<p><a href="../day-06.md#q19">Return to Q19</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q19">Return to Q19</a> · <a href="../../lessons/day-06-active-directory.html#follow-delegated-authentication">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Each has its own configuration, purpose, and result. A deployment may use more than one without making their evidence interchangeable.</p>
 <p>When told the directory integration worked, ask which operation. That gives the claim a specific result to inspect.</p>
 </div>
-<p><a href="../day-06.md#q20">Return to Q20</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q20">Return to Q20</a> · <a href="../../lessons/day-06-active-directory.html#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>Password synchronization needs its own supported process, direction, destination, and result. Those facts are absent here.</p>
 <p>Both activities involve passwords, but they do different work. Keep validation of an attempted sign-in separate from maintaining a changed credential elsewhere.</p>
 </div>
-<p><a href="../day-06.md#q21">Return to Q21</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q21">Return to Q21</a> · <a href="../../lessons/day-06-active-directory.html#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Identify the configured operation and responsible component rather than infer behavior from similar names. An ordinary import success does not show synchronization occurred.</p>
 <p>You do not need every installation procedure to make this distinction. You need the purpose, configuration, and result for the work being investigated.</p>
 </div>
-<p><a href="../day-06.md#q22">Return to Q22</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q22">Return to Q22</a> · <a href="../../lessons/day-06-active-directory.html#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>A verified synchronization can show a change traveled while a later authentication attempt still needs its own credential decision. The broad statement supplies neither result by itself.</p>
 <p>Turn the assurance into an inspectable operation. That prevents an undefined integration claim from replacing the evidence needed for the current sign-in.</p>
 </div>
-<p><a href="../day-06.md#q23">Return to Q23</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q23">Return to Q23</a> · <a href="../../lessons/day-06-active-directory.html#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>Investigate that path for the identified attempt. A timeout means the expected result was not obtained within the allowed wait, not that a particular network cause is already confirmed.</p>
 <p>The boundary is precise enough to request useful evidence without calling Jordan's password wrong or declaring a specific service defect.</p>
 </div>
-<p><a href="../day-06.md#q24">Return to Q24</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q24">Return to Q24</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>Compare receiving no answer with receiving an answer that says no. Both can leave a person unable to sign in, but the evidence and next investigation differ.</p>
 <p>Leave credential validity unresolved while checking the demonstrated connection failure. Calling the password good or bad would add a decision the attempt did not supply.</p>
 </div>
-<p><a href="../day-06.md#q25">Return to Q25</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q25">Return to Q25</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>The successful import does not remove the later timeout or provide a password decision. Keep operation labels and times beside their observations.</p>
 <p>That lets both facts remain useful. Progress in one path cannot become an unobserved reply to another request.</p>
 </div>
-<p><a href="../day-06.md#q26">Return to Q26</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q26">Return to Q26</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>A password reset changes a credential while leaving the failed connection unexplained. The question does not establish a credential problem.</p>
 <p>The proposed checks do not select a network correction in advance. They should distinguish the possible reasons that this request obtained no directory result.</p>
 </div>
-<p><a href="../day-06.md#q27">Return to Q27</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q27">Return to Q27</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>Obtain component and path evidence for this time and attempt. That narrows the next investigation without turning a plausible explanation into a finding.</p>
 <p>The failure boundary can be clear while its cause remains open. The next check should help resolve that specific uncertainty.</p>
 </div>
-<p><a href="../day-06.md#q28">Return to Q28</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q28">Return to Q28</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>Resolution evidence can be requested as part of investigating the path, but it should not be reported as failed until the evidence supplies that result.</p>
 <p>Likewise, a lookup failure is not a returned credential rejection. Describe the actual operation first, then select the check appropriate to its observed boundary.</p>
 </div>
-<p><a href="../day-06.md#q29">Return to Q29</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q29">Return to Q29</a> · <a href="../../lessons/day-06-active-directory.html#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>The user experiences sign-in failure in both, but one request is unanswered while the other returns a refusal.</p>
 <p>Use the result belonging to each attempt. A shared symptom does not justify the same correction when the evidence identifies different boundaries.</p>
 </div>
-<p><a href="../day-06.md#q30">Return to Q30</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q30">Return to Q30</a> · <a href="../../lessons/day-06-active-directory.html#contrast-a-credential-rejection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>Inspect the detailed directory decision and confirm the account involved before choosing a correction. There is a returned refusal, but its specific reason remains unknown.</p>
 <p>Keep that distinction useful: the request reached a credential decision, so the next evidence concerns that decision rather than assuming an unanswered connection or a particular typo.</p>
 </div>
-<p><a href="../day-06.md#q31">Return to Q31</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q31">Return to Q31</a> · <a href="../../lessons/day-06-active-directory.html#contrast-a-credential-rejection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Compare the configured identifier with the intended directory account and approved values. Similar shapes do not make fields interchangeable.</p>
 <p>No mismatch is supplied here. The useful action is a supported comparison, not declaring the identifier defective before its actual relationship is known.</p>
 </div>
-<p><a href="../day-06.md#q32">Return to Q32</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q32">Return to Q32</a> · <a href="../../lessons/day-06-active-directory.html#contrast-a-credential-rejection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Report both precisely: the earlier request obtained no credential result, while the separate later request received a rejection. Their next checks can differ.</p>
 <p>Compare attempts when useful without rewriting their observations. New evidence may advance an investigation, but it should not change what another request actually returned.</p>
 </div>
-<p><a href="../day-06.md#q33">Return to Q33</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q33">Return to Q33</a> · <a href="../../lessons/day-06-active-directory.html#contrast-a-credential-rejection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>Preserve that progression: first the demonstrated connection boundary, then the verified route finding. The original timeout alone did not choose the cause.</p>
 <p>A later confirmation is useful new evidence, not a reason to claim the initial packet contained more than it did.</p>
 </div>
-<p><a href="../day-06.md#q34">Return to Q34</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q34">Return to Q34</a> · <a href="../../lessons/day-06-active-directory.html#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>It does not verify the remaining identity-service requirements or entry to the business application. Continue through those boundaries if usable application access is the requested outcome.</p>
 <p>Report the recovered step clearly. The new credential answer is meaningful evidence, while the wider journey remains unverified rather than automatically complete.</p>
 </div>
-<p><a href="../day-06.md#q35">Return to Q35</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q35">Return to Q35</a> · <a href="../../lessons/day-06-active-directory.html#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>That update tells the next owner what recovered and where the evidence stops. The supplied results concern connection and password validation.</p>
 <p>Do not turn a verified authentication step into an unlimited application claim. The business outcome needs its own receiving-system evidence.</p>
 </div>
-<p><a href="../day-06.md#q36">Return to Q36</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q36">Return to Q36</a> · <a href="../../lessons/day-06-active-directory.html#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>AD has responsibilities in both paths, but each still needs its own configuration and observations. Successful data reading does not establish authentication.</p>
 <p>The distinction also holds when another system owns the profile. Sharing or separating the owner does not change the purpose of the two operations.</p>
 </div>
-<p><a href="../day-06.md#q37">Return to Q37</a> · <a href="../../lessons/day-06-active-directory.md#compare-the-ad-led-variation">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q37">Return to Q37</a> · <a href="../../lessons/day-06-active-directory.html#compare-the-ad-led-variation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>Request corresponding reachability and service evidence. Those details give the owners a specific operation and path to trace.</p>
 <p>The handoff does not need Jordan's password. Relevant connection and returned-result evidence answer the next question without copying the credential into the incident record.</p>
 </div>
-<p><a href="../day-06.md#q38">Return to Q38</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q38">Return to Q38</a> · <a href="../../lessons/day-06-active-directory.html#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>Pair scope with the actual timeout or credential results. A returned rejection and an unanswered connection lead to different questions regardless of the number of reports.</p>
 <p>Use the pattern to choose focused comparisons, not to replace operation evidence with a general diagnosis.</p>
 </div>
-<p><a href="../day-06.md#q39">Return to Q39</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q39">Return to Q39</a> · <a href="../../lessons/day-06-active-directory.html#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>Then add: “We still need to check the remaining sign-in requirements and your intended application entry.”</p>
 <p>Each sentence follows a supplied result. It explains why a successful import did not settle the later password complaint.</p>
 </div>
-<p><a href="../day-06.md#q40">Return to Q40</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+<p><a href="../day-06.html#q40">Return to Q40</a> · <a href="../../lessons/day-06-active-directory.html#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
 </details>
 
 [All Day 6 questions](../day-06.md) · [Question bank](../index.md) · [Course home](../../index.md)

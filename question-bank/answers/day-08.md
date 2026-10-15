@@ -16,7 +16,7 @@ nav_order: 1
 <p>Okta performs the applicable checks and issues information Salesforce must validate. Trust does not mean accepting any message claiming to be from Okta.</p>
 <p>Keep both jobs in view. The identity-service result and the application's acceptance are separate outcomes.</p>
 </div>
-<p><a href="../day-08.md#q01">Return to Q01</a> · <a href="../../lessons/day-08-saml.md#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q01">Return to Q01</a> · <a href="../../lessons/day-08-saml.html#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>The application still identifies its account and controls entry and permissions. These roles describe the stated connection rather than permanent labels for every product.</p>
 <p>Name each participant's responsibility before interpreting its result. Delivery by the browser cannot replace the SP's acceptance evidence.</p>
 </div>
-<p><a href="../day-08.md#q02">Return to Q02</a> · <a href="../../lessons/day-08-saml.md#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q02">Return to Q02</a> · <a href="../../lessons/day-08-saml.html#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>An assertion is a set of statements the application evaluates under its trusted connection. The earlier credential check and the later message exchange are different steps.</p>
 <p>Knowing AD accepted a password does not show Salesforce accepted the assertion. Follow the received information and validation result instead of treating the federation message as another copy of the password.</p>
 </div>
-<p><a href="../day-08.md#q03">Return to Q03</a> · <a href="../../lessons/day-08-saml.md#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q03">Return to Q03</a> · <a href="../../lessons/day-08-saml.html#the-application-needs-trustworthy-identity-information">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Those objects are related, not interchangeable. A request is not the proof it asks for, and the enclosing reply is not identical to its contents.</p>
 <p>Salesforce still validates what arrives before using the identity information.</p>
 </div>
-<p><a href="../day-08.md#q04">Return to Q04</a> · <a href="../../lessons/day-08-saml.md#request-response-and-assertion">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q04">Return to Q04</a> · <a href="../../lessons/day-08-saml.html#request-response-and-assertion">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>Salesforce compares the message with the trusted connection, intended audience, validity, and identity requirements. A plausible username cannot override another failed condition.</p>
 <p>Keep the response result and receiving decision separate. The reply gives the application material to evaluate, not permission to ignore its validation contract.</p>
 </div>
-<p><a href="../day-08.md#q05">Return to Q05</a> · <a href="../../lessons/day-08-saml.md#request-response-and-assertion">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q05">Return to Q05</a> · <a href="../../lessons/day-08-saml.html#request-response-and-assertion">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>Use the connection's trusted configuration and actual validation evidence. The visible name helps locate content, but it cannot show who produced it or whether this attempt may use it.</p>
 <p>Distinguish readable information from acceptable proof. The receiving system must make its own validation decision.</p>
 </div>
-<p><a href="../day-08.md#q06">Return to Q06</a> · <a href="../../lessons/day-08-saml.md#request-response-and-assertion">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q06">Return to Q06</a> · <a href="../../lessons/day-08-saml.html#request-response-and-assertion">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>Salesforce validates the information, matches the intended account, and decides access. It is SP-initiated because the service provider began the exchange.</p>
 <p>That describes the intended route, not a completed incident trace. Actual evidence is needed to establish which stages occurred for the identified attempt.</p>
 </div>
-<p><a href="../day-08.md#q07">Return to Q07</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q07">Return to Q07</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>SAMLResponse is the field carrying the encoded message in this example. Readable XML used for inspection is the message content, not a user form to fill in.</p>
 <p>Form submission establishes a delivery operation to investigate. Salesforce's validation result still determines whether that information is accepted.</p>
 </div>
-<p><a href="../day-08.md#q08">Return to Q08</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q08">Return to Q08</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>Arrival does not establish validation or identification of the intended account. The message can reach the right address while failing a different acceptance requirement.</p>
 <p>Keep receiving and accepting separate. Obtain the relevant application results before reporting entry, rather than make a delivery observation supply every later outcome.</p>
 </div>
-<p><a href="../day-08.md#q09">Return to Q09</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q09">Return to Q09</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>The question supplies an existing account and no creation in the journey. Preserve those facts instead of inferring another operation from the method.</p>
 <p>Some applications have separately supported sign-in-time account behavior, but that needs configuration and evidence. The delivery method alone cannot establish it.</p>
 </div>
-<p><a href="../day-08.md#q10">Return to Q10</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q10">Return to Q10</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>Support and validation details depend on the integration. A different starting point does not remove the application's obligation to check the response.</p>
 <p>Identify the actual launch before interpreting the exchange. Neither route is a reason to ignore audience, signing trust, or account matching.</p>
 </div>
-<p><a href="../day-08.md#q11">Return to Q11</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q11">Return to Q11</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Read the evidence for the actual attempt rather than invent repeated proof requests. Existing authentication may affect which interactions occur.</p>
 <p>The receiving application still validates the returned information. The absence of a particular prompt is not, by itself, an acceptance result or a policy defect.</p>
 </div>
-<p><a href="../day-08.md#q12">Return to Q12</a> · <a href="../../lessons/day-08-saml.md#follow-the-browser">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q12">Return to Q12</a> · <a href="../../lessons/day-08-saml.html#follow-the-browser">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>The actual message still has to satisfy that agreement. Metadata presence does not show what a response contained or whether the application accepted it.</p>
 <p>Keep expected configuration beside observed values. That comparison gives the document practical meaning without turning it into proof of a successful attempt.</p>
 </div>
-<p><a href="../day-08.md#q13">Return to Q13</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q13">Return to Q13</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>The ACS URL answers where the response is delivered. For the stated single-connection model, the service-provider identifier supplies the expected audience, which describes the intended service.</p>
 <p>Read each value by its job. Similar-looking strings can identify different relationships in the same exchange.</p>
 </div>
-<p><a href="../day-08.md#q14">Return to Q14</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q14">Return to Q14</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>Each field answers a different question. A correct user value cannot compensate for the wrong intended application.</p>
 <p>Compare the actual message with the approved settings field by field. That locates a discrepancy without changing unrelated correct information.</p>
 </div>
-<p><a href="../day-08.md#q15">Return to Q15</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q15">Return to Q15</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>Compare the actual audience with the intended connection and obtain the application's validation report to establish its result.</p>
 <p>Keep correct delivery and the visible mismatch together. One successful boundary does not replace another requirement, and the mismatch alone does not supply every other validation outcome.</p>
 </div>
-<p><a href="../day-08.md#q16">Return to Q16</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q16">Return to Q16</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>NameID carries a value, but the application's configuration determines which record field it must match. Email-like text is not automatically the correct identifier.</p>
 <p>Keep the intended matching rule beside the observed values. Otherwise a comparison can answer the wrong identity question.</p>
 </div>
-<p><a href="../day-08.md#q17">Return to Q17</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q17">Return to Q17</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>First establish the instance and relevant attempt. Then compare the fields according to their purposes and use validation evidence.</p>
 <p>Mixing environments can create a misleading diagnosis even when individual settings are valid somewhere. Configuration context is part of the evidence, not a detail to add after choosing the cause.</p>
 </div>
-<p><a href="../day-08.md#q18">Return to Q18</a> · <a href="../../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q18">Return to Q18</a> · <a href="../../lessons/day-08-saml.html#the-two-sides-need-agreed-configuration">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>Compare that claim with the connection's chosen account-matching rule and approved identifier. Reading the text does not establish that the full message was authentic or accepted.</p>
 <p>Content inspection is useful for locating values. It is not the same job as application validation.</p>
 </div>
-<p><a href="../day-08.md#q19">Return to Q19</a> · <a href="../../lessons/day-08-saml.md#read-a-small-piece-of-xml">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q19">Return to Q19</a> · <a href="../../lessons/day-08-saml.html#read-a-small-piece-of-xml">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>You do not need to memorize the namespace address to read the selected field. Identify the named element and the text it contains.</p>
 <p>Structure helps interpret the message, while the actual matching and validation evidence establish whether the application can use it.</p>
 </div>
-<p><a href="../day-08.md#q20">Return to Q20</a> · <a href="../../lessons/day-08-saml.md#read-a-small-piece-of-xml">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q20">Return to Q20</a> · <a href="../../lessons/day-08-saml.html#read-a-small-piece-of-xml">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>The excerpt does not establish the application's rejection reason or all other checks. Obtain the correlated validation report before making that causal claim.</p>
 <p>Inspection and confirmed diagnosis are distinct steps. The selected fields can locate a problem to check without supplying the complete outcome of the attempt.</p>
 </div>
-<p><a href="../day-08.md#q21">Return to Q21</a> · <a href="../../lessons/day-08-saml.md#read-a-small-piece-of-xml">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q21">Return to Q21</a> · <a href="../../lessons/day-08-saml.html#read-a-small-piece-of-xml">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Signature and time conclusions need the full relevant content and validation result. Do not declare a missing signature merely because the shortened view leaves it out.</p>
 <p>State what the excerpt establishes and request the evidence required for the remaining checks. That preserves its value without expanding its scope.</p>
 </div>
-<p><a href="../day-08.md#q22">Return to Q22</a> · <a href="../../lessons/day-08-saml.md#read-a-small-piece-of-xml">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q22">Return to Q22</a> · <a href="../../lessons/day-08-saml.html#read-a-small-piece-of-xml">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>The application must check the required signed content using its configured trusted signing information. Then it evaluates the other acceptance conditions too.</p>
 <p>Do not turn visible text into a completed validation claim. It helps locate fields, while actual verification evidence establishes whether the receiver may rely on them.</p>
 </div>
-<p><a href="../day-08.md#q23">Return to Q23</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q23">Return to Q23</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>Neither is the user's password. Seeing a certificate also does not prove the application trusts the active key or verified a particular message.</p>
 <p>Check the active signing choice, receiving trust, and actual result. These are connection properties rather than another credential entered by the person signing in.</p>
 </div>
-<p><a href="../day-08.md#q24">Return to Q24</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q24">Return to Q24</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>They have different purposes. Readable content is not automatically unsigned or invalid, and encryption alone would not settle every acceptance requirement.</p>
 <p>Inspect the supported connection rules and actual verification results. The visible form of the message does not establish either its trust or intended use.</p>
 </div>
-<p><a href="../day-08.md#q25">Return to Q25</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q25">Return to Q25</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>Inspect the separate checks against the approved connection. Audience identifies intended use; matching identifies the local account.</p>
 <p>Passing one important condition is progress, not a substitute for the rest. Keep each validation outcome attached to the question it answers.</p>
 </div>
-<p><a href="../day-08.md#q26">Return to Q26</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q26">Return to Q26</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>A generic time rejection does not identify which clock or setting is wrong. Obtain the relevant full message and validation evidence before choosing a correction.</p>
 <p>Understand the purpose without inventing a precise cause. Time is one acceptance boundary, not the entire sign-in decision.</p>
 </div>
-<p><a href="../day-08.md#q27">Return to Q27</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q27">Return to Q27</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>A plausible name alone cannot establish those relationships. Inspect the actual request, response, and applicable validation evidence.</p>
 <p>The details depend on the supported flow. Do not assume a universal validation order or borrow a response from another attempt to replace the current result.</p>
 </div>
-<p><a href="../day-08.md#q28">Return to Q28</a> · <a href="../../lessons/day-08-saml.md#what-the-application-must-validate">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q28">Return to Q28</a> · <a href="../../lessons/day-08-saml.html#what-the-application-must-validate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>A shortened excerpt alone would only locate a discrepancy to investigate. The correlated application evidence now establishes its causal role.</p>
 <p>Focus correction on the emitted audience for the intended agreement. Preserve any other accepted results instead of replacing the diagnosis with an unrelated credential explanation.</p>
 </div>
-<p><a href="../day-08.md#q29">Return to Q29</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q29">Return to Q29</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>Inspect the connection value producing the test audience for this production attempt. Changing a correct user field would add another change without repairing the mismatch.</p>
 <p>The accepted results come from validation evidence, not mere readable fields. Keep those findings while addressing the specific failed condition.</p>
 </div>
-<p><a href="../day-08.md#q30">Return to Q30</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q30">Return to Q30</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>Compare approved settings on both sides and identify why the wrong value was emitted. Review shared integration scope before applying the justified change.</p>
 <p>Correct the defective relationship and verify a fresh attempt. Accepting inappropriate proof is not the same outcome as producing correct proof.</p>
 </div>
-<p><a href="../day-08.md#q31">Return to Q31</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q31">Return to Q31</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Review the intended instance, approved value, affected users, and verification plan. Then check fresh messages and acceptance under the corrected agreement.</p>
 <p>The ticket identifies where the problem was noticed; the configuration identifies the wider change scope. Both belong in the recommendation.</p>
 </div>
-<p><a href="../day-08.md#q32">Return to Q32</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q32">Return to Q32</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Saving a setting establishes an action, not what the next message contained or how Salesforce treated it. An old identity-service success cannot verify a new attempt.</p>
 <p>Specify those follow-up checks and leave them unverified until supplied. The proposal becomes a demonstrated correction only through its actual result.</p>
 </div>
-<p><a href="../day-08.md#q33">Return to Q33</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q33">Return to Q33</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>That preserves both services' outcomes and the known account facts.</p>
 <p>Do not invent a missing record or completed fix. The supplied discrepancy is the rejected audience, not failed credentials or absence of the application account.</p>
 </div>
-<p><a href="../day-08.md#q34">Return to Q34</a> · <a href="../../lessons/day-08-saml.md#establish-the-audience-defect">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q34">Return to Q34</a> · <a href="../../lessons/day-08-saml.html#establish-the-audience-defect">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>Inspect the actual emitted value as well as intended configuration. A correct formula alone would not prove what this attempt delivered.</p>
 <p>Do not change the accepted audience to fix a user-matching discrepancy. The current evidence locates the next investigation at identity representation and association.</p>
 </div>
-<p><a href="../day-08.md#q35">Return to Q35</a> · <a href="../../lessons/day-08-saml.md#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q35">Return to Q35</a> · <a href="../../lessons/day-08-saml.html#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>Compare the target, chosen matching rule, and configured versus delivered NameID. Establish the approved correction from that evidence.</p>
 <p>The goal is the right account association, not a new record that accommodates an inaccurate identifier. No new-account requirement is supplied here.</p>
 </div>
-<p><a href="../day-08.md#q36">Return to Q36</a> · <a href="../../lessons/day-08-saml.md#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q36">Return to Q36</a> · <a href="../../lessons/day-08-saml.html#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>The connection supplies the meaning of the value. Familiar names or email-like appearance cannot replace that agreement.</p>
 <p>Keep expected identity configuration beside the observed message. A comparison against the wrong field can look reassuring while leaving the relevant match unanswered.</p>
 </div>
-<p><a href="../day-08.md#q37">Return to Q37</a> · <a href="../../lessons/day-08-saml.md#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q37">Return to Q37</a> · <a href="../../lessons/day-08-saml.html#a-different-nameid-calls-for-a-different-investigation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>Inspect the particular application and operation evidence before making an account claim. A target account may already exist or need another preparation process.</p>
 <p>Authentication and account management remain separate concerns even when a configured journey connects them.</p>
 </div>
-<p><a href="../day-08.md#q38">Return to Q38</a> · <a href="../../lessons/day-08-saml.md#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q38">Return to Q38</a> · <a href="../../lessons/day-08-saml.html#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>Authentication and account identification do not make every action available. Preserve the accepted sign-in instead of reopening an audience defect without evidence.</p>
 <p>Locate the new problem at the action boundary. The required role and denial evidence will distinguish an intended restriction from a permission discrepancy.</p>
 </div>
-<p><a href="../day-08.md#q39">Return to Q39</a> · <a href="../../lessons/day-08-saml.md#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q39">Return to Q39</a> · <a href="../../lessons/day-08-saml.html#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>Use supported correlation and relevant historical evidence before extending a finding to another attempt. A familiar person and application do not make every incident one record.</p>
 <p>The independent case can support its own investigation while the earlier questions remain open. Preserve both scopes rather than borrow later certainty.</p>
 </div>
-<p><a href="../day-08.md#q40">Return to Q40</a> · <a href="../../lessons/day-08-saml.md#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q40">Return to Q40</a> · <a href="../../lessons/day-08-saml.html#authentication-does-not-define-the-account-lifecycle">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q41">
@@ -496,7 +496,7 @@ nav_order: 1
 <p>The provider setting does not prove the actual message value, and receiver configuration supplies what it expects to validate.</p>
 <p>Keep all three together. That connects approved behavior to the emitted information and avoids explaining one instance with settings from another.</p>
 </div>
-<p><a href="../day-08.md#q41">Return to Q41</a> · <a href="../../lessons/day-08-saml.md#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q41">Return to Q41</a> · <a href="../../lessons/day-08-saml.html#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q42">
@@ -508,7 +508,7 @@ nav_order: 1
 <p>Coordinate the supported transition before activation, then verify a fresh response and acceptance. The certificate is connection trust information, not the user's password.</p>
 <p>Generation is a configuration step. The agreement and actual verification result establish whether the changed signing relationship works.</p>
 </div>
-<p><a href="../day-08.md#q42">Return to Q42</a> · <a href="../../lessons/day-08-saml.md#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q42">Return to Q42</a> · <a href="../../lessons/day-08-saml.html#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q43">
@@ -520,7 +520,7 @@ nav_order: 1
 <p>Verify a new response and application acceptance under the intended connection. Distinguish that test from continued use through an old session.</p>
 <p>The session observation remains valid evidence, but it answers a different question. A trust change needs verification that actually uses the changed path.</p>
 </div>
-<p><a href="../day-08.md#q43">Return to Q43</a> · <a href="../../lessons/day-08-saml.md#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q43">Return to Q43</a> · <a href="../../lessons/day-08-saml.html#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q44">
@@ -532,7 +532,7 @@ nav_order: 1
 <p>Then add: “We need to correct the responsible value and check a fresh attempt for the expected audience, application acceptance, and your intended account.”</p>
 <p>That explains the boundary without claiming the proposed repair has already worked.</p>
 </div>
-<p><a href="../day-08.md#q44">Return to Q44</a> · <a href="../../lessons/day-08-saml.md#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
+<p><a href="../day-08.html#q44">Return to Q44</a> · <a href="../../lessons/day-08-saml.html#compare-the-two-sides-of-the-connection">Revisit the lesson</a></p>
 </details>
 
 [All Day 8 questions](../day-08.md) · [Question bank](../index.md) · [Course home](../../index.md)

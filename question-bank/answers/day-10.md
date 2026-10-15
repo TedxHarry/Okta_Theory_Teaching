@@ -16,7 +16,7 @@ nav_order: 1
 <p>Follow the prepared values, relevant operation, response, and intended target record. An existing account may also need ownership and association checks.</p>
 <p>Report the assignment as progress without making it a creation or sign-in result. The target is a separate system, so its outcome cannot be supplied by the relationship alone.</p>
 </div>
-<p><a href="../day-10.md#q01">Return to Q01</a> · <a href="../../lessons/day-10-scim.md#follow-the-account-management-path">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q01">Return to Q01</a> · <a href="../../lessons/day-10-scim.html#follow-the-account-management-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>It does not identify the sign-in protocol. Account management and authentication serve different purposes, even when both contribute to usable access.</p>
 <p>First name the account operation and its result. Then obtain separate entry or permission evidence if the requirement includes using the application.</p>
 </div>
-<p><a href="../day-10.md#q02">Return to Q02</a> · <a href="../../lessons/day-10-scim.md#follow-the-account-management-path">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q02">Return to Q02</a> · <a href="../../lessons/day-10-scim.html#follow-the-account-management-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>An API is an interface through which software requests information or operations. The caller and receiver give its response context.</p>
 <p>Name those participants and the operation before judging the status. Roles belong to this exchange, not every interaction either product can have.</p>
 </div>
-<p><a href="../day-10.md#q03">Return to Q03</a> · <a href="../../lessons/day-10-scim.md#follow-the-account-management-path">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q03">Return to Q03</a> · <a href="../../lessons/day-10-scim.html#follow-the-account-management-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Inspect that connection and the specific operation's result. A token issued for another application's sign-in is not automatically its credential either.</p>
 <p>The completed MFA remains a success, but it cannot provide a receiver response for a backend request nobody has verified.</p>
 </div>
-<p><a href="../day-10.md#q04">Return to Q04</a> · <a href="../../lessons/day-10-scim.md#follow-the-account-management-path">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q04">Return to Q04</a> · <a href="../../lessons/day-10-scim.html#follow-the-account-management-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>Inspect what the connector generated, where it placed the data, and the relevant response and target record. Correct preparation alone does not establish sending or acceptance.</p>
 <p>Follow the boundaries to locate the first discrepancy. That keeps a correct-looking source from replacing evidence of the message the application actually received.</p>
 </div>
-<p><a href="../day-10.md#q05">Return to Q05</a> · <a href="../../lessons/day-10-scim.md#follow-the-account-management-path">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q05">Return to Q05</a> · <a href="../../lessons/day-10-scim.html#follow-the-account-management-path">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>Protocol familiarity alone does not tell you every application's department codes or which actions are enabled in a connector.</p>
 <p>The contract provides a concrete acceptance reference. Use it to identify what should happen, then inspect actual results before reporting that the operation achieved it.</p>
 </div>
-<p><a href="../day-10.md#q06">Return to Q06</a> · <a href="../../lessons/day-10-scim.md#state-the-applications-contract">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q06">Return to Q06</a> · <a href="../../lessons/day-10-scim.html#state-the-applications-contract">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>Preserve the approved business department while preparing the destination's required representation. Finance can be correct source text while FIN is required in this target field.</p>
 <p>The protocol's structure and the application's value rules both matter. Inspect the relevant agreement instead of assuming one example applies everywhere.</p>
 </div>
-<p><a href="../day-10.md#q07">Return to Q07</a> · <a href="../../lessons/day-10-scim.md#state-the-applications-contract">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q07">Return to Q07</a> · <a href="../../lessons/day-10-scim.html#state-the-applications-contract">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>A correct app-profile value is not proof the request placed it correctly or sent it at all. Read the message and receiving result.</p>
 <p>This connects preparation to transmission. Inspect both value and location instead of assuming equal business meaning guarantees the correct structure.</p>
 </div>
-<p><a href="../day-10.md#q08">Return to Q08</a> · <a href="../../lessons/day-10-scim.md#state-the-applications-contract">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q08">Return to Q08</a> · <a href="../../lessons/day-10-scim.html#state-the-applications-contract">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>Find the nested object and read its department field without memorizing the entire identifier. The HTTP resource address is a separate value used by the account operation.</p>
 <p>Keep structure and destination apart. A long string can identify a vocabulary rather than a place to browse.</p>
 </div>
-<p><a href="../day-10.md#q09">Return to Q09</a> · <a href="../../lessons/day-10-scim.md#state-the-applications-contract">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q09">Return to Q09</a> · <a href="../../lessons/day-10-scim.html#state-the-applications-contract">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>Inspect the actual integration and enabled behavior rather than generalize from one operation.</p>
 <p>The HTTP method helps interpret work only with its endpoint and semantics. A familiar method name does not establish another connector's capabilities or outcome.</p>
 </div>
-<p><a href="../day-10.md#q10">Return to Q10</a> · <a href="../../lessons/day-10-scim.md#state-the-applications-contract">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q10">Return to Q10</a> · <a href="../../lessons/day-10-scim.html#state-the-applications-contract">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>It cannot guarantee a later create will never conflict. If the results disagree, inspect the exact search, record, and operation sequence.</p>
 <p>Preserve both observations. The lookup identifies a decision point, not a complete ownership history or promise about every later operation.</p>
 </div>
-<p><a href="../day-10.md#q11">Return to Q11</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q11">Return to Q11</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>No target id is included because this application assigns it. Inspect the response and intended record afterward.</p>
 <p>Read the business information within the structure first. A valid-looking body is a request for work, not evidence the destination completed that work.</p>
 </div>
-<p><a href="../day-10.md#q12">Return to Q12</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q12">Return to Q12</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>The request also does not establish the resulting target state. Obtain the response and relevant record read.</p>
 <p>Keep true as a Boolean distinct from the text string "true" when reading data. Meaning, record location, and actual outcome all need the appropriate context.</p>
 </div>
-<p><a href="../day-10.md#q13">Return to Q13</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q13">Return to Q13</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>A read of that same account checks its stored values and state against the intention. Together they can support creation and the checked destination condition.</p>
 <p>Sign-in and business permissions are still other outcomes. A creation response should not be reported as successful application work without those relevant results.</p>
 </div>
-<p><a href="../day-10.md#q14">Return to Q14</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q14">Return to Q14</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>The 302 directs the browser to another destination. Interpret the header together with status, sender, receiver, and operation.</p>
 <p>One field name does not have a complete meaning outside its exchange. Backend account creation and browser movement need their own result interpretation.</p>
 </div>
-<p><a href="../day-10.md#q15">Return to Q15</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q15">Return to Q15</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>A verified association connects the correct records. Similar text cannot create that relationship or authorize substitution.</p>
 <p>Use the established target id when updating the linked resource. That preserves the intended account while its information changes.</p>
 </div>
-<p><a href="../day-10.md#q16">Return to Q16</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q16">Return to Q16</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>Compare that resource's username, expected attributes, and state. This preserves the relationship between the operation and destination evidence.</p>
 <p>The read verifies its checked state, not actual sign-in or every permission. Correct resource selection makes the account finding reliable while keeping its scope clear.</p>
 </div>
-<p><a href="../day-10.md#q17">Return to Q17</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q17">Return to Q17</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>Report the intended account and values as completed work, then test the particular business outcome if it is required.</p>
 <p>The account can be prepared correctly while later use remains unknown. Preserve that real success without turning it into an unlimited claim about the application.</p>
 </div>
-<p><a href="../day-10.md#q18">Return to Q18</a> · <a href="../../lessons/day-10-scim.md#read-a-create-operation">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q18">Return to Q18</a> · <a href="../../lessons/day-10-scim.html#read-a-create-operation">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>Request the existing resource and reliable ownership evidence, along with the lookup details. A familiar username cannot justify deleting or adopting the record.</p>
 <p>The refusal locates the failed operation. The correct business resolution still depends on the missing identity relationship and search history.</p>
 </div>
-<p><a href="../day-10.md#q19">Return to Q19</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q19">Return to Q19</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Inspect the exact search and response, correct instance, and correlated sequence, with relevant account history. Preserve both observations while resolving their disagreement.</p>
 <p>A plausible story cannot replace the missing operations. The conflict and the earlier no-match are useful findings even before their precise cause is established.</p>
 </div>
-<p><a href="../day-10.md#q20">Return to Q20</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q20">Return to Q20</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>Request both rather than a general retry. They answer different uncertainties and can lead to different approved actions.</p>
 <p>The desired result is a correct account relationship. A successful request without reliable ownership would not satisfy that requirement.</p>
 </div>
-<p><a href="../day-10.md#q21">Return to Q21</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q21">Return to Q21</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Resolve the identity relationship and lookup discrepancy first, then follow the approved account or naming process.</p>
 <p>The goal is the intended person and record, not simply removal of a visible conflict. An error-free create is not a substitute for justified association.</p>
 </div>
-<p><a href="../day-10.md#q22">Return to Q22</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q22">Return to Q22</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>These are conditional paths, not results already provided by the conflict. Do not select either before the ownership evidence arrives.</p>
 <p>The status identifies an operation problem, while business and record evidence justify its resolution. Keep those responsibilities separate.</p>
 </div>
-<p><a href="../day-10.md#q23">Return to Q23</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q23">Return to Q23</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>Obtain those facts before selecting a supported next operation. The create has an explicit rejection, so the missing evidence concerns the existing record and sequence.</p>
 <p>Keep the intended account outcome in view. Forcing another create through could make the relationship harder to manage instead of resolving it.</p>
 </div>
-<p><a href="../day-10.md#q24">Return to Q24</a> · <a href="../../lessons/day-10-scim.md#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q24">Return to Q24</a> · <a href="../../lessons/day-10-scim.html#a-conflict-requires-an-ownership-decision">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>Preserve Finance in the correct business source. Repair its prepared and transmitted representation, then verify the new response and intended target record.</p>
 <p>The request, detailed rejection, and contract establish this specific defect together. It is not evidence that the employee belongs to Sales or needs another account.</p>
 </div>
-<p><a href="../day-10.md#q25">Return to Q25</a> · <a href="../../lessons/day-10-scim.md#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q25">Return to Q25</a> · <a href="../../lessons/day-10-scim.html#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>Read the request and error detail in context before choosing a correction. A different 400 could concern different information.</p>
 <p>The same principle applies to conflicts: a status and a confirmed ownership finding have different scopes. Do not attach one memorized cause to every number.</p>
 </div>
-<p><a href="../day-10.md#q26">Return to Q26</a> · <a href="../../lessons/day-10-scim.md#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q26">Return to Q26</a> · <a href="../../lessons/day-10-scim.html#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>Projects needs FIN to express Finance under its table. Correct the conversion and delivery while preserving the person's real department.</p>
 <p>Acceptability and truth must be satisfied together. Making a required field pass by changing the legitimate source meaning would not achieve the intended account outcome.</p>
 </div>
-<p><a href="../day-10.md#q27">Return to Q27</a> · <a href="../../lessons/day-10-scim.md#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q27">Return to Q27</a> · <a href="../../lessons/day-10-scim.html#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>Review other assigned users sharing the mapping and their approved conversions too. The correction is not necessarily private to Daniel.</p>
 <p>No successful retest is supplied. Specify those results as needed evidence rather than borrow a successful example to close this unresolved case.</p>
 </div>
-<p><a href="../day-10.md#q28">Return to Q28</a> · <a href="../../lessons/day-10-scim.md#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q28">Return to Q28</a> · <a href="../../lessons/day-10-scim.html#a-rejected-value-points-to-a-different-correction">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>Inspect the supported update to prj-1020, its response, and the account afterward. A changed attribute with preserved intended association supports an update finding.</p>
 <p>Name the operation and target id in the record. A successful profile update should not be described as a new-user result.</p>
 </div>
-<p><a href="../day-10.md#q29">Return to Q29</a> · <a href="../../lessons/day-10-scim.md#updating-is-not-creating-again">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q29">Return to Q29</a> · <a href="../../lessons/day-10-scim.html#updating-is-not-creating-again">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>A one-field body is not automatically a safe full replacement preserving all omitted fields. Inspect what the service expects and how the connector uses it.</p>
 <p>The method name is helpful only with its semantics and content. Correcting one attribute should not silently change others because replacement was misunderstood.</p>
 </div>
-<p><a href="../day-10.md#q30">Return to Q30</a> · <a href="../../lessons/day-10-scim.md#updating-is-not-creating-again">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q30">Return to Q30</a> · <a href="../../lessons/day-10-scim.html#updating-is-not-creating-again">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>Read the contract and full intended representation before submitting or judging the change. A one-field update cannot simply be assumed to have PATCH semantics.</p>
 <p>Preserve the intended account information while correcting the department. The right value in one field does not make every request shape appropriate.</p>
 </div>
-<p><a href="../day-10.md#q31">Return to Q31</a> · <a href="../../lessons/day-10-scim.md#updating-is-not-creating-again">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q31">Return to Q31</a> · <a href="../../lessons/day-10-scim.html#updating-is-not-creating-again">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Then obtain the actual request and receiver response if the operation occurred. No refusal can be claimed without its evidence.</p>
 <p>Start at the missing boundary. A correct prepared profile can coexist with unverified delivery without selecting the cause of that uncertainty.</p>
 </div>
-<p><a href="../day-10.md#q32">Return to Q32</a> · <a href="../../lessons/day-10-scim.md#updating-is-not-creating-again">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q32">Return to Q32</a> · <a href="../../lessons/day-10-scim.html#updating-is-not-creating-again">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>The reported result and later state can both be real observations while the full history remains incomplete. Ensure the read and response concern the intended account.</p>
 <p>The disagreement is useful evidence requiring explanation. It does not authorize inventing a particular target defect from two snapshots alone.</p>
 </div>
-<p><a href="../day-10.md#q33">Return to Q33</a> · <a href="../../lessons/day-10-scim.md#updating-is-not-creating-again">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q33">Return to Q33</a> · <a href="../../lessons/day-10-scim.html#updating-is-not-creating-again">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>The body does not establish acceptance or the stored state. Obtain the response and relevant resource read afterward.</p>
 <p>An authorized intention and a transmitted operation are useful facts, but the receiving application supplies its outcome. Keep existing-session evidence separate if ending sessions is also required.</p>
 </div>
-<p><a href="../day-10.md#q34">Return to Q34</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q34">Return to Q34</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>Interpret it with the intended operation, then inspect the linked target record for its required state. The response reports success while the read checks the destination.</p>
 <p>Do not infer an error simply because there is nothing to decode. The relevant account and access results still need their own scoped verification.</p>
 </div>
-<p><a href="../day-10.md#q35">Return to Q35</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q35">Return to Q35</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>Account-state maintenance and ending an established application session are different outcomes. Obtain the relevant access evidence if the removal requirement includes that path.</p>
 <p>Report the confirmed inactive record clearly. A successful deactivation does not need to be exaggerated into deletion or universal session termination.</p>
 </div>
-<p><a href="../day-10.md#q36">Return to Q36</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q36">Return to Q36</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>Inspect the actual operation and target result. The chosen method can differ across integrations while the resource is retained.</p>
 <p>Use deprovisioning to describe removal or disabling through the supported process, not as an automatic synonym for deleting every account record.</p>
 </div>
-<p><a href="../day-10.md#q37">Return to Q37</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q37">Return to Q37</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>Inspect remaining assignments and actual operation evidence before claiming a request or target change. Group removal describes a relationship, not the destination state.</p>
 <p>The removal requirement should guide the wider check. Ending one path is progress, while account and session outcomes still require their own records.</p>
 </div>
-<p><a href="../day-10.md#q38">Return to Q38</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q38">Return to Q38</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>That connects the response and checked state without inventing deletion or session results.</p>
 <p>The completed account action is useful. Keep the additional required outcome open rather than hide it behind a broad closure.</p>
 </div>
-<p><a href="../day-10.md#q39">Return to Q39</a> · <a href="../../lessons/day-10-scim.md#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q39">Return to Q39</a> · <a href="../../lessons/day-10-scim.html#deactivation-is-an-account-state-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>Inspect the supported and enabled action, assignment, mappings, linked target, actual request, and response. SSO configuration, the separate sign-in relationship, does not verify provisioning either.</p>
 <p>Keep general connectivity and the specific operation separate. One accepted test cannot certify all possible messages or business outcomes.</p>
 </div>
-<p><a href="../day-10.md#q40">Return to Q40</a> · <a href="../../lessons/day-10-scim.md#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q40">Return to Q40</a> · <a href="../../lessons/day-10-scim.html#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q41">
@@ -496,7 +496,7 @@ nav_order: 1
 <p>Inspect the target and relevant operation evidence to establish what happened before deciding the supported next step.</p>
 <p>This differs from an explicit rejected create. An unanswered request and a returned refusal support different conclusions and should not be treated as the same finding.</p>
 </div>
-<p><a href="../day-10.md#q41">Return to Q41</a> · <a href="../../lessons/day-10-scim.md#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q41">Return to Q41</a> · <a href="../../lessons/day-10-scim.html#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q42">
@@ -508,7 +508,7 @@ nav_order: 1
 <p>Each stops at a different evidence boundary. Applying one retry or formula change to all would ignore those differences.</p>
 <p>Locate what is demonstrated and request the fact that can distinguish the relevant explanations.</p>
 </div>
-<p><a href="../day-10.md#q42">Return to Q42</a> · <a href="../../lessons/day-10-scim.md#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q42">Return to Q42</a> · <a href="../../lessons/day-10-scim.html#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q43">
@@ -520,7 +520,7 @@ nav_order: 1
 <p>Record the operation, linked identifier, relevant sanitized response, proposed or performed correction, and verification. Those facts make the conclusion traceable beyond the last visible status.</p>
 <p>An absent task and a confirmed account are different findings. Keep the intended outcome open until actual evidence supports it.</p>
 </div>
-<p><a href="../day-10.md#q43">Return to Q43</a> · <a href="../../lessons/day-10-scim.md#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q43">Return to Q43</a> · <a href="../../lessons/day-10-scim.html#check-the-enabled-operation-before-retrying">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q44">
@@ -532,7 +532,7 @@ nav_order: 1
 <p>Keep each request, contract, response, identifier, and read together. A success in one case cannot fill another's missing outcome.</p>
 <p>That comparison gives different next actions rather than one generic provisioning fix.</p>
 </div>
-<p><a href="../day-10.md#q44">Return to Q44</a> · <a href="../../lessons/day-10-scim.md#tell-the-investigation-story">Revisit the lesson</a></p>
+<p><a href="../day-10.html#q44">Return to Q44</a> · <a href="../../lessons/day-10-scim.html#tell-the-investigation-story">Revisit the lesson</a></p>
 </details>
 
 [All Day 10 questions](../day-10.md) · [Question bank](../index.md) · [Course home](../../index.md)

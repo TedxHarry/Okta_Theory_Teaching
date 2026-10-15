@@ -16,7 +16,7 @@ nav_order: 1
 <p>Route maintenance according to that responsibility and the approved business value. A view of the receiving profile does not automatically authorize a local correction.</p>
 <p>Before editing, check the person's source relationship and the field's configuration. A visible value is an observation, not a transfer of ownership.</p>
 </div>
-<p><a href="../day-04.md#q01">Return to Q01</a> · <a href="../../lessons/day-04-sources-and-ownership.md#start-with-authority">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q01">Return to Q01</a> · <a href="../../lessons/day-04-sources-and-ownership.html#start-with-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>The approved business department and recorded value disagree, so the correction belongs through the responsible HR maintenance process. The source designation does not make Finance accurate.</p>
 <p>Keep two checks separate: who owns the field and what its legitimate value should be. After correcting the source, verify any required downstream results rather than assume the new value reached every destination.</p>
 </div>
-<p><a href="../day-04.md#q02">Return to Q02</a> · <a href="../../lessons/day-04-sources-and-ownership.md#start-with-authority">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q02">Return to Q02</a> · <a href="../../lessons/day-04-sources-and-ownership.html#start-with-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>Workday is the usual profile owner here, with AD as the explicit work-email exception. The exception does not replace the overall source decision.</p>
 <p>Read the profile source first, then the field's owner. That explains how different maintenance responsibilities coexist without treating every field as globally controlled by one system.</p>
 </div>
-<p><a href="../day-04.md#q03">Return to Q03</a> · <a href="../../lessons/day-04-sources-and-ownership.md#start-with-authority">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q03">Return to Q03</a> · <a href="../../lessons/day-04-sources-and-ownership.html#start-with-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>A conversion rule cannot decide which conflicting source the company wants to govern the field. Ownership supplies that responsibility.</p>
 <p>Use both decisions: establish the approved owner and input, then inspect how the value is represented and delivered. Neither responsibility alone proves the actual target result.</p>
 </div>
-<p><a href="../day-04.md#q04">Return to Q04</a> · <a href="../../lessons/day-04-sources-and-ownership.md#start-with-authority">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q04">Return to Q04</a> · <a href="../../lessons/day-04-sources-and-ownership.html#start-with-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>Check the actual user's effective source and any field-specific exceptions. A document naming a system does not prove that it applies to every person.</p>
 <p>Recognizing the term helps read older material. The applicable record relationships and settings still supply the maintenance decision for the particular field.</p>
 </div>
-<p><a href="../day-04.md#q05">Return to Q05</a> · <a href="../../lessons/day-04-sources-and-ownership.md#start-with-authority">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q05">Return to Q05</a> · <a href="../../lessons/day-04-sources-and-ownership.html#start-with-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>Those directions state intended relationships, not completed operations. Each requires supported configuration and result evidence for a specific investigation.</p>
 <p>Use the architecture to locate the relevant boundary. Do not turn a data-flow arrow into proof that the latest value was sent or stored successfully.</p>
 </div>
-<p><a href="../day-04.md#q06">Return to Q06</a> · <a href="../../lessons/day-04-sources-and-ownership.md#northbridges-employee-topology">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q06">Return to Q06</a> · <a href="../../lessons/day-04-sources-and-ownership.html#northbridges-employee-topology">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>That does not authorize both systems to overwrite every attribute. Identify the field, direction, and applicable responsibility for each operation.</p>
 <p>AD being a destination in one relationship does not prevent it being a source in another. The precise responsibilities make the design understandable without assuming unrestricted two-way writes.</p>
 </div>
-<p><a href="../day-04.md#q07">Return to Q07</a> · <a href="../../lessons/day-04-sources-and-ownership.md#northbridges-employee-topology">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q07">Return to Q07</a> · <a href="../../lessons/day-04-sources-and-ownership.html#northbridges-employee-topology">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>Name the actual system and resource when requesting evidence. A successful directory operation cannot establish a separate application's result.</p>
 <p>Read the simplified box as several onward destinations, each with its own configuration and outcomes. Diagram layout should not create a relationship that the architecture does not supply.</p>
 </div>
-<p><a href="../day-04.md#q08">Return to Q08</a> · <a href="../../lessons/day-04-sources-and-ownership.md#northbridges-employee-topology">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q08">Return to Q08</a> · <a href="../../lessons/day-04-sources-and-ownership.html#northbridges-employee-topology">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>Maya's two confirmed relationships make the Workday-first order relevant to her. Priya's checked model has no external source association, so her effective source is Okta.</p>
 <p>Read the person's associations before using the ranking. The same configured list can lead to different maintenance processes for different people.</p>
 </div>
-<p><a href="../day-04.md#q09">Return to Q09</a> · <a href="../../lessons/day-04-sources-and-ownership.md#northbridges-employee-topology">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q09">Return to Q09</a> · <a href="../../lessons/day-04-sources-and-ownership.html#northbridges-employee-topology">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>Inspect the linked records, relevant mapping, and applicable import or update result. An import brings source records or changes into processing; its outcome needs evidence.</p>
 <p>Ownership and data-flow design guide the investigation. They cannot supply a destination result that has not been checked.</p>
 </div>
-<p><a href="../day-04.md#q10">Return to Q10</a> · <a href="../../lessons/day-04-sources-and-ownership.md#northbridges-employee-topology">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q10">Return to Q10</a> · <a href="../../lessons/day-04-sources-and-ownership.html#northbridges-employee-topology">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>Information arriving does not itself prove correct matching. A familiar name is not enough to establish ownership of the linked account.</p>
 <p>Check each stage's relevant evidence. Knowing which relationship exists helps explain where later sourced values should come from.</p>
 </div>
-<p><a href="../day-04.md#q11">Return to Q11</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q11">Return to Q11</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Inspect the actual selection and Priya's associations. Her population label alone does not enforce either inclusion or exclusion.</p>
 <p>The integration's scope and resulting links are related but separate facts. Use those observations before claiming how her profile is maintained.</p>
 </div>
-<p><a href="../day-04.md#q12">Return to Q12</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q12">Return to Q12</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>Inspect Priya's linked records rather than infer them from the connector status. The connector can operate for a selected population without applying to every identity.</p>
 <p>This distinction prevents a system diagram from becoming an invented user relationship. Find which sources actually apply before deciding her effective profile source or field maintenance process.</p>
 </div>
-<p><a href="../day-04.md#q13">Return to Q13</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q13">Return to Q13</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>The particular field still needs inspection. It may inherit that source or have an explicit different owner, such as a separately designated directory-owned email field.</p>
 <p>Choosing the profile source is one step in the investigation. It does not remove attribute-level exceptions or prove any update reached its destination.</p>
 </div>
-<p><a href="../day-04.md#q14">Return to Q14</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q14">Return to Q14</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>Inspect the actual associations and sourcing settings before claiming a new owner. Separately investigate the failed operation and its effect on data arrival.</p>
 <p>Keep operational health and ownership distinct. A source can remain responsible for a profile while its latest import needs correction.</p>
 </div>
-<p><a href="../day-04.md#q15">Return to Q15</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q15">Return to Q15</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>Check the source condition, the department's configuration, and the applicable mapping and update results. Do not assume the next connected source supplies a replacement.</p>
 <p>An empty field identifies information to resolve. It does not silently change which business system is responsible for maintaining the department.</p>
 </div>
-<p><a href="../day-04.md#q16">Return to Q16</a> · <a href="../../lessons/day-04-sources-and-ownership.md#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q16">Return to Q16</a> · <a href="../../lessons/day-04-sources-and-ownership.html#first-ask-which-sources-apply-to-this-person">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>The field setting is not globally pinned to Workday for every identity. Its meaning depends on the person-level source decision.</p>
 <p>This allows different populations to coexist in one environment. Route a correction through the applicable owner rather than copy another person's maintenance path.</p>
 </div>
-<p><a href="../day-04.md#q17">Return to Q17</a> · <a href="../../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q17">Return to Q17</a> · <a href="../../lessons/day-04-sources-and-ownership.html#then-check-the-particular-attribute">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>A mapping separately defines how information is represented, such as Finance becoming FIN for an application.</p>
 <p>Read the owner for this field and person, then inspect the relevant representation and operation. Choosing an owner does not calculate or verify every destination value.</p>
 </div>
-<p><a href="../day-04.md#q18">Return to Q18</a> · <a href="../../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q18">Return to Q18</a> · <a href="../../lessons/day-04-sources-and-ownership.html#then-check-the-particular-attribute">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>Reading only the global source ranking would miss the explicit exception. Inspect both the person-level profile decision and the field's source configuration.</p>
 <p>This does not make AD owner of department, every identifier, or lifecycle processing. Keep each responsibility attached to the scope the company actually designated.</p>
 </div>
-<p><a href="../day-04.md#q19">Return to Q19</a> · <a href="../../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q19">Return to Q19</a> · <a href="../../lessons/day-04-sources-and-ownership.html#then-check-the-particular-attribute">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Identify the actual attribute and direction before authorizing writes. Connectivity in both directions does not mean both systems should overwrite the same field.</p>
 <p>Align supported configuration with ownership, then inspect actual results. The architecture can support multiple responsibilities without allowing unrestricted competing updates.</p>
 </div>
-<p><a href="../day-04.md#q20">Return to Q20</a> · <a href="../../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q20">Return to Q20</a> · <a href="../../lessons/day-04-sources-and-ownership.html#then-check-the-particular-attribute">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>Inspect the field's configured handling and actual resulting profile. Also resolve the legitimate email requirement through the appropriate maintenance owner.</p>
 <p>Missing data changes the input available, not automatically the source agreement. Keep the expected replacement unknown until settings and operation evidence explain it.</p>
 </div>
-<p><a href="../day-04.md#q21">Return to Q21</a> · <a href="../../lessons/day-04-sources-and-ownership.md#then-check-the-particular-attribute">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q21">Return to Q21</a> · <a href="../../lessons/day-04-sources-and-ownership.html#then-check-the-particular-attribute">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Before correcting AD, establish whether that directory field is meant to receive the department and how its maintenance works. A disagreement alone does not supply that requirement.</p>
 <p>Do not change correct Okta data to match the other record. Follow the approved responsibility and investigate the separate destination only when its expected outcome is clear.</p>
 </div>
-<p><a href="../day-04.md#q22">Return to Q22</a> · <a href="../../lessons/day-04-sources-and-ownership.md#work-through-the-disagreement">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q22">Return to Q22</a> · <a href="../../lessons/day-04-sources-and-ownership.html#work-through-the-disagreement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>If synchronization is required, inspect the mapping, supported update configuration, and operation evidence. An update not attempted, a rejected update, or a later competing write would require different findings.</p>
 <p>Current values cannot choose among those histories. Use the requirement to identify the boundary, then obtain the result evidence.</p>
 </div>
-<p><a href="../day-04.md#q23">Return to Q23</a> · <a href="../../lessons/day-04-sources-and-ownership.md#work-through-the-disagreement">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q23">Return to Q23</a> · <a href="../../lessons/day-04-sources-and-ownership.html#work-through-the-disagreement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>The controlling value still needs comparison with the approved business email. Authority identifies responsibility; it does not guarantee accuracy.</p>
 <p>Do not demand identical text across every record without a requirement. Establish the legitimate value and owner, then follow any justified maintenance and delivery checks.</p>
 </div>
-<p><a href="../day-04.md#q24">Return to Q24</a> · <a href="../../lessons/day-04-sources-and-ownership.md#work-through-the-disagreement">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q24">Return to Q24</a> · <a href="../../lessons/day-04-sources-and-ownership.html#work-through-the-disagreement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>The supplied ownership decision concerns work email only. Obtain the actual identifier evidence for the system and operation being investigated.</p>
 <p>Calling everything Maya's email can hide which field was checked. Name both the record and field so a maintenance decision does not become an unsupported sign-in-name claim.</p>
 </div>
-<p><a href="../day-04.md#q25">Return to Q25</a> · <a href="../../lessons/day-04-sources-and-ownership.md#work-through-the-disagreement">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q25">Return to Q25</a> · <a href="../../lessons/day-04-sources-and-ownership.html#work-through-the-disagreement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>Those checks distinguish gaps without assuming which caused the discrepancy. Ownership tells you where the value should come from, not whether the latest value arrived.</p>
 <p>Changing correct HR information would introduce another error. Investigate the boundary between the source and its intended representation.</p>
 </div>
-<p><a href="../day-04.md#q26">Return to Q26</a> · <a href="../../lessons/day-04-sources-and-ownership.md#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q26">Return to Q26</a> · <a href="../../lessons/day-04-sources-and-ownership.html#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>After the source correction, verify the relevant import, mappings, and required destination results. Correcting the authoritative record does not prove every receiver was updated.</p>
 <p>Locate the first record that disagrees with the approved business value. Here it is the source itself, which calls for a different investigation from a correct source with a stale receiver.</p>
 </div>
-<p><a href="../day-04.md#q27">Return to Q27</a> · <a href="../../lessons/day-04-sources-and-ownership.md#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q27">Return to Q27</a> · <a href="../../lessons/day-04-sources-and-ownership.html#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>Investigate the approved source value, relationship, mapping, and operation before choosing a correction. Seeing or editing data does not establish ownership.</p>
 <p>A local workaround is not proof that the intended maintenance path is repaired. The durable result needs the correct value supplied through the appropriate process.</p>
 </div>
-<p><a href="../day-04.md#q28">Return to Q28</a> · <a href="../../lessons/day-04-sources-and-ownership.md#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q28">Return to Q28</a> · <a href="../../lessons/day-04-sources-and-ownership.html#what-if-mayas-okta-department-were-wrong">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>The sponsor supplies the business approval, and the authorized administrator maintains the record in its designated system.</p>
 <p>Application delivery still needs its own evidence afterward. The source model identifies where the central value belongs; it does not prove every connected account received it.</p>
 </div>
-<p><a href="../day-04.md#q29">Return to Q29</a> · <a href="../../lessons/day-04-sources-and-ownership.md#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q29">Return to Q29</a> · <a href="../../lessons/day-04-sources-and-ownership.html#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>The authorized administrator maintains the approved information in the Okta-managed record.</p>
 <p>Keep three roles distinct: who approves the information, who may perform the maintenance, and which system controls the field. That makes the process clear without inventing a technical association or permission.</p>
 </div>
-<p><a href="../day-04.md#q30">Return to Q30</a> · <a href="../../lessons/day-04-sources-and-ownership.md#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q30">Return to Q30</a> · <a href="../../lessons/day-04-sources-and-ownership.html#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>If an imported record were mistakenly linked to Priya, the desired model would not explain all observed behavior. The relationship and its effects would need investigation.</p>
 <p>Describe the mechanisms as well as the business category. An intended exclusion and a verified exclusion are different facts.</p>
 </div>
-<p><a href="../day-04.md#q31">Return to Q31</a> · <a href="../../lessons/day-04-sources-and-ownership.md#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q31">Return to Q31</a> · <a href="../../lessons/day-04-sources-and-ownership.html#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>A global priority change does not explain why the wrong relationship arose or establish that it was repaired. It can also affect other associated users.</p>
 <p>Keep the intended contractor model while obtaining the specific relationship evidence. The supported next step is investigation of the demonstrated association discrepancy, not an invented repair for every identity.</p>
 </div>
-<p><a href="../day-04.md#q32">Return to Q32</a> · <a href="../../lessons/day-04-sources-and-ownership.md#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q32">Return to Q32</a> · <a href="../../lessons/day-04-sources-and-ownership.html#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Follow the relevant application mapping, account operation, and target record. Each application may require its own format for the same department meaning.</p>
 <p>The profile can be correct while delivery remains unverified. Having an Okta-managed source changes where the input is maintained, not the need to inspect how it reaches the application.</p>
 </div>
-<p><a href="../day-04.md#q33">Return to Q33</a> · <a href="../../lessons/day-04-sources-and-ownership.md#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q33">Return to Q33</a> · <a href="../../lessons/day-04-sources-and-ownership.html#why-priya-can-be-maintained-in-okta">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>The directory's responsibility for work email does not transfer authority over the full employee lifecycle. Inspect the actual lifecycle settings and results when investigating those actions.</p>
 <p>Even a known source ranking does not prove accounts or sessions were disabled. Each required outcome still needs evidence from its relevant system.</p>
 </div>
-<p><a href="../day-04.md#q34">Return to Q34</a> · <a href="../../lessons/day-04-sources-and-ownership.md#field-ownership-and-account-lifecycle-are-separate-decisions">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q34">Return to Q34</a> · <a href="../../lessons/day-04-sources-and-ownership.html#field-ownership-and-account-lifecycle-are-separate-decisions">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>An architecture conclusion is conditional on those relationships. It should not be carried from one company into another without checking them.</p>
 <p>Name the actual source model before recommending maintenance. Neither design by itself proves that a particular update completed.</p>
 </div>
-<p><a href="../day-04.md#q35">Return to Q35</a> · <a href="../../lessons/day-04-sources-and-ownership.md#keep-the-ad-led-variation-separate">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q35">Return to Q35</a> · <a href="../../lessons/day-04-sources-and-ownership.html#keep-the-ad-led-variation-separate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>Investigate the current approved source's mapping and operation evidence. A correct source value that has not arrived calls for arrival checks before a different ownership decision is proposed.</p>
 <p>Any source-order change needs its own business justification and scope. A stale receiving field does not supply that approval.</p>
 </div>
-<p><a href="../day-04.md#q36">Return to Q36</a> · <a href="../../lessons/day-04-sources-and-ownership.md#keep-the-ad-led-variation-separate">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q36">Return to Q36</a> · <a href="../../lessons/day-04-sources-and-ownership.html#keep-the-ad-led-variation-separate">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>The AD agent is software in the company's environment connecting Okta with the directory for supported operations. Password validation does not make AD the owner of the HR department.</p>
 <p>Separate the questions: who maintains the profile, who owns a particular attribute, and who checks identity proof for this sign-in. Each needs its own configuration and result evidence.</p>
 </div>
-<p><a href="../day-04.md#q37">Return to Q37</a> · <a href="../../lessons/day-04-sources-and-ownership.md#profile-ownership-does-not-identify-the-password-validator">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q37">Return to Q37</a> · <a href="../../lessons/day-04-sources-and-ownership.html#profile-ownership-does-not-identify-the-password-validator">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>The profile update establishes its checked data result. Password acceptance establishes the credential result for that attempt, not a fresh department update.</p>
 <p>Name the operation beside each success. That preserves real progress while preventing a narrow observation from becoming a claim that the entire environment is healthy.</p>
 </div>
-<p><a href="../day-04.md#q38">Return to Q38</a> · <a href="../../lessons/day-04-sources-and-ownership.md#profile-ownership-does-not-identify-the-password-validator">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q38">Return to Q38</a> · <a href="../../lessons/day-04-sources-and-ownership.html#profile-ownership-does-not-identify-the-password-validator">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>Inspect the person's associations, the field's owner, and the relevant update timing and events before repeating the edit. Configuration explains the intended source; operation evidence explains actual writes.</p>
 <p>Keep the hypothesis useful by naming the evidence that would support it. A likely story is not yet a verified cause.</p>
 </div>
-<p><a href="../day-04.md#q39">Return to Q39</a> · <a href="../../lessons/day-04-sources-and-ownership.md#investigate-a-value-that-comes-back">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q39">Return to Q39</a> · <a href="../../lessons/day-04-sources-and-ownership.html#investigate-a-value-that-comes-back">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>Obtain mapping and operation evidence at the demonstrated discrepancy. Ownership locates responsibility; actual results show what arrived or changed.</p>
 <p>Leave missing outcomes unknown. That sequence guides the next useful action without assuming a cause or treating every user as part of one maintenance model.</p>
 </div>
-<p><a href="../day-04.md#q40">Return to Q40</a> · <a href="../../lessons/day-04-sources-and-ownership.md#investigate-a-value-that-comes-back">Revisit the lesson</a></p>
+<p><a href="../day-04.html#q40">Return to Q40</a> · <a href="../../lessons/day-04-sources-and-ownership.html#investigate-a-value-that-comes-back">Revisit the lesson</a></p>
 </details>
 
 [All Day 4 questions](../day-04.md) · [Question bank](../index.md) · [Course home](../../index.md)

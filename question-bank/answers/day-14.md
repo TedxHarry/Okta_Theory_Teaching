@@ -15,7 +15,7 @@ nav_order: 1
 <p>The outcome describes what eligible people should be able to do. The group rule proposes a way to implement part of that outcome. A requirement states the outcome and constraints; a design explains how systems will deliver them.</p>
 <p>A group can select an assignment population without establishing submission permission inside Expense. Agree on the intended capability first, then trace the design through the required relationships and application evidence.</p>
 </div>
-<p><a href="../day-14.md#q01">Return to Q01</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q01">Return to Q01</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -26,7 +26,7 @@ nav_order: 1
 <p>The sentence leaves important business decisions unresolved. Access might mean entry, submission, or approval, and the exception wording has more than one possible meaning.</p>
 <p>Ask the responsible owner to specify the application, capabilities, eligibility, timing, and exception terms. Writing logic now would turn assumptions into access decisions. Record the unresolved questions and their owners so the rule implements an approved meaning rather than inventing one.</p>
 </div>
-<p><a href="../day-14.md#q02">Return to Q02</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q02">Return to Q02</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -37,7 +37,7 @@ nav_order: 1
 <p>No. Including them would create an access decision rather than resolve the missing one. Name the approver and keep that decision open until the authorized answer is supplied.</p>
 <p>Work on agreed parts can continue independently, but the contractor path must follow its approval. Distinguish approved outcomes from assumptions in the requirement record. A temporary interpretation can otherwise become an unintended permanent assignment path.</p>
 </div>
-<p><a href="../day-14.md#q03">Return to Q03</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q03">Return to Q03</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -48,7 +48,7 @@ nav_order: 1
 <p>Different applications and instances can have different connections, account handling, and permissions. A capability in one destination is not an outcome in another.</p>
 <p>Name the system and intended action together before selecting a group, account operation, or acceptance check. That makes the requirement observable. It also prevents a familiar integration's design from being copied into the wrong environment without verifying whether its responsibilities and supported behavior fit.</p>
 </div>
-<p><a href="../day-14.md#q04">Return to Q04</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q04">Return to Q04</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#turn-the-request-into-observable-outcomes">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -59,7 +59,7 @@ nav_order: 1
 <p>Effective Finance employees qualify for ordinary submission access. Moving out of Finance ends normal eligibility; departure requires access removal under the agreed scope. Exceptions must be reviewed separately.</p>
 <p>These approved outcomes guide implementation and verification. They do not establish that processing or target removal already happened. Follow the business change through the relevant assignments, accounts, and access checks before reporting the model's result as complete.</p>
 </div>
-<p><a href="../day-14.md#q05">Return to Q05</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q05">Return to Q05</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -70,7 +70,7 @@ nav_order: 1
 <p>No. Submitting an expense and approving one are different business capabilities. Maya's normal membership supports submission, while approval requires the separate decision explicitly supplied for Daniel.</p>
 <p>Verify the distinction in Expense's local permissions. A group assignment or successful login checks only part of the requirement. Neither Maya's department nor Daniel's title can supply an absent approval decision for her.</p>
 </div>
-<p><a href="../day-14.md#q06">Return to Q06</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q06">Return to Q06</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -81,7 +81,7 @@ nav_order: 1
 <p>It authorizes the ordinary eligibility path, not a privileged exception. The owner's explicit decision governs this model; an impressive title does not add an unstated capability.</p>
 <p>Preserve that meaning in conditions and acceptance checks. If different access is requested, route the new decision to its responsible approver rather than silently extending the current design. Business approval must precede the implementation of the additional path.</p>
 </div>
-<p><a href="../day-14.md#q07">Return to Q07</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q07">Return to Q07</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -92,7 +92,7 @@ nav_order: 1
 <p>Obtain the documented sponsor and Expense-owner approval, scope, end condition, and maintenance responsibility. The group can implement an assignment relationship, but its name does not create approval or remove membership automatically.</p>
 <p>Follow the approved path to the intended account and business capability, then verify removal when the condition ends. A first successful entry is one result; it does not establish the whole exception lifecycle.</p>
 </div>
-<p><a href="../day-14.md#q08">Return to Q08</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q08">Return to Q08</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -103,7 +103,7 @@ nav_order: 1
 <p>No. The framework explains how an exception could be approved. It does not supply Priya's missing decision.</p>
 <p>Request the sponsor and Expense owner's answer for her scope and end condition. Keep her outside the normal employee path and do not infer permission from the existence of an exception design. Approval and implementation are separate findings, so both need evidence before reporting justified access.</p>
 </div>
-<p><a href="../day-14.md#q09">Return to Q09</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q09">Return to Q09</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -114,7 +114,7 @@ nav_order: 1
 <p>No. The exception identifies business access Priya may receive; it does not change the separate authentication agreement. Her permitted sign-in must still satisfy the applicable policy.</p>
 <p>Do not reduce proof merely because she uses an exception path or needs recovery assistance. Check the scope actually approved. Assignment eligibility and authentication evidence are related parts of access, but one decision cannot silently replace the other.</p>
 </div>
-<p><a href="../day-14.md#q10">Return to Q10</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q10">Return to Q10</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -125,7 +125,7 @@ nav_order: 1
 <p>No. The stated account responsibility belongs to the Expense owner. Assignment can be designed without inventing a connector operation.</p>
 <p>If automation is proposed later, investigate its supported capabilities, configuration, and ownership separately. For now, verify the intended account and usable submission access through the agreed process. A known responsibility is more accurate than claiming an assignment creates a target account when no such capability has been established.</p>
 </div>
-<p><a href="../day-14.md#q11">Return to Q11</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q11">Return to Q11</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#use-the-owners-answers">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>It selects the normal assignment population from governed attributes. Connecting Expense to the group then relates membership to application assignment.</p>
 <p>The owner's account preparation and local-role work remain separate. Follow eligibility through membership and assignment to actual business capability. A correct condition is useful for this design, but it does not implement every requirement or prove that the person can submit an expense.</p>
 </div>
-<p><a href="../day-14.md#q12">Return to Q12</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q12">Return to Q12</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -147,7 +147,7 @@ nav_order: 1
 <p>They describe eligibility data, not every current employment decision. The effective start and departure still need their configured processing and verified outcomes.</p>
 <p>Check the business event, account state, assignments, and relevant target results rather than inferring current approval solely from retained text. The group works within the wider access model. It cannot replace the process that determines when working access may begin or must end.</p>
 </div>
-<p><a href="../day-14.md#q13">Return to Q13</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q13">Return to Q13</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -158,7 +158,7 @@ nav_order: 1
 <p>No. A label describes intent; it does not enforce the decision record or execute removal. Inspect actual approval and the responsible maintenance process.</p>
 <p>An owner must arrange and verify the end-condition action, including the relevant application relationship. The group can help implement the model, but its name cannot supply missing governance or results. Treat labels as ways to find objects, rather than evidence that all their promised behavior occurs.</p>
 </div>
-<p><a href="../day-14.md#q14">Return to Q14</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q14">Return to Q14</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -169,7 +169,7 @@ nav_order: 1
 <p>No. Retained membership is a historical relationship, not a new business approval or a reversal of the account action.</p>
 <p>Verify the required account and session outcomes under the effective departure scope. A membership report alone does not establish usable access, and a later return would need fresh decisions. Keep account state, membership, actual access, and current authorization separate when interpreting the report.</p>
 </div>
-<p><a href="../day-14.md#q15">Return to Q15</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q15">Return to Q15</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -180,7 +180,7 @@ nav_order: 1
 <p>A direct assignment can survive removal from the new group, while an existing local role can provide more capability than the intended model allows.</p>
 <p>Review assignment sources, establish correct account ownership and matching, and ask the application owner to evaluate roles. The new group may work while obsolete access remains. Compare the desired outcome with the whole relevant current state, rather than checking only the relationship being added.</p>
 </div>
-<p><a href="../day-14.md#q16">Return to Q16</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q16">Return to Q16</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#translate-the-requirement-without-changing-its-meaning">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -191,7 +191,7 @@ nav_order: 1
 <p>No. Technical ability to assign an application does not authorize inventing the business approval decision. Likewise, an Expense approver role does not make Daniel an Okta administrator.</p>
 <p>Identify the approved capability and an appropriately authorized operator for implementation. The two responsibilities can cooperate without becoming interchangeable. Naming both prevents a configuration permission from being mistaken for business authority, or a business role from granting administrative control.</p>
 </div>
-<p><a href="../day-14.md#q17">Return to Q17</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q17">Return to Q17</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -202,7 +202,7 @@ nav_order: 1
 <p>Least privilege means providing the permissions and scope needed for the defined responsibility. Scope identifies which resources or users those permissions cover.</p>
 <p>Check the exact operation and all affected resources. Expense authority does not automatically cover Projects or a shared-policy change. If the task exceeds available authority, route it to the appropriate operator or revise the design. Convenience is not a reason to replace a scoped responsibility with broad control.</p>
 </div>
-<p><a href="../day-14.md#q18">Return to Q18</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q18">Return to Q18</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -213,7 +213,7 @@ nav_order: 1
 <p>Evaluate Read-only Admin for relevant evidence, Help Desk Admin for supported assistance, App Admin for assigned integration work, and Org Admin for group-rule management.</p>
 <p>These are directions for comparison, not grants or guarantees. Check the current permission matrix, footnotes, operation, and resource scope before assigning authority. A task can exceed a familiar role's limits. Start from the responsibility and find an authorized operator, rather than assuming a title covers every related activity.</p>
 </div>
-<p><a href="../day-14.md#q19">Return to Q19</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q19">Return to Q19</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -224,7 +224,7 @@ nav_order: 1
 <p>Name the missing information and obtain it through an operator whose permissions cover it. Read-only is not a promise of universal visibility.</p>
 <p>Keep evidence retrieval within the actual role boundary instead of treating a title as sufficient authority. Sharing the retrieved material is another responsibility: include relevant findings without copying credentials or unnecessary personal information. The case needs usable evidence, not a broader grant or an unrestricted data dump.</p>
 </div>
-<p><a href="../day-14.md#q20">Return to Q20</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q20">Return to Q20</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -235,7 +235,7 @@ nav_order: 1
 <p>Check the exact operation, permission, and scope. A responsibility involving a group does not automatically fall within every permission of a role named Group Admin.</p>
 <p>Route an uncovered task to the appropriately authorized operator or escalate the design. The aim is legitimate authority for this change, not broadening privileges based on a descriptive title. Keep group membership work and group-rule management distinct when evaluating who can perform the operation.</p>
 </div>
-<p><a href="../day-14.md#q21">Return to Q21</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q21">Return to Q21</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -246,7 +246,7 @@ nav_order: 1
 <p>No. Administrative delegation is a different operation from managing the assigned integration. Route the specific request through the appropriate decision and authorized operator.</p>
 <p>The role comparison is not a reason to give everyone broad authority. Keep application business roles, integration management, and administrative privilege assignment separate. Each concerns a different resource and consequence, so authority for one cannot silently stand in for the others.</p>
 </div>
-<p><a href="../day-14.md#q22">Return to Q22</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q22">Return to Q22</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -257,7 +257,7 @@ nav_order: 1
 <p>Neither follows. Obtain an appropriately authorized read for the actual operation and resource. A failed read is not a successful empty result.</p>
 <p>Human approval, assigned administrative permissions, and the API caller's effective authority are separate facts. Resolve the focused retrieval problem through the right operator rather than turning it into an unrestricted privilege grant. Only a relevant successful read can support the identity findings the investigation needs.</p>
 </div>
-<p><a href="../day-14.md#q23">Return to Q23</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#separate-approval-from-technical-authority">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q23">Return to Q23</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#separate-approval-from-technical-authority">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>Check the correct source and profile, rule membership, assignment, intended target account, and actual submission capability in Expense.</p>
 <p>Login tests entry; it does not necessarily test submitting an expense. The application owner needs to verify that local capability. Define these checks before rollout so “works” has an agreed meaning. An acceptance plan specifies what success would look like, rather than reporting results that have not yet been obtained.</p>
 </div>
-<p><a href="../day-14.md#q24">Return to Q24</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q24">Return to Q24</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -279,7 +279,7 @@ nav_order: 1
 <p>The requirement deliberately separates submission from approval. Positive entry and submission tests do not establish that an unapproved capability is absent.</p>
 <p>Verify the permission boundary inside Expense, rather than inferring it from the group rule. This negative case tests a meaningful part of the model: intended capability should be present and unapproved capability should not be supplied. Both findings are needed to evaluate the stated outcome.</p>
 </div>
-<p><a href="../day-14.md#q25">Return to Q25</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q25">Return to Q25</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -290,7 +290,7 @@ nav_order: 1
 <p>Only absence from the checked group path is supplied. Inspect the other relevant relationships before claiming total access absence.</p>
 <p>The proposed model should supply no unapproved contractor access, but the current environment also needs reconciliation. A correct rule result is one finding within that broader picture. Negative membership cannot describe every independent assignment, target role, or session the person may still have.</p>
 </div>
-<p><a href="../day-14.md#q26">Return to Q26</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q26">Return to Q26</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -301,7 +301,7 @@ nav_order: 1
 <p>Verify the right business capability, recorded owner, end condition, and removal process. Then check the relevant assignment, target, and session outcomes when the condition ends.</p>
 <p>Initial entry establishes access at one point. It does not establish that the model can later remove it as agreed. Include continuation and termination responsibilities in the acceptance plan so an exception remains governed throughout its approved lifetime.</p>
 </div>
-<p><a href="../day-14.md#q27">Return to Q27</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q27">Return to Q27</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -312,7 +312,7 @@ nav_order: 1
 <p>Eligible submission tests who should succeed. Absence of unapproved approval rights tests a capability that should not be supplied. Moving out of Finance tests what happens when eligibility changes.</p>
 <p>Review surviving exceptions and direct assignments during the move. Departure has its own account and session outcomes. One successful login cannot cover all these questions; separate cases make the requirement's boundaries and changes observable.</p>
 </div>
-<p><a href="../day-14.md#q28">Return to Q28</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q28">Return to Q28</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#make-verification-part-of-the-requirement">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -323,7 +323,7 @@ nav_order: 1
 <p>OR allows either condition to qualify the person. An employee outside Finance could match through Employee alone, and a Finance person could match without Employee. AND requires both.</p>
 <p>Assess the population, resulting assignments, and target consequences before choosing recovery actions. The logic demonstrates a broader condition, but it does not tell us which operations actually occurred. Obtain that history instead of assuming every possible unintended account was created.</p>
 </div>
-<p><a href="../day-14.md#q29">Return to Q29</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q29">Return to Q29</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -334,7 +334,7 @@ nav_order: 1
 <p>No. Rollback restores the earlier configuration. Effects already produced need their own investigation and corrective operations.</p>
 <p>Identify the users and paths that actually changed, involve the appropriate owners, and verify cleanup afterward. The rule can be correct again while unintended access remains. Report configuration recovery and access cleanup separately so a restored condition is not mistaken for every target outcome.</p>
 </div>
-<p><a href="../day-14.md#q30">Return to Q30</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q30">Return to Q30</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -345,7 +345,7 @@ nav_order: 1
 <p>No. Timing alone does not establish that every account was incorrect. Identify legitimate ownership, intended access, and required retained records before selecting cleanup.</p>
 <p>Record the prior approved configuration, stopping point, affected identities, owners, corrective operations, and verification. Preserve legitimate work while removing unintended effects. A broad date range is a starting scope for investigation, not an instruction to delete every record it contains.</p>
 </div>
-<p><a href="../day-14.md#q31">Return to Q31</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q31">Return to Q31</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -356,7 +356,7 @@ nav_order: 1
 <p>If that control fails, the operators may be unable to use the route needed to regain control. Plan a protected, approved recovery capability that does not depend entirely on it.</p>
 <p>Define ownership, protection, and verification alongside the affected population and acceptance checks. The operational design should provide authorized recovery, rather than improvised bypass instructions. Planning beforehand makes restoration a reviewable responsibility instead of a guess made after access is lost.</p>
 </div>
-<p><a href="../day-14.md#q32">Return to Q32</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q32">Return to Q32</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#plan-recovery-from-an-incorrect-change">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -367,7 +367,7 @@ nav_order: 1
 <p>Case A concerns intended system behavior and its access effects. Case B concerns verifying the requester and replacing unavailable authentication enrollment.</p>
 <p>The shared word recovery does not make rollback and authenticator reset equivalent. Priya's access approval is supplied for B, but authentication recovery remains unresolved. Identify the demonstrated problem and its responsible process before choosing an action, then verify the corresponding outcome.</p>
 </div>
-<p><a href="../day-14.md#q33">Return to Q33</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q33">Return to Q33</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -378,7 +378,7 @@ nav_order: 1
 <p>Identify the correct account, verify the requester through the organization's approved process, and determine which authenticator is unavailable. Check the operator's authority and scope as well.</p>
 <p>A name or sponsor's access approval does not establish that the caller is Priya. Changing enrollment affects a means of proving identity, so the recovery decision needs its own evidence. Keep the approved business access while resolving the separate requester-verification question.</p>
 </div>
-<p><a href="../day-14.md#q34">Return to Q34</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q34">Return to Q34</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -389,7 +389,7 @@ nav_order: 1
 <p>The exception approves a business capability for Priya. It does not prove that the current requester is Priya or controls the correct identity.</p>
 <p>Use the approved verification process before changing enrollment. The access approver and the recovery operator have different responsibilities. Preserve the access decision while verifying the caller: the facts are related, but one cannot replace the other at this authentication boundary.</p>
 </div>
-<p><a href="../day-14.md#q35">Return to Q35</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q35">Return to Q35</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>The reset cancels the selected enrollment and requires setup again. It does not establish successful replacement registration or application entry.</p>
 <p>Preserve the intended authentication requirements and verify the new enrollment and permitted sign-in. Obtain application evidence when entry is part of the recovery goal. The completed administrative action is progress, but it is different from the restored user outcome that the acceptance checks must demonstrate.</p>
 </div>
-<p><a href="../day-14.md#q36">Return to Q36</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q36">Return to Q36</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -411,7 +411,7 @@ nav_order: 1
 <p>Those actions address different boundaries. The SAML audience defect concerns the sign-in connection's intended recipient; unavailable authentication enrollment concerns registration and proof.</p>
 <p>Choose the supported correction for the demonstrated issue and verify its result. An unrelated password change or broader permission does not supply either missing outcome. Restored access should remain within the approved requirements, rather than compensating for an unresolved problem with another kind of access.</p>
 </div>
-<p><a href="../day-14.md#q37">Return to Q37</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q37">Return to Q37</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -422,7 +422,7 @@ nav_order: 1
 <p>No. Availability depends on the configured process and usable recovery methods. Compare the actual loss with those requirements instead of assuming a capability is ready for every person.</p>
 <p>If assistance is needed, follow the approved verification and recovery path through an authorized operator. Completion still needs correct replacement enrollment and a permitted subsequent sign-in. Suggesting self-service is not evidence that either outcome was achieved.</p>
 </div>
-<p><a href="../day-14.md#q38">Return to Q38</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q38">Return to Q38</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -433,7 +433,7 @@ nav_order: 1
 <p>No. Follow the incident process for the account and session investigation as well. Replacement can restore authentication while other exposure remains unresolved.</p>
 <p>Coordinate the relevant owners and verify each required outcome. Suspected compromise changes the investigation's scope; it is not proof of a particular cause or event. Keep restored setup and unresolved exposure as separate findings instead of treating one successful recovery step as complete incident closure.</p>
 </div>
-<p><a href="../day-14.md#q39">Return to Q39</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q39">Return to Q39</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#account-recovery-is-a-different-problem">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -444,7 +444,7 @@ nav_order: 1
 <p>No. The Microsoft-side identity, license, and service responsibilities remain part of the requirement. A sign-in connection is only one piece of the access model.</p>
 <p>Name the tenant, population, source ownership, connection, account-management model, and removal evidence. Investigate the actual integration rather than copying another application's authentication or provisioning contract. The destination still needs its own account and capability results.</p>
 </div>
-<p><a href="../day-14.md#q40">Return to Q40</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q40">Return to Q40</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q41">
@@ -455,7 +455,7 @@ nav_order: 1
 <p>No. Describe the named connector according to its actual supported path and configuration. SWA uses stored application credentials; WS-Federation exchanges identity information for federated sign-in.</p>
 <p>Another application's protocol cannot rename this connection. Follow each integration's documentation and evidence rather than extending a familiar label to every product from the same vendor. The comparison helps select the right questions, not substitute one deployment model for another.</p>
 </div>
-<p><a href="../day-14.md#q41">Return to Q41</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q41">Return to Q41</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q42">
@@ -466,7 +466,7 @@ nav_order: 1
 <p>Not by itself. The successful sign-in is evidence at the authentication boundary. Account-management, licensing, and the intended service capability need their own relevant findings.</p>
 <p>Follow the actual connector and Microsoft-side responsibilities. Another application's provisioning contract cannot supply these missing results. Report the verified sign-in while keeping the account, license, and task checks visible so the business outcome is assessed across its required scope.</p>
 </div>
-<p><a href="../day-14.md#q42">Return to Q42</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q42">Return to Q42</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#recognize-microsoft-365s-separate-responsibilities">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q43">
@@ -477,7 +477,7 @@ nav_order: 1
 <p>Route the exception to its named approvers, the local account or role result to the Expense owner, and the configuration task to an operator with the required authority and scope.</p>
 <p>Follow each unresolved outcome to the person who can decide or verify it. A vague assignment to “identity” hides these distinct jobs. The Finance owner separately decides approval capability; no single administrator should be assumed to authorize every business and technical result.</p>
 </div>
-<p><a href="../day-14.md#q43">Return to Q43</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#agree-on-who-finishes-each-part">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q43">Return to Q43</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#agree-on-who-finishes-each-part">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q44">
@@ -488,7 +488,7 @@ nav_order: 1
 <p>Connect approved eligibility and capabilities with source ownership, normal and exception paths, account handling, authentication, administrative responsibility, acceptance evidence, and recovery.</p>
 <p>Describe the record as the proposed design and acceptance plan. It is not a completed rollout or supplied set of successful tests. Keep unresolved decisions visible with their owners, so absent approval or intended removal is not accidentally reported as an achieved result.</p>
 </div>
-<p><a href="../day-14.md#q44">Return to Q44</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.md#record-the-decision-clearly">Revisit the lesson</a></p>
+<p><a href="../day-14.html#q44">Return to Q44</a> · <a href="../../lessons/day-14-requirements-and-responsibilities.html#record-the-decision-clearly">Revisit the lesson</a></p>
 </details>
 
 [All Day 14 questions](../day-14.md) · [Question bank](../index.md) · [Course home](../../index.md)

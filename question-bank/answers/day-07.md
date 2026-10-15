@@ -16,7 +16,7 @@ nav_order: 1
 <p>A supported registered-device interaction can establish possession evidence that password knowledge alone does not supply. The proof must actually be accepted; owning a phone is not the same result.</p>
 <p>Count the kinds of validated evidence rather than the number of screens. The additional check should answer a different identity question, not simply repeat the first one.</p>
 </div>
-<p><a href="../day-07.md#q01">Return to Q01</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q01">Return to Q01</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q02">
@@ -28,7 +28,7 @@ nav_order: 1
 <p>The three terms describe related parts of the same check. The app name alone does not identify every interaction or security property it supports.</p>
 <p>When investigating, name the method and actual result. “Used Verify” is too broad to establish which proof was accepted.</p>
 </div>
-<p><a href="../day-07.md#q02">Return to Q02</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q02">Return to Q02</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q03">
@@ -40,7 +40,7 @@ nav_order: 1
 <p>The method and accepted result matter. A fingerprint feature existing or a device being nearby does not show the required check occurred.</p>
 <p>Use factor names to classify the actual evidence. They explain what makes a check different, while the configured flow determines which proofs are required.</p>
 </div>
-<p><a href="../day-07.md#q03">Return to Q03</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q03">Return to Q03</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q04">
@@ -52,7 +52,7 @@ nav_order: 1
 <p>Read the methods and validated evidence instead of counting the interface. A supported interaction can also establish more than one factor without two separate screens.</p>
 <p>The MFA question is about what proof the system obtained. Screen layout is only the visible experience and cannot independently establish the assurance supplied by the flow.</p>
 </div>
-<p><a href="../day-07.md#q04">Return to Q04</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q04">Return to Q04</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q05">
@@ -64,7 +64,7 @@ nav_order: 1
 <p>Inspect what the flow required, the relevant device and configuration, and the evidence actually accepted. Do not infer factor count from the visible prompt count.</p>
 <p>This does not mean every device interaction includes biometric verification. The conclusion belongs to the specific proof established in this interaction.</p>
 </div>
-<p><a href="../day-07.md#q05">Return to Q05</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q05">Return to Q05</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q06">
@@ -76,7 +76,7 @@ nav_order: 1
 <p>The MFA result does not supply an Expense approval role or creation receipt. A job title also would not replace the application's permission evidence.</p>
 <p>Report the completed authentication step, then inspect the account and required capability where relevant. Stronger proof of who a person is does not automatically grant more rights.</p>
 </div>
-<p><a href="../day-07.md#q06">Return to Q06</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q06">Return to Q06</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#why-a-password-may-not-be-enough">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q07">
@@ -88,7 +88,7 @@ nav_order: 1
 <p>Inspect that account and device association. An app icon can exist without the required registration, or the app may hold another organization's account.</p>
 <p>The missing setup explains why registration may still be requested. Verify the correct enrollment rather than treating installed software as proof that authentication is ready.</p>
 </div>
-<p><a href="../day-07.md#q07">Return to Q07</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q07">Return to Q07</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q08">
@@ -100,7 +100,7 @@ nav_order: 1
 <p>Do not compress them into “the app is ready.” An enrolled person may still lack required proof for the current request.</p>
 <p>Read each evidence source for its own question. That locates the missing step without assuming setup and actual use are one outcome.</p>
 </div>
-<p><a href="../day-07.md#q08">Return to Q08</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q08">Return to Q08</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q09">
@@ -112,7 +112,7 @@ nav_order: 1
 <p>Inspect which account and device the current sign-in expects. Seeing any account in the app cannot settle that relationship.</p>
 <p>The next check is specific registration evidence, not merely whether the software is installed. Correct context is part of a useful enrollment finding.</p>
 </div>
-<p><a href="../day-07.md#q09">Return to Q09</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q09">Return to Q09</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q10">
@@ -124,7 +124,7 @@ nav_order: 1
 <p>Check the selected enrollment and the approved recovery process for this situation. Do not assume registration migrated merely because Daniel still has the same identity.</p>
 <p>Keep device context alongside enrollment. “He is enrolled” can be too broad when the current request depends on a different device.</p>
 </div>
-<p><a href="../day-07.md#q10">Return to Q10</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q10">Return to Q10</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q11">
@@ -136,7 +136,7 @@ nav_order: 1
 <p>Enrollment or historical use makes a method available to investigate, not a permanent answer to future challenges. Inspect the current response and its connection to the attempt.</p>
 <p>Reuse can be permitted under other stated conditions, but it is explicitly absent here. Keep the applicable requirement attached to the evidence.</p>
 </div>
-<p><a href="../day-07.md#q11">Return to Q11</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q11">Return to Q11</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#separate-availability-enrollment-and-use">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q12">
@@ -148,7 +148,7 @@ nav_order: 1
 <p>Registration prepares a person to use a method. It does not answer every challenge or determine how often every application must request proof.</p>
 <p>Inspect both decisions. A complete setup record can coexist with an unfinished authentication interaction because they serve different jobs.</p>
 </div>
-<p><a href="../day-07.md#q12">Return to Q12</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#two-requirements-with-different-jobs">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q12">Return to Q12</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#two-requirements-with-different-jobs">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q13">
@@ -160,7 +160,7 @@ nav_order: 1
 <p>Optional enrollment alone does not prove every application permits password-only entry. Required enrollment also does not specify every application's challenge frequency.</p>
 <p>Read the method, configuration, and current context together. A broad enrollment label cannot replace the requirement for a particular request.</p>
 </div>
-<p><a href="../day-07.md#q13">Return to Q13</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#two-requirements-with-different-jobs">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q13">Return to Q13</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#two-requirements-with-different-jobs">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q14">
@@ -172,7 +172,7 @@ nav_order: 1
 <p>These are the particular example's requirements, not universal defaults for every Okta application.</p>
 <p>Keep the conditions intact when reasoning. Removing one would change the question. Registration prepares the method, while the accepted response establishes proof for this attempt.</p>
 </div>
-<p><a href="../day-07.md#q14">Return to Q14</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#two-requirements-with-different-jobs">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q14">Return to Q14</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#two-requirements-with-different-jobs">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q15">
@@ -184,7 +184,7 @@ nav_order: 1
 <p>Because enrollment is required now, the prompt fits the evidence. Guide him through the approved registration and verify the correct company account and supported device association.</p>
 <p>There is no contradiction between an offered method and unfinished setup. Availability does not register every user automatically.</p>
 </div>
-<p><a href="../day-07.md#q15">Return to Q15</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#follow-daniels-enrollment-question">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q15">Return to Q15</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#follow-daniels-enrollment-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q16">
@@ -196,7 +196,7 @@ nav_order: 1
 <p>Use the approved enrollment process and verify the resulting identity and device association. If setup fails, investigate its actual result rather than introduce unrelated changes.</p>
 <p>Choose the action from the step that lacks evidence. An unfinished overall journey does not make every identity setting a candidate correction.</p>
 </div>
-<p><a href="../day-07.md#q16">Return to Q16</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#follow-daniels-enrollment-question">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q16">Return to Q16</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#follow-daniels-enrollment-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q17">
@@ -208,7 +208,7 @@ nav_order: 1
 <p>Enrollment establishes a means of proving identity. Making a screen disappear is not the same as completing that registration appropriately.</p>
 <p>Obtain the relevant setup evidence and authority before selecting recovery. The requested outcome is a correct permitted authentication path, not merely fewer prompts.</p>
 </div>
-<p><a href="../day-07.md#q17">Return to Q17</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#follow-daniels-enrollment-question">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q17">Return to Q17</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#follow-daniels-enrollment-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q18">
@@ -220,7 +220,7 @@ nav_order: 1
 <p>Inspect the selected device, Daniel's experience, and the response outcome. Repeating setup would ignore the progress already supplied.</p>
 <p>Enrollment makes the interaction possible; it does not perform it on the user's behalf. Keep the earlier setup result and new challenge evidence separate.</p>
 </div>
-<p><a href="../day-07.md#q18">Return to Q18</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q18">Return to Q18</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q19">
@@ -232,7 +232,7 @@ nav_order: 1
 <p>Issuing it is not that accepted result. The notification might not have reached Daniel, or an outcome might still need inspection.</p>
 <p>Follow request to response. That distinguishes a started interaction from a requirement actually satisfied for this sign-in.</p>
 </div>
-<p><a href="../day-07.md#q19">Return to Q19</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q19">Return to Q19</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q20">
@@ -244,7 +244,7 @@ nav_order: 1
 <p>Ask what Daniel saw and inspect the enrollment and phone selected for this attempt. Then read its response outcome.</p>
 <p>Sending, receiving, and acceptance are separate facts. Keeping them distinct avoids inventing progress while still recognising that the challenge was initiated.</p>
 </div>
-<p><a href="../day-07.md#q20">Return to Q20</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q20">Return to Q20</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q21">
@@ -256,7 +256,7 @@ nav_order: 1
 <p>A denial on the intended phone points to a different question from an unavailable old phone or an expired challenge. The broad label MFA failed hides those distinctions.</p>
 <p>Keep accepted proof unverified until the result arrives. Choose a correction from the observed outcome rather than from a general symptom.</p>
 </div>
-<p><a href="../day-07.md#q21">Return to Q21</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q21">Return to Q21</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q22">
@@ -268,7 +268,7 @@ nav_order: 1
 <p>A response supplies authentication evidence, so the relationship to the person's actual request matters. The goal is legitimate proof, not automatically approving whatever appears.</p>
 <p>Keep that user decision separate from delivery. A received notification can still be inappropriate to approve.</p>
 </div>
-<p><a href="../day-07.md#q22">Return to Q22</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q22">Return to Q22</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q23">
@@ -280,7 +280,7 @@ nav_order: 1
 <p>Read the outcome and Daniel's experience before selecting an action. The result does not explain why he denied it or justify resetting enrollment automatically.</p>
 <p>A returned decision narrows the next question. It still needs enough context to choose a correction rather than repeat a generic retry.</p>
 </div>
-<p><a href="../day-07.md#q23">Return to Q23</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q23">Return to Q23</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q24">
@@ -292,7 +292,7 @@ nav_order: 1
 <p>Application entry and permissions remain separate outcomes. Inspect them if the requested business task needs those results.</p>
 <p>Report the real success without extending it. Completed authentication is meaningful progress, but it is not a receipt for every account or application action.</p>
 </div>
-<p><a href="../day-07.md#q24">Return to Q24</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q24">Return to Q24</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#enrollment-does-not-answer-a-challenge">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q25">
@@ -304,7 +304,7 @@ nav_order: 1
 <p>The app name alone does not say which method occurred. Configuration and supported platform determine what is available and acceptable.</p>
 <p>Identify the actual method and its result. The matching exercise describes interactions, not proof that any one was enabled or accepted for a particular user.</p>
 </div>
-<p><a href="../day-07.md#q25">Return to Q25</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q25">Return to Q25</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q26">
@@ -316,7 +316,7 @@ nav_order: 1
 <p>The shared Okta Verify name cannot make their results interchangeable. Inspect the actual Push outcome under the stated requirement.</p>
 <p>Another permitted flow could have different rules, but those would need their own evidence. Do not silently replace the current condition with a convenient older success.</p>
 </div>
-<p><a href="../day-07.md#q26">Return to Q26</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q26">Return to Q26</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q27">
@@ -328,7 +328,7 @@ nav_order: 1
 <p>Multifactor authentication combines different factor types. The authenticator name, number of methods, number of prompts, and kinds of proof are related but different facts.</p>
 <p>Count the validated evidence instead of interface options. Two experiences in one app do not themselves answer the assurance question.</p>
 </div>
-<p><a href="../day-07.md#q27">Return to Q27</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q27">Return to Q27</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#okta-verify-methods-are-not-interchangeable">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q28">
@@ -340,7 +340,7 @@ nav_order: 1
 <p>That establishes proof through the enrolled key for this attempt when accepted. The mere availability of FastPass does not supply the result.</p>
 <p>You need not calculate the cryptography to follow the interaction: a challenge, device response, and verification. Those are the evidence stages to inspect.</p>
 </div>
-<p><a href="../day-07.md#q28">Return to Q28</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q28">Return to Q28</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q29">
@@ -352,7 +352,7 @@ nav_order: 1
 <p>The private key is a cryptographic secret used to create the signature. Verification checks the response and its relationship to the challenge.</p>
 <p>Stored registration and current authentication are distinct facts. Following the interaction explains how the enrolled key supplies evidence for a particular request.</p>
 </div>
-<p><a href="../day-07.md#q29">Return to Q29</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q29">Return to Q29</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q30">
@@ -364,7 +364,7 @@ nav_order: 1
 <p>Check the actual method, device, and relevant enrollment. A valid registration on one device does not automatically prepare another.</p>
 <p>“He has Verify” leaves this context missing. The interaction determines which association and result must be inspected.</p>
 </div>
-<p><a href="../day-07.md#q30">Return to Q30</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q30">Return to Q30</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q31">
@@ -376,7 +376,7 @@ nav_order: 1
 <p>Read the attempt's actual method and result rather than infer it from the common app. Each also has its own relevant device context.</p>
 <p>A setting naming FastPass does not establish a Push response, and a Push result cannot simply be relabeled FastPass. Preserve the interaction that was observed.</p>
 </div>
-<p><a href="../day-07.md#q31">Return to Q31</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q31">Return to Q31</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q32">
@@ -388,7 +388,7 @@ nav_order: 1
 <p>Inspect the method, device, configuration, and result. The whole product name does not supply the same properties for every interaction.</p>
 <p>Keep a security claim attached to the flow that establishes it. Capability, applicable conditions, and verified use are separate questions.</p>
 </div>
-<p><a href="../day-07.md#q32">Return to Q32</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q32">Return to Q32</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q33">
@@ -400,7 +400,7 @@ nav_order: 1
 <p>Read the applicable method, device, configured requirement, and accepted evidence. Enabled or enrolled alone does not establish every required proof.</p>
 <p>Keep possession and local verification distinct. The actual flow determines their role, while its results show whether the current interaction completed them.</p>
 </div>
-<p><a href="../day-07.md#q33">Return to Q33</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q33">Return to Q33</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q34">
@@ -412,7 +412,7 @@ nav_order: 1
 <p>Inspect the supported method, configuration, and actual results rather than infer them from an absent field. Device proof and required local verification have separate context.</p>
 <p>Describe the evidence accepted for the request. The visible password screen is not the whole authentication model.</p>
 </div>
-<p><a href="../day-07.md#q34">Return to Q34</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q34">Return to Q34</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q35">
@@ -424,7 +424,7 @@ nav_order: 1
 <p>A successful authentication can use different methods in permitted flows. Identify the actual path before assigning a result to another system.</p>
 <p>Keep the accepted method as a success without inventing AD validation. Comparing incidents does not justify silently replacing one proof path with another.</p>
 </div>
-<p><a href="../day-07.md#q35">Return to Q35</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#where-fastpass-fits">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q35">Return to Q35</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#where-fastpass-fits">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q36">
@@ -436,7 +436,7 @@ nav_order: 1
 <p>Each stops at a different stage. The same reset action would ignore the progress and missing evidence.</p>
 <p>Select the next question from what is established. The app name alone cannot identify the correction.</p>
 </div>
-<p><a href="../day-07.md#q36">Return to Q36</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#keep-the-evidence-tied-to-the-question">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q36">Return to Q36</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#keep-the-evidence-tied-to-the-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q37">
@@ -448,7 +448,7 @@ nav_order: 1
 <p>That preserves completed setup and progress without turning them into the missing current proof.</p>
 <p>The next owner can investigate the attempt rather than repeat registration or assume the whole business goal succeeded.</p>
 </div>
-<p><a href="../day-07.md#q37">Return to Q37</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#keep-the-evidence-tied-to-the-question">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q37">Return to Q37</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#keep-the-evidence-tied-to-the-question">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q38">
@@ -460,7 +460,7 @@ nav_order: 1
 <p>An installation may lack the relevant account association or belong to another organization. Neither settings nor registration supplies an unobserved response outcome.</p>
 <p>Use each view for its own question. A single broad status cannot establish setup, acceptable method, and actual completion together.</p>
 </div>
-<p><a href="../day-07.md#q38">Return to Q38</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q38">Return to Q38</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q39">
@@ -472,7 +472,7 @@ nav_order: 1
 <p>First identify the selected enrollment and inspect the attempt outcome and user experience. That can distinguish an unavailable device from a denial or another missing result.</p>
 <p>Choose an approved action from the evidence. Removing enrollment early can leave the cause unknown while changing what the next attempt requires.</p>
 </div>
-<p><a href="../day-07.md#q39">Return to Q39</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q39">Return to Q39</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q40">
@@ -484,7 +484,7 @@ nav_order: 1
 <p>The old phone is a relevant finding, but it does not establish that a replacement is ready or any unreviewed reset is justified.</p>
 <p>Follow the supported process while preserving authentication requirements. The outcome needs appropriate new setup and permitted use, not merely removal of a registration.</p>
 </div>
-<p><a href="../day-07.md#q40">Return to Q40</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q40">Return to Q40</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q41">
@@ -496,7 +496,7 @@ nav_order: 1
 <p>The reset is a state change, not successful re-enrollment or proof that the new method worked. Application entry needs its own evidence if included in the request.</p>
 <p>Keep the administrative action and recovered user outcome separate. That makes completion measurable rather than equating it with the last operator action.</p>
 </div>
-<p><a href="../day-07.md#q41">Return to Q41</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q41">Return to Q41</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
 </details>
 
 <details class="qb-answer" id="q42">
@@ -508,7 +508,7 @@ nav_order: 1
 <p>Then explain that Expense entry and the permissions for his work still need verification.</p>
 <p>The update connects setup to current proof without claiming registration granted a role or that every application result is complete.</p>
 </div>
-<p><a href="../day-07.md#q42">Return to Q42</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.md#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
+<p><a href="../day-07.html#q42">Return to Q42</a> · <a href="../../lessons/day-07-authenticators-enrollment-mfa.html#read-the-enrollment-before-choosing-a-reset">Revisit the lesson</a></p>
 </details>
 
 [All Day 7 questions](../day-07.md) · [Question bank](../index.md) · [Course home](../../index.md)
