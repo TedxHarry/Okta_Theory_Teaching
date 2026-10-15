@@ -39,6 +39,7 @@ After the final case, the optional [Day 16 practice bridge](lessons/day-16-safe-
 
 ## Handy references
 
+- [Revise, Test, and Learn](question-bank/index.md): questions with their own context and teaching explanations for every day.
 - [Troubleshooting playbook](reference/troubleshooting-playbook.md) after the relevant lessons, to locate evidence in a case.
 - [Onboarding a new application](reference/onboarding-an-application.md) for a design-and-evidence exercise after Day 14.
 - [Cheat sheets](reference/cheat-sheets.md) for quick reminders.

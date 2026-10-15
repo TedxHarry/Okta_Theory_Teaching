@@ -180,3 +180,32 @@
     }, 200);
   })();
 </script>
+
+<style>
+/* Question-bank reading distinction */
+.qb-question, .qb-question strong { color: #173f78; }
+.qb-question { font-weight: 600; }
+.qb-explanation, .qb-explanation p, .qb-explanation strong { color: #245946; }
+.qb-explanation { margin-bottom: 1.4rem; }
+</style>
+
+<style>
+.qb-answer { border-bottom: 1px solid #d8e1df; margin: 0; padding: 0.7rem 0; }
+.qb-answer > summary { color: #173f78; font-weight: 600; cursor: pointer; }
+.qb-answer[open] > summary { margin-bottom: 1rem; }
+.qb-answer > summary:focus-visible { outline: 2px solid #173f78; outline-offset: 4px; }
+</style>
+
+<script>
+(function () {
+  function openBankAnswer() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = document.getElementById(id);
+    if (!target || !target.matches('details.qb-answer')) return;
+    target.open = true;
+    target.scrollIntoView();
+  }
+  document.addEventListener('DOMContentLoaded', openBankAnswer);
+  window.addEventListener('hashchange', openBankAnswer);
+})();
+</script>

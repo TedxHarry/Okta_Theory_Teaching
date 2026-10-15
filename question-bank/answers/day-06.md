@@ -1,0 +1,490 @@
+---
+title: "Day 6 teaching explanations"
+parent: "Day 6 practice bank"
+grand_parent: "Revise, Test, and Learn"
+nav_order: 1
+---
+
+# Day 6: Explanations
+
+<details class="qb-answer" id="q01">
+<summary>Q01. Where the account remains</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s company uses Active Directory (AD) for directory accounts and Okta for identity management. An import reads his selected AD information into Okta, and the correct account association is confirmed. Did the AD account itself move into Okta?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. Jordan's directory account remains in AD. Okta holds information associated with that account so it can represent and process the selected data.</p>
+<p>One person can have linked records in different systems without those records becoming one object. Reading a source does not relocate its database.</p>
+<p>Name the record being checked. The imported information and confirmed link are useful results, but they do not prove that every other operation involving Jordan's directory account succeeded.</p>
+</div>
+<p><a href="../day-06.md#q01">Return to Q01</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q02">
+<summary>Q02. AD and a domain controller</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan signs in using his company’s Active Directory (AD) credentials. The request is handled by a selected domain controller (DC). How does the directory service differ from that server, and why identify the particular DC in an investigation?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>AD is the directory service holding objects such as users, groups, and computers. A domain controller is a server running that service; it can answer queries and validate domain credentials.</p>
+<p>A domain can have more than one controller. Evidence about one server or path may not describe another.</p>
+<p>Identify the selected DC for the actual attempt. That makes a connection or credential-result request more useful than simply reporting that AD failed.</p>
+</div>
+<p><a href="../day-06.md#q02">Return to Q02</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q03">
+<summary>Q03. The agent’s role</summary>
+<p class="qb-question"><strong>Question:</strong> Okta receives Jordan’s sign-in information and sends a delegated password check through an Okta AD agent to Active Directory (AD). A domain controller runs the directory service. Is the agent that database or controller, and what does it do?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>It is neither. The agent is separate software in the company's environment connecting Okta and AD for supported operations. It can run on a separate server.</p>
+<p>In this path, it handles work from Okta, communicates with the controller, and returns the result. The controller evaluates the credentials.</p>
+<p>Keep those jobs separate. A request reaching the agent does not prove its directory connection completed or that a credential answer was obtained.</p>
+</div>
+<p><a href="../day-06.md#q03">Return to Q03</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q04">
+<summary>Q04. Domain, OU, and group</summary>
+<p class="qb-question"><strong>Question:</strong> A company’s Active Directory stores Jordan’s user object within a domain, places it in an organizational unit (OU), and maintains group memberships separately. How do domain, OU, and group describe different organizational relationships?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>A domain is a directory and administration boundary. An OU is a container inside it for organizing objects and delegating administration. A group is a separate collection used for access or administration.</p>
+<p>Jordan can have both a directory location and membership relationships. The OU location does not supply the group result.</p>
+<p>Read location for a scope question and membership for a group question. Similar names do not make those objects or relationships interchangeable.</p>
+</div>
+<p><a href="../day-06.md#q04">Return to Q04</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q05">
+<summary>Q05. An OU name is not membership</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s user object in Active Directory is stored in an organizational unit (OU) named Sales. A separate directory group is also named Sales, but nobody has inspected its members. Does Jordan’s OU location prove he belongs to that group?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The OU organizes where the user object sits. Group membership is another relationship requiring its own evidence.</p>
+<p>The shared name can make them look equivalent, but the name does not add Jordan as a member. Inspect the actual group if membership matters.</p>
+<p>His OU can help explain whether an import selected his record. It cannot independently establish the access or administration relationship provided by the group.</p>
+</div>
+<p><a href="../day-06.md#q05">Return to Q05</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q06">
+<summary>Q06. Read the communication direction</summary>
+<p class="qb-question"><strong>Question:</strong> An Okta AD agent in the company environment exchanges work and results with Okta and separately communicates with Active Directory controllers. A diagram shows two-way information arrows. Must that diagram mean Okta opens a new inbound firewall connection to the agent?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The agent initiates outbound connectivity to Okta and receives work and returns results through that path. The diagram's arrows describe information movement, not new connection direction.</p>
+<p>The agent separately needs access to the relevant domain controllers. That connection has its own configuration and result.</p>
+<p>Do not infer network requirements just from a two-way arrow. This route does not require exposing a directory controller directly to the internet.</p>
+</div>
+<p><a href="../day-06.md#q06">Return to Q06</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q07">
+<summary>Q07. One connection works</summary>
+<p class="qb-question"><strong>Question:</strong> The company’s Okta AD agent is able to receive work from Okta. It also needs to contact a domain controller (DC), a server running Active Directory, but no result for that second connection is supplied. Is the agent-to-DC path verified?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The supplied success concerns communication with Okta. The directory-side connection is another part of the route.</p>
+<p>An agent can receive work while failing to complete its request to a controller. Obtain evidence for that actual path and attempt.</p>
+<p>Follow each connection separately. General availability or progress to an intermediate component is useful context, but it cannot fill in an unobserved response from the next system.</p>
+</div>
+<p><a href="../day-06.md#q07">Return to Q07</a> · <a href="../../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q08">
+<summary>Q08. Profile owner and password validator</summary>
+<p class="qb-question"><strong>Question:</strong> Workday HR controls employee Jordan’s department. His configured Okta password path asks Active Directory (AD) to validate credentials through an agent. How can those responsibilities coexist, and does the password validator thereby own his HR department?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>They answer different questions. Workday governs employee data; AD checks submitted credentials on the stated sign-in path.</p>
+<p>The agent connects the identity service to the directory for that operation. Its password result does not change who controls department.</p>
+<p>Keep maintenance and authentication separate. A correct department does not prove accepted credentials, and successful password validation does not establish that a current HR update reached the profile.</p>
+</div>
+<p><a href="../day-06.md#q08">Return to Q08</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q09">
+<summary>Q09. Reading back from AD</summary>
+<p class="qb-question"><strong>Question:</strong> A company designates Workday HR as Jordan’s profile source, with separately designated directory-owned fields supplied by Active Directory (AD). An AD import successfully reads his account information into Okta. Does reading it make every imported value authoritative?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. Reading information does not replace the company's ownership settings. Workday remains the stated profile source, with the specified field-level exceptions.</p>
+<p>Inspect the owner of the particular attribute before deciding which value should control it. A successful read and authority over a field are different facts.</p>
+<p>Use the import result for what it establishes: data was read and processed under its scope. It does not transfer every maintenance responsibility to the directory.</p>
+</div>
+<p><a href="../day-06.md#q09">Return to Q09</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q10">
+<summary>Q10. Priya’s path</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s Okta identity is associated with an Active Directory (AD) account and uses delegated directory-password validation. Priya’s approved contractor model is Okta-managed with no AD assignment. Does their shared use of Okta prove Priya uses Jordan’s password path?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The actual account relationship and configured sign-in method determine the path. Shared use of the same identity service is not enough.</p>
+<p>Inspect Priya's own configuration and attempt evidence before asking for directory results. Jordan's delegation facts belong to his stated model.</p>
+<p>Do not turn one architecture example into a universal rule for all users. Different populations can coexist while using different maintenance and authentication arrangements.</p>
+</div>
+<p><a href="../day-06.md#q10">Return to Q10</a> · <a href="../../lessons/day-06-active-directory.md#northbridge-is-still-hr-led">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q11">
+<summary>Q11. What succeeded?</summary>
+<p class="qb-question"><strong>Question:</strong> An import from Active Directory (AD) into Okta completes and processes Jordan’s selected directory information. No submitted-password check or authentication response is supplied. What work succeeded, and is credential acceptance established?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>The directory-data import succeeded under the supplied scope. It read and processed information so Okta could represent it.</p>
+<p>That is not a password-validation result. Credentials are the information used to prove identity, and testing them asks the directory to do different work from reading account data.</p>
+<p>Report the import precisely. A later sign-in needs its own attempt and returned result before acceptance can be claimed.</p>
+</div>
+<p><a href="../day-06.md#q11">Return to Q11</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q12">
+<summary>Q12. The whole directory?</summary>
+<p class="qb-question"><strong>Question:</strong> An Active Directory integration imports selected user and group organizational units (OUs) into Okta. The selected-population operation succeeds, but other directory locations are excluded. Does success establish that every directory object was imported?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. Import scope identifies the population chosen for that operation. Success does not expand it to excluded locations.</p>
+<p>Compare an expected record's actual location with the selected scope and processed results. A missing object could be outside the read population rather than absent from the directory.</p>
+<p>Carry scope with the result. The operation can succeed while leaving other directory records completely uninspected.</p>
+</div>
+<p><a href="../day-06.md#q12">Return to Q12</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q13">
+<summary>Q13. A user arrives, a group does not</summary>
+<p class="qb-question"><strong>Question:</strong> An Active Directory import selects Jordan’s employee-user organizational unit but excludes a separate group OU. His user record appears in Okta; a group expected by support does not. Its actual directory location has not been checked. Is the group proven absent from AD?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The result establishes that this import did not supply the group. It does not establish directory absence.</p>
+<p>Find the group in the correct directory and compare its location with the selected group OUs. Scope can explain an excluded record without a failed read or deleted object.</p>
+<p>A missing imported result and a missing source record are different findings. Inspect the relevant source before treating them as the same outcome.</p>
+</div>
+<p><a href="../day-06.md#q13">Return to Q13</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q14">
+<summary>Q14. Found versus correctly linked</summary>
+<p class="qb-question"><strong>Question:</strong> An Okta import discovers an Active Directory record displaying Jordan Lee. Matching and confirmation evidence have not been reviewed. Does discovery alone establish that it is correctly associated with Jordan’s intended Okta identity?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. Discovery says the operation found a record. Matching compares it with identities, and confirmation accepts an outcome through the applicable process.</p>
+<p>The resulting association still needs evidence of the correct relationship. Similar display names do not independently establish ownership.</p>
+<p>Do not treat a found record as a verified link. Obtain the identifier and relationship evidence before relying on that association for maintenance or authentication work.</p>
+</div>
+<p><a href="../day-06.md#q14">Return to Q14</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q15">
+<summary>Q15. Import did not test the password</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s selected Active Directory data was imported successfully into Okta and correctly linked. In a later attempt, his configured directory-password sign-in fails. No credential result is yet supplied. Why does the completed import not resolve that complaint?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>The import read information. The later sign-in asks the directory to evaluate submitted credentials through the configured path.</p>
+<p>Those operations can produce different results, especially at different times. The import does not verify the password or prove the later connection stayed available.</p>
+<p>Keep the earlier success and current failure together without calling them contradictory. Follow the password request and its missing result to locate the next useful check.</p>
+</div>
+<p><a href="../day-06.md#q15">Return to Q15</a> · <a href="../../lessons/day-06-active-directory.md#what-an-import-establishes">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q16">
+<summary>Q16. Explain delegation</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan enters his directory account name and password at Okta. For this configured path, Okta asks Active Directory (AD), through an agent, to check them and return a result. What does delegated authentication mean here?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>It means one system asks another to validate the user's credentials. AD performs this directory credential check, and Okta uses the returned result within its sign-in process.</p>
+<p>The account name matters alongside the password. Delegation identifies who checks the proof; it does not establish that the request arrived or was accepted.</p>
+<p>Follow the actual attempt and remaining requirements. A configured validation path is not itself a successful authentication outcome.</p>
+</div>
+<p><a href="../day-06.md#q16">Return to Q16</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q17">
+<summary>Q17. Follow the logical sequence</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s password sign-in uses Okta, an AD agent, and an Active Directory domain controller (DC). Put these logical steps in order: DC evaluates credentials, Jordan submits information, result returns to Okta, agent receives and passes work, Okta continues or refuses under its requirements.</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Jordan submits information to Okta. Okta sends the delegated request to the agent, which passes it to the controller. AD evaluates the credentials, and the result returns through the agent to Okta. Okta then uses it under the applicable requirements.</p>
+<p>That describes the intended logical sequence. Actual records establish which stages occurred in a particular attempt.</p>
+<p>An arrow or predicted next step is not a completion result.</p>
+</div>
+<p><a href="../day-06.md#q17">Return to Q17</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q18">
+<summary>Q18. Password acceptance and application use</summary>
+<p class="qb-question"><strong>Question:</strong> For Jordan’s identified Okta sign-in attempt, Active Directory (AD) returns an accepted credential result through the agent. No remaining authentication, Salesforce entry, or business-permission evidence is supplied. Does that acceptance prove he completed his Salesforce work?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. It verifies the credential-validation step for the checked attempt, not the entire application journey.</p>
+<p>Remaining Okta requirements may apply. Assignment, target acceptance, and the application's permissions also need evidence where relevant to the task.</p>
+<p>The narrow success is useful progress. Report it clearly, then continue to the outcomes required for the business goal rather than make password acceptance stand in for every later result.</p>
+</div>
+<p><a href="../day-06.md#q18">Return to Q18</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q19">
+<summary>Q19. Another person’s success</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan reports a failed Active Directory password attempt through Okta. A colleague successfully uses a directory-password path during the same period. The user, handling agent, selected controller, and result for Jordan have not been compared. Does the colleague’s success resolve his attempt?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>It establishes the colleague's result. It does not supply Jordan's credential decision or disprove his reported failure.</p>
+<p>The event can become comparison evidence once the paths and context are understood. Jordan still needs records tied to his identity, directory association, attempt, and relevant components.</p>
+<p>Keep people and operations separate even when timestamps look close. Success elsewhere is not confirmation that the affected request completed.</p>
+</div>
+<p><a href="../day-06.md#q19">Return to Q19</a> · <a href="../../lessons/day-06-active-directory.md#follow-delegated-authentication">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q20">
+<summary>Q20. Classify the work</summary>
+<p class="qb-question"><strong>Question:</strong> A company can read selected Active Directory data into Okta, ask AD to validate credentials during sign-in, or propagate a password change through supported configured software. Which work is import, delegated password authentication, and password synchronization?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Import reads and processes directory data. Delegated authentication asks the directory for a credential decision during an attempt. Synchronization propagates a password change to a supported destination.</p>
+<p>Each has its own configuration, purpose, and result. A deployment may use more than one without making their evidence interchangeable.</p>
+<p>When told the directory integration worked, ask which operation. That gives the claim a specific result to inspect.</p>
+</div>
+<p><a href="../day-06.md#q20">Return to Q20</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q21">
+<summary>Q21. Validation is not synchronization</summary>
+<p class="qb-question"><strong>Question:</strong> Okta sends Jordan’s submitted directory credentials through an agent to Active Directory for validation. No password-change event or synchronization result is supplied. Does the request prove his password was copied or changed at another destination?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. It asks for a decision about the submitted credentials, not a propagated change.</p>
+<p>Password synchronization needs its own supported process, direction, destination, and result. Those facts are absent here.</p>
+<p>Both activities involve passwords, but they do different work. Keep validation of an attempted sign-in separate from maintaining a changed credential elsewhere.</p>
+</div>
+<p><a href="../day-06.md#q21">Return to Q21</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q22">
+<summary>Q22. Two agent names</summary>
+<p class="qb-question"><strong>Question:</strong> An Okta deployment uses an AD agent for supported directory operations and documents a separate AD Password Sync Agent for relevant synchronization scenarios. Does the second name simply mean the same component, and what should an investigation identify?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The Password Sync Agent is a separate component for the relevant use cases. The needed components and direction depend on the actual synchronization design.</p>
+<p>Identify the configured operation and responsible component rather than infer behavior from similar names. An ordinary import success does not show synchronization occurred.</p>
+<p>You do not need every installation procedure to make this distinction. You need the purpose, configuration, and result for the work being investigated.</p>
+</div>
+<p><a href="../day-06.md#q22">Return to Q22</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q23">
+<summary>Q23. Make a synchronization claim inspectable</summary>
+<p class="qb-question"><strong>Question:</strong> A colleague says “Jordan’s passwords are synchronized,” but names no operation, direction, destination, configuration, or result. Jordan’s current sign-in question remains unresolved. What focused questions would make that claim useful?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Ask which password change was propagated, from where to where, through which supported configured process, and what result establishes it.</p>
+<p>A verified synchronization can show a change traveled while a later authentication attempt still needs its own credential decision. The broad statement supplies neither result by itself.</p>
+<p>Turn the assurance into an inspectable operation. That prevents an undefined integration claim from replacing the evidence needed for the current sign-in.</p>
+</div>
+<p><a href="../day-06.md#q23">Return to Q23</a> · <a href="../../lessons/day-06-active-directory.md#three-operations-that-should-not-be-confused">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q24">
+<summary>Q24. Locate J-1’s failure</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. Where is the first demonstrated failure, and is its underlying cause already established?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>The demonstrated failure is the timed-out agent-to-controller connection. Receipt at the agent is supplied; an AD credential response is not.</p>
+<p>Investigate that path for the identified attempt. A timeout means the expected result was not obtained within the allowed wait, not that a particular network cause is already confirmed.</p>
+<p>The boundary is precise enough to request useful evidence without calling Jordan's password wrong or declaring a specific service defect.</p>
+</div>
+<p><a href="../day-06.md#q24">Return to Q24</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q25">
+<summary>Q25. No result is not rejection</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. Does this establish that the password is wrong, or that it is correct?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>It establishes neither. No acceptance or rejection result was obtained.</p>
+<p>Compare receiving no answer with receiving an answer that says no. Both can leave a person unable to sign in, but the evidence and next investigation differ.</p>
+<p>Leave credential validity unresolved while checking the demonstrated connection failure. Calling the password good or bad would add a decision the attempt did not supply.</p>
+</div>
+<p><a href="../day-06.md#q25">Return to Q25</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q26">
+<summary>Q26. Earlier import I-1</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). Earlier import I-1 successfully processed his selected directory data. Later J-1 receives no credential answer because the agent-to-DC connection times out. Can I-1 fill in J-1’s missing result?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. I-1 establishes an earlier data-read result, while J-1 concerns credential validation at another time.</p>
+<p>The successful import does not remove the later timeout or provide a password decision. Keep operation labels and times beside their observations.</p>
+<p>That lets both facts remain useful. Progress in one path cannot become an unobserved reply to another request.</p>
+</div>
+<p><a href="../day-06.md#q26">Return to Q26</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q27">
+<summary>Q27. Choose the next evidence</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. Which next request addresses the evidence: a password reset, or checks of the selected DC, network reachability, name resolution, and service availability?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>The focused connection evidence addresses the demonstrated boundary. Request the relevant agent, directory, and network observations for the path and time.</p>
+<p>A password reset changes a credential while leaving the failed connection unexplained. The question does not establish a credential problem.</p>
+<p>The proposed checks do not select a network correction in advance. They should distinguish the possible reasons that this request obtained no directory result.</p>
+</div>
+<p><a href="../day-06.md#q27">Return to Q27</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q28">
+<summary>Q28. A timeout and its possible causes</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. Does that alone prove a firewall blocked the request or a route was missing?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. A network control, routing problem, or unavailable service could explain a timeout, but the supplied result does not choose among them.</p>
+<p>Obtain component and path evidence for this time and attempt. That narrows the next investigation without turning a plausible explanation into a finding.</p>
+<p>The failure boundary can be clear while its cause remains open. The next check should help resolve that specific uncertainty.</p>
+</div>
+<p><a href="../day-06.md#q28">Return to Q28</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q29">
+<summary>Q29. Resolution versus connection</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. Is failed DNS name resolution already proven by the connection timeout?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. DNS name resolution is the lookup connecting a host name to a network address. A connection timeout is a different observation.</p>
+<p>Resolution evidence can be requested as part of investigating the path, but it should not be reported as failed until the evidence supplies that result.</p>
+<p>Likewise, a lookup failure is not a returned credential rejection. Describe the actual operation first, then select the check appropriate to its observed boundary.</p>
+</div>
+<p><a href="../day-06.md#q29">Return to Q29</a> · <a href="../../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q30">
+<summary>Q30. J-2 changes the next check</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). J-1 times out without a credential answer. A separate attempt J-2 reaches the DC and receives an explicit validation rejection, without a detailed reason. How do their next investigations differ?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>For J-1, investigate the demonstrated connection path that obtained no answer. For J-2, inspect the detailed directory result, intended account and username, and relevant credential or account conditions.</p>
+<p>The user experiences sign-in failure in both, but one request is unanswered while the other returns a refusal.</p>
+<p>Use the result belonging to each attempt. A shared symptom does not justify the same correction when the evidence identifies different boundaries.</p>
+</div>
+<p><a href="../day-06.md#q30">Return to Q30</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q31">
+<summary>Q31. Rejection is not necessarily a typo</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In J-2, the agent reaches the DC and gets a generic credential rejection. No detailed identifier, password, or account-condition finding is supplied. Does this prove Jordan mistyped the password?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The generic result may not distinguish an identifier issue, password issue, or account restriction.</p>
+<p>Inspect the detailed directory decision and confirm the account involved before choosing a correction. There is a returned refusal, but its specific reason remains unknown.</p>
+<p>Keep that distinction useful: the request reached a credential decision, so the next evidence concerns that decision rather than assuming an unanswered connection or a particular typo.</p>
+</div>
+<p><a href="../day-06.md#q31">Return to Q31</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q32">
+<summary>Q32. An email-shaped sign-in name</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan’s Active Directory sign-in name is called a user principal name (UPN) and looks like an email address. His mailbox address and configured login mapping have not been compared. Does the UPN’s appearance establish they are identical or that a mismatch exists?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Neither follows from appearance alone. A UPN is a directory sign-in name often written in an email-like form, not automatic evidence of the mailbox address.</p>
+<p>Compare the configured identifier with the intended directory account and approved values. Similar shapes do not make fields interchangeable.</p>
+<p>No mismatch is supplied here. The useful action is a supported comparison, not declaring the identifier defective before its actual relationship is known.</p>
+</div>
+<p><a href="../day-06.md#q32">Return to Q32</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q33">
+<summary>Q33. Do not rewrite the earlier attempt</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). J-1 obtains no credential result after a connection timeout; separate J-2 returns a credential rejection. Can support use J-2 to report that AD rejected J-1 too?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. J-2's refusal belongs to that attempt. It does not retroactively supply J-1's missing answer.</p>
+<p>Report both precisely: the earlier request obtained no credential result, while the separate later request received a rejection. Their next checks can differ.</p>
+<p>Compare attempts when useful without rewriting their observations. New evidence may advance an investigation, but it should not change what another request actually returned.</p>
+</div>
+<p><a href="../day-06.md#q33">Return to Q33</a> · <a href="../../lessons/day-06-active-directory.md#contrast-a-credential-rejection">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q34">
+<summary>Q34. The new routing finding</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). J-1 initially supplies only a connection timeout with no credential answer. Later, the network team establishes and corrects a missing route preventing reachability. Was the route cause already proven by the original timeout?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. It was a possibility until the new network evidence established it. The follow-up makes the cause more specific and supplies a correction action.</p>
+<p>Preserve that progression: first the demonstrated connection boundary, then the verified route finding. The original timeout alone did not choose the cause.</p>
+<p>A later confirmation is useful new evidence, not a reason to claim the initial packet contained more than it did.</p>
+</div>
+<p><a href="../day-06.md#q34">Return to Q34</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q35">
+<summary>Q35. Read J-3’s success</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). The network team establishes and fixes a route issue. A new correlated attempt J-3 reaches the DC and receives accepted credentials. No remaining Okta or application-entry result is supplied. What recovery is verified?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>The follow-up supports recovery of the checked connection and successful directory credential validation in J-3.</p>
+<p>It does not verify the remaining identity-service requirements or entry to the business application. Continue through those boundaries if usable application access is the requested outcome.</p>
+<p>Report the recovered step clearly. The new credential answer is meaningful evidence, while the wider journey remains unverified rather than automatically complete.</p>
+</div>
+<p><a href="../day-06.md#q35">Return to Q35</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q36">
+<summary>Q36. Repair an overbroad closure</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). A route defect is corrected and new J-3 returns accepted directory credentials. Remaining Okta checks, Salesforce entry, and permissions are unverified. Improve: “The route is fixed, so Jordan has full Salesforce access now.”</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Try: “The checked agent-to-directory route problem was corrected. In J-3, AD accepted Jordan's credentials. Remaining Okta requirements, Salesforce entry, and the relevant permissions have not yet been verified.”</p>
+<p>That update tells the next owner what recovered and where the evidence stops. The supplied results concern connection and password validation.</p>
+<p>Do not turn a verified authentication step into an unlimited application claim. The business outcome needs its own receiving-system evidence.</p>
+</div>
+<p><a href="../day-06.md#q36">Return to Q36</a> · <a href="../../lessons/day-06-active-directory.md#know-what-a-successful-follow-up-proves">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q37">
+<summary>Q37. Another architecture, same distinction</summary>
+<p class="qb-question"><strong>Question:</strong> At a company, Active Directory (AD) is both the employee profile source and the validator on an Okta delegated-password path. Directory imports read data, while sign-in requests ask for credential decisions. Does the shared source system make those operations equivalent?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>No. The import carries selected profile information toward Okta. The delegated request asks AD to evaluate credentials for an attempt and return a result.</p>
+<p>AD has responsibilities in both paths, but each still needs its own configuration and observations. Successful data reading does not establish authentication.</p>
+<p>The distinction also holds when another system owns the profile. Sharing or separating the owner does not change the purpose of the two operations.</p>
+</div>
+<p><a href="../day-06.md#q37">Return to Q37</a> · <a href="../../lessons/day-06-active-directory.md#compare-the-ad-led-variation">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q38">
+<summary>Q38. A useful handoff</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). In attempt J-1, the agent receives the request but its connection to the selected DC times out before any credential result is obtained. What should a handoff to the directory and network owners identify, and does the investigation require Jordan’s password in the ticket?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Identify the user and association, configured directory integration, handling agent, selected controller, and time. State the observed timeout and lack of a credential result.</p>
+<p>Request corresponding reachability and service evidence. Those details give the owners a specific operation and path to trace.</p>
+<p>The handoff does not need Jordan's password. Relevant connection and returned-result evidence answer the next question without copying the credential into the incident record.</p>
+</div>
+<p><a href="../day-06.md#q38">Return to Q38</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q39">
+<summary>Q39. One user or several?</summary>
+<p class="qb-question"><strong>Question:</strong> Several users report directory-password failures through the same Okta AD agent during one period. Active Directory controller and attempt results remain incomplete. Does that pattern prove the agent is the cause? Would one reported user instead prove a bad password?</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>Neither pattern proves the cause. Several affected users make the shared path useful to inspect, while one user still needs their own account and attempt evidence.</p>
+<p>Pair scope with the actual timeout or credential results. A returned rejection and an unanswered connection lead to different questions regardless of the number of reports.</p>
+<p>Use the pattern to choose focused comparisons, not to replace operation evidence with a general diagnosis.</p>
+</div>
+<p><a href="../day-06.md#q39">Return to Q39</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+</details>
+
+<details class="qb-answer" id="q40">
+<summary>Q40. Explain Jordan’s story</summary>
+<p class="qb-question"><strong>Question:</strong> Jordan uses an Okta sign-in path that asks Active Directory (AD), through an agent, to validate his password at a domain controller (DC). His directory data is imported and correctly linked. J-1 gets no DC answer after a timeout. A route cause is later established and fixed; J-3 returns accepted credentials. Remaining sign-in and application outcomes are absent. Give Jordan a friendly explanation of that sequence.</p>
+<div class="qb-explanation">
+<p><strong>Explanation:</strong></p>
+<p>You could say: “Your directory information was imported and linked correctly. The first password request reached the agent but did not obtain an answer from the directory server. After the route was fixed, a new attempt reached AD and your credentials were accepted.”</p>
+<p>Then add: “We still need to check the remaining sign-in requirements and your intended application entry.”</p>
+<p>Each sentence follows a supplied result. It explains why a successful import did not settle the later password complaint.</p>
+</div>
+<p><a href="../day-06.md#q40">Return to Q40</a> · <a href="../../lessons/day-06-active-directory.md#hand-the-directory-team-a-specific-question">Revisit the lesson</a></p>
+</details>
+
+[All Day 6 questions](../day-06.md) · [Question bank](../index.md) · [Course home](../../index.md)
