@@ -2,7 +2,6 @@
 title: "Day 12 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 12
-has_children: true
 ---
 
 # Day 12: Questions
@@ -653,4 +652,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-12.md) · [Day 12 lesson](../lessons/day-12-joiners-movers-leavers.md) · [Day 12 recap](../revision/day-12.md) · [Question bank](index.md)
+[Day 12 lesson](../lessons/day-12-joiners-movers-leavers.md) · [Day 12 recap](../revision/day-12.md) · [Question bank](index.md)

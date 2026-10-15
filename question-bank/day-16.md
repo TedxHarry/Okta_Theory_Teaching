@@ -2,7 +2,6 @@
 title: "Day 16 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 16
-has_children: true
 ---
 
 # Day 16: Questions
@@ -546,4 +545,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-16.md) · [Day 16 lesson](../lessons/day-16-safe-practice-plan.md) · [Question bank](index.md)
+[Day 16 lesson](../lessons/day-16-safe-practice-plan.md) · [Question bank](index.md)

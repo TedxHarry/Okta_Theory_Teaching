@@ -2,7 +2,6 @@
 title: "Day 9 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 9
-has_children: true
 ---
 
 # Day 9: Questions
@@ -731,4 +730,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-09.md) · [Day 9 lesson](../lessons/day-09-oidc.md) · [Day 9 recap](../revision/day-09.md) · [Question bank](index.md)
+[Day 9 lesson](../lessons/day-09-oidc.md) · [Day 9 recap](../revision/day-09.md) · [Question bank](index.md)

@@ -2,7 +2,6 @@
 title: "Day 7 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 7
-has_children: true
 ---
 
 # Day 7: Questions
@@ -697,4 +696,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-07.md) · [Day 7 lesson](../lessons/day-07-authenticators-enrollment-mfa.md) · [Day 7 recap](../revision/day-07.md) · [Question bank](index.md)
+[Day 7 lesson](../lessons/day-07-authenticators-enrollment-mfa.md) · [Day 7 recap](../revision/day-07.md) · [Question bank](index.md)

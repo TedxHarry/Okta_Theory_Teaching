@@ -2,7 +2,6 @@
 title: "Day 1 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 1
-has_children: true
 ---
 
 # Day 1: Questions
@@ -663,4 +662,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-01.md) · [Day 1 lesson](../lessons/day-01-people-identities-access.md) · [Day 1 recap](../revision/day-01.md) · [Question bank](index.md)
+[Day 1 lesson](../lessons/day-01-people-identities-access.md) · [Day 1 recap](../revision/day-01.md) · [Question bank](index.md)

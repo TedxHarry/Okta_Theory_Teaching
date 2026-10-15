@@ -2,7 +2,6 @@
 title: "Day 11 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 11
-has_children: true
 ---
 
 # Day 11: Questions
@@ -657,4 +656,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-11.md) · [Day 11 lesson](../lessons/day-11-imports-and-matching.md) · [Day 11 recap](../revision/day-11.md) · [Question bank](index.md)
+[Day 11 lesson](../lessons/day-11-imports-and-matching.md) · [Day 11 recap](../revision/day-11.md) · [Question bank](index.md)

@@ -2,7 +2,6 @@
 title: "Day 3 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 3
-has_children: true
 ---
 
 # Day 3: Questions
@@ -767,4 +766,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-03.md) · [Day 3 lesson](../lessons/day-03-profiles-and-mappings.md) · [Day 3 recap](../revision/day-03.md) · [Question bank](index.md)
+[Day 3 lesson](../lessons/day-03-profiles-and-mappings.md) · [Day 3 recap](../revision/day-03.md) · [Question bank](index.md)

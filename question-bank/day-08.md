@@ -2,7 +2,6 @@
 title: "Day 8 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 8
-has_children: true
 ---
 
 # Day 8: Questions
@@ -731,4 +730,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-08.md) · [Day 8 lesson](../lessons/day-08-saml.md) · [Day 8 recap](../revision/day-08.md) · [Question bank](index.md)
+[Day 8 lesson](../lessons/day-08-saml.md) · [Day 8 recap](../revision/day-08.md) · [Question bank](index.md)

@@ -2,7 +2,6 @@
 title: "Day 5 practice bank"
 parent: "Revise, Test, and Learn"
 nav_order: 5
-has_children: true
 ---
 
 # Day 5: Questions
@@ -667,4 +666,4 @@ has_children: true
 </div>
 </details>
 
-[Teaching explanations](answers/day-05.md) · [Day 5 lesson](../lessons/day-05-groups-and-assignments.md) · [Day 5 recap](../revision/day-05.md) · [Question bank](index.md)
+[Day 5 lesson](../lessons/day-05-groups-and-assignments.md) · [Day 5 recap](../revision/day-05.md) · [Question bank](index.md)
