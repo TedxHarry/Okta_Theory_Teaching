@@ -249,7 +249,7 @@ flowchart TD
 
 Follow the upper flow from the browser to its next destination. Follow the lower flow from the configured integration to the target account operation and its response. The arrows describe different work, even though both flows involve requests and replies. A POST does not identify which flow is happening by itself. Nor does a successful browser redirect prove a provisioning operation occurred. Read who communicated, the destination, and the purpose.
 
-<details>
+<details markdown="1">
 <summary>Supporting reference: DNS and two additional response codes</summary>
 
 A host name normally needs to be resolved to a network address before the connection can be made. **DNS**, the Domain Name System, helps with that lookup. If name resolution fails and no connection is established, you may have no HTTP response from the application at all. An error displayed by the browser is not automatically an application response.
