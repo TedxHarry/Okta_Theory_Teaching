@@ -50,9 +50,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Membership places Maya in the collection. The group-to-application relationship gives that membership its Salesforce assignment purpose.</p>
-<p>Either fact alone leaves part of the path unanswered. Maya could belong to a group that has no Salesforce connection, or Salesforce could be connected to a group she does not belong to.</p>
-<p>Check both relationships and the resulting user assignment for the intended application instance. They are connected responsibilities with separate evidence.</p>
+<p>The first relationship says, 'Maya belongs to this group.' The second says, 'Salesforce is assigned to this group.' Together, they provide her group-based assignment path.</p>
+<p>Check what happens if either part is missing. Maya could be a member of a group with no Salesforce assignment. Or Salesforce could be assigned to a group Maya is not in. In either situation, this path would be incomplete for her.</p>
+<p>Inspect both relationships and the resulting assignment for the intended Salesforce integration. That confirms how the assignment reaches Maya; the account and sign-in inside Salesforce still need their own checks.</p>
 </div>
 </details>
 
@@ -166,9 +166,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>All three would qualify. OR needs at least one true condition: Priya meets Sales, Daniel meets Employee, and Maya meets both.</p>
-<p>That broadens eligibility beyond the approved Sales employees. The changed condition would include a contractor and a Finance employee in this set.</p>
-<p>Compare logic with the actual business decision before applying it. A small wording change can create additional access paths for a much larger population.</p>
+<p>All three qualify under OR. Maya meets both conditions, Priya meets Sales, and Daniel meets Employee. OR asks for at least one true condition; it does not exclude someone who meets both.</p>
+<p>Compare that with the approved requirement: Sales employees only. Priya is a contractor, and Daniel works in Finance. Including them would broaden this rule beyond that requirement.</p>
+<p>So changing AND to OR is a different access decision, not just a different way to write the same decision. Work out the affected people before applying it rather than test only whether Maya now appears.</p>
 </div>
 </details>
 
@@ -232,9 +232,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Yes. Finance/Employee fails the Sales part of the condition. The rule can evaluate its actual input correctly while that input disagrees with the approved source.</p>
-<p>Investigate source associations, mappings, and the import or update results explaining the discrepancy. The two values alone do not establish which operation failed.</p>
-<p>Repair the intended data path instead of assuming the access condition must be wrong. Correct logic cannot make inaccurate input represent the approved person.</p>
+<p>Yes. The rule is being given Finance/Employee. Employee is true, but Sales is false, so the AND condition is false. The rule can make that calculation correctly even though Maya's real approved department is Sales.</p>
+<p>The disagreement is between the source value and the field the rule actually reads. Follow how Sales should reach her central Okta profile: check the linked records, incoming mapping and relevant import or update results.</p>
+<p>Those checks can explain the discrepancy. Broadening the access rule would not repair the inaccurate input and could include other Finance users. Preserve the approved condition while investigating the demonstrated data gap.</p>
 </div>
 </details>
 
@@ -330,9 +330,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Her profile meets the condition, but the supplied exclusion prevents this rule from adding her.</p>
-<p>Review the exclusion and intended requirement before proposing a change. The mechanism is known; its authorization is not established.</p>
-<p>Other membership or assignment paths still need separate checks if relevant. An exclusion from one rule does not describe every possible way the person could receive application access.</p>
+<p>No. Maya's profile meets the condition, but the rule also has an explicit exclusion for her. That exclusion prevents this rule from adding her; the two findings are not contradictory.</p>
+<p>Before removing the exclusion, ask why it exists and whether that exception remains approved. Knowing how it affects membership does not tell us whether it should be changed.</p>
+<p>Keep the scope of the finding. It explains why this rule does not add Maya. It does not tell us whether another group or a direct assignment gives her the application by a separate path.</p>
 </div>
 </details>
 
@@ -446,9 +446,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The individual assignment supplies a separate relationship between Priya and Salesforce. The employee-only rule can remain correct while this path exists.</p>
-<p>Trace the actual assignment source and request its business justification. The unresolved issue is the exception decision, not an instruction to include all contractors in the normal group.</p>
-<p>The path is observed; its approval is not. Keep those facts separate before proposing a correction.</p>
+<p>No. Priya is outside the employee group, just as the rule requires. The individual assignment connects her to Salesforce without using that group.</p>
+<p>There are now two questions to keep apart: 'Did the employee rule include her?' and 'Is her individual assignment approved?' The supplied facts answer the first with no and leave the second open.</p>
+<p>Inspect the actual assignment source and obtain the exception's business justification. Do not change a correct employee-only rule or label Priya an employee merely to explain an assignment that arrived through another relationship.</p>
 </div>
 </details>
 
@@ -478,9 +478,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Assignment source describes the relationship supplying an application assignment, such as a group or individual path. Profile source describes which system controls the user's profile.</p>
-<p>Priya can remain Okta-managed while having an individual Salesforce assignment. The facts concern different responsibilities.</p>
-<p>Name the relationship when saying source. Otherwise an application-access detail can be mistaken for a new data owner that the evidence never supplied.</p>
+<p>They describe different relationships. Profile source tells us which system controls Priya's profile data. Assignment source tells us which relationship gives her Salesforce.</p>
+<p>Here her profile remains maintained in Okta under the approved process. Individual means Salesforce was assigned directly to her rather than through a group. It does not mean her data moved to a different profile owner.</p>
+<p>When asking about a source, name what is being sourced: profile information or an application assignment. That small clarification keeps a data-maintenance decision from being confused with an access path.</p>
 </div>
 </details>
 
@@ -610,9 +610,9 @@ nav_order: 5
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Assignment identifies which users receive the application through an Okta group. Group Push manages group objects and memberships at a supported target.</p>
-<p>They are different relationships. Where Group Push is used, separate groups are required for application assignment and Group Push. Inspect the actual supported integration rather than assume the target capability exists.</p>
-<p>An assignment result cannot prove target-group creation. Define the desired outcome and verify the relationship that actually implements it.</p>
+<p>Ask what you want to manage. For group-based assignment, the question is 'Which users receive this application through an Okta group?' For Group Push, it is 'Which group and memberships should be maintained inside the target application?'</p>
+<p>Those are separate relationships and separate results. A recorded application assignment does not show that a group was created in the target. Where Group Push is used, Okta requires separate groups for app assignment and Group Push; also check that the target integration supports the capability.</p>
+<p>Verify the outcome you actually requested. If you need a target group, inspect its supported configuration and the target group itself. A successful assignment alone cannot answer that question.</p>
 </div>
 </details>
 

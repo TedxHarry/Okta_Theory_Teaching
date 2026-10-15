@@ -10,7 +10,9 @@ Try the [exercises](../exercises/day-05.md) first. Equivalent explanations are w
 
 ## 1. Predict the population
 
-Only Maya meets both conditions. With OR, all three qualify: Maya meets both conditions, Priya is in Sales, and Daniel is an employee. That broader population conflicts with the stated requirement.
+Ask two questions for each person: 'Sales?' and 'Employee?' Maya answers yes to both. Priya answers yes only to Sales, and Daniel answers yes only to Employee. AND requires both answers, so only Maya qualifies.
+
+Changing the condition to OR makes one yes enough. All three would qualify, including a contractor and a Finance employee. The logic change would therefore change the approved access population; it would not merely fix one person's assignment.
 
 The additional Finance/Contractor user meets neither condition, so neither AND nor OR includes that user. Together, these examples check both conditions true, each condition true on its own, and neither condition true. Predicting the result still does not replace observing the actual membership.
 
@@ -28,7 +30,7 @@ Revisit [Manage a shared need through a group](../lessons/day-05-groups-and-assi
 
 ## 3. Right source, wrong rule input
 
-The first demonstrated discrepancy is the Okta department: Finance instead of the approved Sales value. The rule's result is consistent with its current input.
+The rule reads Finance/Employee from Okta, so its Sales AND Employee test returns false. That calculation is consistent with the input it received. The first demonstrated discrepancy is earlier: Maya's approved Workday department is Sales, while her Okta department says Finance.
 
 Inspect Maya's source association, incoming department mapping, and import/update results. A mapping error or an unapplied update is possible; the packet does not select between them. Broadening the rule to include Finance would change who receives access and conceal the data problem.
 
@@ -40,13 +42,15 @@ Packet A demonstrates a rule that has not been activated. Review the approved lo
 
 Packet B supplies a different explanation: an explicit user exclusion. Investigate why it exists and whether it remains approved before proposing removal. A previous manual removal can create such an exclusion, but that history is not established by this packet.
 
-Neither case justifies changing correct HR data. Revisit **A matching condition is not observed membership** if you treated a true condition as proof of membership.
+Neither case justifies changing correct HR data. The difference is between an unactivated membership mechanism and an explicit exception for Maya, not between two different department values.
 
 **Revisit:** [A matching condition is not observed membership](../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership)
 
 ## 5. Contractor assignment
 
-The individual assignment is a separate path, so it does not demonstrate a group-rule failure. Missing approval evidence leaves the exception's authorization unresolved. It does not establish either an approved exception or a confirmed unauthorized assignment. Obtain the approval evidence before making that judgment.
+The employee rule did not include Priya; her Salesforce assignment comes through the individual path instead. Those two facts can coexist without a rule failure.
+
+Now ask whether that separate path has the required approval. The review has not supplied it, so we cannot call the exception approved or declare that no approval exists. Obtain the relevant decision before making that judgment.
 
 Ask for the approved need, accountable owner, and review/removal condition. Keep Priya's true classification. Changing it to Employee would corrupt data to fit an access decision rather than document a legitimate exception.
 

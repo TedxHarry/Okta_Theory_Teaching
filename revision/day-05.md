@@ -12,11 +12,11 @@ A group called “Sales Employees” sounds clear, but its name does not enforce
 
 **Group.** A group collects users so they can be managed together. Membership may come from a rule, a manual decision, or an external source. Find the membership owner before trying to change it.
 
-**Group rule.** A rule evaluates conditions to determine membership. Northbridge's normal Sales rule checks the Okta profile for both `department = Sales` and `workerType = Employee`. The word **AND** matters: both must be true. Using OR would admit people who meet only one condition.
+**Group rule.** A rule evaluates conditions to determine membership. Northbridge's normal Sales rule checks the Okta profile for both `department = Sales` and `workerType = Employee`. The word **AND** matters: both must be true. OR needs at least one true condition, so it would also admit people who meet only one. Someone meeting both qualifies under either condition.
 
 **Rule state and user state.** An active rule is enabled to operate. That is different from a user having an Active status. Neither observation replaces checking the user's actual membership and any applicable exclusion.
 
-**Application assignment.** Assignment establishes a user's relationship to an application in Okta. It may come through a group or directly. It remains separate from creating a target account, completing sign-in, and receiving permissions inside the target.
+**Application assignment.** Assignment establishes a user's relationship to an application in Okta. It may come through a group or directly. This **assignment source** identifies the access path, not the system that owns the user's profile. It remains separate from creating a target account, completing sign-in, and receiving permissions inside the target.
 
 **Multiple assignment paths.** A user can retain an assignment through another group or a direct assignment after leaving one group. To understand removal, inspect every remaining path and its approval.
 

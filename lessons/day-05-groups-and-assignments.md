@@ -6,7 +6,7 @@ nav_order: 5
 
 # Day 5: Groups, rules, and application assignments
 
-Maya and Priya both work with Sales. Maya is an employee; Priya is a contractor. Their manager asks:
+Maya and Priya both work with Sales at Northbridge Services. Maya is an employee; Priya is a contractor. Their manager asks:
 
 > They have the same department. Why does Maya receive Salesforce automatically while Priya does not?
 
@@ -31,7 +31,7 @@ flowchart TD
 
 **Membership** means a user belongs to the group. **Group-based application assignment** means members receive an application assignment through that group's connection to the application.
 
-Follow the diagram from Maya's membership to the application relationship. The first fact places her in the group; the second connects that group to Salesforce. The name `NB-Sales-Employees` is a label, not an instruction. Naming a group does not define its members or connect it to Salesforce. Both relationships need configuration and evidence.
+Read the diagram as two checks. First, open the group and check whether Maya is a member. Then check whether Salesforce is actually assigned to that group. Maya could belong to the group while the application connection is missing, or Salesforce could be assigned to a group she does not belong to. The name `NB-Sales-Employees` is a label, not an instruction. Naming a group does not define its members or connect it to Salesforce. Both relationships need configuration and evidence.
 
 ## A rule decides membership; an assignment connects the application
 
@@ -49,7 +49,7 @@ AND workerType is Employee
 then include the user in NB-Sales-Employees.
 ```
 
-This is plain-language logic, not expression code. **AND** requires both conditions to be true. A **Boolean** result is a true-or-false result: does this user meet the condition?
+This is plain-language logic, not expression code. **AND** requires both conditions to be true. A **Boolean** result is simply true or false: here, it answers 'Does this profile meet the condition?' It is not an account status or proof that the membership action completed.
 
 If the condition is true and the configured rule processes the user without an applicable exclusion, its membership action can place the user in the designated group. The rule is not itself a command to create a Salesforce account. The separate assignment of Salesforce to the group gives that membership its application-access purpose.
 
@@ -67,7 +67,9 @@ Read the diagram from the approved data toward the application outcome. The prof
 
 All three users below are Active in Okta. The example rule is active, has no individual exclusions for them, and has processed the supplied profiles. There are no other membership mechanisms for this example group.
 
-There are two different uses of *active* here. **Active user** is an account state. **Active rule** means the rule is enabled to operate. Neither phrase by itself proves that this user has joined this group. An **exclusion** is an explicit exception preventing the rule from adding a particular user. We use Active users because account state matters to rule processing: for this rule, which does not specify a user-status condition, Okta includes active users. Matching department and workforce classification alone therefore does not prove membership.
+There are two different uses of *active* here. **Active user** describes the account's state. **Active rule** means the rule is enabled to operate. 'Maya's account is Active' does not answer 'Has this rule added Maya to the group?' An **exclusion** is a specific exception preventing the rule from adding a user, even when their profile matches.
+
+Account state also affects rule processing. For this rule, which does not specify a user-status condition, Okta includes active users. With the account state, rule state, processing and lack of exclusions established, we can compare the two profile conditions in the table. In an investigation, check those facts rather than assume them.
 
 Before reading the explanation, predict the result for each person:
 
@@ -87,7 +89,7 @@ A missing or unfamiliar `workerType` does not establish Employee status. Investi
 
 ## Read the current profile, not just the source record
 
-For this attribute-based rule, the input is the Okta user profile. It does not look directly at Workday whenever you read the rule. External values must be represented in the relevant Okta attributes first.
+For this attribute-based rule, the inputs are department and workerType in the central Okta user profile. Evaluating that condition does not ask Workday for a fresh department. The external values must first reach the Okta fields that the rule actually reads.
 
 Suppose Workday correctly says Sales, but Maya's Okta profile says Finance. The rule can correctly evaluate the supplied Okta value and still produce an outcome that conflicts with the business requirement.
 
@@ -148,7 +150,7 @@ Trace the relationship providing this assignment: it connects Priya individually
 
 Ask for the requirement, approval, responsible owner, and review or removal condition for the individual assignment. Do not change Priya's worker type to Employee just to make her fit the normal rule. Do not declare the exception authorized or unauthorized from missing approval evidence alone.
 
-The phrase **assignment source** in this investigation means where the application assignment came from, such as a group or an individual assignment. It does not mean the profile source from Day 4.
+The phrase **assignment source** answers 'Which relationship gives this user the application assignment?' It might be a group or an individual assignment. **Profile source** answers a different question: 'Which system controls this user's profile?' Seeing Individual beside Priya's Salesforce assignment does not mean the owner of her profile changed.
 
 ## Removing one path does not settle every path
 
@@ -158,7 +160,7 @@ Once the new value reaches her Okta profile and the active rule processes it, sh
 
 Then investigate application assignment separately. Another assigned group or a separately maintained individual assignment can still provide a path. Even confirmed removal of the final Okta assignment does not, by itself, prove the target account's state or the end of an existing application session.
 
-Ask which relationship ended and which ones remain. A removed group membership closes that group path; it does not describe another group's assignment or an application's existing session. Use evidence in this order: updated profile, processed rule/membership result, remaining assignment paths, then relevant target outcomes. Day 12 develops the full department-move case.
+Ask which relationship ended and which ones remain. For example, if the Sales group no longer includes Maya but a second group still assigns Salesforce to her, the second path remains. Inspect that relationship rather than treating the first removal as a result for every path. Existing application sessions are another outcome to check. Use evidence in this order: updated profile, processed rule/membership result, remaining assignment paths, then relevant target outcomes. Day 12 develops the full department-move case.
 
 ## Group membership has an owner too
 

@@ -10,7 +10,7 @@ Use the [lesson](../lessons/day-05-groups-and-assignments.md) when needed. State
 
 ## 1. Predict the population
 
-The active rule requires department Sales AND workerType Employee. Maya is Sales/Employee, Priya Sales/Contractor, and Daniel Finance/Employee. All are Active, processed, and not individually excluded.
+The active rule requires department Sales AND workerType Employee. Here, workerType is the company's workforce-classification field. Maya is Sales/Employee, Priya Sales/Contractor, and Daniel Finance/Employee. All three accounts are Active, the rule has processed their profiles, and none is individually excluded.
 
 Who qualifies? How would replacing AND with OR change these results? Why should an unknown worker type not be treated as Employee?
 
