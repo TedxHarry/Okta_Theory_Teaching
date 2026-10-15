@@ -372,13 +372,13 @@ nav_order: 5
 
 ### Q23. Manual removal as a test
 
-<p class="qb-question"><strong>Question:</strong> An Okta group rule manages a user’s membership. An administrator proposes manually removing that user and waiting for the rule to add them again. What possible effect makes removal an unreliable neutral test?</p>
+<p class="qb-question"><strong>Question:</strong> An Okta group rule manages a user’s membership. An administrator proposes manually removing that user and waiting for the rule to add them again. What effect makes removal an unreliable neutral test?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Manually removing a rule-managed user can add them to the rule's exclusion list. The test can therefore change a condition governing later membership.</p>
+<p>When you manually remove a rule-managed user from a group, Okta automatically adds that person to the rule's exclusion list. You have changed a condition governing later membership, so waiting for the rule to add them again is no longer a neutral test.</p>
 <p>Inspect the resulting exclusion and management mechanism instead of assuming the original processing context stayed unchanged.</p>
 <p>A test needs understood effects and scope. Repeating removal or waiting for re-addition can miss the very exception introduced by the test action.</p>
 </div>

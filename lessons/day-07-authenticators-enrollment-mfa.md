@@ -143,7 +143,7 @@ The key used to create the response's signature is a **private key**, a cryptogr
 
 FastPass is not another name for approving a Push notification. It can provide phishing-resistant authentication in supported, correctly configured flows. **Phishing resistance** helps prevent authentication proof from being used through an impostor site. It does not mean every flow bearing the Okta Verify name has the same protection or that all forms of account compromise are impossible.
 
-A flow can also require **user verification**, such as a supported device biometric or passcode check. This adds a check of the person using the device; having a registered device and completing a required local check are distinct facts. Whether the required proof was provided depends on the method, device, configuration, and actual result. “FastPass enabled” does not prove those conditions were met for an attempt.
+A flow can also require **user verification**, such as a supported device biometric or passcode check. Okta documents these [user-verification options in app sign-in policies](https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/new-user-interaction-options.htm). This adds a check of the person using the device; having a registered device and completing a required local check are distinct facts. Whether the required proof was provided depends on the method, device, configuration, and actual result. “FastPass enabled” does not prove those conditions were met for an attempt.
 
 Passwordless means the flow does not require a password; it does not mean “no authentication” or “automatically single-factor.” Do not infer factor count from whether a password field appeared.
 

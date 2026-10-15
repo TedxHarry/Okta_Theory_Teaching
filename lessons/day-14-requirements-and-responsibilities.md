@@ -74,7 +74,7 @@ The Finance owner decides who may approve expenses. An Okta administrator's abil
 
 **Least privilege** means granting the administrative permissions and scope needed for a defined responsibility, rather than broad authority for convenience. A standard role is a starting point to compare with the task, not a substitute for checking its permissions and limits.
 
-Here, **scope** means which resources or users the permission covers. Permission to manage Expense does not imply permission to manage Projects. A shared policy can affect both, so the administrator's authority must cover the actual change and its resource scope.
+Here, **scope** means which resources or users the permission covers. Permission to manage Expense does not imply permission to manage Projects. A shared policy can affect both, so the administrator's authority must cover the actual change and its resource scope. For an App Admin to manage an app sign-in policy, that administrator must be allowed to manage every application assigned to the policy. If Expense and Projects share a policy but Alex can manage only Expense, that App Admin scope is insufficient to manage the shared policy. Check the policy's complete application list before choosing the operator.
 
 | Responsibility | Standard-role direction to evaluate |
 |---|---|

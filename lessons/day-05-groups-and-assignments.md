@@ -122,7 +122,7 @@ The condition matches, and the group already has its Salesforce connection. The 
 
 Alex can propose activating the approved rule after reviewing its full affected population and exclusions. Verification would check actual membership and the resulting Salesforce assignment, followed separately by the required account and sign-in evidence.
 
-Do not use a manual removal as an assumed neutral test of a rule. Okta documents that manually removing a rule-managed user can add that person to the rule's exclusion list. That exclusion then matters when investigating why the person is absent.
+Do not use a manual removal as an assumed neutral test of a rule. When an administrator manually removes a rule-managed user from a group, Okta automatically adds that person to the rule's exclusion list. See [group-rule exclusions](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm). That exclusion then matters when investigating why the person is absent.
 
 ## Follow a successful assignment as far as the evidence goes
 
@@ -168,7 +168,7 @@ For `NB-Sales-Employees`, Northbridge deliberately uses an Okta-managed group an
 
 The name alone does not establish the owner. Keep two locations separate as well: this group is managed in Okta; a group stored inside a target application is another object. Membership in an Okta group does not mean a same-named group exists in the application.
 
-**Group Push** is a separate capability for creating or maintaining groups and memberships in supported target applications. Assigning Salesforce to a group answers who receives the application assignment. It does not automatically create that group inside Salesforce. Where Group Push is used, Okta requires separate groups for application assignment and Group Push; this lesson does not assume Northbridge's Salesforce integration has Group Push configured. For now, be able to explain which relationship each capability manages; you do not need to memorize the Group Push configuration procedure.
+**Group Push** is a separate capability for creating or maintaining groups and memberships in supported target applications. Assigning Salesforce to a group answers who receives the application assignment. It does not automatically create that group inside Salesforce. Where Group Push is used, Okta requires [separate groups for application assignment and Group Push](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/app-assignments-group-push.htm); this lesson does not assume Northbridge's Salesforce integration has Group Push configured. For now, be able to explain which relationship each capability manages; you do not need to memorize the Group Push configuration procedure.
 
 ## Follow a missing application from the user to the assignment
 

@@ -90,7 +90,7 @@ flowchart TD
   A["Jordan submits sign-in information to Okta"] --> B["Okta sends the delegated request to an AD agent"] --> C["The agent passes the credentials to a domain controller"] --> D["AD evaluates the credentials and account conditions"] --> E["The result returns through the agent to Okta"] --> F["Okta continues or refuses the attempt under its requirements"]
 ```
 
-Follow the request to AD, then follow the result back. The request must reach the agent and the DC before there can be a returned AD validation result. Okta then uses that result within the applicable sign-in process. An arrow in this simplified diagram describes the next logical step; the incident evidence tells you which steps actually occurred.
+Follow the request to AD, then follow the result back. Okta's [delegated authentication reference](https://help.okta.com/oie/en-us/Content/Topics/Directory/directory_ad_delegated_authentication.htm) describes this agent-to-domain-controller path. The request must reach the agent and the DC before there can be a returned AD validation result. Okta then uses that result within the applicable sign-in process. An arrow in this simplified diagram describes the next logical step; the incident evidence tells you which steps actually occurred.
 
 A successful password result is one sign-in step. Additional authentication or policy requirements may remain, and application assignment and application-side acceptance are still separate. AD accepting Jordan's password is therefore a narrower conclusion than Jordan successfully opening Salesforce. Not every sign-in method uses this password path.
 

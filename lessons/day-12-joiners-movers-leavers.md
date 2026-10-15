@@ -50,7 +50,7 @@ Use the status names to understand the Okta account that was checked, rather tha
 
 **Suspension** blocks Okta access while retaining app assignments and group memberships. Unsuspension is a different decision from reconstructing removed access. See [suspension behavior](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-suspend.htm).
 
-**Deactivation** removes Okta app assignments and invokes applicable configured deprovisioning. Group memberships are retained. **Deletion** removes the Okta user and cannot be undone; it is a separate action after deactivation. It is not a troubleshooting shortcut. Deactivation can run in the background, so a requested action is not itself evidence of completion. See [deactivation and deletion](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-deactivate-user-account.htm).
+**Deactivation** removes Okta app assignments and invokes applicable configured deprovisioning. Group memberships are retained. **Deletion** removes the Okta user and cannot be undone; in the Admin Console, it is a separate action after deactivation. It is not a troubleshooting shortcut. Deactivation can run in the background, so a requested action is not itself evidence of completion. See [deactivation and deletion](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-deactivate-user-account.htm).
 
 Target behavior requires its own verification. For example, Okta's [outbound SCIM reference](https://developer.okta.com/docs/api/openapi/okta-scim/guides/scim-20) distinguishes suspension from deactivation: suspension alone does not send the SCIM deprovisioning event. Day 10's Projects deactivation sets active false; it does not delete the resource.
 
