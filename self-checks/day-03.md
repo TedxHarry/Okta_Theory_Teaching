@@ -10,15 +10,17 @@ Check the relationships in your explanation. Exact wording and expression syntax
 
 ## 1. Locate the records
 
-The Okta user profile and the Projects app user profile are represented inside Okta. The actual Projects account belongs to the target application.
+Both profiles are in Okta: the central profile about Daniel and the Projects-specific profile prepared for his assignment. His actual Projects account lives inside Projects. The word app in app user profile tells you what the information is for, not where it is stored.
 
-A correct app user profile establishes the value represented in Okta for that application assignment. It does not prove successful target creation or update. Inspect the relevant operation and target record separately.
+If the app user profile says FIN, you can report, 'Okta holds the expected Projects code.' To report that Projects itself holds FIN, check the update result and the linked account inside Projects. Correct preparation is useful, but it is not evidence of delivery.
 
 **Revisit:** [There is an Okta user profile and an application user profile](../lessons/day-03-profiles-and-mappings.md#there-is-an-okta-user-profile-and-an-application-user-profile) if you placed both application-related records inside Projects.
 
 ## 2. Schema versus value
 
-The destination requires a text field with an accepted department code. Finance is readable text but is not one of the accepted codes. The intended transformation produces FIN.
+There are two rules to notice: the field takes text, and that text must be one of the accepted codes. Finance meets the first rule but not the second. FIN meets both and represents Daniel's approved Finance department.
+
+That is why readable text can still be the wrong value for a field. The schema describes what is allowed; Daniel's proposed value is the particular answer we compare with those rules.
 
 Adding a field defines somewhere to hold information; it does not populate every user with a correct value. The applicable data flow or maintenance process must supply that value.
 
@@ -46,7 +48,7 @@ Daniel's HR department should not be changed to compensate for the defect. It is
 
 ## 5. Correct preview, stale target
 
-The unresolved boundary lies between the value represented for the application in Okta and the stored target value. Possible evidence requests include:
+The prepared value in Okta is already FIN, so changing the Finance-to-FIN calculation would not explain why Projects still holds SAL. Follow the next part of the journey: did the prepared value reach Daniel's linked account? Useful checks include:
 
 - Whether the relevant attribute update is supported and enabled.
 - Whether an update was attempted and the operation's result.
@@ -59,7 +61,7 @@ These requests investigate possibilities; they do not establish a failed connect
 
 ## 6. Missing field, missing evidence
 
-The excerpt does not show the field. That alone establishes neither a blank HR value nor automatic fallback to AD.
+We have been shown only part of a record. The department field might simply be outside that selected excerpt. Before saying it is blank, open the relevant source record or obtain the missing field evidence. The excerpt also tells us nothing about whether AD would be chosen instead.
 
 An empty string is an explicitly supplied empty text value. JSON `null` explicitly marks no value; it is not the text `"null"`. An omitted field in a selected excerpt may simply be outside the excerpt. Their update effects depend on the operation and configuration; none alone proves that the destination was cleared.
 

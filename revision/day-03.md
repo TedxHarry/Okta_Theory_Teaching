@@ -10,13 +10,13 @@ Daniel belongs to Finance, yet Projects shows the Sales code. Before changing hi
 
 ## The concepts to keep with you
 
-**Attribute, value, and schema.** An attribute is a named field, such as department. Its value might be `Finance`. A schema describes the fields and the rules for their data. Two systems can describe the same business fact using different accepted values.
+**Attribute, value, and schema.** An attribute is a named field, such as department. Its value might be `Finance`. A profile collects the user's attributes and values. A schema describes which fields are available and what values they allow, like the design and rules of a form. Two systems can describe the same business fact using different accepted values.
 
 **Mapping.** A mapping describes how information moves from a source field to a destination field. Direction matters. An incoming application-to-Okta mapping does not automatically create an outgoing Okta-to-application mapping.
 
 **Transformation.** This changes the representation of a value. Northbridge's Projects application expects `SAL`, `FIN`, or `IT`. Translating `Finance` to `FIN` preserves the business meaning while meeting the target's format. Sending a fixed `SAL` value for everyone does not.
 
-**App user profile.** This is the user's application-specific profile stored in Okta. It is still an Okta-side record. Seeing `FIN` there does not prove that Projects received and stored `FIN`.
+**App user profile.** This is the user's application-specific profile stored in Okta. It is still an Okta-side record. Seeing `FIN` there means Okta holds the prepared value. It does not prove that the separate account inside Projects received and stored `FIN`.
 
 **Preview and delivery.** A preview shows the calculated result for selected input. Saving a correct mapping, updating the app user profile, sending a request, receiving acceptance, and reading the destination are separate observations.
 

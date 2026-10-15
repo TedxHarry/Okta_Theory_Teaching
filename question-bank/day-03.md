@@ -116,9 +116,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Finance carries the right business meaning, but it is not an accepted representation for this field. The intended Projects value is FIN.</p>
-<p>A mapping can convert the source department into the destination's required code. That conversion should preserve meaning while meeting the application's field constraints.</p>
-<p>Read the actual requirement, not just the text's readability. Sending the full name unchanged would miss the supplied contract even though Daniel's source department is correct.</p>
+<p>No. The field accepts text, but it also restricts which text is allowed. Finance is understandable to a person; FIN is the accepted code for this department in Projects.</p>
+<p>Think of choosing from an agreed list. A full department name can express the right idea and still be outside the list. The mapping needs to preserve the idea while producing the accepted code.</p>
+<p>For Daniel, leave the approved department as Finance at the source and prepare FIN for this destination. The difference in text is intentional. Sending the full name unchanged would not meet the supplied field requirement.</p>
 </div>
 </details>
 
@@ -150,9 +150,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The employment record lives in Workday. Both the central user profile and the Projects app user profile live in Okta. The actual account record lives inside Projects.</p>
-<p>The easily missed point is the app user profile: app describes what the information is for, not where it is stored.</p>
-<p>Keep these layers separate when following a department value. Correct prepared information in Okta does not by itself prove the separate application account received it.</p>
+<p>Start by grouping the records by location. Workday holds the employment record. Okta holds two profiles: the central profile about Daniel and the Projects-specific app user profile. Projects holds its own account record.</p>
+<p>The name app user profile can be misleading at first. Here, app tells you which application the prepared information is for. It does not move that profile out of Okta and into Projects.</p>
+<p>So a value read from that profile supports a statement about what Okta holds for the assignment. To say what Projects stores, inspect the linked account there. Keeping those two locations clear helps you avoid stopping at a prepared value before checking the destination.</p>
 </div>
 </details>
 
@@ -216,9 +216,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A mapping defines how information from a source field is represented in a destination field. It can copy a value or calculate another representation.</p>
-<p>One relationship represents incoming Workday department in Okta. Another converts Okta's Finance into the Projects-specific FIN code prepared in Okta.</p>
-<p>Name both sides. “The department mapping” could refer to either relationship. A mapping describes the rule, while the applicable import or update and target evidence establish what actually occurred.</p>
+<p>You could say, 'A mapping tells us how to take information from one named field and represent it in another.' One mapping represents Workday's department in Daniel's central Okta profile. Another prepares the code Projects expects.</p>
+<p>The first can preserve Finance as Finance. The second needs to turn Finance into FIN in the Projects-specific profile held in Okta. Those are two relationships with different destinations, so name which one you mean.</p>
+<p>The rule explains the intended conversion. To find out what actually happened, follow the relevant import or update and read the resulting records. A written conversion rule is not a completed account update.</p>
 </div>
 </details>
 
@@ -398,9 +398,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The outgoing rule produces SAL from Daniel's Finance input where FIN is required. The preview demonstrates that wrong calculation, and the prepared and target values contain the wrong code too.</p>
-<p>That supports correcting the fixed-value rule against the approved conversion. The accurate upstream department should remain Finance.</p>
-<p>The supplied snapshots establish a current mapping defect. They do not establish every historical operation that placed the value in the target.</p>
+<p>Follow Finance from Workday into the central Okta profile. So far, the supplied values agree with Daniel's approved department. Now try that input in the outgoing rule: it returns SAL even though Projects requires FIN.</p>
+<p>That is the first demonstrated wrong representation. A fixed-value rule always gives SAL; it is not choosing the code from Daniel's department. The preview shows the incorrect calculation, and the two later records also contain SAL.</p>
+<p>Propose correcting that rule against the approved conversion while keeping the correct Finance input. The current snapshots do not tell us every past write that put SAL in Projects. We can establish today's calculation defect without inventing its full history.</p>
 </div>
 </details>
 
@@ -480,9 +480,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The evaluated rule calculates the expected code for that input. The preview is useful calculation evidence.</p>
-<p>It does not establish that the rule was applied, an existing app user value changed, an update was sent, or Projects stored FIN.</p>
-<p>Report the good preview while keeping the later stages unverified. Follow the applied configuration, prepared record, operation result, and intended destination before calling the account correction complete.</p>
+<p>We can say, 'The proposed rule produced FIN when we tried Daniel's Finance input.' The preview demonstrates that calculation for that input.</p>
+<p>Now separate trying the rule from applying it. The question does not say the configuration was saved, that the stored app user profile changed, or that anything was sent to Projects. A good preview cannot supply those missing results.</p>
+<p>Keep the successful calculation, then check the applied configuration, stored app user value, update result and intended Projects account. That is how the answer moves from 'the rule looks right for this input' to evidence that Daniel's account was corrected.</p>
 </div>
 </details>
 
@@ -512,9 +512,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Delivery from the prepared representation in Okta to the linked Projects account is unresolved. The supplied calculation and prepared value already meet the requirement.</p>
-<p>Check whether the attribute update is supported and enabled, whether it was generated and sent, its actual value and response, and the account association.</p>
-<p>Rewriting a correct conversion would not answer those questions. The observed target mismatch narrows the next investigation without proving a particular delivery failure.</p>
+<p>Okta has the expected FIN value prepared, but the linked Projects account still holds SAL. The unanswered part is between those two records: what happened to the account update?</p>
+<p>Ask whether that attribute can be updated through this connection and whether updates are enabled. Then look for Daniel's actual update: was it attempted, what value did it send, and what did Projects reply? Keep the account association with those checks so you know which record the request concerned.</p>
+<p>An unattempted update and a rejected update would need different follow-up checks. Neither is established here. The correct preview and prepared value make this a delivery investigation; they do not prove a particular connector failure.</p>
 </div>
 </details>
 
@@ -628,9 +628,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>An empty string is text with no characters. Null is JSON's marker for no value in a present field. Omission means the selected excerpt does not show that field.</p>
-<p>The full source may contain information left out of the excerpt. Inspect the relevant record before claiming its department is empty.</p>
-<p>Also check how the integration handles the actual input. These representations are different, and their downstream effects should not be assumed identical.</p>
+<p>Read each form literally. Empty quotes mean a text value with no characters. The unquoted JSON value null marks no value in a field that is present. If department is omitted, this excerpt does not show the field at all.</p>
+<p>Imagine receiving only a few lines from a larger record. A field missing from those lines might still be present in the full record. That is why we need the actual source evidence before saying the department is blank.</p>
+<p>After identifying the real input, check how this integration handles it. Do not assume an empty string, null and an omitted field all cause the same update or clear the destination. Their representation and the operation's rules both matter.</p>
 </div>
 </details>
 
@@ -744,9 +744,9 @@ nav_order: 3
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Creation-only concerns when the mapped value is calculated. Sending a stored field later is a different operation.</p>
-<p>The supplied behavior allows the existing value to travel in a profile update without being freshly recalculated. Inspect both the stored value and the actual request when investigating what reached the application.</p>
-<p>Do not infer omission merely from the mapping timing label. Calculation, stored representation, and transmission remain separate checks.</p>
+<p>No. Creation-only describes when the mapping calculates the value. It does not promise that a later request will leave the stored field out.</p>
+<p>Imagine the field was calculated earlier and still holds SAL. Under the full-profile update behavior supplied here, that stored SAL can be sent again without the mapping working out a fresh department code. Sending the old answer and recalculating the answer are different actions.</p>
+<p>Check the stored app user value and the actual outgoing request. That lets you explain both what Okta had prepared and what it sent, instead of using a timing label to guess the request's contents.</p>
 </div>
 </details>
 

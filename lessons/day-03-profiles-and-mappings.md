@@ -6,7 +6,7 @@ nav_order: 3
 
 # Day 3: Profiles, attributes, and mappings
 
-Daniel Brooks is a Finance manager at Northbridge Services. Workday correctly places him in Finance. His Okta profile also says Finance. Northbridge Projects, however, displays his department as Sales.
+Daniel Brooks is a Finance manager at Northbridge Services. Workday, Northbridge's HR system, correctly places him in Finance. His Okta profile also says Finance. Northbridge Projects, a separate business application, displays his department as Sales.
 
 Daniel reports:
 
@@ -47,7 +47,7 @@ How does a system know which attributes are allowed and what kind of values they
 
 Imagine Alex needs a place to store an employee number. Before supplying Daniel's number, he needs to know whether that field exists, what kind of value it accepts, and whether it must be filled in. The definition of those fields and constraints is a **schema**. It describes the profile's structure; Daniel's profile supplies the values in that structure.
 
-For example, a schema might specify that an employee number is text and a particular field is required. A company can also need custom attributes in addition to the attributes provided by the product. The available fields and constraints depend on the profile and integration.
+Think of a blank form and the rules for filling it in. The form design names the fields; the rules say what answers are allowed and which fields cannot be left empty. Daniel's completed profile supplies his answers. For example, a schema might specify that an employee number is text and a particular field is required. A company can also need custom attributes in addition to the attributes provided by the product. The available fields and constraints depend on the profile and integration.
 
 Compare these two questions:
 
@@ -60,11 +60,11 @@ The reverse matters too. A value can be readable text but still be unacceptable 
 
 ## There is an Okta user profile and an application user profile
 
-Daniel's central Okta user profile contains the workforce information Northbridge keeps about him in Universal Directory. Projects needs information prepared for its own requirements. Okta holds that application-specific information for Daniel's assignment in an **app user profile**. Alex therefore has two profiles to inspect inside Okta before he checks the actual Projects account.
+Daniel's **central Okta user profile** is the profile Northbridge keeps about him in Universal Directory. Central means it is the Okta user profile that can supply information for different applications; it is not a separate profile created for each application's format. Projects needs information prepared for its own requirements. Okta holds that application-specific information for Daniel's assignment in an **app user profile**. Alex therefore has two profiles to inspect inside Okta before he checks the actual Projects account.
 
 The app user profile is in Okta. It is not the same record as Daniel's account stored inside Northbridge Projects.
 
-The name describes which application the profile is for, not where it is stored. Think “the Projects-specific information held in Okta” whenever you read *Projects app user profile*.
+The name describes which application the profile is for, not where it is stored. Think “the Projects-specific information held in Okta” whenever you read *Projects app user profile*. Suppose it contains FIN, Projects' code for Finance. Alex can report, 'Okta has FIN prepared for Projects.' To say 'Projects stores FIN,' he must check the account inside Projects.
 
 | Layer | Where it is | What it represents |
 |---|---|---|
@@ -81,7 +81,9 @@ Seeing a correct Projects app user profile in Okta therefore does not, by itself
 
 ## A mapping connects a source field to a destination field
 
-HR records Daniel's department in Workday. The configured integration needs to obtain the relevant employee information through its applicable import or update process. A rule then determines how the incoming department field is represented in the receiving Okta field. That relationship is an **attribute mapping**. It defines how attributes relate; the rule itself does not retrieve new information or prove that a fresh import occurred. It also does not establish a successful target update merely by existing.
+HR records Daniel's department in Workday. The configured integration first needs to obtain that employee information through its applicable import or update process. An **attribute mapping** tells it how the source field relates to the receiving field: take this department information and represent it in that Okta attribute. The mapping can copy the text or calculate a different representation.
+
+The rule and the result are separate things to inspect. Knowing how Finance should be represented does not show that the latest Workday information was read or that a later application update succeeded. See [Okta's attribute mapping reference](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-attribute-mappings.htm).
 
 At its simplest, the mapping copies a value:
 
@@ -105,7 +107,7 @@ In the second diagram, start inside Okta at the central department attribute and
 
 For a particular integration, **App to Okta** means the connected application or directory supplies values to the Okta user profile. **Okta to App** means the Okta user profile supplies values toward the application's profile.
 
-The word *app* in the mapping interface can refer to an upstream source integration as well as a downstream business application. It does not automatically mean "the application the employee is trying to open."
+The word *app* in the mapping interface can refer to the integration supplying HR or directory information as well as to a business application receiving information. It does not automatically mean "the application the employee is trying to open."
 
 | Mapping direction | Question it answers in this example |
 |---|---|
@@ -126,7 +128,7 @@ Northbridge Projects is a fictional application with this department-field requi
 | `FIN` | Finance |
 | `IT` | IT |
 
-For this example, the field is required, and these are its accepted codes. These are Northbridge Projects rules, not universal Okta or SCIM requirements.
+For this example, the field is required, and these are its accepted codes. These are Northbridge Projects rules; another application can require different fields and codes.
 
 Workday and Okta use the full name `Finance`. Projects expects `FIN`. Alex cannot simply copy the full name into a field that accepts the code. The mapping needs to express the same business meaning in the destination's format. Converting the value this way is a **transformation**.
 
@@ -143,7 +145,7 @@ This is plain-language rule logic, not Okta Expression Language code. An express
 
 For Daniel, predict the output before reading on: the input is Finance, so the intended output is FIN.
 
-The two values are different strings, but they carry the same meaning under the application's defined code table. Comparing values correctly means checking their intended meaning, not demanding identical text everywhere.
+The two values are different pieces of text, but they carry the same meaning under the application's defined code table. Comparing values correctly means checking their intended meaning, not demanding identical text everywhere.
 
 ## Find the first wrong representation
 
@@ -160,7 +162,7 @@ Alex gathers the following synthetic evidence for Daniel. The observations refer
 
 Where does the first wrong representation appear?
 
-The source and Okta user profile agree with the approved requirement. The configured outbound mapping produces SAL even though Daniel is in Finance. The preview demonstrates that wrong output, and the app user profile and target contain it too.
+The source and Okta user profile agree with the approved requirement. The configured outbound mapping produces SAL even though Daniel is in Finance. A **fixed value**, also called a constant, gives the same result regardless of the input: Sales gets SAL, and Finance gets SAL too. The preview demonstrates that wrong output, and the app user profile and target contain it too.
 
 Projects displays Sales because its stored code is SAL. That display agrees with its code table. Alex follows the value backward rather than correcting the display label: the central Okta profile says Finance, but the outgoing rule calculates SAL. This is where the supplied evidence first demonstrates a wrong representation.
 
@@ -174,9 +176,9 @@ Changing Daniel's Workday department would not be an appropriate correction: the
 
 After the proposed correction, suppose a preview produces FIN for Daniel.
 
-What has been shown? The mapping evaluated to the expected value for that input.
+We can now say, 'This proposed rule calculates FIN when given Finance.' That is useful progress: the conversion works for the input we tried.
 
-What has not been shown? That the configuration was applied, that existing app user values were updated, that a target update was attempted, or that Projects accepted and stored FIN.
+To tell Daniel that Projects has been corrected, Alex needs more. Was the corrected configuration applied? Does the stored app user profile now hold FIN? Was the update sent, and does Daniel's account inside Projects actually contain FIN? The preview alone does not answer those questions.
 
 ```mermaid
 flowchart TD
@@ -245,7 +247,7 @@ The mapping tells Alex how to represent the department; Northbridge's ownership 
 
 ## Read when a mapping applies
 
-Keep one point in mind for this additional detail: a correct expression does not guarantee that an existing application account received a new value. You do not need to memorize the settings today. Where supported, a mapping can calculate an app user field when the app user profile is created, or also recalculate it during updates. In Profile Editor, Alex checks both the mapping direction and when the mapping applies, rather than judging the expression alone.
+A mapping has both a calculation and a setting for when that calculation applies. Where supported, it can calculate an app user field when the app user profile is created, or also recalculate it during updates. **Recalculate** means work out the value again using the applicable input. In Profile Editor, Alex checks both the mapping direction and when the mapping applies, rather than judging the expression alone.
 
 Suppose a separate Projects example has the correct Finance-to-FIN expression, but the department mapping is configured for creation only. An existing user's old app-profile value can remain. Compare that behavior with the business requirement before changing it. Review other assigned users, decide how existing records will receive the correction, then verify the app user profile and target separately.
 

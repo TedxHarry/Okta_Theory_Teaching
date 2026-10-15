@@ -30,7 +30,7 @@ Name the source and destination of each mapping. Does defining either mapping au
 
 ## 4. A fixed value gives the wrong result
 
-Daniel's source department and Okta department are both Finance. The configured outbound rule always produces SAL. Its preview produces SAL, and the Projects account contains SAL.
+Daniel's source department and Okta department are both Finance. The configured rule from the Okta department to the Projects app user profile always produces SAL. Its preview produces SAL, and the Projects account contains SAL.
 
 Identify the demonstrated mapping defect, a justified correction to propose, and the evidence still needed before claiming that every downstream record is corrected. Should Daniel's HR department be changed?
 
