@@ -10,15 +10,17 @@ Attempt the [exercises](../exercises/day-06.md) first. Explain the operation and
 
 ## 1. Place the components
 
-The agent is integration software that connects Okta with AD for supported operations. A domain controller runs the directory service and can handle directory queries and credential validation. The agent can run on a separate server and is not the directory database.
+Give the two components different jobs in your explanation. The agent handles supported work between Okta and AD. The domain controller runs the directory service that can answer directory queries and evaluate the credentials.
+
+In the password path, a request reaches the agent and then goes to the controller for the AD decision. The agent can run on a separate server; it is not the directory database. Reaching it is useful progress, but we still need the result from the controller.
 
 Revisit [Locate the directory, the server, and the agent](../lessons/day-06-active-directory.md#locate-the-directory-the-server-and-the-agent) if your flow has Okta itself acting as the AD domain controller.
 
 ## 2. A successful scoped import
 
-The result concerns the selected population. It does not prove the excluded group is absent from AD. Request the target group's directory record, its OU location, and the configured import scope and results.
+The import read the selected directory locations. Jordan's user arrived from an included OU; that does not tell us whether the missing group exists elsewhere in AD. Find the expected group's directory record, then compare its OU location with the selected group OUs and the import results.
 
-An OU is an administrative container; a group has a membership relationship. Matching names do not establish that relationship. Check membership evidence separately.
+Also separate location from membership. A record stored in an OU named Sales is not automatically a member of a group named Sales. Open the actual group membership if that is the question you need to answer.
 
 Revisit [What an import establishes](../lessons/day-06-active-directory.md#what-an-import-establishes) if you read a successful scan as proof of complete directory coverage.
 
@@ -32,13 +34,13 @@ Revisit [Three operations that should not be confused](../lessons/day-06-active-
 
 ## 4. No credential result
 
-The demonstrated failure is the timed-out connection attempt from the handling agent to the selected DC. The packet proves neither password rejection nor password correctness.
+The request reached the agent, then its connection to the selected DC timed out. That is the demonstrated failure in J-1. No AD credential answer was obtained, so we cannot say that the password was accepted or rejected.
 
 Request connection evidence for that agent/DC path during J-1. A confirmed route problem would support a network correction; a confirmed unavailable directory service would lead to a different responsible component. The timeout alone does not choose a root cause. Name-resolution evidence can help assess the destination, but the packet does not establish a DNS failure.
 
 A specific handoff could say: “For Jordan's J-1 attempt, the handling agent received Okta's request but its connection to the selected DC timed out. No credential result was obtained. Please check that agent-to-DC path at the attempt time and provide the corresponding reachability and service evidence.” Include the known agent, DC, and timestamp; the handoff does not require Jordan's password.
 
-A password reset is not supported as a correction for the demonstrated connectivity failure. Revisit **Investigate Jordan's failed attempt** if you treated lack of a result as an explicit rejection.
+A password reset would change a credential without explaining the demonstrated connection timeout. The next check belongs to that failed connection, not to an assumed password rejection.
 
 **Revisit:** [Investigate Jordan's failed attempt](../lessons/day-06-active-directory.md#investigate-jordans-failed-attempt)
 

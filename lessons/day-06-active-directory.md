@@ -6,7 +6,7 @@ nav_order: 6
 
 # Day 6: AD imports and password validation
 
-Jordan Lee is an active Northbridge employee. An AD import completed successfully, and Alex confirmed that Jordan's directory record is associated with the correct Okta user.
+Jordan Lee is currently employed at Northbridge Services. An Active Directory (**AD**) import completed successfully, and Alex confirmed that Jordan's directory record is linked to the correct Okta user.
 
 Jordan now reports:
 
@@ -22,9 +22,9 @@ By the end of this lesson, you should be able to explain that difference to Jord
 
 Start with the place that holds Jordan's directory account. Northbridge uses **Active Directory Domain Services**, often shortened here to AD, for its employee directory. It holds objects such as users, groups, and computers. An object is a directory record representing one of those things. Jordan's user object contains information about his directory account; a group represents a collection used for access or administration. The directory account is one representation of Jordan, alongside the Workday and Okta records you have already learned to distinguish.
 
-An AD **domain** is a directory and administration boundary containing these objects. A **domain controller**, or **DC**, is a server running the directory service. It can respond to directory queries and validate domain credentials. **Credentials** are the information used to prove identity; on this password path, they include the submitted account name and password. A domain can have more than one domain controller.
+An AD **domain** is a managed area of the directory with its own administration boundary. It contains objects such as Jordan's user account. A **domain controller**, or **DC**, is a server running the directory service for that domain. It can respond to directory queries and validate domain credentials. **Credentials** are the information used to prove identity; on this password path, they include the submitted account name and password. A domain can have more than one domain controller.
 
-Administrators also need to organize the directory. An **organizational unit**, or **OU**, is a container inside a domain that helps organize objects and delegate administration. Think about an employee user record stored in an employee OU. Its location tells you where administrators have organized it. Membership in a group is a separate relationship, like the membership you inspected on Day 5. Placing a user inside an OU does not make that user a member of a same-named group.
+Administrators also need to organize the directory. An **organizational unit**, or **OU**, is a container inside a domain used to organize objects and let designated administrators manage that part of the directory. Think of Jordan's record stored under an employee OU: that is its directory location. A group has a separate list of members, like the membership relationship you inspected on Day 5. Placing a user inside an OU does not make that user a member of a same-named group.
 
 The **Okta AD agent** is separate software in the company's environment. It connects Okta with AD for supported operations. It is neither the AD directory database nor the domain controller itself. It can run on a separate server.
 
@@ -36,9 +36,11 @@ flowchart TD
 
 Read the diagram as a route between components. Okta communicates with the agent, and the agent performs directory operations with a domain controller inside Northbridge's environment. The agent connects the two systems; the DC runs the directory service and can evaluate the domain credentials. Keeping those jobs separate will help you locate Jordan's failure.
 
-The arrows show information moving in both directions. The AD agent initiates outbound connectivity to Okta and receives work and returns results through that communication path. Okta does not need to open a new inbound connection through Northbridge's firewall to the agent. The agent separately needs network access to the relevant domain controllers.
+The arrows show information moving in both directions, but that is different from who starts the connection. The agent initiates **outbound** communication from Northbridge's environment toward Okta. It receives work and returns results through that path. Okta does not need a new **inbound** connection from outside through the company's firewall to the agent. A firewall controls which network traffic is allowed. See [Okta's AD integration FAQ](https://help.okta.com/oie/en-us/Content/Topics/Directory/Directory_FAQ_Okta_and_AD_Groups.htm).
 
-An agent that can communicate with Okta may still be unable to complete its request to a DC. These are separate connections to investigate; the diagram does not require exposing a domain controller directly to the internet.
+The agent also needs a separate connection to the relevant domain controller inside the company's environment. Receiving a request from Okta does not show that this second connection worked.
+
+The diagram does not require exposing a domain controller directly to the internet.
 
 ## Northbridge is still HR-led
 
@@ -69,7 +71,7 @@ flowchart TD
   B -->|"applicable matching and processing"| C["Associated users and represented directory information"]
 ```
 
-Import scope matters. The integration selects which user and group OUs to include. A successful import of the selected population is not a statement that every object in AD was included.
+Import scope matters. The integration selects which user and group OUs to include. That selection answers 'Which parts of the directory are we reading?' A successful import of those selected records does not mean every object in AD was included. See [AD import settings](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm).
 
 Imagine the employee user OU is included, but a separate group OU is not. The import might supply Jordan's user record without supplying a group the investigator expected. That missing group tells you something about the imported results; it does not yet tell you whether the group exists in AD. Compare the group's actual directory location with the selected group OUs and the import result. This check separates an object outside the chosen scope from one that was expected to be read but was not processed as expected.
 
@@ -104,7 +106,7 @@ The incident evidence should identify the affected user, the directory associati
 | Delegated password authentication | Did AD accept the credentials for this attempt through the agent? | That every later requirement or application action succeeded. |
 | Password synchronization | Did a configured process propagate a password change to a supported destination? | That a later authentication attempt succeeded. |
 
-Use the main question in each table row to name the work. An import reads directory data. Delegated authentication asks for a credential decision during an attempt. Password synchronization transfers a password change through a supported, configured process. A password-validation request is not itself evidence that a password change was copied anywhere. A deployment may use both capabilities for different purposes, but each requires its own configuration and result.
+Read each row as a different request: 'Read these directory records,' 'Check the credentials submitted for this sign-in,' or 'Carry this password change to the supported destination.' Those are import, delegated authentication and password synchronization respectively. Password synchronization transfers a change through its supported, configured process. A password-validation request is not itself evidence that a password change was copied anywhere. A deployment may use both capabilities for different purposes, but each requires its own configuration and result.
 
 For a separate hypothetical example, suppose Jordan changes his password in AD. A configured password-synchronization process can propagate that change to a supported destination. That process transfers a change; the delegated request in Jordan's incident asks AD to validate the password he submitted. The incident supplies no password-change or synchronization event.
 
@@ -137,9 +139,11 @@ A **timeout** means the operation did not obtain the expected result within its 
 
 Keep the time and operation labels beside your conclusions. I-1 shows that the earlier import completed; J-1 describes the later authentication attempt. The successful earlier operation cannot fill in a missing result for the later one. Likewise, receiving Okta's request establishes one part of the communication path, while the timed-out DC connection identifies the part that still needs investigation.
 
-Alex should request the relevant agent and directory/network evidence for J-1: the selected DC, name resolution, reachability, and service availability. **Name resolution**, introduced as DNS on Day 2, is the lookup that connects a host name with a network address. Failure to resolve a name and a connection timeout are different observations; neither should be invented from the other.
+Alex should request evidence for the selected agent and DC at the time of J-1. Can the agent look up the intended DC's network address? Can it establish the required connection? Is the directory service available to handle the request? These are name resolution, reachability and service-availability questions.
 
-A routing problem, a network control, or an unavailable service could help explain the timeout. The packet does not choose among them. The next check should help distinguish those explanations on this agent/DC path at the time of J-1. Resetting Jordan's password would change a credential while leaving the demonstrated connectivity failure unexplained. Alex needs evidence about the failed connection before choosing its correction.
+**Name resolution**, introduced as DNS on Day 2, is the lookup that connects a host name with a network address. A failed lookup and a timed-out connection are different observations. Asking for a lookup result does not mean Alex has already found a DNS failure.
+
+A problem with the network route, a traffic control such as a firewall rule, or an unavailable service could help explain the timeout. The packet does not choose among them. The next check should help distinguish those explanations on this agent/DC path at the time of J-1. Resetting Jordan's password would change a credential while leaving the demonstrated connectivity failure unexplained. Alex needs evidence about the failed connection before choosing its correction.
 
 ## Contrast a credential rejection
 

@@ -34,9 +34,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>AD is the directory service holding objects such as users, groups, and computers. A domain controller is a server running that service; it can answer queries and validate domain credentials.</p>
-<p>A domain can have more than one controller. Evidence about one server or path may not describe another.</p>
-<p>Identify the selected DC for the actual attempt. That makes a connection or credential-result request more useful than simply reporting that AD failed.</p>
+<p>AD is the directory service; the domain controller is a server running it. The controller can answer requests for directory information and evaluate the submitted domain credentials.</p>
+<p>There may be more than one controller. 'AD did not answer' leaves out which server the agent tried to contact. Naming that controller helps the directory and network owners check the path used by Jordan's actual attempt.</p>
+<p>Evidence for another controller or an earlier connection does not fill in this result. Keep the selected server, attempt and time together when asking what happened.</p>
 </div>
 </details>
 
@@ -66,9 +66,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A domain is a directory and administration boundary. An OU is a container inside it for organizing objects and delegating administration. A group is a separate collection used for access or administration.</p>
-<p>Jordan can have both a directory location and membership relationships. The OU location does not supply the group result.</p>
-<p>Read location for a scope question and membership for a group question. Similar names do not make those objects or relationships interchangeable.</p>
+<p>Think of these as three different questions. The domain identifies the managed directory area. The OU tells us where Jordan's user object is organized inside it. The group tells us about a separate membership relationship used for access or administration.</p>
+<p>Jordan can have an OU location and belong to groups at the same time. Being stored under an OU does not add him to a group, even if the names look alike.</p>
+<p>If you are checking import scope, inspect the relevant directory location and selection. If you are checking group membership, inspect the group's members. One kind of evidence cannot answer both questions by itself.</p>
 </div>
 </details>
 
@@ -98,9 +98,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The agent initiates outbound connectivity to Okta and receives work and returns results through that path. The diagram's arrows describe information movement, not new connection direction.</p>
-<p>The agent separately needs access to the relevant domain controllers. That connection has its own configuration and result.</p>
-<p>Do not infer network requirements just from a two-way arrow. This route does not require exposing a directory controller directly to the internet.</p>
+<p>No. Two-way information arrows do not mean that both sides must start new connections. The AD agent starts communication outward from the company environment to Okta, then receives work and returns results through that path.</p>
+<p>The firewall question concerns how that communication starts. The diagram does not require Okta to open a new inbound connection through the company's firewall to the agent.</p>
+<p>Now trace the other side: the agent separately needs to communicate with the relevant domain controller. That connection needs its own evidence. A request reaching the agent is not proof that AD received it or returned a credential result.</p>
 </div>
 </details>
 
@@ -246,9 +246,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The import read information. The later sign-in asks the directory to evaluate submitted credentials through the configured path.</p>
-<p>Those operations can produce different results, especially at different times. The import does not verify the password or prove the later connection stayed available.</p>
-<p>Keep the earlier success and current failure together without calling them contradictory. Follow the password request and its missing result to locate the next useful check.</p>
+<p>The two operations asked different questions. The import asked for Jordan's directory information. The later sign-in asks AD whether the submitted credentials are acceptable for that attempt.</p>
+<p>Reading his record successfully does not mean his password was tested or copied into Okta. It also does not guarantee that a connection used later is still working.</p>
+<p>Keep the earlier success in the investigation, but follow the later password request separately. Identify the handling agent, selected controller and returned result, if any. That is the evidence needed to explain this sign-in complaint.</p>
 </div>
 </details>
 
@@ -330,9 +330,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Import reads and processes directory data. Delegated authentication asks the directory for a credential decision during an attempt. Synchronization propagates a password change to a supported destination.</p>
-<p>Each has its own configuration, purpose, and result. A deployment may use more than one without making their evidence interchangeable.</p>
-<p>When told the directory integration worked, ask which operation. That gives the claim a specific result to inspect.</p>
+<p>Read the work as three ordinary requests. 'Read these directory records' is import. 'Check the credentials submitted for this sign-in' is delegated authentication. 'Carry this password change to the supported destination' is password synchronization.</p>
+<p>All three can involve the same person's directory account, which is why saying 'the AD integration worked' is too broad. Ask which operation completed and what result was recorded.</p>
+<p>A successful import does not supply a credential decision or a password-change result. A deployment can use several capabilities, but each needs its own configured path and evidence.</p>
 </div>
 </details>
 
@@ -412,9 +412,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It establishes neither. No acceptance or rejection result was obtained.</p>
-<p>Compare receiving no answer with receiving an answer that says no. Both can leave a person unable to sign in, but the evidence and next investigation differ.</p>
-<p>Leave credential validity unresolved while checking the demonstrated connection failure. Calling the password good or bad would add a decision the attempt did not supply.</p>
+<p>Neither conclusion is established. The agent did not obtain an acceptance or rejection from the domain controller in this attempt.</p>
+<p>Think about the difference between getting no answer to a question and getting an answer that says no. J-1 supplied no credential answer. Jordan's inability to sign in is real, but it does not tell us whether AD would have accepted the submitted password.</p>
+<p>Investigate the timed-out agent-to-controller connection. Leave password validity unresolved until an actual credential result answers it; do not turn an unanswered check into either success or rejection.</p>
 </div>
 </details>
 
@@ -494,9 +494,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>For J-1, investigate the demonstrated connection path that obtained no answer. For J-2, inspect the detailed directory result, intended account and username, and relevant credential or account conditions.</p>
-<p>The user experiences sign-in failure in both, but one request is unanswered while the other returns a refusal.</p>
-<p>Use the result belonging to each attempt. A shared symptom does not justify the same correction when the evidence identifies different boundaries.</p>
+<p>For J-1, start with the connection that timed out. The agent received the work, but no directory credential answer came back. Request evidence for the selected agent-to-controller path at that time.</p>
+<p>For J-2, AD did answer and rejected validation. Now inspect the detailed directory result, the intended account and submitted identifier, and the relevant credential or account conditions. A rejection is not automatically a mistyped password.</p>
+<p>Both attempts leave Jordan unable to sign in, but they give us different next questions. Keep each result with its own attempt rather than use J-2's refusal as the answer J-1 never received.</p>
 </div>
 </details>
 
@@ -660,9 +660,9 @@ nav_order: 6
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “Your directory information was imported and linked correctly. The first password request reached the agent but did not obtain an answer from the directory server. After the route was fixed, a new attempt reached AD and your credentials were accepted.”</p>
-<p>Then add: “We still need to check the remaining sign-in requirements and your intended application entry.”</p>
-<p>Each sentence follows a supplied result. It explains why a successful import did not settle the later password complaint.</p>
+<p>You could say: 'We confirmed that your directory information was imported and linked to the right Okta user. Checking your password is separate work. In the first attempt, the request reached the AD agent, but the agent did not get an answer from the directory server.'</p>
+<p>Then explain the verified follow-up: 'The network team found and fixed a route problem. In the new attempt we checked, AD accepted your credentials. We still need to check the remaining sign-in requirements and whether you can enter the application you need.'</p>
+<p>That gives Jordan a reason for the earlier failure without claiming his password was wrong. It recognizes the recovered password-validation step while keeping the unverified application outcome open.</p>
 </div>
 </details>
 

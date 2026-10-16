@@ -30,7 +30,7 @@ Explain why success in the first operation does not establish success in either 
 
 ## 4. No credential result
 
-Jordan's earlier import succeeded. For attempt J-1, the handling agent received Okta's request, but its connection attempt to the selected DC timed out. No AD acceptance or rejection result was obtained.
+Jordan's earlier import succeeded. For attempt J-1, the handling AD agent received Okta's request, but its connection attempt to the selected domain controller (DC) timed out. No AD acceptance or rejection result was obtained.
 
 State the demonstrated failure and one unsupported conclusion. Choose a specific next evidence request and explain what it could distinguish. Is an immediate password reset supported as the correction?
 

@@ -14,7 +14,7 @@ An AD import succeeded this morning, but Jordan cannot sign in now. Those facts 
 
 **Organizational unit, or OU.** An OU organizes directory objects and can help define import scope. It is not a group. If an object is outside the selected import scope, its absence from the import does not prove it is absent from AD.
 
-**Okta AD agent.** The agent is integration software that communicates between Okta and the AD environment. It is not the domain controller. Agent communication and the agent's ability to reach a DC are things to verify, not assume.
+**Okta AD agent.** The agent is integration software that communicates between Okta and the AD environment. It is not the domain controller. Communication with Okta and communication with a DC are separate connections. A request reaching the agent verifies progress on one side, not a returned directory result from the other.
 
 **Import.** Import reads selected directory records into the integration's processing. It provides evidence about that data operation. It does not test every later sign-in path.
 
@@ -28,7 +28,7 @@ In attempt J-1, the first packet shows a timeout between the agent and the selec
 
 A different packet, for independent attempt J-2, contains an explicit credential rejection. Now the validation path returned a negative result, but the precise reason still needs investigation. Check the identity submitted and relevant account restrictions rather than assuming a typo. A user principal name (UPN), an AD sign-in identifier often written in an email-like form, is not automatically the person's mailbox address.
 
-The linked follow-up J-3 confirms that the identified route is repaired and AD accepts Jordan's credentials. This supports recovery of the checked connection and password validation in J-3. It does not establish the cause of the independent J-2 rejection. It does not prove MFA, application entry, or application permissions succeeded.
+The linked follow-up J-3 confirms that the identified route is repaired and AD accepts Jordan's credentials. This supports recovery of the checked connection and password validation in J-3. It does not establish the cause of the independent J-2 rejection. It does not prove the remaining Okta sign-in checks, application entry, or application permissions succeeded.
 
 Priya has no AD account in Northbridge's contractor model. Do not put her into Jordan's delegated path just because both use Okta.
 
