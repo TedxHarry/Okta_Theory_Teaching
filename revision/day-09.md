@@ -12,9 +12,9 @@ Keep one picture in mind: the browser brings a code back to Expense, and Expense
 
 **OAuth and OpenID Connect.** OAuth concerns authorized access to resources. OpenID Connect, or OIDC, adds identity information for sign-in, including an ID token. Northbridge's Expense example uses a confidential backend client and the Authorization Code flow with PKCE.
 
-**Client.** Expense is the OIDC client. Its backend can protect client credentials. The browser is an HTTP client while carrying requests, but that does not make it the OIDC client in this design.
+**Client.** Expense is the OIDC client. Its backend can protect client credentials, which help prove the application's identity rather than the person's. The browser is an HTTP client while carrying requests, but that does not make it the OIDC client in this design.
 
-**Authorization code.** This is a short-lived, single-use value returned through the browser to the configured callback. It is exchanged at the token endpoint. It is neither an MFA code nor an access token.
+**Authorization code.** This is a short-lived, single-use value returned through the browser to the configured callback. Expense receives it at its callback, then its backend sends it to Okta's token endpoint for exchange. Maya does not type it like an MFA code, and it is not an access token for an API request.
 
 **Request parameters.** `client_id` identifies the client and is not a secret. `response_type=code` requests this flow. `scope=openid` requests OIDC behavior; requesting `profile` does not guarantee every conceivable profile claim. The redirect URI must match an approved registration.
 
@@ -22,7 +22,7 @@ Keep one picture in mind: the browser brings a code back to Expense, and Expense
 
 **ID token and access token.** The ID token provides authentication information for the client. The access token is for authorized access to a resource. Neither should be substituted casually for the other.
 
-**Claims and validation.** Claims are statements in a token, such as issuer (`iss`), subject (`sub`), and audience (`aud`). A subject is interpreted within its issuer. A JSON Web Token (JWT) is a format for representing claims. Decoding one exposes its contents; it does not establish the signature, expected issuer and audience, validity, or other required checks.
+**Claims and validation.** Claims are statements in a token, such as issuer (`iss`), subject (`sub`), and audience (`aud`). Read issuer and subject as a pair: this subject, as identified by this issuer. The same subject text from another issuer does not automatically identify the same person. A JSON Web Token (JWT) is a format for representing claims. Decoding one exposes its contents; it does not establish the signature, expected issuer and audience, validity, or other required checks.
 
 ## Follow the actual boundary
 

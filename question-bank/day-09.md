@@ -18,9 +18,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>OAuth provides a framework for authorizing access to protected resources. OIDC adds an identity layer, including an ID token and rules for validating user-authentication information.</p>
-<p>Expense needs validated identity information for sign-in. A resource service separately evaluates the access token presented for a permitted resource request.</p>
-<p>Follow the purpose to the receiver. The related protocols do not make their artifacts interchangeable or grant every application permission.</p>
+<p>Start with the two questions Expense needs to answer. 'Who is signing in?' concerns the person's identity. 'May this application call that protected service?' concerns resource access.</p>
+<p>OAuth 2.0 provides the framework for obtaining authority to access protected resources. OIDC adds defined user-authentication information, including an ID token the client validates for sign-in. The resource service separately evaluates an access token presented for a request to it.</p>
+<p>The two needs can occur in one application, but the tokens have different receivers and purposes. Identifying a person does not establish every business permission, and receiving an access token does not show an API call has succeeded.</p>
 </div>
 </details>
 
@@ -84,9 +84,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A confidential client can protect its client authentication material in this server-side design. The backend performs the exchange and identity validation without putting its confidential credential in a browser redirect.</p>
-<p>The browser carries messages for the user journey, not every secret or backend operation.</p>
-<p>Keep those participants distinct. A result from one stage cannot verify another, and other application designs should not be silently substituted for the supplied backend architecture.</p>
+<p>Here, confidential describes Expense's ability to protect its client authentication material on its servers. It does not mean the client ID has to be hidden, and it does not describe Maya's user account.</p>
+<p>The backend performs the code exchange and validates the returned identity information. Its configured credential or key stays protected there, outside the browser redirect. The browser carries messages between the services; it does not perform every backend operation.</p>
+<p>Keep this architecture in view when choosing evidence. A code arriving through the browser tells you where the journey has reached. You still need the backend exchange and application results before reporting completed sign-in.</p>
 </div>
 </details>
 
@@ -150,9 +150,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The authorization endpoint receives the authorization request. The token endpoint receives the backend's code exchange. The callback is the registered application return location for the browser response.</p>
-<p>An endpoint is an address for an operation. Reaching one does not establish the result at another.</p>
-<p>Locate the completed stage and next participant. That prevents a browser-return observation from becoming proof that the backend obtained or validated tokens.</p>
+<p>Picture who receives each message. The authorization endpoint belongs to Okta in this example and receives the authorization request. Expense's callback receives the browser's return with the code. Okta's token endpoint receives the backend's code exchange.</p>
+<p>That gives you a route: browser to Okta, browser back to Expense, then Expense's backend directly to Okta. The callback is not the address where the backend redeems the code.</p>
+<p>Each address has a different operation behind it. Seeing the browser reach Expense's callback cannot establish that the later exchange at Okta's token endpoint succeeded or that Expense validated the returned ID token.</p>
 </div>
 </details>
 
@@ -198,9 +198,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The code enables the exchange, the ID token supplies authentication information for validation, and the session is the application's outcome for continuing interaction.</p>
-<p>They are related but different objects. Check actual entry and session evidence rather than infer it from an intermediate artifact.</p>
-<p>This also matters when testing a change: an old session may continue without exercising a new request, code exchange, or token-validation path.</p>
+<p>No. Follow what each one does. The authorization code lets Expense's backend request the token response. The ID token provides authentication information that Expense must validate. The application session lets the signed-in person continue interacting with Expense under its own session rules.</p>
+<p>The session is an application result, not a new name for either earlier value. A returned code does not show it exists, and a readable ID token does not show validation or entry succeeded.</p>
+<p>This distinction also matters after a change. An older working session can let someone continue using Expense without running the newly changed sign-in journey. A fresh attempt is needed to verify that path.</p>
 </div>
 </details>
 
@@ -248,9 +248,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Scope names requested access or information categories. Openid makes the request OIDC; profile requests the supported profile-claim category. A claim is information actually returned.</p>
-<p>The request does not guarantee every possible profile field in every token. Inspect the returned content and its required validation.</p>
-<p>Requested category and observed statement are different evidence. Neither by itself proves a business role such as expense approval.</p>
+<p>A scope describes what the application requests. In this example, openid requests OIDC behavior and profile requests the supported profile-information category. A claim is a named statement actually returned, such as the subject identifier.</p>
+<p>Asking for a category is different from seeing a particular value in the response. The profile request does not guarantee every imaginable profile field, or that every field appears in the ID token.</p>
+<p>Inspect what was returned and whether it passed the required validation. Even a validated name or profile detail does not by itself establish a business role such as permission to approve expenses.</p>
 </div>
 </details>
 
@@ -296,9 +296,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Expense checks state at the browser-return stage. It checks nonce in the ID token against the value sent for this authentication request.</p>
-<p>Matching one cannot replace the other. They relate messages at different points, even though both help connect evidence to the transaction.</p>
-<p>Because nonce is sent in this scenario, its relevant comparison is required. Keep each field, check, and actual result attached to its stage.</p>
+<p>Expense checks state when the browser returns. It compares the returned value with the one kept for the transaction it started. That answers, 'Does this browser response belong to the attempt I began?'</p>
+<p>Nonce is checked later, inside the returned ID token. Expense compares that value with the nonce sent in the authentication request. That answers a related question about the returned identity information, at a different point in the journey.</p>
+<p>Because this request includes nonce, matching state does not remove the nonce check. A matching value at one stage cannot stand in for the other stage's result or the remaining token validation.</p>
 </div>
 </details>
 
@@ -314,9 +314,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It retains the verifier for the transaction, then supplies it at code exchange. The authorization server checks it against the earlier challenge associated with that code.</p>
-<p>This ties redemption to the client's transaction proof. The verifier is not the user's password.</p>
-<p>The first request sends the derived value, while the later operation presents the retained secret. Recognize both stages and inspect their outcomes rather than treat code arrival as complete authentication.</p>
+<p>Expense keeps the secret verifier for this transaction. It sends the derived challenge with the earlier authorization request, so the authorization server can associate that challenge with the code it issues.</p>
+<p>When the backend redeems the code, it supplies the retained verifier. The authorization server checks whether it matches the earlier challenge using the configured method. The code alone does not supply that required proof.</p>
+<p>Think of the order: create and retain the verifier, send its derived challenge, then present the verifier during exchange. This transaction secret is different from the person's password. A returned code is still an intermediate step with an exchange result to establish.</p>
 </div>
 </details>
 
@@ -362,9 +362,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The stated architecture uses both for different relationships. PKCE links the verifier to the code's earlier challenge; client authentication proves the backend client using its configured material.</p>
-<p>Inspect the relevant results when the exchange fails. Neither check is the user's password validation.</p>
-<p>Do not silently remove a requirement because another check exists. Interpret the attempted operation against the architecture and configuration actually supplied.</p>
+<p>No. The question's design requires both checks, and they prove different relationships. Client authentication asks the backend to prove which registered application it is using its configured credential or key. PKCE asks for the verifier associated with this particular code request.</p>
+<p>A client credential identifies the application's authentication relationship. A verifier belongs to a transaction. Supplying one does not establish that the other requirement passed, and neither is the user's password check.</p>
+<p>If the exchange fails, inspect its client-authentication and PKCE results before choosing a correction. Do not remove a stated requirement simply because the other check succeeded.</p>
 </div>
 </details>
 
@@ -478,9 +478,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Sub identifies the subject within its issuer, so that context is part of the identity. The stated client uses the validated pair for its local account association.</p>
-<p>Do not assume an email value is an immutable global key or automatically the configured matching field.</p>
-<p>Validate the identity information and inspect the chosen association rule. Familiar formatting cannot replace the meaning supplied by the connection.</p>
+<p>Read the pair as 'this subject, as identified by this issuer.' The issuer supplies the context in which the subject identifier has meaning. The same subject text from a different issuer does not automatically describe the same person.</p>
+<p>Expense uses the validated issuer/subject pair to find the intended local account in this scenario. An email-like attribute can be useful information, but it is not automatically that association key or an identifier that never changes.</p>
+<p>First validate the identity information, then inspect the configured account association. A familiar email address cannot substitute for either step.</p>
 </div>
 </details>
 
@@ -724,9 +724,9 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “Expense first asked the identity service to return you to an old address that was not approved, so that request stopped before a code was issued. The checked follow-up used the approved address, completed the exchange, validated your identity information, and let you enter your intended account.”</p>
-<p>Keep the permission question separate if it still needs checking.</p>
-<p>The two explanations follow their own evidence without treating the later success as what happened in the first attempt.</p>
+<p>You could say: 'Expense first asked Okta to send your browser back to an old return address that was not approved. Okta stopped that request before issuing a code, so the application could not continue the sign-in exchange for that attempt.'</p>
+<p>Then describe the checked follow-up: 'The new attempt used the approved return address. Expense checked the browser return, completed its server-side exchange and validated your identity information. It then recognized your intended account and let you in.'</p>
+<p>If Maya needs an approval action, add: 'We still need to check whether your account has permission for that action.' This explains the two observed outcomes without turning the later success into what happened during the first attempt or promising permissions that were not checked.</p>
 </div>
 </details>
 

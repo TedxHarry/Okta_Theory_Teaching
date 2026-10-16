@@ -18,7 +18,7 @@ Your goal is to follow one journey: browser returns code → backend exchanges c
 
 ## OAuth and OIDC answer related questions
 
-An application can need permission to call a protected service, and it can need information about the person signing in. Those are related needs with different receiving systems and checks. **OAuth 2.0** is a framework for authorizing access to protected resources, such as APIs. A client can obtain an access token to present to an intended resource service. That is different from a standard statement establishing who signed in to the client application.
+An application can need permission to call a protected service, and it can need information about the person signing in. Those are related needs with different receiving systems and checks. **OAuth 2.0** is a framework for authorizing access to protected resources, such as **APIs**, interfaces through which software asks another service for data or an operation. A client can obtain an access token to present to an intended resource service. That is different from a standard statement establishing who signed in to the client application.
 
 OIDC adds an identity layer to OAuth 2.0. It defines an **ID token** and rules the client uses to validate authentication information about the user. For Expense's sign-in question, the useful result is validated identity information that Expense can associate with the intended account. An access token has a different job at its intended resource service.
 
@@ -47,7 +47,9 @@ Keep this server-side design in view throughout the lesson. Maya's browser carri
 
 An **authorization server** issues OAuth responses and tokens. In this OIDC flow it also serves as the **OpenID Provider**. These roles describe this connection, not every role a product might have.
 
-Okta also needs to know which application is asking. A **client ID** identifies Expense's registration. It is not a password. The identifier names the client; backend client authentication separately proves the client using its configured credential or key. That confidential material stays protected on the backend and does not belong in a browser redirect. Keep the application's identity distinct from Maya's identity.
+Okta also needs to know which application is asking. A **client ID** identifies Expense's registration. It is not a password. The identifier names the client; backend client authentication separately proves the client using its configured credential or key. That confidential material stays protected on the backend and does not belong in a browser redirect.
+
+There are two identities to keep apart: "Which application is asking?" and "Which person is signing in?" Expense's client credential belongs to the application. Maya's user identity is established through the sign-in and validated identity information. The client ID alone proves neither.
 
 ## Follow one successful journey
 
@@ -70,6 +72,8 @@ sequenceDiagram
 ```
 
 The **callback**, or redirect URI, is the application's registered return location. The **authorization endpoint** receives the authorization request. The **token endpoint** receives the backend's code exchange. An endpoint is an address for a particular operation.
+
+Locate those addresses by who receives the message. The browser visits Okta's authorization endpoint to start the protocol request. It returns to Expense's callback with the code. Expense's backend then sends the code to Okta's token endpoint. The callback and token endpoint are on different sides of that exchange.
 
 Read the diagram from top to bottom and pause at Step 4. The browser has returned the code and state to Expense's callback. That hands the next operation to the backend. At Step 5, the backend communicates with Okta directly, presenting the code with the required PKCE proof and client authentication. Okta's token response returns to the backend.
 
@@ -95,13 +99,15 @@ Read the request as Expense's instructions for this transaction: which registrat
 
 `openid` makes this an OIDC request. A **scope** names requested access or information categories. A **claim** is a named statement in returned information, such as a subject identifier. Requesting `profile` does not guarantee every conceivable profile field will appear in every token. The scope describes a request; a claim is information actually returned. Neither by itself establishes an expense-approval permission.
 
-State travels out with the request and back with the browser response; Expense checks that return against the transaction it started. Nonce also begins in the request, but its later comparison is inside the ID token. Because this example sends a nonce, Expense must check that token's nonce against the original value. The two checks occur at different points. Matching either value does not replace all other validation.
+State travels out with the request and back with the browser response. Expense compares it with the value kept for the attempt it started: "Does this browser return belong to my transaction?"
+
+Nonce also begins in the request, but the later comparison uses the nonce inside the ID token: "Does this returned identity information belong to this authentication request?" Because this example sends a nonce, Expense must compare the token's value with the original. State and nonce are checked at different points. Matching either does not replace all other validation.
 
 ## What PKCE adds
 
 **PKCE**, Proof Key for Code Exchange, ties code redemption to a value the client created for that transaction. Expense keeps a secret random **code verifier** for the transaction and sends a derived **code challenge** with the authorization request. During redemption, it supplies the verifier, which the authorization server checks against the earlier challenge.
 
-The two-stage arrangement matters. Sending the derived challenge first lets Okta later check whether the presented verifier belongs with this code. Someone who obtains the code without the required verifier lacks that proof for redemption. This helps protect against code interception or injection. The verifier is a transaction secret, not Maya's password. In this confidential-client example, PKCE complements configured client authentication.
+The two-stage arrangement matters. Sending the derived challenge first lets Okta later check whether the presented verifier belongs with this code. Someone who obtains the code without the required verifier lacks that proof for redemption. This helps protect against code interception or injection. The verifier is a transaction secret, not Maya's password. In this confidential-client example, PKCE complements configured client authentication. Client authentication asks the backend to prove which registered application it is. PKCE asks for the verifier associated with this particular code request. A client credential and a transaction verifier have different jobs.
 
 The request's `S256` names the method that derives the challenge using SHA-256, a one-way cryptographic calculation, and a URL-safe encoding. The authorization request carries that derived challenge, while the backend retains the verifier for the later exchange. See the [PKCE specification](https://www.rfc-editor.org/rfc/rfc7636.html#section-4.2).
 
@@ -154,6 +160,8 @@ An ID token uses **JWT**, JSON Web Token, to represent claims. A readable decode
 ```
 
 `iss` identifies the issuer. `sub` identifies the subject within that issuer. `aud` identifies the intended audience; for this single-audience ID token, it is Expense's client ID. Northbridge associates the validated issuer/subject pair with the intended local account, rather than assuming email is an immutable global identifier.
+
+Read the pair together: "this subject, as identified by this issuer." The same `sub` text from a different issuer does not automatically identify the same person. An email address may be useful profile information, but its familiar appearance does not make it the account-association rule.
 
 The client checks the expected issuer and audience, validity such as expiration, nonce for this request, and the applicable cryptographic validation using trusted provider information. Signature verification requires the actual token and appropriate trusted keys; looking at decoded JSON is insufficient. The excerpt omits signature and other required claims, including expiration and issuance information.
 
