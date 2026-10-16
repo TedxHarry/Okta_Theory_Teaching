@@ -10,11 +10,11 @@ nav_order: 7
 
 ## The concepts to keep with you
 
-**Authenticator.** An authenticator provides a way to prove identity. Okta Verify is one example. A supported method describes how it is used, such as Push, a one-time code, or FastPass. Those methods do not all work in the same way.
+**Authenticator.** An authenticator provides a way to prove identity. Okta Verify is one example. A supported **method** describes how it is used, such as Push, a one-time code, or FastPass. The **factor type** describes what kind of evidence the validated interaction supplies. Those methods do not all work in the same way.
 
 **Factor type and MFA.** Factor types describe kinds of evidence, such as something you know, something you possess, or a biometric characteristic. Multifactor authentication uses more than one factor type. Two passwords are still knowledge evidence. Counting screens or prompts is not a reliable way to count factors; a supported interaction can satisfy multiple requirements.
 
-**Availability, installation, and enrollment.** Availability means the organization allows the authenticator. Installation puts the software on a device. Enrollment registers it for the relevant user and organization. None of those alone proves it was successfully used in the current attempt.
+**Availability, installation, and enrollment.** Availability means the organization allows the authenticator. Installation puts the software on a device. Enrollment connects it to the relevant user and organization. An app installed on Daniel's phone is not automatically registered for his Northbridge account. None of those alone proves it was successfully used in the current attempt.
 
 **Challenge and accepted proof.** Sending a Push challenge is a request for verification. You still need its result. A notification might not arrive, might expire, or might be denied. Do not record successful verification merely because a challenge was issued.
 

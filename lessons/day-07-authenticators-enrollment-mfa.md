@@ -36,13 +36,15 @@ In a successful password-plus-device attempt, accepted password evidence supplie
 
 MFA and authorization remain different. Stronger authentication does not grant Daniel an Expense approval role or create his application account. His Finance manager title alone does not establish the application permissions needed for his work.
 
-Keep the three terms connected: Okta Verify is the **authenticator**; Push is one **method** it supports; a successfully validated registered-device interaction can supply **possession** evidence. The authenticator names the means, the method names how it is used, and the factor type names the kind of proof. [Okta's Verify reference](https://help.okta.com/oie/en-us/content/topics/identity-engine/authenticators/configure-okta-verify.htm) describes its supported methods.
+Ask three questions about Daniel's check: 'What is he using?' Okta Verify, the **authenticator**. 'How is he using it?' By responding to Push, the **method**. 'What kind of proof can that validated interaction supply?' **Possession**, a factor type. These are three descriptions of the same interaction, not three separate checks. [Okta's Verify reference](https://help.okta.com/oie/en-us/content/topics/identity-engine/authenticators/configure-okta-verify.htm) describes its supported methods.
 
 ## Separate availability, enrollment, and use
 
 Imagine Northbridge has made Okta Verify available for its users. Daniel installs the app on his phone. Is that enough to authenticate to Northbridge with it?
 
-Installation puts the software on his phone. Northbridge still needs the registration that associates this authenticator with Daniel's account. Completing that account-specific setup is **enrollment**. During the approved setup, Daniel adds his Northbridge account to Okta Verify so the registered authenticator can be used for that identity. Merely installing the app leaves that association unestablished.
+Installation puts the software on his phone. **Enrollment** is the account-specific registration that connects the authenticator to Daniel's Northbridge identity. During the approved setup, he adds that account to Okta Verify.
+
+An app icon tells Alex the software is installed. It does not answer 'Is Daniel's Northbridge account registered on the device he needs?' That is the enrollment question.
 
 Alex can turn the manager's broad question into checks with different evidence:
 
@@ -53,7 +55,7 @@ Alex can turn the manager's broad question into checks with different evidence:
 | Is the method acceptable for this attempt? | The stated authentication requirement and supported method. |
 | Did Daniel complete it successfully? | The authentication result for the identified attempt. |
 
-Read the table as four questions about Daniel, rather than four names for the same state. Available means the configuration permits the authenticator. Enrolled means the relevant registration exists. Acceptable means the method meets this attempt's requirement. Completed means the identified attempt has an accepted result. A previous successful use is not automatic proof that the current attempt meets its requirements.
+Read the table as four questions about Daniel. The configuration may allow Okta Verify while his own registration is still missing. He may then complete registration but still need to provide the proof required for this sign-in. Each result answers a different question. A successful use yesterday does not automatically satisfy today's attempt; check whether earlier evidence may be reused under its requirements.
 
 Keep device context in view. Enrollment on Daniel's old phone does not establish that a replacement phone is ready. Likewise, an account in Okta Verify for another organization does not establish a Northbridge enrollment.
 
@@ -64,7 +66,7 @@ Northbridge needs to decide both what Daniel must set up and what an access atte
 - An **authenticator enrollment policy** governs which authenticators users may or must enroll and when enrollment is required.
 - An **authentication requirement** describes what proof is needed for an access attempt.
 
-Requiring Daniel to register a method prepares him to use it when needed. It does not, by itself, decide how often every application must challenge him. Likewise, making enrollment optional does not mean that the method can never be needed to satisfy a particular application's requirement. Alex must inspect the requirement for the access attempt as well as the enrollment rule.
+Think of these as 'What must Daniel set up?' and 'What must this sign-in prove?' Requiring registration prepares him to use the authenticator. It does not, by itself, decide how often every application must challenge him. Likewise, making enrollment optional does not mean that the method can never be needed to satisfy a particular application's requirement. Alex must inspect the requirement for the access attempt as well as the enrollment rule.
 
 For the example below, Northbridge has made the following decisions. These are supplied assumptions, not universal Okta defaults:
 
@@ -102,7 +104,7 @@ Enrollment itself is security-sensitive: it establishes a means of proving ident
 
 Suppose Daniel subsequently completes the approved enrollment. In a new attempt D-2, the same stated Expense requirement applies. His password is accepted, and a Push request is issued to the registered device. No accepted response is yet recorded.
 
-Now the missing fact has changed. Daniel is enrolled, but this attempt still needs his response. A **challenge** is a request for authentication proof during an interaction. For Push, Daniel responds through the registered device; the system must receive and accept the relevant response. Completing setup makes that interaction possible. It does not answer every future request on his behalf. Daniel should approve only a Push request that belongs to a sign-in he is intentionally completing. Receiving a notification is not a reason to approve it automatically.
+Now the missing fact has changed: setup is complete, but this attempt still lacks an accepted response. A **challenge** is a request for authentication proof. For Push, the request goes to the registered device and Daniel responds through it. The system must receive and accept the relevant response. Registration makes that interaction possible; it does not complete it for him. Daniel should approve only a Push request that belongs to a sign-in he is intentionally completing. Receiving a notification is not a reason to approve it automatically.
 
 ```mermaid
 flowchart TD
@@ -137,9 +139,9 @@ In Northbridge's supplied Push example, inspect the Push outcome. Do not substit
 
 ## Where FastPass fits
 
-Suppose a separate, permitted sign-in flow lets Daniel use his enrolled device to provide proof without typing a password. **Okta FastPass** uses Okta Verify to respond to a challenge from Okta with a cryptographic key associated with the device's registration. Okta checks the response as evidence that the enrolled key was used for this attempt. Daniel does not type a password in this example.
+Suppose a separate, permitted sign-in flow lets Daniel use his enrolled device to provide proof without typing a password. [**Okta FastPass**](https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/fp/fp-main.htm) uses Okta Verify to respond to a challenge from Okta with a cryptographic key associated with the device's registration. Okta checks the response as evidence that the enrolled key was used for this attempt. Daniel does not type a password in this example.
 
-The key used to create the response's signature is a **private key**, a cryptographic secret. Okta verifies the signature and checks that the response matches its challenge. You do not need the mathematics here; keep the request, device response, and verification in view. For FastPass, Okta Verify must be set up on the supported device being used to access the application. That differs from a Push example in which Daniel can respond on a registered phone while signing in on a computer.
+The device uses a **private key**, a cryptographic secret, to create a **digital signature** for its response. That signature is calculated proof that Okta can verify, tied to the challenge for this request. Okta checks the signature and whether the response matches its challenge. The important sequence is request, signed device response, then verification. For FastPass, Okta Verify must be set up on the supported device being used to access the application. That differs from a Push example in which Daniel can respond on a registered phone while signing in on a computer.
 
 FastPass is not another name for approving a Push notification. It can provide phishing-resistant authentication in supported, correctly configured flows. **Phishing resistance** helps prevent authentication proof from being used through an impostor site. It does not mean every flow bearing the Okta Verify name has the same protection or that all forms of account compromise are impossible.
 
@@ -158,7 +160,7 @@ For Northbridge, an AD password attempt still follows Day 6's delegated path. A 
 | “A notification was sent, so MFA worked.” | Challenge issuance versus accepted response. |
 | “Password accepted, so Expense must work.” | One authentication result versus all requirements and target access. |
 
-Use the distinction in each row to choose the next investigation. Missing enrollment in D-1 calls for checking setup; missing accepted proof in D-2 calls for checking that attempt. A reset changes enrollment state and may require setup again, so it is a consequential action rather than a diagnosis. Recovery and administrative responsibilities are developed later.
+Use the distinction in each row to choose the next investigation. Missing enrollment in D-1 calls for checking setup; missing accepted proof in D-2 calls for checking that attempt. Resetting an enrollment can make Daniel need setup again without explaining what happened to the Push request. Establish the missing result before choosing that change. Recovery and administrative responsibilities are developed later.
 
 ## Read the enrollment before choosing a reset
 

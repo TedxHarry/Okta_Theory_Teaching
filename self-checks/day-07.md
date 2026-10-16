@@ -10,7 +10,9 @@ Attempt the [exercises](../exercises/day-07.md) first. Keep configuration, enrol
 
 ## 1. Count proof, not prompts
 
-Both passwords represent knowledge. Two knowledge checks do not establish different factor types. Password plus the stated registered-device possession method represents knowledge and possession, assuming each is successfully validated.
+Ask what each interaction proves. Both password entries ask for something the person knows, so repeating that kind of check does not add a different factor type.
+
+The password-plus-registered-device example asks for knowledge and possession. Those are different factor types when the stated methods are successfully validated. The important distinction is the accepted proof, not how many screens the user saw.
 
 The number of screens does not identify the kinds of proof. A supported interaction may also establish multiple factors without multiple separate prompts.
 
@@ -18,7 +20,9 @@ Revisit [Why a password may not be enough](../lessons/day-07-authenticators-enro
 
 ## 2. Installed but not enrolled
 
-Availability and installation are established; the required Northbridge account enrollment is missing. The prompt is consistent with that gap. Another organization's account is a different association.
+Northbridge allows Okta Verify, and Daniel has installed it. What is missing is the registration for his Northbridge account. Since that setup is required now, asking him to complete it fits the supplied facts.
+
+Seeing another organization's account in the app would show a different registration. Check the account and device that this Northbridge sign-in actually needs.
 
 Verify completion through the approved enrollment process for Daniel's correct account and supported device. There is no password or department defect in the supplied evidence.
 
@@ -26,7 +30,7 @@ Revisit [Separate availability, enrollment, and use](../lessons/day-07-authentic
 
 ## 3. Required enrollment
 
-Enrollment governs registration. Authentication requirements govern the proof needed for an attempt. The fact that Daniel must register an authenticator does not establish every application's challenge frequency or method requirements.
+The enrollment rule answers 'What must Daniel register?' The access requirement answers 'What evidence must this attempt provide?' Completing the first does not turn it into a rule that every application must challenge him on every visit.
 
 Inspect the actual applicable requirement, relevant prior-authentication/session context, and the attempt's decision and results. Detailed policy mechanics are not required for this answer.
 
@@ -38,7 +42,7 @@ The packet establishes accepted password evidence, enrollment, and an issued Pus
 
 Possible explanations include delivery failure or a received request that Daniel denied. Request the relevant delivery/device and response evidence for D-2. A recorded denial would support a different investigation from evidence that the notification never reached the selected device. Neither cause is proven by the packet. Describe the gap as “Push issued; no accepted response recorded,” rather than “Daniel denied it” or “the phone never received it,” until the distinguishing evidence is supplied.
 
-The accepted password result does not support a wrong-password correction. Revisit **Enrollment does not answer a challenge**.
+The password result is already accepted. Changing it would not establish whether Daniel received and completed this Push request.
 
 **Revisit:** [Enrollment does not answer a challenge](../lessons/day-07-authenticators-enrollment-mfa.md#enrollment-does-not-answer-a-challenge)
 

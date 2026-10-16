@@ -32,7 +32,7 @@ What is established? Name two possible explanations and one evidence request tha
 
 ## 5. Same app, different method
 
-For the same kind of Push-required attempt, someone supplies an unrelated successful TOTP event. They argue that it proves the Push requirement was met because both methods use Okta Verify.
+For the same kind of Push-required attempt, someone supplies an unrelated successful TOTP event, involving a time-based changing code from the app. They argue that it proves the Push requirement was met because both methods use Okta Verify.
 
 Explain the method and attempt mismatches. What evidence would actually support their conclusion?
 

@@ -34,9 +34,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Okta Verify is the authenticator, the means of providing proof. Push is the method, how that means is used. A successfully validated registered-device interaction can supply possession evidence.</p>
-<p>The three terms describe related parts of the same check. The app name alone does not identify every interaction or security property it supports.</p>
-<p>When investigating, name the method and actual result. “Used Verify” is too broad to establish which proof was accepted.</p>
+<p>Ask what Daniel uses, how he uses it, and what evidence the interaction supplies. He uses Okta Verify, so that is the authenticator. He responds to a Push notification, so Push is the method. The successfully validated registered-device interaction can supply possession evidence.</p>
+<p>These are different descriptions of one check, not three checks to count. The same authenticator can support another method, so naming the app alone would leave part of the story out.</p>
+<p>When reporting the result, name the actual method and accepted proof. 'He used Verify' does not tell us whether this was a Push response, a changing code, or another supported interaction.</p>
 </div>
 </details>
 
@@ -116,9 +116,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Installation puts software on the phone. Enrollment registers it for the relevant identity, connecting the authenticator with Daniel's company account.</p>
-<p>Inspect that account and device association. An app icon can exist without the required registration, or the app may hold another organization's account.</p>
-<p>The missing setup explains why registration may still be requested. Verify the correct enrollment rather than treating installed software as proof that authentication is ready.</p>
+<p>No. Installation tells us the software is on Daniel's phone. Enrollment tells us that it has been registered for the company identity he is using.</p>
+<p>An app icon cannot answer which account is registered. The app might have no company account yet, or it might hold an account for a different organization. Check the registration for Daniel's intended employer account and the relevant device.</p>
+<p>That is why a setup request can still make sense after installation. Complete and verify the approved account-specific setup instead of treating the presence of the app as successful enrollment or authentication.</p>
 </div>
 </details>
 
@@ -198,9 +198,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Enrollment policy governs which methods users may or must set up and when. The authentication requirement governs the evidence needed for an access attempt.</p>
-<p>Registration prepares a person to use a method. It does not answer every challenge or determine how often every application must request proof.</p>
-<p>Inspect both decisions. A complete setup record can coexist with an unfinished authentication interaction because they serve different jobs.</p>
+<p>The setup policy asks, 'Which authenticators must this person register, and when?' The access requirement asks, 'What proof does this particular attempt need?'</p>
+<p>Registration prepares a method for use. It does not respond to a challenge or decide how often every application must ask for proof. A person can have finished setup while the current sign-in still needs a response.</p>
+<p>Read both sets of requirements and the actual attempt results. That explains what is ready to use and what has been successfully used, without turning enrollment into a permanent answer to future sign-ins.</p>
 </div>
 </details>
 
@@ -298,9 +298,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Registration is now established. The new missing fact is accepted Push proof for the current attempt.</p>
-<p>Inspect the selected device, Daniel's experience, and the response outcome. Repeating setup would ignore the progress already supplied.</p>
-<p>Enrollment makes the interaction possible; it does not perform it on the user's behalf. Keep the earlier setup result and new challenge evidence separate.</p>
+<p>The earlier setup gap is resolved: Daniel has completed the employer enrollment. Now we need a different result, an accepted Push response for this fresh attempt.</p>
+<p>His accepted password, enrollment and issued Push request are useful progress. But the supplied requirement needs both password and Push proof, and the second accepted result is still missing.</p>
+<p>Ask what he saw, which registered device was selected, and what happened to the response. Repeating registration would ignore the setup already completed. Enrollment makes this interaction possible; it does not perform the response for Daniel.</p>
 </div>
 </details>
 
@@ -428,9 +428,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. TOTP and Push are different methods, and an unrelated event does not supply this attempt's required response.</p>
-<p>The shared Okta Verify name cannot make their results interchangeable. Inspect the actual Push outcome under the stated requirement.</p>
-<p>Another permitted flow could have different rules, but those would need their own evidence. Do not silently replace the current condition with a convenient older success.</p>
+<p>No. A changing TOTP code and a Push response are different methods, even when they come from the same app. The event also belongs to an unrelated attempt.</p>
+<p>Keep the stated question in view: this fresh Expense attempt requires accepted Push, with no earlier proof reused. The TOTP success answers another question and cannot fill in the missing response here.</p>
+<p>Find the actual Push result for this user and attempt, and whether the requirement was satisfied. Do not change the requirement merely because a convenient success record is available.</p>
 </div>
 </details>
 
@@ -462,9 +462,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Verify responds using a cryptographic key associated with the device's registration. Okta verifies the signature and that the response matches its challenge.</p>
-<p>That establishes proof through the enrolled key for this attempt when accepted. The mere availability of FastPass does not supply the result.</p>
-<p>You need not calculate the cryptography to follow the interaction: a challenge, device response, and verification. Those are the evidence stages to inspect.</p>
+<p>The enrolled device responds to Okta's challenge using a cryptographic key associated with its registration. It creates a signed response; Okta checks the signature and whether the response matches this challenge.</p>
+<p>Think of the three stages rather than the mathematics: Okta asks for proof, the device produces a response, and Okta verifies it. If accepted, that is evidence through the enrolled key for this attempt, rather than a typed password entry.</p>
+<p>Merely enabling FastPass would not show those stages completed. Inspect the actual method, device and validation result before reporting successful authentication.</p>
 </div>
 </details>
 
@@ -558,9 +558,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Neither. Passwordless means the flow does not require a password. Other proof can authenticate the person, and factor count depends on what is validated.</p>
-<p>Inspect the supported method, configuration, and actual results rather than infer them from an absent field. Device proof and required local verification have separate context.</p>
-<p>Describe the evidence accepted for the request. The visible password screen is not the whole authentication model.</p>
+<p>Neither conclusion follows. Passwordless tells us a password is not required in this flow. It does not tell us that the person supplied no identity proof.</p>
+<p>The device can provide proof, and the flow may also require local user verification. To determine factor types, look at what was required and successfully validated. The missing password field cannot answer that by itself.</p>
+<p>Describe the actual method and results instead of counting visible prompts. That lets you explain passwordless authentication without assuming either one factor or multiple factors from the screen alone.</p>
 </div>
 </details>
 
@@ -690,9 +690,9 @@ nav_order: 7
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “Your company made Verify available, but your account needed its own registration. Once setup was complete, the fresh sign-in also needed your Push response. The checked password and response were accepted for that attempt.”</p>
-<p>Then explain that Expense entry and the permissions for his work still need verification.</p>
-<p>The update connects setup to current proof without claiming registration granted a role or that every application result is complete.</p>
+<p>You could say: 'Your company made Okta Verify available, but your account still needed its own setup. Once you completed that registration, the fresh Expense sign-in needed both your password and a Push response. Both checks were accepted for the attempt we reviewed.'</p>
+<p>Then explain the next question: 'We still need to establish whether Expense let you in and whether your account has the permissions for the work you need to do.'</p>
+<p>This recognizes the setup and authentication that really succeeded. It does not tell Daniel that registration granted an approval role or that authentication alone proved every application outcome.</p>
 </div>
 </details>
 
