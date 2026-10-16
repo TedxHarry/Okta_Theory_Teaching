@@ -12,11 +12,11 @@ A lifecycle change is complete only when the required outcomes have been checked
 
 **Joiner, mover, and leaver.** A joiner needs approved initial access. A mover needs access reassessed for a changed role or situation. A leaver needs access removed at the approved effective point. Rehiring also needs a fresh access decision; it should not silently restore every old exception.
 
-**Effective point, event receipt, and completion.** The business change becomes effective at an agreed time. Systems may receive and process it later. Track these separately so a received event does not hide an unfinished downstream change.
+**Effective point, event receipt, and completion.** The business change becomes effective at an agreed time. Systems may receive and process it later. Ask when access should change, when the process received the event, and when each required result was verified. A received event does not establish downstream completion.
 
 **Okta lifecycle status.** Status describes the Okta user's state. `STAGED` means created before activation is initiated or awaiting administrative action; `PROVISIONED` means pending user action in this lifecycle context, not that an application account was created. `ACTIVE` does not guarantee application access. `RECOVERY` means password recovery, `PASSWORD_EXPIRED` means the password has expired, and `LOCKED_OUT` means a lockout condition was reached. None is proof of a target application's state.
 
-**Suspension, deactivation, and deletion.** Suspension (`SUSPENDED`) blocks Okta access while retaining assignments and groups and does not itself perform the taught SCIM deactivation. Completed Okta deactivation (`DEPROVISIONED`) removes application assignments and invokes configured deprovisioning, while group memberships are retained. Downstream work may be asynchronous or fail. Deletion is a separate, irreversible operation, not a routine fix for incomplete deprovisioning.
+**Suspension, deactivation, and deletion.** Suspension (`SUSPENDED`) blocks Okta access while retaining assignments and groups and does not itself perform the taught SCIM deactivation. Completed Okta deactivation (`DEPROVISIONED`) removes application assignments and invokes configured deprovisioning, while group memberships are retained. Downstream work can continue in the background or fail; requesting it does not establish the target result. Deletion is a separate, irreversible operation, not a routine fix for incomplete deprovisioning.
 
 **Account state and session state.** A disabled account and an already established application session are separate things to inspect. Here, notice and flag continuing access. Day 13 explains the session mechanisms in more detail.
 
@@ -24,7 +24,7 @@ A lifecycle change is complete only when the required outcomes have been checked
 
 Maya moves from Sales to Finance. The expected result includes ending Sales access without an approved exception and retaining Projects with department `FIN`.
 
-The evidence confirms that her Sales-group membership ends, but a direct Salesforce assignment remains after its approval has ended. A new Salesforce session shows a real remaining access path. Removing the group was therefore insufficient.
+The evidence confirms that her Sales-group membership ends, but a direct Salesforce assignment remains after its approval has ended. A new Salesforce session shows a real remaining access path. The group route ended, but the separate individual assignment survived. A working rule did not remove that independent route.
 
 Projects shows the confirmed `FIN` update on the retained account. That verifies the department change. The packet does not establish successful Projects entry, so keep that outcome open rather than writing “Projects works.”
 

@@ -10,7 +10,9 @@ Attempt the [exercises](../exercises/day-12.md) first. Separate the business req
 
 ## 1. Interpret the state
 
-PROVISIONED corresponds to Pending user action for the Okta account; it does not certify downstream application provisioning. HR departure is employment data, DEPROVISIONED is the deactivated Okta account state, and active false describes a SCIM target account's administrative state. Each needs its own identity and system context.
+Start with "Whose status did we read?" PROVISIONED describes the Okta user, where it corresponds to Pending user action. It supplies no Projects create response or target-account check.
+
+The other observations also belong to different records. HR departure states the employment change. DEPROVISIONED describes the deactivated Okta account. Projects active false describes that target account's administrative state under its contract. Naming the person, system and record keeps one result from being mistaken for all three.
 
 Revisit [Name the state and its system](../lessons/day-12-joiners-movers-leavers.md#name-the-state-and-its-system) and [Recognize the relevant Okta account states](../lessons/day-12-joiners-movers-leavers.md#recognize-the-relevant-okta-account-states).
 
@@ -18,7 +20,7 @@ Revisit [Name the state and its system](../lessons/day-12-joiners-movers-leavers
 
 Suspension blocks Okta access while retaining app assignments and group memberships. Deactivation removes Okta app assignments and invokes applicable configured deprovisioning, but retains group memberships. Deletion removes the Okta user and is irreversible; it is separate from deactivation.
 
-Suspension alone does not send the documented outbound SCIM deprovisioning event. A target operation and target state must be checked. Deleting an Okta record is not evidence that an application account or session was disabled. Revisit **Recognize the relevant Okta account states**.
+Suspension alone does not send the documented outbound SCIM deprovisioning event. A target operation and target state must be checked. Deleting the Okta record would not show that Projects accepted its own account change or that another application ended its session. Verify the required target outcomes through their supported processes.
 
 **Revisit:** [Recognize the relevant Okta account states](../lessons/day-12-joiners-movers-leavers.md#recognize-the-relevant-okta-account-states)
 
@@ -26,13 +28,13 @@ Suspension alone does not send the documented outbound SCIM deprovisioning event
 
 Establish the approved effective start and access requirement, the correct source record, reliable ownership and matching for any existing account, and the intended Okta identity. Then verify the applicable activation, authentication readiness, assignments, target accounts, actual entry, and required permissions.
 
-A similar name is insufficient for a link. A future HR record is insufficient for immediate access. Avoid creating a duplicate to bypass the missing ownership evidence. Revisit **Joiner: connect the initial decisions** and Day 11's matching policy.
+A similar name is insufficient for a link. A future HR record is insufficient for immediate access. Establish who owns the discovered account and whether it should link to the intended identity before choosing another create. The employment approval supplies the access goal; the similar name cannot supply the missing account relationship.
 
 **Revisit:** [Joiner: connect the initial decisions](../lessons/day-12-joiners-movers-leavers.md#joiner-connect-the-initial-decisions)
 
 ## 4. Investigate Maya's old access
 
-M1 to M3 demonstrate the intended department and Sales-group changes. M4 shows the remaining individual Salesforce assignment whose approval has ended; M6 confirms actual retained entry. This is the demonstrated access discrepancy, not a broken Sales rule.
+M1 to M3 demonstrate the intended department and Sales-group changes. M4 shows the remaining individual Salesforce assignment whose approval has ended; M6 confirms actual retained entry. The group route ended as intended, but the separate individual assignment survived. That is the demonstrated access discrepancy; the supplied evidence gives no reason to repair the Sales rule.
 
 Address that remaining assignment under the approved removal requirement, check other paths as appropriate, and verify the relevant Salesforce account-management and access outcomes. Do not assume Salesforce uses SCIM. Preserve Maya's employee identity and continuing Projects access, whose department update is confirmed. Being in Finance does not automatically grant management permissions.
 
@@ -50,7 +52,7 @@ Revisit [Leaver: verify each outcome](../lessons/day-12-joiners-movers-leavers.m
 
 ## 6. Interpret the lingering session
 
-The checked Expense session still supports authenticated access after Okta deactivation. Because a fresh protected response is supplied, this is more than a previously rendered page. The evidence does not explain the session's persistence or establish the state of every other session.
+The checked Expense session still supports authenticated access after Okta deactivation. Because a fresh protected response is supplied, this is more than a previously rendered page. You can report what Expense still permits without knowing why its session persists. The packet supplies no explanation of that mechanism and no result for every other session.
 
 Ask the Expense owner to correlate the session and account, identify the supported termination action and required behavior, and verify that a subsequent protected request no longer succeeds through the checked session. Include other sessions or access paths if the removal requirement covers them. Do not claim that another Okta event alone supplies this evidence.
 
@@ -66,7 +68,7 @@ An acceptable Jordan handoff:
 
 > His departure is effective, Okta is deactivated, and the checked AD account is disabled. Projects remains active after a failed deactivation request, and Expense accepts the checked existing session. Resolve those application outcomes with their owners and verify target state and protected-access results before reporting the departure requirement complete.
 
-A successful Projects deactivation resolves only that account-state issue. Expense's observed session and any other required access paths need separate evidence. Keep separate closure findings for Okta, AD, Projects, and Expense, with each unresolved result assigned to its responsible owner. “Okta deactivated” is a completed finding, not a substitute for those remaining outcomes. Revisit **Decide what evidence closes the ticket**.
+A successful Projects deactivation resolves only that account-state issue. Expense's observed session and any other required access paths need separate evidence. Keep separate closure findings for Okta, AD, Projects, and Expense, with each unresolved result assigned to its responsible owner. “Okta deactivated” accurately reports one completed finding. The remaining owners still need to verify the specific application outcomes assigned to them.
 
 **Revisit:** [Decide what evidence closes the ticket](../lessons/day-12-joiners-movers-leavers.md#decide-what-evidence-closes-the-ticket)
 
@@ -74,7 +76,7 @@ A successful Projects deactivation resolves only that account-state issue. Expen
 
 Suppose Maya's individual Salesforce assignment has a newly supplied, valid transition approval that explicitly permits continued access at the checked point. Her Finance profile and removed Sales-group membership are unchanged. How does your conclusion change?
 
-<details>
+<details markdown="1">
 <summary>Check the reasoning</summary>
 
 The technical assignment path remains the same, but continued access is no longer shown to violate the revised approved requirement. Verify the exception's owner, scope, and end condition, and arrange its required later removal. Do not change correct employee data or the Sales rule to represent the exception. This is a changed hypothetical condition, not a retroactive approval for M-12.

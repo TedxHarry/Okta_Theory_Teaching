@@ -12,7 +12,7 @@ For each affected system, compare the approved outcome with the observed result.
 
 ## 1. Interpret the state
 
-A user has API status PROVISIONED. A colleague concludes that all application accounts exist. Explain the mistake. Then distinguish an HR departure value, Okta DEPROVISIONED, and Projects active false.
+A user has API status PROVISIONED. A colleague concludes that all application accounts exist. Explain the mistake by naming the system and account the status describes. Then distinguish an HR departure value, Okta DEPROVISIONED, and Projects active false.
 
 ## 2. Compare lifecycle actions
 

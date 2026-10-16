@@ -29,7 +29,7 @@ Read each table row at its own boundary. HR supplies the business fact. Okta has
 
 A department or employment field is profile data. It does not become an account-lifecycle action merely because its value changes. Northbridge's configured Workday-driven lifecycle processing must interpret the relevant event, act on the correct identity, and produce verifiable results.
 
-The **effective point** is when the approved business change takes effect. An event's arrival and the completion of downstream changes are separate observations. A future start recorded today does not by itself authorize access today; a departure event arriving on time does not prove every target finished removing access.
+The **effective point** is when the approved business change takes effect. Ask three questions: "When should the access change apply?" "When did the process receive the event?" and "When did each required change actually complete?" These can be different times. A future start recorded today does not by itself authorize access today; a departure event arriving on time does not prove every target finished removing access.
 
 ## Recognize the relevant Okta account states
 
@@ -46,7 +46,7 @@ The API and Admin Console sometimes use different labels. These are the main dis
 | SUSPENDED | Suspended | Okta access is suspended while assignments are retained. |
 | DEPROVISIONED | Deactivated | Okta account has been deactivated; distinct from deletion. |
 
-Use the status names to understand the Okta account that was checked, rather than memorize a sequence every user must follow. These are not mandatory stations in one journey. Account creation, authentication arrangements, and configured lifecycle behavior affect which states occur. A lockout is not an HR termination, and Pending user action is not evidence of a Projects create. The familiar word “provisioned” has an account-status meaning here; Day 10's target creation needs its own evidence.
+Use the status names to understand the Okta account that was checked, rather than memorize a sequence every user must follow. These are not mandatory stations in one journey. Account creation, authentication arrangements, and configured lifecycle behavior affect which states occur. A lockout is not an HR termination, and Pending user action is not evidence of a Projects create. For `PROVISIONED`, ask "Whose status is this?" It describes the Okta user and pending activation-related action. It does not answer "Did Projects create the account?" That is a separate operation with its own result.
 
 **Suspension** blocks Okta access while retaining app assignments and group memberships. Unsuspension is a different decision from reconstructing removed access. See [suspension behavior](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-suspend.htm).
 
@@ -82,7 +82,7 @@ Northbridge's approved outcome for packet M-12 is:
 - Projects access continues, with its department code changed from SAL to FIN.
 - Maya retains her existing identity and intended existing Projects account.
 
-Read the approved outcomes together. Projects must continue on Maya's intended account, while the obsolete Sales access must end. Moving is not simply adding new access. It also requires reviewing access that no longer fits the new role. Finance department alone does not make Maya a Finance manager or grant Daniel's approval permissions. The business requirement decides what should remain; a department name alone cannot answer every permission question.
+Read the approved outcomes together. Projects must continue on Maya's intended account, while the obsolete Sales access must end. Ask "What should Maya stop using?" alongside "What must she still be able to use?" Salesforce must end; Projects must continue with the updated department. A move needs both outcomes. Finance department alone does not make Maya a Finance manager or grant Daniel's approval permissions. The business requirement decides what should remain; a department name alone cannot answer every permission question.
 
 ## Follow Maya's evidence
 
@@ -99,7 +99,7 @@ All observations below are synthetic, correlated to Maya's move, and listed in t
 
 Before choosing a correction, compare M1 to M4 with the approved requirement. Does the evidence show a failed department update, a failed group rule, or an assignment that survives both successful changes?
 
-M1 to M3 show that the source, profile, and Sales rule processed the intended change. M4 establishes the remaining assignment path and its expired business justification. M6 establishes actual retained Salesforce access, not merely a visible tile. Removing the rule-managed membership ended that path; it did not remove the independent individual assignment.
+M1 to M3 show that the source, profile, and Sales rule processed the intended change. M4 establishes the remaining assignment path and its expired business justification. M6 establishes actual retained Salesforce access, not merely a visible tile. The group gave Maya one route to the Salesforce assignment. She was also assigned Salesforce individually, separately from the group. Removing the group membership ended its route, but the individual assignment remained. The rule can therefore have worked correctly while Salesforce access still needs removal.
 
 Do not change correct Finance data back to Sales or weaken the rule. Address the remaining individual assignment under the approved removal requirement, then verify the resulting Okta assignment, the applicable Salesforce account-management action, target access, and relevant sessions. Salesforce's connector behavior must be checked; do not substitute the Projects SCIM contract for it.
 
@@ -128,7 +128,7 @@ L2 and L5 establish the supplied Okta outcome. L3 independently establishes the 
 
 For Projects, follow the operation and then the read. The connector asked for an inactive account, but the 503 response and later active state do not establish the required change. The 503 reports service unavailability; it does not identify the underlying outage cause. Investigate the connector and target result, coordinate an approved way to end access, and verify the account after the correction or supported retry. Do not reactivate Jordan in Okta to make a downstream retry easier: that would conflict with his departure without demonstrating a repair of the target service.
 
-Expense presents a different kind of evidence. L6 is a new authenticated response through Jordan's checked session, rather than an old page that merely remains on screen. It demonstrates continuing authenticated access through that session. Flag it for the application owner: confirm the session and account involved, the required termination behavior, the supported action, and the result of a fresh protected request afterward. The packet does not establish why the session persists. Recognize the retained access now; Day 13 explains the separate session mechanisms.
+Expense presents a different kind of evidence. An old Expense page left on screen would show only what the browser had already displayed. L6 goes further: a new request through Jordan's checked session receives protected data from Expense after Okta deactivation. That demonstrates the application still accepts access through that session. Flag it for the application owner: confirm the session and account involved, the required termination behavior, the supported action, and the result of a fresh protected request afterward. The packet does not establish why the session persists. Recognize the retained access now; Day 13 explains the separate session mechanisms.
 
 Okta deactivation stops Jordan's Okta sessions. That action alone is not proof that Expense ended every session it previously established: different services can maintain separate session state. L6 confirms that this particular Expense session still supports access, without establishing its persistence mechanism. Day 13 examines that distinction.
 

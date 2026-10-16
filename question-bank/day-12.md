@@ -33,8 +33,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Ask which system, record, and observation the writer means. An HR departure, an Okta status, a target application's enabled flag, and a session accepting requests are different findings.</p>
-<p>Use precise wording such as “the checked Okta identity is DEPROVISIONED.” That names the actual account state without claiming every application is inactive. Different states can coexist while a departure is being processed, so the remaining outcomes still need their own checks.</p>
+<p>Ask 'Inactive in which system, on which record, and according to what check?' The note could refer to Jordan's employment, his Okta account, an application account or a session. Those do not describe the same outcome.</p>
+<p>For example, 'the checked Okta identity is DEPROVISIONED' identifies an account and its observed status. It does not tell you whether Projects is inactive or Expense still accepts a session.</p>
+<p>Request the actual observation behind the note, then compare it with the approved removal requirement. Different states can coexist while departure processing remains unfinished, so a precise finding helps identify what still needs attention.</p>
 </div>
 </details>
 
@@ -48,8 +49,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The effective point is when the approved business change takes effect. Arrival tells you when the process received the information. Downstream completion tells you when the required target outcomes were achieved.</p>
-<p>Receiving a future start today does not itself authorize access today. Likewise, an on-time departure event does not establish completed application removal. Keep all three observations so preparation, permitted use, and verified completion are not confused with one another.</p>
+<p>Keep three times in view. The effective point says when the approved access change should apply. Arrival says when the process received the event. Completion says when the required downstream change actually finished.</p>
+<p>A future start entered today can support preparation without authorizing working access today. A departure event arriving on time can still be followed by an unfinished application removal.</p>
+<p>Compare the observed results with the approved timing. Receiving the information is useful progress, but it cannot establish when every target achieved the required account or access state.</p>
 </div>
 </details>
 
@@ -95,8 +97,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Here PROVISIONED is an Okta account-status label indicating that activation-related user action remains. It is not the result of creating an account in Projects.</p>
-<p>For Projects, inspect the relevant account-management request, response, and intended target record. The same word can describe different things at different boundaries. Read the status in the system where it was observed instead of allowing a familiar label to stand in for application evidence.</p>
+<p>No. Start with the system that returned the status: this is an Okta user-list response. PROVISIONED means Pending user action in that account's activation context, not 'Projects has created this person's account.'</p>
+<p>To establish the Projects outcome, inspect the relevant account-management operation, its response and the intended target record. None of those results is supplied by the Okta status here.</p>
+<p>The familiar word can cause the confusion. Keep the status attached to its account, and describe application provisioning through that application's actual operation and result.</p>
 </div>
 </details>
 
@@ -279,8 +282,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Remove obsolete Sales membership and Salesforce access, update the governed department to Finance and Projects' code to FIN, and preserve Maya's existing identity and continuing Projects account and access.</p>
-<p>Read those outcomes together. A move is not simply adding new access, nor is it disabling everything the person already has. The business requirement defines both what no longer belongs and what Maya still needs to do her work.</p>
+<p>Read the move as three kinds of work. Remove the obsolete Sales membership and Salesforce access. Update the governed department to Finance and Projects' department code to FIN. Preserve Maya's existing identity, intended Projects account and continuing Projects access.</p>
+<p>Those are parts of the same approved outcome. Adding the new department without ending the old access would be incomplete. Disabling everything would also be wrong because Maya must keep working in Projects.</p>
+<p>Use this requirement to judge each observed result. It tells you what to end, what to change and what to retain; the department name alone does not supply every role or permission decision.</p>
 </div>
 </details>
 
@@ -326,8 +330,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The individual Salesforce assignment remains after its exception approval ended. It is a separate path from the rule-managed Sales membership that was successfully removed.</p>
-<p>Address that individual assignment through the approved removal process. The supplied evidence gives no reason to change the correct Finance input or the working rule. Ending one relationship does not automatically end another, which explains how the old assignment can survive otherwise successful mover processing.</p>
+<p>The individual Salesforce assignment is the remaining relationship that conflicts with the move. Its exception approval ended, while the separate rule-managed Sales membership was removed successfully.</p>
+<p>Picture the two routes separately: membership supplied a group route to assignment, and the individual assignment supplied another route. Ending the first did not remove the second. The rule can have done its job while the application assignment remains.</p>
+<p>Address the surviving individual assignment under the approved removal process, then verify the required application outcomes. Changing the correct Finance data or the working Sales rule would leave the demonstrated assignment problem unanswered.</p>
 </div>
 </details>
 
@@ -433,8 +438,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. These are different results at different services. A fresh Okta sign-in can be blocked while an application continues accepting a session it previously established.</p>
-<p>Preserve both findings. The Okta test verifies the checked sign-in outcome; Expense supplies its own application-side evidence. Repeating the blocked Okta test cannot erase that protected response. The departure needs the application issue addressed as well as the completed Okta result.</p>
+<p>No. The Okta test asks whether Jordan can start a fresh Okta sign-in. The Expense observation asks whether that application still accepts a session it already established. Different services can give different answers to those two questions.</p>
+<p>Both results are supplied: fresh Okta sign-in is blocked, and a new protected Expense response succeeds through the checked session. Repeating the Okta test would not cancel the application's observation.</p>
+<p>Keep the completed Okta result and ask the Expense owner to resolve and verify its access-removal outcome. You do not need to explain the session's persistence mechanism to recognize that this separate access still works.</p>
 </div>
 </details>
 
@@ -493,8 +499,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It demonstrates continuing authenticated Expense access through that checked session. A newly retrieved protected response is stronger evidence than an old page remaining visible.</p>
-<p>It does not explain why the session persists or identify the supported removal method. Ask the application owner to confirm the account and session, required termination behavior, supported action, and a fresh protected-request result afterward. You can recognize the retained access without inventing its persistence mechanism.</p>
+<p>Expense still permits authenticated access through the checked session. The important fact is the new protected response after deactivation: Jordan is not merely looking at a page the browser displayed earlier.</p>
+<p>That establishes a remaining departure issue. It does not tell support why the session persists, what account-removal method Expense supports or whether every other session behaves the same way.</p>
+<p>Ask the application owner to confirm the account and session, identify the required behavior and supported removal action, then check a fresh protected request afterward. The correction needs an observed access result; another successful Okta event cannot supply it.</p>
 </div>
 </details>
 
@@ -570,8 +577,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>For Projects, verify the intended resource's account state after the supported removal action. For Expense, obtain a new protected-request result after the required access-removal action.</p>
-<p>The failures concern different outcomes: stored account state and demonstrated session access. Keep the correct account and session context while coordinating the owners. Another successful Okta action cannot supply either missing target finding, and account-state evidence alone does not settle the observed session issue.</p>
+<p>Choose the closure check to match the unfinished outcome. Projects still has an active account, so verify the intended resource's account state after the supported removal action. Expense still accepts a session for protected data, so verify what a new protected request can do after its required access-removal action.</p>
+<p>Those checks answer different questions: 'Did this account become inactive?' and 'Does this session still permit access?' A result for one application cannot supply the other application's answer.</p>
+<p>Keep the account and session identifiers with their owners and results. A further Okta success would still leave these particular target findings to verify.</p>
 </div>
 </details>
 
@@ -602,8 +610,9 @@ nav_order: 12
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Re-evaluate current employment, identity matching, assignments, and activation requirements. Retained memberships and old exceptions do not independently establish current business approval.</p>
-<p>A return is a new decision about permitted access. Preserve correct identity relationships while checking what the person now needs. The fact that a capability existed before departure is useful history, but it is not authorization to reconstruct every old path without reviewing the present requirement.</p>
+<p>No. Start with Jordan's current employment, role and approved access needs. Retained groups and old exceptions are history to review, not fresh approval for everything he once had.</p>
+<p>Check the intended identity and account relationships, current assignments and activation requirements. Keeping the correct identity can avoid unnecessary duplicates while still allowing the access decision to change.</p>
+<p>A return to work is not a command to reconstruct every old path. Verify the access required now, including whether any previous exception still has a valid purpose and approval.</p>
 </div>
 </details>
 
