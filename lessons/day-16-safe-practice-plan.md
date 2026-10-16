@@ -32,17 +32,17 @@ An experiment needs a named destination. Identify the training organization, the
 
 Also state where the training profile values come from. If you enter synthetic values into Okta for this exercise, describe them as training data. That does not reproduce Northbridge's Workday sourcing or prove that an employee import works. If your environment has an existing source connection, investigate its ownership and supported update behavior before changing a sourced field.
 
-For this exercise, confirm all four training users are Active and that the central Okta profiles contain the intended department and workerType values. Check that workerType exists in the training schema and that the rule uses those actual profile fields. The default attribute-rule behavior includes Active users when no different user-status condition is specified; an inactive training account can make a missing membership misleading.
+For this exercise, confirm all four training users are Active and that the central Okta profiles contain the intended department and workerType values. The **schema** defines the available profile fields. Check that workerType exists there, that the stored profiles hold the intended values, and that the rule references those actual fields. A field name in the written plan cannot establish any of those conditions. The default attribute-rule behavior includes Active users when no different user-status condition is specified; an inactive training account can make a missing membership misleading.
 
 Use the dedicated training group with no application assignments for this first membership experiment. Preview the proposed rule against the planned users and review all other profiles it could include before activating it. A saved rule is initially Inactive. Activation applies it across the organization, not only to the four names in your plan. Confirm the rule is active and its relevant evaluation completed before interpreting the observed membership. See [creating group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm) and [group-rule best practices](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-group-rules-best.htm).
 
-Alex records the initial profiles, current membership, assignment paths and any target-account association relevant to the experiment. This is the starting state against which the result will be compared. Existing direct assignments could make an application appear available even when the rule being tested did nothing.
+Alex records the initial profiles, current membership, assignment paths and any target-account association relevant to the experiment. This is the **starting state**, the evidence recorded before the intended change. If Casey already had a membership or direct application assignment, seeing it afterward would not show that the new rule supplied it. Comparing before and after helps distinguish a new result from a relationship that was already present.
 
 ## Predict before observing
 
 Write down the input, intended operation and expected evidence before doing anything. For the first exercise, the inputs are the four training profiles, the operation is the configured rule evaluation, and the evidence is the resulting membership for each person.
 
-If Casey appears in the group, compare the result with the actual condition, exclusions and processing evidence. If Morgan is excluded, establish that the relevant evaluation occurred; an unchanged screen alone is not necessarily a completed negative test. If results differ from your prediction, locate the earliest demonstrated discrepancy rather than rewriting the expected result to match the screen.
+If Casey appears in the group, compare the result with the actual condition, exclusions and processing evidence. For Morgan, the expected result is absence from the group. But a rule that never ran could leave Morgan absent too. Check the active rule, applicable inputs and relevant evaluation before treating the membership observation as a completed negative test. If results differ from your prediction, locate the earliest demonstrated discrepancy rather than rewriting the expected result to match the screen.
 
 Keep one changed condition at a time. A later exercise might change Casey's department under a separately stated training requirement. First predict the membership result. Then observe it. Do not simultaneously change the rule, user classification and application assignment: you would lose the ability to explain which change produced the outcome.
 
@@ -54,7 +54,7 @@ Record the group-to-application relationship and any other assignment paths. Ver
 
 Then decide whether target-account management is part of the training design. Inspect the actual connector's supported and enabled behavior. An application owner may need to prepare the account through a separate process. Do not assume the training application supports SCIM because Projects did, or that federation automatically creates an account.
 
-If account management is included, identify the intended linked record, the generated operation, its response and the checked target state. If it is outside the experiment, state that boundary clearly. A narrow experiment is useful when its conclusion stays narrow.
+If account management is included, identify the intended linked record, the generated operation, its response and the checked target state. If it is outside the experiment, state that boundary clearly. You can verify an assignment without claiming that an account was created or updated. A later exercise can add that relationship with its own expected operation and evidence.
 
 ## Test entry and permission as different outcomes
 
@@ -85,7 +85,7 @@ For the first experiment, the destination is LAB-Finance-Employees. This compact
 | Riley — Finance / Contractor | Not a member | Member | Not tested |
 | Taylor — Sales / Employee | Not a member | Member | Not tested |
 
-Both condition columns are predictions. The OR column explains why the negative cases are needed; it is not an instruction to activate an incorrect rule. After an approved experiment, record actual membership and the corresponding rule-processing evidence, then explain any difference from the AND prediction. Until that evidence exists, leave the actual result as Not tested.
+Read the columns as different kinds of statements: "This is what AND should produce," "This is what the hypothetical OR mistake would produce," and "This is what was actually observed." The first two are predictions. The OR comparison explains the useful negative cases; it is not an instruction to activate an incorrect rule. After an approved experiment, record actual membership and the corresponding rule-processing evidence, then explain any difference from the AND prediction. Until that evidence exists, leave the actual result as Not tested.
 
 If you have no training environment, complete the predictions and evidence requests on paper. Label them as a plan, not a successful configuration exercise. If you do execute it later, record the actual results, including mismatches and unfinished outcomes.
 

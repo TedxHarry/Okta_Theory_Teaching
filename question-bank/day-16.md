@@ -63,8 +63,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Both results are predicted under AND and OR. Neither tests a profile that meets exactly one part of the expression.</p>
-<p>Riley tests Finance without Employee, and Taylor tests Employee without Finance. Their intended exclusions distinguish the approved condition from the broader mistake. Choose negative cases that challenge the boundary, not merely easy exclusions. A limited test can pass even when the population logic is wrong.</p>
+<p>Casey meets both parts, so either AND or OR would include Casey. Morgan meets neither, so either expression would exclude Morgan. Those two results cannot tell you which expression is operating.</p>
+<p>Riley and Taylor make the difference visible. Riley meets Finance without Employee; Taylor meets Employee without Finance. AND should exclude each, while OR would include each.</p>
+<p>Include those one-condition cases when checking the intended comparison. A test can produce the expected result for two people while still missing the very mistake it needs to detect.</p>
 </div>
 </details>
 
@@ -125,8 +126,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The intended attributes must exist, contain the supplied values, and be the fields actually referenced by the rule. A field written in a plan is not evidence of its definition or data in the organization.</p>
-<p>Inspect the schema, central profiles, and rule references. Then a mismatch can be traced to its demonstrated boundary. Otherwise missing input or a wrong field reference might be mistaken for faulty comparison logic.</p>
+<p>Check three things separately. The schema defines whether the intended fields exist. The stored profiles show what values those fields actually hold. The rule references show which fields the comparison uses.</p>
+<p>Writing department and workerType in a plan does not establish that the organization has the intended definitions, data or references. A missing value or a different field reference could otherwise look like a comparison problem.</p>
+<p>Inspect those inputs before interpreting membership. Then compare the rule's actual evaluation and result with the prediction, rather than choosing a cause from the display alone.</p>
 </div>
 </details>
 
@@ -155,8 +157,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Check activation and the relevant evaluation. Saving the rule does not establish that the mechanism operated under its intended conditions.</p>
-<p>Keep expression, rule state, processing, and stored membership separate. No change after saving can reflect an inactive mechanism rather than a bad comparison. Only once the applicable execution conditions are established can the observed membership meaningfully test the condition.</p>
+<p>The saved rule is Inactive, so the unchanged membership is not yet evidence that the intended comparison ran and failed. Saving and evaluating are different stages.</p>
+<p>Check the intended activation and relevant evaluation under the approved experiment, along with the actual condition and inputs. Only then can the membership result test what the rule does.</p>
+<p>Keep the observations separate: the expression was saved, the mechanism has not been shown to evaluate it, and membership is unchanged. That explains the next check without inventing an incorrect expression.</p>
 </div>
 </details>
 
@@ -185,8 +188,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Record relevant profile values, group memberships, assignment sources, and target-account associations before the intended change. This is the baseline for comparison.</p>
-<p>An existing direct assignment could make an application available even if the new group did nothing. The starting state is evidence for explaining cause, not setup for its own sake. Keep it beside the later result so a pre-existing relationship is not credited to the new action.</p>
+<p>Record what exists before the new action: relevant profile values, memberships, assignment sources and target-account associations. That starting state gives you something concrete to compare with the later result.</p>
+<p>If the person already had a direct application assignment, seeing the application afterward would not show that the new group supplied it. The result might be real while the explanation of its source is wrong.</p>
+<p>Keep the before-and-after records tied to the intended instance and change. They help distinguish a relationship introduced by the experiment from one it simply encountered.</p>
 </div>
 </details>
 
@@ -217,8 +221,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Not yet. Establish that Morgan had the relevant opportunity to be evaluated under the intended rule and context. Absence could otherwise reflect a mechanism that never ran.</p>
-<p>Record the inputs, active state, applicable processing, and membership observation. Those findings make exclusion meaningful. A negative result needs evidence of the tested operation, not merely a screen that already looked unchanged.</p>
+<p>Not yet. Morgan should be absent, but a rule that never ran could leave the screen looking exactly the same. The display alone cannot distinguish correct exclusion from no relevant evaluation.</p>
+<p>Establish the intended inputs, active rule, applicable processing and resulting membership. Those records show whether Morgan's absence answers the question being tested.</p>
+<p>A negative test still needs evidence that the mechanism operated in the relevant context. 'Not in the group' becomes useful test evidence when you can connect it to that evaluation, rather than only to an unchanged screen.</p>
 </div>
 </details>
 
@@ -294,8 +299,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Another path could provide the assignment independently. Inspect the actual assignment source and starting state for the intended instance.</p>
-<p>A visible tile helps locate the application but does not establish which relationship caused it. Removing one path also does not show every path ended. The experiment should explain the source of the observed result rather than crediting a pre-existing assignment to the connection it just added.</p>
+<p>First ask what supplied Casey's assignment. The new group is one possible path, but a direct assignment or another group could already provide it.</p>
+<p>Compare the recorded starting state with the actual assignment source in the intended integration. A visible tile tells you where an application appears; it does not identify which relationship caused that result.</p>
+<p>Attribute the outcome to the new group only when the relationship evidence supports it. The same distinction matters later: removing that group path would not establish that every other path ended.</p>
 </div>
 </details>
 
@@ -433,8 +439,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Configuration recovery restores settings. Effects already produced need their own evidence and corrective operations where required.</p>
-<p>Identify the changed relationships and target outcomes included in the exercise, then involve their responsible owners and verify the required end state. A correct-looking rule cannot certify all downstream access ended. Report restoration and cleanup separately so the configuration result does not replace missing application findings.</p>
+<p>No. Restoring the original rule answers a configuration question. It does not show what happened to assignments, target accounts, roles or sessions produced while the experiment ran.</p>
+<p>Compare the actual changes with the agreed end condition. Identify which relationships need removal or restoration, involve their owners, and verify the required target results. Keep legitimate records and access within their approved scope.</p>
+<p>Report the restored configuration as one completed result. Report cleanup as complete only when its relevant observations support it; a correct-looking rule cannot supply those missing application findings.</p>
 </div>
 </details>
 
@@ -495,8 +502,9 @@ nav_order: 16
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Yes. Write the predictions, evidence requests, responsibilities, and cleanup plan on paper. Label the artifact as a plan, with actual results Not tested.</p>
-<p>Reasoning about expected boundaries is useful practice even without execution. If the exercise runs later, add real observations, mismatches, and unfinished outcomes. Do not replace that evidence with the original predictions simply because the planned logic seems correct.</p>
+<p>Yes. You can predict which synthetic profiles should match, identify the evidence needed to check that prediction, and name the owners and cleanup responsibilities without executing the experiment.</p>
+<p>Keep the actual-result column as Not tested. A convincing prediction is still a statement about what should happen, not a record of what did happen.</p>
+<p>If an authorized training environment becomes available later, add the actual observations beside the predictions, including mismatches and unfinished outcomes. The written plan remains useful preparation without being described as a tested configuration.</p>
 </div>
 </details>
 
