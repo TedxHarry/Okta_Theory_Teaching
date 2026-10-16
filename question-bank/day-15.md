@@ -80,8 +80,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The outgoing fixed-SAL mapping is the first demonstrated wrong representation. It produces Sales' code from Finance when the requirement calls for FIN. The successful update and later read show that SAL was transmitted and stored.</p>
-<p>The target did not reject that value, and the incoming HR and Okta information is correct. Follow the prepared value through request and destination. Those correlated findings identify the conversion boundary rather than blaming an unrelated source or rejected update.</p>
+<p>Start with the approved meaning: Maya is in Finance, so Projects needs FIN. Workday and Okta already hold the correct department. The fixed-SAL outgoing mapping is the first supplied step that turns it into the wrong representation.</p>
+<p>The preview and app profile show that result, and the correlated update and later read show SAL was sent and stored. Projects accepted the request; it did not reject the value.</p>
+<p>The operation can therefore succeed while the business outcome is wrong. Correct the conversion rather than change the correct source data or invent a failed target update. Verification must follow the corrected value through to the intended account and reporting result.</p>
 </div>
 </details>
 
@@ -125,8 +126,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Check the saved conversion with Finance and other supported inputs, Maya's app profile, the actual update to linked prj-1042, the target FIN value, and the corrected allocation report.</p>
-<p>Preview verifies calculation, the request and target read verify delivery, and the report tests the business result. These are needed follow-up findings, not outcomes already supplied. Keep the proposed repair separate from completed and verified correction.</p>
+<p>Follow the proposed correction through several questions. Does the saved conversion produce FIN for Finance and the correct codes for other supported inputs? Does Maya's stored app profile contain the intended value? What does the actual update send to prj-1042, and what does Projects store afterward?</p>
+<p>Then check the allocation report. That is the business result the ticket asks to correct; a preview or successful update alone cannot supply it.</p>
+<p>No correction or retest is supplied here. Describe these as required follow-up findings, preserve Maya's intended account and continuing access, and report the repair as verified only when its relevant results are available.</p>
 </div>
 </details>
 
@@ -187,8 +189,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Neither authorization conclusion is established. Access is demonstrated, while its approval evidence is unresolved.</p>
-<p>Request the accountable approver, current decision, scope, owner, and end condition. Missing evidence in this investigation is different from an owner confirming that no approval exists. Keep the observed access and decision gap together: they justify review without inventing either a valid exception or a confirmed violation.</p>
+<p>Working access is established: Priya entered Salesforce and received a protected page. Its authorization is still unresolved because the packet supplies no exception decision, owner, scope or end condition.</p>
+<p>Missing evidence is not the same as an authorized owner confirming that no approval exists. It also cannot be treated as approval. Ask that owner for the current decision and its terms.</p>
+<p>Keep both findings in the handoff: access works, and the approval question needs prompt review. The next action depends on that decision rather than on a guessed rule defect or an invented exception.</p>
 </div>
 </details>
 
@@ -311,8 +314,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The approved departure requires access to end, yet a fresh protected response demonstrates continued access. Projects also retains the active account after failed removal.</p>
-<p>Prioritize those supplied findings and coordinate the separate application owners while identity management tracks the required scope. Current retained access is enough to justify prompt attention. The investigator does not need an imagined attack, outage cause, or deadline to explain the priority.</p>
+<p>The requirement says Jordan's access must end, but Expense has returned new protected data through his existing session. Projects also still shows an active account after the failed removal request. Those current findings justify prompt attention.</p>
+<p>Coordinate the Projects and Expense owners on their separate unresolved outcomes while identity management tracks the departure scope. Their investigations can proceed alongside other ticket work; priority does not require every owner to wait in one queue.</p>
+<p>There is no need to invent an attack, financial deadline or detailed outage cause. State the observed retained access and the approved end requirement, then explain which results the owners must verify.</p>
 </div>
 </details>
 
@@ -450,8 +454,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The create failed with a reported username conflict. Ownership of the conflicting record and the lookup discrepancy remain unresolved; no successful create or association is established.</p>
-<p>Request exact lookup details, operation sequence, visibility context, the conflicting resource, and reliable ownership evidence. Projects approval defines the access need. It does not identify the account causing the conflict or authorize taking over an unverified resource.</p>
+<p>The create received a username-uniqueness conflict after the earlier lookup reported no match. No successful create or confirmed association is supplied. The conflicting account's owner and the reason for the two results remain unknown.</p>
+<p>Ask for the exact lookup and response, operation sequence, relevant visibility context, and the conflicting resource with reliable ownership evidence. Those records answer different questions: why was it missed, and whose account is it?</p>
+<p>Priya's Projects exception establishes that she needs the approved work access. It does not identify the conflicting record or authorize taking it over. Resolve the account relationship before choosing the supported next operation.</p>
 </div>
 </details>
 
@@ -480,8 +485,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It proves neither specific cause. Those are hypotheses needing lookup details, sequence, visibility context, and creation history to distinguish them.</p>
-<p>Name the evidence that would test each explanation instead of choosing the familiar one. The reported conflict is a finding; its history and ownership are separate questions. A precise open investigation is more useful than a plausible narrative that replaces missing records.</p>
+<p>Neither cause is established. The packet gives the earlier no-match result and the later conflict, but not the history needed to explain their disagreement.</p>
+<p>A creation record showing the account appeared between the two operations would support the competing-process hypothesis. The exact lookup filter, response and visibility context could instead explain why an existing record was missed. Request evidence that can distinguish those possibilities.</p>
+<p>Ownership remains another question to resolve. Knowing how the conflict arose would not, by itself, establish that the account belongs to Priya. Keep each missing fact attached to the decision it needs to support.</p>
 </div>
 </details>
 
@@ -574,8 +580,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>State what was expected, what was observed, what explains the demonstrated discrepancy, what was changed or handed off, and what was verified.</p>
-<p>Include the person, application instance, and attempt or effective point. If no change or verification occurred, state the proposal and the outcome awaiting its owner. Clear evidence boundaries make the update useful; a polished closure that hides missing results does not.</p>
+<p>Give the next reader five answers: what should have happened, what was observed, what explains any demonstrated discrepancy, what was done or handed off, and what result was verified.</p>
+<p>For this question, the correction is only proposed. Say so, identify the responsible owner, and name the evidence still needed. Do not turn 'we know the next step' into 'the problem is fixed.'</p>
+<p>Include the person, application instance and relevant attempt or effective point. That makes the update understandable without the investigation history and keeps unresolved work visible to whoever must finish it.</p>
 </div>
 </details>
 
@@ -619,8 +626,9 @@ nav_order: 15
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Keep the earlier observation and add what the new evidence establishes. Revisit conclusions that depended on the missing or changed facts instead of silently carrying the old explanation forward.</p>
-<p>Record the remaining uncertainties, responsible owners, and next verification. The investigation should show how the conclusion was reached. That makes the method reusable for another ticket without transferring unsupported incident facts into a new situation.</p>
+<p>Keep the original observation and add the new evidence beside it. Then reconsider the conclusions that depended on the earlier unknown ownership or history.</p>
+<p>Explain what the application owner's verified account history now supports and what it still leaves open. A changed conclusion is appropriate when the evidence changes; preserving a diagnosis after its basis disappears would make the record misleading.</p>
+<p>Update the next action, responsible owner and verification still required. The record should show why the explanation changed, without rewriting an earlier uncertainty as though it had always been known.</p>
 </div>
 </details>
 

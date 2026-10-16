@@ -28,7 +28,7 @@ Other orderings among B, C, A, and E are defensible if tied to stated impact and
 
 ## 2. Investigate Maya's move
 
-A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong representation: the fixed outbound mapping produces SAL. A4 confirms that SAL was sent and stored; the target did not reject it. A5 is consistent with that wrong stored value and does not turn this into a sign-in incident.
+A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong representation: the fixed outbound mapping produces SAL. A4 confirms that Projects accepted and stored the SAL it was sent. The operation succeeded, but the value is wrong for Maya's approved Finance requirement. A5 adds working entry and a report that places her in Sales. Those findings can coexist; successful sign-in does not make the report correct.
 
 Replace the fixed value with the approved department-to-code conversion. Keep correct HR and Okta data unchanged. Verify the saved mapping with Finance and other supported inputs, Maya's app profile, the actual update to prj-1042, the target FIN value, and the corrected report outcome. Preserve her intended existing account and approved access.
 
@@ -42,7 +42,7 @@ B1 to B2 show the expected employee-only rule result: Sales AND Employee exclude
 
 Request the named approver, current exception decision, eligible contractor population, allowed application actions, owner, and end condition. Clarify whether executives are excluded, included normally, or given specific different permissions. Do not interpret the phrase as permission to bypass authentication requirements.
 
-If a valid scoped exception is confirmed, check that the observed access fits it and that removal is managed. If the responsible owner confirms no authorization, arrange approved removal and verify all applicable assignment, target, and session outcomes. If approval remains unresolved, state the open decision and accountable owner; do not invent approval or declare a rule defect.
+If a valid scoped exception is confirmed, check that the observed access fits it and that removal is managed. If the responsible owner confirms no authorization, arrange approved removal and verify all applicable assignment, target, and session outcomes. If approval remains unresolved, state the open decision and accountable owner. "The packet does not contain the approval" is different from "the responsible owner confirms no approval exists." Neither a valid exception nor a confirmed violation should be invented to complete the answer.
 
 B5 proves its supplied Expense authentication, validation, account association, and entry outcome. It does not authorize Salesforce, prove Projects account creation, or establish all internal permissions. A valid approval for one application is not a transferable approval for another.
 
@@ -76,7 +76,7 @@ A suitable leaver explanation follows the source event, Okta state, assignments,
 
 E3 establishes that Projects reported a uniqueness conflict for the create. It does not identify the conflicting account's owner or prove a correctly linked Priya account exists. E2's earlier no-match result does not explain the discrepancy by itself.
 
-Request the full lookup filter/result, exact instance and sequence, competing creation history, and the conflicting resource with reliable ownership evidence. Another process creating the record between lookup and create is one hypothesis. A lookup/filter or visibility defect is another. Different observations would support different explanations; neither is a supplied fact.
+Request the full lookup filter/result, exact instance and sequence, competing creation history, and the conflicting resource with reliable ownership evidence. A creation record showing the account appeared between the lookup and create would support the competing-process explanation. The exact search and response could instead show why an already-existing record was missed. Those are evidence requests to distinguish hypotheses, not findings already supplied by E.
 
 The proposed numbered username is not an approved correction. It might create a duplicate for the same person or conceal another person's conflicting record. If the record belongs to Priya, evaluate supported existing-account handling. If it belongs to someone else, correct the approved naming or data problem through its owner. Confirm the association, applicable operation result, target state, and eventual access before closing the ticket.
 
@@ -86,7 +86,7 @@ Priya's approved Projects exception establishes an access requirement, not permi
 
 ## 7. Interpret the historical AD incident
 
-F1 confirms only the earlier scoped import. F2 establishes that the handling agent reached the domain controller for this attempt. F3 establishes a credential-validation rejection, but leaves its reason unspecified. Request the correlated directory result and relevant account/credential conditions at that historical point. “Wrong password” is a possible explanation, not the supplied conclusion. F4 supplies no application entry.
+F1 confirms only the earlier scoped import. F2 establishes that the handling agent reached the domain controller for this attempt. F3 establishes a credential-validation rejection, but leaves its reason unspecified. Request the correlated directory result and relevant account/credential conditions at that historical point. The controller answered, so this packet reached credential validation. Its general rejection still cannot distinguish a submitted-password problem from the other stated directory conditions. F4 supplies no application entry.
 
 In the changed connectivity packet, there is no credential result because the request did not reach a successful directory validation outcome. Investigate the demonstrated connectivity boundary before proposing a credential correction. Neither a successful import nor a connection failure proves that the password is correct.
 

@@ -14,7 +14,7 @@ You now have several ways to explain an access problem. The skill is choosing th
 
 **Observed state.** Record what a particular source actually shows. Name the system, record, attempt, and time where relevant. “The request contained `FIN`” and “Projects stored `FIN`” are different observations.
 
-**Hypothesis.** A hypothesis is a possible explanation to investigate. Keep it separate from confirmed facts. Missing approval evidence is not proof that approval never existed, and a conflicting username is not proof of account ownership.
+**Hypothesis.** A hypothesis is a possible explanation to investigate. Ask which observation would support it and which would point elsewhere. A plausible explanation is not yet a confirmed finding. Missing approval evidence is not proof that approval never existed, and a conflicting username is not proof of account ownership.
 
 **Failure boundary.** Find the last confirmed successful step and the first demonstrated problem. This narrows the next evidence request and helps avoid irrelevant fixes, such as resetting a password for an audience mismatch.
 
@@ -24,7 +24,7 @@ You now have several ways to explain an access problem. The skill is choosing th
 
 Use this recap after attempting the case. The tickets supply separate investigation snapshots; their proposed corrections are not completed results. Keep the remaining approval, ownership, failure-cause, and verification questions open where the packet leaves them open.
 
-**Maya's Projects department.** Workday and Okta show Finance, but a fixed mapping sends `SAL`, which Projects stores. Entry is confirmed, while the report is wrong. Correct the mapping, check who else it affects, and verify the target value and reporting outcome. If the mapping were already correct, the investigation would instead need delivery and target evidence.
+**Maya's Projects department.** Workday and Okta show Finance, but a fixed mapping sends `SAL`, which Projects stores. The update stored the value it was sent, and entry works, while the report is wrong. Those successes do not establish that the supplied value met Maya's requirement. Correct the mapping, check who else it affects, and verify the target value and reporting outcome. If the mapping were already correct, the investigation would instead need delivery and target evidence.
 
 **Priya's Salesforce access.** The normal employee rule excludes her, but a direct assignment permits entry. The packet does not supply its exception approval. Review that path promptly without declaring it unauthorized solely because the approval is missing from the packet. Her separately approved Expense access does not approve Salesforce or Projects. Ticket E supplies its own Projects exception; that approval does not resolve Ticket B's missing Salesforce decision.
 
@@ -38,7 +38,7 @@ Use this recap after attempting the case. The tickets supply separate investigat
 
 ## When a request reaches you
 
-A closure note connects the expected outcome, observed discrepancy, justified action, and verified result. Name the owner of anything still unresolved instead of hiding it behind a general success statement.
+A closure note connects the expected outcome, observed discrepancy, justified action, and verified result. If only a proposed correction is supplied, name who must perform it and what result is still needed. Knowing the next step is progress; it is not a verified resolution.
 
 ## Check your understanding
 

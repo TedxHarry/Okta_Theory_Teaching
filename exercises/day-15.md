@@ -16,7 +16,7 @@ Explain Northbridge's employee and contractor sourcing, source priority, the AD 
 
 ## 2. Investigate Maya's move
 
-For A, locate the first demonstrated discrepancy, state the supported cause, and propose correction and verification. Explain why successful Projects entry does not resolve the report issue. Describe the affected-population and recovery checks appropriate to the proposed mapping change.
+For A, locate the first demonstrated discrepancy, state the supported cause, and propose correction and verification. Explain why neither successful Projects entry nor a successful update response resolves the report issue by itself. Describe the affected-population and recovery checks appropriate to the proposed mapping change.
 
 ## 3. Investigate Priya's Salesforce access
 

@@ -35,11 +35,13 @@ For each ticket, explain:
 - The next action and its responsible owner.
 - The result needed before reporting resolution, including target access where relevant.
 
-Use the packet's evidence labels in your answer. “Inspect A4's transmitted value and target result” is more useful than “check the logs.” Explain what that check would distinguish: a prepared value, a transmitted value and a stored target value are separate observations. An unresolved conclusion is appropriate when the evidence cannot support a cause or approval. Name the missing evidence and its owner so that uncertainty becomes a useful next step.
+Use the packet's evidence labels in your answer. “Inspect A4's transmitted value and target result” is more useful than “check the logs.” Explain what the check would answer. "What did Okta prepare?" "What did the connector send?" and "What did the application store?" need different records. An operation can succeed at sending and storing a value that still fails the approved business requirement.
+
+A **hypothesis** is a possible explanation, not a finding already established. Ask what observation would support it or point to another explanation. When the evidence leaves a cause, ownership or approval unresolved, name the missing fact and who can provide it. That gives the next owner a question to resolve rather than a guessed diagnosis.
 
 ## Prioritize by the supplied impact
 
-State what you would investigate or escalate first and why. Distinguish ongoing inappropriate access from incorrect data, blocked business work, and an archived incident. Several owners can work independently; ranking attention does not require leaving other tickets untouched.
+State what you would investigate or escalate first and why. Distinguish ongoing inappropriate access from incorrect data, blocked business work, and an archived incident. Priority answers "What needs attention first, and why?" It does not require every owner to wait in one queue. An application owner can investigate an account result while another owner resolves a separate approval decision.
 
 Tie your priority to what the packet shows, rather than an imagined deadline or cause. Say what needs prompt attention and which investigations can proceed with their own owners. A proposed correction is not a completed correction. Do not invent a successful retry, an approval, or a target read to make your final report look complete.
 
@@ -51,7 +53,7 @@ After your attempt, read the [answers](../self-checks/day-15.md) and use the [fi
 
 ## Close the request without hiding an unknown
 
-Use five short statements: what was expected, what was observed, what explains the demonstrated discrepancy, what was changed or handed off, and what was verified. Include the relevant person, application instance, and attempt or effective point. If no change or verification is supplied, say what is proposed or still awaiting its owner. An explanation should remain understandable to someone who did not watch the investigation.
+Use five short statements: what was expected, what was observed, what explains the demonstrated discrepancy, what was changed or handed off, and what was verified. Include the relevant person, application instance, and attempt or effective point. If no change or verification is supplied, say what is proposed or still awaiting its owner. "We know what to change" and "the required outcome is verified" are different statements. A useful handoff can explain the next action while keeping the unresolved part open. An explanation should remain understandable to someone who did not watch the investigation.
 
 When several systems or decisions are involved, evaluate each result independently. One successful correction does not establish every required outcome. Distinguish technical defects, missing approvals, account ownership and remaining access before deciding whether a ticket can close.
 
