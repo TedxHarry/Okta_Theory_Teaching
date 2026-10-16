@@ -22,7 +22,7 @@
   .main-content h1 { font-weight: 700; color: #0b2545; }
   .main-content h2 { font-weight: 600; color: #0b2545; margin-top: 2rem; padding-top: 0.6rem; border-top: 1px solid #eef0f3; }
   .main-content h3, .main-content h4, .main-content h5 { font-weight: 600; color: #0b2545; }
-  .main-content a:not(.btn) { color: #0a56c2; }
+  .main-content a:not(.btn) { color: #0a56c2; white-space: normal; overflow-wrap: anywhere; }
   .main-content a:not(.btn):hover { text-decoration: underline; }
   .main-content strong { color: #0b2545; }
 
@@ -41,6 +41,7 @@
   .main-content code { background: #eef1f4; color: #b5370f; padding: .12em .35em; border-radius: 4px; }
   .main-content pre { background: #f6f8fa; border: 1px solid #e3e6ea; border-radius: 6px; }
   .main-content pre code { background: transparent; color: #24292f; }
+  .main-content :not(pre) > code { overflow-wrap: anywhere; }
   .mermaid { margin: 1.25rem 0; text-align: center; overflow-x: auto; }
   /* The theme's badge class also matches Mermaid labels. Undo it here. */
   .main-content .mermaid .label,

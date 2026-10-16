@@ -69,7 +69,7 @@ For each criterion, mark **independent**, **with guidance**, or **needs review**
 
 Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Maya, SAL, and active true. No Projects sign-in is supplied. What changes?
 
-<details>
+<details markdown="1">
 <summary>Check the changed-condition reasoning</summary>
 
 Creation and the checked account state are now supported, so the uniqueness investigation no longer follows from this packet. Projects sign-in and project permissions remain unverified. Expense success still cannot establish those outcomes for Projects.

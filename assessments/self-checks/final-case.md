@@ -48,7 +48,7 @@ Write a new conclusion for each variation before expanding the reasoning. These 
 
 In A, the mapping preview and app profile now contain FIN, but the target contains SAL. No transmitted operation or response is supplied. Is the original fixed-value cause still demonstrated?
 
-<details>
+<details markdown="1">
 <summary>Compare the reasoning</summary>
 
 No. Request the eligible update, sent value, response, linked target identity, and sequence. Current preview and app-profile values do not prove delivery. The original fixed-SAL mapping defect is no longer supported by this changed packet.
@@ -59,7 +59,7 @@ No. Request the eligible update, sent value, response, linked target identity, a
 
 In B, the authorized owner supplies a current Salesforce exception with matching scope and a defined end condition. Does the contractor rule need to be broadened?
 
-<details>
+<details markdown="1">
 <summary>Compare the reasoning</summary>
 
 No. The normal rule still correctly excludes contractors. The exception explains the separate approved path. Verify its observed access, ownership, and removal condition without rewriting the normal employee classification.
@@ -70,7 +70,7 @@ No. The normal rule still correctly excludes contractors. The exception explains
 
 In D, a supported Projects retry succeeds and a target read confirms active false. Expense has no new evidence. Can the departure ticket close?
 
-<details>
+<details markdown="1">
 <summary>Compare the reasoning</summary>
 
 Only the Projects account-state issue has new confirming evidence. The observed Expense access and any other required paths still need their own resolution and verification. Do not transfer one application's successful correction to another.
@@ -81,7 +81,7 @@ Only the Projects account-state issue has new confirming evidence. The observed 
 
 Replace C1: Daniel has the required enrollment and a valid Okta session, but the applied app rule requires fresh possession proof. A challenge is issued with no accepted response. C2 to C5 have not occurred in this changed attempt. Is the original SAML audience diagnosis established for this attempt?
 
-<details>
+<details markdown="1">
 <summary>Compare the reasoning</summary>
 
 No. The current attempt has not yet satisfied the supplied authentication requirement, and no SAML response or target validation result is supplied. Enrollment and challenge issuance do not establish accepted proof. Investigate challenge delivery, the response, and the correlated result without inventing a password failure or policy defect. After authentication succeeds, obtain the new SAML and application evidence; success at that earlier boundary would not prove that the audience is correct or that Salesforce entry works. Revisit Days 7, 8, and 13 if you carried the original audience finding into this changed attempt.

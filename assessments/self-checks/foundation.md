@@ -74,7 +74,7 @@ Return to Packet B. This time the incoming mapping and preview produce Sales, bu
 
 Write your explanation before expanding the answer.
 
-<details>
+<details markdown="1">
 <summary>Check the changed-condition reasoning</summary>
 
 The current preview no longer demonstrates the constant-value mapping defect. Investigate whether that configuration was applied to the user, the relevant import/update result, and the sequence of subsequent changes. A correct preview is not proof of a corrected stored profile. Keep the correct HR value and intended access rule unchanged while finding the actual discrepancy.
