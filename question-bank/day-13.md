@@ -63,8 +63,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Authentication assurance concerns the confidence supported by the evidence and its characteristics. The application may require a particular method or security property, not merely a general multiple-factor result.</p>
-<p>Identify the actual proof and compare it with the selected requirement. Two successful interactions are not automatically interchangeable with every required factor combination or phishing-resistant method. A useful note names what was accepted and how it meets this application's requirement.</p>
+<p>Ask what evidence the application requires, rather than stop at the phrase 'MFA happened.' Authentication assurance concerns the confidence supported by that evidence and its characteristics. A requirement can specify factor types, acceptable methods or a property such as phishing resistance.</p>
+<p>The note says multiple factors were used, but it does not identify the methods or show they meet this application's requirement. That is the missing comparison.</p>
+<p>Find the actual accepted proof and the rule that applied to this request. Then explain how that proof satisfies the requirement, or which required characteristic remains unestablished. A general success label cannot supply those details.</p>
 </div>
 </details>
 
@@ -80,8 +81,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The cookie helps the browser present session information; Expense decides whether it still accepts that information as an authorized session.</p>
-<p>Obtain a relevant service-side session result or protected-request outcome. Browser storage and server acceptance are different findings. A cookie can remain visible without proving either continuing access or successful termination, so check the receiving service rather than treating stored browser data as a complete access test.</p>
+<p>No. The browser still holding a cookie tells us about stored browser data. It does not tell us what Expense will permit when that session information is presented again.</p>
+<p>Expense makes the acceptance decision. The stored value could remain visible after the service no longer accepts it; this question supplies no request or server-side result to settle that outcome.</p>
+<p>Obtain the relevant session result or a protected-request check for the intended session. Until then, neither continuing access nor successful termination is established by the cookie alone.</p>
 </div>
 </details>
 
@@ -95,8 +97,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maximum lifetime limits overall session duration. An idle limit concerns inactivity as evaluated by the service. Read which session and policy each limit belongs to.</p>
-<p>Neither Okta value establishes Expense's local-session lifetime. Session continuation and a current request's need for renewed authentication are also separate questions. Keeping those boundaries clear prevents an Okta time limit from becoming an unsupported claim about when an application must stop accepting its session.</p>
+<p>Ask two questions about the Okta session. Maximum lifetime asks, 'How long may it last overall?' The idle limit asks, 'Has it been inactive too long?' The service evaluates those conditions under its policy.</p>
+<p>Those limits describe the Okta session. Expense has its own separately defined session behavior, so an Okta time limit does not establish when Expense will stop accepting its local session.</p>
+<p>Keep another question separate too: 'Does this application sign-in request need renewed authentication?' A session can remain valid while the applicable rule asks for newer proof. Locate the setting, session and request before explaining a prompt or expiry.</p>
 </div>
 </details>
 
@@ -189,8 +192,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The existing possession evidence does not meet the selected freshness requirement. Daniel's valid session and acceptable password proof do not supply the missing newer possession proof.</p>
-<p>Eligible enrollment makes an allowed method available, but it is not an accepted response to this challenge. The issued Push request fits the supplied rule. Explain what proof is needed, then inspect its current outcome instead of diagnosing a policy defect merely because another prompt appeared.</p>
+<p>Daniel's Okta session is still valid, and his password evidence remains acceptable. Expense's rule also requires possession proof recent enough for this request. The earlier proof does not meet that freshness requirement, so the new Push challenge fits the supplied rule.</p>
+<p>His enrollment means he has an eligible way to provide the proof. It does not answer the challenge for him, and issuance does not show the current response was accepted.</p>
+<p>Explain the missing result as newer possession proof, then investigate the current interaction if he cannot complete it. There is no need to invent an expired Okta session, missing account or policy-selection defect to explain these facts.</p>
 </div>
 </details>
 
@@ -343,8 +347,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>An event is one recorded occurrence. A transaction groups events within an operation. A session can span several operations over the user's continuing interaction.</p>
-<p>Different event identifiers can therefore belong to the same transaction, and a later transaction can relate to the same session. Use each identifier for its actual job. Do not force the whole browser journey into one transaction or assume different event IDs mean completely unrelated interactions.</p>
+<p>An event is one recorded occurrence. A transaction connects events belonging to an operation. A session supports the user's continuing interaction and can span several operations.</p>
+<p>Picture two event records about one operation: their event IDs differ because they are different occurrences, while a shared transaction ID can connect them. A later operation may have a new transaction ID while still relating to that same user session.</p>
+<p>Use each identifier for that job. Different event IDs do not automatically mean unrelated activity, and a continuing session does not require every record in the browser journey to share one transaction ID.</p>
 </div>
 </details>
 
@@ -435,8 +440,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The same browser can interact with two destinations and present the relevant session information to each. Okta checks K; Expense checks E.</p>
-<p>Each receiving service owns its session decision. Separate labels describe separate relationships, not necessarily separate people or devices. Acceptance or termination at one destination does not supply the other's result, so use the corresponding service evidence when explaining a protected request.</p>
+<p>One browser can send separate requests to two services. When it visits Okta, it presents information for K and Okta decides whether to accept that session. When it visits Expense, it presents information for E and Expense makes its own session decision.</p>
+<p>The separate labels describe those two relationships. They do not imply a second person or device.</p>
+<p>Keep the results separate as well. Okta accepting or ending K does not establish Expense's result for E. The receiving service's evidence explains whether the particular session still supports a protected request.</p>
 </div>
 </details>
 
@@ -527,8 +533,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Not necessarily. A remaining Okta session may provide acceptable evidence for a new application sign-in, leading Expense to establish a different local session.</p>
-<p>Inspect correlated sign-in and session records to distinguish new creation from reuse. The visible prompt count cannot decide between them. A termination test concerns the old session's continuing authority, not simply whether the browser displays a password screen during a later return.</p>
+<p>No. The question already verifies Expense's local logout. Returning without a visible prompt does not overturn that finding or establish that the old session was reused.</p>
+<p>A remaining Okta session may supply acceptable authentication evidence for a new application sign-in. Expense could then create a different local session without asking Daniel to type a password again. That is a possibility to investigate; the new flow and session identifiers have not yet been checked.</p>
+<p>Compare the correlated sign-in records and Expense session identifiers to establish what happened on return. Whether the old session ended and whether Daniel can sign in again are different questions. Prompt visibility alone cannot supply the session history.</p>
 </div>
 </details>
 
@@ -649,8 +656,9 @@ nav_order: 13
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “Your Okta session is still valid. Expense's current rule also needs possession proof recent enough for this request. Your password proof is acceptable, but the earlier device proof does not meet that freshness requirement, so a new Push check is expected.”</p>
-<p>Then explain that enrollment makes the method available while this response still needs acceptance. That identifies the missing proof without claiming his assignment, account, or session disappeared.</p>
+<p>You could say: 'You are still signed in to Okta. Expense also needs a recent check through an allowed possession method. Your password proof is still acceptable, but the earlier device proof is not recent enough for this request, so it is asking for a new Push response.'</p>
+<p>Then explain what remains: 'Your Okta Verify setup makes that method available. We still need the current response to complete and be accepted. If you cannot complete it, we will check what happened to this request.'</p>
+<p>That recognizes Daniel's earlier sign-in and setup while explaining the extra check. It does not tell him his session expired, his account disappeared or the challenge already succeeded.</p>
 </div>
 </details>
 

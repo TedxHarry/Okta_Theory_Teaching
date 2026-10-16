@@ -31,9 +31,9 @@ Enrollment is not an accepted challenge response. An app sign-in policy is not t
 
 ## Keep session lifetime and reauthentication separate
 
-After authentication, a service needs to recognize the person's continuing interaction without starting the same process from the beginning for every request. A **session** lets it do that. In this browser-based example, cookies help the browser present session information to the relevant service. The browser presents information; the receiving service decides whether it still accepts that session. A cookie's presence alone does not prove that the server still accepts it.
+After authentication, a service needs to recognize the person's continuing interaction without starting the same process from the beginning for every request. A **session** lets it do that. In this browser-based example, a **cookie** is a small piece of data the browser stores and sends with the relevant requests. Cookies help it present session information to the service. The service still decides whether to accept that information. Finding a cookie in the browser does not establish that a protected request will succeed.
 
-The global session policy governs the Okta session, including its maximum lifetime and idle limit. A maximum lifetime limits overall duration; an idle limit concerns inactivity as evaluated by that service. Neither should be assumed to equal the lifetime of an application's own session.
+The global session policy governs the Okta session, including its maximum lifetime and idle limit. Ask "How long may this session last overall?" for maximum lifetime, and "Has it been inactive too long?" for the idle limit. The service evaluates those limits for its own session. Neither should be assumed to equal the lifetime of an application's own session.
 
 **Reauthentication** is another authentication check required for an access request. The app sign-in policy can require renewed evidence even while an Okta session remains valid. Existing evidence might also be reusable when it satisfies the applicable requirements. The result depends on the actual rule and context, not a universal “one prompt per session” rule. See [global-session rules](https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/add-okta-sign-on-policy-rule.htm) and [app sign-in rules](https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/add-app-sign-on-policy-rule.htm).
 
@@ -61,11 +61,13 @@ Packet P-1 uses simplified policy intent, not literal Admin Console labels or a 
 | Enrollment | Daniel has an eligible Northbridge Okta Verify enrollment. Push is allowed in this example. |
 | Current result | A Push challenge is issued for the Expense sign-in. No accepted response has yet been recorded. |
 
-**Freshness** asks whether previous authentication is recent enough under the applicable rule. This packet explicitly supplies the evaluation result; the reader does not need to calculate an interval or assume that all factors share one interval.
+**Freshness** asks "Is the earlier proof recent enough for this request?" That differs from asking whether the proof has the required characteristics. Both the kind of evidence and its recency can matter.
+
+In P-1, the supplied evaluation accepts Daniel's password evidence but requires newer possession proof. You do not need to invent an interval or assume all factors share the same one to explain the challenge.
 
 Before calling the prompt a problem, compare the current evidence with the requirement. The password proof is accepted, but the possession proof is not sufficiently fresh. What result should Alex expect at this point?
 
-The challenge is consistent with the stated rule. Daniel's valid Okta session did not make older possession evidence sufficient. His enrollment supplies a possible method, not proof that he completed this challenge. This is renewed proof for the application request, not evidence that his assignment disappeared or that he needs another Expense account.
+The challenge is consistent with the stated rule. "Your Okta session is still accepted" and "Expense needs newer possession proof" can both be true. Daniel's earlier sign-in is not being erased; the current application request has a requirement that the older proof does not meet. His enrollment supplies a possible method, not proof that he completed this challenge. This is renewed proof for the application request, not evidence that his assignment disappeared or that he needs another Expense account.
 
 There is no demonstrated policy defect in P-1. Explain the requirement and investigate the challenge outcome if he cannot complete it: issuance alone does not establish delivery, Daniel's response or acceptance. Removing the requirement just to eliminate a prompt would change the approved access decision rather than explain what happened.
 
@@ -85,7 +87,7 @@ Do not diagnose P-1 using P-3's evidence: P-1 correctly selected its rule. Conve
 
 The **System Log** records Okta-side events. Its outcome belongs to a particular action. An authentication success, session creation, and app SSO outcome answer different questions.
 
-An **event** is one recorded occurrence. A **transaction** groups events belonging to an operation, such as a request to Okta. A user session can span several operations. Two events may therefore have different event identifiers but the same transaction identifier; later operations may use a different transaction while relating to the same session.
+An **event** is one recorded occurrence. A **transaction** groups events belonging to an operation, such as a request to Okta. A user session can span several operations. Imagine two records describing parts of one operation. Each has its own event identifier, while a shared transaction identifier can connect them to that operation. A later operation can have another transaction identifier and still belong to the same Okta session. One session therefore does not require one transaction identifier for its entire lifetime.
 
 Start with the person, application instance, relevant sequence, and observed behavior. Then connect related records using identifiers where available:
 
@@ -149,7 +151,7 @@ Compare the second and third observations before judging the action. Okta refuse
 
 ## Define what signing out must accomplish
 
-**Local logout** ends the application's session under its implementation. It does not automatically establish that Okta or another application's session ended. If an Okta session remains, a later app sign-in may reuse acceptable authentication evidence; a prompt-free return does not necessarily mean the local logout failed.
+**Local logout** ends the application's session under its implementation. It does not automatically establish that Okta or another application's session ended. After local logout, two different questions matter: "Can the old application session still be used?" and "Can Daniel sign in again to create a new one?" If his Okta session remains and supplies acceptable authentication evidence, the new sign-in may need no visible prompt. That would not, by itself, show that Expense reused the old session.
 
 **Single Logout (SLO)** coordinates logout across participating integrations when supported and configured. Its reach depends on those participants; it is not a universal instruction that ends every application session. Do not infer participation, delivery, or successful termination from the name alone. Ask which sessions an action targets and verify each required outcome. See [Okta's SLO support and configuration boundaries](https://help.okta.com/oie/en-us/content/topics/apps/apps_single_logout.htm).
 

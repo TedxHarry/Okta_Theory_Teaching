@@ -16,9 +16,9 @@ Revisit [Give each policy a specific job](../lessons/day-13-policies-and-session
 
 ## 2. Explain the expected challenge
 
-The existing session does not make the older possession evidence fresh enough. The matched rule requires renewed proof, and Daniel has an eligible method. Issuance alone does not show delivery, approval, or accepted authentication.
+Daniel's Okta session remains valid, and his password evidence is acceptable. The missing result is newer possession proof required for Expense. Those facts explain why the system can recognize his continuing Okta session and still ask for another check. Issuance alone does not show delivery, approval, or accepted authentication.
 
-Investigate the selected enrollment, challenge delivery, response, and correlated outcome if completion fails. Do not infer a wrong password, missing enrollment, or policy defect from P-1. Revisit **Follow Daniel's expected challenge**.
+Investigate the selected enrollment, challenge delivery, response, and correlated outcome if completion fails. P-1 already supplies an accepted password result, eligible enrollment and correct rule selection. Keep those findings while investigating the current Push interaction.
 
 **Revisit:** [Follow Daniel's expected challenge](../lessons/day-13-policies-and-sessions.md#follow-daniels-expected-challenge)
 
@@ -34,7 +34,7 @@ The observed order allows the broad rule to match before the intended restrictiv
 
 Entry through the broad rule would not establish compliance with the approved restrictive requirement. Judge the applied rule and accepted proof against the intended design, rather than treating any successful entry as a correct result. P-3 supplies the defect, but no verified corrective follow-up.
 
-This is authentication-rule selection, not profile-source priority. Revisit **Identify the policy that actually applies** and **Contrast a genuine policy-selection problem**.
+This order selects authentication behavior. Profile-source priority instead concerns which source governs data. Changing one does not repair a demonstrated problem in the other.
 
 **Revisit:** [Contrast a genuine policy-selection problem](../lessons/day-13-policies-and-sessions.md#contrast-a-genuine-policy-selection-problem)
 
@@ -42,7 +42,7 @@ This is authentication-rule selection, not profile-source priority. Revisit **Id
 
 A success in another application's transaction does not establish the current Expense outcome. A missing session identifier does not by itself make a record irrelevant; examine actor, targets, transaction, sequence, context, and other available correlation evidence.
 
-Event uuid identifies an individual event. transaction.id connects events in an operation. externalSessionId relates events within an Okta user session, not Expense's local session. A journey can span multiple transactions. Revisit **Build a correlated evidence trail**.
+Use event uuid to identify one occurrence, transaction.id to connect records within an operation, and externalSessionId for the Okta user-session relationship. Later operations in that session can have different transaction identifiers. Expense's local session remains a separate application object; the Okta field does not identify it merely because its name says "external."
 
 **Revisit:** [Build a correlated evidence trail](../lessons/day-13-policies-and-sessions.md#build-a-correlated-evidence-trail)
 
@@ -50,7 +50,7 @@ Event uuid identifies an individual event. transaction.id connects events in an 
 
 The checked Okta session ended successfully, while Expense continued accepting its independently managed local session. The supplied application evidence supports that explanation for this packet. No user deactivation occurred in S-13.
 
-An ID token and the session created after its validation are different objects. Account administrative state is another object again. Neither token expiration nor active false alone demonstrates the result of a subsequent protected request through an existing session. Revisit **Explain why two sessions matter**.
+An ID token and the session created after its validation are different objects. Account administrative state is another object again. To verify termination, check whether the old session can still authorize a protected request. Neither the ID token's expiration nor the account's active-false value supplies that request result by itself.
 
 **Revisit:** [Explain why two sessions matter](../lessons/day-13-policies-and-sessions.md#explain-why-two-sessions-matter)
 
@@ -60,7 +60,7 @@ Okta-session termination is verified. The Expense owner must complete the suppor
 
 Local logout concerns the application's session. SLO coordinates supported participating integrations under their configuration; its scope and results still need evidence. A remaining Okta session can support another app sign-in when applicable requirements are satisfied, so a prompt-free return is not by itself proof of failed local logout.
 
-Jordan's record remains a separate investigation. Daniel's mechanism offers an explanation to investigate, not evidence establishing Jordan's cause. Revisit **Define what signing out must accomplish**.
+Jordan's record remains a separate investigation. Daniel's verified local-session behavior gives the investigator a possibility to check for Jordan. It does not supply Jordan's missing account and session evidence.
 
 **Revisit:** [Define what signing out must accomplish](../lessons/day-13-policies-and-sessions.md#define-what-signing-out-must-accomplish)
 
@@ -68,7 +68,7 @@ Jordan's record remains a separate investigation. Daniel's mechanism offers an e
 
 Replace P-1's freshness finding: the selected rule accepts the existing proof, yet Daniel reports another prompt. Is the original explanation still established?
 
-<details>
+<details markdown="1">
 <summary>Check the reasoning</summary>
 
 No. Determine which service issued the prompt and correlate the actual request, policy evaluation, browser/session context, and application behavior. Another attempt or another requirement may be involved, but neither is supplied. Do not retain the stale-proof diagnosis after its supporting fact changes.

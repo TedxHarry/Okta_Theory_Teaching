@@ -26,7 +26,7 @@ In P-3, a broad matching rule appears above the approved restrictive rule and is
 
 ## 5. Correlate the evidence
 
-An investigator finds a success for Daniel in another transaction and a different application. They also find a current policy event without a usable session identifier. Explain why the first event cannot replace current evidence and why the second should not automatically be discarded. Distinguish event uuid, transaction.id, and externalSessionId.
+An investigator finds a success for Daniel in another transaction and a different application. They also find a current policy event without a usable session identifier. Explain why the first event cannot replace current evidence and why the second should not automatically be discarded. Distinguish event uuid, transaction.id, and externalSessionId. Must every operation within one Okta session have the same transaction identifier?
 
 ## 6. Explain the two sessions
 

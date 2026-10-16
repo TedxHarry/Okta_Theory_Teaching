@@ -14,13 +14,13 @@ When someone is prompted again, do not immediately call it an MFA fault. First a
 
 **Different policy responsibilities.** Enrollment policy governs registration requirements. Global session policy governs the Okta session. App authentication policy governs authentication requirements for access to the app. The app's own permissions still decide which actions the user may perform inside it.
 
-**Assurance and freshness.** Assurance concerns properties of the authentication proof. Freshness concerns how recent that proof is. Having an enrolled authenticator or an existing Okta session does not prove that an application's current requirement is satisfied.
+**Assurance and freshness.** Ask "Does this proof have the required characteristics?" for assurance, and "Is it recent enough for this request?" for freshness. Having an enrolled authenticator or an existing Okta session does not prove that an application's current requirement is satisfied.
 
 **Maximum lifetime and idle timeout.** Maximum lifetime limits the total duration of a session. Idle timeout concerns inactivity. Reauthentication requirements concern when fresh proof is needed. These settings answer different questions.
 
 **Okta session and application session.** Okta and Expense can each maintain their own session. Ending one does not inherently terminate the other. Local logout and configured single logout also have different scope; single logout depends on the supported participating relationships.
 
-**Event, transaction, and session identifiers.** An event describes an occurrence. A transaction connects a particular operation, and session identifiers help relate activity within the relevant system. Do not treat an event ID or Okta session ID as Expense's local session ID.
+**Event, transaction, and session identifiers.** An event describes an occurrence. A transaction groups events for an operation; one continuing session can span several such operations. Session identifiers help relate activity within the relevant system. Do not treat an event ID or Okta session ID as Expense's local session ID.
 
 ## Revisit Daniel's sign-in
 
@@ -34,7 +34,7 @@ In independent P-3, an earlier broad rule matches before the intended restrictiv
 
 S-13 concerns ending sessions, with Daniel's employment and application assignment unchanged; it is not a deactivation packet. It confirms that Okta session `K-13` can no longer be reused, while Expense session `E-LOCAL-13` still receives a new protected response. The app owner's evidence supports the separate local-session explanation in this case. When both checked sessions must end, the Okta outcome is verified but the Expense termination still needs action and a fresh protected-request result.
 
-That explains a possible mechanism for lingering access, but it does not retroactively prove Jordan's exact cause in Day 12. Also, prompt-free re-entry can create a new app session through a still-valid Okta session. Check identifiers and events before declaring logout failed.
+That explains a possible mechanism for lingering access, but it does not retroactively prove Jordan's exact cause in Day 12. Also, prompt-free re-entry can create a new app session through a still-valid Okta session. Distinguish "the old session still works" from "a new session was created." Check session identifiers and the correlated sign-in evidence before deciding which happened.
 
 ## When a request reaches you
 
