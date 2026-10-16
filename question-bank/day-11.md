@@ -95,8 +95,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Import capability lets the integration read records. Profile sourcing determines which configured system governs the relevant profile values. Those are different responsibilities.</p>
-<p>Here Projects can supply account data for a matching investigation while Workday remains the employee profile source. Check the integration's actual sourcing role and attribute settings before predicting ownership changes. The ability to discover an account does not, by itself, appoint that application to control the employee profile.</p>
+<p>No. Reading a Projects account helps Okta discover what exists and compare it with an identity. Giving Projects authority over employee-profile values would be a separate sourcing decision.</p>
+<p>Ask two questions: 'Which account belongs to this person?' and 'Which system governs this person's employee profile?' The import can help answer the first while Workday remains responsible for the second under the supplied design.</p>
+<p>Check the actual integration role and attribute settings before predicting a change in ownership. Import capability alone does not transfer that responsibility to Projects.</p>
 </div>
 </details>
 
@@ -142,8 +143,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It establishes that the supplied values meet the configured comparison. It does not independently verify the person's history or the truth of the account data.</p>
-<p>An incorrectly copied employee number can produce an exact comparison with the wrong identity. Check authoritative identifier information and the ownership evidence required by the organization before accepting the relationship. The comparison is useful, but its quality still depends on the data it receives.</p>
+<p>Here, exact means the two employeeNumber values satisfy the configured comparison. It does not mean the system has independently established who owns the account.</p>
+<p>Suppose a number was copied incorrectly onto another person's record. The comparison could still find equal text and propose the wrong relationship. That is why the accuracy of the input and the required ownership evidence matter. This is an illustration of what could happen, not a copying error established in this question.</p>
+<p>Check the authoritative identifier information and the organization's required account-ownership evidence before accepting the link. Keep the useful comparison result separate from the person-and-account decision it helps inform.</p>
 </div>
 </details>
 
@@ -311,8 +313,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. The same identifier points to two records, so the review's uniqueness condition is not met. Ownership is also unresolved. List order supplies neither missing fact.</p>
-<p>Request account-creation records, the accountable application's ownership evidence, and authoritative identifier history. Those can help distinguish incorrectly copied data from another account situation. Hold the decision until the evidence supports a particular relationship instead of letting an exact comparison choose between ambiguous inputs.</p>
+<p>No. Both records carry NB-1042, so both can satisfy the same equality test. Neither has verified ownership. Choosing whichever appears first would let list order stand in for the evidence the review requires.</p>
+<p>Request account-creation records, the application owner's ownership evidence and authoritative identifier history. These can help explain whether a value was copied incorrectly or there is another account arrangement to resolve. Neither explanation is supplied yet.</p>
+<p>Keep the decision pending. Repeating the comparison on unchanged values would not make one identifier unique or establish an owner. The missing facts must come from the investigation.</p>
 </div>
 </details>
 
@@ -356,8 +359,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. It establishes a missing comparison value. It does not show that no existing Okta identity represents the person.</p>
-<p>Check the account's ownership and the identifier's source and mapping. The field may need correction or completion before a useful comparison can occur. Creating another identity as a shortcut could introduce a duplicate. Keep the missing-data finding separate from a confirmed new-person decision, which needs its own supporting evidence.</p>
+<p>No. The account was discovered, but the field needed for the comparison is empty. That tells us why this comparison cannot identify a match; it does not show that the person lacks an existing Okta identity.</p>
+<p>Find out who owns the account, what authoritative employee number applies, and how that value should reach the imported field. The source, mapping or delivery may need investigation before the comparison can be useful.</p>
+<p>Creating another identity would not fill in those missing facts and could give one person duplicate records. Establish the person and intended relationship before deciding that a new identity is needed.</p>
 </div>
 </details>
 
@@ -403,8 +407,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Ask which exact records will be linked, and whether that integration has a configured profile-sourcing role. Then inspect the applicable source and attribute settings.</p>
-<p>An application association can identify a downstream account without governing the employee profile. An association with an applicable profile source can have different consequences. Understanding both the relationship and the role helps you avoid assuming that every link either transfers ownership or leaves all values untouched.</p>
+<p>First ask, 'Which external record will be connected to which Okta identity?' That establishes the proposed account relationship. Then ask, 'Is this integration configured to govern profile information?' That establishes whether source rules may apply through the link.</p>
+<p>A downstream application account can be linked without becoming the employee profile's source. A record from an applicable configured profile source can have a different effect. The presence of a link alone cannot tell you which situation applies.</p>
+<p>Inspect the integration's source role, applicable priority and attribute settings before predicting changes. The relationship and the authority to govern data are connected decisions, but they answer different questions.</p>
 </div>
 </details>
 
@@ -527,8 +532,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A cursor marks a position in the result sequence. Opaque means the caller uses the service's value without interpreting or constructing it. Follow the supplied next link instead of inventing a replacement position.</p>
-<p>This lets the service control how the next portion is retrieved. Correct pagination still covers only the endpoint and query being used. Completing that sequence does not expand the search to other populations or systems that were never queried.</p>
+<p>Use the next-page link as the service supplied it. The cursor identifies a position in the result sequence; opaque means the caller does not need to understand its internal characters to use it.</p>
+<p>Guessing a page number or constructing a new cursor would replace the continuation the service actually provided. Follow that continuation to obtain the next portion of this result.</p>
+<p>Completing the sequence still covers only the endpoint and query being read. It does not search a different system or an excluded population. Check that scope before describing the result as complete for the investigation.</p>
 </div>
 </details>
 
@@ -572,8 +578,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>This is a failed read, not a successful empty list. Obtain an appropriately authorized read through the responsible administrator before drawing conclusions about the population.</p>
-<p>The supplied investigation establishes the permission cause here. A bare 403 without that finding would require further rejection investigation. In either situation, the failed request does not prove user absence or justify creating a duplicate identity. First establish a successful read with the right scope.</p>
+<p>Report a denied read, not an empty user list. The caller was not allowed to obtain the requested information, so this attempt cannot tell support whether users are present or absent.</p>
+<p>In this question, the investigator has established insufficient read permission as the cause. Request an appropriately authorized read through the responsible administrator, with the right endpoint and population. A bare 403 without that investigation would need its rejection examined before naming the cause.</p>
+<p>Creating another identity would not resolve the missing read evidence. First obtain the successful, appropriately scoped result needed to investigate the existing records.</p>
 </div>
 </details>
 
@@ -651,8 +658,9 @@ nav_order: 11
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “In case A, the checked number and ownership support that candidate, but confirmation is still pending. In case B, the number appears on two accounts and we do not know their owners, so we need more evidence before choosing.”</p>
-<p>Then explain why the name cannot settle either relationship: a wrong link could direct later work at another person's account. The supported proposal and the unresolved investigation are different outcomes, both grounded in the facts supplied.</p>
+<p>You could say: 'The name alone does not tell us which account belongs to Maya. In case A, the employee number, checked uniqueness and ownership evidence support the proposed account. Confirmation is still pending, so we cannot yet say the link is complete.'</p>
+<p>Then explain case B: 'Here the same number appears on two accounts, and their ownership has not been verified. We need that evidence before choosing. The first result in the list is not automatically Maya's account.'</p>
+<p>A wrong link could direct later updates or access decisions at another person's record. Case A supports a proposal awaiting confirmation; case B remains an ownership investigation. Keeping those outcomes separate explains why 'just link the first Maya' cannot resolve either decision properly.</p>
 </div>
 </details>
 

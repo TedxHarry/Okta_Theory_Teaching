@@ -20,7 +20,9 @@ Follow the discovered record, the comparison that proposes a match, and the conf
 
 An account can be visible to an import before Okta has established who it belongs to. An **import** reads records or changes from a connected system into Okta for processing. **Discovery** means the record was found within that operation's scope. **Matching** compares it with existing Okta identities. **Confirmation** accepts the proposed match or new-user outcome through the configured process.
 
-Read the table as different questions about the same record. Finding it answers where the investigation starts. A matching result proposes a relationship. Confirmation accepts the outcome, and an association identifies the linked records. Activation asks about account state. None of those words alone describes a successful application visit.
+Keep one account in view as you read the table. "We found this Projects record" is discovery. "Its data meets the comparison for Maya" is a proposed match. "The proposed outcome was accepted" is confirmation. The resulting association identifies the linked records.
+
+These statements describe progress, but they answer different questions. Alex still needs to check the relevant account state and actual application entry before reporting those outcomes.
 
 | Stage | Question it answers | What it does not establish |
 |---|---|---|
@@ -48,7 +50,7 @@ If an expected AD record is missing, Alex first compares its location with the s
 
 ## A matching rule is a comparison, not a biography
 
-The system compares the information it has; it does not know a person's history merely because two fields agree. An **exact match** means a record meets the configured exact-match criteria. It does not mean the system independently proved the person's real-world identity. A **partial match** is a candidate meeting the configured weaker comparison, such as matching names where identifiers differ.
+Imagine that someone accidentally copies Maya's employee number onto another person's account. The two numbers can agree exactly while the proposed relationship is wrong. The system compares the information it has; it does not independently know the account's history. An **exact match** means a record meets the configured exact-match criteria. It does not mean the system independently proved the person's real-world identity. A **partial match** is a candidate meeting the configured weaker comparison, such as matching names where identifiers differ.
 
 Okta supports [matching on mapped attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-matching-imported-users.htm). The selected criteria and confirmation behavior must be inspected for the specific integration. A business review rule is not automatically a built-in Okta feature.
 
@@ -87,7 +89,7 @@ M-2 adds the outcome M-1 lacked: accepted confirmation and a checked link to the
 
 ## Recognize when the evidence is insufficient
 
-Now examine a different packet M-3: both Projects candidates contain NB-1042, and neither has verified ownership. This replaces M-1's candidate and ownership evidence for the separate scenario. The original review's uniqueness condition is no longer met. An equal value now points to more than one record, so the comparison cannot settle which account belongs in the association.
+Now examine a different packet M-3: both Projects candidates contain NB-1042, and neither has verified ownership. This replaces M-1's candidate and ownership evidence for the separate scenario. The original review's uniqueness condition is no longer met. Both records answer "Does this field equal NB-1042?" with yes. That leaves the important question unanswered: "Which account belongs to Maya?" Choosing the first result would use list order to make an ownership decision.
 
 Do not choose the first result. Request account-creation records, the accountable application owner's evidence, and the authoritative identifier history. If a value was copied incorrectly, correct it through the responsible process before rerunning the comparison. If one person has duplicate accounts, the business owner must decide their intended use and consolidation; a duplicate-looking name alone does not authorize deletion.
 
@@ -95,7 +97,7 @@ A missing employeeNumber is also unresolved. It is not evidence that the person 
 
 ## Association can affect sourcing
 
-The consequence of a link depends on the integration it belongs to. An application-account association and an applicable profile-source association are related concepts, but not interchangeable. The integration's source settings matter. Ask both “Which records are linked?” and “Does this connection have a configured sourcing role?” before predicting which values may change.
+The consequence of a link depends on the integration it belongs to. An application-account association and an applicable profile-source association are related concepts, but not interchangeable. The integration's source settings matter. Ask both “Which records are linked?” and “Does this connection have a configured sourcing role?” before predicting which values may change. A link can tell Okta "this is Maya's Projects account" without telling it "let Projects govern Maya's employee profile." The source configuration determines that separate responsibility.
 
 Recall Northbridge's order: Workday above AD. Maya already has both associations; matching a Projects account does not move Projects into that order. Department inherits Workday ownership, while her designated AD-owned email remains a field-level exception.
 
@@ -138,7 +140,7 @@ Selected fields from that page's two user objects are:
 ]
 ```
 
-Read the status and Link header alongside the two objects. This read succeeded, but the next link says the returned page is not the whole result. Priya is not shown. That does not establish her absence. A **cursor** marks a position in the result sequence. It is **opaque**, meaning the caller uses the service's value without interpreting or constructing it. Follow the supplied next link rather than inventing a page number. Completing the pages still needs the right query and endpoint scope before a completeness claim. See [Okta API pagination](https://developer.okta.com/docs/reference/core-okta-api/#pagination).
+Read the status and Link header alongside the two objects. This read succeeded, but the next link says the returned page is not the whole result. Priya is not shown. That does not establish her absence. The `rel="next"` label tells Alex there is another portion to read. A **cursor** marks a position in that result sequence. **Opaque** means Alex does not need to work out what the cursor's characters mean. He follows the service's supplied next link, including its cursor, rather than calculating a page number or building a new value. Completing the pages still needs the right query and endpoint scope before a completeness claim. See [Okta API pagination](https://developer.okta.com/docs/reference/core-okta-api/#pagination).
 
 This reads Okta users; it is not Projects' SCIM list response and does not enumerate Projects accounts. This JSON excerpt does not supply association evidence.
 

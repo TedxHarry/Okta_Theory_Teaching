@@ -20,7 +20,7 @@ In M-1, Projects candidate A has NB-1042 and verified ownership by Maya. Candida
 
 ## 3. Handle conflicting identifiers
 
-In M-3, both candidates contain NB-1042, and ownership is unknown. Why does the exact comparison not settle the decision? Name evidence needed before linking, creating, or consolidating records.
+In M-3, both candidates contain NB-1042, and ownership is unknown. Why does the exact comparison not settle the decision? Would repeating the comparison on these unchanged values resolve ownership? Name evidence needed before linking, creating, or consolidating records.
 
 ## 4. Explain a missing result
 

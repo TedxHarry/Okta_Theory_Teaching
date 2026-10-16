@@ -14,13 +14,13 @@ Finding a record that looks like Maya is the start of a decision. Before connect
 
 **Confirmation and association.** Confirmation accepts the proposed relationship through the applicable process. The resulting association links the records. Account activation and successful sign-in remain separate outcomes.
 
-**Identifiers.** A field such as employee number can be useful for matching, but an exact comparison only proves that the values agree. Duplicated, reused, or incorrect identifiers still need investigation. A missing match does not automatically mean a new person or account should be created.
+**Identifiers.** A field such as employee number can be useful for matching, but an exact comparison only proves that the values agree. A number copied onto the wrong account can agree exactly with the intended person's number while proposing the wrong relationship. Duplicated, reused, or incorrect identifiers still need investigation. A missing match does not automatically mean a new person or account should be created.
 
-**Import direction and profile ownership.** Reading records from an application does not automatically make it a profile source. Projects remains a downstream account-management target in Northbridge's design, even when the lesson's configured inbound discovery reads its records.
+**Import direction and profile ownership.** Reading records from an application does not automatically make it a profile source. Projects remains a downstream account-management target in Northbridge's design, even when the lesson's configured inbound discovery reads its records. "Which account belongs to Maya?" and "Which system governs her employee profile?" are separate questions.
 
 **Reconciliation.** Reconciliation compares expected identities and account states with what you actually find. Equal totals are not enough. One hundred discovered accounts might still contain the wrong people or incorrect access states.
 
-**Pagination.** An API can return only part of a collection. Follow the supplied next-page link to continue the read. A person absent from page one is not proven absent from the complete result. A denied read, such as `403`, is also not an empty collection.
+**Pagination.** An API can return only part of a collection. Follow the supplied next-page link to continue the read. Its opaque cursor is a service-supplied position value to use as provided, rather than a page number to calculate. A person absent from page one is not proven absent from the complete result. A denied read, such as `403`, is also not an empty collection.
 
 ## Work through Maya's candidates
 
