@@ -66,9 +66,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. User authentication and service-connection authorization are separate checks. The connector uses its own configured access to request account-management work.</p>
-<p>Inspect that connection and the specific operation's result. A token issued for another application's sign-in is not automatically its credential either.</p>
-<p>The completed MFA remains a success, but it cannot provide a receiver response for a backend request nobody has verified.</p>
+<p>Maya has completed a check about her own identity. The connector needs a different result: permission to perform the account-management operation at Projects through its configured service connection.</p>
+<p>Those are separate exchanges. Her MFA result does not show that Projects accepted the connector's authorization or created an account. Inspect the actual connection and operation result rather than repeat her sign-in checks to explain a backend failure.</p>
+<p>No connector result is supplied here, so keep its outcome unknown. A token issued for a different application's sign-in is not automatically a credential for this service connection either.</p>
 </div>
 </details>
 
@@ -132,9 +132,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Compare the prepared FIN value with the actual enterprise department field in the sent request. The app profile's name and wire location differ under this agreement.</p>
-<p>A correct app-profile value is not proof the request placed it correctly or sent it at all. Read the message and receiving result.</p>
-<p>This connects preparation to transmission. Inspect both value and location instead of assuming equal business meaning guarantees the correct structure.</p>
+<p>Look for FIN in the enterprise extension's department field in the actual request. That is the destination field named by this integration's contract. The prepared app-profile field is called departmentCode, so copying its name into another location would not establish the required wire representation.</p>
+<p>There are two questions: 'What value did Okta prepare?' and 'What value and structure did the connector send?' The first is supplied; the second still needs the request.</p>
+<p>Then inspect the receiving result and intended target record. Correct preparation cannot establish transmission, acceptance or stored state by itself.</p>
 </div>
 </details>
 
@@ -148,9 +148,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It names the data definition used for the enterprise extension. It is not a sign-in page or request destination for the employee.</p>
-<p>Find the nested object and read its department field without memorizing the entire identifier. The HTTP resource address is a separate value used by the account operation.</p>
-<p>Keep structure and destination apart. A long string can identify a vocabulary rather than a place to browse.</p>
+<p>The long identifier names the enterprise extension's data definition. It tells the reader which defined set of attributes is being used; it is not a page the employee needs to open.</p>
+<p>In the schemas list, it declares that the resource uses that extension. When the same identifier appears as a field name, the nested object beneath it holds the enterprise attributes, including department. Find that object and read the department value; you do not need to memorize the whole identifier.</p>
+<p>The request's destination address is separate. One value identifies the structure of the data, while the HTTP address identifies where the account-management request goes.</p>
 </div>
 </details>
 
@@ -262,9 +262,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. UserName is the application account name; the provider's id identifies the resource for later operations. The other systems' identifiers serve different purposes.</p>
-<p>A verified association connects the correct records. Similar text cannot create that relationship or authorize substitution.</p>
-<p>Use the established target id when updating the linked resource. That preserves the intended account while its information changes.</p>
+<p>Give the two Projects identifiers different jobs. UserName is the account name, which must be unique within the stated instance. The provider-assigned id identifies the resource the connector should address for later operations.</p>
+<p>An Okta object ID, email address or employee number has its own meaning. Even when two values look alike, you cannot substitute one for another without the established association between the records.</p>
+<p>For an update, follow the verified link to the intended Projects resource and use its target ID. That keeps the change attached to the known account instead of selecting a different record by a familiar-looking value.</p>
 </div>
 </details>
 
@@ -328,9 +328,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>That is a possible explanation, not a supplied fact. A lookup problem or visibility difference is another possibility.</p>
-<p>Inspect the exact search and response, correct instance, and correlated sequence, with relevant account history. Preserve both observations while resolving their disagreement.</p>
-<p>A plausible story cannot replace the missing operations. The conflict and the earlier no-match are useful findings even before their precise cause is established.</p>
+<p>It could have happened that way, but the two results do not prove it. Someone else might have created the account after the search. The search might also have missed a record that was already there.</p>
+<p>Compare the exact lookup and response, the Projects instance queried, and the timing and sequence of operations. Relevant account history can help distinguish those possibilities. Keep both observations while their explanation remains unresolved.</p>
+<p>The conflict also leaves ownership unknown. Even if you establish why the search and create disagreed, you still need to establish whose account it is before deciding whether to associate it with Maya.</p>
 </div>
 </details>
 
@@ -410,9 +410,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The outgoing conversion supplies the full name where this application's contract requires FIN. That mapping does not meet the stated value requirement.</p>
-<p>Preserve Finance in the correct business source. Repair its prepared and transmitted representation, then verify the new response and intended target record.</p>
-<p>The request, detailed rejection, and contract establish this specific defect together. It is not evidence that the employee belongs to Sales or needs another account.</p>
+<p>Daniel's approved department is Finance. Projects requires that same department expressed as FIN in its enterprise department field. The outgoing mapping currently passes the full name, so the representation sent to Projects violates this application's accepted-value rule.</p>
+<p>Preserve Finance in the correct business source and repair the conversion. Making Daniel a Sales employee just to obtain an accepted value would change the business fact rather than express it correctly.</p>
+<p>After the change, verify the stored app profile, actual request, new response and intended target record. The supplied rejection establishes this defect; it does not supply a successful correction or retest.</p>
 </div>
 </details>
 
@@ -492,9 +492,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>PUT replacement follows the full supported representation contract. PATCH describes particular changes according to its operation structure.</p>
-<p>A one-field body is not automatically a safe full replacement preserving all omitted fields. Inspect what the service expects and how the connector uses it.</p>
-<p>The method name is helpful only with its semantics and content. Correcting one attribute should not silently change others because replacement was misunderstood.</p>
+<p>Read PUT as replacing the resource's writable information under the service's supported rules. Read PATCH as applying the changes described in its operation structure.</p>
+<p>The difference matters when only one attribute needs correction. A small PUT body does not automatically mean 'change this field and leave everything else alone.' Omitted writable fields can be cleared or defaulted according to the service's rules. A PATCH describes selected changes, but still needs the required structure and supported behavior.</p>
+<p>Inspect the actual connector contract and full intended representation before judging either request. Knowing the correct department value is only part of understanding whether the operation preserves the rest of the intended account information.</p>
 </div>
 </details>
 
@@ -574,9 +574,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. A 204 is a success response without content. Missing body and missing response are different observations.</p>
-<p>Interpret it with the intended operation, then inspect the linked target record for its required state. The response reports success while the read checks the destination.</p>
-<p>Do not infer an error simply because there is nothing to decode. The relevant account and access results still need their own scoped verification.</p>
+<p>Projects has answered. HTTP 204 reports success and deliberately has no response body, so there is no returned resource document to read in this response.</p>
+<p>That differs from a timeout where no result reaches the caller. An empty successful response and an unknown operation result are different findings; the absence of JSON does not make them equivalent.</p>
+<p>Next, read the linked account to check the required state. This question supplies no later read, so report the successful operation response without inventing the stored-account or existing-session outcome.</p>
 </div>
 </details>
 
@@ -672,9 +672,9 @@ nav_order: 10
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No response is not proof that no account was created. A retry could encounter an existing record or complicate the intended association.</p>
-<p>Inspect the target and relevant operation evidence to establish what happened before deciding the supported next step.</p>
-<p>This differs from an explicit rejected create. An unanswered request and a returned refusal support different conclusions and should not be treated as the same finding.</p>
+<p>The connector knows it sent a create request, but the timeout does not establish what Projects did with it. The account might have been created even though the response did not reach the caller. It might also not have been created; the supplied evidence leaves that open.</p>
+<p>Check the intended destination and operation evidence before submitting another create. If a record exists, establish its identity and association rather than assume it belongs to the person just because the user name looks familiar.</p>
+<p>This is different from receiving an explicit rejection. With a timeout, the missing result is the reason to investigate before choosing the next operation. Another create could encounter an existing account and make the history harder to resolve.</p>
 </div>
 </details>
 

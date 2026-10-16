@@ -47,7 +47,9 @@ Start with the user name, department and target-identifier rows. Projects requir
 
 The department codes are Projects requirements, not universal SCIM rules. The enterprise extension is a standard place for organizational attributes; this application's accepted values are its own contract. A long schema identifier names the data definition. It is not an address to visit.
 
-**Wire representation** means the fields and values actually sent in the request. Here the app profile calls the field `departmentCode`, while the request calls it `department` inside the enterprise extension. Compare both the value and its named location; a correct app-profile value alone is not proof of a correct request.
+**Wire representation** means the fields and values actually sent in the request. Here the app profile calls the field `departmentCode`, while the request calls it `department` inside the enterprise extension. Think of two views: "What has Okta prepared for Projects?" and "What did the connector actually send to Projects?"
+
+For Daniel's Finance department, the intended outgoing value is FIN. To check transmission, Alex must find FIN in the request's enterprise `department` field, not just in the app profile. The value and its location both matter.
 
 Create and ordinary profile updates use POST and PUT in this example. The chosen connector uses PATCH for deactivation. Actual Okta integrations differ: custom integrations created through the App Integration Wizard use PUT for user updates, including deactivation. Read the relevant connector contract rather than assuming every update is PATCH. See [Okta's SCIM operations reference](https://developer.okta.com/docs/api/openapi/okta-scim/guides/scim-20).
 
@@ -57,7 +59,7 @@ Before creating an account, the connector asks Projects whether an account with 
 
 Start with a successful teaching example C-1. It is separate from the later failure packets. Maya is still a Sales employee. Her approved assignment and Projects app profile are present; the preceding username lookup found no matching account.
 
-The request goes to `/scim/v2/Users` using POST. Its content type is `application/scim+json`. Below is the complete illustrative resource body for this small contract; transport and authorization headers are omitted. This is synthetic evidence to read, not a command to execute.
+The request goes to `/scim/v2/Users` using POST. Its content type is `application/scim+json`, a label telling the receiver that the body uses SCIM's JSON representation. Below is the complete illustrative resource body for this small contract; transport and authorization headers are omitted. This is synthetic evidence to read, not a command to execute.
 
 ```json
 {
@@ -75,7 +77,7 @@ The request goes to `/scim/v2/Users` using POST. Its content type is `applicatio
 
 Read the familiar information inside the structure before studying its longer names: Maya's user name, the requested active state, and Sales represented as SAL. This is what Okta asks Projects to create; the request alone cannot tell Alex whether Projects did so. No `id` is supplied because Projects assigns it.
 
-The `schemas` list names the definitions used by this resource. The long enterprise identifier appears again as a field name whose nested object holds `department`. You need to locate that object and read SAL; you do not need to memorize the identifier. The JSON Boolean `true` requests an enabled target state under the stated contract; it is not the same field as an Okta user's account status.
+The `schemas` list names the definitions used by this resource. The long enterprise identifier appears again as a field name whose nested object holds `department`. You need to locate that object and read SAL; you do not need to memorize the identifier. The JSON Boolean `true` is a true-or-false value, written without quotation marks. Here it requests an enabled Projects account under the stated contract. It does not describe the separate Okta user's account status.
 
 Projects returns HTTP **201 Created**, content type `application/scim+json`, and a Location header pointing to `https://projects.northbridge.example/scim/v2/Users/prj-1042`. Its response body is:
 
@@ -106,7 +108,9 @@ Alex can now report more than “Maya is assigned.” For C-1, Projects created 
 
 Here `Location` identifies the created resource; the `201` response is not Day 2's `302` browser redirect. A later read is a separate GET request for that resource. Interpret the header with its response status and operation. See [SCIM resource creation](https://www.rfc-editor.org/rfc/rfc7644.html#section-3.3).
 
-SCIM's `id` is the provider's resource identifier. It is not interchangeable with a person's email, Okta object ID, or employee number. A connector association connects the appropriate records; similar-looking identifiers do not create that relationship by themselves. See [SCIM's core schema](https://www.rfc-editor.org/rfc/rfc7643.html).
+Keep two questions apart: "What is this account's user name?" and "Which Projects record are we managing?" `userName` answers the first. Projects' assigned `id`, prj-1042 in C-1, identifies the resource used for later operations.
+
+That target ID is not interchangeable with Maya's email, Okta object ID, or employee number. The connector's association connects the appropriate records. Similar-looking identifiers do not establish that relationship by themselves. See [SCIM's core schema](https://www.rfc-editor.org/rfc/rfc7643.html).
 
 ## A conflict requires an ownership decision
 
@@ -125,7 +129,7 @@ Maya is assigned, and a create request with her expected user name reaches Proje
 
 Pause before choosing a retry. Projects says the user name is already in use. What would Alex need to know before deciding whether the existing account should be associated with Maya?
 
-The response establishes a reported uniqueness conflict, not who owns the conflicting record. It also does not establish why the earlier lookup and later create result differ. Another process creating the account between requests is one hypothesis; a lookup problem is another. The apparent disagreement between the two results is something to investigate, not evidence that the existing account can safely be removed.
+The response establishes a reported uniqueness conflict, not who owns the conflicting record. It also does not establish why the earlier lookup and later create result differ. Another process might have created the account after the lookup. Or the lookup might have missed an existing record. These are possible explanations, not findings supplied by C-2. Compare the exact search, receiving instance and operation sequence before choosing between them. Neither possibility establishes who owns the account or justifies removing it.
 
 Alex requests the existing record's identifier, ownership evidence, the exact lookup and response, and the correlated operation sequence. The record evidence addresses whose account it is. The lookup and sequence address why the create encountered something the lookup did not find. He should not delete the existing record, invent a different username, or link it to Maya solely to clear the error. Those actions could make the error disappear while leaving the identity relationship wrong.
 
@@ -162,7 +166,7 @@ The current mapping does not meet the stated contract. Correct the approved conv
 
 A profile update addresses the linked existing resource, such as `/Users/prj-1020` for Daniel in a separate successful correction example. PUT replaces the resource's writable representation according to the contract; PATCH describes selected changes. A one-field body must not be treated casually as a complete PUT replacement.
 
-The distinction matters because omitted writable fields in a PUT can be cleared or given defaults under the service's rules. Sending only the corrected department is therefore not automatically an instruction to preserve every other field. Read the supported replacement contract; see [SCIM replacement behavior](https://www.rfc-editor.org/rfc/rfc7644.html#section-3.5.1).
+Read PUT as "replace this resource's writable information using the supported representation" and PATCH as "apply these specified changes." If Alex supplies only department in a PUT, he cannot assume every omitted writable field will stay as it was. Those fields can be cleared or given defaults under the service's rules. The right value in one field does not make an incomplete replacement appropriate. Read the supported replacement contract; see [SCIM replacement behavior](https://www.rfc-editor.org/rfc/rfc7644.html#section-3.5.1).
 
 In that correction example, the connector sends a complete supported PUT representation containing FIN for Daniel's enterprise department. Projects returns success, and a subsequent read of prj-1020 confirms FIN. The identifier keeps the operation tied to the known account while its information changes. This is an update to a known account, not evidence of a newly created user. It is a separate successful correction example, not a supplied retest result for C-3.
 
@@ -187,7 +191,7 @@ Use a hypothetical approved removal of Maya's Projects access, independent of he
 
 Read the PATCH as a selected change to the linked account: replace its active value with false. The request asks for that change; it does not yet establish the result.
 
-Projects returns HTTP **204 No Content**: success without a response body. An empty body here is expected, rather than evidence that Projects failed to answer. A subsequent read confirms `active: false` and that the account record still exists. Under the stated Projects contract, the account is disabled for new access. This is not deletion of its history or proof that every existing session has ended. For Maya's access removal, Alex can report the checked account state and keep the existing-session question open.
+Projects returns HTTP **204 No Content**: success without a response body. Projects has answered: the status reports success, and this response type has no body to read. That is different from a timeout, where Alex received no result and does not yet know what happened. A subsequent read confirms `active: false` and that the account record still exists. Under the stated Projects contract, the account is disabled for new access. This is not deletion of its history or proof that every existing session has ended. For Maya's access removal, Alex can report the checked account state and keep the existing-session question open.
 
 SCIM defines deletion, but Okta's documented outbound SCIM user deprovisioning sets active to false rather than issuing DELETE. Supported and enabled behavior matters. Do not assume that removing a group membership always generated this operation: another assignment path may remain.
 

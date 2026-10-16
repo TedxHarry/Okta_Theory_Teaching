@@ -32,7 +32,7 @@ The connector addresses Daniel's linked prj-1020 resource with a supported full 
 
 ## 6. Explain deactivation
 
-An approved hypothetical removal generates active false. Projects returns 204; a later read shows the retained resource with active false. Explain the empty response, account outcome, and remaining session question. Would one removed group membership alone establish this chain?
+An approved hypothetical removal generates active false. Projects returns 204; a later read shows the retained resource with active false. Explain the empty response, how it differs from receiving no result after a timeout, the account outcome, and the remaining session question. Would one removed group membership alone establish this chain?
 
 ## 7. Distinguish the connections
 

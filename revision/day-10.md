@@ -16,9 +16,9 @@ SCIM helps answer “what happened to the application account?” Keep that ques
 
 **Service authorization.** The connector needs its own configured authority to call Projects. The user's MFA result or an Expense ID token is not a substitute for that service authorization.
 
-**Create and target ID.** A create request uses `POST` in the example. The `201` response, resource body, and `Location` identify the newly created resource. Projects assigns its resource ID, such as `prj-1042`. That ID is important for later operations on the same account. A `Location` header here is not a browser redirect.
+**Create and target ID.** A create request uses `POST` in the example. The `201` response, resource body, and `Location` identify the newly created resource. Projects assigns its resource ID, such as `prj-1042`. The user name tells you the account name; the target ID identifies which Projects record later operations concern. It is not interchangeable with the Okta object ID or employee number. A `Location` header here is not a browser redirect.
 
-**PUT and PATCH.** PUT replaces writable resource data according to the supported semantics; omitted writable fields can be cleared or defaulted. PATCH changes selected information. Read the actual connector behavior instead of assuming every Okta connection uses the example's deactivation method.
+**PUT and PATCH.** PUT asks to replace writable resource information under the service's rules. PATCH describes selected changes. A PUT containing only department does not automatically mean "change department and preserve everything else"; omitted writable fields can be cleared or defaulted. Read the actual connector behavior instead of assuming every Okta connection uses the example's deactivation method.
 
 **Deactivation.** Setting `active` to false disables access according to the target's supported behavior while retaining the account. It is different from deletion. It also does not, by itself, establish that every existing session ended.
 
@@ -30,7 +30,7 @@ The independent C-2 packet's `409` uniqueness conflict means the requested usern
 
 Independent C-3 concerns Daniel. Its `400` response identifies an invalid department value: the request sends `Finance` where Projects expects `FIN`. Fix the transformation rather than changing the authoritative business department. C-3 does not supply a successful retest. The lesson's separate PUT example verifies FIN in the linked prj-1020 resource, but is not evidence that C-3 was corrected.
 
-For deactivation, the example's `204` response has no body. A later read showing `active: false` verifies the retained resource's state. Keep session termination as a separate check. Also, removing one assignment path may leave another, so it need not produce deactivation at all.
+For deactivation, the example's `204` response reports success and has no body. This is different from a timeout with no operation result received. A later read showing `active: false` verifies the retained resource's state. Keep session termination as a separate check. Also, removing one assignment path may leave another, so it need not produce deactivation at all.
 
 ## When a request reaches you
 
