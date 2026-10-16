@@ -12,7 +12,7 @@ Attempt the [exercises](../exercises/day-08.md) first. Use the specified connect
 
 Okta is the IdP and Salesforce the SP. The browser carries the browser-based messages. The SP's authentication request asks for authentication; the response returns protocol information containing the assertion in this successful-response flow. The assertion describes the user and authentication under conditions the SP must check.
 
-Salesforce receives SAML information, not Maya's AD password. Any earlier delegated password validation is separate. Revisit **Request, response, and assertion** if those objects became synonyms.
+Salesforce receives SAML information, not Maya's AD password. Any earlier delegated password validation is separate. In ordinary terms, the request asks for authentication, the response carries the reply, and the assertion inside it supplies statements Salesforce must evaluate.
 
 **Revisit:** [Follow the browser](../lessons/day-08-saml.md#follow-the-browser)
 
@@ -20,7 +20,7 @@ Salesforce receives SAML information, not Maya's AD password. Any earlier delega
 
 The ACS is the receiving endpoint. Audience identifies the SP for which the assertion is intended. A response can arrive at the correct endpoint with an unacceptable audience inside it.
 
-Delivery therefore does not establish valid content. Revisit **The two sides need agreed configuration**.
+Ask two separate questions: "Did the response reach the receiving address?" and "Does the assertion name the service allowed to use it?" The first can be yes while the second is no. That is why reaching the ACS cannot prove the audience is acceptable.
 
 **Revisit:** [The two sides need agreed configuration](../lessons/day-08-saml.md#the-two-sides-need-agreed-configuration)
 
@@ -38,7 +38,7 @@ The assertion has the wrong audience for the checked production connection, and 
 
 Then collect a new assertion and application result for the same intended user and instance. Confirm the production audience, accepted validation, and entry into the intended account. Check application permissions separately as needed. Review the intended production integration and the users who share it before changing its setting; do not apply a test connection's value to production simply because the labels look similar. The initial S-1 packet establishes the defect, not a completed correction.
 
-Changing the correct username affects a different field. Disabling validation would remove a required check instead of correcting the mismatch. Revisit **Establish the audience defect**.
+Maya's username already matches the intended account. Changing that field would not correct the audience sent for this connection. Disabling audience validation would let the wrong value escape the check. Neither action makes the emitted audience agree with the approved production connection.
 
 **Revisit:** [Establish the audience defect](../lessons/day-08-saml.md#establish-the-audience-defect)
 
@@ -54,7 +54,7 @@ Revisit [A different NameID calls for a different investigation](../lessons/day-
 
 A signature does not encrypt the message, and the presence of a Signature element does not prove it verifies. The recipient needs trusted signing information and successful verification of the required signed content.
 
-Even a valid signature does not settle whether the assertion is intended for this SP, is currently usable, belongs to the expected request where applicable, or maps to the correct account. Revisit **What the application must validate**.
+A successful signature check would establish something useful about the signed content under the trusted key. It would still leave the audience, validity, expected request relationship where applicable, and account match to check. "The signature verifies" and "this application can accept the sign-in" answer different questions.
 
 **Revisit:** [What the application must validate](../lessons/day-08-saml.md#what-the-application-must-validate)
 

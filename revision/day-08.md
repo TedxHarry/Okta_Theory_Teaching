@@ -12,15 +12,15 @@ With SAML, Salesforce does not simply take Okta's word for it because a message 
 
 **Identity provider and service provider.** Okta is the identity provider, or IdP, in this example. Salesforce is the service provider, or SP. The browser carries messages between them. The flow does not send Maya's AD password to Salesforce.
 
-**Assertion.** A SAML assertion contains statements about the subject and authentication. It travels within the response in the lesson's flow. Reading its XML lets you inspect supplied information; reading it is not the same as validating it.
+**Assertion.** A SAML assertion contains statements about the subject, meaning the person identified in this example, and authentication. It travels within the response in the lesson's flow. Reading its XML lets you inspect supplied information; reading it is not the same as validating it.
 
 **ACS URL.** The Assertion Consumer Service address is the endpoint that receives the SAML response. An endpoint is an address for a particular operation. Sending the response to an address and naming its intended audience are separate matters.
 
-**Entity ID, audience, and NameID.** An Entity ID identifies a SAML party. The audience identifies the intended recipient of the assertion. NameID identifies the subject for the application's configured matching approach. Do not confuse an application identifier with a user's identifier.
+**Entity ID, audience, and NameID.** An Entity ID identifies a SAML party. The audience identifies the intended recipient of the assertion. NameID identifies the subject for the application's configured matching approach. Ask "where is it delivered?" for ACS, "which service may use it?" for audience, and "which user is described?" for NameID.
 
 **Metadata and signing certificates.** Metadata describes connection information. A trusted signing certificate helps the recipient verify the signature. A signature supports integrity and authenticity checks; it is not encryption. The mere presence of a signature element proves neither successful verification nor confidentiality.
 
-**Validation.** The recipient checks the relevant issuer, signature and trusted key, audience, destination, validity, request relationship, replay protections, and user identification. A correct NameID does not cancel a failed audience check.
+**Validation.** The recipient checks the relevant issuer, signature and trusted key, audience, destination, validity, request relationship, replay protections, and user identification. Request correlation ties a response to the expected request where required. Replay checks prevent improper reuse of previously issued information. A correct NameID does not cancel a failed audience check.
 
 ## Walk through the flow and the failure
 

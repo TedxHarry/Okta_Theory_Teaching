@@ -37,7 +37,9 @@ When Salesforce starts the flow, it can issue an **authentication request**, oft
 
 The IdP returns a **SAML response**. A successful response in this flow contains an **assertion**: statements about the user and authentication, with conditions governing their use.
 
-Keep the three objects connected to their jobs. Salesforce's request asks for authentication. Okta's response is the enclosing reply, and the assertion inside the successful response carries statements Salesforce will evaluate. A protocol-level success status does not require Salesforce to accept an assertion that fails its checks. The reply and the application's decision about that reply remain separate.
+In everyday language, Salesforce asks Okta, "Please authenticate the person trying to enter." That is the request. Okta sends its reply as the response. Inside the successful response, the assertion supplies the identity and authentication statements Salesforce must evaluate. These are related parts of the exchange, not three names for the same message.
+
+Even a response with a success status can carry an assertion Salesforce must reject. Okta has supplied its reply; Salesforce still has to decide whether the information meets this connection's requirements.
 
 Think of the assertion as answering questions such as:
 
@@ -66,7 +68,7 @@ sequenceDiagram
   Note over S: 6. Validate, match account, decide access
 ```
 
-Follow the numbered steps from top to bottom. Maya's browser first asks Salesforce for access, then carries Salesforce's request to Okta. After the applicable checks, Okta supplies a response for the browser to deliver to Salesforce. In this example, that last delivery uses an HTTP POST. In this HTTP POST example, Okta can provide a web page containing an HTML form with the encoded response in a hidden field named **SAMLResponse**. The browser submits the form to Salesforce's ACS, often automatically. Maya normally does not see or manually enter the message. The XML used later in this lesson is a readable excerpt for study, rather than a screen Maya must fill in.
+Follow the numbered steps from top to bottom. Maya's browser first asks Salesforce for access, then carries Salesforce's request to Okta. After the applicable checks, Okta supplies a response for the browser to deliver to Salesforce. For that last HTTP POST delivery, Okta can provide a web page containing an HTML form with the encoded response in a hidden field named **SAMLResponse**. The browser submits the form to Salesforce's ACS, often automatically. Maya normally does not see or manually enter the message. The XML used later in this lesson is a readable excerpt for study, rather than a screen Maya must fill in.
 
 The application's **Assertion Consumer Service**, or **ACS**, is the receiving service for that response. Its configured **endpoint** is an address for that operation. Reaching the ACS establishes where the browser delivered the response; Salesforce still needs to validate what arrived. Recall Day 2: POST describes a message operation, not automatic account creation.
 
@@ -82,7 +84,9 @@ An **entity ID** identifies a SAML participant. Even when it looks like a web ad
 
 Keep destination and identity separate. The ACS URL tells the browser where to deliver the response. The SP entity ID identifies the intended application. A response can arrive at the right address while the assertion names a different intended application. That is the distinction Alex needs to investigate Maya's rejection.
 
-**Audience** answers “which service may use this assertion?” **NameID** identifies the user described by it, under the connection's chosen matching rule. These answer different questions from the ACS URL's “where is the response delivered?”
+**Audience** answers “which service may use this assertion?” **NameID** answers “which user does it describe?” under the connection's chosen matching rule. The **ACS URL** answers “where is the response delivered?”
+
+For Maya, reaching Salesforce's receiving address does not establish that the assertion names the production Salesforce connection. Naming that connection correctly would still leave another question: does the user identifier match Maya's intended account? Each value has its own job.
 
 Northbridge uses these fictional teaching values for its production Salesforce connection. They are not real Salesforce endpoint formats to copy:
 
@@ -145,6 +149,8 @@ A **digital signature** lets the recipient verify the signed data against truste
 Signing and encryption have different purposes. Signing supports checking the origin and integrity of the signed content. Encryption protects content from being read without the required decryption key. A signed message can therefore still be readable. Even successful signature verification does not settle whether the signed assertion names the right audience or meets its validity conditions.
 
 Likewise, displaying or decoding an assertion is not validating it. The shortened excerpt cannot establish signature or time checks. Those require the full relevant message and validation evidence. Clock differences can matter when investigating a validity rejection, but an expiry label alone does not prove which clock or setting is wrong.
+
+**Request correlation** means connecting the response to the request that started this attempt, where the flow requires that connection. **Replay** means presenting previously issued information again; replay checks prevent improper reuse. A signed assertion from an earlier exchange is not automatically acceptable for a new one.
 
 Each row answers a different acceptance question. A valid signature does not replace the audience check, and an acceptable audience does not replace account matching. The table groups these checks by purpose; it does not prescribe a universal order in which every application performs them.
 

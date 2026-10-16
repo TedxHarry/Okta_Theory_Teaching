@@ -68,9 +68,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The AuthnRequest asks the identity provider to authenticate under the connection's requirements. The response is the enclosing reply. The assertion inside it carries statements about the user and authentication, with conditions on use.</p>
-<p>Those objects are related, not interchangeable. A request is not the proof it asks for, and the enclosing reply is not identical to its contents.</p>
-<p>Salesforce still validates what arrives before using the identity information.</p>
+<p>Start with what Salesforce needs: authentication information about the person trying to enter. Its authentication request asks Okta to provide that information under the connection's requirements.</p>
+<p>Okta sends a SAML response as its reply. In this successful-response flow, the response contains an assertion with statements about the user and authentication, together with conditions on their use.</p>
+<p>The request asks, the response replies, and the assertion supplies statements for Salesforce to check. Receiving a successful reply does not finish Salesforce's work. It still needs to validate the information and identify the intended application account.</p>
 </div>
 </details>
 
@@ -134,9 +134,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The browser submits the form to the application's configured receiving service, often automatically. Maya normally does not manually enter the assertion.</p>
-<p>SAMLResponse is the field carrying the encoded message in this example. Readable XML used for inspection is the message content, not a user form to fill in.</p>
-<p>Form submission establishes a delivery operation to investigate. Salesforce's validation result still determines whether that information is accepted.</p>
+<p>Maya normally does not type the SAML response. In this example, Okta provides a web page with a form. A hidden field named SAMLResponse holds the response, and the browser submits the form to the application's receiving address using HTTP POST, often automatically.</p>
+<p>That explains how information travels back even though Maya does not fill in a visible message box. The browser carries the response; it does not decide whether the application should trust it.</p>
+<p>The application must still validate what arrives and match the user. A completed form submission establishes delivery, not successful validation, account creation, or permission to perform every action.</p>
 </div>
 </details>
 
@@ -248,9 +248,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Issuer names the issuing party. Audience names the intended service. ACS is the receiving service and its address. NameID supplies the user identifier interpreted under the connection's matching rule.</p>
-<p>Each field answers a different question. A correct user value cannot compensate for the wrong intended application.</p>
-<p>Compare the actual message with the approved settings field by field. That locates a discrepancy without changing unrelated correct information.</p>
+<p>Give each value one question to answer. Issuer asks, 'Who issued this information?' Audience asks, 'Which service may use this assertion?' ACS asks, 'Where is the response delivered?' NameID asks, 'Which user does it describe under this connection's matching rule?'</p>
+<p>For a company application, the receiving address, application identifier and user identifier serve different purposes even if some look like web or email addresses. Their appearance does not make them interchangeable.</p>
+<p>Compare each observed value with the corresponding approved setting. A correct user identifier cannot fix an assertion intended for another service, and a correct delivery address cannot establish the user match.</p>
 </div>
 </details>
 
@@ -264,9 +264,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Yes. The receiving address and intended audience are different concepts. Arrival at production does not automatically make the assertion appropriate for production.</p>
-<p>Compare the actual audience with the intended connection and obtain the application's validation report to establish its result.</p>
-<p>Keep correct delivery and the visible mismatch together. One successful boundary does not replace another requirement, and the mismatch alone does not supply every other validation outcome.</p>
+<p>Yes, those facts can occur together. The browser can deliver the response to production's ACS while the assertion inside names the test service as its audience.</p>
+<p>The address answers where the response went. The audience answers which service may use the assertion. Reaching the right address does not rewrite the value inside it or make that value acceptable.</p>
+<p>Compare the audience actually sent with production's expected audience, then inspect the application's validation report for this attempt. That report is needed to establish whether the mismatch caused this rejection; successful delivery alone cannot settle it.</p>
 </div>
 </details>
 
@@ -396,9 +396,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The private key creates the signature. The certificate supplies public-key information the recipient uses for verification under its trusted configuration.</p>
-<p>Neither is the user's password. Seeing a certificate also does not prove the application trusts the active key or verified a particular message.</p>
-<p>Check the active signing choice, receiving trust, and actual result. These are connection properties rather than another credential entered by the person signing in.</p>
+<p>The private signing key is a cryptographic secret used to create the digital signature. The signing certificate supplies corresponding public-key information that the application can use to verify the required signed content.</p>
+<p>This is a different job from checking a user's password. The application checks the SAML signature using its trusted signing configuration; it does not need the user's AD password to perform that check.</p>
+<p>The important result is successful verification under the intended trust configuration. Merely finding a certificate or signature element does not establish that result, and generating a certificate does not automatically make the application trust it.</p>
 </div>
 </details>
 
@@ -460,9 +460,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>They connect the message to the relevant interaction and help prevent improper replay, use of proof again where that reuse is not permitted.</p>
-<p>A plausible name alone cannot establish those relationships. Inspect the actual request, response, and applicable validation evidence.</p>
-<p>The details depend on the supported flow. Do not assume a universal validation order or borrow a response from another attempt to replace the current result.</p>
+<p>The response needs to fit this sign-in attempt, not merely look like a valid message from somewhere in the past. Where required, request correlation connects it to the authentication request the application expects.</p>
+<p>Replay means presenting previously issued information again. Replay checks prevent improper reuse. Otherwise, someone could try to reuse earlier signed information instead of completing the exchange required now. A valid signature alone does not establish that this reuse is acceptable.</p>
+<p>Check the request relationship, applicable validity conditions and replay result for the actual flow. An IdP-initiated launch starts differently, so do not invent a preceding SP request when that flow does not have one.</p>
 </div>
 </details>
 
@@ -576,9 +576,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Follow the NameID-producing mapping and linked target record under the chosen username rule. The presented identifier differs from the approved one.</p>
-<p>Inspect the actual emitted value as well as intended configuration. A correct formula alone would not prove what this attempt delivered.</p>
-<p>Do not change the accepted audience to fix a user-matching discrepancy. The current evidence locates the next investigation at identity representation and association.</p>
+<p>Follow the matching rule stated in this question: NameID must match the approved application username. The supplied NameID is outdated, and the application reports no matching user. The audience and required validation checks have already passed.</p>
+<p>That places the next investigation at user identification. Compare the NameID actually delivered with the approved username and linked application record, then trace the mapping that supplied it. Changing the audience would address a check that already passed.</p>
+<p>Resolve which existing account this sign-in should identify before considering account creation. Another account could leave the incorrect identifier in place and add confusion about which record belongs to the person.</p>
 </div>
 </details>
 
@@ -724,9 +724,9 @@ nav_order: 8
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could say: “You completed the identity-service checks, and your Salesforce account is present. Salesforce still had to inspect the message it received. That message named the test connection where production was expected, so the application rejected it.”</p>
-<p>Then add: “We need to correct the responsible value and check a fresh attempt for the expected audience, application acceptance, and your intended account.”</p>
-<p>That explains the boundary without claiming the proposed repair has already worked.</p>
+<p>You could tell Maya: 'You completed the Okta checks, but Salesforce also checks the information it receives. For the attempt we reviewed, that information named the test Salesforce connection even though you were entering production. Salesforce rejected that mismatch. Your intended account exists and is active.'</p>
+<p>Then explain what happens next: 'We need to correct the connection value responsible for that mismatch, after checking who shares the setting. A fresh sign-in must then show the production audience and successful entry into your intended account before we call the correction verified.'</p>
+<p>This explains the known failure without blaming Maya's password or promising a repair that has not yet been tested. Any permissions needed after entry remain a separate application question.</p>
 </div>
 </details>
 

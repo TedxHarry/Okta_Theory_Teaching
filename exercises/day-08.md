@@ -40,7 +40,7 @@ Does the username difference establish a matching defect? What additional eviden
 
 A colleague can read an assertion and sees a Signature element. They conclude it is encrypted and trustworthy.
 
-Explain both unsupported conclusions. Why do trusted signing configuration and actual verification matter? Would successful signature verification alone settle audience, validity, and account matching?
+Explain separately what being able to read the assertion shows and what seeing a Signature element shows. Why do trusted signing configuration and actual verification matter? Would successful signature verification alone settle audience, validity, and account matching?
 
 ## 7. Describe the limit of success
 
