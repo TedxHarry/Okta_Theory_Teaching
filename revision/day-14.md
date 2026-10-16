@@ -10,7 +10,7 @@ Before turning “give Finance access” into a group rule, make the request pre
 
 ## The concepts to keep with you
 
-**Requirement and design.** A requirement states the approved outcome. A design explains how the system will deliver it. “Finance employees may submit expenses” is an outcome; a rule combining department and worker type is one part of its implementation.
+**Requirement and design.** A requirement states the approved outcome. A design explains how the system will deliver it. “Finance employees may submit expenses” is an outcome; a rule combining department and worker type is one part of its implementation. Correct group membership alone does not establish the submission capability inside Expense.
 
 **Business approval and technical authority.** The person authorized to approve access is not necessarily the administrator authorized to configure it. A sponsor's approval does not grant the sponsor an Okta administrative role, and an administrator's technical ability does not supply missing business approval.
 
@@ -20,7 +20,7 @@ Before turning “give Finance access” into a group rule, make the request pre
 
 **Acceptance evidence.** Check an eligible user, an ineligible user, and a change that should end access. One successful sign-in tests only part of the requirement. Existing direct assignments and application permissions can leave unintended access in place.
 
-**Rollback.** Restoring configuration does not necessarily undo created accounts, changed permissions, or active sessions. Identify those effects separately when planning a correction.
+**Rollback.** Restoring configuration does not necessarily undo created accounts, changed permissions, or active sessions. Ask whether the configuration is correct again and whether its unintended effects have ended. Those need separate evidence.
 
 ## Make the Expense request concrete
 
@@ -34,7 +34,7 @@ Test both sides of the eligibility condition: a Finance contractor without an ex
 
 ## Keep recovery deliberate
 
-For Priya's lost-phone situation, verify the caller through the approved process, use an authorized recovery action, and confirm enrollment and sign-in afterward. Access approval alone does not establish the caller's identity. A password reset also does not repair an unrelated protocol mismatch. Administrative recovery needs a protected route of its own.
+For Priya's lost-phone situation, verify the caller through the approved process, use an authorized recovery action, and confirm enrollment and sign-in afterward. “Priya may have access” and “this caller is Priya” are different findings. The approved exception supplies the first; the recovery process must establish the second. A password reset also does not repair an unrelated protocol mismatch. Administrative recovery needs a protected route of its own.
 
 ## When a request reaches you
 

@@ -18,7 +18,7 @@ Revisit [Turn the request into observable outcomes](../lessons/day-14-requiremen
 
 Maya qualifies for the normal Finance path but does not gain approval permission merely from department. Daniel uses that path and has separately approved application authority. Priya does not meet the employee condition; an exception requires its own supplied approval and maintenance. Jordan's departure requires access removal regardless of retained attributes or memberships. R-14 does not supply Priya's exception approval. The separate lost-phone scenario supplies approval for that scenario; do not carry it backward as proof that the proposed R-14 exception was decided.
 
-The group rule handles only the stated population comparison. Effective lifecycle processing, exceptions, app assignment, target readiness, business roles, and sessions require their own controls and evidence. Revisit **Translate the requirement without changing its meaning**.
+The group rule answers which records meet the normal population condition. It does not, by itself, establish what the user can do inside Expense. Effective lifecycle processing, exceptions, app assignment, target readiness, business roles, and sessions require their own controls and evidence.
 
 **Revisit:** [Use the owner's answers](../lessons/day-14-requirements-and-responsibilities.md#use-the-owners-answers)
 
@@ -26,7 +26,7 @@ The group rule handles only the stated population comparison. Effective lifecycl
 
 The old individual assignment survives a different path's removal. Establish whether it has a current approved exception, inspect other paths, and apply the actual removal requirement. Do not falsify the employee's governed department to make the assignment look consistent.
 
-Verify the assignment result and the application's supported account, role, and session outcomes. Expense provisioning automation has not been established in R-14; coordinate with its owner rather than assuming SCIM. Revisit **Make verification part of the requirement**.
+Verify the assignment result and the application's supported account, role, and session outcomes. R-14 assigns target-account handling to the Expense owner and supplies no provisioning automation. Follow that agreed process; Projects' SCIM behavior cannot supply Expense's missing operation or result.
 
 **Revisit:** [Translate the requirement without changing its meaning](../lessons/day-14-requirements-and-responsibilities.md#translate-the-requirement-without-changing-its-meaning)
 
@@ -50,9 +50,9 @@ Revisit [Plan recovery from an incorrect change](../lessons/day-14-requirements-
 
 ## 6. Reason about account recovery
 
-Access approval does not verify that the caller is Priya. Establish the correct account and requester through the approved identity-verification process, identify the unavailable enrollment, and confirm the administrator's authorized scope. Follow the supported recovery route and verify replacement enrollment and a permitted sign-in afterward.
+Access approval says Priya may receive the business capability. It does not establish that the person asking for a reset is Priya. Establish the correct account and requester through the approved identity-verification process, identify the unavailable enrollment, and confirm the administrator's authorized scope. Follow the supported recovery route and verify replacement enrollment and a permitted sign-in afterward.
 
-A reset cancels selected enrollment; it is not itself recovered access. Extra permissions neither establish identity nor repair the lost authenticator. If compromise is suspected, involve the incident process and investigate relevant sessions. Revisit **Account recovery is a different problem**.
+A reset cancels selected enrollment; it is not itself recovered access. Extra permissions neither establish identity nor repair the lost authenticator. If compromise is suspected, involve the incident process and investigate relevant sessions. Restoring enrollment and resolving possible exposure are separate outcomes.
 
 **Revisit:** [Account recovery is a different problem](../lessons/day-14-requirements-and-responsibilities.md#account-recovery-is-a-different-problem)
 
@@ -68,7 +68,7 @@ Revisit [Recognize Microsoft 365's separate responsibilities](../lessons/day-14-
 
 The Expense owner later confirms a supported automated provisioning connection. Does the original access requirement need to become “all Finance users are approvers”?
 
-<details>
+<details markdown="1">
 <summary>Check the reasoning</summary>
 
 No. A new implementation capability does not change the approved permission model. Evaluate its mapping, matching, operations, and removal behavior against the same requirements, and replace the manual account-management step only when the new design and its outcomes are established. Approval permission remains a separate business decision.

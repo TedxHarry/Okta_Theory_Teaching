@@ -14,7 +14,9 @@ First establish the owner's decisions, then translate them into a proposed acces
 
 ## Turn the request into observable outcomes
 
-A **requirement** states the intended outcome and constraints. A **design** describes how the systems will achieve it. “Use a group rule” is a design choice; “eligible Finance employees can submit their own expenses” is an outcome.
+A **requirement** states the intended outcome and constraints. A **design** describes how the systems will achieve it. “Eligible Finance employees can submit their own expenses” tells Alex what must be possible. “Use a group rule” proposes part of how to deliver it.
+
+The rule could select the right people while Expense still lacks the intended account or submission permission. That is why Alex needs both an approved outcome and a design that reaches it inside the application.
 
 Alex needs answers to these questions:
 
@@ -49,7 +51,7 @@ The owner has also confirmed the current people: Maya is now Finance, Daniel is 
 
 Alex proposes an Okta-managed group, `NB-Finance-Employees`, populated by the condition department equals Finance AND workerType equals Employee. That is the normal assignment population. The approved employee lifecycle process handles effective starts and departures; these two attributes alone are not a complete employment-state control.
 
-Expense would be assigned to that group. Contractor exceptions would use a separately maintained assignment path, such as a dedicated exception group, backed by approved records. The group's name does not enforce approval or automatically expire membership. An owner must arrange and verify the removal at the exception's end condition.
+Expense would be assigned to that group. Contractor exceptions would use a separately maintained assignment path, such as a dedicated exception group, backed by approved records. The group's name does not enforce approval or automatically expire membership. An end date records when access should end; it does not perform the removal. The named owner must arrange the supported action and verify the relevant assignment and target outcomes when that condition is reached.
 
 Trace the proposal from governed attributes to group membership and then to the Expense assignment. The application owner still handles the intended account and local business role. The group selects a normal population; it does not implement every outcome in the approved list.
 
@@ -72,7 +74,7 @@ Reconcile existing assignments before applying the model. An old direct Expense 
 
 The Finance owner decides who may approve expenses. An Okta administrator's ability to assign an application does not grant authority to invent that business decision. Likewise, Daniel's Expense approver role does not make him an Okta administrator.
 
-**Least privilege** means granting the administrative permissions and scope needed for a defined responsibility, rather than broad authority for convenience. A standard role is a starting point to compare with the task, not a substitute for checking its permissions and limits.
+**Least privilege** means granting the administrative permissions and scope needed for a defined responsibility, rather than broad authority for convenience. Ask "Which action must this operator perform, and on which resources?" Then compare that responsibility with the role's actual permissions and limits. A familiar role name alone cannot answer either question.
 
 Here, **scope** means which resources or users the permission covers. Permission to manage Expense does not imply permission to manage Projects. A shared policy can affect both, so the administrator's authority must cover the actual change and its resource scope. For an App Admin to manage an app sign-in policy, that administrator must be allowed to manage every application assigned to the policy. If Expense and Projects share a policy but Alex can manage only Expense, that App Admin scope is insufficient to manage the shared policy. Check the policy's complete application list before choosing the operator.
 
@@ -109,9 +111,11 @@ These are positive, negative, and change cases: who should succeed, who should n
 
 ## Plan recovery from an incorrect change
 
-Suppose a proposed rule mistakenly uses Finance OR Employee. Before choosing a recovery action, compare that condition with the intended Finance AND Employee population. An employee outside Finance could qualify through Employee alone. Alex must assess the affected population, application assignments, and target consequences before deciding how to recover.
+Suppose a proposed rule mistakenly uses Finance OR Employee. Before choosing a recovery action, compare that condition with the intended Finance AND Employee population. A Sales employee with no other approved path meets Employee alone. A Finance contractor without an exception meets Finance alone. OR would include each in the normal population; AND would exclude both. An eligible Finance employee meets both and would qualify either way, so testing only that person would miss the mistake.
 
-A **rollback** restores an earlier configuration. It does not automatically reverse every effect already produced. Restoring AND repairs the population condition, but Alex must still identify what happened while the broader condition applied. It would not prove that extra target accounts, application roles, or sessions had been removed. Configuration recovery and access cleanup are separate results to verify.
+The condition shows who could qualify. Alex still needs the actual membership, assignment and target history to establish what happened before deciding how to recover.
+
+A **rollback** restores an earlier configuration. It does not automatically reverse every effect already produced. Restoring AND repairs the population condition, but Alex must still identify what happened while the broader condition applied. It would not prove that extra target accounts, application roles, or sessions had been removed. Ask "Is the rule correct again?" separately from "Has the unintended access ended?" The first can be yes while assignments, application roles or sessions still need cleanup.
 
 A useful change-recovery record names the prior approved configuration, the point at which further changes should stop, the affected identities, responsible owners, corrective operations, and the evidence needed afterward. Preserve legitimate access while removing unintended access. Do not delete all accounts created during a change without establishing which are incorrect and what records must be retained.
 
@@ -121,7 +125,7 @@ Administrative recovery also needs a protected, approved way for authorized staf
 
 In a separate support scenario, Priya has replaced her phone and cannot use her old Okta Verify enrollment. Her approved Expense exception is confirmed for this scenario, but authentication recovery remains unresolved.
 
-Here the business access decision is already supplied for this independent scenario. The remaining question is whether the requester is the person whose authentication enrollment will be changed. The help desk must identify the correct account, verify the requester through Northbridge's approved process, and determine which authenticator is unavailable. Knowing a name or obtaining a sponsor's access approval is not by itself proof that the caller controls Priya's identity.
+Here the business access decision is already supplied for this independent scenario. The remaining question is whether the requester is the person whose authentication enrollment will be changed. The help desk must identify the correct account, verify the requester through Northbridge's approved process, and determine which authenticator is unavailable. The sponsor's approval answers "May Priya have this access?" Requester verification answers "Is this caller Priya?" Knowing her name or presenting the access approval cannot substitute for that separate check.
 
 An authorized authenticator reset cancels the selected enrollment and requires setup again; it does not prove successful re-enrollment or application entry. See [Okta's reset behavior](https://help.okta.com/oie/en-us/content/topics/security/mfa/mfa-reset-users.htm). Recovery should preserve the intended authentication requirements and verify the replacement enrollment and a subsequent permitted sign-in. If loss may involve compromise, account and session investigation follows the incident process as well.
 

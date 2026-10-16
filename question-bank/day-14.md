@@ -18,8 +18,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The outcome describes what eligible people should be able to do. The group rule proposes a way to implement part of that outcome. A requirement states the outcome and constraints; a design explains how systems will deliver them.</p>
-<p>A group can select an assignment population without establishing submission permission inside Expense. Agree on the intended capability first, then trace the design through the required relationships and application evidence.</p>
+<p>The owner has described what eligible employees must be able to do: submit their own expenses in the named application. The group rule proposes a way to select people for an assignment path. Those are related, but they are not the same result.</p>
+<p>The rule could select the intended population while Expense still lacks the correct account or submission permission. A group membership report would not establish that the employee can complete the business task.</p>
+<p>Agree on the outcome first, then trace how the proposed design reaches it: governed eligibility, membership, assignment, intended account and actual submission capability. The application result is what makes the requirement observable.</p>
 </div>
 </details>
 
@@ -125,8 +126,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Obtain the documented sponsor and Expense-owner approval, scope, end condition, and maintenance responsibility. The group can implement an assignment relationship, but its name does not create approval or remove membership automatically.</p>
-<p>Follow the approved path to the intended account and business capability, then verify removal when the condition ends. A first successful entry is one result; it does not establish the whole exception lifecycle.</p>
+<p>Start with the individual decision: the sponsor and Expense owner must approve this contractor's defined access, with its scope and end condition. Name who maintains that decision and arranges removal when it ends.</p>
+<p>The proposed exception group can carry an assignment path. It cannot supply missing approval merely by having 'approved' in its name, and it does not automatically act on an end date without a configured process.</p>
+<p>Verify the intended account and business capability, then the required removal outcomes when the exception ends. A successful first entry is useful evidence for that moment; it does not establish that the exception will end as agreed.</p>
 </div>
 </details>
 
@@ -217,8 +219,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. A label describes intent; it does not enforce the decision record or execute removal. Inspect actual approval and the responsible maintenance process.</p>
-<p>An owner must arrange and verify the end-condition action, including the relevant application relationship. The group can help implement the model, but its name cannot supply missing governance or results. Treat labels as ways to find objects, rather than evidence that all their promised behavior occurs.</p>
+<p>No. Read the name as a description of intent, not a completed approval or a running removal process. It tells you what someone meant the group to represent.</p>
+<p>Check the actual approval records and the process responsible for end conditions. An expiry date can record when access should end without causing any membership or target-account action.</p>
+<p>Name who will arrange the supported removal and who will verify the result. The group's label cannot establish either responsibility was carried out, so it is not evidence that every member is approved or will leave on time.</p>
 </div>
 </details>
 
@@ -264,8 +267,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Technical ability to assign an application does not authorize inventing the business approval decision. Likewise, an Expense approver role does not make Daniel an Okta administrator.</p>
-<p>Identify the approved capability and an appropriately authorized operator for implementation. The two responsibilities can cooperate without becoming interchangeable. Naming both prevents a configuration permission from being mistaken for business authority, or a business role from granting administrative control.</p>
+<p>Ask two separate questions: 'Who may decide that this person should approve expenses?' and 'Who is technically authorized to configure the required change?'</p>
+<p>The Finance owner holds the business decision in this scenario. An Okta administrator's ability to assign Expense does not supply that approval. Daniel's right to approve expenses inside the application likewise does not give him Okta administrative authority.</p>
+<p>Connect the approved capability to an operator with the required permissions and scope, and involve the application owner for its local role. These people can work together while retaining their different responsibilities.</p>
 </div>
 </details>
 
@@ -386,8 +390,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The requirement deliberately separates submission from approval. Positive entry and submission tests do not establish that an unapproved capability is absent.</p>
-<p>Verify the permission boundary inside Expense, rather than inferring it from the group rule. This negative case tests a meaningful part of the model: intended capability should be present and unapproved capability should not be supplied. Both findings are needed to evaluate the stated outcome.</p>
+<p>Maya's successful submission proves a capability she should have. It does not establish the absence of a different capability she should not have: approving another person's expense without approval.</p>
+<p>That is the purpose of this negative case. Verify inside Expense that the unapproved action is unavailable under her actual permissions. The group rule and login result cannot supply that application permission finding.</p>
+<p>The intended outcome has both sides: Maya can submit, and she does not receive unapproved approver authority. Testing only what should succeed would leave the second part unchecked.</p>
 </div>
 </details>
 
@@ -448,8 +453,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>OR allows either condition to qualify the person. An employee outside Finance could match through Employee alone, and a Finance person could match without Employee. AND requires both.</p>
-<p>Assess the population, resulting assignments, and target consequences before choosing recovery actions. The logic demonstrates a broader condition, but it does not tell us which operations actually occurred. Obtain that history instead of assuming every possible unintended account was created.</p>
+<p>AND requires both Finance and Employee. OR lets either condition qualify the person. A Sales employee could therefore match through Employee alone, while a Finance contractor could match through Finance alone.</p>
+<p>An eligible Finance employee satisfies both conditions and would qualify under either version. That person's positive test would not reveal the error; the people meeting only one condition make the difference visible.</p>
+<p>The logic shows broader possible eligibility, but the question supplies no actual effect history. Inspect which memberships, assignments and target operations occurred before choosing cleanup. Do not turn every possible consequence into a claimed account-creation result.</p>
 </div>
 </details>
 
@@ -463,8 +469,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Rollback restores the earlier configuration. Effects already produced need their own investigation and corrective operations.</p>
-<p>Identify the users and paths that actually changed, involve the appropriate owners, and verify cleanup afterward. The rule can be correct again while unintended access remains. Report configuration recovery and access cleanup separately so a restored condition is not mistaken for every target outcome.</p>
+<p>No. Restoring AND answers 'Is the population condition correct again?' It does not answer 'What happened while OR was in use, and has unintended access ended?'</p>
+<p>Inspect the identities and assignment paths that actually changed, together with any target accounts, roles and sessions affected. The right rule can be restored while some of those consequences remain.</p>
+<p>Involve the relevant owners, preserve legitimate access and verify the corrective outcomes. Report configuration recovery and access cleanup separately until the evidence supports both.</p>
 </div>
 </details>
 
@@ -540,8 +547,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The exception approves a business capability for Priya. It does not prove that the current requester is Priya or controls the correct identity.</p>
-<p>Use the approved verification process before changing enrollment. The access approver and the recovery operator have different responsibilities. Preserve the access decision while verifying the caller: the facts are related, but one cannot replace the other at this authentication boundary.</p>
+<p>The exception answers 'May Priya have this business access?' It does not answer 'Is the person asking for help actually Priya?' A caller can know the name or present an access approval without that establishing their identity.</p>
+<p>Before changing the enrollment used to prove identity, follow the approved requester-verification process and establish the correct account. The operator also needs authority for that recovery action.</p>
+<p>Keep the supplied access approval while resolving the separate verification question. Neither needs to be invented or replaced by the other; both belong to a justified recovery outcome.</p>
 </div>
 </details>
 
@@ -555,8 +563,9 @@ nav_order: 14
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The reset cancels the selected enrollment and requires setup again. It does not establish successful replacement registration or application entry.</p>
-<p>Preserve the intended authentication requirements and verify the new enrollment and permitted sign-in. Obtain application evidence when entry is part of the recovery goal. The completed administrative action is progress, but it is different from the restored user outcome that the acceptance checks must demonstrate.</p>
+<p>The reset cancels the selected unavailable enrollment and makes setup necessary again. It does not register the replacement device for the user or establish a successful application visit.</p>
+<p>There are still two results to verify: the intended replacement enrollment and a subsequent sign-in that satisfies the approved authentication requirements. Obtain the application result when entry is part of the recovery goal.</p>
+<p>Report the reset as the completed administrative action. Restored setup and permitted use need their own evidence before you describe recovery as complete.</p>
 </div>
 </details>
 

@@ -32,7 +32,7 @@ A mistaken Finance OR Employee rule grants unintended assignments. Describe posi
 
 ## 6. Reason about account recovery
 
-Priya reports an unavailable old phone. Her access exception is approved, but the caller's identity and replacement enrollment are unverified. Does the approval justify an immediate authenticator reset? Explain the necessary identity, authority, recovery, and outcome checks. Would extra app permissions fix the issue?
+Priya reports an unavailable old phone. Her access exception is approved, but the caller's identity and replacement enrollment are unverified. Does the approval justify an immediate authenticator reset? State the separate questions answered by access approval and requester verification, then explain the necessary authority, recovery and outcome checks. Would extra app permissions fix the issue?
 
 ## 7. Compare Microsoft 365
 
