@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 11,
+  "questions": [
+    {
+      "id": "L11-Q01",
+      "topic": "Discovery versus association",
+      "prompt": "An import discovers an application account. What remains separate?",
+      "correctId": "9228443258",
+      "options": [
+        {
+          "id": "9228443258",
+          "text": "Matching and confirming its association to the intended identity",
+          "explanation": "Discovery alone does not prove ownership or approved linkage."
+        },
+        {
+          "id": "76d6a74364",
+          "text": "Whether the account appeared in discovery",
+          "explanation": "That limited observation is already supplied."
+        },
+        {
+          "id": "d752f802a1",
+          "text": "Whether every user must be newly created",
+          "explanation": "An import can encounter existing records."
+        },
+        {
+          "id": "826b429c11",
+          "text": "Whether the imported data performs browser authentication",
+          "explanation": "Import and sign-in are different operations."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q02",
+      "topic": "Scope",
+      "prompt": "Before interpreting an import's results, what should be established?",
+      "correctId": "dfbb7e55f4",
+      "options": [
+        {
+          "id": "dfbb7e55f4",
+          "text": "The connector, direction, included population and operation scope",
+          "explanation": "A count is meaningful only for the actual population and operation."
+        },
+        {
+          "id": "ebb2317fd0",
+          "text": "Only the import's friendly display name",
+          "explanation": "A label does not describe all filters and relationships."
+        },
+        {
+          "id": "ba7c2b8274",
+          "text": "Only whether another integration succeeded",
+          "explanation": "A different connector has a different scope."
+        },
+        {
+          "id": "bb5f97cdf7",
+          "text": "Assume every source record is always included",
+          "explanation": "Filters and configured boundaries can limit discovery."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q03",
+      "topic": "Matching rules",
+      "prompt": "Two records share an email string. What is needed before linking them?",
+      "correctId": "2a675920a5",
+      "options": [
+        {
+          "id": "2a675920a5",
+          "text": "The approved matching rule, uniqueness and sufficient ownership evidence",
+          "explanation": "A matching-looking string is not a complete identity biography."
+        },
+        {
+          "id": "08f64867ef",
+          "text": "Always merge records based on that string alone",
+          "explanation": "Mutable or reused values can be ambiguous."
+        },
+        {
+          "id": "2f0f1145ba",
+          "text": "Pick the record with more permissions",
+          "explanation": "Privilege is not identity proof."
+        },
+        {
+          "id": "d6ff8d5b3c",
+          "text": "Assume duplicate names imply duplicate people",
+          "explanation": "Several records can legitimately describe one person."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q04",
+      "topic": "Existing accounts",
+      "prompt": "An application already has the intended user's account before onboarding. What should the integration consider?",
+      "correctId": "6d74229b45",
+      "options": [
+        {
+          "id": "6d74229b45",
+          "text": "A supported and verified match to the existing resource",
+          "explanation": "Do not assume every assignment needs a new target account."
+        },
+        {
+          "id": "fcce4eb453",
+          "text": "Create a duplicate before inspecting the existing account",
+          "explanation": "That can add ambiguity and unnecessary resources."
+        },
+        {
+          "id": "0bd9a0ef3b",
+          "text": "Delete the old account without an ownership review",
+          "explanation": "An existing record may hold legitimate data and access."
+        },
+        {
+          "id": "42410db86d",
+          "text": "Treat account existence as proof all permissions match",
+          "explanation": "The target's actual state still needs checking."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q05",
+      "topic": "Ambiguity",
+      "prompt": "An import matches two existing identities under the proposed criteria. What is appropriate?",
+      "correctId": "8479875bd1",
+      "options": [
+        {
+          "id": "8479875bd1",
+          "text": "Stop the automatic link and resolve the ambiguity through the approved process",
+          "explanation": "Arbitrary selection risks associating the wrong person and account."
+        },
+        {
+          "id": "bcfeab2363",
+          "text": "Choose the first result by default",
+          "explanation": "Result order is not ownership evidence."
+        },
+        {
+          "id": "c29078416e",
+          "text": "Choose the identity with the newer display name",
+          "explanation": "Recency of a label does not establish the correct match."
+        },
+        {
+          "id": "653381b0d8",
+          "text": "Create a third identity automatically",
+          "explanation": "Another record does not resolve the existing ownership question."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q06",
+      "topic": "Sourcing effects",
+      "prompt": "Why inspect sourcing consequences before confirming an imported association?",
+      "correctId": "f00c814a60",
+      "options": [
+        {
+          "id": "f00c814a60",
+          "text": "The supported association may affect which system maintains certain data",
+          "explanation": "Linking records can have consequences beyond displaying them together."
+        },
+        {
+          "id": "9367a0ee95",
+          "text": "A match can never affect ownership or lifecycle",
+          "explanation": "That depends on the integration's supported behavior."
+        },
+        {
+          "id": "3c6f423d53",
+          "text": "The importing source always owns every attribute automatically",
+          "explanation": "Attribute ownership must be verified rather than generalized."
+        },
+        {
+          "id": "a8c0269440",
+          "text": "Matching automatically validates all user passwords",
+          "explanation": "Record association is not credential validation."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q07",
+      "topic": "Pagination",
+      "prompt": "A search returns the first page of accounts. What is unsafe to conclude?",
+      "correctId": "80932dae40",
+      "options": [
+        {
+          "id": "80932dae40",
+          "text": "That an unlisted account is absent from the full result set",
+          "explanation": "Inspect pagination and search scope before making an absence claim."
+        },
+        {
+          "id": "e787b2ba54",
+          "text": "That the displayed accounts were returned on this page",
+          "explanation": "That limited observation is directly established."
+        },
+        {
+          "id": "449185e23b",
+          "text": "That more pages may need inspection",
+          "explanation": "That is precisely the relevant follow-up."
+        },
+        {
+          "id": "636f5ee8c9",
+          "text": "That target IDs can identify returned resources",
+          "explanation": "Object IDs remain useful within their supported scope."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q08",
+      "topic": "Reconciliation",
+      "prompt": "During an identity integration review, what does reconciliation compare?",
+      "correctId": "e1e04c5112",
+      "options": [
+        {
+          "id": "e1e04c5112",
+          "text": "Expected records or relationships with the observed current state",
+          "explanation": "It identifies differences that need interpretation and verified follow-up."
+        },
+        {
+          "id": "28657f3f8c",
+          "text": "Only whether the sign-in page loads",
+          "explanation": "Page availability is not a record-state comparison."
+        },
+        {
+          "id": "2e1338b5c5",
+          "text": "Only the number of assigned apps in every tenant",
+          "explanation": "Scope and intended relationships are necessary, not one universal count."
+        },
+        {
+          "id": "d29665af8a",
+          "text": "Only whether every discovered record should be deleted",
+          "explanation": "Discovery does not authorize a universal destructive action."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q09",
+      "topic": "Unexpected removal count",
+      "prompt": "An import proposes many more removals than expected. What should happen first?",
+      "correctId": "8987a2e3bf",
+      "options": [
+        {
+          "id": "8987a2e3bf",
+          "text": "Check scope, source availability and the proposed impact before confirming",
+          "explanation": "An anomalous count is evidence to investigate, not automatic authorization."
+        },
+        {
+          "id": "4ddb02991b",
+          "text": "Approve because the connector generated the proposal",
+          "explanation": "Generated intent does not establish correct lifecycle scope."
+        },
+        {
+          "id": "22d9e17405",
+          "text": "Assume every employee actually left",
+          "explanation": "The count alone does not prove employment changes."
+        },
+        {
+          "id": "8a1dc282b5",
+          "text": "Delete duplicates in unrelated apps immediately",
+          "explanation": "That broad action is unsupported by the supplied observation."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q10",
+      "topic": "JIT distinction",
+      "prompt": "How does an import differ from just-in-time account creation during sign-in?",
+      "correctId": "6228300682",
+      "options": [
+        {
+          "id": "6228300682",
+          "text": "They are different triggers and processes with their own supported matching and lifecycle rules",
+          "explanation": "Do not infer one operation's behavior from the other."
+        },
+        {
+          "id": "395cfea919",
+          "text": "Every import requires the user to authenticate interactively",
+          "explanation": "Import is not inherently a user browser sign-in."
+        },
+        {
+          "id": "e6341cd883",
+          "text": "JIT always replaces all later reconciliation needs",
+          "explanation": "Account and lifecycle state still require supported management."
+        },
+        {
+          "id": "8408058fe8",
+          "text": "Both automatically prove target resource permissions",
+          "explanation": "Neither operation alone establishes every authorization outcome."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Matching preview: one candidate proposed",
+        "Association confirmation: not supplied",
+        "Effective source/lifecycle changes: not verified"
+      ]
+    },
+    {
+      "id": "L11-Q11",
+      "topic": "Evidence limits",
+      "prompt": "A dry-run matching preview selects an account, but no confirmation is supplied. What remains unknown?",
+      "correctId": "b747d64053",
+      "options": [
+        {
+          "id": "b747d64053",
+          "text": "Whether the association was actually confirmed and became effective",
+          "explanation": "Preview demonstrates proposed matching, not completed linkage."
+        },
+        {
+          "id": "af0ef3fec9",
+          "text": "Whether the preview selected a candidate",
+          "explanation": "That observed candidate is supplied."
+        },
+        {
+          "id": "52db223e59",
+          "text": "Whether every preview creates a target user",
+          "explanation": "Preview should not be equated with actual resource creation."
+        },
+        {
+          "id": "0468e85b09",
+          "text": "Whether an account's display name must be globally unique",
+          "explanation": "Display names are not a universal identity uniqueness guarantee."
+        }
+      ]
+    },
+    {
+      "id": "L11-Q12",
+      "topic": "Verification",
+      "prompt": "After confirming an approved match, what should be verified?",
+      "correctId": "d5cf246efe",
+      "options": [
+        {
+          "id": "d5cf246efe",
+          "text": "The actual identity-resource association and any resulting profile, assignment or lifecycle effects",
+          "explanation": "A completed link needs verification of its intended and relevant downstream consequences."
+        },
+        {
+          "id": "cb30b027f3",
+          "text": "Only whether the confirmation button was clicked",
+          "explanation": "An action request is not a complete outcome check."
+        },
+        {
+          "id": "9a40ffc5e3",
+          "text": "Only an unrelated successful import",
+          "explanation": "Different operation evidence cannot verify this association."
+        },
+        {
+          "id": "9a1b854c69",
+          "text": "Only whether both users share a department",
+          "explanation": "Department resemblance is not sufficient ownership evidence."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

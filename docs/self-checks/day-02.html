@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 2: Self-check answers. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 2: Self-check answers | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/self-checks/day-02.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html" aria-current="page"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Lesson 2</a><a href="/Okta_Theory_Teaching/question-bank/day-02.html">Questions (44)</a><a href="/Okta_Theory_Teaching/quizzes/day-02.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-2-self-check-answers">Day 2: Self-check answers</h1>
+<p>Use these to check the distinctions in your reasoning. You do not need to repeat the wording or memorize the example routes. If your answer turns a successful step into a successful whole journey, identify the missing evidence and rewrite that sentence before moving on.</p>
+<h2 id="1-read-the-destination">1. Read the destination</h2>
+<ul>
+<li>Scheme: <code>https</code>.</li>
+<li>Host: <code>expenses.northbridge.example</code>.</li>
+<li>Path: <code>/reports</code>.</li>
+<li>Query parameter: <code>department</code>, with the value <code>Finance</code>.</li>
+</ul>
+<p>The query value is information sent with the request. It does not prove the server changed Maya's stored profile or accepted Finance as her department.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#read-the-destination-before-interpreting-the-result">Read the destination before interpreting the result</a> if you treated a query parameter as a confirmed profile update.</p>
+<h2 id="2-follow-the-redirect">2. Follow the redirect</h2>
+<p>Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in <code>Location</code>; Expense is not making that next browser request on Maya's behalf.</p>
+<p>The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Maya authenticated or an account was created, we would need evidence of those separate actions.</p>
+<p>A provisioning request instead asks the target for an account-management operation. It may be sent directly by the configured integration without using the user's browser. A method such as POST does not, by itself, distinguish these purposes.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#a-response-can-send-the-browser-elsewhere">A response can send the browser elsewhere</a> and <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#compare-a-redirect-with-account-management">Compare a redirect with account management</a> if you equated browser movement with provisioning.</p>
+<h2 id="3-a-successful-page-request">3. A successful page request</h2>
+<p>The server did what this request asked: it returned a sign-in form. Maya has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.</p>
+<p>Here, <code>200 OK</code> describes the page request. We would look for the later authentication result before saying Maya successfully signed in.</p>
+<p>HTTPS protects communication in transit. It does not grant authorization, create an account, or establish that sign-in succeeded.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#a-status-code-describes-a-requests-result">A status code describes a request's result</a> if you treated 200 as a universal sign-in success indicator.</p>
+<h2 id="4-an-application-refusal">4. An application refusal</h2>
+<p>We know where the problem became visible: the application refused this request and said it could not accept the sign-in information. We do not yet know why. Finding where a failure is reported and finding what caused it are different parts of the investigation.</p>
+<p>An incorrect identity message is a possible explanation. A wrong password or missing role is not established by the status code either. Do not choose a correction from those possibilities alone.</p>
+<p>Request the detailed application rejection evidence and the relevant sign-in exchange, matched to the same person, application instance, and attempt. These may show a problem originating earlier even though the refusal is observed at the application.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-mayas-attempt-one-step-at-a-time">Follow Maya's attempt one step at a time</a> if you concluded that the component reporting the error necessarily created the defect.</p>
+<h2 id="5-cookie-session-and-account">5. Cookie, session, and account</h2>
+<p>Daniel removed something stored in his browser. His Expense account is a separate record kept by the application. Deleting the cookie does not send an instruction to delete that account.</p>
+<p>If Expense used the cookie to recognize his session, removing it can affect that browser's next visit. Keeping it is no guarantee either: the browser can still hold a value after the service stops accepting the associated session. The service's response tells us more than the stored value alone. Not every cookie is used for sign-in.</p>
+<p>An answer distinguishing the three concepts is sufficient. You do not need detailed session expiry or policy mechanics here.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#a-remembered-sign-in-is-not-an-account">A remembered sign-in is not an account</a> if you treated browser data as the system's account record.</p>
+<h2 id="6-read-the-event">6. Read the event</h2>
+<p>A sound translation is:</p>
+<blockquote>
+<p>Okta recorded a successful application SSO event associated with Maya Rao and Northbridge Expense.</p>
+</blockquote>
+<ul>
+<li>Action category: <code>eventType</code>.</li>
+<li>Actor: the record under <code>actor</code>.</li>
+<li>Involved target: the entry in <code>target</code>.</li>
+<li>Recorded event result: <code>outcome.result</code>.</li>
+</ul>
+<p>The event is not evidence that the separate application accepted the information, granted permissions, or created an account.</p>
+<p>The selected excerpt lacks the full identifiers and timing/context needed to establish a particular attempt independently. Display names alone are insufficient. In the main lesson's timeline, a matching attempt is supplied as a fact of the training packet; outside it, that relationship must be established.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#read-an-event-as-a-sentence-first">Read an event as a sentence first</a> and <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#match-the-evidence-to-the-right-attempt">Match the evidence to the right attempt</a> if you used SUCCESS without identifying its action and scope.</p>
+<h2 id="7-tell-the-story-using-the-right-evidence">7. Tell the story using the right evidence</h2>
+<p>The browser requested Expense, received a redirect, and loaded the identity service's sign-in form. The related Okta SSO event recorded success. Expense then refused the sign-in return request.</p>
+<p>The first demonstrated failure in the packet is the Expense refusal. The packet does not establish the underlying defect. The application may reject something produced earlier in the flow.</p>
+<p>Priya's success is a different person's event. It neither proves Maya's sign-in worked nor disproves her refusal. It could eventually be comparison evidence, but only with relevant context.</p>
+<p>Request the detailed refusal and corresponding sign-in-exchange evidence. Explain what each record proves and does not prove before proposing a correction.</p>
+<p>A useful handoff could say: “For Maya's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-mayas-attempt-one-step-at-a-time">Follow Maya's attempt one step at a time</a> if your story jumped from Okta SUCCESS to application success.</p>
+<h2 id="before-moving-on-questions-from-the-lesson">Before-moving-on questions from the lesson</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Question</th>
+<th>Essential reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request versus response?</td>
+<td>A message asking for a resource or operation versus the receiving system's reply.</td>
+</tr>
+<tr>
+<td>Which URL part identifies the host?</td>
+<td>The host after the scheme; it is not the path or query parameter.</td>
+</tr>
+<tr>
+<td>What does 302 with Location do?</td>
+<td>Directs the browser to another location; the next request still needs its own result.</td>
+</tr>
+<tr>
+<td>Why is a sign-in form's 200 not authentication proof?</td>
+<td>It reports the request result for loading the form, not completion of the later sign-in interaction.</td>
+</tr>
+<tr>
+<td>What does the event's SUCCESS prove?</td>
+<td>Okta recorded success for the identified SSO event; downstream acceptance and the business outcome need separate evidence.</td>
+</tr>
+<tr>
+<td>Cookie versus account?</td>
+<td>Browser-held data versus a system record; a session is another distinct concept.</td>
+</tr>
+<tr>
+<td>Why match person, application, and attempt?</td>
+<td>A record from another person, application, or attempt does not establish this ticket's outcome.</td>
+</tr>
+</tbody>
+</table></div><p>Compare Questions 6 and 7: the selected event in Question 6 cannot independently establish the reported attempt; Question 7 explicitly supplies that connection. Use supplied facts, but do not silently add missing ones.</p>
+<p>In your notebook, record one successful request that did not complete the business goal. Add the observed failure boundary and the evidence that would be needed to identify the cause.</p>
+<p><a href="/Okta_Theory_Teaching/exercises/day-02.html">Return to the exercises</a> · <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Return to Day 2</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-02.html">Revise Day 2</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+<p><a href="/Okta_Theory_Teaching/question-bank/day-02.html">Practice questions with explanations</a> · <a href="/Okta_Theory_Teaching/revision/day-02.html">Day 2 recap</a> · <a href="/Okta_Theory_Teaching/exercises/day-02.html">Reasoning exercises</a></p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-02.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-02.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-02.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><small>← Previous lesson</small>Day 1: People, identities, and access</a><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><small>Next lesson →</small>Day 3: Profiles, attributes, and mappings</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

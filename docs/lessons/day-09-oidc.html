@@ -1,0 +1,283 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 9: OIDC and the authorization code. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 9: OIDC and the authorization code | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-09-oidc.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html" aria-current="page"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html" aria-current="page">Lesson 9</a><a href="/Okta_Theory_Teaching/question-bank/day-09.html">Questions (44)</a><a href="/Okta_Theory_Teaching/quizzes/day-09.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-9-oidc-and-the-authorization-code">Day 9: OIDC and the authorization code</h1>
+<p>Maya opens Northbridge Expense. Instead of returning to her expense page, the sign-in journey stops with a message that the return address is not permitted.</p>
+<p>Maya expected to come back to Expense after the identity checks. Alex needs to understand how Expense tells Okta where that return should go, and why Okta can refuse the requested address before the rest of the journey takes place.</p>
+<p>The application uses <strong>OpenID Connect</strong>, or <strong>OIDC</strong>. As with SAML, the application relies on an identity service and must validate what it receives. This time, the browser brings back a temporary code, and Expense's server uses that code in a further exchange. The messages and their purposes are different.</p>
+<p>Start by locating the stage that failed. A rejected return address is not the same problem as an application rejecting a token it has already received.</p>
+<p>Your goal is to follow one journey: browser returns code → backend exchanges code → application validates identity information and decides access. Place each new term on that journey rather than memorizing it in isolation. As you read, keep asking which participant acts next and what result would show that the step completed. The supplied observations are enough to practice this reasoning without a tenant or a working application.</p>
+<h2 id="oauth-and-oidc-answer-related-questions">OAuth and OIDC answer related questions</h2>
+<p>An application can need permission to call a protected service, and it can need information about the person signing in. Those are related needs with different receiving systems and checks. <strong>OAuth 2.0</strong> is a framework for authorizing access to protected resources, such as <strong>APIs</strong>, interfaces through which software asks another service for data or an operation. A client can obtain an access token to present to an intended resource service. That is different from a standard statement establishing who signed in to the client application.</p>
+<p>OIDC adds an identity layer to OAuth 2.0. It defines an <strong>ID token</strong> and rules the client uses to validate authentication information about the user. For Expense's sign-in question, the useful result is validated identity information that Expense can associate with the intended account. An access token has a different job at its intended resource service.</p>
+<p>A <strong>token</strong> is a data value issued for a defined purpose. Its name and the receiving system's checks matter: an ID token carries identity claims for the client; an access token is presented to its intended resource service. That service, often an API, is called the <strong>resource server</strong>.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Question</th>
+<th>Relevant concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How can an application obtain authority to call a protected API?</td>
+<td>OAuth and an appropriately issued access token.</td>
+</tr>
+<tr>
+<td>How can the application verify information about the user's authentication?</td>
+<td>OIDC and ID token validation.</td>
+</tr>
+</tbody>
+</table></div><p>Follow the purpose in each table row to the receiver that checks it. Expense validates the ID token for its sign-in. A resource server evaluates an access token for a resource request under its own rules. Readable user information in an access token does not change that purpose. Neither token automatically creates an application account or grants every application permission.</p>
+<h2 id="fix-the-client-type-before-tracing-the-flow">Fix the client type before tracing the flow</h2>
+<p>Northbridge Expense is a fictional web application with a server-side <strong>backend</strong>: application software running on its servers, rather than in Maya's browser. The backend processes sign-in responses and can protect its client credentials. This is a <strong>confidential client</strong>. A <strong>client</strong> is the application participating in the OAuth/OIDC exchange; it is not Maya's user account.</p>
+<p>Day 2 called the browser an HTTP client because it makes web requests. Here, <strong>OIDC client</strong> identifies Expense's role in the sign-in protocol. The browser carries messages for that flow, but Expense's backend performs the code exchange and validates the ID token. Always name which exchange the word <em>client</em> refers to. See <a href="https://openid.net/specs/openid-connect-core-1_0.html#Terminology">OIDC's client role</a>.</p>
+<p>Keep this server-side design in view throughout the lesson. Maya's browser carries redirects; Expense's backend performs the exchange and can protect confidential material. The example uses Authorization Code with PKCE and configured backend client authentication. Other client designs exist, but we will use this one consistently so that each message has an identifiable sender and receiver.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Participant</th>
+<th>Responsibility in this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maya and her browser</td>
+<td>Start access and carry redirects.</td>
+</tr>
+<tr>
+<td>Expense backend</td>
+<td>Acts as the OIDC client, exchanges the code, validates identity information, and establishes its application session.</td>
+</tr>
+<tr>
+<td>Okta</td>
+<td>Acts as the OpenID Provider and authorization server, applying requirements and issuing the configured responses.</td>
+</tr>
+</tbody>
+</table></div><p>An <strong>authorization server</strong> issues OAuth responses and tokens. In this OIDC flow it also serves as the <strong>OpenID Provider</strong>. These roles describe this connection, not every role a product might have.</p>
+<p>Okta also needs to know which application is asking. A <strong>client ID</strong> identifies Expense's registration. It is not a password. The identifier names the client; backend client authentication separately proves the client using its configured credential or key. That confidential material stays protected on the backend and does not belong in a browser redirect.</p>
+<p>There are two identities to keep apart: &quot;Which application is asking?&quot; and &quot;Which person is signing in?&quot; Expense's client credential belongs to the application. Maya's user identity is established through the sign-in and validated identity information. The client ID alone proves neither.</p>
+<h2 id="follow-one-successful-journey">Follow one successful journey</h2>
+<p>Before looking at the failure, trace the intended journey. An <strong>authorization code</strong> is a temporary, single-use value that the client exchanges for tokens. In this architecture, Maya's browser delivers it to Expense, and the backend presents it to Okta under the exchange requirements. Maya does not type it like an MFA code, and Expense does not use it to call a resource API.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/63c3d45f91b3f82b.svg" alt="Day 9: OIDC and the authorization code: diagram 1" width="1025" height="573" loading="lazy"><figcaption><span>Day 9: OIDC and the authorization code: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/63c3d45f91b3f82b.svg" data-diagram="Day 9: OIDC and the authorization code: diagram 1">Open full diagram</a></figcaption></figure><p>The <strong>callback</strong>, or redirect URI, is the application's registered return location. The <strong>authorization endpoint</strong> receives the authorization request. The <strong>token endpoint</strong> receives the backend's code exchange. An endpoint is an address for a particular operation.</p>
+<p>Locate those addresses by who receives the message. The browser visits Okta's authorization endpoint to start the protocol request. It returns to Expense's callback with the code. Expense's backend then sends the code to Okta's token endpoint. The callback and token endpoint are on different sides of that exchange.</p>
+<p>Read the diagram from top to bottom and pause at Step 4. The browser has returned the code and state to Expense's callback. That hands the next operation to the backend. At Step 5, the backend communicates with Okta directly, presenting the code with the required PKCE proof and client authentication. Okta's token response returns to the backend.</p>
+<p>Expense then validates the identity information, associates the user with its account, and establishes its application session. That session is Expense's result for continued application use; it is not another name for the code or ID token. A failure at the backend exchange would need different evidence from a browser that never reached the callback.</p>
+<p>The actual authentication interaction depends on the applicable requirements and existing context. Do not assume every request displays a new password prompt or a consent screen.</p>
+<h2 id="read-the-requests-purpose">Read the request's purpose</h2>
+<p>Here are selected, decoded parameters from a synthetic successful authorization request. This is a readable field list, not a complete URL or runnable request. All addresses and identifiers are fictional.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>client_id</td>
+<td><code>nb-expense-web</code></td>
+<td>The intended Expense registration.</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td><code>code</code></td>
+<td>Request an authorization code.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td><code>openid profile</code></td>
+<td>Request OIDC sign-in and the supported profile-claim category.</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td><code>https://expenses.northbridge.example/oidc/callback</code></td>
+<td>The registered application return location.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>A fresh transaction value, omitted</td>
+<td>Correlate the returned browser response with the request.</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>A fresh transaction value, omitted</td>
+<td>Bind the returned ID token to this authentication request.</td>
+</tr>
+<tr>
+<td>code_challenge / code_challenge_method</td>
+<td>A derived value, omitted / <code>S256</code></td>
+<td>Establish the PKCE check for the later code exchange.</td>
+</tr>
+</tbody>
+</table></div><p>Read the request as Expense's instructions for this transaction: which registration is asking, what response it wants, which information categories it requests, and where the browser should return. The transaction values add checks that connect the later messages to this request.</p>
+<p><code>openid</code> makes this an OIDC request. A <strong>scope</strong> names requested access or information categories. A <strong>claim</strong> is a named statement in returned information, such as a subject identifier. Requesting <code>profile</code> does not guarantee every conceivable profile field will appear in every token. The scope describes a request; a claim is information actually returned. Neither by itself establishes an expense-approval permission.</p>
+<p>State travels out with the request and back with the browser response. Expense compares it with the value kept for the attempt it started: &quot;Does this browser return belong to my transaction?&quot;</p>
+<p>Nonce also begins in the request, but the later comparison uses the nonce inside the ID token: &quot;Does this returned identity information belong to this authentication request?&quot; Because this example sends a nonce, Expense must compare the token's value with the original. State and nonce are checked at different points. Matching either does not replace all other validation.</p>
+<h2 id="what-pkce-adds">What PKCE adds</h2>
+<p><strong>PKCE</strong>, Proof Key for Code Exchange, ties code redemption to a value the client created for that transaction. Expense keeps a secret random <strong>code verifier</strong> for the transaction and sends a derived <strong>code challenge</strong> with the authorization request. During redemption, it supplies the verifier, which the authorization server checks against the earlier challenge.</p>
+<p>The two-stage arrangement matters. Sending the derived challenge first lets Okta later check whether the presented verifier belongs with this code. Someone who obtains the code without the required verifier lacks that proof for redemption. This helps protect against code interception or injection. The verifier is a transaction secret, not Maya's password. In this confidential-client example, PKCE complements configured client authentication. Client authentication asks the backend to prove which registered application it is. PKCE asks for the verifier associated with this particular code request. A client credential and a transaction verifier have different jobs.</p>
+<p>The request's <code>S256</code> names the method that derives the challenge using SHA-256, a one-way cryptographic calculation, and a URL-safe encoding. The authorization request carries that derived challenge, while the backend retains the verifier for the later exchange. See the <a href="https://www.rfc-editor.org/rfc/rfc7636.html#section-4.2">PKCE specification</a>.</p>
+<p>You do not need to calculate the challenge to investigate the flow. Recognize that a code arriving at the callback is only an intermediate step; the exchange has its own requirements and outcome.</p>
+<p>Keep three points in the journey in view: the browser returns a response, the backend exchanges the code, and Expense validates the ID token. State, PKCE, and nonce protect those different points:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Check in this example</th>
+<th>Where it is checked</th>
+<th>Relationship it checks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State</td>
+<td>Expense checks the browser's returned response.</td>
+<td>Does it correspond to the transaction Expense started?</td>
+</tr>
+<tr>
+<td>PKCE</td>
+<td>Okta checks the verifier during code exchange.</td>
+<td>Does the verifier match the challenge associated with this code?</td>
+</tr>
+<tr>
+<td>Nonce</td>
+<td>Expense checks the returned ID token.</td>
+<td>Does its nonce match the value sent for this authentication request?</td>
+</tr>
+</tbody>
+</table></div><p>Passing one check does not replace the others or the remaining ID token checks. See the <a href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth">OIDC code-flow definition</a> and the PKCE reference above.</p>
+<h2 id="three-artifacts-three-purposes">Three artifacts, three purposes</h2>
+<p>A successful token response in this example includes an ID token and an access token. This synthetic JSON shows selected field names only. The strings are explanatory placeholders, not real or encoded tokens:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;id_token&quot;: &quot;ID_TOKEN_PLACEHOLDER&quot;,
+  &quot;access_token&quot;: &quot;ACCESS_TOKEN_PLACEHOLDER&quot;,
+  &quot;token_type&quot;: &quot;Bearer&quot;
+}
+</code></pre>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Artifact</th>
+<th>Used by</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization code</td>
+<td>Expense backend at the token endpoint</td>
+<td>Obtain the token response under the exchange requirements.</td>
+</tr>
+<tr>
+<td>ID token</td>
+<td>Expense as the OIDC client</td>
+<td>Validate information about the user's authentication.</td>
+</tr>
+<tr>
+<td>Access token</td>
+<td>Its intended resource server</td>
+<td>Authorize an API request after the relevant token and permission checks.</td>
+</tr>
+</tbody>
+</table></div><p>Both tokens appear because this successful OIDC exchange returns identity information for the client alongside a token for resource access. Expense uses the ID token for its authentication decision. The access token could be presented to its intended resource service when a permitted call is needed. No such API request is supplied here: receiving that token does not mean Expense used it. A successful handoff at one boundary does not establish the next boundary's result.</p>
+<p><strong>Bearer</strong> means possession of the token is sufficient to present it for use, subject to validation. Treat it as sensitive. Its existence does not show that any API call succeeded.</p>
+<p>This sign-in example does not add a custom Expense API or assume that an Okta-issued access token is valid for an arbitrary API. The intended resource, issuer configuration, scopes, and validation contract determine where it can be used.</p>
+<h2 id="read-claims-without-claiming-validation">Read claims without claiming validation</h2>
+<p>An ID token uses <strong>JWT</strong>, JSON Web Token, to represent claims. A readable decoded payload reveals content; it does not prove authenticity or acceptance. The following selected claims are a synthetic illustration, not a complete ID token:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;iss&quot;: &quot;https://identity.northbridge.example&quot;,
+  &quot;sub&quot;: &quot;subject-maya-1042&quot;,
+  &quot;aud&quot;: &quot;nb-expense-web&quot;
+}
+</code></pre>
+<p><code>iss</code> identifies the issuer. <code>sub</code> identifies the subject within that issuer. <code>aud</code> identifies the intended audience; for this single-audience ID token, it is Expense's client ID. Northbridge associates the validated issuer/subject pair with the intended local account, rather than assuming email is an immutable global identifier.</p>
+<p>Read the pair together: &quot;this subject, as identified by this issuer.&quot; The same <code>sub</code> text from a different issuer does not automatically identify the same person. An email address may be useful profile information, but its familiar appearance does not make it the account-association rule.</p>
+<p>The client checks the expected issuer and audience, validity such as expiration, nonce for this request, and the applicable cryptographic validation using trusted provider information. Signature verification requires the actual token and appropriate trusted keys; looking at decoded JSON is insufficient. The excerpt omits signature and other required claims, including expiration and issuance information.</p>
+<p>The selected claims let you compare what the payload says with Expense's expectations. The complete validation result answers whether Expense could rely on it. Keep the questions at this purpose level: who issued it, who it describes, who it is intended for, and whether it is valid for this transaction. A JWT-shaped string is not automatically an acceptable ID token or access token. This is the same reading-versus-validation distinction you used with Day 8's XML.</p>
+<h2 id="find-the-redirect-mismatch">Find the redirect mismatch</h2>
+<p>Return to Maya's incident O-1. The investigator has matched these observations to the same authorization request and registration:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved Expense callback</td>
+<td><code>https://expenses.northbridge.example/oidc/callback</code></td>
+</tr>
+<tr>
+<td>Registered sign-in redirect URI</td>
+<td>Exactly the approved callback above.</td>
+</tr>
+<tr>
+<td>Actual request redirect_uri</td>
+<td><code>https://expenses.northbridge.example/oidc/callback-old</code></td>
+</tr>
+<tr>
+<td>Request validation result</td>
+<td>Rejected because the requested redirect URI is not registered.</td>
+</tr>
+<tr>
+<td>Code issued for O-1</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Code exchange for O-1</td>
+<td>Did not occur.</td>
+</tr>
+</tbody>
+</table></div><p>Before proposing a change, compare the approved callback, registered callback, actual requested address, and rejection reason. Which side differs from the agreement? The registration matches the approved design; Expense's request still names the old callback. The report confirms rejection on that basis, and no code was issued. That establishes the first demonstrated defect.</p>
+<p>Because the requested callback is not registered, Okta rejects this request before issuing a code. It must not redirect Maya's browser to that unapproved address, even to send back the error. The identity service can display an error instead, and the sign-in journey stops. Expense receives no code for O-1, so its backend has nothing to exchange. Exact redirect matching protects the destination of the response.</p>
+<p>The supported proposal is to correct the application configuration that emits the old callback and verify a new request. Adding the obsolete address would expand the agreement to accommodate the wrong request. Broadening destinations indiscriminately would weaken that boundary, while resetting Maya's authenticator would address a different part of the sign-in. Choose the change that repairs the demonstrated discrepancy.</p>
+<p>O-1 has no issued code or token exchange. Searching for the cause in an ID token from another attempt would cross an evidence boundary. A token-audience problem belongs to a later stage that this attempt did not reach.</p>
+<h2 id="verify-the-correction-through-the-remaining-stages">Verify the correction through the remaining stages</h2>
+<p>For a new attempt O-2, the investigator records:</p>
+<ol>
+<li>The request uses the approved registered callback and is accepted.</li>
+<li>After the applicable checks, a code returns to that callback; Expense verifies state.</li>
+<li>The backend completes the authenticated code exchange with its matching PKCE verifier.</li>
+<li>Expense validates the returned ID token, including its expected nonce, and identifies Maya's intended account.</li>
+<li>Expense establishes its application session and Maya enters the application.</li>
+</ol>
+<p>Trace each recorded result back to the diagram. O-2 passes the request check, returns a correlated code, completes the backend exchange, validates the ID token, identifies the intended account, and establishes actual Expense entry. This linked follow-up reaches the later stages that O-1 never reached.</p>
+<p>You can report successful application entry for O-2. Expense-approval permission and a provisioning operation remain unestablished. The protocol changed, but the distinction between sign-in, account management, and application authorization still applies.</p>
+<h2 id="compare-with-saml">Compare with SAML</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>SAML example from Day 8</th>
+<th>OIDC example here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser carries a response containing an assertion to the ACS.</td>
+<td>Browser returns a code to the callback; backend exchanges it for tokens.</td>
+</tr>
+<tr>
+<td>SP validates the assertion under its trust configuration.</td>
+<td>Client validates the ID token and transaction under its OIDC configuration.</td>
+</tr>
+<tr>
+<td>NameID is interpreted through the configured matching rule.</td>
+<td>Expense uses the validated issuer/subject identity for its account association.</td>
+</tr>
+</tbody>
+</table></div><p>Start with the first row: the browser's return contains different material in these examples. Day 8 carries a SAML response containing an assertion. Here, the code leads to a separate backend exchange before Expense obtains the ID token. Both require application-side validation and a configured account association, but their messages and checks are not interchangeable. Neither protocol alone proves account creation or complete application authorization.</p>
+<h2 id="read-the-registration-as-an-agreement">Read the registration as an agreement</h2>
+<p>Compare Expense's integration registration with the request its backend actually creates. Keep the client identifier, allowed sign-in redirect URI, intended grant, and configured client-authentication method together. The application owner maintains the corresponding application-side values.</p>
+<p>In O-1, these comparisons identify the application request as the side that needs correction. The application owner can investigate why Expense is generating the obsolete address. After the approved change, follow a new attempt through code return, backend exchange, validation, and entry. A saved registration or an old working session cannot supply those new results.</p>
+<p>If the code is returned but the exchange fails, the next evidence comes from that exchange. Its client-authentication result and PKCE check matter there; an earlier browser redirect cannot prove either. Request the error and relevant identifiers without copying client secrets or complete usable tokens into a ticket. If one registration serves several deployments, identify them before changing shared settings.</p>
+<p>For a new OIDC report, locate the last completed stage before naming a cause. No code in O-1 means the investigation starts with request validation. A returned code hands the next check to the backend exchange. A returned ID token still needs validation before Expense can rely on its identity information. Let that progression guide your next evidence request.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain:</p>
+<ul>
+<li>How OAuth and OIDC relate?</li>
+<li>Which steps use the browser and which use Expense's backend?</li>
+<li>Why the code, ID token, and access token have different purposes?</li>
+<li>Why a scope is different from a claim?</li>
+<li>What state, nonce, and PKCE protect at a purpose level?</li>
+<li>Why decoded claims do not establish token validity?</li>
+<li>Why O-1 should be investigated before token processing?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-09.html">Day 9 exercises</a>, then compare with the <a href="/Okta_Theory_Teaching/self-checks/day-09.html">answers</a>. The optional final comparison in the answer file considers a later token rejection.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, draw the browser and backend as separate participants. Mark the last completed stage before proposing the next evidence request.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">Day 10</a> returns to account management through SCIM.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-09.html">Day 9 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html">Previous: Day 8</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-09.html">Revise Day 9</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-09.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-09.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-09.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><small>← Previous lesson</small>Day 8: SAML and application sign-in</a><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><small>Next lesson →</small>Day 10: SCIM and application accounts</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

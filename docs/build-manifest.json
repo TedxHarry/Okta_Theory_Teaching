@@ -1,0 +1,993 @@
+{
+  "base": "/Okta_Theory_Teaching/",
+  "documents": [
+    {
+      "source": "index.md",
+      "route": "",
+      "title": "Okta Theory",
+      "kind": "Course guide",
+      "description": "Okta Theory. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "overview.md",
+      "route": "overview.html",
+      "title": "Okta at a glance",
+      "kind": "Course guide",
+      "description": "Okta at a glance. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "learning-path.md",
+      "route": "learning-path.html",
+      "title": "Learning path",
+      "kind": "Course guide",
+      "description": "Learning path. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-01-people-identities-access.md",
+      "route": "lessons/day-01-people-identities-access.html",
+      "title": "Day 1: People, identities, and access",
+      "number": 1,
+      "kind": "Lesson",
+      "description": "Day 1: People, identities, and access. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-02-requests-and-evidence.md",
+      "route": "lessons/day-02-requests-and-evidence.html",
+      "title": "Day 2: Following a request and reading evidence",
+      "number": 2,
+      "kind": "Lesson",
+      "description": "Day 2: Following a request and reading evidence. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-03-profiles-and-mappings.md",
+      "route": "lessons/day-03-profiles-and-mappings.html",
+      "title": "Day 3: Profiles, attributes, and mappings",
+      "number": 3,
+      "kind": "Lesson",
+      "description": "Day 3: Profiles, attributes, and mappings. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-04-sources-and-ownership.md",
+      "route": "lessons/day-04-sources-and-ownership.html",
+      "title": "Day 4: Sources, priority, and ownership",
+      "number": 4,
+      "kind": "Lesson",
+      "description": "Day 4: Sources, priority, and ownership. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-05-groups-and-assignments.md",
+      "route": "lessons/day-05-groups-and-assignments.html",
+      "title": "Day 5: Groups, rules, and application assignments",
+      "number": 5,
+      "kind": "Lesson",
+      "description": "Day 5: Groups, rules, and application assignments. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-06-active-directory.md",
+      "route": "lessons/day-06-active-directory.html",
+      "title": "Day 6: AD imports and password validation",
+      "number": 6,
+      "kind": "Lesson",
+      "description": "Day 6: AD imports and password validation. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+      "route": "lessons/day-07-authenticators-enrollment-mfa.html",
+      "title": "Day 7: Authenticators, enrollment, and MFA",
+      "number": 7,
+      "kind": "Lesson",
+      "description": "Day 7: Authenticators, enrollment, and MFA. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-08-saml.md",
+      "route": "lessons/day-08-saml.html",
+      "title": "Day 8: SAML and application sign-in",
+      "number": 8,
+      "kind": "Lesson",
+      "description": "Day 8: SAML and application sign-in. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-09-oidc.md",
+      "route": "lessons/day-09-oidc.html",
+      "title": "Day 9: OIDC and the authorization code",
+      "number": 9,
+      "kind": "Lesson",
+      "description": "Day 9: OIDC and the authorization code. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-10-scim.md",
+      "route": "lessons/day-10-scim.html",
+      "title": "Day 10: SCIM and application accounts",
+      "number": 10,
+      "kind": "Lesson",
+      "description": "Day 10: SCIM and application accounts. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-11-imports-and-matching.md",
+      "route": "lessons/day-11-imports-and-matching.html",
+      "title": "Day 11: Imports, matching, and reconciliation",
+      "number": 11,
+      "kind": "Lesson",
+      "description": "Day 11: Imports, matching, and reconciliation. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-12-joiners-movers-leavers.md",
+      "route": "lessons/day-12-joiners-movers-leavers.html",
+      "title": "Day 12: Joining, moving, and leaving",
+      "number": 12,
+      "kind": "Lesson",
+      "description": "Day 12: Joining, moving, and leaving. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-13-policies-and-sessions.md",
+      "route": "lessons/day-13-policies-and-sessions.html",
+      "title": "Day 13: Policies, sessions, and another authentication check",
+      "number": 13,
+      "kind": "Lesson",
+      "description": "Day 13: Policies, sessions, and another authentication check. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-14-requirements-and-responsibilities.md",
+      "route": "lessons/day-14-requirements-and-responsibilities.html",
+      "title": "Day 14: Requirements, responsibility, and recovery",
+      "number": 14,
+      "kind": "Lesson",
+      "description": "Day 14: Requirements, responsibility, and recovery. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-15-integrated-case.md",
+      "route": "lessons/day-15-integrated-case.html",
+      "title": "Day 15: Investigate Northbridge as a connected system",
+      "number": 15,
+      "kind": "Lesson",
+      "description": "Day 15: Investigate Northbridge as a connected system. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/day-16-safe-practice-plan.md",
+      "route": "lessons/day-16-safe-practice-plan.html",
+      "title": "Day 16: Turn understanding into a safe practice plan",
+      "number": 16,
+      "kind": "Lesson",
+      "description": "Day 16: Turn understanding into a safe practice plan. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "lessons/index.md",
+      "route": "lessons/",
+      "title": "Lessons",
+      "kind": "Lesson",
+      "description": "Lessons. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "question-bank/day-01.md",
+      "route": "question-bank/day-01.html",
+      "title": "Day 1: Questions",
+      "number": 1,
+      "kind": "Questions",
+      "description": "Day 1: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 40
+    },
+    {
+      "source": "question-bank/day-02.md",
+      "route": "question-bank/day-02.html",
+      "title": "Day 2: Questions",
+      "number": 2,
+      "kind": "Questions",
+      "description": "Day 2: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 44
+    },
+    {
+      "source": "question-bank/day-03.md",
+      "route": "question-bank/day-03.html",
+      "title": "Day 3: Questions",
+      "number": 3,
+      "kind": "Questions",
+      "description": "Day 3: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 46
+    },
+    {
+      "source": "question-bank/day-04.md",
+      "route": "question-bank/day-04.html",
+      "title": "Day 4: Questions",
+      "number": 4,
+      "kind": "Questions",
+      "description": "Day 4: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 40
+    },
+    {
+      "source": "question-bank/day-05.md",
+      "route": "question-bank/day-05.html",
+      "title": "Day 5: Questions",
+      "number": 5,
+      "kind": "Questions",
+      "description": "Day 5: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 40
+    },
+    {
+      "source": "question-bank/day-06.md",
+      "route": "question-bank/day-06.html",
+      "title": "Day 6: Questions",
+      "number": 6,
+      "kind": "Questions",
+      "description": "Day 6: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 40
+    },
+    {
+      "source": "question-bank/day-07.md",
+      "route": "question-bank/day-07.html",
+      "title": "Day 7: Questions",
+      "number": 7,
+      "kind": "Questions",
+      "description": "Day 7: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 42
+    },
+    {
+      "source": "question-bank/day-08.md",
+      "route": "question-bank/day-08.html",
+      "title": "Day 8: Questions",
+      "number": 8,
+      "kind": "Questions",
+      "description": "Day 8: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 44
+    },
+    {
+      "source": "question-bank/day-09.md",
+      "route": "question-bank/day-09.html",
+      "title": "Day 9: Questions",
+      "number": 9,
+      "kind": "Questions",
+      "description": "Day 9: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 44
+    },
+    {
+      "source": "question-bank/day-10.md",
+      "route": "question-bank/day-10.html",
+      "title": "Day 10: Questions",
+      "number": 10,
+      "kind": "Questions",
+      "description": "Day 10: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 44
+    },
+    {
+      "source": "question-bank/day-11.md",
+      "route": "question-bank/day-11.html",
+      "title": "Day 11: Questions",
+      "number": 11,
+      "kind": "Questions",
+      "description": "Day 11: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 42
+    },
+    {
+      "source": "question-bank/day-12.md",
+      "route": "question-bank/day-12.html",
+      "title": "Day 12: Questions",
+      "number": 12,
+      "kind": "Questions",
+      "description": "Day 12: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 42
+    },
+    {
+      "source": "question-bank/day-13.md",
+      "route": "question-bank/day-13.html",
+      "title": "Day 13: Questions",
+      "number": 13,
+      "kind": "Questions",
+      "description": "Day 13: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 42
+    },
+    {
+      "source": "question-bank/day-14.md",
+      "route": "question-bank/day-14.html",
+      "title": "Day 14: Questions",
+      "number": 14,
+      "kind": "Questions",
+      "description": "Day 14: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 44
+    },
+    {
+      "source": "question-bank/day-15.md",
+      "route": "question-bank/day-15.html",
+      "title": "Day 15: Questions",
+      "number": 15,
+      "kind": "Questions",
+      "description": "Day 15: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 40
+    },
+    {
+      "source": "question-bank/day-16.md",
+      "route": "question-bank/day-16.html",
+      "title": "Day 16: Questions",
+      "number": 16,
+      "kind": "Questions",
+      "description": "Day 16: Questions. Okta workforce identity theory and reasoning practice.",
+      "questions": 35
+    },
+    {
+      "source": "question-bank/index.md",
+      "route": "question-bank/",
+      "title": "Revise, Test, and Learn",
+      "kind": "Questions",
+      "description": "Revise, Test, and Learn. Okta workforce identity theory and reasoning practice.",
+      "questions": 0
+    },
+    {
+      "source": "exercises/day-01.md",
+      "route": "exercises/day-01.html",
+      "title": "Day 1: Reasoning exercises",
+      "number": 1,
+      "kind": "Exercises",
+      "description": "Day 1: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-02.md",
+      "route": "exercises/day-02.html",
+      "title": "Day 2: Reasoning exercises",
+      "number": 2,
+      "kind": "Exercises",
+      "description": "Day 2: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-03.md",
+      "route": "exercises/day-03.html",
+      "title": "Day 3: Reasoning exercises",
+      "number": 3,
+      "kind": "Exercises",
+      "description": "Day 3: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-04.md",
+      "route": "exercises/day-04.html",
+      "title": "Day 4: Reasoning exercises",
+      "number": 4,
+      "kind": "Exercises",
+      "description": "Day 4: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-05.md",
+      "route": "exercises/day-05.html",
+      "title": "Day 5: Reasoning exercises",
+      "number": 5,
+      "kind": "Exercises",
+      "description": "Day 5: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-06.md",
+      "route": "exercises/day-06.html",
+      "title": "Day 6: Reasoning exercises",
+      "number": 6,
+      "kind": "Exercises",
+      "description": "Day 6: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-07.md",
+      "route": "exercises/day-07.html",
+      "title": "Day 7: Reasoning exercises",
+      "number": 7,
+      "kind": "Exercises",
+      "description": "Day 7: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-08.md",
+      "route": "exercises/day-08.html",
+      "title": "Day 8: Reasoning exercises",
+      "number": 8,
+      "kind": "Exercises",
+      "description": "Day 8: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-09.md",
+      "route": "exercises/day-09.html",
+      "title": "Day 9: Reasoning exercises",
+      "number": 9,
+      "kind": "Exercises",
+      "description": "Day 9: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-10.md",
+      "route": "exercises/day-10.html",
+      "title": "Day 10: Reasoning exercises",
+      "number": 10,
+      "kind": "Exercises",
+      "description": "Day 10: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-11.md",
+      "route": "exercises/day-11.html",
+      "title": "Day 11: Reasoning exercises",
+      "number": 11,
+      "kind": "Exercises",
+      "description": "Day 11: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-12.md",
+      "route": "exercises/day-12.html",
+      "title": "Day 12: Reasoning exercises",
+      "number": 12,
+      "kind": "Exercises",
+      "description": "Day 12: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-13.md",
+      "route": "exercises/day-13.html",
+      "title": "Day 13: Reasoning exercises",
+      "number": 13,
+      "kind": "Exercises",
+      "description": "Day 13: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-14.md",
+      "route": "exercises/day-14.html",
+      "title": "Day 14: Reasoning exercises",
+      "number": 14,
+      "kind": "Exercises",
+      "description": "Day 14: Reasoning exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/day-15.md",
+      "route": "exercises/day-15.html",
+      "title": "Day 15: Final investigation tasks",
+      "number": 15,
+      "kind": "Exercises",
+      "description": "Day 15: Final investigation tasks. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "exercises/index.md",
+      "route": "exercises/",
+      "title": "Exercises",
+      "kind": "Exercises",
+      "description": "Exercises. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-01.md",
+      "route": "self-checks/day-01.html",
+      "title": "Day 1: Self-check answers",
+      "number": 1,
+      "kind": "Self-check",
+      "description": "Day 1: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-02.md",
+      "route": "self-checks/day-02.html",
+      "title": "Day 2: Self-check answers",
+      "number": 2,
+      "kind": "Self-check",
+      "description": "Day 2: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-03.md",
+      "route": "self-checks/day-03.html",
+      "title": "Day 3: Self-check answers",
+      "number": 3,
+      "kind": "Self-check",
+      "description": "Day 3: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-04.md",
+      "route": "self-checks/day-04.html",
+      "title": "Day 4: Self-check answers",
+      "number": 4,
+      "kind": "Self-check",
+      "description": "Day 4: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-05.md",
+      "route": "self-checks/day-05.html",
+      "title": "Day 5: Self-check answers",
+      "number": 5,
+      "kind": "Self-check",
+      "description": "Day 5: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-06.md",
+      "route": "self-checks/day-06.html",
+      "title": "Day 6: Self-check answers",
+      "number": 6,
+      "kind": "Self-check",
+      "description": "Day 6: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-07.md",
+      "route": "self-checks/day-07.html",
+      "title": "Day 7: Self-check answers",
+      "number": 7,
+      "kind": "Self-check",
+      "description": "Day 7: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-08.md",
+      "route": "self-checks/day-08.html",
+      "title": "Day 8: Self-check answers",
+      "number": 8,
+      "kind": "Self-check",
+      "description": "Day 8: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-09.md",
+      "route": "self-checks/day-09.html",
+      "title": "Day 9: Self-check answers",
+      "number": 9,
+      "kind": "Self-check",
+      "description": "Day 9: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-10.md",
+      "route": "self-checks/day-10.html",
+      "title": "Day 10: Self-check answers",
+      "number": 10,
+      "kind": "Self-check",
+      "description": "Day 10: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-11.md",
+      "route": "self-checks/day-11.html",
+      "title": "Day 11: Self-check answers",
+      "number": 11,
+      "kind": "Self-check",
+      "description": "Day 11: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-12.md",
+      "route": "self-checks/day-12.html",
+      "title": "Day 12: Self-check answers",
+      "number": 12,
+      "kind": "Self-check",
+      "description": "Day 12: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-13.md",
+      "route": "self-checks/day-13.html",
+      "title": "Day 13: Self-check answers",
+      "number": 13,
+      "kind": "Self-check",
+      "description": "Day 13: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-14.md",
+      "route": "self-checks/day-14.html",
+      "title": "Day 14: Self-check answers",
+      "number": 14,
+      "kind": "Self-check",
+      "description": "Day 14: Self-check answers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/day-15.md",
+      "route": "self-checks/day-15.html",
+      "title": "Day 15: Model investigation",
+      "number": 15,
+      "kind": "Self-check",
+      "description": "Day 15: Model investigation. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "self-checks/index.md",
+      "route": "self-checks/",
+      "title": "Self-Checks",
+      "kind": "Self-check",
+      "description": "Self-Checks. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-01.md",
+      "route": "revision/day-01.html",
+      "title": "Day 1 revision: People, identities, and access",
+      "number": 1,
+      "kind": "Recap",
+      "description": "Day 1 revision: People, identities, and access. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-02.md",
+      "route": "revision/day-02.html",
+      "title": "Day 2 revision: Requests and evidence",
+      "number": 2,
+      "kind": "Recap",
+      "description": "Day 2 revision: Requests and evidence. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-03.md",
+      "route": "revision/day-03.html",
+      "title": "Day 3 revision: Profiles and mappings",
+      "number": 3,
+      "kind": "Recap",
+      "description": "Day 3 revision: Profiles and mappings. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-04.md",
+      "route": "revision/day-04.html",
+      "title": "Day 4 revision: Sources and ownership",
+      "number": 4,
+      "kind": "Recap",
+      "description": "Day 4 revision: Sources and ownership. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-05.md",
+      "route": "revision/day-05.html",
+      "title": "Day 5 revision: Groups and assignments",
+      "number": 5,
+      "kind": "Recap",
+      "description": "Day 5 revision: Groups and assignments. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-06.md",
+      "route": "revision/day-06.html",
+      "title": "Day 6 revision: Active Directory",
+      "number": 6,
+      "kind": "Recap",
+      "description": "Day 6 revision: Active Directory. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-07.md",
+      "route": "revision/day-07.html",
+      "title": "Day 7 revision: Authenticators and MFA",
+      "number": 7,
+      "kind": "Recap",
+      "description": "Day 7 revision: Authenticators and MFA. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-08.md",
+      "route": "revision/day-08.html",
+      "title": "Day 8 revision: SAML",
+      "number": 8,
+      "kind": "Recap",
+      "description": "Day 8 revision: SAML. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-09.md",
+      "route": "revision/day-09.html",
+      "title": "Day 9 revision: OIDC",
+      "number": 9,
+      "kind": "Recap",
+      "description": "Day 9 revision: OIDC. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-10.md",
+      "route": "revision/day-10.html",
+      "title": "Day 10 revision: SCIM",
+      "number": 10,
+      "kind": "Recap",
+      "description": "Day 10 revision: SCIM. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-11.md",
+      "route": "revision/day-11.html",
+      "title": "Day 11 revision: Imports and matching",
+      "number": 11,
+      "kind": "Recap",
+      "description": "Day 11 revision: Imports and matching. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-12.md",
+      "route": "revision/day-12.html",
+      "title": "Day 12 revision: Joiners, movers, and leavers",
+      "number": 12,
+      "kind": "Recap",
+      "description": "Day 12 revision: Joiners, movers, and leavers. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-13.md",
+      "route": "revision/day-13.html",
+      "title": "Day 13 revision: Policies and sessions",
+      "number": 13,
+      "kind": "Recap",
+      "description": "Day 13 revision: Policies and sessions. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-14.md",
+      "route": "revision/day-14.html",
+      "title": "Day 14 revision: Requirements and responsibilities",
+      "number": 14,
+      "kind": "Recap",
+      "description": "Day 14 revision: Requirements and responsibilities. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/day-15.md",
+      "route": "revision/day-15.html",
+      "title": "Day 15 revision: Bringing it together",
+      "number": 15,
+      "kind": "Recap",
+      "description": "Day 15 revision: Bringing it together. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "revision/index.md",
+      "route": "revision/",
+      "title": "Revision Guide",
+      "kind": "Recap",
+      "description": "Revision Guide. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/final-case.md",
+      "route": "assessments/final-case.html",
+      "title": "Final case: Northbridge's open identity tickets",
+      "kind": "Assessment",
+      "description": "Final case: Northbridge's open identity tickets. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/foundation.md",
+      "route": "assessments/foundation.html",
+      "title": "Foundation checkpoint: From identity data to access",
+      "kind": "Assessment",
+      "description": "Foundation checkpoint: From identity data to access. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/index.md",
+      "route": "assessments/",
+      "title": "Assessments",
+      "kind": "Assessment",
+      "description": "Assessments. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/integration.md",
+      "route": "assessments/integration.html",
+      "title": "Integration checkpoint: Sign-in and account management",
+      "kind": "Assessment",
+      "description": "Integration checkpoint: Sign-in and account management. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/self-checks/final-case.md",
+      "route": "assessments/self-checks/final-case.html",
+      "title": "Final case: Debrief and skills checklist",
+      "kind": "Assessment",
+      "description": "Final case: Debrief and skills checklist. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/self-checks/foundation.md",
+      "route": "assessments/self-checks/foundation.html",
+      "title": "Foundation checkpoint: Debrief and rubric",
+      "kind": "Assessment",
+      "description": "Foundation checkpoint: Debrief and rubric. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "assessments/self-checks/integration.md",
+      "route": "assessments/self-checks/integration.html",
+      "title": "Integration checkpoint: Debrief and rubric",
+      "kind": "Assessment",
+      "description": "Integration checkpoint: Debrief and rubric. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/connection-maintenance.md",
+      "route": "requests/connection-maintenance.html",
+      "title": "A connection needs new credentials",
+      "kind": "Request",
+      "description": "A connection needs new credentials. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/department-and-reporting.md",
+      "route": "requests/department-and-reporting.html",
+      "title": "The department changed, but the report did not",
+      "kind": "Request",
+      "description": "The department changed, but the report did not. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/index.md",
+      "route": "requests/",
+      "title": "Working through requests",
+      "kind": "Request",
+      "description": "Working through requests. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/missing-application.md",
+      "route": "requests/missing-application.html",
+      "title": "The application is missing",
+      "kind": "Request",
+      "description": "The application is missing. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/reading-records-and-settings.md",
+      "route": "requests/reading-records-and-settings.html",
+      "title": "Reading records and settings",
+      "kind": "Request",
+      "description": "Reading records and settings. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "requests/recovery-and-account-state.md",
+      "route": "requests/recovery-and-account-state.html",
+      "title": "A replacement phone and a locked account",
+      "kind": "Request",
+      "description": "A replacement phone and a locked account. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/attribute-ownership.md",
+      "route": "reference/attribute-ownership.html",
+      "title": "Northbridge's source and ownership reference",
+      "kind": "Reference",
+      "description": "Northbridge's source and ownership reference. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/cheat-sheets.md",
+      "route": "reference/cheat-sheets.html",
+      "title": "Cheat sheets",
+      "kind": "Reference",
+      "description": "Cheat sheets. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/glossary.md",
+      "route": "reference/glossary.html",
+      "title": "Course glossary",
+      "kind": "Reference",
+      "description": "Course glossary. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/index.md",
+      "route": "reference/",
+      "title": "Reference",
+      "kind": "Reference",
+      "description": "Reference. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/northbridge-company.md",
+      "route": "reference/northbridge-company.html",
+      "title": "Northbridge Services",
+      "kind": "Reference",
+      "description": "Northbridge Services. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/onboarding-an-application.md",
+      "route": "reference/onboarding-an-application.html",
+      "title": "Onboarding a new application",
+      "kind": "Reference",
+      "description": "Onboarding a new application. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/optional-extensions.md",
+      "route": "reference/optional-extensions.html",
+      "title": "Optional extensions",
+      "kind": "Reference",
+      "description": "Optional extensions. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/troubleshooting-playbook.md",
+      "route": "reference/troubleshooting-playbook.html",
+      "title": "Troubleshooting playbook",
+      "kind": "Reference",
+      "description": "Troubleshooting playbook. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "notebook/guide.md",
+      "route": "notebook/guide.html",
+      "title": "Your learning notebook",
+      "kind": "Notebook",
+      "description": "Your learning notebook. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "quizzes/day-01.json",
+      "route": "quizzes/day-01.html",
+      "kind": "Quizzes",
+      "number": 1,
+      "title": "Day 1: Quizzes",
+      "description": "Independent practice for Day 1: People, identities, and access.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-02.json",
+      "route": "quizzes/day-02.html",
+      "kind": "Quizzes",
+      "number": 2,
+      "title": "Day 2: Quizzes",
+      "description": "Independent practice for Day 2: Following a request and reading evidence.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-03.json",
+      "route": "quizzes/day-03.html",
+      "kind": "Quizzes",
+      "number": 3,
+      "title": "Day 3: Quizzes",
+      "description": "Independent practice for Day 3: Profiles, attributes, and mappings.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-04.json",
+      "route": "quizzes/day-04.html",
+      "kind": "Quizzes",
+      "number": 4,
+      "title": "Day 4: Quizzes",
+      "description": "Independent practice for Day 4: Sources, priority, and ownership.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-05.json",
+      "route": "quizzes/day-05.html",
+      "kind": "Quizzes",
+      "number": 5,
+      "title": "Day 5: Quizzes",
+      "description": "Independent practice for Day 5: Groups, rules, and application assignments.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-06.json",
+      "route": "quizzes/day-06.html",
+      "kind": "Quizzes",
+      "number": 6,
+      "title": "Day 6: Quizzes",
+      "description": "Independent practice for Day 6: AD imports and password validation.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-07.json",
+      "route": "quizzes/day-07.html",
+      "kind": "Quizzes",
+      "number": 7,
+      "title": "Day 7: Quizzes",
+      "description": "Independent practice for Day 7: Authenticators, enrollment, and MFA.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-08.json",
+      "route": "quizzes/day-08.html",
+      "kind": "Quizzes",
+      "number": 8,
+      "title": "Day 8: Quizzes",
+      "description": "Independent practice for Day 8: SAML and application sign-in.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-09.json",
+      "route": "quizzes/day-09.html",
+      "kind": "Quizzes",
+      "number": 9,
+      "title": "Day 9: Quizzes",
+      "description": "Independent practice for Day 9: OIDC and the authorization code.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-10.json",
+      "route": "quizzes/day-10.html",
+      "kind": "Quizzes",
+      "number": 10,
+      "title": "Day 10: Quizzes",
+      "description": "Independent practice for Day 10: SCIM and application accounts.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-11.json",
+      "route": "quizzes/day-11.html",
+      "kind": "Quizzes",
+      "number": 11,
+      "title": "Day 11: Quizzes",
+      "description": "Independent practice for Day 11: Imports, matching, and reconciliation.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-12.json",
+      "route": "quizzes/day-12.html",
+      "kind": "Quizzes",
+      "number": 12,
+      "title": "Day 12: Quizzes",
+      "description": "Independent practice for Day 12: Joining, moving, and leaving.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-13.json",
+      "route": "quizzes/day-13.html",
+      "kind": "Quizzes",
+      "number": 13,
+      "title": "Day 13: Quizzes",
+      "description": "Independent practice for Day 13: Policies, sessions, and another authentication check.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-14.json",
+      "route": "quizzes/day-14.html",
+      "kind": "Quizzes",
+      "number": 14,
+      "title": "Day 14: Quizzes",
+      "description": "Independent practice for Day 14: Requirements, responsibility, and recovery.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-15.json",
+      "route": "quizzes/day-15.html",
+      "kind": "Quizzes",
+      "number": 15,
+      "title": "Day 15: Quizzes",
+      "description": "Independent practice for Day 15: Investigate Northbridge as a connected system.",
+      "quizzes": 12
+    },
+    {
+      "source": "quizzes/day-16.json",
+      "route": "quizzes/day-16.html",
+      "kind": "Quizzes",
+      "number": 16,
+      "title": "Day 16: Quizzes",
+      "description": "Independent practice for Day 16: Turn understanding into a safe practice plan.",
+      "quizzes": 12
+    }
+  ],
+  "diagramPlacements": 35
+}

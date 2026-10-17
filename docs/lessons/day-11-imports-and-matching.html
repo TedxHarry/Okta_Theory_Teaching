@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 11: Imports, matching, and reconciliation. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 11: Imports, matching, and reconciliation | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html" aria-current="page"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html" aria-current="page">Lesson 11</a><a href="/Okta_Theory_Teaching/question-bank/day-11.html">Questions (42)</a><a href="/Okta_Theory_Teaching/quizzes/day-11.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-11-imports-matching-and-reconciliation">Day 11: Imports, matching, and reconciliation</h1>
+<p>“There is already a Projects account called Maya Rao. Should we link it or create another?”</p>
+<p>Alex cannot answer from the name alone. The application may contain an account that belongs to Maya, a record for another person with the same name, or information that needs correction before any relationship is accepted.</p>
+<p>Linking the wrong account could direct later updates or access decisions at someone else's record. Creating another account without checking could leave one person with two unmanaged paths.</p>
+<p>Day 10 showed why a conflicting user name needs an ownership investigation. Here we will follow a separate account-review packet through that decision. Alex first establishes which person the existing account represents, which integration discovered it, and which association already exists. A correct link lets later operations address the intended record.</p>
+<p>Follow the discovered record, the comparison that proposes a match, and the confirmation that accepts it. Then check the resulting association and account state. By the end, explain when an existing account can be linked with confidence and when incomplete or conflicting evidence leaves the decision open.</p>
+<h2 id="separate-the-stages">Separate the stages</h2>
+<p>An account can be visible to an import before Okta has established who it belongs to. An <strong>import</strong> reads records or changes from a connected system into Okta for processing. <strong>Discovery</strong> means the record was found within that operation's scope. <strong>Matching</strong> compares it with existing Okta identities. <strong>Confirmation</strong> accepts the proposed match or new-user outcome through the configured process.</p>
+<p>Keep one account in view as you read the table. &quot;We found this Projects record&quot; is discovery. &quot;Its data meets the comparison for Maya&quot; is a proposed match. &quot;The proposed outcome was accepted&quot; is confirmation. The resulting association identifies the linked records.</p>
+<p>These statements describe progress, but they answer different questions. Alex still needs to check the relevant account state and actual application entry before reporting those outcomes.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Stage</th>
+<th>Question it answers</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discovery</td>
+<td>Which records did this operation find?</td>
+<td>That every possible account was searched.</td>
+</tr>
+<tr>
+<td>Matching</td>
+<td>Which existing identity meets the configured comparison?</td>
+<td>That the input data is correct.</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Was this match or new-user outcome accepted?</td>
+<td>That all subsequent operations succeeded.</td>
+</tr>
+<tr>
+<td>Association</td>
+<td>Which external record is linked to which Okta identity?</td>
+<td>That the external system controls the profile.</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>Is the relevant account in an enabled state?</td>
+<td>That sign-in and every required permission work.</td>
+</tr>
+</tbody>
+</table></div><p>When reading activation or account state, name the system. An enabled Projects account does not establish that the linked Okta identity is active, or that the user can complete sign-in. Each account has its own state and evidence.</p>
+<p>These are logical distinctions. Configuration may automate some stages; the administrator does not necessarily approve every record manually. Okta documents matching and confirmation options separately in its <a href="https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm">AD import settings</a>.</p>
+<p>If Alex is told “Import succeeded,” he needs a more precise follow-up: which records were scanned, what was proposed, what was confirmed, and what happened afterward? A successful read with pending confirmation is a different result from a checked association. Ask for the stage's outcome, rather than turning one success label into a conclusion about the whole journey.</p>
+<h2 id="start-with-scope-and-direction">Start with scope and direction</h2>
+<p>Start by naming the direction. Day 10 sent an account-management instruction from Okta to Projects. Here an import reads existing Projects records into Okta for processing. Reading an account does not create it again. The receiving Okta identity and the discovered Projects account are separate records whose relationship still needs to be established.</p>
+<p>For this lesson, the fictional Projects integration supports inbound user discovery, and its mapped employeeNumber is available for comparison. Projects remains a downstream account system, not a configured profile source. Reading its records does not change Northbridge's Workday-led architecture.</p>
+<p>For AD, selected organizational units help define what is eligible for import. The correct domain, integration instance, scope, and read permissions matter. A record outside scope can be absent from an import without being absent from AD.</p>
+<p>If an expected AD record is missing, Alex first compares its location with the scope that was actually read. That distinguishes a deliberately excluded record from a missing result inside the approved population. Compare its location with the approved population before proposing a wider scope. Priya's contractor identity and Alex's administrative identity are intentionally outside employee source imports.</p>
+<h2 id="a-matching-rule-is-a-comparison-not-a-biography">A matching rule is a comparison, not a biography</h2>
+<p>Imagine that someone accidentally copies Maya's employee number onto another person's account. The two numbers can agree exactly while the proposed relationship is wrong. The system compares the information it has; it does not independently know the account's history. An <strong>exact match</strong> means a record meets the configured exact-match criteria. It does not mean the system independently proved the person's real-world identity. A <strong>partial match</strong> is a candidate meeting the configured weaker comparison, such as matching names where identifiers differ.</p>
+<p>Okta supports <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-matching-imported-users.htm">matching on mapped attributes</a>. The selected criteria and confirmation behavior must be inspected for the specific integration. A business review rule is not automatically a built-in Okta feature.</p>
+<p>Northbridge uses this review policy for the following Projects packet:</p>
+<ul>
+<li>Compare the mapped employeeNumber with the existing Okta employeeNumber for this employee population.</li>
+<li>Accept the proposed link only when the value is present, unique among the checked candidates, and supported by the authoritative employee record and account-ownership evidence.</li>
+<li>Hold missing, conflicting, or ambiguous evidence for review. Do not approve a name-only candidate or create a second Okta identity as a shortcut.</li>
+</ul>
+<p>Keep the two responsibilities distinct. The configured employeeNumber comparison proposes the match. Northbridge's review process checks whether the identifiers and ownership evidence justify accepting it. Manual confirmation is used for this packet. Those additional checks are not an automatic consequence of choosing an exact comparison. Northbridge's employee numbers are governed identifiers, not a claim that every organization's employeeNumber is unique, immutable, or never reused.</p>
+<p>Email can change or be reused. Names can be shared. Even an employee number can be copied incorrectly. A reliable matching decision depends on both the comparison and the quality of the values compared.</p>
+<h2 id="work-through-mayas-existing-account">Work through Maya's existing account</h2>
+<p>Packet M-1 is an independent account-review scenario. It does not claim to resolve Day 10's conflict history. Maya remains a Sales employee with existing Workday and AD associations and an approved Projects assignment. Her Projects association is unconfirmed in this packet.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authoritative employee record</td>
+<td>Maya Rao, NB-1042, Sales.</td>
+</tr>
+<tr>
+<td>Existing Okta identity</td>
+<td>Maya Rao, employeeNumber NB-1042.</td>
+</tr>
+<tr>
+<td>Projects candidate A</td>
+<td>id prj-1042; name Maya Rao; employeeNumber NB-1042.</td>
+</tr>
+<tr>
+<td>Projects candidate B</td>
+<td>id prj-7788; name Maya Rao; employeeNumber NB-7788.</td>
+</tr>
+<tr>
+<td>Ownership evidence</td>
+<td>Projects owner confirms A belongs to NB-1042 and B belongs to a different person.</td>
+</tr>
+<tr>
+<td>Comparison coverage</td>
+<td>Relevant candidates and identifier uniqueness checked in the stated Projects instance.</td>
+</tr>
+<tr>
+<td>Proposed match</td>
+<td>A to Maya's existing Okta identity.</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Pending.</td>
+</tr>
+</tbody>
+</table></div><p>Before reading the decision, compare A and B against both parts of the review: the employeeNumber comparison and the ownership evidence. Which candidate meets them, and which stage is still pending?</p>
+<p>Candidate A meets the comparison and the supplied ownership checks. Candidate B's similar name does not override its different employee number and confirmed different ownership. The evidence supports confirming A through the approved process, not creating another Okta identity or deleting B. Here Okta supplies the configured comparison result; Northbridge's additional review supplies the ownership justification for accepting it. Pending confirmation means Alex can explain the supported proposal, but cannot yet report that the records are linked.</p>
+<p>Now use an explicit follow-up M-2: confirmation succeeds, and an association check links Maya's existing Okta identity to prj-1042 in the intended Projects integration. A read of that target confirms NB-1042, SAL, and active true. No sign-in is supplied.</p>
+<p>M-2 adds the outcome M-1 lacked: accepted confirmation and a checked link to the intended Projects resource. The target read also establishes the supplied account values and state. It does not establish Maya's Projects entry. Nor does it make Projects her profile source: that integration is not configured as one. Workday still controls her employee profile under the existing source model. Linking identifies an account; sourcing determines which system governs the profile.</p>
+<h2 id="recognize-when-the-evidence-is-insufficient">Recognize when the evidence is insufficient</h2>
+<p>Now examine a different packet M-3: both Projects candidates contain NB-1042, and neither has verified ownership. This replaces M-1's candidate and ownership evidence for the separate scenario. The original review's uniqueness condition is no longer met. Both records answer &quot;Does this field equal NB-1042?&quot; with yes. That leaves the important question unanswered: &quot;Which account belongs to Maya?&quot; Choosing the first result would use list order to make an ownership decision.</p>
+<p>Do not choose the first result. Request account-creation records, the accountable application owner's evidence, and the authoritative identifier history. If a value was copied incorrectly, correct it through the responsible process before rerunning the comparison. If one person has duplicate accounts, the business owner must decide their intended use and consolidation; a duplicate-looking name alone does not authorize deletion.</p>
+<p>A missing employeeNumber is also unresolved. It is not evidence that the person is new. Different issues can produce “no match”: a new employee, a missing value, a transformation error, the wrong scope, or incomplete discovery. Alex's next check depends on what is missing: a record that was never discovered needs a different investigation from a discovered record whose comparison field is empty. Distinguish these before creating an identity.</p>
+<h2 id="association-can-affect-sourcing">Association can affect sourcing</h2>
+<p>The consequence of a link depends on the integration it belongs to. An application-account association and an applicable profile-source association are related concepts, but not interchangeable. The integration's source settings matter. Ask both “Which records are linked?” and “Does this connection have a configured sourcing role?” before predicting which values may change. A link can tell Okta &quot;this is Maya's Projects account&quot; without telling it &quot;let Projects govern Maya's employee profile.&quot; The source configuration determines that separate responsibility.</p>
+<p>Recall Northbridge's order: Workday above AD. Maya already has both associations; matching a Projects account does not move Projects into that order. Department inherits Workday ownership, while her designated AD-owned email remains a field-level exception.</p>
+<p>Consider a separate hypothetical error: an AD record is accidentally confirmed against Priya's Okta-managed contractor identity. This violates her intended exclusion from employee imports. Because AD is a configured profile source, the new association may affect her source applicability and governed values. Inspect the resulting source, attribute settings, and actual writes. Do not assume the contractor label prevents the effect or that Workday applies to her without an association.</p>
+<p>For Priya, Alex needs the mistaken confirmation history and the resulting source and write evidence. That shows both how the wrong relationship arose and what it affected. The correction requires investigating that match and its impact, then restoring the intended association and data through the supported process. Merely changing source priority for everyone would address a much broader decision without establishing that Priya's link was repaired. See the <a href="/Okta_Theory_Teaching/reference/attribute-ownership.html">ownership reference</a> and <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-prioritize-profile-source.htm">Okta's source-priority documentation</a>.</p>
+<h2 id="reconcile-expected-and-observed-records">Reconcile expected and observed records</h2>
+<p><strong>Reconciliation</strong> means comparing the intended records and relationships with the observed ones and explaining differences. Here it is an investigation practice, not the name of a promised automatic repair feature.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Expected</th>
+<th>Observed</th>
+<th>Useful next question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One correctly associated account</td>
+<td>No confirmed association</td>
+<td>Was it discovered, matched, and confirmed?</td>
+</tr>
+<tr>
+<td>One account for the approved purpose</td>
+<td>Two plausible candidates</td>
+<td>Who owns each, and are both authorized?</td>
+</tr>
+<tr>
+<td>An employee is in import scope</td>
+<td>No imported record</td>
+<td>Was the correct scope searched successfully?</td>
+</tr>
+<tr>
+<td>Priya remains Okta-managed</td>
+<td>Unexpected AD association</td>
+<td>Which match created the link, and what changed afterward?</td>
+</tr>
+</tbody>
+</table></div><p>Count differences help locate a problem but do not identify individual ownership. “100 imported” does not prove the 100 expected people were correctly matched.</p>
+<p>For example, 99 expected employees plus one unexpected account still total 100. The total looks right while one expected person is missing and an unexpected record is present. Compare the actual identities and associations, not just the totals. Reconciliation turns that difference into an investigation of specific records, rather than an instruction to force the count back into agreement.</p>
+<h2 id="read-the-whole-result-not-just-its-first-page">Read the whole result, not just its first page</h2>
+<p>The remaining examples show other ways incomplete evidence can lead to a wrong decision. Focus on what each result establishes and what is still unknown; you do not need to configure pagination, JIT or safeguards today.</p>
+<p>Alex receives a synthetic read-only Okta management API result for <code>GET /api/v1/users?limit=2</code>. This is an evidence excerpt, not a request to run. The fictional host represents the checked Okta organization.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">HTTP/1.1 200 OK
+Link: &lt;https://identity.northbridge.example/api/v1/users?limit=2&amp;after=CURSOR_PLACEHOLDER&gt;; rel=&quot;next&quot;
+</code></pre>
+<p>Selected fields from that page's two user objects are:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">[
+  {&quot;id&quot;: &quot;OKTA_MAYA_PLACEHOLDER&quot;, &quot;profile&quot;: {&quot;login&quot;: &quot;maya.rao@northbridge.example&quot;}},
+  {&quot;id&quot;: &quot;OKTA_DANIEL_PLACEHOLDER&quot;, &quot;profile&quot;: {&quot;login&quot;: &quot;daniel.brooks@northbridge.example&quot;}}
+]
+</code></pre>
+<p>Read the status and Link header alongside the two objects. This read succeeded, but the next link says the returned page is not the whole result. Priya is not shown. That does not establish her absence. The <code>rel=&quot;next&quot;</code> label tells Alex there is another portion to read. A <strong>cursor</strong> marks a position in that result sequence. <strong>Opaque</strong> means Alex does not need to work out what the cursor's characters mean. He follows the service's supplied next link, including its cursor, rather than calculating a page number or building a new value. Completing the pages still needs the right query and endpoint scope before a completeness claim. See <a href="https://developer.okta.com/docs/reference/core-okta-api/#pagination">Okta API pagination</a>.</p>
+<p>This reads Okta users; it is not Projects' SCIM list response and does not enumerate Projects accounts. This JSON excerpt does not supply association evidence.</p>
+<p>In a separate attempt, the same read receives HTTP 403 Forbidden, with an investigator's supplied finding that the caller lacks the required permission. That is a failed read, not an empty result. Request an appropriately authorized read through the responsible administrator; do not infer “no users” or treat the failed request as a reason to create a duplicate. A bare 403 without that finding would require more investigation of the rejection.</p>
+<h2 id="compare-import-with-just-in-time-creation">Compare import with just-in-time creation</h2>
+<p>An import discovers accounts through a read operation. <strong>Just-in-time provisioning (JIT)</strong> creates or updates an account during a supported, configured sign-in journey. Always name the destination: an application creating its own account from federation is different from Okta creating a profile through an enabled AD JIT path.</p>
+<p>The timing and destination make the distinction useful. In the Projects packet, the account already exists and an import reads it for matching. In a supported JIT journey, account creation or updating happens during sign-in in the named receiving system. Successful federation alone does not guarantee either behavior. Northbridge's Projects matching packet uses import and confirmation; it does not assume JIT. JIT also does not eliminate the need for identity matching, ownership, and later access-removal decisions.</p>
+<h2 id="treat-an-unexpected-removal-count-as-evidence">Treat an unexpected removal count as evidence</h2>
+<p>An import safeguard can stop covered imports when proposed unassignments reach a configured threshold. Its scope and eligibility matter: it is not a universal barrier against every access change. In particular, a changed attribute affecting a group rule is not the same as a covered imported-group membership removal. See <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-safeguard.htm">import safeguard coverage</a>.</p>
+<p>Suppose an import reports an unexpected rise in removals after its selected directory scope changes. Compare the intended population, the changed scope, source availability, and affected records before treating those removals as departures. Ask the source owner to confirm the business changes. Do not disable the safeguard merely to finish the import.</p>
+<p>Once the cause is established, review the corrected import results and the remaining associations and assignments. A count returning to normal does not prove that the right identities were preserved. The same habit applies across the lesson: inspect the actual records, justify the comparison, confirm the relationship through the applicable process, and verify the result. When ownership or completeness remains unknown, keeping the decision open is a supported outcome. For an unfamiliar matching and assignment situation, try <a href="/Okta_Theory_Teaching/requests/missing-application.html">the missing-application request</a> after the foundation checkpoint.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain why a discovered record is not yet a verified association, why an exact comparison can use bad data, and why M-3 must remain unresolved? Can you distinguish an app association from profile ownership and an incomplete read from confirmed absence?</p>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-11.html">exercises</a>, then the <a href="/Okta_Theory_Teaching/self-checks/day-11.html">answers</a>. In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, record the integration, source record ID, intended Okta identity, matching criteria, ownership evidence, confirmation result, and remaining unknowns.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a> follows an approved move and departure through these connected records.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-11.html">Day 11 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">Previous: Day 10</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-11.html">Revise Day 11</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-11.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-11.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-11.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><small>← Previous lesson</small>Day 10: SCIM and application accounts</a><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><small>Next lesson →</small>Day 12: Joining, moving, and leaving</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

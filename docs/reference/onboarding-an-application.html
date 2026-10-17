@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Onboarding a new application. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Onboarding a new application | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/onboarding-an-application.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="onboarding-a-new-application">Onboarding a new application</h1>
+<p>“Connect our new app to Okta” contains several decisions. Which people need it? How will the app recognize them? Who manages its accounts, and what should happen when access ends?</p>
+<p>Use this framework after <a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html">Day 14</a>. It is a theory exercise in explaining a proposed design and its evidence. No tenant or configuration work is required.</p>
+<p>Follow one requirement through the framework. Explain who needs which capability, how the intended account will be identified, and what would show that access starts and ends correctly. Keep unanswered owner decisions visible instead of hiding them behind a connector choice.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/c076712292f4e5f9.svg" alt="Onboarding a new application: diagram 1" width="276" height="734" loading="lazy"><figcaption><span>Onboarding a new application: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/c076712292f4e5f9.svg" data-diagram="Onboarding a new application: diagram 1">Open full diagram</a></figcaption></figure><h2 id="1-define-the-requirement-and-the-system-boundary">1. Define the requirement and the system boundary</h2>
+<p>An <strong>Okta organization</strong>, often called an <strong>org</strong> or tenant, is a separate Okta environment with its own users and configuration. An <strong>application integration instance</strong> is a particular configured connection within that org. Two connections to the same product can point to different target environments and have different settings.</p>
+<p>Record the intended org, integration instance and target environment before comparing evidence. A successful operation against a test instance does not establish the production outcome.</p>
+<p>Ask which employees and contractors qualify, which system owns the deciding attributes, which application permissions they need, and when access starts or ends. Name the business approver, identity-data owner, IAM owner and application owner. A department does not automatically establish an application role.</p>
+<h2 id="2-choose-the-supported-sign-in-method">2. Choose the supported sign-in method</h2>
+<p>Establish what the particular app and connector support. For SAML, explain the trusted issuer, validation requirements, destination and matching rule. For this course's OIDC web-client model, the browser returns a code and the backend exchanges it for tokens, validates the response and establishes an application session. Do not copy these settings into a connector that uses a different protocol.</p>
+<p>Revisit <a href="/Okta_Theory_Teaching/lessons/day-08-saml.html">SAML</a> or <a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html">OIDC</a> for the full flow.</p>
+<h2 id="3-separate-account-management-from-sign-in">3. Separate account management from sign-in</h2>
+<p>Identify who creates, updates and disables accounts. If provisioning is supported and configured, establish its actual operations and credentials. Otherwise, explain the responsible manual or external process and the evidence it returns. Signing in does not universally create an account, and an assignment is not proof of successful provisioning.</p>
+<p>For an existing account, establish ownership before linking or creating anything. See <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">SCIM</a> and <a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html">matching</a>.</p>
+<h2 id="4-distinguish-the-identifiers">4. Distinguish the identifiers</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Decision</th>
+<th>What to establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAML sign-in matching</td>
+<td>The app's configured identity rule; in Day 8, NameID must match the intended Salesforce username. An email-looking value is not automatically correct.</td>
+</tr>
+<tr>
+<td>OIDC identity</td>
+<td>Validate the token and use the issuer (<code>iss</code>) and subject (<code>sub</code>) together for the stable identity within that issuer. Email is not an equivalent guaranteed stable key.</td>
+</tr>
+<tr>
+<td>Initial provisioning lookup</td>
+<td>The connector's documented matching criteria; the Projects SCIM example looks up <code>userName</code> and checks ownership.</td>
+</tr>
+<tr>
+<td>Subsequent target operations</td>
+<td>The confirmed target-assigned resource identifier, such as Projects <code>id</code>, associated with the intended Okta user.</td>
+</tr>
+</tbody>
+</table></div><p>Consider what happens when a login or email changes and when a lookup finds a conflicting account. Do not infer ownership from one matching string. See <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClaimStability">OIDC claim stability</a> and <a href="https://developer.okta.com/docs/api/openapi/okta-scim/guides/scim-20">Okta SCIM operations</a>.</p>
+<h2 id="5-explain-membership-and-exceptions">5. Explain membership and exceptions</h2>
+<p>Write the eligibility condition in plain words first. A group rule can manage membership from attributes; an existing directory group or an approved manually maintained group may suit a different requirement. Name the membership owner and the app assignment attached to that group.</p>
+<p>A direct assignment or a governed exception group can represent an approved exception. State the approver, scope, owner and end condition. Neither mechanism automatically supplies those controls. Check surviving assignment paths when normal eligibility ends. See <a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html">Day 5</a>.</p>
+<h2 id="6-compare-several-evidence-cases">6. Compare several evidence cases</h2>
+<p>For this fictional design variant, Northbridge Projects is intended for Sales employees. A contractor needs a separately approved, limited exception. Maya's move to Finance would end ordinary access under this variant; this does not change the different approved Projects outcome in Day 12.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Case</th>
+<th>Required reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eligible Sales employee</td>
+<td>Explain assignment, intended account, successful sign-in and permitted actions with separate evidence.</td>
+</tr>
+<tr>
+<td>Ineligible Finance employee</td>
+<td>Explain why the ordinary assignment is absent and why an old account or session still needs checking.</td>
+</tr>
+<tr>
+<td>Priya's contractor exception</td>
+<td>Establish sponsor approval, limited permission, assignment path and end condition; preserve her Okta-managed source model.</td>
+</tr>
+<tr>
+<td>Maya moves out of Sales</td>
+<td>Inspect every surviving assignment, target account and relevant session against the variant's removal requirement.</td>
+</tr>
+<tr>
+<td>Existing account or rehire</td>
+<td>Verify ownership and intended reuse before assuming a new account is needed.</td>
+</tr>
+<tr>
+<td>Departure or exception expiry</td>
+<td>Explain the Okta action, per-app removal results and separate session outcome.</td>
+</tr>
+</tbody>
+</table></div><p>One successful example supports only its observed path. It does not establish the negative, exception or lifecycle cases. Choose cases that can expose a mistaken condition: a Sales employee alone would qualify under both Sales AND Employee and the broader Sales OR Employee condition. A Sales contractor and a Finance employee distinguish the intended population from that mistake. These are design predictions, not supplied test results.</p>
+<h2 id="7-explain-maintenance-shared-impact-and-recovery">7. Explain maintenance, shared impact and recovery</h2>
+<p>Identify other apps or users affected by shared groups and policies. State who owns a failed change and what evidence would show that both the configuration and its unintended effects have been corrected. Restoring a setting alone does not remove accounts or sessions already created.</p>
+<p>Two short comparisons help locate a maintenance failure:</p>
+<ul>
+<li><strong>SAML credential or field mismatch:</strong> a reported expired or untrusted signing certificate calls for comparing the received signature's credential, validity and configured trust. A reported audience mismatch calls for comparing the audience with the intended application identifier. Both can reject sign-in; they require different evidence and owners. Keep validation enabled.</li>
+<li><strong>Service credential or user authentication:</strong> a provisioning API's rejected integration credential concerns the connection acting on accounts. It does not establish that Maya's password or authenticator is wrong. Identify the caller, endpoint and exact error before proposing a credential change.</li>
+</ul>
+<p>Record owners for certificate and service-credential maintenance, expected expiry or rotation events, and the supported recovery process. No secret values belong in the learning notes.</p>
+<h2 id="state-what-the-evidence-supports">State what the evidence supports</h2>
+<p>A clear explanation connects the approved population, identifiers, assignment paths, account operations, sign-in, permissions and removal behavior. It also names unresolved questions and the evidence needed to answer them. That is an assessed design explanation; operational deployment readiness requires the organization's own validation and change process.</p>
+<p><a href="/Okta_Theory_Teaching/exercises/day-14.html">Day 14 practice</a> · <a href="/Okta_Theory_Teaching/learning-path.html">Learning path</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

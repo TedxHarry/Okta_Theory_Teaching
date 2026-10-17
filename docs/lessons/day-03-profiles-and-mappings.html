@@ -1,0 +1,296 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 3: Profiles, attributes, and mappings. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 3: Profiles, attributes, and mappings | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html" aria-current="page"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html" aria-current="page">Lesson 3</a><a href="/Okta_Theory_Teaching/question-bank/day-03.html">Questions (46)</a><a href="/Okta_Theory_Teaching/quizzes/day-03.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-3-profiles-attributes-and-mappings">Day 3: Profiles, attributes, and mappings</h1>
+<p>Daniel Brooks is a Finance manager at Northbridge Services. Workday, Northbridge's HR system, correctly places him in Finance. His Okta profile also says Finance. Northbridge Projects, a separate business application, displays his department as Sales.</p>
+<p>Daniel reports:</p>
+<blockquote>
+<p>My department is correct in HR. Why is Projects showing something different?</p>
+</blockquote>
+<p>Before deciding where to make a correction, follow the value between systems. Day 1 separated the person from the accounts representing them. Day 2 separated individual observations from the whole outcome. Here, those habits help us find where identity information changes.</p>
+<p>Alex could change the value he sees in Projects, but first he needs to understand why it is wrong. A correction in one record may leave the rule producing that value unchanged. Follow four places: Workday, Daniel's central profile in Okta, the Projects-specific profile held in Okta, and the account inside Projects.</p>
+<p>Your goal is to locate the first demonstrated wrong value, explain why the same department can have different text in different systems, and distinguish calculating a value from delivering it to an application. You can follow the evidence without a tenant or writing a mapping expression.</p>
+<h2 id="start-with-one-piece-of-information">Start with one piece of information</h2>
+<p>Daniel's department is an <strong>attribute</strong>: one named piece of information about him. The value of that attribute is <code>Finance</code>.</p>
+<p>Alex opens Daniel's Okta record and reads several details together: his name, employee number, and department. That collection of attributes is a <strong>profile</strong>. An attribute names one detail; its value tells Alex what that record currently says about Daniel. A profile brings those details together for this representation of him.</p>
+<p>Here is a fictional profile excerpt:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;firstName&quot;: &quot;Daniel&quot;,
+  &quot;lastName&quot;: &quot;Brooks&quot;,
+  &quot;employeeNumber&quot;: &quot;NB-1020&quot;,
+  &quot;department&quot;: &quot;Finance&quot;
+}
+</code></pre>
+<p>Read <code>department</code> as the field name and <code>Finance</code> as its value. The excerpt contains selected profile fields, not the entire Okta user object.</p>
+<p>A user object also has information outside its profile, such as its object identifier and account status. An Active status is not a department attribute, and changing a department is not the same operation as activating an account.</p>
+<p>When investigating, be precise about the object and field you mean. &quot;Daniel looks correct&quot; is less useful than &quot;Daniel's Okta user profile has <code>department = Finance</code>.&quot;</p>
+<h2 id="the-profile-describes-a-user-the-schema-describes-the-fields">The profile describes a user; the schema describes the fields</h2>
+<p>How does a system know which attributes are allowed and what kind of values they can hold?</p>
+<p>Imagine Alex needs a place to store an employee number. Before supplying Daniel's number, he needs to know whether that field exists, what kind of value it accepts, and whether it must be filled in. The definition of those fields and constraints is a <strong>schema</strong>. It describes the profile's structure; Daniel's profile supplies the values in that structure.</p>
+<p>Think of a blank form and the rules for filling it in. The form design names the fields; the rules say what answers are allowed and which fields cannot be left empty. Daniel's completed profile supplies his answers. For example, a schema might specify that an employee number is text and a particular field is required. A company can also need custom attributes in addition to the attributes provided by the product. The available fields and constraints depend on the profile and integration.</p>
+<p>Compare these two questions:</p>
+<ul>
+<li><strong>Schema question:</strong> Does this profile support a department field, and what values may it contain?</li>
+<li><strong>Profile-value question:</strong> What department value does Daniel have in that field?</li>
+</ul>
+<p>Adding a field to a schema does not automatically give every user a correct value. A value must come from the applicable data source or maintenance process.</p>
+<p>The reverse matters too. A value can be readable text but still be unacceptable to the destination. If an application expects a department code, sending the full department name can fail its requirements. Alex checks both whether there is a suitable field and whether the proposed value belongs in it.</p>
+<h2 id="there-is-an-okta-user-profile-and-an-application-user-profile">There is an Okta user profile and an application user profile</h2>
+<p>Daniel's <strong>central Okta user profile</strong> is the profile Northbridge keeps about him in Universal Directory. Central means it is the Okta user profile that can supply information for different applications; it is not a separate profile created for each application's format. Projects needs information prepared for its own requirements. Okta holds that application-specific information for Daniel's assignment in an <strong>app user profile</strong>. Alex therefore has two profiles to inspect inside Okta before he checks the actual Projects account.</p>
+<p>The app user profile is in Okta. It is not the same record as Daniel's account stored inside Northbridge Projects.</p>
+<p>The name describes which application the profile is for, not where it is stored. Think “the Projects-specific information held in Okta” whenever you read <em>Projects app user profile</em>. Suppose it contains FIN, Projects' code for Finance. Alex can report, 'Okta has FIN prepared for Projects.' To say 'Projects stores FIN,' he must check the account inside Projects.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Layer</th>
+<th>Where it is</th>
+<th>What it represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workday employee record</td>
+<td>Workday</td>
+<td>Daniel's employment information.</td>
+</tr>
+<tr>
+<td>Okta user profile</td>
+<td>Okta</td>
+<td>His central workforce profile in Okta.</td>
+</tr>
+<tr>
+<td>Projects app user profile</td>
+<td>Okta</td>
+<td>The application-specific attributes associated with his Projects assignment.</td>
+</tr>
+<tr>
+<td>Projects account record</td>
+<td>Northbridge Projects</td>
+<td>The account and values actually stored by the application.</td>
+</tr>
+</tbody>
+</table></div><p>Why prepare a separate application-specific profile? Different applications can need different field names, formats, and values. Follow the intended journey through the table: HR records Finance in Workday, and the configured integration represents it as Finance in Daniel's central Okta profile. Projects needs a department code, so Okta prepares FIN in his Projects-specific profile. The configured account-update process must then deliver that code to Daniel's account inside Projects, where FIN means Finance. These are expected results to verify, not proof that they occurred for Daniel.</p>
+<p>Notice the two Projects-related records: one holds the prepared value inside Okta; the other holds the application's actual stored value. Different text can preserve the same meaning, but each record still needs its own check.</p>
+<p>Seeing a correct Projects app user profile in Okta therefore does not, by itself, prove that the Projects account has been created or updated successfully. You still need evidence from the account-management operation and destination.</p>
+<h2 id="a-mapping-connects-a-source-field-to-a-destination-field">A mapping connects a source field to a destination field</h2>
+<p>HR records Daniel's department in Workday. The configured integration first needs to obtain that employee information through its applicable import or update process. An <strong>attribute mapping</strong> tells it how the source field relates to the receiving field: take this department information and represent it in that Okta attribute. The mapping can copy the text or calculate a different representation.</p>
+<p>The rule and the result are separate things to inspect. Knowing how Finance should be represented does not show that the latest Workday information was read or that a later application update succeeded. See <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-attribute-mappings.htm">Okta's attribute mapping reference</a>.</p>
+<p>At its simplest, the mapping copies a value:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/9da634276002bcd0.svg" alt="Day 3: Profiles, attributes, and mappings: diagram 1" width="276" height="222" loading="lazy"><figcaption><span>Day 3: Profiles, attributes, and mappings: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/9da634276002bcd0.svg" data-diagram="Day 3: Profiles, attributes, and mappings: diagram 1">Open full diagram</a></figcaption></figure><p>Start at the incoming Finance value and follow the arrow to Daniel's Okta department. This simple mapping preserves the text. The labels describe the intended data flow; they are not instructions or exact Workday connector field names.</p>
+<p>Another mapping can take a value from the Okta user profile and prepare the value required by an application's profile.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/4bf21aeaa10225e3.svg" alt="Day 3: Profiles, attributes, and mappings: diagram 2" width="276" height="222" loading="lazy"><figcaption><span>Day 3: Profiles, attributes, and mappings: diagram 2</span><a href="/Okta_Theory_Teaching/assets/diagrams/4bf21aeaa10225e3.svg" data-diagram="Day 3: Profiles, attributes, and mappings: diagram 2">Open full diagram</a></figcaption></figure><p>In the second diagram, start inside Okta at the central department attribute and follow the arrow to the Projects-specific department-code attribute. The destination shown is still an app user profile in Okta. Delivery to Projects is another operation to check. Always name both sides: &quot;the department mapping&quot; is ambiguous when several systems and profiles are involved.</p>
+<h2 id="direction-changes-the-meaning">Direction changes the meaning</h2>
+<p>For a particular integration, <strong>App to Okta</strong> means the connected application or directory supplies values to the Okta user profile. <strong>Okta to App</strong> means the Okta user profile supplies values toward the application's profile.</p>
+<p>The word <em>app</em> in the mapping interface can refer to the integration supplying HR or directory information as well as to a business application receiving information. It does not automatically mean &quot;the application the employee is trying to open.&quot;</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Mapping direction</th>
+<th>Question it answers in this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workday to Okta</td>
+<td>How is HR department information represented in Daniel's Okta profile?</td>
+</tr>
+<tr>
+<td>Okta to Projects</td>
+<td>How is Daniel's Okta department represented for Projects?</td>
+</tr>
+</tbody>
+</table></div><p>A mapping in one direction does not automatically define the reverse direction. It also does not mean a value is constantly synchronized in every circumstance. The integration's supported operations and update configuration still matter.</p>
+<p>Day 2's request habit applies here: identify where information comes from and where it is meant to go before interpreting the result. If Daniel's central Okta value is correct but his Projects-specific value is wrong, Alex needs the outgoing relationship; inspecting the incoming relationship alone would leave that discrepancy unexplained.</p>
+<h2 id="a-correct-mapping-can-change-the-value">A correct mapping can change the value</h2>
+<p>Northbridge Projects is a fictional application with this department-field requirement:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Accepted <code>departmentCode</code></th>
+<th>Displayed department</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SAL</code></td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><code>FIN</code></td>
+<td>Finance</td>
+</tr>
+<tr>
+<td><code>IT</code></td>
+<td>IT</td>
+</tr>
+</tbody>
+</table></div><p>For this example, the field is required, and these are its accepted codes. These are Northbridge Projects rules; another application can require different fields and codes.</p>
+<p>Workday and Okta use the full name <code>Finance</code>. Projects expects <code>FIN</code>. Alex cannot simply copy the full name into a field that accepts the code. The mapping needs to express the same business meaning in the destination's format. Converting the value this way is a <strong>transformation</strong>.</p>
+<p>The intended rule is:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">If the Okta department is Sales, produce SAL.
+If the Okta department is Finance, produce FIN.
+If the Okta department is IT, produce IT.
+If it is missing or unrecognized, flag it for review.
+</code></pre>
+<p>This is plain-language rule logic, not Okta Expression Language code. An expression is a formula that calculates a value from its inputs; Okta Expression Language supplies syntax for such formulas. An expression can calculate the code, but a review or notification process must be defined separately. The words &quot;flag it for review&quot; do not mean that a mapping automatically opens a ticket.</p>
+<p>For Daniel, predict the output before reading on: the input is Finance, so the intended output is FIN.</p>
+<p>The two values are different pieces of text, but they carry the same meaning under the application's defined code table. Comparing values correctly means checking their intended meaning, not demanding identical text everywhere.</p>
+<h2 id="find-the-first-wrong-representation">Find the first wrong representation</h2>
+<p>Alex gathers the following synthetic evidence for Daniel. The observations refer to the same user, the same Projects integration, and the account linked to that assignment. A <strong>mapping preview</strong> evaluates the mapping with a selected input and shows the calculated output. Here, it uses Daniel's listed input; the stored profile and target values are separate observations.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Boundary</th>
+<th>Observed value or behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workday employee record</td>
+<td>Department: Finance.</td>
+</tr>
+<tr>
+<td>Imported Okta user profile</td>
+<td><code>department = Finance</code>.</td>
+</tr>
+<tr>
+<td>Configured Okta-to-Projects rule</td>
+<td>Always produce the fixed value <code>SAL</code> for <code>departmentCode</code>.</td>
+</tr>
+<tr>
+<td>Mapping preview for Daniel</td>
+<td><code>departmentCode = SAL</code>.</td>
+</tr>
+<tr>
+<td>Projects app user profile in Okta</td>
+<td><code>departmentCode = SAL</code>.</td>
+</tr>
+<tr>
+<td>Projects account record</td>
+<td>Stored code SAL; displayed department Sales.</td>
+</tr>
+</tbody>
+</table></div><p>Where does the first wrong representation appear?</p>
+<p>The source and Okta user profile agree with the approved requirement. The configured outbound mapping produces SAL even though Daniel is in Finance. A <strong>fixed value</strong>, also called a constant, gives the same result regardless of the input: Sales gets SAL, and Finance gets SAL too. The preview demonstrates that wrong output, and the app user profile and target contain it too.</p>
+<p>Projects displays Sales because its stored code is SAL. That display agrees with its code table. Alex follows the value backward rather than correcting the display label: the central Okta profile says Finance, but the outgoing rule calculates SAL. This is where the supplied evidence first demonstrates a wrong representation.</p>
+<p>Alex has evidence of a mapping defect: the fixed value conflicts with the intended conversion. He can propose replacing that constant with the approved department-to-code logic. Before applying a shared rule, he also checks which other users it affects; a correction for Daniel must preserve the intended conversions for their departments too.</p>
+<p>Be careful about what is still unknown. These snapshots do not establish the complete history of how the target obtained SAL. That historical claim would require the relevant operation evidence. They do establish that the current mapping produces the wrong value for the stated input.</p>
+<p>Changing Daniel's Workday department would not be an appropriate correction: the evidence says the HR value is already correct.</p>
+<h2 id="a-preview-is-a-calculation-not-delivery-evidence">A preview is a calculation, not delivery evidence</h2>
+<p>After the proposed correction, suppose a preview produces FIN for Daniel.</p>
+<p>We can now say, 'This proposed rule calculates FIN when given Finance.' That is useful progress: the conversion works for the input we tried.</p>
+<p>To tell Daniel that Projects has been corrected, Alex needs more. Was the corrected configuration applied? Does the stored app user profile now hold FIN? Was the update sent, and does Daniel's account inside Projects actually contain FIN? The preview alone does not answer those questions.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/8a06f447082dc4bc.svg" alt="Day 3: Profiles, attributes, and mappings: diagram 3" width="276" height="582" loading="lazy"><figcaption><span>Day 3: Profiles, attributes, and mappings: diagram 3</span><a href="/Okta_Theory_Teaching/assets/diagrams/8a06f447082dc4bc.svg" data-diagram="Day 3: Profiles, attributes, and mappings: diagram 3">Open full diagram</a></figcaption></figure><p>Follow the diagram from calculation to stored target value. A preview answers what the rule calculates for its selected input. The app user profile shows what Okta represents for the assignment, the operation record shows an attempted update, and the target read shows what Projects stores. Each step requires its own evidence. A preview does not perform the entire chain for you.</p>
+<p>Now consider another packet:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Observation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Okta user department</td>
+<td>Finance</td>
+</tr>
+<tr>
+<td>Mapping preview</td>
+<td>FIN</td>
+</tr>
+<tr>
+<td>Projects app user profile</td>
+<td>FIN</td>
+</tr>
+<tr>
+<td>Projects account</td>
+<td>SAL</td>
+</tr>
+<tr>
+<td>Target update result</td>
+<td>Not supplied</td>
+</tr>
+</tbody>
+</table></div><p>Compare this packet with the fixed-value defect. Here, the calculated code and app user value are already correct; Projects still holds the old code. Rewriting the expression would not answer whether the prepared value was sent and accepted. The unanswered boundary is delivery from the representation in Okta to the linked target account.</p>
+<p>Ask whether updates are supported and enabled for that attribute, whether an update was attempted, what response it received, and whether the inspected target is the linked account. Do not claim a specific connector failure without the result. Do not assume saving a mapping means all existing accounts were updated.</p>
+<p>A useful evidence request separates possible explanations. Ask for the update record for Daniel's linked Projects account: what value was sent and what reply came back? A recorded rejection calls for examining its reason. Evidence that updates are disabled calls for checking the intended update configuration instead. Neither finding is supplied by this packet.</p>
+<h2 id="recognize-a-verified-correction">Recognize a verified correction</h2>
+<p>Here is a separate synthetic follow-up for Daniel after the approved mapping correction. All observations concern his linked Projects account, and the target check follows the recorded update.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saved mapping evaluated with Finance</td>
+<td>FIN</td>
+</tr>
+<tr>
+<td>Projects app user profile in Okta</td>
+<td>FIN</td>
+</tr>
+<tr>
+<td>Account-update record for the linked target</td>
+<td>Department code FIN sent; target reports success</td>
+</tr>
+<tr>
+<td>Target account read after that update</td>
+<td>FIN, displayed as Finance</td>
+</tr>
+</tbody>
+</table></div><p>The saved rule produces the intended code, Okta holds it for the assignment, the update record reports sending it successfully, and the later target read confirms it was stored. Together, these observations support a successful department correction for Daniel at the checked point. They do not establish the outcome for every other user sharing the mapping. Those users need an appropriately scoped check too.</p>
+<h2 id="missing-data-needs-a-decision">Missing data needs a decision</h2>
+<p>Suppose the incoming department has no value. Should the mapping use Sales because most employees are in Sales?</p>
+<p>Using Sales would turn a lack of information into a claim about this person's department. Under Northbridge's rule above, missing or unrecognized values require review. Alex needs the real source value and an agreed handling process, rather than a guess based on what is common.</p>
+<p>These examples also have different meanings:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Representation</th>
+<th>What you can observe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;department&quot;: &quot;Finance&quot;</code></td>
+<td>A supplied text value.</td>
+</tr>
+<tr>
+<td><code>&quot;department&quot;: &quot;&quot;</code></td>
+<td>An empty string.</td>
+</tr>
+<tr>
+<td><code>&quot;department&quot;: null</code></td>
+<td>The field is present with JSON's marker for no value. This is different from the text <code>&quot;null&quot;</code> or an empty text string.</td>
+</tr>
+<tr>
+<td>No <code>department</code> field in a selected excerpt</td>
+<td>The excerpt does not show the field.</td>
+</tr>
+</tbody>
+</table></div><p>Do not assume these cases behave identically in every integration. A field omitted from an excerpt may simply have been left out of the evidence. A missing input also does not prove that Okta will automatically choose another source or clear an existing destination value.</p>
+<p>The correct next question is what the source actually contains and how this mapping and update operation handle that condition.</p>
+<h2 id="mapping-and-ownership-answer-different-questions">Mapping and ownership answer different questions</h2>
+<p>A mapping explains <strong>where a value goes and how it is transformed</strong>.</p>
+<p>Attribute ownership explains <strong>which system is allowed to control that value</strong>.</p>
+<p>For Daniel's HR department, Northbridge has chosen Workday as the controlling source. The mapping into Okta expresses how that data is represented there. A later mapping prepares the application-specific code.</p>
+<p>The mapping tells Alex how to represent the department; Northbridge's ownership decision tells him where that department should be maintained. A correct rule does not authorize him to change a correct HR value to compensate for an error elsewhere. Competing sources become especially important when Workday, AD, and Okta-managed users coexist. Day 4 examines that decision explicitly.</p>
+<h2 id="read-when-a-mapping-applies">Read when a mapping applies</h2>
+<p>A mapping has both a calculation and a setting for when that calculation applies. Where supported, it can calculate an app user field when the app user profile is created, or also recalculate it during updates. <strong>Recalculate</strong> means work out the value again using the applicable input. In Profile Editor, Alex checks both the mapping direction and when the mapping applies, rather than judging the expression alone.</p>
+<p>Suppose a separate Projects example has the correct Finance-to-FIN expression, but the department mapping is configured for creation only. An existing user's old app-profile value can remain. Compare that behavior with the business requirement before changing it. Review other assigned users, decide how existing records will receive the correction, then verify the app user profile and target separately.</p>
+<p>Separate two actions: calculating a new app user value and sending the value already stored there. Creation-only does not mean the field is guaranteed absent from every later request. Okta's Profile Push documentation describes sending the full app user profile during a profile update, including stored values for fields whose mappings are creation-only. Recalculating a field and transmitting a stored field are different steps. See <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-selective-profile-push.htm">Profile Push behavior</a>.</p>
+<p>Keep three questions separate as you explain Daniel's ticket: who controls the value, what the mapping prepares, and what the destination actually stores. Naming the first proven discrepancy helps Alex choose a correction; checking the subsequent operation and target tells him whether it worked.</p>
+<h2 id="tell-daniels-story">Tell Daniel's story</h2>
+<p>Daniel asks why Projects still describes him as Sales when his HR and Okta profiles say Finance. Explain how the outgoing mapping and app user profile connect to the target account. The current mapping always returns SAL, while Finance should become FIN. Identify the first demonstrated wrong representation, the input that should remain unchanged, and the evidence needed to verify correction through the target.</p>
+<p>In a separate variation, the mapping and app user profile contain FIN, but the target still contains SAL. Explain why your next check would change. This variation does not supply a correction to the original case.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain:</p>
+<ul>
+<li>The difference between an attribute, its value, a profile, and a schema?</li>
+<li>Where the Okta user profile, app user profile, and target account live?</li>
+<li>Why mapping direction must be stated explicitly?</li>
+<li>Why Finance becoming FIN can be correct?</li>
+<li>What a correct preview proves and what it leaves unverified?</li>
+<li>Why an omitted field is not automatically proof of an empty source value?</li>
+<li>How mapping differs from ownership?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-03.html">Day 3 reasoning exercises</a>, then compare with the <a href="/Okta_Theory_Teaching/self-checks/day-03.html">separate self-check answers</a>.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, draw the four data layers and label each observed value. Record the first proven discrepancy and the additional evidence needed to verify delivery to the target.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html">Day 4</a> asks who controls the profile and individual attributes when more than one source is connected.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-03.html">Day 3 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Previous: Day 2</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-03.html">Revise Day 3</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-03.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-03.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-03.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><small>← Previous lesson</small>Day 2: Following a request and reading evidence</a><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><small>Next lesson →</small>Day 4: Sources, priority, and ownership</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

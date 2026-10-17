@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 14,
+  "questions": [
+    {
+      "id": "L14-Q01",
+      "topic": "Requirements",
+      "prompt": "An owner asks to give Finance the new app. What should be established before configuring grants?",
+      "correctId": "f3bc8d513c",
+      "options": [
+        {
+          "id": "f3bc8d513c",
+          "text": "Eligible population, resources/actions, timing, account rules, owners and removal expectations",
+          "explanation": "A department label alone is not a complete access requirement."
+        },
+        {
+          "id": "fde892391d",
+          "text": "Assign every Finance-related group immediately",
+          "explanation": "Group names do not establish the approved population or permission scope."
+        },
+        {
+          "id": "bdef8380c1",
+          "text": "Grant every user administrator access to avoid tickets",
+          "explanation": "That broadens permissions beyond the request."
+        },
+        {
+          "id": "67338de83e",
+          "text": "Configure only the app logo",
+          "explanation": "Branding does not define identity and access behavior."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q02",
+      "topic": "Authentication versus lifecycle",
+      "prompt": "A proposed SAML connection supports SSO but no provisioning. What must the plan include?",
+      "correctId": "a3f68b2a53",
+      "options": [
+        {
+          "id": "a3f68b2a53",
+          "text": "A supported account creation, change and removal process with ownership",
+          "explanation": "Sign-in federation does not by itself maintain target account lifecycle."
+        },
+        {
+          "id": "eb51833f42",
+          "text": "Assume SAML always provisions and deletes users",
+          "explanation": "That is not an inherent property of the sign-in protocol."
+        },
+        {
+          "id": "acb57f3960",
+          "text": "Skip account readiness because SSO exists",
+          "explanation": "The target still needs an eligible local identity relationship."
+        },
+        {
+          "id": "9682c30320",
+          "text": "Use assignment as proof target removal is automatic",
+          "explanation": "Assignment and downstream lifecycle outcomes differ."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q03",
+      "topic": "Responsibility",
+      "prompt": "The identity team owns claims and the app team owns local roles. What should a design capture?",
+      "correctId": "f612db0bec",
+      "options": [
+        {
+          "id": "f612db0bec",
+          "text": "Which owner maintains and verifies each boundary and contract",
+          "explanation": "Clear responsibility supports change, investigation and handover."
+        },
+        {
+          "id": "ea8f3d87a9",
+          "text": "One team may silently redefine all rules",
+          "explanation": "That removes controlled ownership and approval."
+        },
+        {
+          "id": "b50825a611",
+          "text": "Only the vendor's public product name",
+          "explanation": "A name does not identify local responsibilities."
+        },
+        {
+          "id": "5871f43867",
+          "text": "No app owner is needed for federated access",
+          "explanation": "The app still controls important local outcomes."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q04",
+      "topic": "Least necessary data",
+      "prompt": "An app needs employee ID and department but a proposal releases home address too. What should happen?",
+      "correctId": "040636ccb3",
+      "options": [
+        {
+          "id": "040636ccb3",
+          "text": "Release only justified attributes required by the integration",
+          "explanation": "Unnecessary personal data adds exposure without serving the stated function."
+        },
+        {
+          "id": "984c76eae4",
+          "text": "Send every available profile field for future convenience",
+          "explanation": "Availability is not a requirement to disclose data."
+        },
+        {
+          "id": "27ce406bf2",
+          "text": "Encrypt it and stop assessing need",
+          "explanation": "Confidentiality protection does not make unnecessary release necessary."
+        },
+        {
+          "id": "e4be841ff0",
+          "text": "Move extra fields into navigation context instead",
+          "explanation": "Relocating unnecessary information does not resolve the need question."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q05",
+      "topic": "Account matching",
+      "prompt": "A design proposes matching by display name because it is readable. What needs improvement?",
+      "correctId": "d57e3c3f76",
+      "options": [
+        {
+          "id": "d57e3c3f76",
+          "text": "An agreed unique, scoped identity key and supported matching behavior",
+          "explanation": "Names can be duplicated or changed and are not sufficient by themselves."
+        },
+        {
+          "id": "7395b02795",
+          "text": "Choose the most privileged account when names duplicate",
+          "explanation": "Privilege is not ownership evidence."
+        },
+        {
+          "id": "773211c633",
+          "text": "Use any account with the same department",
+          "explanation": "Department is not a unique identity key."
+        },
+        {
+          "id": "fe80717ef6",
+          "text": "Ignore mapping because the assertion will be signed",
+          "explanation": "A signature does not make every local lookup rule correct."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q06",
+      "topic": "Release testing",
+      "prompt": "Why include both allowed and denied cases in an access test plan?",
+      "correctId": "813225b7be",
+      "options": [
+        {
+          "id": "813225b7be",
+          "text": "To verify intended access and enforcement of boundaries",
+          "explanation": "A positive baseline alone does not prove inappropriate access is rejected."
+        },
+        {
+          "id": "a287ce6f52",
+          "text": "To remove restrictions until every case succeeds",
+          "explanation": "Some test cases are supposed to be denied."
+        },
+        {
+          "id": "2101c5d28a",
+          "text": "To replace target evidence with design assumptions",
+          "explanation": "The actual receiver outcome must still be observed."
+        },
+        {
+          "id": "4a30d588da",
+          "text": "To prove every system shares one policy implementation",
+          "explanation": "Different systems enforce different responsibilities."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q07",
+      "topic": "Recovery route",
+      "prompt": "A change may block all app administrators. What should exist before activation?",
+      "correctId": "230e2ca918",
+      "options": [
+        {
+          "id": "230e2ca918",
+          "text": "An authorized, supported recovery route with owners, criteria and verification",
+          "explanation": "Recovery should be concrete before the access-affecting change is applied."
+        },
+        {
+          "id": "a32f7aac81",
+          "text": "Only a screenshot of a previous sign-in",
+          "explanation": "Historical access is not a current recovery mechanism."
+        },
+        {
+          "id": "4dc280acf5",
+          "text": "A plan to disable all validation automatically",
+          "explanation": "Removing trust checks is not a sound default recovery strategy."
+        },
+        {
+          "id": "2f0880a549",
+          "text": "A promise that familiar products cannot lock out users",
+          "explanation": "Product familiarity does not eliminate configuration risks."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q08",
+      "topic": "Change scope",
+      "prompt": "An engineer plans to modify a policy shared by several apps. What is needed?",
+      "correctId": "419c1885f6",
+      "options": [
+        {
+          "id": "419c1885f6",
+          "text": "An impact assessment covering actual associations and relevant users",
+          "explanation": "The visible ticket may be narrower than the shared configuration's effect."
+        },
+        {
+          "id": "fc283ee323",
+          "text": "Only a test for the app whose tab is open",
+          "explanation": "That misses sibling app effects."
+        },
+        {
+          "id": "096d1c1c4b",
+          "text": "Only rename the policy to the requested app",
+          "explanation": "Renaming does not change existing associations."
+        },
+        {
+          "id": "889d48eecb",
+          "text": "No recovery plan because the edit is small",
+          "explanation": "A small edit can have large access consequences."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q09",
+      "topic": "Acceptance evidence",
+      "prompt": "A connection saves and an admin can open an app using an old local session. What remains untested?",
+      "correctId": "a001717f59",
+      "options": [
+        {
+          "id": "a001717f59",
+          "text": "Fresh federation, intended user/account mapping and the changed access requirements",
+          "explanation": "Saved configuration and existing-session access can bypass the changed path."
+        },
+        {
+          "id": "43099db491",
+          "text": "Whether the settings page accepted the save",
+          "explanation": "That observed state is already supplied."
+        },
+        {
+          "id": "4bdbac29cd",
+          "text": "Whether the admin can use that existing session",
+          "explanation": "That limited access was directly observed."
+        },
+        {
+          "id": "3625b60f89",
+          "text": "Whether every normal user must be an administrator",
+          "explanation": "That is not a consequence of connection testing."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q10",
+      "topic": "Handover",
+      "prompt": "Which handover best supports ongoing engineering work?",
+      "correctId": "29b8e93a50",
+      "options": [
+        {
+          "id": "29b8e93a50",
+          "text": "Environment, authoritative values, owners, test evidence, limitations and recovery steps",
+          "explanation": "Another engineer needs the actual contract and verified state, not just a success claim."
+        },
+        {
+          "id": "0f0b300b37",
+          "text": "Only the phrase SSO works",
+          "explanation": "That leaves scope and evidence unclear."
+        },
+        {
+          "id": "ac33826f2d",
+          "text": "Only private credentials in an unprotected note",
+          "explanation": "Secrets are not a substitute for a maintained operational agreement."
+        },
+        {
+          "id": "bad7337a56",
+          "text": "Only an unlabeled XML example",
+          "explanation": "Without context it cannot establish the intended environment or behavior."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Handover identifies environment, approved values and owners",
+        "Controlled test results and limitations are recorded",
+        "Recovery criteria and procedure are included"
+      ]
+    },
+    {
+      "id": "L14-Q11",
+      "topic": "Unresolved requirements",
+      "prompt": "A required removal behavior is unsupported by the target connector. What should release planning do?",
+      "correctId": "3c0156b0d4",
+      "options": [
+        {
+          "id": "3c0156b0d4",
+          "text": "Make the gap explicit and obtain an approved supported alternative before claiming readiness",
+          "explanation": "Unsupported automation does not establish the required business outcome."
+        },
+        {
+          "id": "37471a6e35",
+          "text": "Mark it complete because the sign-in test passed",
+          "explanation": "Sign-in success does not verify removal."
+        },
+        {
+          "id": "dd8243745d",
+          "text": "Assume a future feature already provides it",
+          "explanation": "A proposal is not current capability or evidence."
+        },
+        {
+          "id": "13213d8c19",
+          "text": "Delete the requirement from the record silently",
+          "explanation": "That hides an unresolved obligation rather than resolving it."
+        }
+      ]
+    },
+    {
+      "id": "L14-Q12",
+      "topic": "Verification closure",
+      "prompt": "After a change, which result supports closing the specific issue?",
+      "correctId": "ad3e335e87",
+      "options": [
+        {
+          "id": "ad3e335e87",
+          "text": "A fresh controlled test exercises the corrected boundary and confirms intended access and rejection",
+          "explanation": "Closure needs observed behavior against the agreed requirement."
+        },
+        {
+          "id": "fe6b05d21f",
+          "text": "Only the approved change ticket",
+          "explanation": "Approval does not prove execution or effect."
+        },
+        {
+          "id": "792c5d0305",
+          "text": "Only a preview of a proposed value",
+          "explanation": "Preview does not prove target state."
+        },
+        {
+          "id": "53b89b1259",
+          "text": "Only an unrelated successful request",
+          "explanation": "Different operation evidence does not verify this correction."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

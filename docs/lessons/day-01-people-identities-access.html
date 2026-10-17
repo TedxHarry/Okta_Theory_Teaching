@@ -1,0 +1,233 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 1: People, identities, and access. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 1: People, identities, and access | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html" aria-current="page"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html" aria-current="page">Lesson 1</a><a href="/Okta_Theory_Teaching/question-bank/day-01.html">Questions (40)</a><a href="/Okta_Theory_Teaching/quizzes/day-01.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-1-people-identities-and-access">Day 1: People, identities, and access</h1>
+<p>Maya Rao has joined the Sales team at Northbridge Services. Human Resources (<strong>HR</strong>), the team responsible for employee records, has recorded her employment details. Her manager expects her to start using Salesforce, where the Sales team works with customer information. At Northbridge, Okta is the identity platform that helps manage employee sign-in and access to business applications such as Salesforce.</p>
+<p>From Maya's point of view, that sounds straightforward: she has joined the company, she has work to do, and Salesforce is the application she needs. She opens her laptop, signs in to Okta, and then reports:</p>
+<blockquote>
+<p>I can sign in to Okta, but I cannot use Salesforce.</p>
+</blockquote>
+<p>It is understandable to expect a successful sign-in to mean Maya is ready to work. But her report leaves several questions open. <strong>What does her successful Okta sign-in tell us, and what does it leave unanswered?</strong></p>
+<p>Alex is Northbridge's <strong>identity and access management (IAM)</strong> administrator. His work includes helping the company manage who its users are and which systems they may use. To investigate Maya's report, he needs to separate five questions. Does Maya have an Okta user? Is Salesforce assigned to her? Does the intended Salesforce account exist? Can she complete Salesforce sign-in? And does she have the permissions needed for her work?</p>
+<p>Alex cannot choose a correction yet. Separating these questions helps him decide which record to inspect next. They describe different facts to check, rather than a fixed order in which every company's systems operate. An application account, for example, might already exist before its sign-in connection is configured.</p>
+<p>You do not need an Okta tenant or knowledge of its menus to follow the reasoning. As we follow Maya, notice which system holds each record and which question each observation answers. By the end, you should be able to explain why successful sign-in can coexist with missing application access.</p>
+<h2 id="maya-is-one-person-the-systems-hold-different-records">Maya is one person; the systems hold different records</h2>
+<p>Think about the work each team needs to do for Maya. HR needs her employee number, department, and manager. Active Directory (<strong>AD</strong>) holds a workplace account that directory-connected services can use. We will look at directories shortly; for now, think of this as another record about Maya, with its own job. Okta needs a user record it can use in its identity and access decisions. Salesforce needs an application account that represents her inside the Sales application.</p>
+<p>Why keep records in several places? These systems support different work. Workday maintains employment information for HR. AD supports directory-related sign-in and access needs. Okta connects identity information with application assignments and sign-in. Salesforce manages the account and permissions Maya uses inside Salesforce. Keeping Maya's information in Okta does not replace the work those other systems perform.</p>
+<p>Those records are connected, but they are not the same object. The table keeps their responsibilities separate:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Place</th>
+<th>What represents Maya there?</th>
+<th>What is it for?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workday</td>
+<td>Employee record</td>
+<td>Employment information, such as her employee number and department.</td>
+</tr>
+<tr>
+<td>Active Directory</td>
+<td>Directory account</td>
+<td>Directory-related sign-in and access needs.</td>
+</tr>
+<tr>
+<td>Okta</td>
+<td>Okta user</td>
+<td>Her representation in Okta for identity information and access decisions.</td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td>Salesforce user account</td>
+<td>Her representation inside the Sales application.</td>
+</tr>
+</tbody>
+</table></div><p>Maya is one person represented by several records. Each record belongs to a particular system and serves a particular purpose. When someone says “Maya's account,” we need to know which record they mean before we can interpret its state.</p>
+<p>In identity and access management, an <strong>identity</strong> is the representation of who someone is. An <strong>account</strong> is a system-specific record through which that person may sign in or receive access. Some identities represent services or software rather than people; our starting examples follow employees and contractors.</p>
+<p>An account can exist without being ready for use. It might be <strong>disabled</strong>, meaning the record is kept but is not enabled for ordinary sign-in. It might be waiting for activation, or it might lack permission for a particular task. Saying “the account exists” therefore does not establish that Maya can do her job. Follow the diagram from the person to the conditions for access, noticing the additional question at each step:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/b85d7dea31451d9c.svg" alt="Day 1: People, identities, and access: diagram 1" width="276" height="478" loading="lazy"><figcaption><span>Day 1: People, identities, and access: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/b85d7dea31451d9c.svg" data-diagram="Day 1: People, identities, and access: diagram 1">Open full diagram</a></figcaption></figure><p>The arrows organize the questions; they do not promise that one successful check settles the next. Finding an account establishes its existence. Checking its state and the relevant access conditions tells us more about whether Maya can use it.</p>
+<p>That distinction helps us choose an appropriate correction. If Maya has an Okta user but no Salesforce account, resetting her Okta password does not create the missing Salesforce account. A change should address the gap we actually found.</p>
+<h2 id="what-a-directory-does">What a directory does</h2>
+<p>A company needs an organized place to keep information about users. Imagine trying to make an access decision when each application has a different description of Maya's department or worker type. Before systems can use that information consistently, they need records they can read and maintain.</p>
+<p>An organized collection of user information is a <strong>directory</strong>. It can also store groups, which are collections of users. Their access behavior is the subject of Day 5.</p>
+<p>Active Directory is one such directory. Northbridge uses it for directory accounts and groups. Okta also keeps identity information in a directory layer called <strong>Universal Directory</strong>. For now, focus on the role they share: holding organized information that systems can use. Their different responsibilities will become clearer as we follow the course.</p>
+<p>Think about the useful question each record helps answer:</p>
+<ul>
+<li>Who is this user?</li>
+<li>What is their department?</li>
+<li>What kind of worker are they?</li>
+<li>What groups are associated with them?</li>
+</ul>
+<p>Imagine Alex opens Maya's Okta user record and reads her name and department. These individual details are called <strong>attributes</strong>. The collection of details in that record is her <strong>profile</strong>. Think of a form: Department is the field, Sales is the value written in it, and the completed set of fields makes up the profile. Alex can compare the department recorded here with the department in Workday before investigating how an update reached Okta.</p>
+<p>Here is a small fictional example of information about Maya:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Detail</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Maya Rao</td>
+</tr>
+<tr>
+<td>Employee number</td>
+<td>NB-1042</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Worker type</td>
+<td>Employee</td>
+</tr>
+</tbody>
+</table></div><p>Read the department and worker type together: this record describes Maya as a Sales employee. Those values can become inputs to access decisions. Later, we will follow how they affect access; today, we need to recognize where the information is recorded.</p>
+<p>Suppose HR shows the correct Sales value in Workday. That is useful evidence about Workday. To say the same value is present in Okta or Salesforce, however, we need to inspect the relevant record there. The destination might already be correct or might contain an older value. Its maintenance could involve a configured update or an authorized manual process. First compare the records; if they differ, investigate how the information in that system gets updated.</p>
+<h2 id="why-northbridge-uses-okta">Why Northbridge uses Okta</h2>
+<p>Now consider the broader problem. Northbridge has several applications, each with its own accounts and access decisions. The company needs a consistent way to connect workforce identity information to application access and sign-in as people join, change responsibilities, and leave.</p>
+<p>Okta helps Northbridge maintain identity information, assign applications, make sign-in decisions, and connect to other systems for supported account-management operations. Each responsibility answers a different part of Maya's access question.</p>
+<p>Follow Maya's employment information. HR records her name, employee number, and department in Workday. Okta also needs information about her. Northbridge's configured connection lets employee information reach Okta without someone having to enter every detail again. That connection is an <strong>integration</strong>: a relationship configured for particular supported tasks. The administrator sets up the connection; Maya does not move her HR record herself.</p>
+<p>In this flow, Workday supplies the information, so it is the <strong>source</strong>. Okta receives it, so it is the <strong>target</strong>. Later, when Okta supplies information to an application, Okta takes the source role in that different flow. These terms tell Alex where information comes from and where to check whether it arrived. A connection's existence alone does not prove that Maya's latest update reached its destination.</p>
+<p>Read this picture from left to right. Begin with the employee information, then follow its relationship to the workforce identity and the application:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/1720c7ff3c86b9d9.svg" alt="Day 1: People, identities, and access: diagram 2" width="729" height="94" loading="lazy"><figcaption><span>Day 1: People, identities, and access: diagram 2</span><a href="/Okta_Theory_Teaching/assets/diagrams/1720c7ff3c86b9d9.svg" data-diagram="Day 1: People, identities, and access: diagram 2">Open full diagram</a></figcaption></figure><p>This diagram focuses on the path toward Salesforce. Northbridge also uses AD, but that relationship is not shown here.</p>
+<p>The first arrow means that employee information can reach Okta through a configured integration. The second represents the configured relationship between Okta and the application. In Northbridge's main employee setup, Workday supplies HR information to Okta, and Okta connects onward to AD and business applications.</p>
+<p>Pause at the second arrow. A single app integration can support sign-in, account management, or both, depending on its capabilities and configuration. These solve different problems, so Alex checks their results separately. The picture describes the relationships; Maya's records and operation results tell him what has actually happened.</p>
+<p>Priya Shah also works with the Sales team, but she is a contractor. Her identity is maintained in Okta following approval from her <strong>sponsor</strong>, the employee responsible for confirming her business need at Northbridge. Maya's employee data comes from Workday; Priya's identity follows a different maintenance process.</p>
+<p>That difference matters when choosing where to investigate or correct information. A connection used for employees does not mean every identity must come from that source. Start with the particular person and their applicable process, then follow the relevant systems.</p>
+<h2 id="signing-in-and-having-permission-are-different">Signing in and having permission are different</h2>
+<p>Return to Maya signing in. Suppose she enters her sign-in details and satisfies the required checks. The system accepts that the sign-in is being performed by the expected user.</p>
+<p>That process is <strong>authentication</strong>: checking who is signing in. It gives the system a basis for recognizing the user in that interaction.</p>
+<p>Consider a separate hypothetical situation: Maya successfully enters an application, but it denies an action reserved for Finance managers. Her sign-in worked in this example. The unanswered question is whether she has permission to perform that action. This example does not resolve her original Salesforce ticket.</p>
+<p>That decision is <strong>authorization</strong>: determining what the authenticated user is allowed to access or do.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Question</th>
+<th>Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is this the expected user signing in?</td>
+<td>Authentication</td>
+</tr>
+<tr>
+<td>May this user access the application or perform this action?</td>
+<td>Authorization</td>
+</tr>
+</tbody>
+</table></div><p>For a familiar comparison, think of a security desk checking a person's badge and a restricted room requiring separate permission. Recognizing the person and permitting entry answer different questions. The comparison separates the ideas; in an application, we still need evidence of its actual sign-in and permission decisions.</p>
+<p>In this hypothetical example, the application recognizes Maya but must still apply the permission required for the action. Authentication can succeed while that action is denied. A working sign-in does not grant every permission.</p>
+<p>Authorization decisions can happen at more than one boundary. Okta can determine whether a user is assigned an application, while the application controls its own features and permissions. An assignment in Okta is not a guarantee that every action inside the application is allowed.</p>
+<p>This is why an administrator begins by clarifying “cannot access.” Does Maya fail to sign in to Okta? Does Salesforce reject her sign-in? Or can she enter Salesforce but not use a particular feature? Each description points to a different question. A precise symptom makes the next check more useful.</p>
+<h2 id="sso-helps-with-sign-in-provisioning-manages-accounts">SSO helps with sign-in; provisioning manages accounts</h2>
+<p>Consider two situations. In the first, Maya needs a Salesforce account. If Northbridge has configured supported automatic account management for Salesforce, the connection can request an account change, such as creation, and Salesforce must process it. Alex checks the result in the application; a requested change is not proof of a completed change. If accounts are created through a separate process, he follows that process instead. Creating and maintaining application accounts is called <strong>provisioning</strong>.</p>
+<p>In the second situation, Maya has a suitable application account and wants to open the application. Northbridge can connect its sign-in to Okta so she does not have to enter separate credentials for every application. <strong>Credentials</strong> are information used to establish identity during authentication, such as a password. Helping her sign in through that established relationship is <strong>single sign-on</strong>, usually called <strong>SSO</strong>. Creating the account and signing in to it solve different problems.</p>
+<p>Consider a representative <strong>federated sign-in</strong>. The application trusts identity information from another system under a configured relationship. Okta authenticates Maya as required and sends the application information it can validate. The application then uses that information to complete its own sign-in process. For now, follow the responsibility of each system: Okta provides identity information, and the application must use its configured checks to accept it. We will examine the messages later.</p>
+<p>SSO does not mean that another check will never be required. Each system can have requirements for starting or continuing a signed-in interaction; Day 2 introduces the term <em>session</em> for that interaction.</p>
+<p>Provisioning also includes updates to an existing application account. Removing or disabling access, such as when employment ends, is commonly discussed as <strong>deprovisioning</strong>.</p>
+<p>The diagram places those responsibilities in separate flows. Follow the sign-in flow with Maya, then look at the account-management flow and notice what it is trying to change:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/1ae8bd9aa214d9f1.svg" alt="Day 1: People, identities, and access: diagram 3" width="1516" height="164" loading="lazy"><figcaption><span>Day 1: People, identities, and access: diagram 3</span><a href="/Okta_Theory_Teaching/assets/diagrams/1ae8bd9aa214d9f1.svg" data-diagram="Day 1: People, identities, and access: diagram 3">Open full diagram</a></figcaption></figure><p>The upper flow concerns Maya's sign-in. The lower flow changes an application account. Alex checks whether the application accepted the sign-in in the upper flow, and whether the requested account change occurred in the lower flow. SSO supports sign-in; provisioning manages accounts. They can be related because Maya may need a suitable account to use the application, but each flow has its own result to verify.</p>
+<p>An application might have SSO configured while its accounts are created separately. An account might already exist before SSO is connected. An automatic provisioning attempt might fail even though the user can sign in to Okta. Each arrangement is a reason to ask how this particular application's accounts are managed.</p>
+<p>Different applications can use different account-management methods. For Maya's Salesforce ticket, we first need the account and assignment facts; the connection's technical details come afterward.</p>
+<h2 id="being-assigned-an-application-is-another-fact-to-check">Being assigned an application is another fact to check</h2>
+<p>Knowing who Maya is does not, by itself, express which applications she should receive. Northbridge needs a way to represent that relationship. In Okta, this includes <strong>application assignments</strong>.</p>
+<p>For example, an assignment connects Maya's Okta user to the particular Salesforce integration she is meant to use. Alex can inspect that relationship in Okta without assuming that Salesforce has already created her account. For Maya's ticket, whether that assignment exists is still unknown. How Northbridge manages assignments comes later; today, keep the relationship separate from account creation and successful sign-in.</p>
+<p>Keep these statements separate:</p>
+<ol>
+<li>Maya exists as an Okta user.</li>
+<li>Maya is assigned Salesforce in Okta.</li>
+<li>Maya has a Salesforce account.</li>
+<li>Maya can complete Salesforce sign-in.</li>
+<li>Maya has the Salesforce permissions needed for her work.</li>
+</ol>
+<p>These are the five questions from our opening, now expressed as claims Alex could support with evidence. They are connected, but each needs its own check. Evidence for statement 1 does not establish statements 2 through 5, and assignment evidence alone does not settle the account or application results.</p>
+<p>An assignment can trigger configured provisioning, but assignment itself is not proof of successful account creation. An <strong>application tile</strong> is the app's visible shortcut on the user's dashboard. Seeing it does not confirm that the account exists or that sign-in works. An assigned application can also have its dashboard tile hidden, so not seeing a tile does not, by itself, establish that the application is unassigned.</p>
+<h2 id="investigating-mayas-ticket">Investigating Maya's ticket</h2>
+<p>Before investigating the failure, picture an illustrative successful journey. HR records an employee in Workday, and the configured connection provides the required information to Okta. The employee receives the appropriate application assignment. A supported provisioning process creates or updates the application account if configured; otherwise, the separate account-management process supplies it. The employee completes the required sign-in checks, and the application permits the actions their permissions allow.</p>
+<p>This is one possible configured journey, not a universal sequence or a verified outcome for Maya. An account may already exist, and each operation needs its own evidence. You do not need the protocol messages or configuration menus today. You need to recognize the different responsibilities and ask whether their expected results occurred.</p>
+<p>We can now return to Maya's report with more useful questions:</p>
+<blockquote>
+<p>I can sign in to Okta, but I cannot use Salesforce.</p>
+</blockquote>
+<p>Alex collects the following information. This is a fictional training snapshot, not a captured production record.</p>
+<p>Before reading the findings, establish how Alex identifies the right records. An <strong>identifier</strong> distinguishes a record, such as an employee number or application username. The approved identifier here means the value Northbridge expects to use when finding Maya's Salesforce account. For example, an employee number might identify her HR record while a username identifies her application account. Those values can be different and still refer to Maya.</p>
+<p>He must also identify the intended <strong>application instance</strong>. An application can have a <strong>production</strong> environment used for everyday work and a separate <strong>test</strong> environment used to try changes. An Okta app integration instance is one particular configured connection; Alex checks which Salesforce environment that connection leads to. Searching test would not tell him whether Maya has an account in production. In the findings below, he has identified the environment he searched and the identifier he used.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Observation</th>
+<th>Evidence available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR has Maya recorded as a Sales employee.</td>
+<td>Workday record for employee NB-1042.</td>
+</tr>
+<tr>
+<td>Maya has an Okta user in Active status.</td>
+<td>Her Okta user record.</td>
+</tr>
+<tr>
+<td>Maya completed the required Okta sign-in checks for this attempt.</td>
+<td>A successful sign-in result for the identified attempt.</td>
+</tr>
+<tr>
+<td>An AD account is associated with Maya.</td>
+<td>The directory account association.</td>
+</tr>
+<tr>
+<td>No Salesforce account matches Maya's approved identifier in the checked Salesforce environment.</td>
+<td>A target-side account check.</td>
+</tr>
+<tr>
+<td>Salesforce assignment in Okta has not been inspected.</td>
+<td>No assignment evidence collected yet.</td>
+</tr>
+<tr>
+<td>Provisioning configuration and results have not been inspected.</td>
+<td>No account-management evidence collected yet.</td>
+</tr>
+</tbody>
+</table></div><p>The first four rows establish Maya's employment, Okta user, sign-in result, and AD association. The Salesforce row identifies a gap: the check did not find a matching account under the expected identifier in that instance.</p>
+<p>The last two rows describe missing evidence. <strong>Not inspected</strong> means Alex has not checked yet. <strong>Confirmed absent</strong> means he checked a specified place and did not find the expected item there. The scope of that check matters.</p>
+<p>For an everyday comparison, searching one folder for a filename and finding no match does not prove the file is absent from the whole computer. Maya's account search has the same limit: no account matched the expected identifier in the checked Salesforce environment. An account might be missing, or it might exist under another identifier. Neither explanation is confirmed yet. Her assignment is a different unknown because Alex has not inspected it at all.</p>
+<p>Pause before following Alex's next step. With assignment and account-management results still unknown, which check would you choose next, and what would its result help you distinguish? Consider why creating another account immediately could be premature.</p>
+<p>Possible explanations include a missing assignment, an account-management process that has not completed, or an identifier mismatch involving an existing account. Each is a <strong>hypothesis</strong>: a possible explanation that still needs evidence. Several explanations can fit the same symptom, so the next check should help distinguish them.</p>
+<p>Alex should inspect the expected Salesforce assignment and how Northbridge manages that application's accounts. Assignment evidence will answer a question the packet currently leaves open. The account-management approach will tell him which process and results to inspect: automatic provisioning, if configured, or the separate process responsible for creating accounts.</p>
+<p>Those findings can change his next action. If an expected assignment is confirmed absent, he needs to investigate that gap against the access requirement. If the assignment is present, he still needs the account-management and matching evidence. Finding an existing account under a different identifier would require establishing whether it belongs to Maya before considering a new account. None of those outcomes has been supplied yet.</p>
+<p>Follow the diagram as a reasoning sequence. Start with the intended outcome, compare it with the observed result, then use the unknowns to choose the next evidence:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/1ce8b34801e9b024.svg" alt="Day 1: People, identities, and access: diagram 4" width="276" height="574" loading="lazy"><figcaption><span>Day 1: People, identities, and access: diagram 4</span><a href="/Okta_Theory_Teaching/assets/diagrams/1ce8b34801e9b024.svg" data-diagram="Day 1: People, identities, and access: diagram 4">Open full diagram</a></figcaption></figure><p>The diagram's “checked instance” means the Salesforce environment inspected for the account. The final box is an evidence request, not a completed fix. Alex has made progress by narrowing the investigation, even though he cannot yet close the ticket. Resetting Maya's password because she reported an access problem would be guessing; her successful Okta sign-in already points toward the other unanswered questions for this attempt.</p>
+<h2 id="apply-the-distinction-to-daniel">Apply the distinction to Daniel</h2>
+<p>Daniel Brooks is a Finance manager. He signs in to Okta and then enters Northbridge Expense successfully. When he tries to approve an expense, the application denies the action.</p>
+<p>Daniel has reached the application. The refusal happens when he attempts a particular action, so his reported symptom does not point back to an unproven password problem.</p>
+<p>The supplied observations show a successful sign-in and application entry. The unanswered question concerns the approval action: what permission does it require, and does Daniel have it? Alex should follow that question to the application's permission evidence and the approved requirement.</p>
+<p>Daniel's manager title is relevant business information, but it does not prove that the application permission has been granted correctly. Establish what he should be allowed to do before proposing a permission change. An administrator should compare the approved requirement with his actual application permissions.</p>
+<p>Maya's next checks concern assignment, account management, and account matching. Daniel's concern the denied action and its required permission. Both users describe an &quot;access issue,&quot; but their evidence leads Alex to different investigations. Ask where the expected outcome first differs from what was observed.</p>
+<h2 id="start-with-the-right-record">Start with the right record</h2>
+<p>When Maya says “my account is active,” ask which account she means. The People area in the Okta Admin Console helps you inspect her Okta user. The application integration holds her assignment information. The Salesforce owner checks the Salesforce account. These views describe different records.</p>
+<p>You do not need to memorize those locations today. Understand why an investigator might need more than one view: each can answer a different question about Maya. Start with the approved identifier, intended Okta integration, and the Salesforce environment it connects to, rather than relying on a familiar display name.</p>
+<p>Record what each check establishes before moving to the next. If the Okta user exists but application assignment has not been checked, write exactly that. “User exists; assignment unknown” gives the next person a useful starting point without making them separate your findings from your assumptions.</p>
+<p>Before proposing any change, agree on the intended outcome. Does Maya need to enter Salesforce, see a particular set of records, or perform an action? Those requests can require different investigations. Adding an account would be premature if the real issue is a permission on an existing account. The outcome tells us what we need to verify; the evidence tells us which correction is justified.</p>
+<p>Carry three habits into the next lesson: name the record and the system that holds it, keep the access decisions separate, and distinguish missing evidence from a confirmed finding. Together, these habits help you explain an access problem and choose a next check for a reason.</p>
+<h2 id="tell-mayas-story">Tell Maya's story</h2>
+<p>Maya asks, “Why do we need to check Salesforce if my Okta sign-in worked?” Explain the separate records and access decisions in your own words, as though you were answering her.</p>
+<p>Now consider a separate variation: the intended Salesforce account is found, but it is disabled. Explain what that finding establishes, what you would check next, and why enabling it immediately still needs an approved requirement. This variation does not change the original ticket's findings.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain these without looking up a definition?</p>
+<ul>
+<li>Why can Maya have an Okta user but still be unable to use Salesforce?</li>
+<li>How is authentication different from authorization?</li>
+<li>What does SSO do, and what does provisioning do?</li>
+<li>Why is a correct department value in Workday not proof of the value in Salesforce?</li>
+<li>What is the difference between &quot;not inspected&quot; and &quot;confirmed absent&quot;?</li>
+<li>What additional evidence would help Alex choose a correction for Maya?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-01.html">Day 1 reasoning exercises</a>, then compare your explanation with the <a href="/Okta_Theory_Teaching/self-checks/day-01.html">separate self-check answers</a>.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-01.html">Day 1 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, record the five separate statements about Maya's user, assignment, application account, sign-in, and permissions. Add one observation and what it cannot prove.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Day 2</a> follows a request between systems and shows how to read evidence from individual steps without mistaking one successful result for the whole outcome.</p>
+<p><a href="/Okta_Theory_Teaching/">Course home</a> · <a href="/Okta_Theory_Teaching/reference/northbridge-company.html">Northbridge reference</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-01.html">Revise Day 1</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-01.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-01.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-01.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><span></span><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><small>Next lesson →</small>Day 2: Following a request and reading evidence</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

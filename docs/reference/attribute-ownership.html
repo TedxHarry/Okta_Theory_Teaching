@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Northbridge's source and ownership reference. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Northbridge's source and ownership reference | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/attribute-ownership.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="northbridges-source-and-ownership-reference">Northbridge's source and ownership reference</h1>
+<p>Use this alongside <a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html">Day 4</a>. These are Northbridge's stated architecture decisions, not universal settings for every organization.</p>
+<p>The employee flow is Workday → Okta → AD and applications. AD can also return designated directory-owned values. External profile sources are ordered Workday first, AD second, evaluated against the user's applicable associations.</p>
+<p>Start with the person, named field and operation you are investigating. A question about department ownership is different from a question about password validation or a failed target update. Use the table to locate the responsible system, then check the actual association and configuration for that record.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Person or field</th>
+<th>Source or responsibility</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maya and Daniel's profiles</td>
+<td>Workday; both have Workday and AD associations</td>
+<td>One effective profile source per user.</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>Inherits from the effective profile source</td>
+<td>Workday for these employees; Okta for Priya.</td>
+</tr>
+<tr>
+<td>workerType</td>
+<td>Inherits from the effective profile source</td>
+<td>Workday supplies Employee for the employee examples; approved Okta maintenance supplies Contractor for Priya. This classification is separate from account status.</td>
+</tr>
+<tr>
+<td>AD-linked employee work email</td>
+<td>Explicit AD attribute source</td>
+<td>Avoid a competing outbound write back over this AD-owned field.</td>
+</tr>
+<tr>
+<td>Priya's profile</td>
+<td>Okta</td>
+<td>No Workday association or AD account assignment; outside employee import scope.</td>
+</tr>
+<tr>
+<td>Priya's maintenance</td>
+<td>Authorized administrator after sponsor approval</td>
+<td>A sponsor is a business approver, not another technical source integration.</td>
+</tr>
+<tr>
+<td>Alex's administrative identity</td>
+<td>Okta</td>
+<td>Excluded from employee source imports.</td>
+</tr>
+<tr>
+<td>Employee lifecycle</td>
+<td>Configured Workday-driven events</td>
+<td>Attribute ownership alone does not define deactivation behavior.</td>
+</tr>
+<tr>
+<td>AD password validation</td>
+<td>AD through the Okta AD agent on that sign-in path</td>
+<td>Separate from HR profile ownership and import success.</td>
+</tr>
+<tr>
+<td>Projects department code</td>
+<td>Okta-to-Projects mapping</td>
+<td>Sales → SAL; Finance → FIN; IT → IT. Target delivery needs its own evidence.</td>
+</tr>
+</tbody>
+</table></div><p>For Maya and Daniel, Workday's profile ownership can coexist with AD's ownership of the designated work-email field and its separate password-validation role. AD returning an email value or accepting a password does not transfer department ownership to AD. Conversely, a successful employee import does not establish an accepted password or an application session.</p>
+<p>Priya follows the approved Okta-managed contractor process. Workday's higher priority does not make it her source when she has no applicable association. Her sponsor provides business approval; the authorized administrator maintains the data. Alex's administrative identity is also outside the employee import population. Keep those stated relationships rather than forcing every person through the employee path.</p>
+<p>Ownership identifies who is allowed to maintain a value. A mapping determines how that value is represented for another profile or application. Delivery and the target's stored state require their own evidence. For Projects, Finance must become FIN under the stated conversion, but a correct mapping preview alone does not prove that FIN reached the intended account.</p>
+<p>An absent field, failed import, or unavailable source does not by itself prove a change in ownership or fallback. Check actual associations, field settings, mappings, and operation results.</p>
+<p>Record those findings separately: which source applies, which field setting governs the value, what the mapping produced, and what the receiving system confirmed. This keeps a source disagreement from being mistaken for a delivery problem, and a failed password check from being treated as a profile-ownership change.</p>
+<p><a href="/Okta_Theory_Teaching/reference/northbridge-company.html">Company reference</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

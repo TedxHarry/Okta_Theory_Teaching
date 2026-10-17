@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 2,
+  "questions": [
+    {
+      "id": "L02-Q01",
+      "topic": "Request sender",
+      "prompt": "A browser follows an application's redirect to Okta. Who sends the resulting request to Okta?",
+      "correctId": "e5f4a7c959",
+      "options": [
+        {
+          "id": "e5f4a7c959",
+          "text": "The browser following the supplied redirect",
+          "explanation": "The app gives direction; the browser performs this next HTTP delivery."
+        },
+        {
+          "id": "30810105ab",
+          "text": "The app directly sends that redirected browser request",
+          "explanation": "A redirect is not itself a server-to-server delivery."
+        },
+        {
+          "id": "331e2d0242",
+          "text": "The identity record sends the request",
+          "explanation": "An identity record is data, not an HTTP participant."
+        },
+        {
+          "id": "8445a5c3ea",
+          "text": "Okta creates the incoming browser request",
+          "explanation": "The browser initiates the redirected request to the provider."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q02",
+      "topic": "Responder",
+      "prompt": "An HTTP trace shows a 403 returned by the business application. Why identify the responding system?",
+      "correctId": "ec33f78ae1",
+      "options": [
+        {
+          "id": "ec33f78ae1",
+          "text": "The status describes that receiver's operation, not every upstream stage",
+          "explanation": "A target denial does not by itself locate an Okta authentication failure."
+        },
+        {
+          "id": "73e8470b13",
+          "text": "Every 403 always comes from Okta",
+          "explanation": "Different participants can return HTTP responses."
+        },
+        {
+          "id": "6334ea8472",
+          "text": "A 403 identifies the missing business permission by itself",
+          "explanation": "The status alone does not identify the exact rule or cause."
+        },
+        {
+          "id": "860ee51c72",
+          "text": "The responder is irrelevant once a status exists",
+          "explanation": "Source and operation context are essential to interpretation."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q03",
+      "topic": "Redirect status",
+      "prompt": "A browser receives HTTP 302 with a Location header during sign-in. What does this normally direct it to do?",
+      "correctId": "eee6546547",
+      "options": [
+        {
+          "id": "eee6546547",
+          "text": "Make a new request to the indicated location",
+          "explanation": "A redirect directs navigation; it is not itself proof that the final application accepted sign-in."
+        },
+        {
+          "id": "d12a8a2d96",
+          "text": "Create a local application session immediately",
+          "explanation": "Session creation needs the actual app's acceptance process."
+        },
+        {
+          "id": "481d2e1833",
+          "text": "Treat Location as the user's employee identifier",
+          "explanation": "The header is a navigation destination, not a subject identifier."
+        },
+        {
+          "id": "4a3c4064f3",
+          "text": "Assume every later step succeeded",
+          "explanation": "A redirect is only one step in a longer exchange."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q04",
+      "topic": "Successful transport",
+      "prompt": "An HTTP POST reaches an application's endpoint and returns 200. What needs context before calling sign-in successful?",
+      "correctId": "ccc527b51f",
+      "options": [
+        {
+          "id": "ccc527b51f",
+          "text": "What operation the receiver processed and what application outcome it recorded",
+          "explanation": "An HTTP success status does not universally mean identity acceptance or resource permission."
+        },
+        {
+          "id": "f937c133bc",
+          "text": "Only whether the page title looks familiar",
+          "explanation": "Presentation is not a processing result."
+        },
+        {
+          "id": "e424e739a2",
+          "text": "Only whether a previous user succeeded last week",
+          "explanation": "A different attempt cannot establish this one's outcome."
+        },
+        {
+          "id": "9f03cd00ff",
+          "text": "Nothing; every 200 means full application access",
+          "explanation": "Status meaning depends on the operation and returned result."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q05",
+      "topic": "Event association",
+      "prompt": "Two users sign in within the same second. How should an analyst associate a log event with the intended attempt?",
+      "correctId": "5f362cf821",
+      "options": [
+        {
+          "id": "5f362cf821",
+          "text": "Use relevant user, app, time and transaction identifiers together",
+          "explanation": "Nearby timestamps alone are weak association when activity overlaps."
+        },
+        {
+          "id": "8e8d19bebd",
+          "text": "Choose the closest timestamp regardless of user",
+          "explanation": "That can attach another person's result to the case."
+        },
+        {
+          "id": "8408f1c050",
+          "text": "Assume the latest event belongs to the open ticket",
+          "explanation": "Recency does not establish the intended transaction."
+        },
+        {
+          "id": "8de89dec9f",
+          "text": "Use only the application's display name",
+          "explanation": "A shared name does not identify one attempt or instance."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q06",
+      "topic": "Event scope",
+      "prompt": "An Okta event reports successful SSO issuance. Which result still needs receiver evidence?",
+      "correctId": "47da2e6ab0",
+      "options": [
+        {
+          "id": "47da2e6ab0",
+          "text": "Application acceptance and the intended local account/session outcome",
+          "explanation": "Issuing identity information differs from consuming it successfully."
+        },
+        {
+          "id": "bb0323459b",
+          "text": "Whether the issuer recorded issuance",
+          "explanation": "That is the observed event outcome."
+        },
+        {
+          "id": "f2830e0ec1",
+          "text": "Whether the browser can ever carry messages",
+          "explanation": "That general capability does not answer this downstream question."
+        },
+        {
+          "id": "e81b90c76f",
+          "text": "Whether all source profiles are synchronized",
+          "explanation": "Issuance does not establish unrelated source-data operations."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q07",
+      "topic": "Empty searches",
+      "prompt": "A System Log query returns no matching events. What is an appropriate next check?",
+      "correctId": "e117cbeb88",
+      "options": [
+        {
+          "id": "e117cbeb88",
+          "text": "Org, time range, time zone, filters and actual entry path",
+          "explanation": "An empty search may reflect search scope rather than absence of processing."
+        },
+        {
+          "id": "f7bffcfc5f",
+          "text": "Conclude no identity activity occurred anywhere",
+          "explanation": "The query cannot support that universal claim."
+        },
+        {
+          "id": "8b94aaf855",
+          "text": "Remove all app assignments immediately",
+          "explanation": "That change is unrelated to understanding the search result."
+        },
+        {
+          "id": "86559425b4",
+          "text": "Assume the target application must be working",
+          "explanation": "An empty issuer query proves no target outcome."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q08",
+      "topic": "First failure",
+      "prompt": "The browser reaches an app, which logs a failed audience check after Okta issuance succeeded. Where is the first confirmed failure?",
+      "correctId": "b659dbabf4",
+      "options": [
+        {
+          "id": "b659dbabf4",
+          "text": "The receiving application's federation acceptance",
+          "explanation": "The supplied progression succeeds through issuance and fails at receiver targeting validation."
+        },
+        {
+          "id": "7b8070721a",
+          "text": "The original credential check necessarily failed",
+          "explanation": "The evidence locates a later boundary."
+        },
+        {
+          "id": "3129b73566",
+          "text": "The target account was necessarily deleted",
+          "explanation": "No account-lifecycle evidence is supplied."
+        },
+        {
+          "id": "c51bef2d5f",
+          "text": "The browser never delivered the response",
+          "explanation": "The receiver's rejection establishes it processed a return."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q09",
+      "topic": "Configuration evidence",
+      "prompt": "A saved connection setting matches a design document. What has not yet been proved?",
+      "correctId": "177a9e01ee",
+      "options": [
+        {
+          "id": "177a9e01ee",
+          "text": "That the live operation used it and produced the intended target outcome",
+          "explanation": "Saved state and runtime behavior require different evidence."
+        },
+        {
+          "id": "3cf97e54cf",
+          "text": "That the saved value matches the document",
+          "explanation": "That comparison is supplied directly."
+        },
+        {
+          "id": "74bb083748",
+          "text": "That configuration can influence processing",
+          "explanation": "It can influence behavior, but execution is the missing evidence."
+        },
+        {
+          "id": "a8d106e181",
+          "text": "That a target result should be checked",
+          "explanation": "Checking the target is the appropriate next boundary."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q10",
+      "topic": "Causal restraint",
+      "prompt": "A sign-in failed shortly after a mapping change. What makes blaming the change premature?",
+      "correctId": "f891fe7756",
+      "options": [
+        {
+          "id": "f891fe7756",
+          "text": "Timing alone does not establish which operation or boundary failed",
+          "explanation": "Correlated processing evidence is needed to link the change to the outcome."
+        },
+        {
+          "id": "b9d6b96b9e",
+          "text": "Changes can never cause sign-in failures",
+          "explanation": "They can; the point is to establish the connection."
+        },
+        {
+          "id": "bfeb34ad1f",
+          "text": "A failed attempt always has several unrelated causes",
+          "explanation": "The cause count is unknown until investigated."
+        },
+        {
+          "id": "ab7db39fa1",
+          "text": "A familiar error message identifies the exact cause",
+          "explanation": "Similar messages can hide different failure boundaries."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    },
+    {
+      "id": "L02-Q11",
+      "topic": "Controlled retest",
+      "prompt": "An engineer applies one justified correction. What makes the retest useful?",
+      "correctId": "96d2afd25f",
+      "options": [
+        {
+          "id": "96d2afd25f",
+          "text": "A fresh controlled attempt with relevant starting state and correlated target results",
+          "explanation": "A retest must exercise the changed boundary and verify the intended outcome."
+        },
+        {
+          "id": "c8f5b7531e",
+          "text": "Refresh an unrelated public page",
+          "explanation": "That does not exercise the identity operation."
+        },
+        {
+          "id": "da4436f9cc",
+          "text": "Only confirm the setting saved",
+          "explanation": "Saving does not prove runtime acceptance."
+        },
+        {
+          "id": "f745377ad6",
+          "text": "Reuse an old app session without checking new messages",
+          "explanation": "Existing session access can bypass the changed federation path."
+        }
+      ]
+    },
+    {
+      "id": "L02-Q12",
+      "topic": "Unknown outcomes",
+      "prompt": "A record shows a provisioning request was submitted, but no response or target read is supplied. What can be concluded?",
+      "correctId": "6bbe7494d1",
+      "options": [
+        {
+          "id": "6bbe7494d1",
+          "text": "Submission is established; completion and target state remain unknown",
+          "explanation": "A proposed or initiated action is not a verified outcome."
+        },
+        {
+          "id": "4fd018e8fc",
+          "text": "The target update definitely succeeded",
+          "explanation": "No completion evidence is provided."
+        },
+        {
+          "id": "837fa8df1c",
+          "text": "The target update definitely failed",
+          "explanation": "Missing result does not prove failure either."
+        },
+        {
+          "id": "2da0b8225b",
+          "text": "The user's next sign-in must use the new value",
+          "explanation": "The packet establishes no such downstream effect."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Provisioning operation: submitted",
+        "Target response: not supplied",
+        "Correlated target read: not supplied"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 16,
+  "questions": [
+    {
+      "id": "L16-Q01",
+      "topic": "Training scope",
+      "prompt": "A learner wants to test a group rule. What must be established before actual execution?",
+      "correctId": "52a00672c8",
+      "options": [
+        {
+          "id": "52a00672c8",
+          "text": "An authorized training environment, permitted scope and cleanup expectations",
+          "explanation": "A written experiment is distinct from permission to change real identities."
+        },
+        {
+          "id": "6fc6b37c78",
+          "text": "Any production tenant is appropriate by default",
+          "explanation": "The course does not supply authority to change production."
+        },
+        {
+          "id": "af4879cac9",
+          "text": "A prediction itself counts as a completed lab",
+          "explanation": "Predicted and observed outcomes must stay separate."
+        },
+        {
+          "id": "efb2f49582",
+          "text": "A familiar product removes the need to define scope",
+          "explanation": "Familiarity does not establish authorization or safe boundaries."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q02",
+      "topic": "Testable question",
+      "prompt": "Which question best defines a small rule experiment?",
+      "correctId": "0bc5aed685",
+      "options": [
+        {
+          "id": "0bc5aed685",
+          "text": "Does Sales AND Employee include only the intended test population?",
+          "explanation": "It names a condition and an observable membership outcome."
+        },
+        {
+          "id": "55cc508138",
+          "text": "Can I learn all of Okta in one edit?",
+          "explanation": "That is too broad to provide a controlled test."
+        },
+        {
+          "id": "60af4dcd0a",
+          "text": "Will every app behave identically?",
+          "explanation": "Different integrations have separate contracts and outcomes."
+        },
+        {
+          "id": "9bfb36bfa7",
+          "text": "Can I call it successful before observing anything?",
+          "explanation": "A conclusion needs actual results under the chosen scope."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q03",
+      "topic": "Positive cases",
+      "prompt": "A rule requires Sales AND Employee. Which test user should match?",
+      "correctId": "9f29d76ae4",
+      "options": [
+        {
+          "id": "9f29d76ae4",
+          "text": "A user explicitly classified as both Sales and Employee",
+          "explanation": "Both required conditions must be established."
+        },
+        {
+          "id": "66479c8c94",
+          "text": "A Sales contractor",
+          "explanation": "Only the Sales condition is satisfied."
+        },
+        {
+          "id": "b9401156a1",
+          "text": "A Finance employee",
+          "explanation": "Only the Employee condition is satisfied."
+        },
+        {
+          "id": "f3e1039605",
+          "text": "A user with workerType missing",
+          "explanation": "Missing data does not establish the required classification."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q04",
+      "topic": "Negative cases",
+      "prompt": "Why test a Sales contractor and a Finance employee against Sales AND Employee?",
+      "correctId": "3cf7908105",
+      "options": [
+        {
+          "id": "3cf7908105",
+          "text": "They distinguish correct AND logic from an overly broad OR rule",
+          "explanation": "One-condition cases expose unintended inclusion that a single positive test can miss."
+        },
+        {
+          "id": "70c63fd5b9",
+          "text": "Both should always be granted membership",
+          "explanation": "That contradicts the intended combined condition."
+        },
+        {
+          "id": "74eb5df9a6",
+          "text": "Negative cases are unnecessary once one user matches",
+          "explanation": "A positive case alone cannot establish the exclusion boundary."
+        },
+        {
+          "id": "cdc808dfcc",
+          "text": "The test should change their business facts to make them match",
+          "explanation": "That removes the contrast the experiment needs."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q05",
+      "topic": "Prediction versus observation",
+      "prompt": "A learner predicts two users will be excluded, but runs no test. How should the record label this?",
+      "correctId": "c16e9f1c9a",
+      "options": [
+        {
+          "id": "c16e9f1c9a",
+          "text": "Predicted exclusion, with observed outcome not tested",
+          "explanation": "A reasoned expectation is not execution evidence."
+        },
+        {
+          "id": "067a29c0c7",
+          "text": "Verified exclusion",
+          "explanation": "No observed membership result is supplied."
+        },
+        {
+          "id": "0b8b9adc19",
+          "text": "A failed implementation",
+          "explanation": "No execution result is available either way."
+        },
+        {
+          "id": "cb74ecc863",
+          "text": "Completed application removal",
+          "explanation": "The prediction concerns rule membership, not target lifecycle."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q06",
+      "topic": "Assignment boundary",
+      "prompt": "A test confirms intended group membership. What still needs separate evidence for app assignment?",
+      "correctId": "5945a61e53",
+      "options": [
+        {
+          "id": "5945a61e53",
+          "text": "The actual group's assignment relationship to the intended app instance",
+          "explanation": "Membership is not automatically an application grant."
+        },
+        {
+          "id": "995d742115",
+          "text": "Nothing; every group grants every app",
+          "explanation": "Assignment requires a defined relationship."
+        },
+        {
+          "id": "ee07e336de",
+          "text": "Only the user's authenticator enrollment count",
+          "explanation": "Authentication readiness does not establish the app grant path."
+        },
+        {
+          "id": "3be4db3106",
+          "text": "Only the target app's logo",
+          "explanation": "Branding does not identify the relationship."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q07",
+      "topic": "Target boundary",
+      "prompt": "A test confirms an Okta app assignment but has not inspected the target. What remains unknown?",
+      "correctId": "ffcceb6d87",
+      "options": [
+        {
+          "id": "ffcceb6d87",
+          "text": "Target account readiness, sign-in and intended resource permission",
+          "explanation": "Provider assignment is not a complete downstream result."
+        },
+        {
+          "id": "51debaff79",
+          "text": "Whether the provider assignment exists",
+          "explanation": "That limited state is supplied."
+        },
+        {
+          "id": "fea9947457",
+          "text": "Whether the rule has any positive cases",
+          "explanation": "The question concerns a later boundary rather than its full test matrix."
+        },
+        {
+          "id": "82267ce935",
+          "text": "Whether all target apps must use the same provisioning protocol",
+          "explanation": "Support varies and cannot be assumed universally."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q08",
+      "topic": "Entry and permission",
+      "prompt": "A training reader signs in and views projects but is denied deletion as required. Which result is correct?",
+      "correctId": "11ba307ec2",
+      "options": [
+        {
+          "id": "11ba307ec2",
+          "text": "Both allowed reading and denied deletion match the defined test",
+          "explanation": "The test needs expected success and expected restriction."
+        },
+        {
+          "id": "e316d3f517",
+          "text": "Every request must return success to pass",
+          "explanation": "That would misclassify an intended authorization denial."
+        },
+        {
+          "id": "deb93b024b",
+          "text": "Deletion must be allowed because SSO succeeded",
+          "explanation": "Authentication does not grant unrestricted actions."
+        },
+        {
+          "id": "5a88b1e1a2",
+          "text": "The reader account should be removed as a repair",
+          "explanation": "The supplied results show no defect in the stated permission boundary."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q09",
+      "topic": "End condition",
+      "prompt": "Why define how a training experiment ends before executing it?",
+      "correctId": "59627e9832",
+      "options": [
+        {
+          "id": "59627e9832",
+          "text": "To specify cleanup, expected remaining state and verification",
+          "explanation": "An experiment includes removal of temporary access and recording final outcomes."
+        },
+        {
+          "id": "3f6023e740",
+          "text": "Cleanup is never needed for test identities",
+          "explanation": "Temporary grants and records can still need controlled removal."
+        },
+        {
+          "id": "73055b9716",
+          "text": "Closing a browser proves all changes are undone",
+          "explanation": "Browser closure does not revert server-side configuration."
+        },
+        {
+          "id": "88ad87e824",
+          "text": "A predicted cleanup counts as verified removal",
+          "explanation": "Actual end-state evidence is still needed after execution."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q10",
+      "topic": "Changed-condition review",
+      "prompt": "A test matrix includes only a Sales employee, which matches under both AND and OR. What is missing?",
+      "correctId": "ab48c3c4c4",
+      "options": [
+        {
+          "id": "ab48c3c4c4",
+          "text": "Cases that distinguish the intended AND rule from the incorrect OR variant",
+          "explanation": "A nondiscriminating positive case cannot expose the logical difference."
+        },
+        {
+          "id": "df09e12f2f",
+          "text": "A longer display name for the same user",
+          "explanation": "That does not change the rule conditions under test."
+        },
+        {
+          "id": "2bd07e0a82",
+          "text": "A claim that the rule is correct because one case passed",
+          "explanation": "The supplied single case cannot distinguish the competing rules."
+        },
+        {
+          "id": "81a12f82c5",
+          "text": "An unrelated password reset",
+          "explanation": "That does not test group-rule logic."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Intended condition: Sales AND Employee",
+        "Only test case: Sales Employee",
+        "Both AND and OR would include this case"
+      ]
+    },
+    {
+      "id": "L16-Q11",
+      "topic": "Practice record",
+      "prompt": "Which record best supports learning from an experiment?",
+      "correctId": "f62063cf43",
+      "options": [
+        {
+          "id": "f62063cf43",
+          "text": "Requirement, predicted cases, actual observations, differences, follow-up and cleanup state",
+          "explanation": "A structured record connects reasoning with verified outcomes."
+        },
+        {
+          "id": "1bfa54d086",
+          "text": "Only a screenshot with no case labels",
+          "explanation": "It may not establish which rule, user or outcome was tested."
+        },
+        {
+          "id": "9f7644df80",
+          "text": "Only a claim that nothing failed",
+          "explanation": "That omits intended exclusions and evidence."
+        },
+        {
+          "id": "078a905608",
+          "text": "Only the proposed setup steps",
+          "explanation": "A setup proposal does not document execution or end state."
+        }
+      ]
+    },
+    {
+      "id": "L16-Q12",
+      "topic": "Written practice",
+      "prompt": "A learner has no training tenant. What useful work can still be completed?",
+      "correctId": "c3823e92fd",
+      "options": [
+        {
+          "id": "c3823e92fd",
+          "text": "The experiment question, predictions, discriminating cases and evidence/cleanup plan",
+          "explanation": "Planning can develop reasoning while remaining explicitly unexecuted."
+        },
+        {
+          "id": "741a96ee59",
+          "text": "Claim verified live results using the predicted table",
+          "explanation": "That would misrepresent a prediction as an observation."
+        },
+        {
+          "id": "72e205ac87",
+          "text": "Use someone else's tenant without authorization",
+          "explanation": "The absence of a tenant does not create permission."
+        },
+        {
+          "id": "b2b19b7220",
+          "text": "Skip all reasoning until production access is available",
+          "explanation": "The written planning tasks do not require real configuration changes."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

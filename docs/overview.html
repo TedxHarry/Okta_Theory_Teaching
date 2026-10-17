@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Okta at a glance. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Okta at a glance | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/overview.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="okta-at-a-glance">Okta at a glance</h1>
+<p>Before you start the daily lessons, picture a person trying to do their work. The company needs to know who they are, which applications they should receive, how they prove their identity, and what they may do after entering an application. Those questions belong to connected systems with different responsibilities.</p>
+<p>Use this page as a map. You do not need to memorize the terms before Day 1. Return to it when a detailed example makes you lose sight of the larger journey.</p>
+<p>In Northbridge's workforce environment, Okta connects the systems that hold identity information with the applications people need. It holds user profiles, maintains access relationships, performs the applicable sign-in checks, and uses configured connections for account management. The other systems still have their own jobs: HR supplies employment information, and each application must establish its account, access and permission outcomes.</p>
+<h2 id="how-identity-data-flows">How identity data flows</h2>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/07a722ac805e3fb6.svg" alt="Okta at a glance: diagram 1" width="598" height="621" loading="lazy"><figcaption><span>Okta at a glance: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/07a722ac805e3fb6.svg" data-diagram="Okta at a glance: diagram 1">Open full diagram</a></figcaption></figure><p>At Northbridge, Workday is the profile source for employees such as Maya and Daniel. Okta provisions their AD accounts through the configured employee process; AD returns designated directory-owned values such as work email. Priya is an Okta-managed contractor, maintained after sponsor approval and outside employee import scope. A sponsor approves the change; the sponsor is not another technical source integration.</p>
+<p>Read the diagram from the people records toward the target accounts. The employee and contractor paths both reach Okta, but their data is maintained through different processes. The return arrow from AD concerns designated attributes; it does not make AD the owner of every employee field. Follow the direction and purpose of an arrow before assuming what it changed.</p>
+<p>Workday is first and AD second in external profile-source priority. That order applies to a user's actual source associations, not to every user merely because both integrations exist. A separately scoped AD-led example teaches users whose profile source is AD; it does not change Maya's Workday-led model. <a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html">Day 4</a> explains source priority and attribute ownership.</p>
+<p>Group rules are one way to maintain membership. Approved group or direct assignments establish intended application access. A supported, configured provisioning process can then manage the target account; otherwise another accountable process must do so. Assignment alone does not prove account creation.</p>
+<p>The arrows show relationships to investigate, not one universal order followed by every connector. A correct source value, a group membership, an assignment and a checked target account are separate results. A person can have an Okta profile and still have no account in Salesforce. Ask which result the evidence actually establishes.</p>
+<h2 id="how-sign-in-works">How sign-in works</h2>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/e6cc6f141bca5bfc.svg" alt="Okta at a glance: diagram 2" width="276" height="582" loading="lazy"><figcaption><span>Okta at a glance: diagram 2</span><a href="/Okta_Theory_Teaching/assets/diagrams/e6cc6f141bca5bfc.svg" data-diagram="Okta at a glance: diagram 2">Open full diagram</a></figcaption></figure><p>In these app-initiated examples, the browser travels to Okta for the applicable sign-in checks. With SAML, it carries the response back to the application. In the OIDC code flow taught here, it carries a code; the application backend exchanges that code for tokens. The app validates the relevant messages, identifies the user and decides whether to establish its own session. Receiving a response alone does not establish trust or successful access.</p>
+<p>Signing in and having an account are two different things. Signing in and being allowed to do a particular action inside the app are also two different things.</p>
+<p>For example, reaching Expense does not by itself establish permission to approve an expense. The application can also maintain its own session after sign-in, so an Okta-session result does not supply every application-session result. Later lessons follow these boundaries separately; for now, keep the receiving system in view.</p>
+<h2 id="the-pieces-one-line-each">The pieces, one line each</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Universal Directory</td>
+<td>Where Okta stores each person's profile and attributes.</td>
+</tr>
+<tr>
+<td>Profile</td>
+<td>The set of details Okta holds about one person.</td>
+</tr>
+<tr>
+<td>Profile source</td>
+<td>The system allowed to control a person's profile.</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>A collection of users.</td>
+</tr>
+<tr>
+<td>Group rule</td>
+<td>A rule that puts people in a group based on their attributes.</td>
+</tr>
+<tr>
+<td>Application assignment</td>
+<td>A record that a user should get an application.</td>
+</tr>
+<tr>
+<td>Provisioning</td>
+<td>Creating, updating, or disabling the account inside the target app.</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Checking who is signing in.</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Deciding what the signed-in user is allowed to do.</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>The rules that decide what a sign-in requires.</td>
+</tr>
+<tr>
+<td>System Log</td>
+<td>Okta's record of what happened, which you read as evidence.</td>
+</tr>
+</tbody>
+</table></div><p>These short descriptions are orientation. The lessons explain the conditions and scope behind them: which source applies to a person, which rule or policy was evaluated, and which target result was confirmed. A product label alone is not an explanation of a ticket.</p>
+<h2 id="the-one-habit-to-carry-everywhere">The one habit to carry everywhere</h2>
+<p>When something does not work, do not guess. Ask four questions:</p>
+<ol>
+<li>What should have happened for this person and this app?</li>
+<li>What actually happened?</li>
+<li>Where did those two first differ?</li>
+<li>What evidence proves it?</li>
+</ol>
+<p>Use the answers to choose a justified next check. If the packet does not establish a cause or approval, record the missing evidence rather than filling the gap with a familiar explanation. After a correction, check the required outcome in the affected system before reporting success.</p>
+<p>Ready? Start with <a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html">Day 1</a> and follow the <a href="/Okta_Theory_Teaching/learning-path.html">learning path</a> in order. When a flow gets confusing, come back to this page.</p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

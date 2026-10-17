@@ -190,7 +190,7 @@ nav_order: 1
 
 ### Q12. A configured connection
 
-<p class="qb-question"><strong>Question:</strong> An integration—a configured connection for supported tasks—links the company’s Workday HR system to Okta. It is enabled. Maya’s department recently changed in Workday, but support has not checked the update result or her current Okta profile. Is the enabled integration proof the latest value arrived?</p>
+<p class="qb-question"><strong>Question:</strong> An integration (a configured connection for supported tasks) links the company’s Workday HR system to Okta. It is enabled. Maya’s department recently changed in Workday, but support has not checked the update result or her current Okta profile. Is the enabled integration proof the latest value arrived?</p>
 
 <details class="qb-answer" id="q12-explanation">
 <summary>Read the teaching explanation</summary>
@@ -388,7 +388,7 @@ nav_order: 1
 
 ### Q24. A visible tile
 
-<p class="qb-question"><strong>Question:</strong> Maya sees a Salesforce tile—a clickable shortcut—on her Okta dashboard. No Salesforce account, entry, or permission checks are supplied. Does the visible shortcut prove any of those three outcomes?</p>
+<p class="qb-question"><strong>Question:</strong> Maya sees a Salesforce tile (a clickable shortcut) on her Okta dashboard. No Salesforce account, entry, or permission checks are supplied. Does the visible shortcut prove any of those three outcomes?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>

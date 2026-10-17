@@ -192,7 +192,7 @@ nav_order: 5
 
 ### Q12. Unknown does not mean Employee
 
-<p class="qb-question"><strong>Question:</strong> A company’s normal Salesforce group requires Sales AND Employee. A user’s central Okta department is Sales, but workerType—the workforce classification—is missing. Can “not known to be Contractor” be treated as confirmed Employee?</p>
+<p class="qb-question"><strong>Question:</strong> A company’s normal Salesforce group requires Sales AND Employee. A user’s central Okta department is Sales, but workerType (the workforce classification) is missing. Can “not known to be Contractor” be treated as confirmed Employee?</p>
 
 <details class="qb-answer" id="q12-explanation">
 <summary>Read the teaching explanation</summary>

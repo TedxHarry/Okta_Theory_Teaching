@@ -1,0 +1,183 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 6: AD imports and password validation. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 6: AD imports and password validation | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html" aria-current="page"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html" aria-current="page">Lesson 6</a><a href="/Okta_Theory_Teaching/question-bank/day-06.html">Questions (40)</a><a href="/Okta_Theory_Teaching/quizzes/day-06.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-6-ad-imports-and-password-validation">Day 6: AD imports and password validation</h1>
+<p>Jordan Lee is currently employed at Northbridge Services. An Active Directory (<strong>AD</strong>) import completed successfully, and Alex confirmed that Jordan's directory record is linked to the correct Okta user.</p>
+<p>Jordan now reports:</p>
+<blockquote>
+<p>My directory account is in Okta, but I cannot sign in with my AD password.</p>
+</blockquote>
+<p>When Jordan says his directory account is in Okta, he means Okta holds information associated with his AD account. The directory account itself remains in AD. The successful record import does not establish that his AD password was copied into Okta or tested.</p>
+<p>From Jordan's point of view, this sounds contradictory. If Okta can see his directory account, why can he not use its password? Alex needs to find out what the successful import actually did, then follow the failed sign-in on its own path. Reading an account record and checking a submitted password ask AD to do different work.</p>
+<p>By the end of this lesson, you should be able to explain that difference to Jordan and choose the next useful check. You will also distinguish an unanswered password request from one that AD explicitly rejects. You can reason through both paths without installing an agent or using a live directory.</p>
+<h2 id="locate-the-directory-the-server-and-the-agent">Locate the directory, the server, and the agent</h2>
+<p>Start with the place that holds Jordan's directory account. Northbridge uses <strong>Active Directory Domain Services</strong>, often shortened here to AD, for its employee directory. It holds objects such as users, groups, and computers. An object is a directory record representing one of those things. Jordan's user object contains information about his directory account; a group represents a collection used for access or administration. The directory account is one representation of Jordan, alongside the Workday and Okta records you have already learned to distinguish.</p>
+<p>An AD <strong>domain</strong> is a managed area of the directory with its own administration boundary. It contains objects such as Jordan's user account. A <strong>domain controller</strong>, or <strong>DC</strong>, is a server running the directory service for that domain. It can respond to directory queries and validate domain credentials. <strong>Credentials</strong> are the information used to prove identity; on this password path, they include the submitted account name and password. A domain can have more than one domain controller.</p>
+<p>Administrators also need to organize the directory. An <strong>organizational unit</strong>, or <strong>OU</strong>, is a container inside a domain used to organize objects and let designated administrators manage that part of the directory. Think of Jordan's record stored under an employee OU: that is its directory location. A group has a separate list of members, like the membership relationship you inspected on Day 5. Placing a user inside an OU does not make that user a member of a same-named group.</p>
+<p>The <strong>Okta AD agent</strong> is separate software in the company's environment. It connects Okta with AD for supported operations. It is neither the AD directory database nor the domain controller itself. It can run on a separate server.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/cb092174421cab16.svg" alt="Day 6: AD imports and password validation: diagram 1" width="276" height="362" loading="lazy"><figcaption><span>Day 6: AD imports and password validation: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/cb092174421cab16.svg" data-diagram="Day 6: AD imports and password validation: diagram 1">Open full diagram</a></figcaption></figure><p>Read the diagram as a route between components. Okta communicates with the agent, and the agent performs directory operations with a domain controller inside Northbridge's environment. The agent connects the two systems; the DC runs the directory service and can evaluate the domain credentials. Keeping those jobs separate will help you locate Jordan's failure.</p>
+<p>The arrows show information moving in both directions, but that is different from who starts the connection. The agent initiates <strong>outbound</strong> communication from Northbridge's environment toward Okta. It receives work and returns results through that path. Okta does not need a new <strong>inbound</strong> connection from outside through the company's firewall to the agent. A firewall controls which network traffic is allowed. See <a href="https://help.okta.com/oie/en-us/Content/Topics/Directory/Directory_FAQ_Okta_and_AD_Groups.htm">Okta's AD integration FAQ</a>.</p>
+<p>The agent also needs a separate connection to the relevant domain controller inside the company's environment. Receiving a request from Okta does not show that this second connection worked.</p>
+<p>The diagram does not require exposing a domain controller directly to the internet.</p>
+<h2 id="northbridge-is-still-hr-led">Northbridge is still HR-led</h2>
+<p>Workday controls Jordan's employee profile. Okta maintains his workforce identity and connects to his AD account. AD supplies specifically designated directory-owned values and validates his password when the AD password path is used.</p>
+<p>These responsibilities do not conflict:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Question</th>
+<th>Northbridge's answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who controls Jordan's employee department?</td>
+<td>Workday, through the inherited profile-source decision.</td>
+</tr>
+<tr>
+<td>Where is his directory account?</td>
+<td>AD, linked to his Okta identity.</td>
+</tr>
+<tr>
+<td>Who validates his password on the configured AD password path?</td>
+<td>AD, through the agent.</td>
+</tr>
+<tr>
+<td>Who makes the remaining Okta sign-in decisions?</td>
+<td>Okta, using the applicable requirements and context.</td>
+</tr>
+</tbody>
+</table></div><p>Notice that the table asks a different question in each row. Workday can determine Jordan's department while AD determines whether the submitted directory credentials are acceptable. Neither responsibility replaces the other. If his password attempt fails, changing which source controls his department would address a different decision. Recall Day 4: password validation and attribute ownership answer different questions.</p>
+<p>The import direction also fits this architecture. Reading information back from an existing AD account does not make AD the owner of every employee attribute. The configured source and mapping decisions still govern which values control the Okta profile.</p>
+<p>Priya's Okta-managed contractor identity has no AD assignment in this architecture. Do not assume that her sign-in uses Jordan's AD path merely because both people use Okta.</p>
+<h2 id="what-an-import-establishes">What an import establishes</h2>
+<p>Alex first checks the operation that already succeeded. An <strong>import</strong> brings directory records and changes into Okta for processing. It asks for directory information so Okta can represent and process the selected records. The relevant flow is:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/d8a3a58ecbc8dc29.svg" alt="Day 6: AD imports and password validation: diagram 2" width="276" height="428" loading="lazy"><figcaption><span>Day 6: AD imports and password validation: diagram 2</span><a href="/Okta_Theory_Teaching/assets/diagrams/d8a3a58ecbc8dc29.svg" data-diagram="Day 6: AD imports and password validation: diagram 2">Open full diagram</a></figcaption></figure><p>Import scope matters. The integration selects which user and group OUs to include. That selection answers 'Which parts of the directory are we reading?' A successful import of those selected records does not mean every object in AD was included. See <a href="https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm">AD import settings</a>.</p>
+<p>Imagine the employee user OU is included, but a separate group OU is not. The import might supply Jordan's user record without supplying a group the investigator expected. That missing group tells you something about the imported results; it does not yet tell you whether the group exists in AD. Compare the group's actual directory location with the selected group OUs and the import result. This check separates an object outside the chosen scope from one that was expected to be read but was not processed as expected.</p>
+<p>Matching and confirmation matter too. Discovering a record is not the same as establishing the correct identity association. For Jordan's incident, the packet explicitly supplies that association; Day 11 examines how to reason about uncertain matches.</p>
+<p>Now return to Jordan's claim. The import found and processed his selected directory information, and Alex separately confirmed the correct association. Those are useful facts. Neither is a password-validation result. Importing profile information does not demonstrate that Jordan entered a valid password, that AD accepted a password-validation request, or that a later sign-in path remained available. A result belongs to the operation that produced it.</p>
+<p>It also does not turn every imported AD attribute into the controlling value for an HR-led user. Source and mapping settings still apply.</p>
+<h2 id="follow-delegated-authentication">Follow delegated authentication</h2>
+<p>Jordan now enters his directory sign-in information at Okta. For this configured path, the question is whether AD accepts those submitted credentials. Okta asks AD to perform that check through the agent. When a system asks another system to validate a user's credentials, it is <strong>delegating authentication</strong>. Northbridge uses that arrangement for Jordan's AD password path.</p>
+<p>The following is a simplified logical flow:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/f753bc5c1a596a21.svg" alt="Day 6: AD imports and password validation: diagram 3" width="276" height="806" loading="lazy"><figcaption><span>Day 6: AD imports and password validation: diagram 3</span><a href="/Okta_Theory_Teaching/assets/diagrams/f753bc5c1a596a21.svg" data-diagram="Day 6: AD imports and password validation: diagram 3">Open full diagram</a></figcaption></figure><p>Follow the request to AD, then follow the result back. Okta's <a href="https://help.okta.com/oie/en-us/Content/Topics/Directory/directory_ad_delegated_authentication.htm">delegated authentication reference</a> describes this agent-to-domain-controller path. The request must reach the agent and the DC before there can be a returned AD validation result. Okta then uses that result within the applicable sign-in process. An arrow in this simplified diagram describes the next logical step; the incident evidence tells you which steps actually occurred.</p>
+<p>A successful password result is one sign-in step. Additional authentication or policy requirements may remain, and application assignment and application-side acceptance are still separate. AD accepting Jordan's password is therefore a narrower conclusion than Jordan successfully opening Salesforce. Not every sign-in method uses this password path.</p>
+<p>The incident evidence should identify the affected user, the directory association, the relevant attempt, and the agent/DC path involved. A successful password event for another person does not resolve Jordan's attempt.</p>
+<h2 id="three-operations-that-should-not-be-confused">Three operations that should not be confused</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Operation</th>
+<th>Main question</th>
+<th>What success does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Directory import</td>
+<td>Could the configured operation read and process the selected directory data?</td>
+<td>That a user's password was accepted.</td>
+</tr>
+<tr>
+<td>Delegated password authentication</td>
+<td>Did AD accept the credentials for this attempt through the agent?</td>
+<td>That every later requirement or application action succeeded.</td>
+</tr>
+<tr>
+<td>Password synchronization</td>
+<td>Did a configured process propagate a password change to a supported destination?</td>
+<td>That a later authentication attempt succeeded.</td>
+</tr>
+</tbody>
+</table></div><p>Read each row as a different request: 'Read these directory records,' 'Check the credentials submitted for this sign-in,' or 'Carry this password change to the supported destination.' Those are import, delegated authentication and password synchronization respectively. Password synchronization transfers a change through its supported, configured process. A password-validation request is not itself evidence that a password change was copied anywhere. A deployment may use both capabilities for different purposes, but each requires its own configuration and result.</p>
+<p>For a separate hypothetical example, suppose Jordan changes his password in AD. A configured password-synchronization process can propagate that change to a supported destination. That process transfers a change; the delegated request in Jordan's incident asks AD to validate the password he submitted. The incident supplies no password-change or synchronization event.</p>
+<p>Okta documents a separate <strong>AD Password Sync Agent</strong> for relevant synchronization scenarios. Do not treat its name as another name for the ordinary AD agent. The required components and direction depend on the synchronization use case. Northbridge's incident uses delegated authentication; a successful import is not evidence of password synchronization.</p>
+<p>If a colleague says that Jordan's password is synchronized, ask which password operation, in which direction, and for which destination. That gives you something you can inspect. A general statement that passwords are integrated leaves those decisions unanswered. At this stage, you need to distinguish the operations and components; you do not need to memorize installation procedures for every synchronization use case.</p>
+<h2 id="investigate-jordans-failed-attempt">Investigate Jordan's failed attempt</h2>
+<p>The following synthetic evidence is a plain-language investigation summary, not literal Okta or Windows log output. The investigator has correlated the authentication observations to the same attempt, labelled J-1. Earlier import I-1 is a separate operation.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved employment and Okta state</td>
+<td>Jordan is employed; his Okta account is Active.</td>
+</tr>
+<tr>
+<td>Account association</td>
+<td>His expected AD account is linked to the checked Okta user.</td>
+</tr>
+<tr>
+<td>Earlier import I-1</td>
+<td>Completed; Jordan's selected directory data was processed.</td>
+</tr>
+<tr>
+<td>Authentication configuration</td>
+<td>AD delegated password authentication applies to this attempt.</td>
+</tr>
+<tr>
+<td>Agent observation for J-1</td>
+<td>The handling agent received the delegated request from Okta.</td>
+</tr>
+<tr>
+<td>Agent-to-DC observation for J-1</td>
+<td>The connection attempt to the selected DC timed out before a credential-validation response was obtained.</td>
+</tr>
+<tr>
+<td>Returned AD credential result</td>
+<td>No acceptance or rejection result was obtained for J-1.</td>
+</tr>
+<tr>
+<td>User experience</td>
+<td>Jordan could not complete this sign-in attempt.</td>
+</tr>
+</tbody>
+</table></div><p>Before reading on, locate the first demonstrated failure. Did AD reject Jordan's password?</p>
+<p>Start with the two observations for J-1. The handling agent received the delegated request from Okta. Its connection attempt to the selected DC then timed out before it obtained a credential-validation response. That is the first demonstrated failure in the supplied path.</p>
+<p>The packet does not show AD rejecting Jordan's password. It does not establish that the password was correct either: no credential result was obtained. Both conclusions would require an answer that this attempt did not supply.</p>
+<p>A <strong>timeout</strong> means the operation did not obtain the expected result within its allowed wait. Compare “I did not receive an answer” with “I received an answer saying no.” They lead to different investigations even when Jordan sees a sign-in failure in both cases.</p>
+<p>Keep the time and operation labels beside your conclusions. I-1 shows that the earlier import completed; J-1 describes the later authentication attempt. The successful earlier operation cannot fill in a missing result for the later one. Likewise, receiving Okta's request establishes one part of the communication path, while the timed-out DC connection identifies the part that still needs investigation.</p>
+<p>Alex should request evidence for the selected agent and DC at the time of J-1. Can the agent look up the intended DC's network address? Can it establish the required connection? Is the directory service available to handle the request? These are name resolution, reachability and service-availability questions.</p>
+<p><strong>Name resolution</strong>, introduced as DNS on Day 2, is the lookup that connects a host name with a network address. A failed lookup and a timed-out connection are different observations. Asking for a lookup result does not mean Alex has already found a DNS failure.</p>
+<p>A problem with the network route, a traffic control such as a firewall rule, or an unavailable service could help explain the timeout. The packet does not choose among them. The next check should help distinguish those explanations on this agent/DC path at the time of J-1. Resetting Jordan's password would change a credential while leaving the demonstrated connectivity failure unexplained. Alex needs evidence about the failed connection before choosing its correction.</p>
+<h2 id="contrast-a-credential-rejection">Contrast a credential rejection</h2>
+<p>In a separate attempt, J-2, suppose the handling agent reaches the DC and receives an explicit credential-validation rejection.</p>
+<p>Pause before choosing the same next check as for J-1. In J-2, AD has supplied an answer: it rejected credential validation. The path obtained a response for this attempt. The unanswered question now concerns the rejected identity or credentials and relevant account conditions. Check the detailed directory result and the actual username/account involved. A result from J-2 does not retroactively supply the missing answer for J-1.</p>
+<p>Do not translate every rejection into “the user mistyped the password.” A generic rejection may not distinguish an incorrect identifier, a password issue, or an account restriction. Ask for the detail that separates them before choosing a correction.</p>
+<p>The identifier deserves attention as well as the password. An AD sign-in name can differ from a work email address. A <strong>user principal name</strong>, or <strong>UPN</strong>, is a directory sign-in name often written in an email-like form. Its appearance does not prove it is the person's mailbox address. Compare the configured identifier with the intended account, just as you compared identifiers across systems in earlier lessons. This packet does not supply a mismatch; it gives you a reason to check one rather than assume identical strings.</p>
+<h2 id="know-what-a-successful-follow-up-proves">Know what a successful follow-up proves</h2>
+<p>Here is a synthetic follow-up to J-1, with new evidence:</p>
+<ul>
+<li>The network team identifies and corrects a route preventing the handling agent from reaching the selected DC.</li>
+<li>A new attempt, J-3, is correlated across the relevant records.</li>
+<li>The agent reaches the DC, and AD returns an accepted credential result for Jordan.</li>
+<li>Evidence of the remaining Okta checks and application entry is not supplied.</li>
+</ul>
+<p>Read the follow-up in two parts. The network team has now established a route problem and corrected it. The new, correlated attempt J-3 then supplies the credential result that was missing in J-1: AD accepts Jordan's credentials. Together, those observations support recovery of the checked connection and successful password validation in J-3.</p>
+<p>The remaining Okta checks and application entry are still unverified. Alex can report the recovered password-validation step and explain what remains to be checked. The confirmed routing finding belongs to this follow-up; it was only a possible explanation in the original packet.</p>
+<p>This is how an investigation progresses: keep the first conclusion within the initial evidence, then update it when additional evidence establishes the cause and recovery.</p>
+<h2 id="compare-the-ad-led-variation">Compare the AD-led variation</h2>
+<p>In a separately labelled AD-led company, AD may control the employee profile as well as validate the password:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/058204963b42fcea.svg" alt="Day 6: AD imports and password validation: diagram 4" width="700" height="314" loading="lazy"><figcaption><span>Day 6: AD imports and password validation: diagram 4</span><a href="/Okta_Theory_Teaching/assets/diagrams/058204963b42fcea.svg" data-diagram="Day 6: AD imports and password validation: diagram 4">Open full diagram</a></figcaption></figure><p>Compare the two halves of the diagram. The upper path carries profile data from AD toward Okta and applications. The lower path sends a password-validation request toward AD and receives a result. AD has responsibilities in both paths at this separate company, but the operations still ask different questions.</p>
+<p>Northbridge keeps Workday at the start of its employee profile flow. Import and authentication remain distinct in both architectures. Neither a source-priority decision nor a successful import replaces authentication evidence.</p>
+<h2 id="hand-the-directory-team-a-specific-question">Hand the directory team a specific question</h2>
+<p>For J-1, identify the configured AD integration, the agent involved, the selected domain controller, and the time of the failed request. The directory integration's status and agent information help locate the path. The directory and network owners may need to provide evidence that is unavailable in Okta.</p>
+<p>Alex also needs to know how widely the problem is occurring. Are several users failing through the same agent, or is Jordan the only affected person in the checked period? A shared failure makes that shared path useful to inspect. A single reported failure still needs its own account and attempt evidence. Neither pattern proves the cause, so pair it with the actual timeout or returned credential result.</p>
+<p>A useful escalation says: &quot;This delegated request through this agent did not obtain a DC result; please check the corresponding reachability and service evidence.&quot; The identity, time, and component details give the directory team a specific operation to trace. Ask for the relevant result and connection evidence; the investigation does not require putting Jordan's password in the incident handoff.</p>
+<p>After the path is repaired, obtain a new credential-validation result and continue through the remaining sign-in requirements. An agent showing available is not a substitute for that user's successful attempt. When you explain the outcome to Jordan, connect each conclusion to its result: his account was imported, his first password request received no DC result, and the later checked attempt was accepted by AD. Any broader access claim still needs its own evidence.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain:</p>
+<ul>
+<li>The separate roles of AD, a domain controller, and the Okta AD agent?</li>
+<li>Why an OU is different from a group and why import scope matters?</li>
+<li>How Workday can control a profile while AD validates a password?</li>
+<li>Why import, delegated authentication, and password synchronization differ?</li>
+<li>Why J-1 supports a connectivity investigation rather than a confirmed bad password?</li>
+<li>What changes when the DC returns an explicit rejection?</li>
+<li>What J-3 establishes and which outcomes still need evidence?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-06.html">Day 6 exercises</a>, then compare with the <a href="/Okta_Theory_Teaching/self-checks/day-06.html">separate answers</a>.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, draw the import and password paths separately. For each, name the operation, observed result, and the next evidence needed. Keep profile ownership beside the diagram rather than using it as a substitute for a sign-in result.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html">Day 7</a> explains authenticators, enrollment, and additional authentication requirements.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-06.html">Day 6 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html">Previous: Day 5</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-06.html">Revise Day 6</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-06.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-06.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-06.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><small>← Previous lesson</small>Day 5: Groups, rules, and application assignments</a><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><small>Next lesson →</small>Day 7: Authenticators, enrollment, and MFA</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

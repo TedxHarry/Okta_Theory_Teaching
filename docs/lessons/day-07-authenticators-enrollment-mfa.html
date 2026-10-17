@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 7: Authenticators, enrollment, and MFA. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 7: Authenticators, enrollment, and MFA | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html" aria-current="page"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html" aria-current="page">Lesson 7</a><a href="/Okta_Theory_Teaching/question-bank/day-07.html">Questions (42)</a><a href="/Okta_Theory_Teaching/quizzes/day-07.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-7-authenticators-enrollment-and-mfa">Day 7: Authenticators, enrollment, and MFA</h1>
+<p>This is a separate sign-in attempt from Daniel's earlier expense-approval problem. Daniel opens Northbridge Expense. His password is accepted, but he is asked to set up Okta Verify before continuing. His manager asks:</p>
+<blockquote>
+<p>We already enabled Okta Verify. Why does Daniel need to set it up?</p>
+</blockquote>
+<p>Daniel has supplied a password the system accepts, yet he still cannot continue. The setup request concerns another way to prove his identity: Okta Verify, an app he can register for his Northbridge account. His manager's question combines making that option available with completing Daniel's own setup. Using it successfully during a sign-in is a further step.</p>
+<p>Recall Day 6: an accepted password result does not establish that all sign-in requirements have been met. Today, follow Daniel from the available option through registration and then to the evidence required for a particular attempt. Your goal is to explain which step he has reached and choose the next check from that evidence. You can follow the case without installing the app or using an Okta tenant.</p>
+<h2 id="why-a-password-may-not-be-enough">Why a password may not be enough</h2>
+<p>A password is something Daniel knows. Someone else who obtains it might try to use it. Asking that person to enter the stolen password again would add little reassurance. Northbridge can instead require another kind of evidence, such as proof involving a registered device Daniel possesses. The purpose of the extra check is to require evidence that knowing his password alone does not supply.</p>
+<p>An <strong>authenticator</strong> is a means of providing authentication evidence. A password, a supported security key, and Okta Verify are examples. Authenticators can support different <strong>methods</strong>, or ways of authenticating. For example, Daniel might respond to an Okta Verify notification on his registered phone. That tells us more about the interaction than simply saying he used Okta Verify. The authenticator's name alone does not describe every method or security property it supports.</p>
+<p>A <strong>factor type</strong> describes the kind of evidence:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Factor type</th>
+<th>Plain meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knowledge</td>
+<td>Something you know</td>
+<td>A password.</td>
+</tr>
+<tr>
+<td>Possession</td>
+<td>Something you have or control</td>
+<td>A registered device used to prove possession.</td>
+</tr>
+<tr>
+<td>Biometric</td>
+<td>Something you are</td>
+<td>Fingerprint or face verification supported by a device.</td>
+</tr>
+</tbody>
+</table></div><p><strong>Multifactor authentication</strong>, or <strong>MFA</strong>, combines different factor types. It adds evidence beyond a single kind of proof.</p>
+<p>Count the kinds of evidence, not the screens. Asking for two passwords is still asking for knowledge twice. Two prompts do not automatically establish two factors. Conversely, a supported authenticator interaction may establish more than one factor, such as device possession together with biometric verification.</p>
+<p>In a successful password-plus-device attempt, accepted password evidence supplies knowledge, and the validated registered-device method supplies possession. Both results matter. The fact that he owns a phone, without the relevant registration and accepted proof, does not complete the device check.</p>
+<p>MFA and authorization remain different. Stronger authentication does not grant Daniel an Expense approval role or create his application account. His Finance manager title alone does not establish the application permissions needed for his work.</p>
+<p>Ask three questions about Daniel's check: 'What is he using?' Okta Verify, the <strong>authenticator</strong>. 'How is he using it?' By responding to Push, the <strong>method</strong>. 'What kind of proof can that validated interaction supply?' <strong>Possession</strong>, a factor type. These are three descriptions of the same interaction, not three separate checks. <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/authenticators/configure-okta-verify.htm">Okta's Verify reference</a> describes its supported methods.</p>
+<h2 id="separate-availability-enrollment-and-use">Separate availability, enrollment, and use</h2>
+<p>Imagine Northbridge has made Okta Verify available for its users. Daniel installs the app on his phone. Is that enough to authenticate to Northbridge with it?</p>
+<p>Installation puts the software on his phone. <strong>Enrollment</strong> is the account-specific registration that connects the authenticator to Daniel's Northbridge identity. During the approved setup, he adds that account to Okta Verify.</p>
+<p>An app icon tells Alex the software is installed. It does not answer 'Is Daniel's Northbridge account registered on the device he needs?' That is the enrollment question.</p>
+<p>Alex can turn the manager's broad question into checks with different evidence:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Question</th>
+<th>Evidence to inspect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is the authenticator available under the applicable configuration?</td>
+<td>Authenticator settings and enrollment rules for this user.</td>
+</tr>
+<tr>
+<td>Has Daniel enrolled it for his Northbridge account?</td>
+<td>The relevant enrollment and device/account association.</td>
+</tr>
+<tr>
+<td>Is the method acceptable for this attempt?</td>
+<td>The stated authentication requirement and supported method.</td>
+</tr>
+<tr>
+<td>Did Daniel complete it successfully?</td>
+<td>The authentication result for the identified attempt.</td>
+</tr>
+</tbody>
+</table></div><p>Read the table as four questions about Daniel. The configuration may allow Okta Verify while his own registration is still missing. He may then complete registration but still need to provide the proof required for this sign-in. Each result answers a different question. A successful use yesterday does not automatically satisfy today's attempt; check whether earlier evidence may be reused under its requirements.</p>
+<p>Keep device context in view. Enrollment on Daniel's old phone does not establish that a replacement phone is ready. Likewise, an account in Okta Verify for another organization does not establish a Northbridge enrollment.</p>
+<h2 id="two-requirements-with-different-jobs">Two requirements with different jobs</h2>
+<p>Northbridge needs to decide both what Daniel must set up and what an access attempt must prove. A <strong>policy</strong> expresses configured requirements for a population or situation. These two purposes guide different decisions:</p>
+<ul>
+<li>An <strong>authenticator enrollment policy</strong> governs which authenticators users may or must enroll and when enrollment is required.</li>
+<li>An <strong>authentication requirement</strong> describes what proof is needed for an access attempt.</li>
+</ul>
+<p>Think of these as 'What must Daniel set up?' and 'What must this sign-in prove?' Requiring registration prepares him to use the authenticator. It does not, by itself, decide how often every application must challenge him. Likewise, making enrollment optional does not mean that the method can never be needed to satisfy a particular application's requirement. Alex must inspect the requirement for the access attempt as well as the enrollment rule.</p>
+<p>For the example below, Northbridge has made the following decisions. These are supplied assumptions, not universal Okta defaults:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Decision</th>
+<th>Daniel's applicable requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enrollment</td>
+<td>Okta Verify enrollment is required now; no postponement applies.</td>
+</tr>
+<tr>
+<td>Expense authentication</td>
+<td>This fresh attempt needs accepted password evidence and an accepted Okta Verify Push response.</td>
+</tr>
+<tr>
+<td>Method availability</td>
+<td>Push is enabled and supported on Daniel's mobile device.</td>
+</tr>
+<tr>
+<td>Prior authentication</td>
+<td>No earlier verification is being reused to satisfy the Push requirement in this packet.</td>
+</tr>
+</tbody>
+</table></div><p>Under these supplied conditions, Daniel needs a completed enrollment and, for this fresh attempt, accepted password and Push evidence. There is no earlier Push verification to count and no enrollment postponement to explain the setup request away. Keep those conditions with this example; another application's requirements could differ. Day 13 examines how policies and sessions determine the requirements for an attempt.</p>
+<h2 id="follow-daniels-enrollment-question">Follow Daniel's enrollment question</h2>
+<p>Alex collects this synthetic packet for attempt D-1. It is a plain-language summary, not a raw Okta event:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Observation</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daniel's Okta identity</td>
+<td>Correct account; Active.</td>
+</tr>
+<tr>
+<td>Authenticator configuration</td>
+<td>Okta Verify is enabled and allowed for Daniel.</td>
+</tr>
+<tr>
+<td>Applicable enrollment requirement</td>
+<td>Enrollment required now.</td>
+</tr>
+<tr>
+<td>Daniel's Northbridge enrollment</td>
+<td>No completed Okta Verify enrollment found for this account.</td>
+</tr>
+<tr>
+<td>Password result for D-1</td>
+<td>Accepted.</td>
+</tr>
+<tr>
+<td>What Daniel sees</td>
+<td>A request to set up Okta Verify.</td>
+</tr>
+</tbody>
+</table></div><p>Predict the explanation before reading on: which two facts did the manager combine?</p>
+<p>The enabled setting answers the organization's configuration question. Daniel's enrollment row answers a different question: this Northbridge account has no completed registration. Because enrollment is required now, the setup request fits the supplied evidence. Alex can explain that Northbridge has made the option available, but Daniel still needs to connect it to his own account through the approved setup.</p>
+<p>The next useful action is to guide Daniel through that approved enrollment path and verify the resulting association with the correct Northbridge account and supported device. The password result is already accepted in D-1. Resetting it would address a different part of the sign-in, while changing his department would not establish the missing registration.</p>
+<p>Enrollment itself is security-sensitive: it establishes a means of proving identity. If Daniel cannot complete it, the next question concerns the actual enrollment failure and approved assistance process, rather than removing the requirement just to make the prompt disappear.</p>
+<h2 id="enrollment-does-not-answer-a-challenge">Enrollment does not answer a challenge</h2>
+<p>Suppose Daniel subsequently completes the approved enrollment. In a new attempt D-2, the same stated Expense requirement applies. His password is accepted, and a Push request is issued to the registered device. No accepted response is yet recorded.</p>
+<p>Now the missing fact has changed: setup is complete, but this attempt still lacks an accepted response. A <strong>challenge</strong> is a request for authentication proof. For Push, the request goes to the registered device and Daniel responds through it. The system must receive and accept the relevant response. Registration makes that interaction possible; it does not complete it for him. Daniel should approve only a Push request that belongs to a sign-in he is intentionally completing. Receiving a notification is not a reason to approve it automatically.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/9d964c95fb1b3de8.svg" alt="Day 7: Authenticators, enrollment, and MFA: diagram 1" width="276" height="522" loading="lazy"><figcaption><span>Day 7: Authenticators, enrollment, and MFA: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/9d964c95fb1b3de8.svg" data-diagram="Day 7: Authenticators, enrollment, and MFA: diagram 1">Open full diagram</a></figcaption></figure><p>Start at the top with what Northbridge makes available, then follow Daniel's registration to the challenge for a particular attempt. The final arrow requires a response to be received and validated. That is why a record saying the challenge was issued cannot establish the result at the bottom. The diagram shows a conceptual relationship; authenticators can present different screens and interactions.</p>
+<p>For D-2, enrollment is established but accepted Push evidence is not. Before reading further, choose what you would ask Daniel and what you would inspect for this attempt. “Issued” does not prove that he received or approved the notification. His experience, the selected enrollment/device, and the response outcome help locate the gap between sending a challenge and obtaining accepted proof.</p>
+<p>An expired challenge, a user denial, and an undelivered notification are different findings. If the selected device is an old phone, that points to a different next check than a recorded denial on the intended phone. These are possible explanations, not findings supplied for D-2. A broad “MFA failed” description hides the distinction Alex needs before choosing a correction.</p>
+<p>For a successful follow-up, the investigator obtains an accepted response tied to the current attempt and confirms that the stated authentication requirement is satisfied. That is the result needed to close this authentication question. Application entry and permissions still need their own evidence; this follow-up does not resolve Daniel's separate Expense cases from earlier lessons.</p>
+<h2 id="okta-verify-methods-are-not-interchangeable">Okta Verify methods are not interchangeable</h2>
+<p>Okta Verify supports several authentication experiences, subject to configuration and platform support:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Method</th>
+<th>What the user does conceptually</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-based one-time password, or TOTP</td>
+<td>Enters a changing code generated by the app.</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>Responds to a notification on a registered mobile device.</td>
+</tr>
+<tr>
+<td>FastPass</td>
+<td>Uses a device-based cryptographic authentication flow through Okta Verify.</td>
+</tr>
+</tbody>
+</table></div><p>The table describes different interactions. With TOTP, Daniel supplies a changing code from the app. With Push, he responds to a notification. FastPass uses cryptographic proof associated with the device, which we will examine next. Knowing he has Okta Verify does not identify which interaction took place.</p>
+<p>A TOTP result is not a Push result, and two methods from the same app do not automatically prove two different factor types. Check both the method used and the kind of evidence it supplies.</p>
+<p>In Northbridge's supplied Push example, inspect the Push outcome. Do not substitute an unrelated code result or an older event because it also says Okta Verify.</p>
+<h2 id="where-fastpass-fits">Where FastPass fits</h2>
+<p>Suppose a separate, permitted sign-in flow lets Daniel use his enrolled device to provide proof without typing a password. <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/fp/fp-main.htm"><strong>Okta FastPass</strong></a> uses Okta Verify to respond to a challenge from Okta with a cryptographic key associated with the device's registration. Okta checks the response as evidence that the enrolled key was used for this attempt. Daniel does not type a password in this example.</p>
+<p>The device uses a <strong>private key</strong>, a cryptographic secret, to create a <strong>digital signature</strong> for its response. That signature is calculated proof that Okta can verify, tied to the challenge for this request. Okta checks the signature and whether the response matches its challenge. The important sequence is request, signed device response, then verification. For FastPass, Okta Verify must be set up on the supported device being used to access the application. That differs from a Push example in which Daniel can respond on a registered phone while signing in on a computer.</p>
+<p>FastPass is not another name for approving a Push notification. It can provide phishing-resistant authentication in supported, correctly configured flows. <strong>Phishing resistance</strong> helps prevent authentication proof from being used through an impostor site. It does not mean every flow bearing the Okta Verify name has the same protection or that all forms of account compromise are impossible.</p>
+<p>A flow can also require <strong>user verification</strong>, such as a supported device biometric or passcode check. Okta documents these <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/new-user-interaction-options.htm">user-verification options in app sign-in policies</a>. This adds a check of the person using the device; having a registered device and completing a required local check are distinct facts. Whether the required proof was provided depends on the method, device, configuration, and actual result. “FastPass enabled” does not prove those conditions were met for an attempt.</p>
+<p>Passwordless means the flow does not require a password; it does not mean “no authentication” or “automatically single-factor.” Do not infer factor count from whether a password field appeared.</p>
+<p>For Northbridge, an AD password attempt still follows Day 6's delegated path. A separately permitted FastPass flow is not evidence that AD validated a password during that attempt. Do not silently change the authentication path when comparing incidents.</p>
+<h2 id="keep-the-evidence-tied-to-the-question">Keep the evidence tied to the question</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Report</th>
+<th>First distinction to investigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“The app is installed, but setup is still requested.”</td>
+<td>Installation versus correct account enrollment.</td>
+</tr>
+<tr>
+<td>“Daniel is enrolled, but access asks for another check.”</td>
+<td>Enrollment versus the current authentication requirement.</td>
+</tr>
+<tr>
+<td>“A notification was sent, so MFA worked.”</td>
+<td>Challenge issuance versus accepted response.</td>
+</tr>
+<tr>
+<td>“Password accepted, so Expense must work.”</td>
+<td>One authentication result versus all requirements and target access.</td>
+</tr>
+</tbody>
+</table></div><p>Use the distinction in each row to choose the next investigation. Missing enrollment in D-1 calls for checking setup; missing accepted proof in D-2 calls for checking that attempt. Resetting an enrollment can make Daniel need setup again without explaining what happened to the Push request. Establish the missing result before choosing that change. Recovery and administrative responsibilities are developed later.</p>
+<h2 id="read-the-enrollment-before-choosing-a-reset">Read the enrollment before choosing a reset</h2>
+<p>The user's authenticator information answers which enrollments are associated with that identity. The organization's authenticator configuration answers which methods are available. Inspect both before interpreting a report that “Verify is installed but does not work.” An installation may belong to another organization or lack the needed enrollment.</p>
+<p>For an issued Push with no accepted response, first establish what the user experienced and read the attempt's outcome. If an old phone is unavailable, inspect which enrollment was selected and what approved recovery is needed. If the expected phone was used, inspect the relevant response result. Removing the enrollment before understanding the evidence can create a setup task while leaving the original cause unknown.</p>
+<p>If replacement is necessary, follow the approved identity-verification and recovery process with the required authority. The completion evidence is a replacement enrollment and a permitted subsequent sign-in, not merely a completed reset action. Keep the detailed <a href="/Okta_Theory_Teaching/requests/recovery-and-account-state.html">replacement-phone situation</a> for after Day 14, when recovery responsibilities have been introduced.</p>
+<p>Daniel's story turns on the step that has evidence. Availability explains what Northbridge offers; enrollment connects the authenticator to his account; the current result establishes whether the required proof was accepted. Explain the missing step before proposing a change, then keep the application outcome as its own check.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain:</p>
+<ul>
+<li>The difference between an authenticator, a method, and a factor type?</li>
+<li>Why installing Okta Verify differs from enrolling Daniel's account?</li>
+<li>Why required enrollment differs from proof required for an attempt?</li>
+<li>What a challenge being issued proves and leaves unknown?</li>
+<li>Why two prompts do not automatically mean two factors?</li>
+<li>How Push and FastPass differ at a conceptual level?</li>
+<li>Why satisfied authentication still does not establish application permissions?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-07.html">Day 7 exercises</a>, then read the <a href="/Okta_Theory_Teaching/self-checks/day-07.html">separate answers</a>.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, record Daniel's availability, enrollment, required method, and attempt result as four separate facts. Explain which fact would change your next action.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html">Day 8</a> follows the identity information an application receives through SAML after the relevant Okta checks.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-07.html">Day 7 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html">Previous: Day 6</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-07.html">Revise Day 7</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-07.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-07.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-07.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><small>← Previous lesson</small>Day 6: AD imports and password validation</a><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><small>Next lesson →</small>Day 8: SAML and application sign-in</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

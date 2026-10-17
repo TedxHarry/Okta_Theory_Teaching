@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Northbridge Services. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Northbridge Services | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/northbridge-company.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="northbridge-services">Northbridge Services</h1>
+<p>Northbridge Services has Sales, Finance, and IT teams. Employees and contractors need access to different applications. The company must also change that access when people's responsibilities change or their work ends.</p>
+<p>This fictional company connects the course's examples. Use this reference to locate the person, system and point in the story before interpreting a ticket. The same person may appear in several packets, but each packet supplies its own evidence about accounts, assignments and access.</p>
+<h2 id="people">People</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Person</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maya Rao</td>
+<td>Sales employee who later moves to Finance.</td>
+</tr>
+<tr>
+<td>Daniel Brooks</td>
+<td>Finance manager.</td>
+</tr>
+<tr>
+<td>Priya Shah</td>
+<td>Sales contractor with an employee sponsor.</td>
+</tr>
+<tr>
+<td>Alex Chen</td>
+<td>IAM administrator; the administrative identity is managed in Okta.</td>
+</tr>
+<tr>
+<td>Jordan Lee</td>
+<td>Employee whose later departure requires access removal.</td>
+</tr>
+</tbody>
+</table></div><p>Read a role as business context, not a complete permission list. A manager's title does not prove an application role, and an IAM administrator's title does not establish authority for every configuration change. Use the approval and administrative scope supplied for the particular task.</p>
+<h2 id="systems">Systems</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>System</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workday</td>
+<td>Employee records and employment information.</td>
+</tr>
+<tr>
+<td>Active Directory</td>
+<td>Directory accounts and groups; validates employee passwords when the configured AD password sign-in path is used.</td>
+</tr>
+<tr>
+<td>Okta</td>
+<td>Workforce identity records, application assignments, sign-in decisions, and configured connections to other systems.</td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td>Sales application.</td>
+</tr>
+<tr>
+<td>ServiceNow</td>
+<td>Background IT service application; no separate ServiceNow investigation is required in this course.</td>
+</tr>
+<tr>
+<td>Microsoft 365</td>
+<td>Workplace applications.</td>
+</tr>
+<tr>
+<td>Northbridge Expense</td>
+<td>Fictional expense application used for an OIDC sign-in example.</td>
+</tr>
+<tr>
+<td>Northbridge Projects</td>
+<td>Fictional application used for account-management examples through SCIM.</td>
+</tr>
+<tr>
+<td>Okta Verify</td>
+<td>An authenticator used in sign-in examples.</td>
+</tr>
+</tbody>
+</table></div><p>When reading a result, name which of these systems produced it. Workday can establish an employment fact, AD can provide a directory or password-validation result, and an application can report its own account or access outcome. An Okta success does not supply all three results. Expense and Projects are fictional teaching applications; their stated contracts do not define every other integration's behavior.</p>
+<p>The initial picture is simple:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">Employee information in Workday
+              ↓
+         Identity in Okta
+              ↓
+   Configured connections to AD and applications
+</code></pre>
+<p>The arrows show logical relationships. They do not mean that every account exists immediately or that every application uses the same protocol.</p>
+<p>Employee information is HR-led. Contractor identities such as Priya's are maintained in Okta following sponsor approval. The detailed source ownership and sign-in decisions become part of the examples as those concepts are introduced.</p>
+<p>Priya's sponsor approves the business change; an authorized operator maintains her Okta-managed identity through that process. Do not invent an employee-source association to make her follow Maya's path. For AD-linked employees, profile ownership, designated AD-owned fields and AD password validation remain separate responsibilities.</p>
+<p><a href="/Okta_Theory_Teaching/reference/attribute-ownership.html">Source and ownership reference</a> · <a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html">Return to Day 1</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<h2 id="follow-the-timeline">Follow the timeline</h2>
+<p>Days 1 to 11 use Maya's Sales employment and Jordan's active employment unless a packet explicitly states a hypothetical variation. In <a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a>, Maya's approved move to Finance and Jordan's departure take effect. Earlier observations remain evidence about their earlier states. Individual case packets state their own account and assignment evidence.</p>
+<p>An archived sign-in investigation therefore describes what happened at its earlier point; resolving its cause would not authorize restoring a departed employee's access. Similarly, a later packet with a confirmed account does not resolve an earlier packet that left the account relationship unknown.</p>
+<p>Priya's application approvals are separate decisions. In the final case, her Expense and Projects exceptions are supplied, while her Salesforce exception remains unverified. Approval for one application does not answer another application's ticket. Likewise, Daniel's Finance manager role does not automatically grant Salesforce access or make him an Okta administrator; use the approvals and permissions stated in the packet.</p>
+<p>The <a href="/Okta_Theory_Teaching/reference/onboarding-an-application.html">application-onboarding reference</a> explicitly changes Projects eligibility for a design exercise. In that variant, Maya's Finance move ends ordinary Projects access. In Day 12 and the final case, her approved Projects access continues. Keep each requirement with its own case.</p>
+<h2 id="keep-mayas-identifiers-separate">Keep Maya's identifiers separate</h2>
+<p>Different fields can identify the same person for different purposes. These values appear in the relevant teaching packets:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Field and context</th>
+<th>Value</th>
+<th>What to compare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employee number</td>
+<td><code>NB-1042</code></td>
+<td>The governed employee record and the stated matching criteria.</td>
+</tr>
+<tr>
+<td>AD-owned work email in Day 4</td>
+<td><code>mrao@northbridge.example</code></td>
+<td>The linked AD value and Okta's work-email field.</td>
+</tr>
+<tr>
+<td>Okta login in Day 11's API excerpt</td>
+<td><code>maya.rao@northbridge.example</code></td>
+<td>The login field on the intended Okta user.</td>
+</tr>
+<tr>
+<td>Salesforce username and SAML NameID in Day 8</td>
+<td><code>maya.rao@northbridge.example</code></td>
+<td>The connection's configured username-matching rule.</td>
+</tr>
+<tr>
+<td>Projects resource identifier</td>
+<td><code>prj-1042</code></td>
+<td>The confirmed association to the intended Projects account.</td>
+</tr>
+</tbody>
+</table></div><p>The work-email field, Okta login, and application username are separate attributes even when some contain identical text. Day 4's email ownership does not define the login or SAML NameID mapping. No example establishes that <code>mrao@northbridge.example</code> and <code>maya.rao@northbridge.example</code> are mailbox aliases. Read the named field and its configured relationship before treating different strings as an error.</p>
+<p>Use an identifier with its system and purpose. An employee number helps compare the stated identity evidence; a Projects resource identifier names a target record; a login or application username participates in its configured operation. Reusing a value in another example does not transfer that example's association, approval or successful outcome. Keep the field, record and packet together in your notes.</p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

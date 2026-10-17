@@ -1,0 +1,13 @@
+{
+  "profile": "content-site",
+  "sourceRoots": ["site", "docs"],
+  "locale": "en",
+  "requiredCapabilities": [],
+  "requiredCommands": ["build", "links", "browser"],
+  "commands": {
+    "build": "npm run build",
+    "links": "npm run check",
+    "browser": "npm test"
+  },
+  "evidence": { "browser": "tests/browser.mjs", "links": "scripts/check.mjs" }
+}

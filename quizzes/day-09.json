@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 9,
+  "questions": [
+    {
+      "id": "L09-Q01",
+      "topic": "Client role",
+      "prompt": "A confidential web app uses OIDC authorization code flow. What does client mean here?",
+      "correctId": "d64b603601",
+      "options": [
+        {
+          "id": "d64b603601",
+          "text": "The app relying on the provider's authentication result",
+          "explanation": "The protocol client role differs from the browser's general HTTP-client role."
+        },
+        {
+          "id": "a648ebb92b",
+          "text": "Always the browser alone, regardless of architecture",
+          "explanation": "The app backend can perform client protocol operations."
+        },
+        {
+          "id": "720c66a698",
+          "text": "Always the identity provider",
+          "explanation": "The provider and relying client have different roles."
+        },
+        {
+          "id": "373dfe2383",
+          "text": "The business user's local account row",
+          "explanation": "A stored account is not the protocol participant exchanging a code."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q02",
+      "topic": "Authorization code",
+      "prompt": "A backend receives an authorization code at its registered callback. What must happen before treating sign-in as complete?",
+      "correctId": "7e55ef0e41",
+      "options": [
+        {
+          "id": "7e55ef0e41",
+          "text": "Exchange it through the supported token flow and validate the resulting identity information",
+          "explanation": "The code is an intermediate result, not a finished app session."
+        },
+        {
+          "id": "197119c1b3",
+          "text": "Use the code as the user's permanent password",
+          "explanation": "The code is a short-lived protocol artifact rather than a reusable password."
+        },
+        {
+          "id": "bf20faace1",
+          "text": "Treat any callback query value as a verified identity",
+          "explanation": "The client must process the actual flow and its validation requirements."
+        },
+        {
+          "id": "349306ce46",
+          "text": "Grant access solely because the browser reached the callback",
+          "explanation": "Arrival does not establish the completed authentication result."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q03",
+      "topic": "Redirect URI",
+      "prompt": "An authorization request names a redirect_uri. What does this identify?",
+      "correctId": "ffc3adbdf6",
+      "options": [
+        {
+          "id": "ffc3adbdf6",
+          "text": "The approved client callback for the protocol return",
+          "explanation": "It is distinct from an arbitrary post-login resource or token audience."
+        },
+        {
+          "id": "3bea3469e0",
+          "text": "The API resource server's permission list",
+          "explanation": "A callback does not describe API authorization scope."
+        },
+        {
+          "id": "389b12e131",
+          "text": "The subject's employee identifier",
+          "explanation": "It identifies an endpoint, not a person."
+        },
+        {
+          "id": "39d5a88032",
+          "text": "Any external URL the browser prefers",
+          "explanation": "Redirect handling is constrained by the registered flow agreement."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q04",
+      "topic": "State",
+      "prompt": "Why does a client retain and validate an appropriate state value for a login transaction?",
+      "correctId": "b18b54484a",
+      "options": [
+        {
+          "id": "b18b54484a",
+          "text": "To associate the authorization return with the initiating context",
+          "explanation": "State supports transaction context; other token checks still apply."
+        },
+        {
+          "id": "2bf2e12629",
+          "text": "To decrypt every access token",
+          "explanation": "State is not a decryption private key."
+        },
+        {
+          "id": "c7b832c513",
+          "text": "To replace all issuer and audience checks",
+          "explanation": "Those are separate validation requirements."
+        },
+        {
+          "id": "497b1921af",
+          "text": "To define the user's application role by itself",
+          "explanation": "Navigation/transaction state is not a local authorization grant."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q05",
+      "topic": "Nonce",
+      "prompt": "A client sends a nonce and expects it in the ID token. What should it check?",
+      "correctId": "3dbdbffce6",
+      "options": [
+        {
+          "id": "3dbdbffce6",
+          "text": "That the returned claim matches the nonce for the relevant transaction",
+          "explanation": "A nonce supports association of the ID token with the intended request."
+        },
+        {
+          "id": "7c01b1b857",
+          "text": "That nonce equals the user's display name",
+          "explanation": "The value is transaction context, not a human-readable identity label."
+        },
+        {
+          "id": "2d328b2dfa",
+          "text": "That any nonce from any earlier login is acceptable",
+          "explanation": "It must fit the relevant retained transaction."
+        },
+        {
+          "id": "7636a7bef7",
+          "text": "That nonce presence makes the signature optional",
+          "explanation": "It does not authenticate arbitrary token content."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q06",
+      "topic": "PKCE",
+      "prompt": "A code flow uses an S256 code challenge and retains a verifier. What is the verifier used for?",
+      "correctId": "f4973f571e",
+      "options": [
+        {
+          "id": "f4973f571e",
+          "text": "The later token request proves possession through the agreed PKCE check",
+          "explanation": "The challenge and verifier connect the authorization request to the code exchange."
+        },
+        {
+          "id": "4eabd14b3a",
+          "text": "It becomes the application's public issuer identifier",
+          "explanation": "Issuer identity is a different protocol value."
+        },
+        {
+          "id": "d4917d8093",
+          "text": "It replaces every required confidential-client authentication method",
+          "explanation": "PKCE and the configured client authentication responsibilities are distinct."
+        },
+        {
+          "id": "4a87bc75df",
+          "text": "It is sent as the user's password to the API",
+          "explanation": "The verifier is protocol transaction material, not an API user password."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q07",
+      "topic": "ID token purpose",
+      "prompt": "What is an ID token used for in an OIDC sign-in?",
+      "correctId": "5b896368cf",
+      "options": [
+        {
+          "id": "5b896368cf",
+          "text": "Convey authentication claims to the intended client for validation",
+          "explanation": "It supports the client's sign-in decision under the required checks."
+        },
+        {
+          "id": "ea4a3cf7a4",
+          "text": "A universal bearer credential for every API",
+          "explanation": "API access uses the relevant access-token and resource-server contract."
+        },
+        {
+          "id": "c7cf628f00",
+          "text": "A command to provision every downstream account",
+          "explanation": "Authentication claims do not execute arbitrary account creation."
+        },
+        {
+          "id": "451e64f5eb",
+          "text": "A substitute for the application's local permission rules",
+          "explanation": "Local authorization still needs its own requirements."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q08",
+      "topic": "Access token purpose",
+      "prompt": "A client receives an access token intended for a resource server. What does the API need to evaluate?",
+      "correctId": "5b82a4a40d",
+      "options": [
+        {
+          "id": "5b82a4a40d",
+          "text": "Its supported token-validation and authorization requirements",
+          "explanation": "Token receipt by the client does not establish every API permission."
+        },
+        {
+          "id": "9a923982c6",
+          "text": "Only whether an ID token was also returned",
+          "explanation": "An ID token does not replace the API's access-token checks."
+        },
+        {
+          "id": "b48d4633d0",
+          "text": "Only whether the app has a local session cookie",
+          "explanation": "The API has its own token and permission boundary."
+        },
+        {
+          "id": "16774749ae",
+          "text": "Any readable token text without authenticity checks",
+          "explanation": "Readable claims are not automatically trusted authorization evidence."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q09",
+      "topic": "Issuer and audience",
+      "prompt": "An ID token's signature verifies, but its audience does not identify this client. What should the client do?",
+      "correctId": "fd5bc3e8c0",
+      "options": [
+        {
+          "id": "fd5bc3e8c0",
+          "text": "Reject the audience mismatch",
+          "explanation": "Cryptographic verification does not cancel intended-recipient restrictions."
+        },
+        {
+          "id": "0e112264dd",
+          "text": "Accept because the provider is familiar",
+          "explanation": "The client still needs the expected audience."
+        },
+        {
+          "id": "d5e7b19c64",
+          "text": "Replace the audience with its own client_id",
+          "explanation": "Editing incoming claims does not repair the authentication result."
+        },
+        {
+          "id": "5f8ccc9546",
+          "text": "Ignore all targeting when email matches",
+          "explanation": "An email claim cannot override the required recipient check."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q10",
+      "topic": "Code versus session",
+      "prompt": "A browser reaches Expense's callback with a code, but no code-exchange or token-validation result is supplied. What remains unknown?",
+      "correctId": "457332d7ea",
+      "options": [
+        {
+          "id": "457332d7ea",
+          "text": "Whether Expense completed authentication and created its own session",
+          "explanation": "The callback is an intermediate observation rather than proof of full entry."
+        },
+        {
+          "id": "725e17c14b",
+          "text": "Whether a code reached the callback",
+          "explanation": "That limited result is supplied directly."
+        },
+        {
+          "id": "d6c51187a7",
+          "text": "Whether the client has a registered callback",
+          "explanation": "The question already describes its registered callback."
+        },
+        {
+          "id": "fdd4ee9dc9",
+          "text": "Whether every API call must now be allowed",
+          "explanation": "No token or API authorization outcome is established."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Browser callback: authorization code received",
+        "Backend token exchange: not supplied",
+        "Token validation/local session: not supplied"
+      ]
+    },
+    {
+      "id": "L09-Q11",
+      "topic": "Stable identity",
+      "prompt": "Why should an app avoid assuming email alone is a permanent global identity key?",
+      "correctId": "4316802c9e",
+      "options": [
+        {
+          "id": "4316802c9e",
+          "text": "Claim stability, issuer scope and the app's agreed subject mapping matter",
+          "explanation": "Mutable profile claims are not automatically durable identity linkage."
+        },
+        {
+          "id": "2d95d342f9",
+          "text": "Every email claim is always invalid",
+          "explanation": "An email claim can be useful under an appropriate contract."
+        },
+        {
+          "id": "08da1885a6",
+          "text": "A display name is always globally unique",
+          "explanation": "Display names are not a universal unique identity key."
+        },
+        {
+          "id": "72f75a01f6",
+          "text": "Issuer checking is unnecessary when sub exists",
+          "explanation": "Subject interpretation remains tied to the expected issuer relationship."
+        }
+      ]
+    },
+    {
+      "id": "L09-Q12",
+      "topic": "Local access",
+      "prompt": "OIDC checks pass, but Expense's required local account is disabled. What should happen?",
+      "correctId": "c6b4259145",
+      "options": [
+        {
+          "id": "c6b4259145",
+          "text": "Expense should enforce its account-eligibility requirement",
+          "explanation": "A trusted authentication result does not override disabled local account state."
+        },
+        {
+          "id": "2467548c51",
+          "text": "The account must automatically reactivate",
+          "explanation": "That is a separate lifecycle action requiring supported authority."
+        },
+        {
+          "id": "a67684e36f",
+          "text": "The ID token must be called a bad signature",
+          "explanation": "The token can be valid even when local entry is denied."
+        },
+        {
+          "id": "0426dbad35",
+          "text": "The app must accept because a code was exchanged",
+          "explanation": "Code exchange is not the whole application access decision."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

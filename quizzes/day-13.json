@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 13,
+  "questions": [
+    {
+      "id": "L13-Q01",
+      "topic": "Policy responsibilities",
+      "prompt": "Why distinguish an Okta global session policy from an app authentication policy?",
+      "correctId": "b34f6eb66b",
+      "options": [
+        {
+          "id": "b34f6eb66b",
+          "text": "They govern different session and authentication requirements",
+          "explanation": "An acceptable provider session does not mean every app requirement is already satisfied."
+        },
+        {
+          "id": "8892af33d3",
+          "text": "Both define every target application's business roles",
+          "explanation": "Local resource authorization is a separate responsibility."
+        },
+        {
+          "id": "979ee725a8",
+          "text": "The app policy always creates target accounts",
+          "explanation": "Authentication requirements do not perform arbitrary provisioning."
+        },
+        {
+          "id": "ad2c0d38ee",
+          "text": "A global session makes every app policy irrelevant",
+          "explanation": "Application-specific requirements can still apply."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q02",
+      "topic": "Existing assurance",
+      "prompt": "A user has an acceptable Okta session but an app requires stronger assurance. What may happen?",
+      "correctId": "0c3211be55",
+      "options": [
+        {
+          "id": "0c3211be55",
+          "text": "The user may need an additional authentication check",
+          "explanation": "The app's requirement can exceed what the existing session satisfies."
+        },
+        {
+          "id": "debef7f768",
+          "text": "The app must ignore its requirement to preserve SSO",
+          "explanation": "SSO does not waive applicable policy assurance."
+        },
+        {
+          "id": "f9b46ae466",
+          "text": "Every additional check proves a software defect",
+          "explanation": "A challenge can be correct enforcement."
+        },
+        {
+          "id": "7b8b9fd2d6",
+          "text": "The user's source profile must be deleted first",
+          "explanation": "Profile deletion is unrelated to meeting assurance."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q03",
+      "topic": "Rule selection",
+      "prompt": "A prompt seems surprising. What should an analyst identify first?",
+      "correctId": "deb863caff",
+      "options": [
+        {
+          "id": "deb863caff",
+          "text": "The actual policy association, matching context and selected rule",
+          "explanation": "The policy that really processed the attempt matters more than a familiar name."
+        },
+        {
+          "id": "4d03892daf",
+          "text": "Any policy with a similar title",
+          "explanation": "Labels do not establish the selected rule."
+        },
+        {
+          "id": "99d9935e9d",
+          "text": "Only the number of app assignments",
+          "explanation": "Assignment count does not identify authentication requirements."
+        },
+        {
+          "id": "503a5b5870",
+          "text": "Always the oldest policy in the org",
+          "explanation": "Age alone does not establish evaluation context."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q04",
+      "topic": "Independent sessions",
+      "prompt": "A browser holds separate provider and app sessions. What should be assumed about their lifetimes?",
+      "correctId": "86a7850b90",
+      "options": [
+        {
+          "id": "86a7850b90",
+          "text": "Each has its own applicable state and policy",
+          "explanation": "Federation does not merge all systems' session clocks."
+        },
+        {
+          "id": "155cea5925",
+          "text": "They always expire at the same instant",
+          "explanation": "That equality is not guaranteed."
+        },
+        {
+          "id": "9c300e793f",
+          "text": "The provider's cookie is the app's local cookie",
+          "explanation": "Session cookies belong to their respective service relationships."
+        },
+        {
+          "id": "fbc3af60ee",
+          "text": "A new app session proves the provider session is new",
+          "explanation": "An existing provider session can support new app entry."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q05",
+      "topic": "Idle versus maximum",
+      "prompt": "A local app session has an idle timeout and an absolute maximum. The user stays active. Which limit may still end it?",
+      "correctId": "d7a7857a5c",
+      "options": [
+        {
+          "id": "d7a7857a5c",
+          "text": "The absolute maximum lifetime",
+          "explanation": "Activity can affect idle handling without eliminating an absolute maximum."
+        },
+        {
+          "id": "746e617868",
+          "text": "Neither limit can ever affect an active user",
+          "explanation": "A maximum can apply regardless of continued activity."
+        },
+        {
+          "id": "3218c5ca2b",
+          "text": "The user's department text becomes the timeout",
+          "explanation": "Profile department is not a session clock."
+        },
+        {
+          "id": "ff61db5ea4",
+          "text": "The browser's bookmark date controls lifetime",
+          "explanation": "Navigation history does not define the app's policy."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q06",
+      "topic": "Reauthentication",
+      "prompt": "An app requests another authentication check after an interval. Is that always the same as destroying every session?",
+      "correctId": "44b945e3ee",
+      "options": [
+        {
+          "id": "44b945e3ee",
+          "text": "No; authentication freshness and session termination are distinct operations",
+          "explanation": "A new proof requirement does not inherently revoke all unrelated sessions."
+        },
+        {
+          "id": "deef07081e",
+          "text": "Yes; every challenge means all sessions were deleted",
+          "explanation": "That is broader than the supplied authentication requirement."
+        },
+        {
+          "id": "834ca39a98",
+          "text": "Yes; the user must have a new identity record",
+          "explanation": "A fresh authentication event does not imply a new person or account."
+        },
+        {
+          "id": "a40657fec5",
+          "text": "No policy or event evidence is needed",
+          "explanation": "The applicable rule and actual outcome still need verification."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q07",
+      "topic": "Local logout",
+      "prompt": "An app ends its own session while Okta remains acceptable. What can a later visit do?",
+      "correctId": "db9b9f4490",
+      "options": [
+        {
+          "id": "db9b9f4490",
+          "text": "Start a new sign-in and create a replacement app session",
+          "explanation": "Rapid return can reflect provider reuse rather than survival of the old local session."
+        },
+        {
+          "id": "97fcdcc228",
+          "text": "Prove the old app session was never terminated",
+          "explanation": "A new session can explain the observed access."
+        },
+        {
+          "id": "0d6bea4a53",
+          "text": "Necessarily sign out every other app",
+          "explanation": "Local termination does not establish cross-app scope."
+        },
+        {
+          "id": "2e71776772",
+          "text": "Skip all app validation forever",
+          "explanation": "A new exchange still requires the receiving app's checks."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q08",
+      "topic": "Policy blast radius",
+      "prompt": "A shared authentication policy is changed for one app ticket. What should be assessed?",
+      "correctId": "e8776206ac",
+      "options": [
+        {
+          "id": "e8776206ac",
+          "text": "Other app associations, matching users and affected requirements",
+          "explanation": "A shared policy change can affect more than the app currently being inspected."
+        },
+        {
+          "id": "f97d432fbd",
+          "text": "Only whether the requester gets fewer prompts",
+          "explanation": "That does not assess unintended weakening or wider impact."
+        },
+        {
+          "id": "a7107f18ad",
+          "text": "Only whether the rule saves",
+          "explanation": "Save success is not evidence of intended policy outcomes."
+        },
+        {
+          "id": "cba0a59d51",
+          "text": "No assessment if the policy name includes the app",
+          "explanation": "The actual associations matter more than its label."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q09",
+      "topic": "Expected prompt",
+      "prompt": "The selected rule requires a new check and the user is prompted accordingly. What is the first interpretation?",
+      "correctId": "9bc10dcb10",
+      "options": [
+        {
+          "id": "9bc10dcb10",
+          "text": "The prompt may be the intended policy outcome",
+          "explanation": "Compare the observed challenge with the approved rule before calling it a defect."
+        },
+        {
+          "id": "7e4f77b904",
+          "text": "Every prompt must be removed for SSO to work",
+          "explanation": "Single sign-on can coexist with additional requirements."
+        },
+        {
+          "id": "59823259a8",
+          "text": "A prompt proves a target account is missing",
+          "explanation": "Account readiness and authentication challenge are different boundaries."
+        },
+        {
+          "id": "8474f73c57",
+          "text": "Every policy must be reset to default",
+          "explanation": "That broad change is not justified by the supplied behavior."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q10",
+      "topic": "Outcome evidence",
+      "prompt": "A policy test predicts no challenge, but no real controlled attempt is recorded. What remains unknown?",
+      "correctId": "52dae28b5d",
+      "options": [
+        {
+          "id": "52dae28b5d",
+          "text": "Whether the intended runtime context actually followed that path",
+          "explanation": "A prediction or configuration view is not a verified execution result."
+        },
+        {
+          "id": "15c88dc965",
+          "text": "Whether a prediction was supplied",
+          "explanation": "That limited planning fact is stated directly."
+        },
+        {
+          "id": "38d02e30cd",
+          "text": "Whether every user has identical session state",
+          "explanation": "Different users can have different relevant context."
+        },
+        {
+          "id": "b022af3949",
+          "text": "Whether a successful sign-in would establish all resource permissions",
+          "explanation": "Authentication alone would not establish every local permission."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Policy test prediction: no challenge",
+        "Actual controlled attempt: not supplied",
+        "Runtime matching context/result: not observed"
+      ]
+    },
+    {
+      "id": "L13-Q11",
+      "topic": "Logout requirements",
+      "prompt": "A business request says sign out everywhere. What must be clarified?",
+      "correctId": "95e1720983",
+      "options": [
+        {
+          "id": "95e1720983",
+          "text": "Which systems, sessions and devices are included and how termination is verified",
+          "explanation": "A broad phrase needs supported mechanisms and testable scope."
+        },
+        {
+          "id": "47d6b9055a",
+          "text": "Only the text on the local logout button",
+          "explanation": "A label cannot establish cross-system termination."
+        },
+        {
+          "id": "72bb1cc0a4",
+          "text": "An assumption that every SAML app participates automatically",
+          "explanation": "Integration support and configured participation must be checked."
+        },
+        {
+          "id": "3352a18826",
+          "text": "A rule to permanently delete every user record",
+          "explanation": "Logout and account deletion have different meanings."
+        }
+      ]
+    },
+    {
+      "id": "L13-Q12",
+      "topic": "Correlated policy evidence",
+      "prompt": "Which evidence best explains an app authentication outcome?",
+      "correctId": "ca6e955f94",
+      "options": [
+        {
+          "id": "ca6e955f94",
+          "text": "The relevant app association, selected rule, context, authentication result and downstream outcome",
+          "explanation": "These connect intended requirements to a particular observed attempt."
+        },
+        {
+          "id": "6ca5e0be82",
+          "text": "Only a screenshot of a similarly named policy",
+          "explanation": "That does not establish actual rule selection."
+        },
+        {
+          "id": "78d3ba7741",
+          "text": "Only last month's successful login by another user",
+          "explanation": "Different state and context cannot prove this outcome."
+        },
+        {
+          "id": "20c91a4577",
+          "text": "Only an enrollment list",
+          "explanation": "Readiness for a method is not the current policy evaluation result."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Your learning notebook. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Your learning notebook | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/notebook/guide.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="your-learning-notebook">Your learning notebook</h1>
+<p>Keep a short record of explanations you can use again. Write in your own words; copying a definition is less useful than explaining what happens to someone at Northbridge.</p>
+<p>For each lesson, record:</p>
+<ul>
+<li>A flow you can explain from beginning to end.</li>
+<li>Two concepts that are easy to confuse and the difference between them.</li>
+<li>One observation and what it proves.</li>
+<li>One question that remains unanswered and the evidence you would request.</li>
+</ul>
+<h2 id="an-investigation-entry">An investigation entry</h2>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">Person and intended account identifiers:
+Okta organization, application instance, and target environment:
+Case packet, attempt, and relevant sequence:
+Expected behavior:
+Observed behavior:
+Evidence available:
+What that evidence proves:
+What it does not prove:
+Possible explanations:
+Next evidence to request:
+How different findings would change my explanation:
+Correction, if the cause is established:
+Responsible owner and approval or decision still needed:
+How to verify the result:
+Remaining unknowns and unresolved access:
+</code></pre>
+<p>You do not need a confirmed correction when the evidence is incomplete. Saying what remains unknown and how to investigate it is a useful answer.</p>
+<p>Keep a changed-condition exercise in a separately labelled entry. Revise a conclusion when the same case supplies new evidence, but do not carry an alternative packet's facts into the original case or overwrite an earlier historical state.</p>
+<h2 id="choose-evidence-that-separates-explanations">Choose evidence that separates explanations</h2>
+<p>After Day 3, consider Daniel's app user profile containing FIN while Projects still contains SAL. Two possible explanations are that no update occurred or that an attempted update was rejected.</p>
+<p>“Check the logs” is too broad to distinguish them. Ask for the account-update history for Daniel's linked Projects account, including the value sent and the response. Evidence of a rejected FIN update supports investigating that rejection. Evidence that updates were disabled and no operation occurred points toward the configured update process. An empty search alone does not prove no update happened: check its scope.</p>
+<p>Write what finding would make you change your mind. This turns a list of possible causes into an investigation.</p>
+<h2 id="reuse-an-earlier-explanation">Reuse an earlier explanation</h2>
+<p>Before starting the next lesson, close the earlier lesson and explain one of its flows from your notebook. Then compare your explanation with its self-check. Keep a short correction beside any distinction you missed. When the same investigation supplies new evidence, update its flow and retain the earlier finding. Keep independent cases and changed-condition exercises in separate entries.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html">Return to Day 1</a></p>
+<h2 id="after-the-final-case">After the final case</h2>
+<p>Use the <a href="/Okta_Theory_Teaching/assessments/self-checks/final-case.html">final skills checklist</a> to select one explanation to improve. Keep the original conclusion, the evidence that changed it, and the revised explanation together. This makes your reasoning visible when a later case looks similar but has different facts.</p>
+<p>For the optional <a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html">Day 16 practice plan</a>, record the question, authorized environment, synthetic profiles, initial state, intended action, predictions, actual results, evidence, owners, and cleanup outcomes. A written prediction is a plan; leave the actual result as Not tested until an experiment supplies it. Keep the Finance AND Employee predictions separate from the hypothetical OR comparison. The initial membership activity uses a dedicated group without application assignments; add assignment, account, sign-in, and permission checks only when those boundaries become part of an approved later activity.</p>
+<h2 id="an-access-decision-entry">An access-decision entry</h2>
+<p>Use this after Day 14 to explain an approved access requirement and its proposed design. Keep approval decisions separate from observations showing whether the design works.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">Application and instance:
+Business owner and approved requirement:
+Eligible people and effective condition:
+Permitted application actions:
+Source attributes and their owners:
+Normal group and assignment path:
+Exception approval, scope, owner, and end condition:
+Existing-account matching and target-account handling:
+Authentication requirement:
+Administrative authority needed:
+People and applications affected by a change:
+Evidence that intended access works:
+Evidence that unapproved access is denied:
+Move, departure, and exception-removal evidence:
+Recovery if the change produces an incorrect outcome:
+Unresolved decisions and their owners:
+</code></pre>
+<p>For R-14, Finance employee eligibility belongs in the normal path. Daniel's separate approver approval belongs under permitted actions. Priya's missing exception decision stays unresolved; the template is not permission to fill it with a guess.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html">Day 15</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

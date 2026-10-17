@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 10,
+  "questions": [
+    {
+      "id": "L10-Q01",
+      "topic": "SCIM purpose",
+      "prompt": "A connection uses SCIM to create and update application users. Which responsibility is this?",
+      "correctId": "d3f98e508e",
+      "options": [
+        {
+          "id": "d3f98e508e",
+          "text": "Account resource management at the target",
+          "explanation": "SCIM operations manage resources rather than performing browser SSO."
+        },
+        {
+          "id": "3d7361e423",
+          "text": "Sending the browser's SAML assertion",
+          "explanation": "Federation message delivery is a different responsibility."
+        },
+        {
+          "id": "b12a936ae3",
+          "text": "Validating every employee's AD password",
+          "explanation": "Directory credential validation is distinct."
+        },
+        {
+          "id": "f0cce4d62b",
+          "text": "Creating an Okta browser session on every API call",
+          "explanation": "SCIM is not a browser sign-in mechanism."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q02",
+      "topic": "Create response",
+      "prompt": "A supported POST to /Users returns 201 with a resource ID and Location. What is established?",
+      "correctId": "ca05b170a9",
+      "options": [
+        {
+          "id": "ca05b170a9",
+          "text": "The target reports creation of that resource for this operation",
+          "explanation": "Verify association and required state; the response is not a user sign-in result."
+        },
+        {
+          "id": "6baa0ac840",
+          "text": "The browser was redirected because Location exists",
+          "explanation": "Interpret the header with its 201 operation, not as a 302 redirect."
+        },
+        {
+          "id": "e7303e871d",
+          "text": "The user can perform every business action",
+          "explanation": "Creation does not establish all permissions."
+        },
+        {
+          "id": "452c46fd20",
+          "text": "Every future update must succeed",
+          "explanation": "A successful creation says nothing universal about later operations."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q03",
+      "topic": "Target identifiers",
+      "prompt": "SCIM returns target id 8f21 while the user's email is maya@example.test. How should the ID be treated?",
+      "correctId": "bb70cc2495",
+      "options": [
+        {
+          "id": "bb70cc2495",
+          "text": "As the target resource identifier used under the supported association",
+          "explanation": "It is not interchangeable with an email or another system's object ID."
+        },
+        {
+          "id": "d2ce95c730",
+          "text": "Always replace it with the email address",
+          "explanation": "That would confuse different identifier roles."
+        },
+        {
+          "id": "c431440378",
+          "text": "Assume it equals the Okta user ID",
+          "explanation": "Each system can issue its own object identifiers."
+        },
+        {
+          "id": "a7e7b5766d",
+          "text": "Use it as the user's password",
+          "explanation": "A resource ID is not a user authentication secret."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q04",
+      "topic": "Conflict response",
+      "prompt": "A SCIM create returns 409 with a uniqueness conflict detail. What should be investigated?",
+      "correctId": "1718d94f0c",
+      "options": [
+        {
+          "id": "1718d94f0c",
+          "text": "The conflicting field, existing resource and approved ownership/matching rule",
+          "explanation": "The status alone does not identify the rightful account owner or safe correction."
+        },
+        {
+          "id": "2a1c143b2a",
+          "text": "Delete any existing account immediately",
+          "explanation": "A conflict does not justify deleting an unverified owner's resource."
+        },
+        {
+          "id": "0469b608c2",
+          "text": "Retry creation forever without inspecting it",
+          "explanation": "Retries do not resolve a persistent uniqueness conflict."
+        },
+        {
+          "id": "5083baa4fe",
+          "text": "Assume the user has successfully signed in",
+          "explanation": "The operation concerns account creation, not browser entry."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q05",
+      "topic": "Invalid value",
+      "prompt": "A target rejects department=Finance and its contract requires FIN. What is the evidenced problem?",
+      "correctId": "e1f592dc1b",
+      "options": [
+        {
+          "id": "e1f592dc1b",
+          "text": "The sent value disagrees with the target's accepted representation",
+          "explanation": "Compare the source and mapping without changing the correct business meaning."
+        },
+        {
+          "id": "977c5439c4",
+          "text": "Every HTTP 400 always means department is wrong",
+          "explanation": "This cause comes from the actual payload, detail and supplied contract."
+        },
+        {
+          "id": "3a6c6eb690",
+          "text": "The SAML audience must be changed",
+          "explanation": "That is a separate sign-in setting."
+        },
+        {
+          "id": "e0efb2474b",
+          "text": "The account necessarily belongs to a different person",
+          "explanation": "No ownership conflict is established by this value rejection."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q06",
+      "topic": "PATCH",
+      "prompt": "An integration supports PATCH for a department change. Why use its documented operation contract?",
+      "correctId": "dcec3378fb",
+      "options": [
+        {
+          "id": "dcec3378fb",
+          "text": "It defines the specific changes and supported semantics",
+          "explanation": "Do not infer behavior solely from a field name or generic HTTP familiarity."
+        },
+        {
+          "id": "1a579383ec",
+          "text": "PATCH automatically replaces every resource field",
+          "explanation": "That confuses a change operation with full replacement semantics."
+        },
+        {
+          "id": "28ac29393a",
+          "text": "PATCH guarantees every application supports the same attributes",
+          "explanation": "Supported target schemas and operations can differ."
+        },
+        {
+          "id": "df2e1ca0c9",
+          "text": "PATCH makes authorization unnecessary",
+          "explanation": "The API still enforces its supported access and operation requirements."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q07",
+      "topic": "PUT",
+      "prompt": "An engineer sends only department in a PUT replacement. What should be checked first?",
+      "correctId": "9eda4571a6",
+      "options": [
+        {
+          "id": "9eda4571a6",
+          "text": "The target's replacement contract and treatment of omitted writable attributes",
+          "explanation": "A partial representation can have effects beyond the one supplied field."
+        },
+        {
+          "id": "94df36a3a1",
+          "text": "Assume every omitted attribute is always preserved",
+          "explanation": "Replacement semantics must not be treated as a guaranteed partial update."
+        },
+        {
+          "id": "53aa56eecc",
+          "text": "Assume PUT and PATCH are always identical",
+          "explanation": "They have different operation semantics."
+        },
+        {
+          "id": "5874135e67",
+          "text": "Use a browser refresh as proof of the request body",
+          "explanation": "The actual operation and target state need inspection."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q08",
+      "topic": "Deactivation",
+      "prompt": "A supported SCIM update sets active=false successfully. What does this alone not prove?",
+      "correctId": "2d3094f64a",
+      "options": [
+        {
+          "id": "2d3094f64a",
+          "text": "That every existing application session has ended",
+          "explanation": "Account-state management and session termination require explicit supported behavior."
+        },
+        {
+          "id": "4dbfc04072",
+          "text": "That the target reported this operation succeeded",
+          "explanation": "That result is supplied directly."
+        },
+        {
+          "id": "73a3985a8c",
+          "text": "That the account's active value was requested false",
+          "explanation": "That intent is supplied in the operation."
+        },
+        {
+          "id": "b2b30e9523",
+          "text": "That app accounts have state",
+          "explanation": "The update itself concerns a state field."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q09",
+      "topic": "Enabled operations",
+      "prompt": "A connection supports account updates but creation is disabled. What should an engineer avoid assuming?",
+      "correctId": "6be5381f5f",
+      "options": [
+        {
+          "id": "6be5381f5f",
+          "text": "That assigning a new user will necessarily create a target account",
+          "explanation": "Supported and enabled operations define what the integration can execute."
+        },
+        {
+          "id": "3c13beb0c2",
+          "text": "That update behavior needs checking",
+          "explanation": "That is an appropriate question for the actual connection."
+        },
+        {
+          "id": "59c9750c46",
+          "text": "That an existing resource can have a target ID",
+          "explanation": "Target resource identity remains relevant."
+        },
+        {
+          "id": "bf7979c076",
+          "text": "That assignment and creation differ",
+          "explanation": "They are distinct relationships and operations."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q10",
+      "topic": "Queued versus completed",
+      "prompt": "Okta records a queued provisioning task with no target response. What remains unknown?",
+      "correctId": "22263f64b0",
+      "options": [
+        {
+          "id": "22263f64b0",
+          "text": "Whether the target executed it and holds the intended state",
+          "explanation": "Queued intent is not completed downstream verification."
+        },
+        {
+          "id": "e639a7abf4",
+          "text": "Whether a task was queued",
+          "explanation": "That limited state is explicitly supplied."
+        },
+        {
+          "id": "6b7dc77e89",
+          "text": "Whether the target has a protocol endpoint in general",
+          "explanation": "The missing evidence concerns this task's completion."
+        },
+        {
+          "id": "e2b6cc3bcd",
+          "text": "Whether the user's app permission is automatically administrator",
+          "explanation": "No such role follows from a queued account operation."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Account-management task: queued",
+        "Target response: not supplied",
+        "Target current state: not verified"
+      ]
+    },
+    {
+      "id": "L10-Q11",
+      "topic": "Target verification",
+      "prompt": "After a reported account update, what strengthens the outcome evidence?",
+      "correctId": "19bc2645f8",
+      "options": [
+        {
+          "id": "19bc2645f8",
+          "text": "A correlated read of the intended target resource and required values",
+          "explanation": "The target's actual state confirms more than an intermediate app profile."
+        },
+        {
+          "id": "2ee8e6ca13",
+          "text": "Only re-read the unchanged source value",
+          "explanation": "That does not establish downstream storage."
+        },
+        {
+          "id": "0b96e44487",
+          "text": "Only inspect an application tile",
+          "explanation": "A shortcut does not prove target account attributes."
+        },
+        {
+          "id": "573e4a855b",
+          "text": "Only confirm an unrelated user's login",
+          "explanation": "That does not verify this resource update."
+        }
+      ]
+    },
+    {
+      "id": "L10-Q12",
+      "topic": "Safe recovery",
+      "prompt": "A create failed because of an existing-account conflict. What is the best next step?",
+      "correctId": "b190edbff4",
+      "options": [
+        {
+          "id": "b190edbff4",
+          "text": "Resolve the intended association and approved matching before another create",
+          "explanation": "A safe correction depends on who owns the existing resource."
+        },
+        {
+          "id": "cc24b0211d",
+          "text": "Create another account with a random identifier",
+          "explanation": "That can introduce duplicates and break identity linkage."
+        },
+        {
+          "id": "3736659d9d",
+          "text": "Disable conflict checking globally",
+          "explanation": "That removes a boundary rather than resolving ownership."
+        },
+        {
+          "id": "997e3e1199",
+          "text": "Change the person's authoritative employee number arbitrarily",
+          "explanation": "A technical conflict does not justify falsifying identity data."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

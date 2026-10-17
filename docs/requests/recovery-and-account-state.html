@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A replacement phone and a locked account. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>A replacement phone and a locked account | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/requests/recovery-and-account-state.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="a-replacement-phone-and-a-locked-account">A replacement phone and a locked account</h1>
+<p>Read after Day 14.</p>
+<p>Nora has replaced her phone. She says, “My password works, but the sign-in keeps asking for my old phone.” Her manager asks the help desk to reset her password.</p>
+<h2 id="separate-the-reported-symptom-from-the-action-requested">Separate the reported symptom from the action requested</h2>
+<p>The records show Nora's verified Okta-managed identity is Active. Her application assignment remains approved. The current attempt accepted her password and issued an Okta Verify challenge, but no accepted response is recorded. Her enrolled old device is unavailable. She has no usable alternative method under the applicable recovery process.</p>
+<p>Her caller identity has <strong>not</strong> yet been verified through that process. The manager's message confirms the access request, not who is participating in the recovery interaction.</p>
+<p>Decide what is known, what must happen before a reset, and which type of reset could address this situation.</p>
+<details markdown="1">
+<summary>Compare your reasoning</summary>
+<p>The demonstrated obstacle is the unavailable authenticator method, not a rejected password. A password reset would not establish usable possession proof on the new phone.</p>
+<p>First complete the organization's approved identity-verification and recovery process. The person performing the action also needs authority for that user and operation. If verification cannot be completed, escalate through the protected recovery route rather than bypassing the authentication requirement.</p>
+<p>After successful verification and authorization, the relevant enrollment can be reset through the supported process. Okta documents authenticator reset separately from password recovery. See <a href="https://help.okta.com/oie/en-us/content/topics/security/mfa/mfa-reset-users.htm">reset multifactor authentication</a>.</p>
+</details>
+<h2 id="follow-the-replacement-through">Follow the replacement through</h2>
+<p>The next packet confirms that the approved verification and authorization are complete. The selected old enrollment is reset. Nora registers the replacement device in the correct organization, and a new attempt supplies the required proof. The intended application accepts her sign-in.</p>
+<p>Which facts belong in the closure note? Does the reset alone prove these results?</p>
+<details markdown="1">
+<summary>Compare the completion evidence</summary>
+<p>Record the affected method, completed verification through the approved process, authorized reset, replacement enrollment, and successful permitted sign-in. Do not place recovery secrets or unnecessary personal verification information in the ticket.</p>
+<p>The reset action alone proves neither enrollment on the new device nor accepted authentication. Those outcomes need the later evidence supplied here. Application permission changes were not required by this request.</p>
+<blockquote>
+<p>Nora's password was accepted, but her enrolled device was unavailable. After the approved recovery checks, the selected enrollment was reset. Replacement enrollment and the required proof are confirmed, and the intended application accepted a new sign-in. Her approved assignment was retained.</p>
+</blockquote>
+</details>
+<h2 id="choose-among-different-account-actions">Choose among different account actions</h2>
+<p>The label “cannot sign in” can describe several situations. Read the state and its system before selecting an action.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Observation</th>
+<th>Question to resolve</th>
+<th>Why another action is insufficient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activation is pending</td>
+<td>Which activation step or user action remains?</td>
+<td>Unlocking does not complete activation.</td>
+</tr>
+<tr>
+<td>The Okta-managed account is locked</td>
+<td>Is this the relevant lockout, and what caused the failed attempts?</td>
+<td>Unlocking does not change a forgotten password or stop an uncorrected source of repeated attempts.</td>
+</tr>
+<tr>
+<td>Password recovery is needed</td>
+<td>Where is the password managed, and which recovery method is permitted?</td>
+<td>Resetting an authenticator does not reset that password.</td>
+</tr>
+<tr>
+<td>An enrolled method is unavailable</td>
+<td>Can identity be verified and that enrollment replaced through the approved process?</td>
+<td>Password reset does not establish a usable replacement method.</td>
+</tr>
+<tr>
+<td>The person is suspended or deactivated</td>
+<td>What business event and authoritative process set that state?</td>
+<td>A recovery request is not approval to restore withdrawn access.</td>
+</tr>
+</tbody>
+</table></div><p>For AD-delegated users, check the AD account and returned credential result as well as the Okta state. Do not assume an Okta-side action clears an AD-side condition.</p>
+<p>Now consider Eli, a different Okta-managed user. His account is locked after repeated password failures. There is no evidence that he lost his authenticator. Nora's successful recovery supplies no identity-verification or recovery result for Eli. Explain why Nora's enrollment-reset action should not be copied into his ticket, and what you would establish before an authorized unlock or password-recovery action.</p>
+<details markdown="1">
+<summary>Check Eli's situation</summary>
+<p>The evidence identifies a lockout following password failures, not an unavailable authenticator. Verify the requester, confirm the account and credential ownership, and investigate the repeated attempts. Determine whether the password is known and usable or recovery is required. After an authorized action, verify the resulting state and a new permitted attempt; look for recurring failures instead of repeatedly unlocking without investigating.</p>
+</details>
+<p><a href="/Okta_Theory_Teaching/requests/">Working through requests</a> · <a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html">Day 7</a> · <a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

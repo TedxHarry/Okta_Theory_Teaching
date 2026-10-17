@@ -80,10 +80,10 @@ For the first experiment, the destination is LAB-Finance-Employees. This compact
 
 | Training identity | Finance AND Employee: predicted membership | Finance OR Employee: predicted membership | Actual result |
 |---|---|---|---|
-| Casey — Finance / Employee | Member | Member | Not tested |
-| Morgan — Sales / Contractor | Not a member | Not a member | Not tested |
-| Riley — Finance / Contractor | Not a member | Member | Not tested |
-| Taylor — Sales / Employee | Not a member | Member | Not tested |
+| Casey : Finance / Employee | Member | Member | Not tested |
+| Morgan : Sales / Contractor | Not a member | Not a member | Not tested |
+| Riley : Finance / Contractor | Not a member | Member | Not tested |
+| Taylor : Sales / Employee | Not a member | Member | Not tested |
 
 Read the columns as different kinds of statements: "This is what AND should produce," "This is what the hypothetical OR mistake would produce," and "This is what was actually observed." The first two are predictions. The OR comparison explains the useful negative cases; it is not an instruction to activate an incorrect rule. After an approved experiment, record actual membership and the corresponding rule-processing evidence, then explain any difference from the AND prediction. Until that evidence exists, leave the actual result as Not tested.
 

@@ -1,0 +1,754 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Course glossary. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Course glossary | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/glossary.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="course-glossary">Course glossary</h1>
+<p>Use these short reminders when a term interrupts your reading or you need to explain a result in your own words. Terms are grouped by the lesson that develops them; you do not need to memorize this page before starting the course. The linked lessons explain the relationships and limits.</p>
+<p>Read a definition with its system, operation and evidence. A familiar word such as source, client, scope or active can describe different responsibilities in different contexts. Knowing the label helps you locate the question; it does not establish the answer for a ticket.</p>
+<h2 id="course-context">Course context</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Okta organization / org / tenant</td>
+<td>A separate Okta environment with its own users and configuration.</td>
+</tr>
+<tr>
+<td>OIE</td>
+<td>Okta Identity Engine, the engine used for this course's product explanations.</td>
+</tr>
+<tr>
+<td>Evidence packet</td>
+<td>A set of supplied case facts. An independent variation changes only the stated facts for that question.</td>
+</tr>
+</tbody>
+</table></div><h2 id="people-and-access-day-1">People and access (Day 1)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IAM</td>
+<td>Identity and access management: managing identities and the access they should receive.</td>
+</tr>
+<tr>
+<td>HR / sponsor</td>
+<td>Human Resources, responsible for employee records / the employee confirming a contractor's business need.</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>A representation of who a person or software actor is.</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>A record representing that actor within a particular system.</td>
+</tr>
+<tr>
+<td>Directory</td>
+<td>An organized store of identity information.</td>
+</tr>
+<tr>
+<td>AD</td>
+<td>Active Directory, the directory used in Northbridge's employee environment.</td>
+</tr>
+<tr>
+<td>Universal Directory</td>
+<td>Okta's directory layer for identity profiles and related data.</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>A collection of users managed together; its access role is explained on Day 5.</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Checking who is signing in.</td>
+</tr>
+<tr>
+<td>Credentials</td>
+<td>Information used to establish identity during authentication, such as a password.</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Deciding what access or action is permitted.</td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>Single sign-on: using a connected sign-in relationship across applications.</td>
+</tr>
+<tr>
+<td>Federation</td>
+<td>A configured trust relationship in which one system accepts validated identity information from another.</td>
+</tr>
+<tr>
+<td>Provisioning</td>
+<td>Managing accounts through operations such as creation and updates.</td>
+</tr>
+<tr>
+<td>Deprovisioning</td>
+<td>Removing or disabling access or accounts through the applicable process; not necessarily deletion.</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td>The Okta-side relationship granting a user an application; target account success is a separate fact.</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td>A value that distinguishes an object; an employee number and application username serve different contexts.</td>
+</tr>
+<tr>
+<td>Application instance</td>
+<td>A particular application environment or configured connection, rather than the product name alone.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html">Day 1 explanations</a></p>
+<h2 id="messages-and-evidence-day-2">Messages and evidence (Day 2)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request / response</td>
+<td>A message asking a server for something and that server's reply.</td>
+</tr>
+<tr>
+<td>Client / server</td>
+<td>Software making a request / the system receiving and handling it. A browser is one kind of client.</td>
+</tr>
+<tr>
+<td>HTTP / HTTPS</td>
+<td>Rules for web messages / HTTP carried over an encrypted connection.</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>An address identifying a destination and resource; it can also contain query parameters.</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>The naming system used to look up a host's network address.</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>The request's operation category, such as GET or POST.</td>
+</tr>
+<tr>
+<td>Header / body</td>
+<td>Message information / message content.</td>
+</tr>
+<tr>
+<td>Redirect</td>
+<td>A response directing the client to another location.</td>
+</tr>
+<tr>
+<td>Status code</td>
+<td>A response's numeric result for a particular request.</td>
+</tr>
+<tr>
+<td>API</td>
+<td>An interface through which software requests information or operations.</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>A structured text format containing named fields and values, objects, and lists.</td>
+</tr>
+<tr>
+<td>System Log</td>
+<td>Okta's event record; external systems have their own evidence.</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>State associated with an ongoing interaction.</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>Data stored by a browser and sent on matching requests; some cookies help identify sessions.</td>
+</tr>
+<tr>
+<td>Hypothesis</td>
+<td>A possible explanation to test against evidence.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Day 2 explanations</a></p>
+<h2 id="data-and-ownership-days-3-and-4">Data and ownership (Days 3 and 4)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attribute / value</td>
+<td>A named detail / its content, such as department / Sales.</td>
+</tr>
+<tr>
+<td>Profile / schema</td>
+<td>A collection of a user's attributes / the definition of its fields and constraints.</td>
+</tr>
+<tr>
+<td>App user profile</td>
+<td>Application-specific user data represented inside Okta, separate from the target account.</td>
+</tr>
+<tr>
+<td>Mapping</td>
+<td>A defined relationship between source and destination fields.</td>
+</tr>
+<tr>
+<td>Mapping preview</td>
+<td>The calculated output for a selected input; separate evidence is needed for stored values and target delivery.</td>
+</tr>
+<tr>
+<td>Transformation</td>
+<td>A conversion of a value, such as Finance to FIN.</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td>A formula used to calculate an output from inputs.</td>
+</tr>
+<tr>
+<td>Profile source</td>
+<td>The effective system controlling a user's profile.</td>
+</tr>
+<tr>
+<td>Source association</td>
+<td>The link between an Okta user and their record in a source integration.</td>
+</tr>
+<tr>
+<td>Import scope</td>
+<td>The set of records an integration is configured to include in import processing.</td>
+</tr>
+<tr>
+<td>Source priority</td>
+<td>The configured order of applicable profile sources.</td>
+</tr>
+<tr>
+<td>Attribute source</td>
+<td>The designated source for one field, which may differ from the profile source.</td>
+</tr>
+<tr>
+<td>Import / matching</td>
+<td>Bringing external records into Okta for processing / comparing records to identify a candidate association; comparison alone does not prove ownership.</td>
+</tr>
+<tr>
+<td>Lifecycle</td>
+<td>Changes as someone joins, changes responsibilities, and leaves.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html">Day 3 explanations</a> · <a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html">Day 4 explanations</a></p>
+<p>Keep ownership, calculation and delivery separate. The source governs a value, the mapping prepares its representation, and operation evidence shows what reached the target. A correct preview is not a target-state result.</p>
+<h2 id="from-attributes-to-access-day-5">From attributes to access (Day 5)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Membership</td>
+<td>The relationship that places a user in a group.</td>
+</tr>
+<tr>
+<td>Group rule</td>
+<td>A condition used to manage membership in designated groups.</td>
+</tr>
+<tr>
+<td>AND / OR</td>
+<td>Both conditions must hold / at least one condition must hold.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>A true-or-false value.</td>
+</tr>
+<tr>
+<td>Group-based assignment</td>
+<td>An application assignment supplied through group membership.</td>
+</tr>
+<tr>
+<td>Direct assignment</td>
+<td>An application assigned individually to a user.</td>
+</tr>
+<tr>
+<td>Assignment source</td>
+<td>The origin of an application assignment, such as a group; different from a profile source.</td>
+</tr>
+<tr>
+<td>Group Push</td>
+<td>A separate capability for maintaining groups and memberships in supported target applications.</td>
+</tr>
+<tr>
+<td>workerType</td>
+<td>Northbridge's custom text attribute describing Employee or Contractor classification.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html">Day 5 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<h2 id="directory-operations-day-6">Directory operations (Day 6)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AD DS</td>
+<td>Active Directory Domain Services, the directory service used for Northbridge's employee AD environment.</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>An AD directory and administration boundary.</td>
+</tr>
+<tr>
+<td>Domain controller (DC)</td>
+<td>A server running the directory service and supporting directory queries and credential validation.</td>
+</tr>
+<tr>
+<td>Organizational unit (OU)</td>
+<td>A container for organizing directory objects; not a group membership.</td>
+</tr>
+<tr>
+<td>Okta AD agent</td>
+<td>Integration software connecting Okta with AD for supported operations.</td>
+</tr>
+<tr>
+<td>Delegated authentication</td>
+<td>Asking another system to validate credentials; AD does so through the agent in this example.</td>
+</tr>
+<tr>
+<td>Password synchronization</td>
+<td>Propagating password changes through a configured, supported process.</td>
+</tr>
+<tr>
+<td>UPN</td>
+<td>User principal name: an AD sign-in name whose email-like form does not prove it is a mailbox address.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html">Day 6 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<h2 id="authentication-evidence-day-7">Authentication evidence (Day 7)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authenticator</td>
+<td>A means of providing authentication evidence.</td>
+</tr>
+<tr>
+<td>Authentication method</td>
+<td>A particular way of authenticating, such as Push or TOTP.</td>
+</tr>
+<tr>
+<td>Factor type</td>
+<td>The kind of proof: knowledge, possession, or biometric.</td>
+</tr>
+<tr>
+<td>MFA</td>
+<td>Multifactor authentication: combining different factor types.</td>
+</tr>
+<tr>
+<td>Enrollment</td>
+<td>Registration associating an authenticator with a user's account.</td>
+</tr>
+<tr>
+<td>Challenge</td>
+<td>A request for proof during an authentication interaction.</td>
+</tr>
+<tr>
+<td>TOTP</td>
+<td>Time-based one-time password: a changing code generated by an authenticator.</td>
+</tr>
+<tr>
+<td>FastPass</td>
+<td>Passwordless cryptographic authentication through Okta Verify in a supported flow.</td>
+</tr>
+<tr>
+<td>User verification</td>
+<td>A check of the person using an authenticator, such as a supported biometric or device passcode check.</td>
+</tr>
+<tr>
+<td>Phishing resistance</td>
+<td>Protection against using authentication proof through an impostor site; method and flow support matter.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html">Day 7 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>Enrollment makes an authentication method available to the account. Issuing a challenge asks for proof. An accepted response establishes the recorded authentication result. Neither an installed app nor an issued prompt substitutes for that accepted result, and several prompts do not necessarily mean several factor types.</p>
+<h2 id="federation-day-8">Federation (Day 8)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAML</td>
+<td>Security Assertion Markup Language, a standard used for the federation exchange in Day 8.</td>
+</tr>
+<tr>
+<td>IdP / SP</td>
+<td>Identity provider issuing identity information / service provider validating it to decide application access.</td>
+</tr>
+<tr>
+<td>Assertion</td>
+<td>Statements about a subject and authentication, with conditions governing their use.</td>
+</tr>
+<tr>
+<td>ACS</td>
+<td>Assertion Consumer Service: the SP endpoint receiving the SAML response.</td>
+</tr>
+<tr>
+<td>Endpoint</td>
+<td>An address for a particular operation, such as receiving a SAML response or exchanging an authorization code.</td>
+</tr>
+<tr>
+<td>Entity ID / audience</td>
+<td>Participant identifier / the intended recipient identity expressed in assertion conditions.</td>
+</tr>
+<tr>
+<td>NameID</td>
+<td>A subject identifier interpreted under the application's configured identity-matching rule.</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Connection information such as identifiers, endpoints, and certificates.</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>A text format using named, nested elements to structure information.</td>
+</tr>
+<tr>
+<td>Digital signature</td>
+<td>Cryptographic evidence verified against trusted signing information; different from encryption.</td>
+</tr>
+<tr>
+<td>JIT provisioning</td>
+<td>Supported, configured account creation or update during a sign-in journey.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html">Day 8 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<h2 id="application-sign-in-day-9">Application sign-in (Day 9)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OAuth 2.0</td>
+<td>A framework for authorizing access to protected resources, such as APIs.</td>
+</tr>
+<tr>
+<td>OIDC</td>
+<td>OpenID Connect: an identity layer on OAuth 2.0 defining user-authentication information and its validation.</td>
+</tr>
+<tr>
+<td>Confidential client</td>
+<td>An application able to protect its client credentials, such as Expense's server-side backend.</td>
+</tr>
+<tr>
+<td>OIDC client</td>
+<td>The application requesting and validating user-authentication information; Expense in Day 9. This protocol role differs from the browser's role as an HTTP client.</td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td>Public identifier for the application's registration; not a credential.</td>
+</tr>
+<tr>
+<td>Authorization code</td>
+<td>Temporary, single-use value exchanged for tokens under the exchange requirements.</td>
+</tr>
+<tr>
+<td>Callback / redirect URI</td>
+<td>The application's registered location for receiving the browser's return.</td>
+</tr>
+<tr>
+<td>ID token</td>
+<td>Token the OIDC client validates for information about the user's authentication.</td>
+</tr>
+<tr>
+<td>Access token</td>
+<td>Token presented to its intended resource server for authorized access under that server's checks.</td>
+</tr>
+<tr>
+<td>OAuth scope / claim</td>
+<td>Requested access or information category / a named statement in returned information.</td>
+</tr>
+<tr>
+<td>Resource server</td>
+<td>The service, often an API, that checks an access token and the requested access.</td>
+</tr>
+<tr>
+<td>Issuer / subject</td>
+<td>The issuing authority / the identity within that issuer. Expense uses the validated issuer-and-subject pair to identify the user.</td>
+</tr>
+<tr>
+<td>JWT</td>
+<td>JSON Web Token: a format representing claims; decoding it does not establish validity.</td>
+</tr>
+<tr>
+<td>State / nonce</td>
+<td>Values connecting the returned browser response / ID token to the client's authentication transaction.</td>
+</tr>
+<tr>
+<td>PKCE</td>
+<td>Proof Key for Code Exchange: a verifier/challenge check tying code redemption to the initiating transaction.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html">Day 9 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>In the server-side Expense example, the browser returns the authorization code and the backend exchanges it. The ID token, access token and application session have different jobs. State is checked on the returned browser response, PKCE at code exchange, and nonce in the ID token; passing one check does not replace the others. The PKCE code verifier is the transaction secret retained for exchange; the code challenge is the derived value sent earlier.</p>
+<h2 id="application-account-management-day-10">Application account management (Day 10)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCIM</td>
+<td>System for Cross-domain Identity Management: a standard for managing identity resources between systems.</td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>An object managed through an interface, such as a user account.</td>
+</tr>
+<tr>
+<td>Integration contract</td>
+<td>Supported operations, expected fields, and behavior of a connection.</td>
+</tr>
+<tr>
+<td>SCIM id</td>
+<td>The service provider's identifier for a resource; distinct from a user name or Okta object ID.</td>
+</tr>
+<tr>
+<td>Schema extension</td>
+<td>An additional defined set of attributes, such as enterprise User department.</td>
+</tr>
+<tr>
+<td>POST / PUT / PATCH</td>
+<td>Create at the user collection / replace a resource's writable representation / apply selected changes, under the supported contract.</td>
+</tr>
+<tr>
+<td>Deactivation</td>
+<td>An account-state change; not automatically deletion or termination of every session.</td>
+</tr>
+<tr>
+<td>201 / 204</td>
+<td>Created / successful response with no content. Interpret alongside the operation.</td>
+</tr>
+<tr>
+<td>409 uniqueness</td>
+<td>A reported uniqueness conflict; does not establish the conflicting account's owner.</td>
+</tr>
+<tr>
+<td>400 invalidValue</td>
+<td>Rejection for a value incompatible with the operation or schema, or a missing required value; inspect the details.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">Day 10 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>Name the protocol role as well as the product. Okta is the SCIM client for the Projects account-management exchange; Expense is the OIDC client for its sign-in. In the SCIM creation response, meta.resourceType names the resource type and meta.location gives its address. Neither replaces the provider's resource identifier or the association to the intended account.</p>
+<h2 id="record-matching-day-11">Record matching (Day 11)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discovery</td>
+<td>Finding a record within the scope of a read or import operation.</td>
+</tr>
+<tr>
+<td>Exact match</td>
+<td>A record meeting the configured exact comparison; not independent proof that the data is correct.</td>
+</tr>
+<tr>
+<td>Partial match</td>
+<td>A candidate meeting configured weaker comparison criteria.</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Acceptance of a proposed match or new-user outcome through the configured process.</td>
+</tr>
+<tr>
+<td>Association</td>
+<td>A link between records in an integration; profile-source effects depend on source settings.</td>
+</tr>
+<tr>
+<td>Reconciliation</td>
+<td>Comparing expected records and relationships with observed ones and investigating differences.</td>
+</tr>
+<tr>
+<td>Pagination</td>
+<td>Returning a result set in separate pages.</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>A service-supplied position marker used to retrieve another page; not a page number to invent.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html">Day 11 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<h2 id="lifecycle-changes-day-12">Lifecycle changes (Day 12)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JML</td>
+<td>Joiner, mover, and leaver: access changes associated with starting work, changing responsibilities, and leaving.</td>
+</tr>
+<tr>
+<td>Effective event</td>
+<td>An approved business change that has taken effect; distinct from a future planned change.</td>
+</tr>
+<tr>
+<td>Effective point</td>
+<td>When an approved business change takes effect; separate from event receipt and downstream completion.</td>
+</tr>
+<tr>
+<td>STAGED</td>
+<td>Okta account state before activation begins or while administrative action is pending.</td>
+</tr>
+<tr>
+<td>PROVISIONED</td>
+<td>Okta Pending user action state; not proof that all target accounts exist.</td>
+</tr>
+<tr>
+<td>SUSPENDED</td>
+<td>Okta access is suspended while app assignments and group memberships remain.</td>
+</tr>
+<tr>
+<td>DEPROVISIONED</td>
+<td>Okta Deactivated state; distinct from deletion.</td>
+</tr>
+<tr>
+<td>Deletion</td>
+<td>Removal of the Okta user through a separate irreversible action.</td>
+</tr>
+<tr>
+<td>Closure evidence</td>
+<td>Observations establishing that the agreed outcome has been achieved in the affected systems.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>The other Okta states in Day 12 include ACTIVE, RECOVERY, PASSWORD_EXPIRED and LOCKED_OUT: an enabled account, password recovery, a required password update and a lockout condition. None proves the state of an application account or an existing application session. Always name the account and system being checked.</p>
+<h2 id="authentication-decisions-and-sessions-day-13">Authentication decisions and sessions (Day 13)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global session policy</td>
+<td>Requirements and limits governing the Okta session.</td>
+</tr>
+<tr>
+<td>App sign-in policy / application authentication policy</td>
+<td>Authentication requirements applied to access requests for its associated applications.</td>
+</tr>
+<tr>
+<td>Authentication assurance</td>
+<td>Confidence supported by the authentication evidence and its characteristics.</td>
+</tr>
+<tr>
+<td>Reauthentication</td>
+<td>Another authentication check required for an access request.</td>
+</tr>
+<tr>
+<td>Freshness</td>
+<td>Whether earlier authentication is recent enough under the applicable requirement.</td>
+</tr>
+<tr>
+<td>Idle limit / maximum lifetime</td>
+<td>Inactivity limit evaluated by the service / overall session-duration limit.</td>
+</tr>
+<tr>
+<td>Local session</td>
+<td>An application's own session, distinct from the Okta session.</td>
+</tr>
+<tr>
+<td>Local logout</td>
+<td>Termination of the application's session under its implementation.</td>
+</tr>
+<tr>
+<td>SLO</td>
+<td>Single Logout: coordinated logout across supported, configured participants.</td>
+</tr>
+<tr>
+<td>Event correlation</td>
+<td>Connecting related records using identity, targets, sequence, and available transaction/session identifiers.</td>
+</tr>
+<tr>
+<td>Event / transaction</td>
+<td>One recorded occurrence / a group of events belonging to an operation. A session can span several operations.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html">Day 13 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>For correlation, event uuid identifies an occurrence, transaction.id connects events within an operation, and authenticationContext.externalSessionId relates an Okta user session. authenticationContext.rootSessionId supplies related-session context when available. These are not the application's local session identifier. Keep a successful Okta action separate from the application's recorded outcome.</p>
+<h2 id="access-decisions-and-responsibility-day-14">Access decisions and responsibility (Day 14)</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement / design</td>
+<td>Approved outcome and constraints / the proposed means of achieving them.</td>
+</tr>
+<tr>
+<td>Access model</td>
+<td>How eligibility, exceptions, assignments, and target permissions connect.</td>
+</tr>
+<tr>
+<td>Least privilege</td>
+<td>Administrative permissions and scope limited to the defined responsibility.</td>
+</tr>
+<tr>
+<td>Administrative scope</td>
+<td>The resources or users covered by an administrator's permission. This differs from an OAuth scope and from an import's selected population.</td>
+</tr>
+<tr>
+<td>Acceptance evidence</td>
+<td>Observations demonstrating that an agreed requirement is satisfied.</td>
+</tr>
+<tr>
+<td>Rollback</td>
+<td>Restoring an earlier configuration; downstream consequences need separate verification.</td>
+</tr>
+<tr>
+<td>Account recovery</td>
+<td>Restoring authorized access through approved identity verification and supported recovery processes.</td>
+</tr>
+<tr>
+<td>SWA</td>
+<td>Secure Web Authentication: Okta's stored-credential sign-in method.</td>
+</tr>
+<tr>
+<td>WS-Federation</td>
+<td>A federation protocol used by the documented Office 365 integration's federated sign-in path.</td>
+</tr>
+<tr>
+<td>Microsoft Entra ID</td>
+<td>Microsoft's cloud identity service used with Microsoft 365.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html">Day 14 explanations</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p>Import scope selects a population to read. Administrative scope limits which resources or users an operator may manage. An OAuth scope names requested access or information. Similar wording does not make those controls interchangeable. Likewise, business approval does not itself grant administrative permission to implement a change.</p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

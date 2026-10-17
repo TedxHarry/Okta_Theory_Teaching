@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Integration checkpoint: Sign-in and account management. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Integration checkpoint: Sign-in and account management | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/assessments/integration.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="integration-checkpoint-sign-in-and-account-management">Integration checkpoint: Sign-in and account management</h1>
+<p>Use Days 1 to 10 to explain the following independent synthetic packets. Write your conclusions before opening the <a href="/Okta_Theory_Teaching/assessments/self-checks/integration.html">debrief</a>. Each packet names its own application, attempt, and target evidence. Do not transfer success from one application to another.</p>
+<p>For each conclusion, name the packet, person, operation, and receiving system. If the packet supplies no result for a later stage, leave that stage unverified. Record the first attempt before using the debrief to revise it.</p>
+<h2 id="packet-a-salesforce-rejects-a-saml-audience">Packet A: Salesforce rejects a SAML audience</h2>
+<p>Daniel has an approved Salesforce assignment and an existing active Salesforce account. For attempt A-1, Okta's record reports a successful SAML response issuance. These are selected fields from that response, not a complete assertion:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issuer</td>
+<td><code>https://identity.northbridge.example/saml/idp</code></td>
+</tr>
+<tr>
+<td>Audience</td>
+<td><code>https://salesforce.northbridge.example/entity/test</code></td>
+</tr>
+<tr>
+<td>NameID</td>
+<td><code>daniel.brooks@northbridge.example</code></td>
+</tr>
+</tbody>
+</table></div><p>The checked production Salesforce connection expects audience <code>https://salesforce.northbridge.example/entity/prod</code>. Its correlated validation report accepts the signature and validity window but rejects the audience. No Salesforce session is established for A-1.</p>
+<p><strong>Task 1:</strong> Categorize the exchange, trace the successful boundary followed by failure, and identify the demonstrated mismatch. Does an existing account or successful Okta response prove application entry? Propose a correction and verification.</p>
+<h2 id="packet-b-expense-accepts-oidc">Packet B: Expense accepts OIDC</h2>
+<p>For Maya's attempt B-1, Expense uses Day 9's confidential backend client. Selected authorization-request fields are:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>client_id</td>
+<td>nb-expense-web</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td>code</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>openid profile</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td><code>https://expenses.northbridge.example/oidc/callback</code></td>
+</tr>
+</tbody>
+</table></div><p>The callback is registered. The backend verifies state, completes the authenticated PKCE code exchange, and validates the ID token, including nonce and the required time and cryptographic checks. These are selected decoded claims, not independent validation evidence:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;iss&quot;: &quot;https://identity.northbridge.example&quot;,
+  &quot;sub&quot;: &quot;subject-maya-1042&quot;,
+  &quot;aud&quot;: &quot;nb-expense-web&quot;
+}
+</code></pre>
+<p>The application confirms Maya's intended pre-existing Expense account, establishes its session, and displays her expense page. Expense-approval permission has not been tested.</p>
+<p><strong>Task 2:</strong> Categorize the exchange. Explain the browser/backend distinction and why the supplied validation report matters beyond the readable claims. State the precise successful outcome. Did this prove account creation?</p>
+<h2 id="packet-c-projects-rejects-a-create">Packet C: Projects rejects a create</h2>
+<p>Maya is also assigned to Projects. Her app profile contains the correct userName and SAL department code. The authorized connector sends a POST to the checked Projects <code>/scim/v2/Users</code> endpoint with those values and active true. Projects replies HTTP 409 with:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;schemas&quot;: [&quot;urn:ietf:params:scim:api:messages:2.0:Error&quot;],
+  &quot;status&quot;: &quot;409&quot;,
+  &quot;scimType&quot;: &quot;uniqueness&quot;,
+  &quot;detail&quot;: &quot;userName is already in use in this Projects instance.&quot;
+}
+</code></pre>
+<p>No conflicting record, ownership confirmation, successful association, or follow-up account read is supplied.</p>
+<p><strong>Task 3:</strong> Categorize the exchange and locate its failure. What does the response report, and what remains unknown about Maya's target account? Explain why Packet B does not settle this incident. Request specific evidence before choosing a correction.</p>
+<h2 id="packet-d-same-user-different-identity-evidence">Packet D: Same user, different identity evidence</h2>
+<p>A colleague suggests using Maya's Expense ID token to authorize the Projects connector, then removing the uniqueness check if the create still fails.</p>
+<p><strong>Task 4:</strong> Explain both errors in that proposal. Name a justified next action using Packet C, without writing a configuration procedure.</p>
+<h2 id="give-a-useful-handoff">Give a useful handoff</h2>
+<p><strong>Task 5:</strong> Using Packets A–C, write a short handoff for each application's owner: demonstrated outcome, first proven failure if any, next evidence or action, and what would confirm resolution. For every application, state whether the supplied evidence establishes the intended account's existence and actual entry.</p>
+<h2 id="packet-e-password-accepted-another-requirement-unresolved">Packet E: Password accepted, another requirement unresolved</h2>
+<p>This is an independent Expense attempt E-1 for Jordan, who is still employed. Do not carry Maya's successful Packet B outcome into it.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earlier directory operation</td>
+<td>Jordan's selected AD data was imported and associated with his correct Okta user.</td>
+</tr>
+<tr>
+<td>Password result for E-1</td>
+<td>AD accepted his credentials through the handling agent.</td>
+</tr>
+<tr>
+<td>Applicable authentication requirement</td>
+<td>Accepted password evidence plus accepted Okta Verify Push; no prior verification is reused.</td>
+</tr>
+<tr>
+<td>Enrollment</td>
+<td>Completed for Jordan's Northbridge account and the selected device.</td>
+</tr>
+<tr>
+<td>Push result</td>
+<td>Challenge issued; no accepted response recorded in the supplied evidence.</td>
+</tr>
+<tr>
+<td>Expense outcome</td>
+<td>No application-side acceptance or account-state evidence supplied.</td>
+</tr>
+</tbody>
+</table></div><p><strong>Task 6:</strong> Which observation establishes password acceptance, and why is the import insufficient for that claim? Distinguish enrollment from successful Push. Name the first unverified requirement, two possible explanations, and evidence that would separate them. Does this packet justify a password reset, a SAML/OIDC configuration change, or a claim that Expense access succeeded?</p>
+<p>Use the <a href="/Okta_Theory_Teaching/assessments/self-checks/integration.html">debrief and rubric</a> after attempting all tasks. Record one corrected distinction in <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>.</p>
+<h2 id="explain-the-proposed-action">Explain the proposed action</h2>
+<p>Choose one failed attempt. Identify the connection setting or operation you would inspect, the owner of the next evidence, and the outcome needed after a correction. Explain why one tempting action, such as resetting a password or retrying a create, is not justified by this packet.</p>
+<p>Use <a href="/Okta_Theory_Teaching/requests/reading-records-and-settings.html">Reading records and settings</a> if you need to connect the question to a configuration view. Keep later policy and recovery questions open until their lessons.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">Day 10</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

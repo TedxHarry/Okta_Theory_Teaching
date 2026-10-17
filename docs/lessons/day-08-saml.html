@@ -1,0 +1,226 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 8: SAML and application sign-in. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 8: SAML and application sign-in | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-08-saml.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html" aria-current="page"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html" aria-current="page">Lesson 8</a><a href="/Okta_Theory_Teaching/question-bank/day-08.html">Questions (44)</a><a href="/Okta_Theory_Teaching/quizzes/day-08.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-8-saml-and-application-sign-in">Day 8: SAML and application sign-in</h1>
+<p>Maya opens Northbridge's Salesforce environment. She completes the required Okta checks, returns to Salesforce, and sees a sign-in rejection.</p>
+<p>From Maya's point of view, she has done what Okta asked. Alex also finds a successful Okta SSO event for the same attempt. Yet Salesforce still has a decision to make: does the information arriving from Okta meet this application's sign-in requirements? Day 2 prepared you to separate those outcomes. Now follow the information across that boundary.</p>
+<p>For this case, Salesforce is assigned to Maya, and her intended Salesforce account exists and is active. These are supplied facts for this incident; they do not retroactively resolve Day 1's incomplete ticket.</p>
+<p>First picture the exchange without worrying about its message format. Salesforce sends Maya's browser to Okta; after the applicable checks, the browser carries identity information back to Salesforce for validation. Your goal is to explain that journey, distinguish delivery from acceptance, and use the rejection evidence to choose the field that needs investigation. You can practice this with the supplied message excerpt and reports, without a tenant.</p>
+<h2 id="the-application-needs-trustworthy-identity-information">The application needs trustworthy identity information</h2>
+<p>Salesforce needs to know which user is arriving and whether it can trust the authentication behind that identity. Northbridge has already asked Okta to perform the applicable identity checks. In a <strong>federated sign-in</strong>, Salesforce can rely on information from Okta under a configured trust relationship. The two systems agree how to identify each other and what Salesforce must validate before using that information. This gives the application a way to recognize Maya without receiving her password.</p>
+<p><strong>SAML</strong>, Security Assertion Markup Language, is a standard used for this exchange. In this example:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Participant</th>
+<th>SAML role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maya</td>
+<td>User</td>
+<td>Starts the access attempt and completes required interactions.</td>
+</tr>
+<tr>
+<td>Okta</td>
+<td>Identity provider, or IdP</td>
+<td>Performs the applicable identity checks and issues SAML information.</td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td>Service provider, or SP</td>
+<td>Validates the received information, identifies the application user, and controls access.</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Message carrier</td>
+<td>Carries the browser-based exchange between the two services.</td>
+</tr>
+</tbody>
+</table></div><p>Read the table as a division of work. Okta supplies identity information as the IdP; Salesforce evaluates it and controls entry as the SP. Maya completes the required interactions, while her browser carries the messages. The browser's role in delivery does not make it the authority deciding that Maya should be admitted. IdP and SP describe roles in this connection, not permanent roles that every system has in every integration.</p>
+<p>Okta does not send Maya's AD password to Salesforce in this SAML flow. It sends an assertion about her identity and authentication. If AD validated her password earlier, that remains a separate step from what Salesforce receives.</p>
+<h2 id="request-response-and-assertion">Request, response, and assertion</h2>
+<p>When Salesforce starts the flow, it can issue an <strong>authentication request</strong>, often called an <code>AuthnRequest</code>, asking the IdP to authenticate the user under the connection's requirements.</p>
+<p>The IdP returns a <strong>SAML response</strong>. A successful response in this flow contains an <strong>assertion</strong>: statements about the user and authentication, with conditions governing their use.</p>
+<p>In everyday language, Salesforce asks Okta, &quot;Please authenticate the person trying to enter.&quot; That is the request. Okta sends its reply as the response. Inside the successful response, the assertion supplies the identity and authentication statements Salesforce must evaluate. These are related parts of the exchange, not three names for the same message.</p>
+<p>Even a response with a success status can carry an assertion Salesforce must reject. Okta has supplied its reply; Salesforce still has to decide whether the information meets this connection's requirements.</p>
+<p>Think of the assertion as answering questions such as:</p>
+<ul>
+<li>Who issued this information?</li>
+<li>Which user does it describe?</li>
+<li>Which application is it intended for?</li>
+<li>Under what conditions may it be accepted?</li>
+</ul>
+<p>An assertion gives Salesforce material to check against its trusted configuration. Anyone reading text can see what it claims; that does not establish who produced it, whether it was altered, or whether this application may use it. Those questions explain why the validation step matters even after Maya completes Okta's checks.</p>
+<h2 id="follow-the-browser">Follow the browser</h2>
+<p>Maya begins at Salesforce, which needs the identity information before admitting her. Salesforce starts the exchange by sending an authentication request through her browser to Okta. Because the service provider starts it, this is <strong>SP-initiated</strong>:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/4441747a089f6afa.svg" alt="Day 8: SAML and application sign-in: diagram 1" width="818" height="485" loading="lazy"><figcaption><span>Day 8: SAML and application sign-in: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/4441747a089f6afa.svg" data-diagram="Day 8: SAML and application sign-in: diagram 1">Open full diagram</a></figcaption></figure><p>Follow the numbered steps from top to bottom. Maya's browser first asks Salesforce for access, then carries Salesforce's request to Okta. After the applicable checks, Okta supplies a response for the browser to deliver to Salesforce. For that last HTTP POST delivery, Okta can provide a web page containing an HTML form with the encoded response in a hidden field named <strong>SAMLResponse</strong>. The browser submits the form to Salesforce's ACS, often automatically. Maya normally does not see or manually enter the message. The XML used later in this lesson is a readable excerpt for study, rather than a screen Maya must fill in.</p>
+<p>The application's <strong>Assertion Consumer Service</strong>, or <strong>ACS</strong>, is the receiving service for that response. Its configured <strong>endpoint</strong> is an address for that operation. Reaching the ACS establishes where the browser delivered the response; Salesforce still needs to validate what arrived. Recall Day 2: POST describes a message operation, not automatic account creation.</p>
+<p>This diagram is a simplified browser exchange, not a complete network trace. An existing authentication context may affect which prompts occur; do not assume every SAML launch repeats every factor.</p>
+<p>An <strong>IdP-initiated</strong> flow starts from the identity provider, such as launching an application from Okta. It does not begin with the same SP authentication request. Support and validation behavior depend on the integration. Changing where the flow starts does not remove the SP's obligation to validate the response.</p>
+<h2 id="the-two-sides-need-agreed-configuration">The two sides need agreed configuration</h2>
+<p>Before this exchange can work, both sides need the details of the intended connection. Okta needs to know which application the assertion is for and where to send the response. Salesforce needs the trusted identity-provider and signing information used to validate it. <strong>SAML metadata</strong> describes connection information such as identifiers, endpoints, and signing certificates. An integration may exchange a metadata document or configure the relevant values separately. Metadata helps communicate the agreement; the actual message must still satisfy it.</p>
+<p>An <strong>entity ID</strong> identifies a SAML participant. Even when it looks like a web address, it serves as an identifier; it is not automatically the endpoint receiving the browser's message.</p>
+<p>Keep destination and identity separate. The ACS URL tells the browser where to deliver the response. The SP entity ID identifies the intended application. A response can arrive at the right address while the assertion names a different intended application. That is the distinction Alex needs to investigate Maya's rejection.</p>
+<p><strong>Audience</strong> answers “which service may use this assertion?” <strong>NameID</strong> answers “which user does it describe?” under the connection's chosen matching rule. The <strong>ACS URL</strong> answers “where is the response delivered?”</p>
+<p>For Maya, reaching Salesforce's receiving address does not establish that the assertion names the production Salesforce connection. Naming that connection correctly would still leave another question: does the user identifier match Maya's intended account? Each value has its own job.</p>
+<p>Northbridge uses these fictional teaching values for its production Salesforce connection. They are not real Salesforce endpoint formats to copy:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Meaning</th>
+<th>Expected value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trusted IdP issuer</td>
+<td><code>https://identity.northbridge.example/saml/idp</code></td>
+</tr>
+<tr>
+<td>SP entity ID / expected audience</td>
+<td><code>https://salesforce.northbridge.example/entity/prod</code></td>
+</tr>
+<tr>
+<td>ACS destination</td>
+<td><code>https://salesforce.northbridge.example/saml/acs</code></td>
+</tr>
+<tr>
+<td>User identification choice</td>
+<td>NameID must match the intended Salesforce username.</td>
+</tr>
+<tr>
+<td>Maya's approved Salesforce username</td>
+<td><code>maya.rao@northbridge.example</code></td>
+</tr>
+</tbody>
+</table></div><p>Use the table by asking what each value identifies. The issuer names the trusted IdP, the audience names the intended SP, the ACS gives the receiving address, and NameID supplies the user identifier under the selected rule. A correct user identifier cannot compensate for a value naming the wrong application.</p>
+<p>Other deployments may use a configured Federation ID instead of username matching. Here, <strong>Federation ID</strong> means a separate user identifier the application can use to match a federated sign-in. Inspect the selected identity rule; an email-looking value is not automatically the right application identifier.</p>
+<h2 id="read-a-small-piece-of-xml">Read a small piece of XML</h2>
+<p>SAML uses <strong>XML</strong>, a text format with named elements. An opening tag such as <code>&lt;saml:NameID&gt;</code> begins an element; <code>&lt;/saml:NameID&gt;</code> ends it. Text between them is its value. Elements can contain other elements.</p>
+<p>A prefix such as <code>saml:</code> identifies a namespace: the vocabulary those element names belong to. In the excerpt below, <code>xmlns:saml</code> declares that vocabulary. You do not need to memorize the namespace address.</p>
+<p>This is a synthetic, shortened assertion excerpt for Maya's rejected attempt S-1. It preserves only the fields being compared. It omits required surrounding content, signature material, authentication statements, and validity fields. It is not a complete or usable SAML assertion.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-xml">&lt;saml:Assertion xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;&gt;
+  &lt;saml:Issuer&gt;https://identity.northbridge.example/saml/idp&lt;/saml:Issuer&gt;
+  &lt;saml:Subject&gt;
+    &lt;saml:NameID&gt;maya.rao@northbridge.example&lt;/saml:NameID&gt;
+  &lt;/saml:Subject&gt;
+  &lt;saml:Conditions&gt;
+    &lt;saml:AudienceRestriction&gt;
+      &lt;saml:Audience&gt;https://salesforce.northbridge.example/entity/test&lt;/saml:Audience&gt;
+    &lt;/saml:AudienceRestriction&gt;
+  &lt;/saml:Conditions&gt;
+&lt;/saml:Assertion&gt;
+</code></pre>
+<p>Start with three named elements, leaving the surrounding structure in place. Issuer names the party claiming to issue the information. NameID inside Subject supplies the user identifier. Audience inside AudienceRestriction names the intended service. Compare those values with the earlier configuration table before reading on.</p>
+<p>The excerpt names the expected issuer and Maya's approved username, but its audience identifies the test application configuration. The expected audience identifies production. You have located a visible discrepancy. The application report later in the lesson will establish whether that discrepancy caused this rejection; the shortened XML alone cannot tell you the outcome of all the checks.</p>
+<h2 id="what-the-application-must-validate">What the application must validate</h2>
+<p>For today, focus on who issued the information, which application it is intended for, which user it identifies, and whether the application accepted it. The other checks remain important. Understand their purpose without trying to memorize every SAML field yet.</p>
+<p>Suppose the username looks correct. Salesforce still needs to establish that the required signed content verifies under its trusted configuration, is intended for this connection, and is usable for the current attempt. Otherwise, a plausible-looking identity string would be enough to bypass the sign-in decision. The checks below explain what the application must establish:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Check</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issuer</td>
+<td>The message must come from the expected identity provider.</td>
+</tr>
+<tr>
+<td>Signature and trusted signing key</td>
+<td>The SP must verify the required signed content using the configured trust information.</td>
+</tr>
+<tr>
+<td>Audience</td>
+<td>The assertion must be intended for this SP under the agreed configuration.</td>
+</tr>
+<tr>
+<td>Recipient / destination</td>
+<td>Delivery-related values must agree with the intended receiving endpoint as required by the flow.</td>
+</tr>
+<tr>
+<td>Validity conditions</td>
+<td>The assertion must be usable at the checked point; fields such as NotBefore and NotOnOrAfter constrain validity.</td>
+</tr>
+<tr>
+<td>Request correlation and replay checks</td>
+<td>Where required, the response must belong to the expected request and must not be reused improperly.</td>
+</tr>
+<tr>
+<td>User identification</td>
+<td>The validated identity must map to the intended account under the application's chosen rule.</td>
+</tr>
+</tbody>
+</table></div><p>A <strong>digital signature</strong> lets the recipient verify the signed data against trusted signing information. The <strong>signing certificate</strong> supplies public-key information for that check. The private signing key creates the signature; the corresponding public key lets the recipient verify it. The trusted configuration connects that check to the expected issuer. Merely seeing a signature element or certificate does not establish successful verification.</p>
+<p>Signing and encryption have different purposes. Signing supports checking the origin and integrity of the signed content. Encryption protects content from being read without the required decryption key. A signed message can therefore still be readable. Even successful signature verification does not settle whether the signed assertion names the right audience or meets its validity conditions.</p>
+<p>Likewise, displaying or decoding an assertion is not validating it. The shortened excerpt cannot establish signature or time checks. Those require the full relevant message and validation evidence. Clock differences can matter when investigating a validity rejection, but an expiry label alone does not prove which clock or setting is wrong.</p>
+<p><strong>Request correlation</strong> means connecting the response to the request that started this attempt, where the flow requires that connection. <strong>Replay</strong> means presenting previously issued information again; replay checks prevent improper reuse. A signed assertion from an earlier exchange is not automatically acceptable for a new one.</p>
+<p>Each row answers a different acceptance question. A valid signature does not replace the audience check, and an acceptable audience does not replace account matching. The table groups these checks by purpose; it does not prescribe a universal order in which every application performs them.</p>
+<h2 id="establish-the-audience-defect">Establish the audience defect</h2>
+<p>Alex obtains the following synthetic evidence for S-1. The expected values belong to the checked production instance, and the full response observations are correlated to that same attempt.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Okta SSO event</td>
+<td>SUCCESS for Maya and the relevant application attempt.</td>
+</tr>
+<tr>
+<td>Expected audience</td>
+<td>The production entity ID shown above.</td>
+</tr>
+<tr>
+<td>Audience in the full assertion</td>
+<td>The test entity ID shown in the excerpt.</td>
+</tr>
+<tr>
+<td>Application validation report</td>
+<td>Rejects the assertion because the audience differs from its configured entity ID.</td>
+</tr>
+<tr>
+<td>Issuer, required signature, and validity checks</td>
+<td>Reported as accepted in the supplied validation evidence.</td>
+</tr>
+<tr>
+<td>Intended account record</td>
+<td>Active; approved username matches the excerpt's NameID.</td>
+</tr>
+</tbody>
+</table></div><p>Before choosing a change, compare the expected audience, the audience actually sent, and Salesforce's rejection reason. All three point to the same defect: the production connection received the test audience, and Salesforce rejected it for that reason. This is stronger evidence than noticing a suspicious string by itself.</p>
+<p>The packet also reports accepted issuer, required-signature, and validity checks. Those conclusions come from the supplied validation evidence, not from the shortened XML. Maya's active account and matching approved username are supplied too. Keep those established facts while investigating the failed audience check.</p>
+<p>Alex should compare the approved connection settings on both sides and identify the value responsible for emitting the test audience for this production attempt. The correction must bring the emitted value into agreement with the intended connection. Review the affected integration before changing it, because other users may use the same configuration. Disabling audience validation would remove the check that caught the mismatch. Changing Maya's correct username would alter a different field without correcting the audience.</p>
+<p>A saved setting is only the proposed correction until a new attempt supplies the result. Verify that the new message contains the production audience, Salesforce accepts the response, and Maya reaches her intended account. These are the conditions for verifying the correction, not results already supplied for S-1. The original SUCCESS event cannot verify a new attempt.</p>
+<h2 id="a-different-nameid-calls-for-a-different-investigation">A different NameID calls for a different investigation</h2>
+<p>In a separate variation S-2, the audience and required validation checks pass. The assertion instead carries <code>maya.old@northbridge.example</code>; the approved target username is still <code>maya.rao@northbridge.example</code>. The application reports that it cannot find a user under its configured username-matching rule.</p>
+<p>Now choose the next check using S-2's own evidence. The audience and required validation checks pass, but the presented user identifier differs from the approved username under this connection's matching rule. This is an identity-matching discrepancy. Follow the application username/NameID mapping and the linked target record, using Day 3's distinction between a configured mapping and the value actually delivered. Changing the audience again would address the wrong field. Creating another account before resolving the intended association could add a second problem.</p>
+<p>The comparison also depends on the matching rule. If a connection expects Federation ID, comparing only the target's username would not establish the correct match. Configuration supplies the meaning of the value.</p>
+<h2 id="authentication-does-not-define-the-account-lifecycle">Authentication does not define the account lifecycle</h2>
+<p>SAML sign-in and account management remain separate concerns. The main example assumes an existing active Salesforce account and no account creation during this sign-in.</p>
+<p>Some applications can separately support <strong>just-in-time provisioning</strong>, or <strong>JIT</strong>, which creates or updates an account during a configured sign-in journey. That is additional account-management behavior using the sign-in context. It must be supported and configured; receiving a SAML assertion does not guarantee it. For Maya's current case, use the supplied fact that her active account already exists. Day 11 returns to account creation and matching choices.</p>
+<p>After a response is accepted, the application establishes its own sign-in/session outcome and applies its permissions. SAML acceptance does not automatically give Maya every Salesforce action. If she enters the correct account but an action is denied, investigate the relevant application authorization requirement, as with Daniel on Day 1.</p>
+<h2 id="compare-the-two-sides-of-the-connection">Compare the two sides of the connection</h2>
+<p>Alex needs three things beside one another: the Okta connection settings, the intended application's configuration, and the actual message for the attempt. The application integration's Sign On settings describe the Okta side. First confirm that all three belong to the same production or test connection, then compare issuer, audience, ACS, and user identifier. This prevents a correct setting from one connection being used to explain a message from another. A saved setting does not prove what was emitted.</p>
+<p>A signing-certificate change needs coordination too. The certificate identifies a public key the application can use to verify signatures; it is not the user's password. Generating a new certificate does not by itself establish that the application trusts it. Inspect the active signing choice, the application's trusted certificate, and the supported transition process before activation. See <a href="https://help.okta.com/oie/en-us/Content/Topics/Apps/manage-signing-certificates.htm">signing-certificate settings</a>.</p>
+<p>After a change, verify a fresh response and target acceptance. Do not use an old application session as proof that the new signing relationship works. The <a href="/Okta_Theory_Teaching/requests/connection-maintenance.html">connection-maintenance situation</a> develops this comparison after Day 14.</p>
+<p>Maya's investigation becomes clearer when each value has a job. The ACS tells you where the response arrived, the audience tells you which service the assertion is intended for, and NameID identifies the user under the selected matching rule. Compare the observed values with the approved connection, then use the application's validation evidence to decide which discrepancy explains the failure.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain:</p>
+<ul>
+<li>Which participant is the IdP, which is the SP, and what the browser carries?</li>
+<li>How request, response, and assertion differ?</li>
+<li>Why ACS destination and audience are different concepts?</li>
+<li>How NameID matching depends on the selected application identity rule?</li>
+<li>Why readable XML and a signature element do not prove validation?</li>
+<li>What establishes the cause in S-1 and what changes in S-2?</li>
+<li>Why successful federation is not proof of account provisioning or every application permission?</li>
+</ul>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-08.html">Day 8 exercises</a>, then read the <a href="/Okta_Theory_Teaching/self-checks/day-08.html">separate answers</a>.</p>
+<p>In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, draw the browser flow and annotate the issuer, intended audience, receiving endpoint, and user identifier. Keep expected configuration beside observed message values.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html">Day 9</a> follows Northbridge Expense through OIDC, a different sign-in protocol.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-08.html">Day 8 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html">Previous: Day 7</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-08.html">Revise Day 8</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-08.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-08.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-08.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><small>← Previous lesson</small>Day 7: Authenticators, enrollment, and MFA</a><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><small>Next lesson →</small>Day 9: OIDC and the authorization code</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

@@ -1,2 +1,6 @@
 # Generated PDFs are not tracked in the repository
 *.pdf
+
+node_modules/
+test-results/
+premium-audit.json

@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 15,
+  "questions": [
+    {
+      "id": "L15-Q01",
+      "topic": "Independent packets",
+      "prompt": "A case contains several tickets involving the same employee. How should their evidence be read?",
+      "correctId": "c9ea3d5f89",
+      "options": [
+        {
+          "id": "c9ea3d5f89",
+          "text": "Use each ticket's stated time, operation and facts without importing unshown outcomes",
+          "explanation": "A shared name does not make all snapshots one completed transaction."
+        },
+        {
+          "id": "6595b91537",
+          "text": "A success in one ticket resolves every other ticket",
+          "explanation": "Different boundaries and attempts need separate results."
+        },
+        {
+          "id": "3a71689e48",
+          "text": "The latest narrative automatically rewrites archived evidence",
+          "explanation": "Archived incidents retain their explicitly supplied timing."
+        },
+        {
+          "id": "1e3470c42f",
+          "text": "Every hypothetical proposal has already executed",
+          "explanation": "Proposed work and observed outcomes differ."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q02",
+      "topic": "Multiple causes",
+      "prompt": "One SP node rejects K2 while another accepts SAML but fails account matching. What is established?",
+      "correctId": "ab553b8ae3",
+      "options": [
+        {
+          "id": "ab553b8ae3",
+          "text": "There are separate trust-adoption and identity-resolution mismatches",
+          "explanation": "Different evidenced boundaries need their own corrections and retests."
+        },
+        {
+          "id": "ce3b3723db",
+          "text": "A key rollback necessarily fixes the account mapping",
+          "explanation": "Signing-key selection does not redefine the emitted subject."
+        },
+        {
+          "id": "d997f290ef",
+          "text": "Every failed page must have one common cause",
+          "explanation": "Similar symptoms can hide distinct failures."
+        },
+        {
+          "id": "f2b2dfddcb",
+          "text": "The successful node proves all users are healthy",
+          "explanation": "A node's acceptance does not establish every account outcome."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q03",
+      "topic": "Source tracing",
+      "prompt": "HR department and the Okta user profile are correct, but the app profile is wrong. Where is the first evidenced data mismatch?",
+      "correctId": "c77bf8a2ff",
+      "options": [
+        {
+          "id": "c77bf8a2ff",
+          "text": "Between the correct user profile and the app-specific value",
+          "explanation": "Investigate the actual mapping and application-profile update path."
+        },
+        {
+          "id": "d910ed03df",
+          "text": "Inside HR necessarily",
+          "explanation": "The supplied HR value is correct."
+        },
+        {
+          "id": "efc683cb3c",
+          "text": "At the final report permission necessarily",
+          "explanation": "The data already differs before that downstream resource decision."
+        },
+        {
+          "id": "47fe591d79",
+          "text": "In every source relationship",
+          "explanation": "One demonstrated mismatch does not establish universal sourcing failure."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q04",
+      "topic": "SAML outcome",
+      "prompt": "Okta issues a response and the SP rejects the wrong audience. What is the justified conclusion?",
+      "correctId": "8ed29086a1",
+      "options": [
+        {
+          "id": "8ed29086a1",
+          "text": "Issuance succeeded but receiver targeting acceptance failed",
+          "explanation": "An upstream success cannot override a local validation rejection."
+        },
+        {
+          "id": "ebdf20cd2e",
+          "text": "The user necessarily typed the wrong password",
+          "explanation": "The supplied failure is later than issuer processing."
+        },
+        {
+          "id": "78b394358c",
+          "text": "Every target account is missing",
+          "explanation": "No target account-lifecycle result is supplied."
+        },
+        {
+          "id": "9f3addd74d",
+          "text": "The audience check should be removed to restore service",
+          "explanation": "That would discard the intended trust boundary."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q05",
+      "topic": "SCIM versus SSO",
+      "prompt": "A SAML sign-in succeeds while a separate SCIM update is rejected. How should the analyst report it?",
+      "correctId": "de64a31b09",
+      "options": [
+        {
+          "id": "de64a31b09",
+          "text": "Successful sign-in and failed account-data update as separate outcomes",
+          "explanation": "Protocol operations have distinct responsibilities and results."
+        },
+        {
+          "id": "73c2bbbdd2",
+          "text": "Declare the SCIM update successful because entry worked",
+          "explanation": "Application entry does not establish account-update completion."
+        },
+        {
+          "id": "5aa5d875fd",
+          "text": "Declare every sign-in failed because SCIM rejected",
+          "explanation": "The supplied sign-in outcome remains successful."
+        },
+        {
+          "id": "f5593fa456",
+          "text": "Treat both as the same browser POST",
+          "explanation": "The delivery and operation types differ."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q06",
+      "topic": "Conflicting accounts",
+      "prompt": "A proposed import match finds two candidates with similar identifiers. What is appropriate?",
+      "correctId": "2986220bec",
+      "options": [
+        {
+          "id": "2986220bec",
+          "text": "Resolve ownership and matching ambiguity before confirming association",
+          "explanation": "Choosing a convenient record risks linking the wrong identity."
+        },
+        {
+          "id": "f60362b027",
+          "text": "Pick the account with the newest login",
+          "explanation": "Recency is not sufficient ownership evidence."
+        },
+        {
+          "id": "90cc50b01a",
+          "text": "Merge accounts merely because names resemble each other",
+          "explanation": "Similarity is not an approved unique match."
+        },
+        {
+          "id": "3c33449543",
+          "text": "Create a duplicate to avoid investigation",
+          "explanation": "Another record does not resolve the ambiguity."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q07",
+      "topic": "Expected authorization denial",
+      "prompt": "An enabled reader reaches projects, then is denied an admin change as required. What needs repair?",
+      "correctId": "127a17eed9",
+      "options": [
+        {
+          "id": "127a17eed9",
+          "text": "No defect is demonstrated by that expected denial",
+          "explanation": "Authentication and allowed reading can coexist with correct administrative restriction."
+        },
+        {
+          "id": "c4c6c16a9d",
+          "text": "Promote the reader to administrator",
+          "explanation": "That would violate the supplied requirement."
+        },
+        {
+          "id": "e13c4c0dac",
+          "text": "Replace the provider's signing key",
+          "explanation": "A local expected authorization result is not a verification failure."
+        },
+        {
+          "id": "7a851943c1",
+          "text": "Delete the user's app account",
+          "explanation": "No account-eligibility problem is established."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q08",
+      "topic": "Departure evidence",
+      "prompt": "A leaver is deactivated in Okta while one target's termination is unconfirmed. How should the status be recorded?",
+      "correctId": "30c4b9f1c3",
+      "options": [
+        {
+          "id": "30c4b9f1c3",
+          "text": "Confirmed provider change with that target outcome still open",
+          "explanation": "Do not extend an upstream result into an unverified downstream claim."
+        },
+        {
+          "id": "205c9b9224",
+          "text": "Complete removal everywhere",
+          "explanation": "The target result is explicitly unconfirmed."
+        },
+        {
+          "id": "73f7c80cb8",
+          "text": "Definite failure at every target",
+          "explanation": "Missing one result does not prove universal failure."
+        },
+        {
+          "id": "6b8d7e5f0e",
+          "text": "No issue can exist until a cause is known",
+          "explanation": "An open required outcome matters even before its cause is established."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q09",
+      "topic": "Smallest correction",
+      "prompt": "A mapping uses the wrong transformation but its authoritative input is correct. What should a justified plan target?",
+      "correctId": "a879044458",
+      "options": [
+        {
+          "id": "a879044458",
+          "text": "The demonstrated transformation and its supported application/update behavior",
+          "explanation": "Fix the evidenced boundary rather than changing correct business facts."
+        },
+        {
+          "id": "6b80aacf16",
+          "text": "Rewrite the authoritative value to fit the wrong output",
+          "explanation": "That falsifies correct source information."
+        },
+        {
+          "id": "21c1392106",
+          "text": "Change all policy rules in the org",
+          "explanation": "That is unrelated and unnecessarily broad."
+        },
+        {
+          "id": "0370e5b7f0",
+          "text": "Disable the entire identity platform permanently",
+          "explanation": "The packet supports a specific mismatch, not universal failure."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q10",
+      "topic": "Unknown root cause",
+      "prompt": "A node's effective trust lacks approved K2. What remains unknown from that inventory alone?",
+      "correctId": "98653aab71",
+      "options": [
+        {
+          "id": "98653aab71",
+          "text": "Why the approved update was not adopted there",
+          "explanation": "Observed state identifies a mismatch, but not its operational root cause."
+        },
+        {
+          "id": "2f60632e5b",
+          "text": "Whether the node lists K2",
+          "explanation": "The supplied inventory establishes its absence."
+        },
+        {
+          "id": "858dcf758e",
+          "text": "Whether K2 was intended to be approved",
+          "explanation": "That approval is part of the stated facts."
+        },
+        {
+          "id": "8bebf7012f",
+          "text": "Whether an arbitrary embedded certificate should be trusted",
+          "explanation": "Incoming material does not create independent approval."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Approved plan: node B should trust K2",
+        "Effective node B inventory: K1 only",
+        "Reason for missing adoption: not supplied"
+      ]
+    },
+    {
+      "id": "L15-Q11",
+      "topic": "Verification plan",
+      "prompt": "Which plan best tests a repaired integration across two active nodes?",
+      "correctId": "0142444662",
+      "options": [
+        {
+          "id": "0142444662",
+          "text": "Fresh attempts at both nodes with actual trust, identity, session and permission evidence",
+          "explanation": "One node's result does not prove the other adopted the correction."
+        },
+        {
+          "id": "ac83c4be53",
+          "text": "Only one old session at either node",
+          "explanation": "That can bypass the changed path."
+        },
+        {
+          "id": "974959f5b9",
+          "text": "Only a central configuration screenshot",
+          "explanation": "Saved state is not every runtime's effective behavior."
+        },
+        {
+          "id": "6516366fc7",
+          "text": "Only confirm the app's public home page loads",
+          "explanation": "Public availability is not identity acceptance evidence."
+        }
+      ]
+    },
+    {
+      "id": "L15-Q12",
+      "topic": "Engineering summary",
+      "prompt": "Which conclusion is most defensible in a case handover?",
+      "correctId": "6e89ecb9fb",
+      "options": [
+        {
+          "id": "6e89ecb9fb",
+          "text": "Named evidence, confirmed boundaries, remaining unknowns, proposed correction and verification status",
+          "explanation": "A good summary separates facts, hypotheses, actions and observed outcomes."
+        },
+        {
+          "id": "b85d002e0b",
+          "text": "The cause is obvious, with no evidence references",
+          "explanation": "Confidence alone does not support a diagnosis."
+        },
+        {
+          "id": "61080d2ffe",
+          "text": "All issues share the most recent change",
+          "explanation": "Temporal proximity does not prove a universal cause."
+        },
+        {
+          "id": "c3bdf15356",
+          "text": "A proposed fix is already a verified recovery",
+          "explanation": "Execution and retest evidence are still required."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

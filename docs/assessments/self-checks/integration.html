@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Integration checkpoint: Debrief and rubric. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Integration checkpoint: Debrief and rubric | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/assessments/self-checks/integration.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="integration-checkpoint-debrief-and-rubric">Integration checkpoint: Debrief and rubric</h1>
+<p>Attempt the <a href="/Okta_Theory_Teaching/assessments/integration.html">checkpoint</a> first. Equivalent reasoning is acceptable; judge whether the conclusion follows from the packet.</p>
+<h2 id="task-1-salesforce">Task 1: Salesforce</h2>
+<p>This is SAML sign-in. Response issuance succeeded on Okta's side; Salesforce rejected the supplied test audience against its production expectation. Signature acceptance is separately supplied and does not make the audience acceptable. Daniel's account exists and is active, but this attempt did not establish a session.</p>
+<p>Review the production connection's emitted audience configuration against its approved identifier, correct the demonstrated mismatch, and verify a new response and Salesforce acceptance. Keep account matching, session establishment, and required permissions as distinct checks. No evidence supports an authenticator reset or a new account as the correction.</p>
+<h2 id="task-2-expense">Task 2: Expense</h2>
+<p>This is OIDC sign-in through Authorization Code with PKCE. The browser returns a code; the backend exchanges it for tokens. Decoded claims provide readable values, while the supplied validation report establishes the stated checks for this attempt.</p>
+<p>The intended account already exists, and actual entry and an application session are demonstrated. Creation is not: the packet explicitly describes a pre-existing account. Expense-approval permission remains untested.</p>
+<h2 id="task-3-projects">Task 3: Projects</h2>
+<p>This is a SCIM account-create exchange. The request reached Projects and received a reported uniqueness conflict. No successful create is established. Projects reports a value already in use, but the packet does not identify its owner or establish a correctly associated Maya account.</p>
+<p>Request the conflicting resource and reliable ownership identifiers, the matching/lookup evidence, and the correlated operation history. Use those to decide approved existing-account handling or a data correction. Do not automatically delete, rename, or link a record. Successful Expense sign-in concerns a different application and operation.</p>
+<h2 id="task-4-proposed-shortcut">Task 4: Proposed shortcut</h2>
+<p>The Expense ID token supplies authentication information for Expense's client validation. It is not a service credential granting the Projects connector account-management authority. Projects' uniqueness constraint also protects its account model; bypassing it would not resolve the identity question.</p>
+<p>The supplied create reached the target through an authorized connector. The next justified action is the ownership/matching investigation from Task 3, not substituting credentials or disabling validation.</p>
+<h2 id="task-5-handoff">Task 5: Handoff</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Application</th>
+<th>Supported outcome</th>
+<th>Next action and resolution evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salesforce</td>
+<td>Daniel's account exists; A-1 failed audience validation and did not establish a session.</td>
+<td>Correct the emitted audience for the approved production connection, then verify a new correlated exchange and application entry.</td>
+</tr>
+<tr>
+<td>Expense</td>
+<td>Maya's pre-existing account and B-1 entry are confirmed.</td>
+<td>No sign-in defect is shown. Check approval permission separately if the business requirement includes approving expenses.</td>
+</tr>
+<tr>
+<td>Projects</td>
+<td>Create rejected; ownership and correct association of the conflicting record are unknown.</td>
+<td>Establish record ownership and lookup history, choose the approved correction, then verify association, applicable operation result, and target state. Entry requires separate evidence.</td>
+</tr>
+</tbody>
+</table></div><p>A good handoff distinguishes observed facts from proposed actions. “All provisioning works because SSO succeeded” would cross both a protocol boundary and an application boundary.</p>
+<h2 id="task-6-jordans-remaining-authentication-requirement">Task 6: Jordan's remaining authentication requirement</h2>
+<p>The AD credential result for E-1 establishes password acceptance. The earlier import establishes a different data operation; it cannot supply that authentication result. Enrollment establishes the account/device registration, while an issued challenge establishes that Push was requested.</p>
+<p>The first unverified requirement is an accepted Push response. A notification that did not reach the device and a delivered notification that Jordan denied are two possible explanations. Request the selected-device delivery evidence and challenge response/outcome for E-1 to distinguish them. Neither explanation is established by the supplied packet.</p>
+<p>No evidence supports changing a working password or a federation setting as the correction. After the required authentication evidence is accepted, application-side acceptance, account state and permissions still need their own evidence. Packet B concerns Maya's different attempt and cannot fill those gaps. Revisit Day 6's operation distinction and Day 7's enrollment/challenge distinction if your answer treats import or enrollment as a completed sign-in.</p>
+<h2 id="assess-your-reasoning">Assess your reasoning</h2>
+<p>For each criterion, mark <strong>independent</strong>, <strong>with guidance</strong>, or <strong>needs review</strong>. Independent means you explained that point without consulting an explanation or reference for it; with guidance means a reference helped; needs review means the distinction remains unclear.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Criterion</th>
+<th>Evidence of understanding</th>
+<th>Revisit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AD operation</td>
+<td>Uses the current credential result, rather than import success, as password evidence.</td>
+<td>Day 6</td>
+</tr>
+<tr>
+<td>Authenticator evidence</td>
+<td>Separates enrollment, challenge issuance and an accepted response.</td>
+<td>Day 7</td>
+</tr>
+<tr>
+<td>Protocol purpose</td>
+<td>Separates SAML/OIDC sign-in from SCIM account management.</td>
+<td>Days 8 to 10</td>
+</tr>
+<tr>
+<td>Message route</td>
+<td>Separates browser delivery from backend exchanges.</td>
+<td>Days 2 and 9</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Does not equate readable claims or issuance with target acceptance.</td>
+<td>Days 8 to 9</td>
+</tr>
+<tr>
+<td>Account evidence</td>
+<td>Distinguishes a confirmed account from an unowned conflict report.</td>
+<td>Days 1 and 10</td>
+</tr>
+<tr>
+<td>Correction</td>
+<td>Fixes the audience defect but investigates ownership before resolving the conflict.</td>
+<td>Day 10 conflict example</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Keeps people, instances, attempts, permissions, and outcomes separate.</td>
+<td>Day 2 evidence boundaries</td>
+</tr>
+</tbody>
+</table></div><h2 id="try-a-changed-condition">Try a changed condition</h2>
+<p>Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Maya, SAL, and active true. No Projects sign-in is supplied. What changes?</p>
+<details markdown="1">
+<summary>Check the changed-condition reasoning</summary>
+<p>Creation and the checked account state are now supported, so the uniqueness investigation no longer follows from this packet. Projects sign-in and project permissions remain unverified. Expense success still cannot establish those outcomes for Projects.</p>
+</details>
+<h2 id="review-the-action-not-just-the-diagnosis">Review the action, not just the diagnosis</h2>
+<p>For your proposed action, mark each point as explained independently, explained with a reference, or still unclear. Revisit the specific missing explanation before trying a changed situation.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Point</th>
+<th>What your response should establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boundary</td>
+<td>Chooses the SAML, OIDC, authenticator, or SCIM evidence relevant to the supplied failure.</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Connects the proposed correction to that evidence, with no unrelated resets or account creation.</td>
+</tr>
+<tr>
+<td>Owner and effect</td>
+<td>Identifies the application or directory owner needed for the next check and considers other users of the connection.</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Requires a new relevant attempt or target read. A saved setting, issued challenge, or connection test does not settle later outcomes.</td>
+</tr>
+</tbody>
+</table></div><p><a href="/Okta_Theory_Teaching/assessments/integration.html">Checkpoint</a> · <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html">Day 10</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

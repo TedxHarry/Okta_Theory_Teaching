@@ -1,0 +1,251 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Final case: Northbridge's open identity tickets. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Final case: Northbridge's open identity tickets | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/assessments/final-case.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="final-case-northbridges-open-identity-tickets">Final case: Northbridge's open identity tickets</h1>
+<p>All records, identifiers, and operation summaries are synthetic. These are investigation snapshots, not raw product logs or executable requests. No corrective results are supplied unless explicitly stated.</p>
+<p>Record your investigation before opening the model answers or recap. For each ticket, use its evidence labels to distinguish confirmed findings, possible explanations, proposed actions, and outcomes still awaiting verification.</p>
+<p>Use this packet with the <a href="/Okta_Theory_Teaching/exercises/day-15.html">Day 15 tasks</a>. The current case follows Maya's effective move to Finance and Jordan's departure. Each ticket supplies its own observations; it does not claim that every earlier example occurred in one production history. Ticket F is an archived incident before Jordan departed.</p>
+<h2 id="environment-and-ownership">Environment and ownership</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Item</th>
+<th>Supplied architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employee flow</td>
+<td>Workday → Okta → AD and configured applications.</td>
+</tr>
+<tr>
+<td>Source priority</td>
+<td>Workday first, AD second, applied to each user's actual source associations.</td>
+</tr>
+<tr>
+<td>Employee fields</td>
+<td>Department and workerType inherit the effective profile source; employee department is Workday-owned here.</td>
+</tr>
+<tr>
+<td>Work email</td>
+<td>Explicitly sourced from AD for AD-linked employees; no competing outbound write to that field.</td>
+</tr>
+<tr>
+<td>Maya and Daniel</td>
+<td>Correct Workday and AD associations. Maya is Finance, NB-1042; Daniel is a Finance manager, NB-1020.</td>
+</tr>
+<tr>
+<td>Priya</td>
+<td>Sales contractor, maintained in Okta after sponsor approval; no Workday association or AD assignment and excluded from employee imports.</td>
+</tr>
+<tr>
+<td>Alex</td>
+<td>IAM administrator; administrative identity is Okta-managed and excluded from employee imports. Actual role authority must be checked for each change.</td>
+</tr>
+<tr>
+<td>Jordan</td>
+<td>Departed employee in current tickets; correctly linked accounts. F supplies an earlier employed state.</td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td>SAML sign-in. Do not assume SCIM provisioning.</td>
+</tr>
+<tr>
+<td>Expense</td>
+<td>OIDC confidential web client using Authorization Code, PKCE, and backend client authentication. Local application sessions are separately managed.</td>
+</tr>
+<tr>
+<td>Projects</td>
+<td>SCIM 2.0 create/update/deactivate contract from Day 10; required department codes SAL, FIN, IT. Projects is not a profile source.</td>
+</tr>
+</tbody>
+</table></div><p>For current sign-in tickets, use the supplied policy and authentication findings; do not invent another MFA requirement. Application permissions and account-management results remain separate checks.</p>
+<h2 id="ticket-a-mayas-department-differs-in-projects">Ticket A: Maya's department differs in Projects</h2>
+<p><strong>Requirement:</strong> Maya's effective Finance department must reach her existing Projects account as FIN. Projects access continues. The application uses this department value in an internal allocation report; approval permission is controlled separately.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Workday department Finance; employeeNumber NB-1042.</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Okta department Finance and workerType Employee; correct Workday association and ownership confirmed.</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Current outgoing departmentCode mapping is a fixed SAL value. Preview with Maya's Finance input produces SAL. Projects app profile contains SAL.</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>A correlated update sends SAL to linked Projects id prj-1042; target reports success. A subsequent read of that account shows SAL and active true.</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Maya can enter Projects, but the allocation report places her in Sales. No failed sign-in or approval-role problem is supplied.</td>
+</tr>
+</tbody>
+</table></div><p>No evidence says that HR should be changed or that the target rejected the value.</p>
+<h2 id="ticket-b-priyas-individual-salesforce-assignment">Ticket B: Priya's individual Salesforce assignment</h2>
+<p><strong>Normal requirement:</strong> Salesforce is assigned through NB-Sales-Employees, whose rule is Sales AND Employee. Contractor access needs a separate approved exception.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Priya's approved and stored classification is Sales / Contractor. Her source associations remain as stated above.</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>The active rule processes her profile. She is absent from NB-Sales-Employees.</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Salesforce is individually assigned to Priya. The exception approval, owner, scope, and end condition are not supplied.</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>Her existing Salesforce account is active; a correlated SAML sign-in is accepted and a protected page is returned.</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>Separate Expense evidence: her Expense exception is approved, the registered callback is used, state and PKCE exchange checks succeed, ID token validation including issuer/audience/nonce succeeds, and Expense confirms entry to her intended account.</td>
+</tr>
+</tbody>
+</table></div><p>The business request on the Salesforce ticket says, “Keep useful contractor access; executives should be different.” It does not define which contractors, which actions, or what “different” means. B5 concerns another application.</p>
+<h2 id="ticket-c-daniels-salesforce-sign-in-fails">Ticket C: Daniel's Salesforce sign-in fails</h2>
+<p><strong>Requirement and impact:</strong> Daniel has an approved Salesforce reporting exception and needs its reports for Finance work. His assignment and intended existing target account are confirmed. Salesforce received the sign-in response but rejected it; this attempt did not establish an application session.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>Okta account Active; required authenticators enrolled. Correlated current results satisfy the applicable global-session and app-authentication requirements.</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Okta issues the SAML response for this Salesforce production attempt.</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Selected assertion audience is <code>https://salesforce.northbridge.example/entity/test</code>.</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Production Salesforce expects <code>https://salesforce.northbridge.example/entity/prod</code>. Its correlated validation report accepts signature and validity checks but rejects the audience.</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>The response carries NameID <code>daniel.brooks@northbridge.example</code>; the configured matching value on the intended Salesforce account is the same. No Salesforce session is established.</td>
+</tr>
+</tbody>
+</table></div><p>These are selected decoded assertion fields with a separate supplied validation report, not a complete SAML message.</p>
+<h2 id="ticket-d-jordans-departure-is-not-fully-resolved">Ticket D: Jordan's departure is not fully resolved</h2>
+<p><strong>Requirement and impact:</strong> Jordan's departure is effective. Workforce access must end. The existing Expense session below still retrieves protected information.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Sequence</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Workday departure event is received for the correctly associated Okta identity.</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Okta deactivation completes; a later read shows DEPROVISIONED and absent app assignments. Fresh Okta sign-in is blocked.</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Directory owner confirms the correct AD account is disabled.</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Projects deactivation is enabled. The operation targets Jordan's linked resource with active false, receives HTTP 503, and a later account read still shows active true.</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>A new protected Expense request succeeds using his pre-existing local session after D2. It is not merely cached page content. No correlated new Okta sign-in is shown.</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Expense's account-management action, logout configuration, and session-termination result have not been supplied.</td>
+</tr>
+</tbody>
+</table></div><p>Do not infer the service-unavailability cause or the exact reason the Expense session persists. No successful retry is supplied.</p>
+<h2 id="ticket-e-projects-reports-a-username-conflict">Ticket E: Projects reports a username conflict</h2>
+<p><strong>Requirement:</strong> Priya has a separately approved Projects exception for a specified work assignment. This approval is independent of the missing Salesforce approval in B. Projects should provide the correct account without creating or taking over someone else's account.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td>Projects assignment is present. App profile userName is <code>priya.shah@northbridge.example</code>, departmentCode SAL.</td>
+</tr>
+<tr>
+<td>E2</td>
+<td>The recorded username lookup against the intended Projects instance reports no match. A subsequent create sends the expected userName, SAL enterprise department, and active true.</td>
+</tr>
+<tr>
+<td>E3</td>
+<td>The create receives HTTP 409 and the SCIM body below.</td>
+</tr>
+<tr>
+<td>E4</td>
+<td>The conflicting resource, ownership record, and exact lookup details are not supplied. No confirmed Projects association or successful create is shown.</td>
+</tr>
+</tbody>
+</table></div><pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;schemas&quot;: [&quot;urn:ietf:params:scim:api:messages:2.0:Error&quot;],
+  &quot;status&quot;: &quot;409&quot;,
+  &quot;scimType&quot;: &quot;uniqueness&quot;,
+  &quot;detail&quot;: &quot;userName is already in use in this Projects instance.&quot;
+}
+</code></pre>
+<p>A colleague suggests adding a number to the username and retrying. No approved naming correction is supplied.</p>
+<h2 id="ticket-f-archived-ad-password-incident">Ticket F: Archived AD password incident</h2>
+<p><strong>Historical context:</strong> This is a separate attempt before Jordan's departure. He was employed, his Okta account was Active, and his correct AD association was confirmed. This is not evidence that he can sign in now.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>A prior AD import successfully processed his scoped directory data.</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>AD delegated password authentication applies to the archived sign-in attempt. The handling agent receives the request and reaches the domain controller.</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>The domain controller returns a credential-validation rejection. The supplied packet does not specify whether the submitted password, an account restriction, or another directory condition explains it.</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>That attempt does not complete authentication. No application entry is supplied.</td>
+</tr>
+</tbody>
+</table></div><p>The ticket is retained for investigation review; it is not a request to restore access after departure.</p>
+<h2 id="your-response">Your response</h2>
+<p>Complete the <a href="/Okta_Theory_Teaching/exercises/day-15.html">seven tasks</a>, including a prioritized handoff and one complete mover or leaver explanation. Use evidence labels and leave unresolved findings explicit.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html">Day 15</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

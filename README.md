@@ -84,3 +84,25 @@ The optional [Day 16 practice bridge](lessons/day-16-safe-practice-plan.md) foll
 
 [Course repository](https://github.com/TedxHarry/Okta_Theory_Teaching)
 
+## Website maintenance
+
+The published website uses the generated `docs/` directory on `main`. The original Markdown remains the editable source. Existing `.html` addresses and explicit question/explanation anchors are retained. `_config.yml` and `_includes/` preserve the previous Jekyll implementation; they are not used by the prebuilt website.
+
+The shared reading interface provides a collapsible lesson menu, Lesson / Questions / Quizzes links, local search and full-size diagram viewing. All 669 original question explanations and 35 diagram placements remain available. There are 192 new multiple-choice questions: 12 for each core day and 12 for the optional Day 16. Quizzes include independent scenarios, 16 evidence packets and 32 reasoning prompts. Selection reveals a correct/incorrect result and explanations for every choice. Missed-only retry reshuffles those choices while retaining other answers. Answers are not stored or transmitted.
+
+Use Node.js 22 or newer:
+
+```sh
+npm ci
+npm run build
+npm run check
+npm test
+npm run serve
+```
+
+Open `http://127.0.0.1:4173/Okta_Theory_Teaching/`. Browser checks use installed Chrome on Windows; other platforms need a Playwright Chromium installation or `BROWSER_EXECUTABLE`.
+
+Edit lessons, exercises and reference Markdown in their existing locations. Quiz sources are `quizzes/day-NN.json`; each uses stable question/option IDs and a `correctId`. Every option requires an explanation. After changing a Mermaid diagram, run `npm run diagrams` before building. The builder verifies each diagram source against its rendered SVG manifest.
+
+Commit source changes and regenerated `docs/` together, then push `main`. GitHub Pages serves `/docs` without a custom workflow. Reports and screenshots go to the ignored `test-results/` directory. Plain reading, original answers, quiz answer disclosures and navigation remain useful without JavaScript. Fonts and rendered SVGs are self-hosted.
+

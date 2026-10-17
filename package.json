@@ -1,0 +1,32 @@
+{
+  "name": "okta-theory-teaching",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/quiz.test.mjs && node tests/browser.mjs",
+    "test:quiz": "node --test tests/quiz.test.mjs",
+    "diagrams": "node scripts/render-diagrams.mjs",
+    "serve": "node scripts/serve.mjs",
+    "format": "prettier --write site/style.css site/*.js scripts/*.mjs tests/*.mjs package.json premium-ui.json",
+    "format:check": "prettier --check site/style.css site/*.js scripts/*.mjs tests/*.mjs package.json premium-ui.json"
+  },
+  "dependencies": {
+    "github-slugger": "2.0.0",
+    "markdown-it": "15.0.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "mermaid": "11.16.1",
+    "playwright": "1.64.1",
+    "prettier": "3.9.10"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "katex": "0.18.2"
+  }
+}

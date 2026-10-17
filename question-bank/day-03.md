@@ -176,7 +176,7 @@ nav_order: 3
 
 ### Q11. Prepared is not stored at the target
 
-<p class="qb-question"><strong>Question:</strong> Daniel belongs to Finance, which Projects represents as FIN. His Projects app user profile—the application-specific information stored in Okta—contains FIN. No update response or account read inside Projects is supplied. Can support report that Projects stores FIN?</p>
+<p class="qb-question"><strong>Question:</strong> Daniel belongs to Finance, which Projects represents as FIN. His Projects app user profile (the application-specific information stored in Okta) contains FIN. No update response or account read inside Projects is supplied. Can support report that Projects stores FIN?</p>
 
 <details class="qb-answer" id="q11-explanation">
 <summary>Read the teaching explanation</summary>

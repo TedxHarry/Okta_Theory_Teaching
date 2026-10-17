@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 4,
+  "questions": [
+    {
+      "id": "L04-Q01",
+      "topic": "Source association",
+      "prompt": "An HR integration is highest priority, but a contractor has no HR source association. What should an engineer avoid assuming?",
+      "correctId": "3be761e44e",
+      "options": [
+        {
+          "id": "3be761e44e",
+          "text": "That the HR integration owns that contractor merely because it ranks first",
+          "explanation": "Source priority must be interpreted with the person's actual source relationships."
+        },
+        {
+          "id": "3ebb65ccc9",
+          "text": "That the contractor may have a different approved owner",
+          "explanation": "That is possible and should be checked."
+        },
+        {
+          "id": "70c52bbb6f",
+          "text": "That ownership requires inspecting the intended record",
+          "explanation": "That inspection is necessary to establish the relationship."
+        },
+        {
+          "id": "510a0f92b4",
+          "text": "That different attributes can have designated owners",
+          "explanation": "Attribute-level ownership can differ under supported configuration."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q02",
+      "topic": "Attribute ownership",
+      "prompt": "A profile uses HR-owned department and AD-owned directory attributes. Which conclusion is correct?",
+      "correctId": "7337f6f2b5",
+      "options": [
+        {
+          "id": "7337f6f2b5",
+          "text": "Ownership can be attribute-specific rather than one universal source for every field",
+          "explanation": "The supported sourcing agreement determines which system controls each value."
+        },
+        {
+          "id": "2500822209",
+          "text": "HR must overwrite every field because it owns department",
+          "explanation": "One owned attribute does not confer universal control."
+        },
+        {
+          "id": "d2550de2c8",
+          "text": "AD password validation makes AD owner of every profile field",
+          "explanation": "Authentication and attribute sourcing are separate responsibilities."
+        },
+        {
+          "id": "f253619f9e",
+          "text": "The latest edit always wins regardless of ownership",
+          "explanation": "Timing alone does not define the authoritative source."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q03",
+      "topic": "Authoritative correction",
+      "prompt": "An employee's HR-owned department is wrong in Okta and matches the wrong HR source value. Where should an authorized correction normally start?",
+      "correctId": "c8413866b3",
+      "options": [
+        {
+          "id": "c8413866b3",
+          "text": "The authoritative business source and its approved maintenance process",
+          "explanation": "Correcting the source aligns the business fact with its ownership contract."
+        },
+        {
+          "id": "1b003e8f4e",
+          "text": "Only a temporary target edit with no source investigation",
+          "explanation": "A later source update may overwrite an unsupported local change."
+        },
+        {
+          "id": "4bb0cb084d",
+          "text": "Disable the integration permanently",
+          "explanation": "That does not establish the right business fact or approved process."
+        },
+        {
+          "id": "1c590fdf1a",
+          "text": "Grant access through a random group",
+          "explanation": "That bypasses the data issue without resolving ownership."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q04",
+      "topic": "Overwrite behavior",
+      "prompt": "A local edit to an HR-owned Okta field is later replaced during source processing. What does this suggest?",
+      "correctId": "5f630c1cf6",
+      "options": [
+        {
+          "id": "5f630c1cf6",
+          "text": "The effective source relationship may be reapplying its authoritative value",
+          "explanation": "Inspect actual ownership and processing evidence rather than relying on the local edit alone."
+        },
+        {
+          "id": "d08ecc7f4d",
+          "text": "The local edit necessarily became permanent",
+          "explanation": "The observed replacement contradicts that assumption."
+        },
+        {
+          "id": "eb8596d9b4",
+          "text": "Every integration is broken",
+          "explanation": "The behavior may be consistent with configured ownership."
+        },
+        {
+          "id": "3f822740ac",
+          "text": "The account must have been recreated",
+          "explanation": "A field update does not by itself prove recreation."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q05",
+      "topic": "Contractor maintenance",
+      "prompt": "A contractor is maintained in Okta under sponsor approval and has no employee HR record. What is appropriate?",
+      "correctId": "d8af91b236",
+      "options": [
+        {
+          "id": "d8af91b236",
+          "text": "Use the approved contractor process and verify the intended record and owner",
+          "explanation": "Do not invent an employee-source association to imitate another population's path."
+        },
+        {
+          "id": "a88eec4f77",
+          "text": "Create a false HR employment record for convenience",
+          "explanation": "That changes the business facts and ownership model."
+        },
+        {
+          "id": "72a50accb1",
+          "text": "Assume the contractor cannot have any application access",
+          "explanation": "Eligibility depends on the approved requirement, not that missing HR relationship alone."
+        },
+        {
+          "id": "8788100bd7",
+          "text": "Treat the sponsor as automatically authorized for every technical change",
+          "explanation": "Business approval and operator administrative authority remain separate."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q06",
+      "topic": "Business meaning",
+      "prompt": "A user's correct workerType is Contractor, but an access rule requires Employee. What should happen before changing data?",
+      "correctId": "98c927714d",
+      "options": [
+        {
+          "id": "98c927714d",
+          "text": "Determine intended eligibility and any approved exception",
+          "explanation": "Correct data can legitimately produce nonmembership; do not falsify it to force access."
+        },
+        {
+          "id": "ad00114054",
+          "text": "Rewrite workerType to Employee without approval",
+          "explanation": "That changes a business fact to bypass an access condition."
+        },
+        {
+          "id": "ec157bdf6e",
+          "text": "Assume the rule engine malfunctioned",
+          "explanation": "The supplied result may follow the rule correctly."
+        },
+        {
+          "id": "349df2ea17",
+          "text": "Remove all other source relationships",
+          "explanation": "That is unrelated to establishing approved eligibility."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q07",
+      "topic": "Competing values",
+      "prompt": "HR and AD contain different department values. What determines which value should govern the Okta field?",
+      "correctId": "ba5a69befb",
+      "options": [
+        {
+          "id": "ba5a69befb",
+          "text": "The person's actual associations and configured attribute ownership",
+          "explanation": "Neither string recency nor product name alone establishes authority."
+        },
+        {
+          "id": "78d709c640",
+          "text": "Whichever console was opened last",
+          "explanation": "Viewing order has no sourcing authority."
+        },
+        {
+          "id": "707aa36647",
+          "text": "Always AD because it may validate passwords",
+          "explanation": "Credential validation does not define every profile owner."
+        },
+        {
+          "id": "1dbfbfcedf",
+          "text": "Always the shorter string",
+          "explanation": "String length has no ownership meaning."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q08",
+      "topic": "Sourcing versus authentication",
+      "prompt": "AD validates an employee password while HR owns employment data. Which statement fits?",
+      "correctId": "d3636a285f",
+      "options": [
+        {
+          "id": "d3636a285f",
+          "text": "Authentication routing and profile ownership are distinct configured relationships",
+          "explanation": "One system can validate credentials while another maintains employment facts."
+        },
+        {
+          "id": "c0ad8f8dd2",
+          "text": "Successful AD authentication makes AD the sole profile source",
+          "explanation": "A credential result does not redefine attribute ownership."
+        },
+        {
+          "id": "f3805b0b59",
+          "text": "An HR record directly validates every AD password",
+          "explanation": "HR data and AD credential validation serve different purposes."
+        },
+        {
+          "id": "5a16463f8e",
+          "text": "Only one integration can ever exist for a user",
+          "explanation": "Multiple relationships can support different responsibilities."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q09",
+      "topic": "Source evidence",
+      "prompt": "An integration settings page lists Workday first. What additional evidence is needed for a particular employee's department?",
+      "correctId": "62d025ab0d",
+      "options": [
+        {
+          "id": "62d025ab0d",
+          "text": "The actual user association, designated field owner and observed values/processing",
+          "explanation": "A global list alone does not prove ownership and current output for one user."
+        },
+        {
+          "id": "b093ce1d4e",
+          "text": "Only the user's display name",
+          "explanation": "Names do not establish source linkage or field authority."
+        },
+        {
+          "id": "b4aa1e0a8e",
+          "text": "Only a successful target session",
+          "explanation": "Session access does not reveal source ownership."
+        },
+        {
+          "id": "519ef8c94b",
+          "text": "Only another user's profile",
+          "explanation": "A different user's relationship cannot establish this one's."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q10",
+      "topic": "Unknown cause",
+      "prompt": "A field is stale in Okta while its source value is current. What is still unknown without operation evidence?",
+      "correctId": "9687f10886",
+      "options": [
+        {
+          "id": "9687f10886",
+          "text": "Which stage prevented the current source value from becoming effective",
+          "explanation": "The mismatch is observed, but its processing cause needs further evidence."
+        },
+        {
+          "id": "19895c90c7",
+          "text": "Whether the two observed values differ",
+          "explanation": "That comparison is explicitly supplied."
+        },
+        {
+          "id": "a868879923",
+          "text": "Whether the target app has every permission",
+          "explanation": "That unrelated result is also unverified, but does not explain this profile mismatch."
+        },
+        {
+          "id": "46de8f9b76",
+          "text": "Whether the source should be falsified to match the stale value",
+          "explanation": "A stale downstream copy does not justify altering the correct source fact."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    },
+    {
+      "id": "L04-Q11",
+      "topic": "Change planning",
+      "prompt": "An owner proposes changing source priority for a population. What needs assessment?",
+      "correctId": "9729df9fbd",
+      "options": [
+        {
+          "id": "9729df9fbd",
+          "text": "Affected user associations, attribute ownership, lifecycle effects and a controlled recovery plan",
+          "explanation": "Source changes can affect more than one displayed field or one user."
+        },
+        {
+          "id": "c41174a4fa",
+          "text": "Only the display order of the source names",
+          "explanation": "The setting can have operational effects beyond presentation."
+        },
+        {
+          "id": "63986f5334",
+          "text": "Only whether one test account still signs in",
+          "explanation": "One authentication result does not cover sourcing and lifecycle consequences."
+        },
+        {
+          "id": "edabb07255",
+          "text": "No assessment if the new source is a known product",
+          "explanation": "A product's familiarity does not establish correct scope or behavior."
+        }
+      ]
+    },
+    {
+      "id": "L04-Q12",
+      "topic": "Confirmed outcome",
+      "prompt": "An authorized source correction is approved but not executed. What may the handover claim?",
+      "correctId": "09ec4351cc",
+      "options": [
+        {
+          "id": "09ec4351cc",
+          "text": "The correction is approved; execution and downstream verification remain open",
+          "explanation": "Approval is a decision, not evidence that source or target state changed."
+        },
+        {
+          "id": "647d81646a",
+          "text": "The target is already correct",
+          "explanation": "No execution or target result is supplied."
+        },
+        {
+          "id": "2d609130ab",
+          "text": "The integration has completed synchronization",
+          "explanation": "No processing result is established."
+        },
+        {
+          "id": "450a473c0a",
+          "text": "The user's application issue is closed",
+          "explanation": "Closure needs the required verified outcome."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Observed source department: Finance",
+        "Observed Okta department: Sales",
+        "Relevant source/update processing result: not supplied"
+      ]
+    }
+  ]
+}

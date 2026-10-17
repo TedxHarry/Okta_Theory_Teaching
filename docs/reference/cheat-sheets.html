@@ -1,0 +1,163 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Cheat sheets. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Cheat sheets | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/cheat-sheets.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="cheat-sheets">Cheat sheets</h1>
+<p>Use these reminders after the corresponding lessons. For first explanations, follow the <a href="/Okta_Theory_Teaching/learning-path.html">learning path</a>; for unfamiliar terms, use the <a href="/Okta_Theory_Teaching/reference/glossary.html">glossary</a>.</p>
+<p>Use a row to check your conclusion, rather than as a substitute for the case evidence. Name the person, application instance and operation before deciding which distinction matters.</p>
+<h2 id="easily-confused-pairs">Easily confused pairs</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>This</th>
+<th>Is not this</th>
+<th>The difference in one line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity</td>
+<td>Account</td>
+<td>A digital identity represents an entity in a context; an account is a system record. One person can have several identities, such as employee and administrator identities.</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Authorization</td>
+<td>Who is signing in, versus what they are allowed to do.</td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>Provisioning</td>
+<td>Signing in, versus creating and managing the account.</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td>A usable account</td>
+<td>Okta intends them to have it, versus the account actually existing and working.</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>Group rule</td>
+<td>A collection of users, versus one mechanism for managing membership; groups can be managed in other ways.</td>
+</tr>
+<tr>
+<td>Import</td>
+<td>Provisioning</td>
+<td>Import reads records from a connected system into Okta; provisioning manages account lifecycle. In these outbound examples, Okta provisions target accounts.</td>
+</tr>
+<tr>
+<td>SAML</td>
+<td>OIDC</td>
+<td>Two different sign-in protocols; their messages are not interchangeable.</td>
+</tr>
+<tr>
+<td>ID token</td>
+<td>Access token</td>
+<td>Identity information validated by the OIDC client, versus a token presented to an intended API; neither is a universal permission grant.</td>
+</tr>
+<tr>
+<td>Okta session</td>
+<td>Application session</td>
+<td>Being signed in to Okta, versus being signed in to the app.</td>
+</tr>
+<tr>
+<td>Profile source</td>
+<td>Mapping</td>
+<td>Who controls a value, versus how a value moves and changes shape.</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>Connector</td>
+<td>An agent is software carrying out integration work; a connector defines supported integration capabilities. A connector may rely on an agent, as AD does here.</td>
+</tr>
+</tbody>
+</table></div><h2 id="okta-user-states-in-plain-words">Okta user states, in plain words</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>API status</th>
+<th>Console label</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STAGED</td>
+<td>Staged</td>
+<td>Created before activation is initiated, or awaiting administrative action.</td>
+</tr>
+<tr>
+<td>PROVISIONED</td>
+<td>Pending user action</td>
+<td>Activation-related user action remains. This does not mean every application account was provisioned.</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>Active</td>
+<td>Account is enabled; authentication requirements and application access still need their own checks.</td>
+</tr>
+<tr>
+<td>RECOVERY</td>
+<td>Password reset</td>
+<td>Account is in a password-recovery state.</td>
+</tr>
+<tr>
+<td>PASSWORD_EXPIRED</td>
+<td>Password expired</td>
+<td>Password update is required.</td>
+</tr>
+<tr>
+<td>LOCKED_OUT</td>
+<td>Locked out</td>
+<td>A lockout condition has been reached.</td>
+</tr>
+<tr>
+<td>SUSPENDED</td>
+<td>Suspended</td>
+<td>Okta access is suspended while assignments are retained.</td>
+</tr>
+<tr>
+<td>DEPROVISIONED</td>
+<td>Deactivated</td>
+<td>Okta account has been deactivated; distinct from deletion.</td>
+</tr>
+</tbody>
+</table></div><p>These are distinct API statuses, not required steps in one sequence. Active alone does not establish working sign-in or app access. Suspension retains assignments; deactivation is separate from deletion and does not prove every application session ended. See <a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a> and <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm">Okta user states</a>.</p>
+<h2 id="what-common-evidence-proves-and-does-not">What common evidence proves, and does not</h2>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>You see</th>
+<th>It proves</th>
+<th>It does not prove</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Okta sign-in success</td>
+<td>They authenticated to Okta for that attempt</td>
+<td>That the app let them in, or that an account exists</td>
+</tr>
+<tr>
+<td>An app tile on the dashboard</td>
+<td>The app is shown to the user</td>
+<td>That the account exists or that sign-in works</td>
+</tr>
+<tr>
+<td>An assignment in Okta</td>
+<td>Okta intends them to have the app</td>
+<td>That the account was created in the app</td>
+</tr>
+<tr>
+<td>A SCIM &quot;201 Created&quot;</td>
+<td>The app created the account for that request</td>
+<td>That sign-in works or that permissions are correct</td>
+</tr>
+<tr>
+<td>An import job reports completion</td>
+<td>That job completed within its reported scope</td>
+<td>That a particular user was included, correctly matched, or can sign in</td>
+</tr>
+<tr>
+<td>A &quot;200 OK&quot; on a page</td>
+<td>The request was handled</td>
+<td>That the person authenticated</td>
+</tr>
+</tbody>
+</table></div><p>Keep the right-hand column in mind. A successful result belongs to the action that produced it. Enrollment still needs accepted authentication proof; membership still needs the intended assignment; a target-account result still needs separate sign-in and permission evidence.</p>
+<p>After a correction, verify the requested outcome rather than only the saved setting. Restoring a rule does not by itself establish that unintended assignments, accounts or sessions have been cleaned up. When a result has not been checked, keep it marked as unknown.</p>
+<p><a href="/Okta_Theory_Teaching/">Course home</a></p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

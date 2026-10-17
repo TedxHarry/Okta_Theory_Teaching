@@ -1,0 +1,142 @@
+{
+  "07a722ac805e3fb66650b3e99e90cf7fa0c07316dbfb1aca9305ced24ebe9766": {
+    "file": "07a722ac805e3fb6.svg",
+    "source": "overview.md"
+  },
+  "e6cc6f141bca5bfcb722a7f9064bf4e7e41431814aed55d325bd20660fa473de": {
+    "file": "e6cc6f141bca5bfc.svg",
+    "source": "overview.md"
+  },
+  "b85d7dea31451d9cf450b0868eb3bc44d428368a0b04c0efca2a8182ec78426e": {
+    "file": "b85d7dea31451d9c.svg",
+    "source": "lessons/day-01-people-identities-access.md"
+  },
+  "1720c7ff3c86b9d9921ae2a5c6d39c7fe712d6e219911fa474974379beaf6b67": {
+    "file": "1720c7ff3c86b9d9.svg",
+    "source": "lessons/day-01-people-identities-access.md"
+  },
+  "1ae8bd9aa214d9f1a7676e44ec3ccdd0ef68498f4594b5a81309fe8de989fb97": {
+    "file": "1ae8bd9aa214d9f1.svg",
+    "source": "lessons/day-01-people-identities-access.md"
+  },
+  "1ce8b34801e9b024c48be05bc122cb74a4ffb8441dbbd89c61279ce1ac767c06": {
+    "file": "1ce8b34801e9b024.svg",
+    "source": "lessons/day-01-people-identities-access.md"
+  },
+  "22133062d8c4c6ea6a4c56aa3aea5730338677ae98291d9ecfd1bb013226181a": {
+    "file": "22133062d8c4c6ea.svg",
+    "source": "lessons/day-02-requests-and-evidence.md"
+  },
+  "f4bf542319b352251e35b7f0fe66d0106bccaac10b42d08d627c10a016b589a2": {
+    "file": "f4bf542319b35225.svg",
+    "source": "lessons/day-02-requests-and-evidence.md"
+  },
+  "1ede10105a1590ca3144e9f9f795f1631dea9d7a7d05dd972a72cf649150d5c3": {
+    "file": "1ede10105a1590ca.svg",
+    "source": "lessons/day-02-requests-and-evidence.md"
+  },
+  "9da634276002bcd046c73f60c463eb3ca19371aef8f179d37651834a838ab13e": {
+    "file": "9da634276002bcd0.svg",
+    "source": "lessons/day-03-profiles-and-mappings.md"
+  },
+  "4bf21aeaa10225e339cffbd3d0b9de2731e499e5badc4c7d85813071e2659e09": {
+    "file": "4bf21aeaa10225e3.svg",
+    "source": "lessons/day-03-profiles-and-mappings.md"
+  },
+  "8a06f447082dc4bcc459641e93491b6fd097fc4db1f4230dcd86630e3b8ca697": {
+    "file": "8a06f447082dc4bc.svg",
+    "source": "lessons/day-03-profiles-and-mappings.md"
+  },
+  "4324963498357bc57b85a34e8faca484a0f05527b98d588c36fdcb38e5dd8532": {
+    "file": "4324963498357bc5.svg",
+    "source": "lessons/day-04-sources-and-ownership.md"
+  },
+  "94d1393d7b601ea2ea321af155168bfd4063ac53eeadc8e4ed338fcc21472ff6": {
+    "file": "94d1393d7b601ea2.svg",
+    "source": "lessons/day-04-sources-and-ownership.md"
+  },
+  "3479bc0bb76cb39b2a1f2cdeebcfb023d8d4fc382391fd6e68c29f60385c4679": {
+    "file": "3479bc0bb76cb39b.svg",
+    "source": "lessons/day-04-sources-and-ownership.md"
+  },
+  "562d194d9266378ad1181bd2d308c9d3f18029435ee2cb201a503f3e13032a60": {
+    "file": "562d194d9266378a.svg",
+    "source": "lessons/day-05-groups-and-assignments.md"
+  },
+  "4dbcb0382defc8486501eff5a54731cc817d24e8fba0bfb87d1b63877f50395e": {
+    "file": "4dbcb0382defc848.svg",
+    "source": "lessons/day-05-groups-and-assignments.md"
+  },
+  "cb092174421cab16a1c32d67787fe562fe671fde30775412151c7b0236889cd5": {
+    "file": "cb092174421cab16.svg",
+    "source": "lessons/day-06-active-directory.md"
+  },
+  "d8a3a58ecbc8dc290702bdeff0707324f32ad25afcfb4091429ec604df78a140": {
+    "file": "d8a3a58ecbc8dc29.svg",
+    "source": "lessons/day-06-active-directory.md"
+  },
+  "f753bc5c1a596a21329fb1ec13c8080d3ea278c236056ea8f065cca03a84f9f7": {
+    "file": "f753bc5c1a596a21.svg",
+    "source": "lessons/day-06-active-directory.md"
+  },
+  "058204963b42fcea0fe5c6c38f2b7d7f6f3dedaac958cd2e6f47fb2209813343": {
+    "file": "058204963b42fcea.svg",
+    "source": "lessons/day-06-active-directory.md"
+  },
+  "9d964c95fb1b3de8e1d4be1c149bf8d4832abb2a76e23eba3540b042a9f9da1f": {
+    "file": "9d964c95fb1b3de8.svg",
+    "source": "lessons/day-07-authenticators-enrollment-mfa.md"
+  },
+  "4441747a089f6afa4f3cf6a9a7e9cc2ac01ecc85c8a44fe79bfef131decdd9f0": {
+    "file": "4441747a089f6afa.svg",
+    "source": "lessons/day-08-saml.md"
+  },
+  "63c3d45f91b3f82ba736fbb394d70355a6b5e7007161b5a3efe6154f9958bb25": {
+    "file": "63c3d45f91b3f82b.svg",
+    "source": "lessons/day-09-oidc.md"
+  },
+  "27fbd9adfdf374ae2f880db9883e7a3d931d2ce5d5b8e78aadc215f0345b2ded": {
+    "file": "27fbd9adfdf374ae.svg",
+    "source": "lessons/day-10-scim.md"
+  },
+  "cb0e117054ef383d7d50fd7cd277fb901209793179947fcaf00f4ce77a7171c6": {
+    "file": "cb0e117054ef383d.svg",
+    "source": "lessons/day-12-joiners-movers-leavers.md"
+  },
+  "ed4aa9db721a35f1c837ca5e7fe7f1ef3c621ea1ebc933a685a7e75f3ae07edf": {
+    "file": "ed4aa9db721a35f1.svg",
+    "source": "lessons/day-13-policies-and-sessions.md"
+  },
+  "c076712292f4e5f9166eb3a5c3f10a954dc5cf9a5c8716ce13d9ff5a4ca038a8": {
+    "file": "c076712292f4e5f9.svg",
+    "source": "reference/onboarding-an-application.md"
+  },
+  "c86ee504740992faba223a2aa5ce901f0a9dd5df50c48a730b3f4e8596c13fe9": {
+    "file": "c86ee504740992fa.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "3e2f99a81d726e1584841bcc07eea07d2aabcd52473817737b1cb7c01f815912": {
+    "file": "3e2f99a81d726e15.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "bd896f09929fc2ca044bbf14bbc0e84891be4b8e133389c90e0640303a667ccb": {
+    "file": "bd896f09929fc2ca.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "23098e2b924fb91cfa2e429456920b0f9e43a94083186970fca5ae864f6f61d4": {
+    "file": "23098e2b924fb91c.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "1f3f02bf6b36d8eeab5a30a4bca65dbb01af6a728a105ac30f858eb3ee293013": {
+    "file": "1f3f02bf6b36d8ee.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "3531f42ac613007eece41213cb8d5d3b9ce84cdd8ebea1e6bdaca130c516e427": {
+    "file": "3531f42ac613007e.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  },
+  "0d280d917d3b9788b0e92182f9e7d22388e7650bdb4c1b335f1041f60f318e1d": {
+    "file": "0d280d917d3b9788.svg",
+    "source": "reference/troubleshooting-playbook.md"
+  }
+}

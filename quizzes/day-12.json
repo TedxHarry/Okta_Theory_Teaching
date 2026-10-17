@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 12,
+  "questions": [
+    {
+      "id": "L12-Q01",
+      "topic": "Joiner readiness",
+      "prompt": "HR creates an employee record. What still needs verification before calling the employee app-ready?",
+      "correctId": "a868b543c1",
+      "options": [
+        {
+          "id": "a868b543c1",
+          "text": "Identity propagation, intended assignments, target accounts and required access",
+          "explanation": "An upstream employment record is not complete downstream readiness."
+        },
+        {
+          "id": "d57e22de7e",
+          "text": "All target accounts must already exist immediately",
+          "explanation": "Creation timing and supported provisioning require their own results."
+        },
+        {
+          "id": "bd8ad21d35",
+          "text": "The employee automatically has every app role",
+          "explanation": "Permissions depend on approved requirements and target enforcement."
+        },
+        {
+          "id": "5ee56a5d0c",
+          "text": "Only the user's display name matters",
+          "explanation": "Readiness includes state, relationships and actual application outcomes."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q02",
+      "topic": "Mover timing",
+      "prompt": "An employee's Finance move takes effect next Monday. What should guide access changes?",
+      "correctId": "bef2d6affc",
+      "options": [
+        {
+          "id": "bef2d6affc",
+          "text": "The approved effective time and intended old/new access requirements",
+          "explanation": "Do not treat a future business change as already effective."
+        },
+        {
+          "id": "9adf7e4f85",
+          "text": "Every source value should change immediately regardless of date",
+          "explanation": "That ignores the approved timing constraint."
+        },
+        {
+          "id": "290e4bd953",
+          "text": "Keep all old access indefinitely",
+          "explanation": "Old access needs an explicit retention or removal decision."
+        },
+        {
+          "id": "8dccc99085",
+          "text": "The new job title alone grants all Finance permissions",
+          "explanation": "Business context is not a complete permission contract."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q03",
+      "topic": "Old access paths",
+      "prompt": "A mover leaves one Sales group but retains a direct Sales app assignment. What should be checked?",
+      "correctId": "3a678def7f",
+      "options": [
+        {
+          "id": "3a678def7f",
+          "text": "Whether the remaining path is intended and approved",
+          "explanation": "Removing one grant does not establish removal of all old access."
+        },
+        {
+          "id": "21b43b8cb5",
+          "text": "Assume the app is fully unassigned",
+          "explanation": "The direct path can preserve assignment."
+        },
+        {
+          "id": "71580494f8",
+          "text": "Delete the employee identity to remove one grant",
+          "explanation": "That is broader than the supplied access problem."
+        },
+        {
+          "id": "4ca315d93d",
+          "text": "Change the department back to Sales",
+          "explanation": "The correct move should not be falsified to fit leftover access."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q04",
+      "topic": "Multiple populations",
+      "prompt": "An HR-led employee and an Okta-managed contractor both leave. Why can their procedures differ?",
+      "correctId": "863f856239",
+      "options": [
+        {
+          "id": "863f856239",
+          "text": "Their approved ownership and lifecycle relationships differ",
+          "explanation": "A shared removal goal does not imply identical source-side actions."
+        },
+        {
+          "id": "7ce9f762c1",
+          "text": "Every contractor must first be added to employee HR",
+          "explanation": "Do not invent a false association to imitate another population."
+        },
+        {
+          "id": "e5625daece",
+          "text": "Only employees can have app sessions",
+          "explanation": "Contractors can also have supported application sessions."
+        },
+        {
+          "id": "2b5e1b1b91",
+          "text": "The same display label guarantees the same lifecycle behavior",
+          "explanation": "Labels do not establish ownership and connector contracts."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q05",
+      "topic": "Leaver scope",
+      "prompt": "An employee is deactivated in Okta. What remains to verify?",
+      "correctId": "2362f8f244",
+      "options": [
+        {
+          "id": "2362f8f244",
+          "text": "Target account/access outcomes and relevant existing sessions under supported mechanisms",
+          "explanation": "Provider lifecycle state does not prove every downstream termination."
+        },
+        {
+          "id": "72163bf053",
+          "text": "Every app session necessarily ended instantly",
+          "explanation": "That requires applicable revocation support and outcome evidence."
+        },
+        {
+          "id": "1001ee5fa6",
+          "text": "Every target account was physically deleted",
+          "explanation": "Deactivation and deletion are distinct operations."
+        },
+        {
+          "id": "a8f6f13dae",
+          "text": "No downstream checks are needed once the source is updated",
+          "explanation": "Each relevant target outcome still matters."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q06",
+      "topic": "Deactivation versus deletion",
+      "prompt": "Why distinguish disabling a target account from deleting it?",
+      "correctId": "1ed8fb114c",
+      "options": [
+        {
+          "id": "1ed8fb114c",
+          "text": "They have different resource, data-retention and recovery effects",
+          "explanation": "Use the approved supported lifecycle operation rather than treating names as interchangeable."
+        },
+        {
+          "id": "4155f6919b",
+          "text": "Both always erase all stored business data",
+          "explanation": "A disabled account can remain as a stored resource."
+        },
+        {
+          "id": "d9bf717ed8",
+          "text": "Deletion is always the safest default for every leaver",
+          "explanation": "The correct action depends on approved policy and target behavior."
+        },
+        {
+          "id": "e8f0ce5b23",
+          "text": "Deactivation always ends every session automatically",
+          "explanation": "Session termination scope must be verified separately."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q07",
+      "topic": "Existing sessions",
+      "prompt": "A removed assignment blocks new SSO, but an old local app session still works. What boundary remains open?",
+      "correctId": "81e9df0b78",
+      "options": [
+        {
+          "id": "81e9df0b78",
+          "text": "The existing application's session termination or re-evaluation behavior",
+          "explanation": "Future entry and current session continuity are distinct concerns."
+        },
+        {
+          "id": "c41291231f",
+          "text": "The old assignment necessarily remains in Okta",
+          "explanation": "An old local session can explain access after assignment removal."
+        },
+        {
+          "id": "602d108934",
+          "text": "The successful request proves a fresh SAML assertion was issued",
+          "explanation": "Existing session access may involve no federation exchange."
+        },
+        {
+          "id": "30b5984bcb",
+          "text": "Changing the HR manager automatically ends the session",
+          "explanation": "That field change does not establish a revocation operation."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q08",
+      "topic": "Asynchronous outcomes",
+      "prompt": "A leaver update is queued for a target. What should the tracking record say?",
+      "correctId": "aaab8792f7",
+      "options": [
+        {
+          "id": "aaab8792f7",
+          "text": "The requested action is pending until its relevant completion is verified",
+          "explanation": "Queued work must not be described as confirmed removal."
+        },
+        {
+          "id": "1ac75b55a9",
+          "text": "Access is already removed everywhere",
+          "explanation": "The supplied record lacks that downstream evidence."
+        },
+        {
+          "id": "014952e574",
+          "text": "The target definitely rejected it",
+          "explanation": "A pending state does not prove a failure either."
+        },
+        {
+          "id": "1e93e8568b",
+          "text": "The employee has no identity in any system",
+          "explanation": "A queued operation does not erase all records."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q09",
+      "topic": "Responsibility",
+      "prompt": "A target does not support the desired automated deactivation. What is needed?",
+      "correctId": "1d831276da",
+      "options": [
+        {
+          "id": "1d831276da",
+          "text": "A documented approved manual or alternative removal process with an owner and verification",
+          "explanation": "An unsupported connector capability does not remove the business obligation."
+        },
+        {
+          "id": "cb7fb76b58",
+          "text": "Assume Okta automatically invents the missing operation",
+          "explanation": "Product support constrains what the integration can execute."
+        },
+        {
+          "id": "436c1c8bd8",
+          "text": "Close the leaver task because automation was attempted",
+          "explanation": "Attempted work is not completed removal."
+        },
+        {
+          "id": "a7d885adb1",
+          "text": "Give the user a different department to suppress the ticket",
+          "explanation": "That falsifies facts instead of resolving access termination."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q10",
+      "topic": "Investigation packet",
+      "prompt": "HR departure is effective and Okta is deactivated, but no target result is supplied. What remains unknown?",
+      "correctId": "98f33724e5",
+      "options": [
+        {
+          "id": "98f33724e5",
+          "text": "Whether each relevant downstream account and session meets the removal requirement",
+          "explanation": "Upstream completion does not establish unobserved target outcomes."
+        },
+        {
+          "id": "99ea69c247",
+          "text": "Whether the supplied departure is effective",
+          "explanation": "That fact is explicitly stated."
+        },
+        {
+          "id": "84ce1e92fb",
+          "text": "Whether Okta was recorded as deactivated",
+          "explanation": "That state is supplied directly."
+        },
+        {
+          "id": "7874d45638",
+          "text": "Whether every record must be physically deleted",
+          "explanation": "Physical deletion is not a universal consequence of departure."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "HR departure: effective",
+        "Okta user: deactivated",
+        "Target account and existing-session results: not supplied"
+      ]
+    },
+    {
+      "id": "L12-Q11",
+      "topic": "Expected denial",
+      "prompt": "A former employee's fresh app sign-in is denied after verified removal. How should that test be recorded?",
+      "correctId": "36fb815427",
+      "options": [
+        {
+          "id": "36fb815427",
+          "text": "A successful rejection test under the removal requirement",
+          "explanation": "Expected denial can demonstrate a correctly enforced boundary."
+        },
+        {
+          "id": "07f5390e2c",
+          "text": "As proof the identity system needs reactivation",
+          "explanation": "That would contradict the intended removal outcome."
+        },
+        {
+          "id": "b53632c271",
+          "text": "As proof all old sessions are terminated",
+          "explanation": "The fresh-entry test does not establish every existing session's state."
+        },
+        {
+          "id": "3c17b09a42",
+          "text": "As an application outage for all users",
+          "explanation": "One intended rejection does not establish a universal outage."
+        }
+      ]
+    },
+    {
+      "id": "L12-Q12",
+      "topic": "Completion evidence",
+      "prompt": "After an employee departure, which handover most usefully establishes the access-removal status?",
+      "correctId": "d804b0bea9",
+      "options": [
+        {
+          "id": "d804b0bea9",
+          "text": "Named systems, required end states, actual results, owners and unresolved outcomes",
+          "explanation": "Completion should be scoped to confirmed evidence, with open work visible."
+        },
+        {
+          "id": "8f3287457b",
+          "text": "Only the phrase access removed",
+          "explanation": "That does not identify systems, sessions or verification."
+        },
+        {
+          "id": "7d16d175ac",
+          "text": "Only a source screenshot",
+          "explanation": "An upstream view does not establish target outcomes."
+        },
+        {
+          "id": "0b5c32c3dc",
+          "text": "Only a proposed removal script",
+          "explanation": "A proposal is not an execution and verification record."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

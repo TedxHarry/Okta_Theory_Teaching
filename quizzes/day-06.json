@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 6,
+  "questions": [
+    {
+      "id": "L06-Q01",
+      "topic": "Agent role",
+      "prompt": "An AD integration uses an installed Okta AD Agent. What role does the agent play?",
+      "correctId": "7fcc97214b",
+      "options": [
+        {
+          "id": "7fcc97214b",
+          "text": "It supports configured communication between Okta and the directory environment",
+          "explanation": "The agent connects supported operations; it does not replace the directory."
+        },
+        {
+          "id": "00b88e16a0",
+          "text": "It becomes the employee's authoritative HR record automatically",
+          "explanation": "Agent installation does not redefine profile ownership."
+        },
+        {
+          "id": "7f32ed74c8",
+          "text": "It makes every target app share AD's session store",
+          "explanation": "Directory connectivity does not merge application sessions."
+        },
+        {
+          "id": "10281d3a1d",
+          "text": "It provisions every app without separate support",
+          "explanation": "Each app operation depends on its own supported configuration."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q02",
+      "topic": "Import versus authentication",
+      "prompt": "An AD import succeeds, but a later AD-password sign-in fails. Why can both occur?",
+      "correctId": "88cebd2eef",
+      "options": [
+        {
+          "id": "88cebd2eef",
+          "text": "Data import and credential validation are different operations",
+          "explanation": "Success of one operation does not establish the other's current path or result."
+        },
+        {
+          "id": "bad8b018aa",
+          "text": "Import success proves every future password is valid",
+          "explanation": "An import is not a password-validation result."
+        },
+        {
+          "id": "f31b554e35",
+          "text": "Password failure proves no account was imported",
+          "explanation": "A credential problem does not erase an imported record."
+        },
+        {
+          "id": "99547fe860",
+          "text": "Both must be the same operation under different names",
+          "explanation": "They serve distinct data and authentication responsibilities."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q03",
+      "topic": "Delegated authentication",
+      "prompt": "A configured employee sign-in path delegates AD password validation. Where is that password checked?",
+      "correctId": "bac56f5abc",
+      "options": [
+        {
+          "id": "bac56f5abc",
+          "text": "Through the supported agent path against AD",
+          "explanation": "The configured directory participates in validating the supplied credential."
+        },
+        {
+          "id": "881b3ae3d5",
+          "text": "By the target application's account database only",
+          "explanation": "That is not the supplied delegated AD authentication path."
+        },
+        {
+          "id": "42d58afbc2",
+          "text": "By comparing the HR department value",
+          "explanation": "Profile data does not validate an AD password."
+        },
+        {
+          "id": "0136cf3ff1",
+          "text": "By a SAML audience comparison",
+          "explanation": "Audience targeting is a different federation check."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q04",
+      "topic": "Source ownership",
+      "prompt": "HR owns an employee's department while AD validates the employee's password. What is correct?",
+      "correctId": "bbffc377e0",
+      "options": [
+        {
+          "id": "bbffc377e0",
+          "text": "HR-led data ownership can coexist with AD credential validation",
+          "explanation": "Data sourcing and authentication routing have distinct roles."
+        },
+        {
+          "id": "57c15f74f8",
+          "text": "AD must own department because it checks passwords",
+          "explanation": "Credential validation does not grant universal attribute authority."
+        },
+        {
+          "id": "640c0e2825",
+          "text": "HR directly validates the AD password",
+          "explanation": "The supplied path places credential validation in AD."
+        },
+        {
+          "id": "bbd292d349",
+          "text": "Only one relationship can be configured for the user",
+          "explanation": "Multiple integrations can support separate responsibilities."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q05",
+      "topic": "Connectivity failure",
+      "prompt": "An agent cannot reach the required directory service, and no password-validation result is returned. What should be investigated first?",
+      "correctId": "1f82888e75",
+      "options": [
+        {
+          "id": "1f82888e75",
+          "text": "The supported agent-to-directory communication path",
+          "explanation": "No credential verdict is established when the validation path could not complete."
+        },
+        {
+          "id": "2f03ed26ad",
+          "text": "The password is definitely incorrect",
+          "explanation": "A communication failure is not a rejected credential result."
+        },
+        {
+          "id": "2877662483",
+          "text": "The user must be deleted and recreated",
+          "explanation": "The evidence does not justify that lifecycle action."
+        },
+        {
+          "id": "c8737da389",
+          "text": "Every application signing certificate must be replaced",
+          "explanation": "That is unrelated to the stated directory communication gap."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q06",
+      "topic": "Credential rejection",
+      "prompt": "The agent reaches AD, and AD explicitly rejects the supplied credentials. What is established?",
+      "correctId": "f152ef2890",
+      "options": [
+        {
+          "id": "f152ef2890",
+          "text": "Credential validation failed for that attempt",
+          "explanation": "Investigate the specific account and credential result without generalizing beyond it."
+        },
+        {
+          "id": "27b2ca8caa",
+          "text": "The agent necessarily could not contact AD",
+          "explanation": "A directory rejection establishes a processed validation result."
+        },
+        {
+          "id": "95a46ffe3c",
+          "text": "Every directory import failed",
+          "explanation": "Import is a different operation and has no supplied result here."
+        },
+        {
+          "id": "58bb03d80e",
+          "text": "The user's app resource role is wrong",
+          "explanation": "A credential rejection occurs before that local authorization question."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q07",
+      "topic": "Account association",
+      "prompt": "A displayed Okta user has no established association with the intended AD account. What needs checking?",
+      "correctId": "14c1c4b65e",
+      "options": [
+        {
+          "id": "14c1c4b65e",
+          "text": "The actual directory-user association and intended authentication path",
+          "explanation": "A familiar name does not establish the correct account linkage."
+        },
+        {
+          "id": "dcc3727959",
+          "text": "Only whether the department text matches",
+          "explanation": "Matching department is not unique account association evidence."
+        },
+        {
+          "id": "6a5c2870aa",
+          "text": "Any AD account with the same first name",
+          "explanation": "A similar name is insufficient to establish ownership."
+        },
+        {
+          "id": "3ee001eae6",
+          "text": "Whether the app tile is visible",
+          "explanation": "A shortcut does not prove the directory relationship."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q08",
+      "topic": "Directory account state",
+      "prompt": "An employee has an active Okta record but the associated AD account is locked. Why can delegated authentication fail?",
+      "correctId": "2deb288a46",
+      "options": [
+        {
+          "id": "2deb288a46",
+          "text": "The directory's own account restrictions affect its credential-validation result",
+          "explanation": "Active state in one system does not override the other's local restriction."
+        },
+        {
+          "id": "5efb9fb6f8",
+          "text": "Okta active status guarantees AD is usable",
+          "explanation": "The systems maintain distinct account states."
+        },
+        {
+          "id": "9ba67c24e1",
+          "text": "A locked account proves every profile mapping is wrong",
+          "explanation": "Credential state does not establish mapping correctness."
+        },
+        {
+          "id": "364629cb53",
+          "text": "The app must accept the user because assignment exists",
+          "explanation": "Assignment cannot waive the failed authentication requirement."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q09",
+      "topic": "Operation scope",
+      "prompt": "An administrator sees an enabled AD integration. What is still needed to explain one failed sign-in?",
+      "correctId": "a51b047bb2",
+      "options": [
+        {
+          "id": "a51b047bb2",
+          "text": "Relevant user association, actual route, agent and directory result for the attempt",
+          "explanation": "Enabled configuration is not an execution trace."
+        },
+        {
+          "id": "9b92282918",
+          "text": "Only the integration's display name",
+          "explanation": "A name does not locate the failing operation."
+        },
+        {
+          "id": "600d8a16f6",
+          "text": "Only an unrelated successful import",
+          "explanation": "That does not establish the current password-validation path."
+        },
+        {
+          "id": "2218605b56",
+          "text": "A claim that AD is always the sole source",
+          "explanation": "That overgeneralizes both ownership and authentication."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q10",
+      "topic": "Follow-up evidence",
+      "prompt": "After a directory communication repair, one controlled password sign-in succeeds. What does this prove?",
+      "correctId": "4d3e8aac4b",
+      "options": [
+        {
+          "id": "4d3e8aac4b",
+          "text": "The repaired path worked for that account and attempt",
+          "explanation": "Broader account, app and lifecycle outcomes still need their own evidence."
+        },
+        {
+          "id": "32216338df",
+          "text": "All users and apps are permanently healthy",
+          "explanation": "One result cannot support that universal conclusion."
+        },
+        {
+          "id": "94189e4e1c",
+          "text": "Every source field is synchronized",
+          "explanation": "Credential validation does not verify all profile data."
+        },
+        {
+          "id": "7b20a47090",
+          "text": "All old application sessions have ended",
+          "explanation": "The sign-in result is unrelated to session termination elsewhere."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Directory communication repair: applied",
+        "Controlled account/attempt: AD credential validation succeeded",
+        "Other users, apps and profile synchronization: not tested"
+      ]
+    },
+    {
+      "id": "L06-Q11",
+      "topic": "AD-led variation",
+      "prompt": "A different organization sources its users from AD instead of HR. What should be re-established before applying another company's procedure?",
+      "correctId": "b130df0c8e",
+      "options": [
+        {
+          "id": "b130df0c8e",
+          "text": "Actual ownership, user associations, direction and supported lifecycle behavior",
+          "explanation": "A familiar product stack does not guarantee the same source architecture."
+        },
+        {
+          "id": "cff962e138",
+          "text": "Only rename the company in the procedure",
+          "explanation": "Labels do not reconcile different ownership contracts."
+        },
+        {
+          "id": "18f2893988",
+          "text": "Assume HR remains authoritative anyway",
+          "explanation": "The question explicitly supplies a different sourcing arrangement."
+        },
+        {
+          "id": "0f757b5680",
+          "text": "Skip target verification because AD is the source",
+          "explanation": "Source choice does not prove downstream completion."
+        }
+      ]
+    },
+    {
+      "id": "L06-Q12",
+      "topic": "Useful handover",
+      "prompt": "Which directory-team handover best supports an investigation?",
+      "correctId": "2549af48c3",
+      "options": [
+        {
+          "id": "2549af48c3",
+          "text": "User/account identifiers, operation, time, observed path and the exact missing or rejected result",
+          "explanation": "Specific evidence separates connectivity, account state and credential failures."
+        },
+        {
+          "id": "59a02e59a8",
+          "text": "A statement that all AD is broken",
+          "explanation": "A broad symptom supplies no actionable boundary."
+        },
+        {
+          "id": "2391608696",
+          "text": "Only a screenshot of an app tile",
+          "explanation": "That does not describe directory validation."
+        },
+        {
+          "id": "69f7d116d9",
+          "text": "A request to reset every user's password",
+          "explanation": "The evidence does not justify a universal credential change."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}

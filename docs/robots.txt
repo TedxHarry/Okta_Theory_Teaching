@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tedxharry.github.io/Okta_Theory_Teaching/sitemap.xml

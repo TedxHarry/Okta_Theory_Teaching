@@ -1,0 +1,178 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 13: Policies, sessions, and another authentication check. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 13: Policies, sessions, and another authentication check | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=c51dc98a731d"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=c51dc98a731d"><script src="/Okta_Theory_Teaching/assets/app.js?v=c51dc98a731d" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html" aria-current="page"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html" aria-current="page">Lesson 13</a><a href="/Okta_Theory_Teaching/question-bank/day-13.html">Questions (42)</a><a href="/Okta_Theory_Teaching/quizzes/day-13.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-13-policies-sessions-and-another-authentication-check">Day 13: Policies, sessions, and another authentication check</h1>
+<p>Daniel opens Northbridge Expense from his Okta dashboard and receives another authentication challenge. He asks, “I am already signed in. Why am I being asked again?”</p>
+<p>Daniel can see his dashboard, so another prompt feels like the sign-in he already completed is being ignored. Alex needs to separate two questions: is Daniel's Okta session still accepted, and does his authentication evidence satisfy Expense's current requirement? An existing session and an acceptable authentication result for this application are different facts. The challenge could be expected, or it could reveal an incorrect rule or context.</p>
+<p>Daniel remains an active Finance manager. His Expense assignment and existing application account are confirmed for this lesson. Missing assignment and missing provisioning are not the demonstrated problems.</p>
+<p>First follow a correctly applied rule that requires fresh possession proof. Then compare it with a genuine rule-selection problem. Finally, follow the same browser using separate Okta and Expense sessions, and decide what evidence shows that each one ended. By the end, explain an authentication challenge using the applied rule and current evidence, and verify Okta and application session outcomes separately.</p>
+<h2 id="give-each-policy-a-specific-job">Give each policy a specific job</h2>
+<p>Alex starts with what the system is required to check. A <strong>policy</strong> groups requirements. A <strong>rule</strong> states when particular conditions apply and what decision or authentication requirement follows. The policy's job matters: an enrollment requirement, an Okta-session requirement and an application authentication requirement answer different questions.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Policy or control</th>
+<th>Main question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authenticator enrollment policy</td>
+<td>Which authenticators may or must this person enroll?</td>
+</tr>
+<tr>
+<td>Global session policy</td>
+<td>What requirements and limits govern the Okta session?</td>
+</tr>
+<tr>
+<td>Application authentication policy, also called an app sign-in policy</td>
+<td>What authentication must satisfy this application's access request?</td>
+</tr>
+<tr>
+<td>Application's own permissions</td>
+<td>What may the person do after entering the application?</td>
+</tr>
+</tbody>
+</table></div><p>Enrollment is not an accepted challenge response. An app sign-in policy is not the app's expense-approval role. Okta Identity Engine requires the applicable global-session and app authentication requirements to be satisfied; one does not simply cancel the other. See <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/about-policies.htm">Okta policies and rules</a>.</p>
+<p><strong>Authentication assurance</strong> means the confidence supported by the authentication evidence and its characteristics. A requirement can concern factor types, acceptable methods, or properties such as phishing resistance. Alex compares the evidence with the actual requirement, rather than treating all successful authentication as interchangeable. “MFA happened” is too vague if the current requirement demands something that evidence does not satisfy.</p>
+<h2 id="keep-session-lifetime-and-reauthentication-separate">Keep session lifetime and reauthentication separate</h2>
+<p>After authentication, a service needs to recognize the person's continuing interaction without starting the same process from the beginning for every request. A <strong>session</strong> lets it do that. In this browser-based example, a <strong>cookie</strong> is a small piece of data the browser stores and sends with the relevant requests. Cookies help it present session information to the service. The service still decides whether to accept that information. Finding a cookie in the browser does not establish that a protected request will succeed.</p>
+<p>The global session policy governs the Okta session, including its maximum lifetime and idle limit. Ask &quot;How long may this session last overall?&quot; for maximum lifetime, and &quot;Has it been inactive too long?&quot; for the idle limit. The service evaluates those limits for its own session. Neither should be assumed to equal the lifetime of an application's own session.</p>
+<p><strong>Reauthentication</strong> is another authentication check required for an access request. The app sign-in policy can require renewed evidence even while an Okta session remains valid. Existing evidence might also be reusable when it satisfies the applicable requirements. The result depends on the actual rule and context, not a universal “one prompt per session” rule. See <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/add-okta-sign-on-policy-rule.htm">global-session rules</a> and <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/add-app-sign-on-policy-rule.htm">app sign-in rules</a>.</p>
+<p>Keep two clocks and one access decision distinct: how long the session can last, how inactivity is measured, and whether the current request needs another authentication check. An Okta app sign-in rule acts when the application sign-in flow reaches Okta. It does not mean every click within an already established application session automatically returns to Okta for evaluation.</p>
+<h2 id="identify-the-policy-that-actually-applies">Identify the policy that actually applies</h2>
+<p>An application must be associated with the intended authentication policy. A policy may be shared by multiple applications. Editing a shared rule can therefore affect more than the application named in the ticket.</p>
+<p>For the ordered rules used here, Okta checks rule conditions in priority order. The matching rule determines the action; a more restrictive rule placed lower does not automatically win. Conditions may use group membership, device information, or network context. Inspect the values evaluated for this attempt, not just the user's usual location or a policy's descriptive name. See <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/add-app-signon-policy-desktop.htm">rule evaluation order</a>.</p>
+<p>To explain a prompt, Alex needs the selected rule and the conditions that made it apply. A policy name such as “Expense security” cannot provide that evidence. These policy priorities are different from Day 4's profile-source priority. One selects authentication behavior; the other concerns data ownership.</p>
+<h2 id="follow-daniels-expected-challenge">Follow Daniel's expected challenge</h2>
+<p>Packet P-1 uses simplified policy intent, not literal Admin Console labels or a complete configuration. Daniel has already completed the required enrollment from Day 7. Expense uses Day 9's confidential OIDC web-client architecture.</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Evidence</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Okta session K-13</td>
+<td>Present and valid for Daniel in the checked browser.</td>
+</tr>
+<tr>
+<td>Expense policy association</td>
+<td>The intended Expense authentication policy is assigned.</td>
+</tr>
+<tr>
+<td>Matched rule E-13</td>
+<td>The configured rule applies to Daniel's observed group and context.</td>
+</tr>
+<tr>
+<td>Rule requirement</td>
+<td>Password plus an allowed possession factor, with separate configured freshness requirements.</td>
+</tr>
+<tr>
+<td>Evaluation of existing proof</td>
+<td>Password evidence remains acceptable; the possession-factor freshness condition is not satisfied.</td>
+</tr>
+<tr>
+<td>Enrollment</td>
+<td>Daniel has an eligible Northbridge Okta Verify enrollment. Push is allowed in this example.</td>
+</tr>
+<tr>
+<td>Current result</td>
+<td>A Push challenge is issued for the Expense sign-in. No accepted response has yet been recorded.</td>
+</tr>
+</tbody>
+</table></div><p><strong>Freshness</strong> asks &quot;Is the earlier proof recent enough for this request?&quot; That differs from asking whether the proof has the required characteristics. Both the kind of evidence and its recency can matter.</p>
+<p>In P-1, the supplied evaluation accepts Daniel's password evidence but requires newer possession proof. You do not need to invent an interval or assume all factors share the same one to explain the challenge.</p>
+<p>Before calling the prompt a problem, compare the current evidence with the requirement. The password proof is accepted, but the possession proof is not sufficiently fresh. What result should Alex expect at this point?</p>
+<p>The challenge is consistent with the stated rule. &quot;Your Okta session is still accepted&quot; and &quot;Expense needs newer possession proof&quot; can both be true. Daniel's earlier sign-in is not being erased; the current application request has a requirement that the older proof does not meet. His enrollment supplies a possible method, not proof that he completed this challenge. This is renewed proof for the application request, not evidence that his assignment disappeared or that he needs another Expense account.</p>
+<p>There is no demonstrated policy defect in P-1. Explain the requirement and investigate the challenge outcome if he cannot complete it: issuance alone does not establish delivery, Daniel's response or acceptance. Removing the requirement just to eliminate a prompt would change the approved access decision rather than explain what happened.</p>
+<p>In follow-up P-2, the current Push response is accepted and Okta records that the applicable authentication requirements are satisfied. Expense's backend then completes its OIDC exchange and validation, associates Daniel with his intended account, and establishes application session E-LOCAL-13. A protected page is returned successfully.</p>
+<p>Follow P-2 through the boundaries you learned earlier. The current authentication proof is accepted; the backend exchange and validation succeed; Expense selects the intended account and establishes its own session; the protected page actually returns. P-2 demonstrates entry for that attempt. It does not prove that Daniel may approve a particular expense, nor does it prove that an unrelated earlier failed attempt succeeded.</p>
+<h2 id="contrast-a-genuine-policy-selection-problem">Contrast a genuine policy-selection problem</h2>
+<p>Independent packet P-3 changes the policy evidence. The approved design places a restrictive rule for the identified sensitive population before a general rule. The observed configuration instead has a broad matching rule above it. The evaluation record shows that the broad rule matched Daniel and did not require the intended additional proof.</p>
+<p>The discrepancy is between the approved rule order and the applied configuration. The general rule is reached first and supplies the decision, so the intended lower rule is not automatically added afterward. Unlike P-1, this packet supplies a demonstrated configuration problem. Inspect the policy's application associations, rule conditions, priority, and affected populations. Propose restoring the approved selection behavior, then verify both a relevant request and a request that should follow a different rule. A test of only Daniel's request would leave the other affected paths unchecked.</p>
+<p>Do not diagnose P-1 using P-3's evidence: P-1 correctly selected its rule. Conversely, “Daniel got in” would not prove P-3 meets the intended protection requirement. Success must be judged against the approved behavior.</p>
+<h2 id="build-a-correlated-evidence-trail">Build a correlated evidence trail</h2>
+<p>The <strong>System Log</strong> records Okta-side events. Its outcome belongs to a particular action. An authentication success, session creation, and app SSO outcome answer different questions.</p>
+<p>An <strong>event</strong> is one recorded occurrence. A <strong>transaction</strong> groups events belonging to an operation, such as a request to Okta. A user session can span several operations. Imagine two records describing parts of one operation. Each has its own event identifier, while a shared transaction identifier can connect them to that operation. A later operation can have another transaction identifier and still belong to the same Okta session. One session therefore does not require one transaction identifier for its entire lifetime.</p>
+<p>Start with the person, application instance, relevant sequence, and observed behavior. Then connect related records using identifiers where available:</p>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Field or evidence</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actor and target identifiers</td>
+<td>Identify who or what acted and which objects were affected.</td>
+</tr>
+<tr>
+<td>Event type and outcome</td>
+<td>Establish the action and its recorded result.</td>
+</tr>
+<tr>
+<td>Event uuid</td>
+<td>Identify an individual event.</td>
+</tr>
+<tr>
+<td>transaction.id</td>
+<td>Relate events within an operation.</td>
+</tr>
+<tr>
+<td>authenticationContext.externalSessionId</td>
+<td>Relate events within an Okta user session.</td>
+</tr>
+<tr>
+<td>authenticationContext.rootSessionId</td>
+<td>Group sessions sharing a common root where that context is available.</td>
+</tr>
+<tr>
+<td>Application's own evidence</td>
+<td>Establish its protocol validation, account association, local session, or permission result.</td>
+</tr>
+</tbody>
+</table></div><p>Keep the main distinction in view: event UUID identifies one recorded occurrence, transaction ID connects events within an operation, and external session ID connects events within the same Okta user session. Root session ID provides related-session context when available. The names help you choose what to correlate; they do not make every identifier the same thing.</p>
+<p>These fields are described in <a href="https://developer.okta.com/docs/reference/system-log-query/">Okta's System Log correlation guide</a>. The name externalSessionId does not make it the application's own session identifier. One browser journey may involve several transactions; some records lack a usable session identifier. Do not force every event into a single transaction or discard a relevant event solely because its session field is absent.</p>
+<p>For P-1/P-2, an investigator's synthetic summary is:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">Daniel + Expense + Okta session K-13
+    operation A: applicable rule; renewed possession evidence required
+    operation B: current challenge response accepted
+    operation C: Okta-side Expense SSO result
+Expense's correlated records
+    OIDC exchange and validation accepted
+    intended Daniel account selected
+    local session E-LOCAL-13 established; protected request accepted
+</code></pre>
+<p>Read the summary from the policy decision to the protected request. The Okta records establish its decisions and authentication results. Expense's records establish its exchange, selected account and local-session outcome. No single success in the first group can stand in for all the results in the second.</p>
+<p>The labels above are teaching identifiers, not raw Okta event values. The investigator has correlated the operations and application records; their identifiers are not assumed to be identical across systems.</p>
+<p>A nearby success for Maya, another app, or an earlier Daniel attempt is not a substitute. Likewise, a search returning no event may reflect incomplete coverage rather than proof that nothing happened. Day 2's evidence boundaries and Day 11's completeness checks still apply.</p>
+<h2 id="explain-why-two-sessions-matter">Explain why two sessions matter</h2>
+<p>After P-2, the browser can interact with two services. The two browser labels below represent the same browser making separate requests to Okta and Expense, using each service's session information:</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/ed4aa9db721a35f1.svg" alt="Day 13: Policies, sessions, and another authentication check: diagram 1" width="465" height="174" loading="lazy"><figcaption><span>Day 13: Policies, sessions, and another authentication check: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/ed4aa9db721a35f1.svg" data-diagram="Day 13: Policies, sessions, and another authentication check: diagram 1">Open full diagram</a></figcaption></figure><p>Read the diagram as two destinations for one browser. A request to Okta presents information for K-13; a request to Expense presents information for E-LOCAL-13. Each receiving service checks the session it owns. The repeated Browser label does not introduce a second device or person.</p>
+<p>Expense established its own session after validating the sign-in exchange. In this fictional implementation, ordinary protected-page requests are checked against Expense's local session, not sent to Okta for a fresh OIDC exchange every time. That behavior must be established from the application, not assumed for all products.</p>
+<p>An ID token is not the same object as that local session. Expiration of an ID token does not by itself demonstrate that the application ended a session it previously created. Similarly, active false in an account-management response is not a session-termination receipt.</p>
+<p>Consider packet S-13, after an approved session-ending action for Daniel. His employment and application assignment are unchanged:</p>
+<ol>
+<li>Okta confirms that K-13 is ended.</li>
+<li>A subsequent request to Okta cannot reuse K-13 and requires the applicable sign-in process.</li>
+<li>Expense still accepts a new protected request through E-LOCAL-13.</li>
+<li>Expense's owner confirms that its local session remains valid and this request did not initiate a new Okta sign-in.</li>
+</ol>
+<p>Compare the second and third observations before judging the action. Okta refuses reuse of K-13, while Expense accepts a new protected request through E-LOCAL-13. The owner's evidence rules out a new Okta sign-in as the source of this request. The observations establish different outcomes in the two systems. Ending K-13 worked; it did not end the checked Expense session. This is not evidence that Okta deactivation failed, because no deactivation was performed in S-13.</p>
+<h2 id="define-what-signing-out-must-accomplish">Define what signing out must accomplish</h2>
+<p><strong>Local logout</strong> ends the application's session under its implementation. It does not automatically establish that Okta or another application's session ended. After local logout, two different questions matter: &quot;Can the old application session still be used?&quot; and &quot;Can Daniel sign in again to create a new one?&quot; If his Okta session remains and supplies acceptable authentication evidence, the new sign-in may need no visible prompt. That would not, by itself, show that Expense reused the old session.</p>
+<p><strong>Single Logout (SLO)</strong> coordinates logout across participating integrations when supported and configured. Its reach depends on those participants; it is not a universal instruction that ends every application session. Do not infer participation, delivery, or successful termination from the name alone. Ask which sessions an action targets and verify each required outcome. See <a href="https://help.okta.com/oie/en-us/content/topics/apps/apps_single_logout.htm">Okta's SLO support and configuration boundaries</a>.</p>
+<p>For S-13, the appropriate next decision depends on the requirement. If only the Okta session needed to end, the supplied Okta evidence supports that outcome. If both Okta and Expense access through the existing sessions needed to end, the Expense owner must complete and verify its supported termination action. A repeat protected request should no longer succeed through the terminated local session; a newly established session must be distinguished from reuse of the old one. The test is about that session's continued authority, not merely whether the browser displays a sign-in prompt.</p>
+<p>This also explains the investigation required for Jordan in Day 12. A separate application session is a possible reason access can persist, but Daniel's evidence does not prove Jordan's root cause. Correlate Jordan's actual account and session records, confirm the removal requirement, and verify his outcome independently.</p>
+<h2 id="predict-who-a-rule-change-will-affect">Predict who a rule change will affect</h2>
+<p>Before changing an authentication rule, identify the policy, its application associations, rule order, conditions, and required proof. Write down an eligible user, an excluded user, and an existing-session situation. Predict the selected rule and expected challenge for each before evaluating evidence.</p>
+<p>A group condition answers who may match; the requirement answers what proof they must provide. Moving a broad rule above a narrower rule can change which requirement is reached. Reducing a freshness requirement changes how recent the accepted proof must be; it does not create missing enrollment or grant an application permission.</p>
+<p>For Daniel's P-1, an expected challenge is not a reason to weaken the rule. In P-3, the supplied matching-rule evidence does establish an ordering problem. After an approved correction, inspect fresh attempts from the affected populations and confirm that other applications sharing the policy retain their intended behavior.</p>
+<p>Daniel's original question now has two distinct answers to investigate: a valid session can coexist with a requirement for newer proof, and each service has its own session outcome to verify. Use the applied rule to explain the challenge, and the receiving application's evidence to explain continued access. A prompt or a success label alone cannot answer both questions.</p>
+<p>Practice selecting evidence and explaining the resulting action in <a href="/Okta_Theory_Teaching/requests/department-and-reporting.html">the report-access request</a> after Day 14.</p>
+<h2 id="before-moving-on">Before moving on</h2>
+<p>Can you explain why P-1 is an expected challenge but P-3 is a demonstrated configuration problem? Can you identify which service owns each session, distinguish an event from a transaction, and state what a successful Okta-side result still leaves for the application to verify?</p>
+<p>Try the <a href="/Okta_Theory_Teaching/exercises/day-13.html">exercises</a>, then the <a href="/Okta_Theory_Teaching/self-checks/day-13.html">answers</a>. In <a href="/Okta_Theory_Teaching/notebook/guide.html">your notebook</a>, record the expected requirement, actual matched rule, authentication evidence, Okta-session result, and separate application result.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html">Day 14</a> turns business requests into clear access requirements and administrative responsibilities.</p>
+<p>For more examples, open the <a href="/Okta_Theory_Teaching/question-bank/day-13.html">Day 13 practice bank</a>. Each question includes its own context and an expandable teaching explanation.</p>
+<p><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Previous: Day 12</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
+<p><a href="/Okta_Theory_Teaching/revision/day-13.html">Revise Day 13</a>: revisit the concepts, example, and questions without rereading the full lesson.</p>
+</article><aside class="learning-links" aria-label="More study material"><strong>Study tools</strong><a href="/Okta_Theory_Teaching/exercises/day-13.html">Exercises</a><a href="/Okta_Theory_Teaching/self-checks/day-13.html">Self-check</a><a href="/Okta_Theory_Teaching/revision/day-13.html">Recap</a><a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a><a href="/Okta_Theory_Teaching/requests/">Working through requests</a></aside><nav class="page-navigation" aria-label="Lesson sequence"><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><small>← Previous lesson</small>Day 12: Joining, moving, and leaving</a><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><small>Next lesson →</small>Day 14: Requirements, responsibility, and recovery</a></nav></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

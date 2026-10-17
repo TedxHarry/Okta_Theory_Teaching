@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "lesson": 7,
+  "questions": [
+    {
+      "id": "L07-Q01",
+      "topic": "Authenticator availability",
+      "prompt": "An authenticator is enabled for an organization. What does that alone establish?",
+      "correctId": "041f0cd0c2",
+      "options": [
+        {
+          "id": "041f0cd0c2",
+          "text": "It is available under the applicable configuration, not enrolled by every user",
+          "explanation": "Availability, enrollment and actual authentication use are separate facts."
+        },
+        {
+          "id": "4d667ec259",
+          "text": "Every user already enrolled it",
+          "explanation": "Organization availability does not establish individual enrollment."
+        },
+        {
+          "id": "c0aa8f3e8c",
+          "text": "Every sign-in used it successfully",
+          "explanation": "Use requires evidence from the actual attempt."
+        },
+        {
+          "id": "7575b0ea7f",
+          "text": "Every application accepts the resulting assurance",
+          "explanation": "App requirements must still be evaluated."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q02",
+      "topic": "Enrollment",
+      "prompt": "A user has an active authenticator enrollment. What remains distinct?",
+      "correctId": "adb7e92c5c",
+      "options": [
+        {
+          "id": "adb7e92c5c",
+          "text": "Whether it was successfully used for the current authentication requirement",
+          "explanation": "An enrollment prepares a method but is not a challenge result."
+        },
+        {
+          "id": "bed1ace3cb",
+          "text": "Whether the enrollment record exists",
+          "explanation": "The question explicitly supplies that fact."
+        },
+        {
+          "id": "101dde4f67",
+          "text": "Whether enrollment and use must have identical timestamps",
+          "explanation": "They are different events and need not coincide."
+        },
+        {
+          "id": "c572ab1f97",
+          "text": "Whether every enrolled method meets every policy",
+          "explanation": "Policy requirements can distinguish methods and contexts."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q03",
+      "topic": "Two policy jobs",
+      "prompt": "An enrollment policy requires an authenticator, while an app policy requires authentication assurance. Why distinguish them?",
+      "correctId": "7bb7c9cb4a",
+      "options": [
+        {
+          "id": "7bb7c9cb4a",
+          "text": "One governs enrollment readiness; the other governs sign-in requirements",
+          "explanation": "Being enrolled and satisfying a particular attempt's requirement differ."
+        },
+        {
+          "id": "72e274bd2a",
+          "text": "Both simply create application accounts",
+          "explanation": "These policies concern authentication readiness and requirements."
+        },
+        {
+          "id": "3d08178ce7",
+          "text": "Enrollment automatically grants every app role",
+          "explanation": "Local authorization remains independent."
+        },
+        {
+          "id": "5dbc49d4db",
+          "text": "An app policy must erase all enrollments",
+          "explanation": "That is not the purpose of an authentication requirement."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q04",
+      "topic": "MFA meaning",
+      "prompt": "A policy requires multiple factors. Why is entering the same password twice insufficient by itself?",
+      "correctId": "5ffc587886",
+      "options": [
+        {
+          "id": "5ffc587886",
+          "text": "Repeating one type of proof does not create independent factor categories",
+          "explanation": "MFA depends on the required factor properties, not the number of repeated prompts."
+        },
+        {
+          "id": "487ae59ff4",
+          "text": "Any two screens always establish MFA",
+          "explanation": "Screen count is not an assurance definition."
+        },
+        {
+          "id": "dda83d92b8",
+          "text": "A longer password automatically becomes a second factor",
+          "explanation": "Credential length does not create another factor category."
+        },
+        {
+          "id": "9cfa322abb",
+          "text": "Every application must implement identical methods",
+          "explanation": "Supported requirements and methods vary by policy and integration."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q05",
+      "topic": "Method distinctions",
+      "prompt": "A user has Okta Verify enrolled. Why should an engineer identify the actual method and policy result?",
+      "correctId": "e771d736a6",
+      "options": [
+        {
+          "id": "e771d736a6",
+          "text": "Different methods and device/context requirements can matter to assurance",
+          "explanation": "A product name alone does not prove which method satisfied an attempt."
+        },
+        {
+          "id": "0a7ba56152",
+          "text": "Every Okta Verify use is identical in assurance and prerequisites",
+          "explanation": "That overgeneralizes supported methods and policy contexts."
+        },
+        {
+          "id": "ef4ebb05c5",
+          "text": "Enrollment proves every later challenge succeeded",
+          "explanation": "The current event still needs its own outcome."
+        },
+        {
+          "id": "f31c63c042",
+          "text": "The app can infer the method from the user's department",
+          "explanation": "Profile department does not establish authentication proof."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q06",
+      "topic": "FastPass context",
+      "prompt": "A project wants to rely on FastPass for an app requirement. What should be verified?",
+      "correctId": "ae08383372",
+      "options": [
+        {
+          "id": "ae08383372",
+          "text": "Supported configuration, device/enrollment context and the actual policy outcome",
+          "explanation": "A method label alone does not prove readiness or satisfaction in a particular attempt."
+        },
+        {
+          "id": "9544f47ce6",
+          "text": "Assume enabling the org setting enrolls every device",
+          "explanation": "Availability does not establish each user's actual setup."
+        },
+        {
+          "id": "9a6d1e1ccb",
+          "text": "Assume a prior password event proves FastPass use",
+          "explanation": "The authentication evidence must identify the relevant method and result."
+        },
+        {
+          "id": "d5072815eb",
+          "text": "Remove app-policy requirements to avoid prompts",
+          "explanation": "That weakens the requirement instead of verifying supported satisfaction."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q07",
+      "topic": "Expected challenge",
+      "prompt": "An existing provider session does not meet a stronger app requirement and the user is challenged. Is this necessarily a fault?",
+      "correctId": "0f57e6b6bf",
+      "options": [
+        {
+          "id": "0f57e6b6bf",
+          "text": "No; the additional check can be expected policy enforcement",
+          "explanation": "Session reuse depends on whether existing assurance satisfies the app's requirement."
+        },
+        {
+          "id": "77828416ba",
+          "text": "Yes; SSO guarantees no future prompts",
+          "explanation": "Single sign-on does not waive all later authentication requirements."
+        },
+        {
+          "id": "0e5f8ba07f",
+          "text": "Yes; every repeated prompt proves a missing app account",
+          "explanation": "A challenge concerns authentication and does not establish account absence."
+        },
+        {
+          "id": "116591437a",
+          "text": "No policy evidence is ever needed",
+          "explanation": "The actual selected policy and outcome should still be checked."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q08",
+      "topic": "Challenge failure",
+      "prompt": "A user is enrolled but cannot complete a current authenticator challenge. What is a useful investigation?",
+      "correctId": "3a4047a1bb",
+      "options": [
+        {
+          "id": "3a4047a1bb",
+          "text": "Identify the enrollment, method, device/context and actual challenge result",
+          "explanation": "Enrollment existence does not explain every current use failure."
+        },
+        {
+          "id": "04509515b1",
+          "text": "Assume enrollment never occurred",
+          "explanation": "The question supplies an enrollment record."
+        },
+        {
+          "id": "b950651790",
+          "text": "Reset all authenticators without inspecting the evidence",
+          "explanation": "A broad reset can be unnecessary and obscure the failed boundary."
+        },
+        {
+          "id": "8c35ddcbaf",
+          "text": "Change the user's app role first",
+          "explanation": "Resource authorization does not repair authentication proof."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q09",
+      "topic": "Reset scope",
+      "prompt": "An authorized support process may reset one problematic enrollment. What should guide the scope?",
+      "correctId": "03af8387f7",
+      "options": [
+        {
+          "id": "03af8387f7",
+          "text": "The actual affected enrollment, identity verification and approved recovery procedure",
+          "explanation": "Recovery actions should fit the demonstrated issue and supported authority."
+        },
+        {
+          "id": "2f4a924add",
+          "text": "Always erase every user's enrollment",
+          "explanation": "That exceeds the supplied individual issue."
+        },
+        {
+          "id": "aeef86b8a0",
+          "text": "Use a matching display name as sufficient identity proof",
+          "explanation": "Support identity verification needs the approved stronger process."
+        },
+        {
+          "id": "9341ad1a83",
+          "text": "Promise every existing app session will end",
+          "explanation": "Enrollment reset does not by itself establish universal session termination."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q10",
+      "topic": "Evidence limits",
+      "prompt": "An event records successful authenticator enrollment, but no sign-in attempt is supplied. What remains unknown?",
+      "correctId": "64ab568304",
+      "options": [
+        {
+          "id": "64ab568304",
+          "text": "Whether the app's authentication requirement was later satisfied",
+          "explanation": "Enrollment evidence is not a later authentication or target-access result."
+        },
+        {
+          "id": "802c4bfc8e",
+          "text": "Whether enrollment was recorded as successful",
+          "explanation": "That specific event is supplied."
+        },
+        {
+          "id": "769fc9bcf7",
+          "text": "Whether an app policy can require assurance",
+          "explanation": "It can; this packet simply lacks its runtime outcome."
+        },
+        {
+          "id": "b590785437",
+          "text": "Whether every enrolled user is an administrator",
+          "explanation": "Enrollment conveys no such local role."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "evidence": [
+        "Authenticator enrollment event: successful",
+        "Current app-policy evaluation: not supplied",
+        "Current sign-in or target access result: not supplied"
+      ]
+    },
+    {
+      "id": "L07-Q11",
+      "topic": "Policy selection",
+      "prompt": "A challenge seems unexpected. What should be checked before changing an authentication rule?",
+      "correctId": "a911436a83",
+      "options": [
+        {
+          "id": "a911436a83",
+          "text": "The actual app-policy association, matching context and selected rule",
+          "explanation": "An apparent prompt problem may reflect correct selection or a genuine selection mismatch."
+        },
+        {
+          "id": "6cbf9d4df6",
+          "text": "Only the user's enrollment count",
+          "explanation": "Count alone does not establish the applicable rule."
+        },
+        {
+          "id": "fa9eba7542",
+          "text": "Only a policy with a familiar name",
+          "explanation": "Names do not prove association and rule selection."
+        },
+        {
+          "id": "4151983daf",
+          "text": "Always weaken the first rule in the list",
+          "explanation": "Changes need the actual selected requirement and intended behavior."
+        }
+      ]
+    },
+    {
+      "id": "L07-Q12",
+      "topic": "End-to-end outcome",
+      "prompt": "MFA succeeds but the application rejects the user's local account. Which distinction matters?",
+      "correctId": "677ca3caa7",
+      "options": [
+        {
+          "id": "677ca3caa7",
+          "text": "Authentication assurance and application account acceptance are separate",
+          "explanation": "Successful proof does not override a later application eligibility check."
+        },
+        {
+          "id": "eb6b7b06d5",
+          "text": "MFA necessarily failed because access was denied",
+          "explanation": "The stated MFA outcome can remain successful."
+        },
+        {
+          "id": "1b827e5241",
+          "text": "The application must ignore disabled account state",
+          "explanation": "Local account requirements remain applicable."
+        },
+        {
+          "id": "8cec7a87dc",
+          "text": "Another MFA prompt necessarily creates the missing account",
+          "explanation": "Authentication does not itself perform account provisioning."
+        }
+      ],
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+    }
+  ]
+}
