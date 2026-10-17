@@ -402,6 +402,154 @@
         "source": "lessons/day-02-requests-and-evidence.md",
         "heading": "Compare a redirect with account management"
       }
+    },
+    {
+      "id": "L02-Q13",
+      "topic": "Challenge: An error inside a successful response",
+      "prompt": "A browser trace ends with HTTP 200 from an application. What does the complete supplied packet establish about this sign-in attempt?",
+      "evidence": [
+        "Request R20: application returns HTTP 200 with an account-not-found page",
+        "Receiver record R20: no local session created"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "d25f4771ae",
+      "options": [
+        {
+          "id": "d25f4771ae",
+          "text": "The app responded, but this sign-in created no local session",
+          "explanation": "HTTP success needs interpretation in context. The response content and correlated receiver result establish an application-level failure."
+        },
+        {
+          "id": "e15361b9d5",
+          "text": "HTTP 200 proves that the employee entered the app",
+          "explanation": "A page can carry an application error while using HTTP 200. The receiver explicitly reports no session."
+        },
+        {
+          "id": "c0191569c5",
+          "text": "Okta must have returned an account-not-found error",
+          "explanation": "The named responder is the application. The packet does not attribute that response to Okta."
+        },
+        {
+          "id": "0cb6a1058e",
+          "text": "The browser never contacted the application",
+          "explanation": "The supplied application response is evidence that contact occurred for this request."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "A status code describes a request's result"
+      }
+    },
+    {
+      "id": "L02-Q14",
+      "topic": "Challenge: A redirect has an unfinished destination",
+      "prompt": "An app returns a redirect to Okta, but the trace stops there. Which next-stage fact remains unknown from this packet?",
+      "evidence": [
+        "App request R21: HTTP 302; Location points to the intended Okta endpoint",
+        "No following browser request or Okta event is included"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "10abf937fd",
+      "options": [
+        {
+          "id": "10abf937fd",
+          "text": "Whether the browser followed the redirect and Okta processed it",
+          "explanation": "The redirect instructs navigation. It is not evidence of the browser's following request or the destination's processing."
+        },
+        {
+          "id": "596c161df8",
+          "text": "Whether the application supplied a Location header",
+          "explanation": "The packet explicitly supplies that header and its destination."
+        },
+        {
+          "id": "2db74ad181",
+          "text": "Whether the response came from the application",
+          "explanation": "The responding system is supplied. The missing evidence begins after its response."
+        },
+        {
+          "id": "05cc085850",
+          "text": "Whether the response instructed the browser to go to Okta",
+          "explanation": "That instruction is present; execution of the next step is the unresolved fact."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "A response can send the browser elsewhere"
+      }
+    },
+    {
+      "id": "L02-Q15",
+      "topic": "Challenge: Correlate before combining",
+      "prompt": "An analyst finds two nearby successes while investigating a failed user attempt. Which action best determines whether either event belongs in the investigation?",
+      "evidence": [
+        "Ticket: user U22, app instance A, request R22 at 11:00 UTC",
+        "Found events: user U23/app A and user U22/app B near 11:00 UTC"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "735e733197",
+      "options": [
+        {
+          "id": "735e733197",
+          "text": "Correlate the intended user, app instance and request context",
+          "explanation": "Time proximity alone is weak association. Neither found event matches the stated user-and-app pair, so obtain evidence for the intended attempt."
+        },
+        {
+          "id": "21a2374e25",
+          "text": "Use the U22 event because a matching user is sufficient",
+          "explanation": "The app instance differs. A user can make independent attempts to different apps."
+        },
+        {
+          "id": "bf36e8ac07",
+          "text": "Use the app A event because a matching destination is sufficient",
+          "explanation": "The user differs. Another person's result does not establish U22's attempt."
+        },
+        {
+          "id": "0f2347c425",
+          "text": "Combine both events into a single successful journey",
+          "explanation": "Combining mismatched actors and targets invents a journey that neither event establishes."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Match the evidence to the right attempt"
+      }
+    },
+    {
+      "id": "L02-Q16",
+      "topic": "Challenge: A retest that identifies the repair",
+      "prompt": "A failed request has an approved endpoint correction. Which retest best distinguishes a working correction from unrelated old activity?",
+      "evidence": [
+        "Original attempt: request R23 to the wrong app endpoint",
+        "Correction: endpoint changed; old successes exist in the log"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "679a289b60",
+      "options": [
+        {
+          "id": "679a289b60",
+          "text": "Trace a fresh attempt through the corrected endpoint and receiver outcome",
+          "explanation": "A new transaction connects the changed condition with current processing. Existing successes may precede the change or belong to another attempt."
+        },
+        {
+          "id": "6f62f9c738",
+          "text": "Find any success event after the original ticket time",
+          "explanation": "A success with unknown user, target or transaction context does not establish this correction."
+        },
+        {
+          "id": "bb682b2488",
+          "text": "Compare the saved endpoint setting without making a new attempt",
+          "explanation": "Configuration comparison is useful, but does not show that a current request uses it and succeeds."
+        },
+        {
+          "id": "22dc7b8035",
+          "text": "Repeat the action using an already open app session only",
+          "explanation": "That may avoid the corrected entry path entirely and leave the original defect untested."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Compare a redirect with account management"
+      }
     }
   ]
 }

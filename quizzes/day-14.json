@@ -402,6 +402,154 @@
         "source": "lessons/day-14-requirements-and-responsibilities.md",
         "heading": "Make verification part of the requirement"
       }
+    },
+    {
+      "id": "L14-Q13",
+      "topic": "Challenge: Two approvals with different scopes",
+      "prompt": "An app owner approves reader access, but an engineer proposes a shared authentication-policy change to implement it. What does the supplied approval establish?",
+      "evidence": [
+        "Business approval: selected users may read Projects reports",
+        "Proposed technical change: relax policy shared by Projects and Payroll; impact approval absent"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "44ed01800b",
+      "options": [
+        {
+          "id": "44ed01800b",
+          "text": "Reader access is approved; the broader policy change remains unassessed",
+          "explanation": "Approval of an outcome does not automatically authorize every broader implementation. Separate access ownership, administrative authority and the shared change's impact."
+        },
+        {
+          "id": "b2f9239a05",
+          "text": "Every technical change that makes reader entry work is already approved",
+          "explanation": "The shared authentication change affects a different scope, including Payroll, that the packet does not approve."
+        },
+        {
+          "id": "f8d0ee806d",
+          "text": "Reader access must be rejected because two teams are involved",
+          "explanation": "Separate responsibilities call for coordination, not automatic rejection of the legitimate business requirement."
+        },
+        {
+          "id": "44e3ebe2df",
+          "text": "The engineer should change worker classifications instead of seeking policy review",
+          "explanation": "Changing business identity facts to bypass a requirement is not supported by this approval."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Separate approval from technical authority"
+      }
+    },
+    {
+      "id": "L14-Q14",
+      "topic": "Challenge: Successful SSO leaves a lifecycle question",
+      "prompt": "A vendor demonstration proves SAML sign-in, but the project also requires account creation and removal. Which implementation fact is still unknown?",
+      "evidence": [
+        "Demo: intended SAML test user enters the application",
+        "Vendor account API, connector capabilities and manual lifecycle ownership: not assessed"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "4d04e898d5",
+      "options": [
+        {
+          "id": "4d04e898d5",
+          "text": "How required creation and removal will be implemented and verified",
+          "explanation": "Federation success does not establish lifecycle capability. Obtain the supported operation contract or an approved alternative before treating the project design as complete."
+        },
+        {
+          "id": "ef449ff532",
+          "text": "Whether the demonstrated SAML test user entered the app",
+          "explanation": "That result is supplied; it does not settle other users' account-management requirements."
+        },
+        {
+          "id": "fdbfaef760",
+          "text": "Whether the project requires removal as well as creation",
+          "explanation": "Both requirements are stated in the packet."
+        },
+        {
+          "id": "cce3f94332",
+          "text": "Whether a vendor demonstration occurred",
+          "explanation": "The demonstration is supplied. The missing facts concern lifecycle implementation."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Agree on who finishes each part"
+      }
+    },
+    {
+      "id": "L14-Q15",
+      "topic": "Challenge: Choose the smallest relevant design change",
+      "prompt": "A reader can enter an app but is granted an administrator role. Which investigation targets the evidenced requirement mismatch?",
+      "evidence": [
+        "Approved role: read reports only",
+        "Federation acceptance: confirmed; target effective role: administrator"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "4b987e4e1b",
+      "options": [
+        {
+          "id": "4b987e4e1b",
+          "text": "Trace the effective role assignment against the approved reader requirement",
+          "explanation": "Authentication succeeded. The evidenced defect is excessive authorization, so inspect the mechanism that produced the target role and correct it through the responsible owner."
+        },
+        {
+          "id": "bf815977bc",
+          "text": "Change the SAML audience because entry was too successful",
+          "explanation": "Audience targeting does not define the supplied local permission assignment."
+        },
+        {
+          "id": "33b072c4e4",
+          "text": "Disable the user's authenticator enrollment permanently",
+          "explanation": "That can block authentication but does not correct the wrong role or preserve required reader access."
+        },
+        {
+          "id": "fa3a22fcb2",
+          "text": "Approve administrator access retroactively to match the current state",
+          "explanation": "The current excessive grant is not authorization to change the stated business requirement."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Translate the requirement without changing its meaning"
+      }
+    },
+    {
+      "id": "L14-Q16",
+      "topic": "Challenge: A recovery route must be tested",
+      "prompt": "A federation change could lock out all app administrators. Which pre-release evidence best supports a workable recovery plan?",
+      "evidence": [
+        "Plan mentions an alternative administrator entry method",
+        "Alternative identity, permissions, dependencies and actual test result: not yet verified"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "2463d42dfa",
+      "options": [
+        {
+          "id": "2463d42dfa",
+          "text": "Verify the authorized recovery route, permissions and reversal procedure",
+          "explanation": "A written route is not automatically usable. Establish that it works under the relevant failure conditions and that responsible people can reverse the change."
+        },
+        {
+          "id": "7be9065c4c",
+          "text": "Keep a currently open administrator tab as the whole recovery plan",
+          "explanation": "The session can expire or be invalidated and may depend on the changed path."
+        },
+        {
+          "id": "df544e47c7",
+          "text": "Assume the app owner always has an independent password login",
+          "explanation": "That capability and its authorization must be established for the actual app, not inferred from a job title."
+        },
+        {
+          "id": "ae7454d297",
+          "text": "Record that the configuration can be saved again",
+          "explanation": "Saving does not establish that an authorized administrator can regain access to make the correction."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Plan recovery from an incorrect change"
+      }
     }
   ]
 }

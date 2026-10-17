@@ -87,7 +87,7 @@ try {
     await page.locator(".quiz-options:not([hidden])").first().waitFor();
     assert.equal(await page.locator(".reading-modes a").count(), 3);
     const data = JSON.parse(await page.locator("#quiz-data").textContent());
-    assert.equal(data.questions.length, 12);
+    assert.equal(data.questions.length, 16);
     for (const q of data.questions) {
       const ids = await page
         .locator(`#${q.id} input`)
@@ -127,10 +127,39 @@ try {
     assert.equal(await card.locator(".quiz-verdict").innerText(), "Correct.");
     await card.getByText("Understand every option", { exact: true }).click();
     assert.equal(await card.locator(".quiz-rationales li").count(), 4);
+    for (const challenge of data.questions.slice(12)) {
+      const challengeCard = page.locator(`#${challenge.id}`);
+      assert(await challengeCard.locator(".quiz-evidence").isVisible());
+      assert(await challengeCard.locator(".quiz-reasoning").isVisible());
+      const incorrect = challenge.options.find(
+        (option) => option.id !== challenge.correctId,
+      );
+      await challengeCard.locator(`input[value="${incorrect.id}"]`).check();
+      assert.match(
+        await challengeCard.locator(".quiz-verdict").innerText(),
+        /incorrect/,
+      );
+      assert(
+        (await challengeCard.locator(".quiz-result").innerText()).includes(
+          incorrect.explanation,
+        ),
+      );
+      await challengeCard
+        .locator(`input[value="${challenge.correctId}"]`)
+        .check();
+      assert.equal(
+        await challengeCard.locator(".quiz-verdict").innerText(),
+        "Correct.",
+      );
+      assert.equal(
+        await challengeCard.locator(".quiz-result a").getAttribute("href"),
+        challenge.review.url,
+      );
+    }
   }
   assert.equal(positions.size, 4);
   results.push(
-    "All 16 quiz banks grade by stable IDs, shuffle across all four answer positions, explain choices and retry missed questions.",
+    "All 16 quiz banks grade by stable IDs, shuffle across all four answer positions, explain choices and retry missed questions. All 64 new evidence challenges show reasoning prompts and grade correct/incorrect choices with focused review links.",
   );
   await page.goto(base + "quizzes/day-01.html");
   await page.locator("#remember-answers").check();
@@ -212,7 +241,7 @@ try {
   assert.equal(await first.locator("input:checked").count(), 1);
   assert.equal(
     await page.locator("#quiz-progress").innerText(),
-    "1 of 12 answered",
+    "1 of 16 answered",
   );
   await second.locator("input").first().focus();
   await page.keyboard.press("Space");

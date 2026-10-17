@@ -62,16 +62,22 @@ test("saved progress accepts current choices and rejects stale or malformed reco
   assert.equal(validSavedAnswers(null, data), null);
 });
 
-test("192 independent questions have four unique options, stable IDs and substantive explanations", () => {
-  assert.equal(banks.flatMap((bank) => bank.questions).length, 192);
+test("256 independent questions have four unique options, stable IDs and substantive explanations", () => {
+  assert.equal(banks.flatMap((bank) => bank.questions).length, 256);
   const prompts = banks.flatMap((bank) => bank.questions.map((q) => q.prompt));
   assert.equal(new Set(prompts).size, prompts.length);
   const questions = banks.flatMap((bank) => bank.questions);
-  assert.equal(questions.filter((q) => q.evidence).length, 48);
-  assert.equal(questions.filter((q) => q.reasoning).length, 32);
+  assert.equal(questions.filter((q) => q.evidence).length, 112);
+  assert.equal(questions.filter((q) => q.reasoning).length, 96);
   for (const bank of banks) {
-    assert.equal(new Set(bank.questions.map((q) => q.topic)).size, 12);
-    assert.equal(bank.questions.length, 12);
+    assert.equal(new Set(bank.questions.map((q) => q.topic)).size, 16);
+    assert.equal(bank.questions.length, 16);
+    for (const question of bank.questions.slice(12)) {
+      assert(question.topic.startsWith("Challenge: "));
+      assert(question.evidence.length >= 2);
+      assert(question.reasoning.length > 30);
+      assert(question.review.heading);
+    }
   }
 });
 
@@ -94,7 +100,7 @@ test("retry changes option order even when the random draw repeats the same orde
     }
 });
 
-test("grading follows immutable option IDs in every order for all 768 choices", () => {
+test("grading follows immutable option IDs in every order for all 1024 choices", () => {
   for (const bank of banks)
     for (const q of bank.questions) {
       for (const selected of q.options) {
@@ -140,8 +146,8 @@ test("generated quizzes include per-question no-script explanations and escape s
   assert(html.includes('class="quiz-evidence"'));
   assert(html.includes('aria-describedby="L01-Q12-evidence"'));
   assert(html.includes('class="quiz-reasoning"'));
-  assert.equal((html.match(/Show answer and explanations/g) || []).length, 12);
-  assert.equal((html.match(/class="quiz-feedback"/g) || []).length, 12);
+  assert.equal((html.match(/Show answer and explanations/g) || []).length, 16);
+  assert.equal((html.match(/class="quiz-feedback"/g) || []).length, 16);
   assert(html.includes("&lt;/script&gt;"));
   assert(!html.includes("</script><img"));
   const payload = JSON.parse(html.match(/id="quiz-data">(.*?)<\/script>/s)[1]);

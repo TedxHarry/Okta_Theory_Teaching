@@ -402,6 +402,154 @@
         "source": "lessons/day-06-active-directory.md",
         "heading": "Hand the directory team a specific question"
       }
+    },
+    {
+      "id": "L06-Q13",
+      "topic": "Challenge: An old import and a new failure",
+      "prompt": "A directory import succeeded yesterday. A sign-in today receives no directory response. What can be concluded from the stated evidence?",
+      "evidence": [
+        "Yesterday: account import completed for the intended identity",
+        "Today: delegated credential attempt times out before an AD verdict"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "1c6ec9c0e7",
+      "options": [
+        {
+          "id": "1c6ec9c0e7",
+          "text": "The missing credential response does not establish a wrong password",
+          "explanation": "Yesterday's import does not prove today's credential path is working. A missing response requires investigating the current communication path."
+        },
+        {
+          "id": "483a5f2f7e",
+          "text": "The password must be incorrect because the user was imported",
+          "explanation": "Discovery of an account does not establish a later password verdict, particularly when no verdict returns."
+        },
+        {
+          "id": "dcb875a26e",
+          "text": "The earlier import success proves today's agent path is healthy",
+          "explanation": "The operations and times differ. Historical success cannot replace current-path evidence."
+        },
+        {
+          "id": "2198d4017f",
+          "text": "Deleting and reimporting the user is the demonstrated repair",
+          "explanation": "The packet shows no missing-record defect and does not justify changing the identity association."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Three operations that should not be confused"
+      }
+    },
+    {
+      "id": "L06-Q14",
+      "topic": "Challenge: An agent-level success is limited",
+      "prompt": "One controlled delegated sign-in succeeds after an agent-path repair. Which wider claim remains unverified?",
+      "evidence": [
+        "Fresh attempt D61: intended AD account validated and Okta authentication completed",
+        "No other users, app permissions or failover paths were tested"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "8189d0251a",
+      "options": [
+        {
+          "id": "8189d0251a",
+          "text": "Whether other users, permissions and alternative paths work",
+          "explanation": "The test establishes its own user and path result. Broader population, app authorization and resilience claims need their own evidence."
+        },
+        {
+          "id": "0272d388da",
+          "text": "That the intended account validated in attempt D61",
+          "explanation": "The supplied fresh result establishes that narrower outcome."
+        },
+        {
+          "id": "986bd855c1",
+          "text": "That Okta authentication completed for D61",
+          "explanation": "Completion is explicitly supplied; it does not imply every downstream permission."
+        },
+        {
+          "id": "9996b26355",
+          "text": "That a controlled post-repair attempt was performed",
+          "explanation": "The packet supplies such an attempt. Scope beyond it is the remaining uncertainty."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Know what a successful follow-up proves"
+      }
+    },
+    {
+      "id": "L06-Q15",
+      "topic": "Challenge: Inspect the associated account first",
+      "prompt": "A user is active in Okta, but delegated sign-in is rejected. Which next check best distinguishes an account-association issue from a credential problem?",
+      "evidence": [
+        "Okta identity U62 is active; delegated authentication is configured",
+        "Directory rejection exists, but the exact associated AD account has not been confirmed"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "2b851a4536",
+      "options": [
+        {
+          "id": "2b851a4536",
+          "text": "Identify the exact associated AD account and correlated verdict",
+          "explanation": "An active central record does not establish which directory account was validated. Confirm identity association before interpreting the rejection as the intended user's credential failure."
+        },
+        {
+          "id": "ea1d6e4369",
+          "text": "Reset a similarly named AD account immediately",
+          "explanation": "A display-name similarity does not prove it is the account involved; the reset could affect the wrong person."
+        },
+        {
+          "id": "c5a97bcc99",
+          "text": "Change HR department to trigger another import",
+          "explanation": "No department or import defect is supplied. It does not discriminate the current credential path."
+        },
+        {
+          "id": "96565d1000",
+          "text": "Enable automatic creation of another directory account",
+          "explanation": "A second account would not explain or repair the existing association without an ownership decision."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Investigate Jordan's failed attempt"
+      }
+    },
+    {
+      "id": "L06-Q16",
+      "topic": "Challenge: A useful directory handover",
+      "prompt": "A directory team repaired a reported communication fault. Which evidence request best verifies the original delegated-authentication incident?",
+      "evidence": [
+        "Incident: user U63, associated AD account A63, agent path P63",
+        "Required outcome: a fresh credential attempt on the intended path returns a usable result"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "c1fdce1615",
+      "options": [
+        {
+          "id": "c1fdce1615",
+          "text": "Retest U63 and correlate the AD and Okta authentication results",
+          "explanation": "A fresh, associated result tests the original operation. Preserve remaining app-readiness questions separately."
+        },
+        {
+          "id": "f81363e1e9",
+          "text": "Send a general screenshot showing that an agent service is running",
+          "explanation": "A running process does not prove the investigated account's directory request completed."
+        },
+        {
+          "id": "00299a82ff",
+          "text": "Show that an unrelated account import succeeded",
+          "explanation": "An import on another account does not verify U63's delegated sign-in."
+        },
+        {
+          "id": "e74b40cb1e",
+          "text": "Verify only that the employee's source profile is current",
+          "explanation": "Profile sourcing is a different operation from the failed credential-validation path."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Hand the directory team a specific question"
+      }
     }
   ]
 }

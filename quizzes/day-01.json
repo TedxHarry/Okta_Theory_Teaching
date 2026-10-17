@@ -402,6 +402,154 @@
         "source": "lessons/day-01-people-identities-access.md",
         "heading": "Investigating Devi's ticket"
       }
+    },
+    {
+      "id": "L01-Q13",
+      "topic": "Challenge: Two independent access results",
+      "prompt": "An employee can use Reports but cannot enter Projects. Both apps use Okta for sign-in. Which conclusion follows from the supplied observations?",
+      "evidence": [
+        "Okta sign-in: accepted for the employee",
+        "Reports: report opened successfully; Projects: account disabled"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "fdd1400a04",
+      "options": [
+        {
+          "id": "fdd1400a04",
+          "text": "Projects account readiness is a separate problem",
+          "explanation": "Shared Okta sign-in does not make application accounts share state. The Projects account is observed disabled; investigate its approved state and ownership."
+        },
+        {
+          "id": "695d6d6a42",
+          "text": "The Okta password must be wrong for Projects",
+          "explanation": "An app-specific disabled record is not evidence that the shared Okta credential is wrong."
+        },
+        {
+          "id": "0cbc830a32",
+          "text": "Reports access proves that Projects should accept the user",
+          "explanation": "A successful outcome in one app does not establish another app account or permission."
+        },
+        {
+          "id": "75332d084f",
+          "text": "Projects needs the same role names as Reports",
+          "explanation": "The packet establishes a disabled account, not a role-name mismatch between apps."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Signing in and having permission are different"
+      }
+    },
+    {
+      "id": "L01-Q14",
+      "topic": "Challenge: What a role label leaves open",
+      "prompt": "A support ticket says an app user has the Reader role. Which fact needed to establish working read access is still unknown?",
+      "evidence": [
+        "Intended resource: quarterly report in Projects",
+        "Account record: Reader role recorded; enabled state and actual request not inspected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "87fa288e1d",
+      "options": [
+        {
+          "id": "87fa288e1d",
+          "text": "Whether the intended account can actually read that resource",
+          "explanation": "A role label is configuration evidence. Account state, resource scope and the actual access result still need checking."
+        },
+        {
+          "id": "b7f5792dd0",
+          "text": "Whether the record contains a Reader role label",
+          "explanation": "The supplied record already establishes the label; it does not establish effective access."
+        },
+        {
+          "id": "bd5b185fb1",
+          "text": "Whether the intended resource is a quarterly report",
+          "explanation": "The packet identifies that resource explicitly. Uncertainty concerns access to it."
+        },
+        {
+          "id": "06d083d931",
+          "text": "Whether Reader is the role recorded in the ticket",
+          "explanation": "That detail is supplied. Repeating it would not resolve the missing account and access evidence."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Start with the right record"
+      }
+    },
+    {
+      "id": "L01-Q15",
+      "topic": "Challenge: Choose the relevant record",
+      "prompt": "An employee reports that Projects is unavailable after signing in to Okta. Which next check most directly addresses the unresolved application boundary?",
+      "evidence": [
+        "Okta authentication event: success for user U17",
+        "Projects account U17: not inspected; no Projects sign-in result supplied"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "fad5ac2d62",
+      "options": [
+        {
+          "id": "fad5ac2d62",
+          "text": "Inspect the intended Projects account and its entry result",
+          "explanation": "The missing evidence concerns Projects readiness and processing. Locate the correct app record and attempt before choosing a repair."
+        },
+        {
+          "id": "8984f19198",
+          "text": "Reset the accepted Okta credential immediately",
+          "explanation": "The packet supplies no credential rejection. Resetting it does not establish the app account state."
+        },
+        {
+          "id": "37c3c458c4",
+          "text": "Change the employee department to match a coworker",
+          "explanation": "No eligibility or data defect has been demonstrated; copying another person changes an unproven boundary."
+        },
+        {
+          "id": "54870d92c8",
+          "text": "Grant an administrator role to bypass the ticket",
+          "explanation": "No permission requirement or missing role is established, and broad access does not explain the original failure."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Investigating Devi's ticket"
+      }
+    },
+    {
+      "id": "L01-Q16",
+      "topic": "Challenge: Prove the requested outcome",
+      "prompt": "A ticket requires an assigned employee to open a report with read-only access. Which follow-up best supports closing that specific ticket?",
+      "evidence": [
+        "Previous problem: intended app account was disabled",
+        "Authorized enablement: recorded; report access has not yet been retested"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "ea5c68a035",
+      "options": [
+        {
+          "id": "ea5c68a035",
+          "text": "Verify account enablement, report reading and the expected edit denial",
+          "explanation": "This checks the repaired state and both sides of the stated access requirement for the intended user and resource."
+        },
+        {
+          "id": "feb6ae2f0b",
+          "text": "Confirm only that the Okta dashboard tile is visible",
+          "explanation": "A launch tile does not show that the app accepted the account or applied the required permissions."
+        },
+        {
+          "id": "1316371205",
+          "text": "Confirm only that a different administrator can edit the report",
+          "explanation": "Another account with different permissions cannot establish this reader's intended access."
+        },
+        {
+          "id": "2208d04d1d",
+          "text": "Confirm only that the enablement action was submitted",
+          "explanation": "Submission is an intermediate event; it does not establish the effective app state or access result."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Being assigned an application is another fact to check"
+      }
     }
   ]
 }

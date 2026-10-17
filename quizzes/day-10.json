@@ -402,6 +402,154 @@
         "source": "lessons/day-10-scim.md",
         "heading": "A conflict requires an ownership decision"
       }
+    },
+    {
+      "id": "L10-Q13",
+      "topic": "Challenge: A missing response is not a confirmed failure",
+      "prompt": "A SCIM create request times out at the client. Which conclusion is supported by the supplied evidence?",
+      "evidence": [
+        "POST /Users: sent for intended worker E101",
+        "Client: no response received; target state and processing result not yet inspected"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "56e40d33c4",
+      "options": [
+        {
+          "id": "56e40d33c4",
+          "text": "The target creation outcome remains unresolved",
+          "explanation": "A timeout describes the client's observation, not necessarily the target's final state. Reconcile the intended account and operation before choosing a retry."
+        },
+        {
+          "id": "aecc52df95",
+          "text": "The target definitely created no account",
+          "explanation": "The target might have processed the request before the response was lost or delayed. No target result is supplied."
+        },
+        {
+          "id": "b6cff0ab69",
+          "text": "A second create is guaranteed to be harmless",
+          "explanation": "Without resolving the first outcome, a retry can encounter a conflict or create an unintended duplicate depending on the contract."
+        },
+        {
+          "id": "d58a985596",
+          "text": "The client can record creation as complete because the request was sent",
+          "explanation": "Submission without a response or target-state evidence does not establish completion."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Read a create operation"
+      }
+    },
+    {
+      "id": "L10-Q14",
+      "topic": "Challenge: Account state versus continuing access",
+      "prompt": "A supported SCIM operation sets a target account to active=false and a target read confirms that value. What remains unknown about the stated removal requirement?",
+      "evidence": [
+        "Target account P102: active=false confirmed after the operation",
+        "Requirement: existing protected app sessions must also stop; no session test supplied"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "ce8e526723",
+      "options": [
+        {
+          "id": "ce8e526723",
+          "text": "Whether existing target sessions still authorize protected requests",
+          "explanation": "The account-state outcome is established. The separate session-termination requirement needs evidence from the target's supported mechanism and subsequent access."
+        },
+        {
+          "id": "8943e5fc68",
+          "text": "Whether the stored active field became false",
+          "explanation": "The target read explicitly establishes that field result."
+        },
+        {
+          "id": "015433d6b3",
+          "text": "Whether an account-state operation occurred",
+          "explanation": "The supported operation and its stored outcome are both supplied."
+        },
+        {
+          "id": "1bb044f892",
+          "text": "Whether the account is identified as P102",
+          "explanation": "The resource identifier is supplied. The missing result concerns continuing sessions."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Deactivation is an account-state change"
+      }
+    },
+    {
+      "id": "L10-Q15",
+      "topic": "Challenge: Resolve a timeout before repeating creation",
+      "prompt": "After an unconfirmed create, a retry receives a uniqueness conflict. What next check most directly prevents an incorrect account association?",
+      "evidence": [
+        "Initial create: response unavailable",
+        "Retry: 409 uniqueness; matching target resource exists, but its ownership is not established"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "59055ed216",
+      "options": [
+        {
+          "id": "59055ed216",
+          "text": "Inspect the conflict and resource ownership before linking or retrying",
+          "explanation": "The first request may have succeeded, or the conflict may belong to another record. Establish identity and operation evidence rather than treating the conflict as permission to link."
+        },
+        {
+          "id": "872039f8b9",
+          "text": "Automatically link the first resource with a similar display name",
+          "explanation": "A conflict does not prove rightful ownership; a display name can select another person's account."
+        },
+        {
+          "id": "b8ea816c5c",
+          "text": "Change the username randomly and create another account",
+          "explanation": "That can bypass a legitimate uniqueness guard while introducing a duplicate or wrong identity."
+        },
+        {
+          "id": "2ebc757d36",
+          "text": "Delete the conflicting account before reading its owner",
+          "explanation": "The account could hold another person's data and access. Deletion is not justified by the supplied uncertainty."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "A conflict requires an ownership decision"
+      }
+    },
+    {
+      "id": "L10-Q16",
+      "topic": "Challenge: Verify update without replacement loss",
+      "prompt": "An integration changes an existing user's department using its documented supported update operation. Which verification best addresses the requirement?",
+      "evidence": [
+        "Resource P104: department must change SAL to FIN",
+        "Contract: retain the same resource and unrelated required fields"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "7a1c4c33de",
+      "options": [
+        {
+          "id": "7a1c4c33de",
+          "text": "Verify FIN on P104 with stable association and preserved required fields",
+          "explanation": "The outcome is more than an HTTP success. Verify the intended existing resource, changed field and relevant preservation requirements."
+        },
+        {
+          "id": "169898552f",
+          "text": "Find a FIN value on any account returned by a search",
+          "explanation": "That could be a different resource and does not establish P104's update."
+        },
+        {
+          "id": "61e146976a",
+          "text": "Confirm only that the update request contained FIN",
+          "explanation": "The request expresses intent, but not target acceptance or the stored final representation."
+        },
+        {
+          "id": "74b0452168",
+          "text": "Replace P104 with a newly created resource and compare only department",
+          "explanation": "That violates the stated continuity requirement and does not test the supported existing-account update."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Updating is not creating again"
+      }
     }
   ]
 }

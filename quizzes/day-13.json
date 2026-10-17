@@ -402,6 +402,154 @@
         "source": "lessons/day-13-policies-and-sessions.md",
         "heading": "Build a correlated evidence trail"
       }
+    },
+    {
+      "id": "L13-Q13",
+      "topic": "Challenge: A higher rule changes the diagnosis",
+      "prompt": "An administrator expects a permissive app rule to apply, but the correlated attempt selects a higher-priority restrictive rule. What is established?",
+      "evidence": [
+        "App association: intended policy confirmed",
+        "Observed context matches higher-priority rule R1; selected R1 requires a new check"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "f45775ba22",
+      "options": [
+        {
+          "id": "f45775ba22",
+          "text": "The observed higher-priority rule selection explains the prompt",
+          "explanation": "A lower rule's presence does not establish selection. Compare actual context and rule order with the approved design before deciding whether the selection is a defect."
+        },
+        {
+          "id": "3eb1cb261a",
+          "text": "The lower rule must apply because its name mentions this team",
+          "explanation": "A descriptive rule name does not override supplied selection and priority evidence."
+        },
+        {
+          "id": "29587d205e",
+          "text": "The authenticator enrollment must be corrupt",
+          "explanation": "The packet explains the prompt through policy selection and supplies no enrollment corruption evidence."
+        },
+        {
+          "id": "d2a3b94c12",
+          "text": "A shared policy cannot have different outcomes for different contexts",
+          "explanation": "Conditional rules exist to distinguish contexts; policy sharing does not imply identical outcomes for every attempt."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Identify the policy that actually applies"
+      }
+    },
+    {
+      "id": "L13-Q14",
+      "topic": "Challenge: A prompt does not settle session destruction",
+      "prompt": "A user is challenged again after an authentication interval. Which fact about session state remains unknown from the challenge alone?",
+      "evidence": [
+        "App authentication rule: new check required after the configured interval",
+        "Challenge displayed; provider and local app session termination not inspected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "1434bdabe8",
+      "options": [
+        {
+          "id": "1434bdabe8",
+          "text": "Whether either session was terminated rather than requiring reauthentication",
+          "explanation": "Reauthentication and session lifetime are related controls with distinct outcomes. A prompt alone does not establish the destruction of every session."
+        },
+        {
+          "id": "fd6f637dd5",
+          "text": "Whether another check was requested",
+          "explanation": "The displayed challenge explicitly establishes that narrower observation."
+        },
+        {
+          "id": "f701b91486",
+          "text": "Whether the supplied rule contains an interval condition",
+          "explanation": "That requirement is supplied; actual session termination is not."
+        },
+        {
+          "id": "001b4f3025",
+          "text": "Whether a challenge was displayed to the user",
+          "explanation": "The packet states that it was. Display and termination are different facts."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Keep session lifetime and reauthentication separate"
+      }
+    },
+    {
+      "id": "L13-Q15",
+      "topic": "Challenge: A shared rule needs a wider comparison",
+      "prompt": "A proposed rule edit would remove a prompt in Expense. Which next analysis is most justified before releasing it?",
+      "evidence": [
+        "Rule belongs to Policy P13, shared by Expense and Payroll",
+        "Payroll authentication requirement: unchanged; impact of proposed edit not assessed"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "ec64c471ca",
+      "options": [
+        {
+          "id": "ec64c471ca",
+          "text": "Assess the change against requirements and contexts in both apps",
+          "explanation": "A local symptom can lead to a shared change. Assess Payroll and rule-order effects rather than assuming the Expense outcome is the only consequence."
+        },
+        {
+          "id": "7ccd3362be",
+          "text": "Release after testing only the original Expense user",
+          "explanation": "That leaves another explicitly affected app's authentication requirement untested."
+        },
+        {
+          "id": "50f1b78ef6",
+          "text": "Remove the stronger requirement from both apps for consistency",
+          "explanation": "Consistency is not a substitute for each app's approved requirement."
+        },
+        {
+          "id": "c9864e64d0",
+          "text": "Rename the shared policy to Expense Only and keep the same associations",
+          "explanation": "A label does not change the actual app associations or rule behavior."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Predict who a rule change will affect"
+      }
+    },
+    {
+      "id": "L13-Q16",
+      "topic": "Challenge: Differentiate an old session from a new one",
+      "prompt": "After local logout, an app opens again without a password prompt. Which evidence best verifies whether logout failed or a new session was created?",
+      "evidence": [
+        "Old app session identifier: A134",
+        "Provider session may remain acceptable; no subsequent request/session trace yet supplied"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "0bf6fab25a",
+      "options": [
+        {
+          "id": "0bf6fab25a",
+          "text": "Correlate old-session invalidation, protected requests and any replacement session",
+          "explanation": "The same user experience can reflect survival or replacement. Correlated old/new state and message flow distinguish the two."
+        },
+        {
+          "id": "68e96b796e",
+          "text": "Conclude failure solely because the next visit had no password prompt",
+          "explanation": "A surviving provider session can support a fresh app session; no prompt does not prove the old local session survived."
+        },
+        {
+          "id": "030f2fe58f",
+          "text": "Conclude success solely because the logout button was clicked",
+          "explanation": "The action does not establish that the target invalidated A134."
+        },
+        {
+          "id": "7f24cc2ccd",
+          "text": "Inspect only the provider's configured timeout",
+          "explanation": "Configuration alone does not show the local session outcome or whether a new exchange occurred."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Define what signing out must accomplish"
+      }
     }
   ]
 }

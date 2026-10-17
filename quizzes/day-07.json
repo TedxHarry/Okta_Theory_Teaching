@@ -402,6 +402,154 @@
         "source": "lessons/day-07-authenticators-enrollment-mfa.md",
         "heading": "Before moving on"
       }
+    },
+    {
+      "id": "L07-Q13",
+      "topic": "Challenge: A stronger app requirement",
+      "prompt": "A user has an acceptable Okta session and an authenticator enrollment, yet an app requests another check. What does the packet support?",
+      "evidence": [
+        "Selected app rule: requires authentication evidence not satisfied by the existing session",
+        "New challenge: offered; its completion has not yet been observed"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "1463c7d207",
+      "options": [
+        {
+          "id": "1463c7d207",
+          "text": "The challenge fits the rule; successful app entry is unproven",
+          "explanation": "An existing session and enrollment do not by themselves satisfy every app requirement. Follow the challenge and application result separately."
+        },
+        {
+          "id": "4413753dac",
+          "text": "The enrollment must have disappeared because a challenge appeared",
+          "explanation": "The packet says enrollment exists. A prompt can concern use or assurance rather than missing enrollment."
+        },
+        {
+          "id": "cf45d4c33a",
+          "text": "The app rule must be ignored whenever an Okta session exists",
+          "explanation": "A session does not override an applicable stronger app authentication requirement."
+        },
+        {
+          "id": "e4cd46f824",
+          "text": "The challenge proves the user already completed app sign-in",
+          "explanation": "Offering a check is not evidence that it was completed or that entry followed."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Two requirements with different jobs"
+      }
+    },
+    {
+      "id": "L07-Q14",
+      "topic": "Challenge: A method name is not an outcome",
+      "prompt": "An engineer proposes that an app requirement is satisfied because the user has Okta Verify. What essential attempt-specific fact remains unknown?",
+      "evidence": [
+        "User inventory: Okta Verify enrollment exists",
+        "Current attempt: actual method and policy evaluation are not supplied"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "490b8ceeb8",
+      "options": [
+        {
+          "id": "490b8ceeb8",
+          "text": "Which method was used and whether it satisfied the selected rule",
+          "explanation": "An enrollment/product label does not establish the method, challenge result or applicable assurance decision in this attempt."
+        },
+        {
+          "id": "33f134b0ae",
+          "text": "Whether an Okta Verify enrollment exists",
+          "explanation": "The inventory explicitly establishes enrollment, but not its use in this attempt."
+        },
+        {
+          "id": "2a965a003c",
+          "text": "Whether the engineer proposed using the enrollment as evidence",
+          "explanation": "The proposal is stated; it does not establish the actual authentication result."
+        },
+        {
+          "id": "a0c694c2f7",
+          "text": "Whether inventory and attempt evidence are the same record type",
+          "explanation": "The packet labels them separately. The unresolved work is obtaining actual method and rule evidence."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Okta Verify methods are not interchangeable"
+      }
+    },
+    {
+      "id": "L07-Q15",
+      "topic": "Challenge: Recovery with a defined scope",
+      "prompt": "A user has one working enrollment and one failed device enrollment. Which next step is most justified before a reset?",
+      "evidence": [
+        "Support identity verification: required by the approved recovery process",
+        "Failure detail: points to one device; impact of resetting all enrollments not assessed"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "2fcd4a2610",
+      "options": [
+        {
+          "id": "2fcd4a2610",
+          "text": "Verify identity and assess recovery scoped to the failed enrollment",
+          "explanation": "Recovery changes authentication readiness. Establish identity, affected method and supported scope rather than removing working methods without evidence."
+        },
+        {
+          "id": "665c3edca7",
+          "text": "Remove every enrollment to simplify the investigation",
+          "explanation": "That broadens disruption and can remove the user's working method without resolving the evidenced scope."
+        },
+        {
+          "id": "9df33a7631",
+          "text": "Disable the app requirement permanently",
+          "explanation": "A device-specific recovery issue does not justify weakening the app's approved requirement."
+        },
+        {
+          "id": "d526d5ce80",
+          "text": "Reset the password before inspecting the challenged method or recovery scope",
+          "explanation": "A password change may not address the failed device enrollment. Establish the affected method and approved recovery scope before selecting an action."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Read the enrollment before choosing a reset"
+      }
+    },
+    {
+      "id": "L07-Q16",
+      "topic": "Challenge: Verify the recovered method",
+      "prompt": "An authorized recovery action completed. Which follow-up best supports the claim that the affected user can meet the intended app authentication requirement?",
+      "evidence": [
+        "Recovery scope: one failed enrollment replaced through the approved process",
+        "Requirement: selected app rule must be met without weakening its conditions"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "32e09dd1e8",
+      "options": [
+        {
+          "id": "32e09dd1e8",
+          "text": "Verify fresh method use, rule satisfaction and the separate app result",
+          "explanation": "Recovery administration, authentication proof and application entry are separate outcomes. A fresh correlated test verifies the intended requirement without assuming it from enrollment alone."
+        },
+        {
+          "id": "a9ee622ec1",
+          "text": "Stop when the enrollment inventory shows a new entry",
+          "explanation": "Inventory shows enrollment state, not successful use under the app rule."
+        },
+        {
+          "id": "0ea860e991",
+          "text": "Use an app tab opened before recovery as the only test",
+          "explanation": "An existing local session may bypass the recovered method and the new authentication requirement."
+        },
+        {
+          "id": "35b04b31fc",
+          "text": "Allow any method temporarily and treat entry as proof of the original requirement",
+          "explanation": "A weakened test no longer establishes that the intended unchanged requirement can be met."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Keep the evidence tied to the question"
+      }
     }
   ]
 }

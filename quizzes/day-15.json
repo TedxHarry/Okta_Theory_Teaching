@@ -402,6 +402,154 @@
         "source": "lessons/day-15-integrated-case.md",
         "heading": "Close the request without hiding an unknown"
       }
+    },
+    {
+      "id": "L15-Q13",
+      "topic": "Challenge: Two nodes require two boundary diagnoses",
+      "prompt": "Fresh attempts hit two active SP nodes after a signing-key change. Which investigation summary preserves the supplied results?",
+      "evidence": [
+        "Node A: approved key trusted, SAML accepted, account resolution fails",
+        "Node B: approved key absent, verification fails before account resolution"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "a449697bfc",
+      "options": [
+        {
+          "id": "a449697bfc",
+          "text": "A has an account-resolution gap; B has an earlier trust gap",
+          "explanation": "The same user-facing failure masks different stopping points. Keep each node's correlated attempt separate and plan correction and verification for each evidenced boundary."
+        },
+        {
+          "id": "f9420aae95",
+          "text": "Both nodes have only a NameID issue because neither user entered",
+          "explanation": "Node B did not reach account resolution; a shared symptom cannot establish the same cause."
+        },
+        {
+          "id": "70f1828620",
+          "text": "Both nodes need only the signing key because the change was recent",
+          "explanation": "Node A already verifies and accepts SAML. Its evidenced remaining gap is different."
+        },
+        {
+          "id": "9cae158540",
+          "text": "Node A success proves the deployment is complete across the service",
+          "explanation": "Node A has an unresolved local-account result, and Node B has an independent verification failure."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      }
+    },
+    {
+      "id": "L15-Q14",
+      "topic": "Challenge: An action without an outcome is unfinished",
+      "prompt": "A final handover includes one verified repair and one submitted target action. Which outcome remains unknown?",
+      "evidence": [
+        "Mapping incident: intended target value confirmed corrected",
+        "Leaver incident: target deactivation requested; no target result or access test supplied"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "9afa417bf4",
+      "options": [
+        {
+          "id": "9afa417bf4",
+          "text": "Whether the required leaver target removal actually completed",
+          "explanation": "A verified result in one incident does not close another. Track the target operation and required access checks under the leaver incident's owner."
+        },
+        {
+          "id": "b6552d9596",
+          "text": "Whether the mapping incident has a verified corrected target value",
+          "explanation": "The packet explicitly confirms that result."
+        },
+        {
+          "id": "4664f77a60",
+          "text": "Whether a leaver target action was requested",
+          "explanation": "The request is supplied; execution and effect are the missing outcomes."
+        },
+        {
+          "id": "e336362a95",
+          "text": "Whether these incidents have different evidence statuses",
+          "explanation": "Their statuses are supplied. The unresolved engineering outcome is target removal."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Close the request without hiding an unknown"
+      }
+    },
+    {
+      "id": "L15-Q15",
+      "topic": "Challenge: Prioritize an evidenced continuing exposure",
+      "prompt": "Two tickets are open. Which next action best follows the explicitly supplied impact?",
+      "evidence": [
+        "Ticket A: reader can read; forbidden administration is denied as required",
+        "Ticket B: departed worker's old app session still reads sensitive records after the required immediate cutoff"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "968be92a2f",
+      "options": [
+        {
+          "id": "968be92a2f",
+          "text": "Prioritize B's continuing exposure; record A's denial as expected",
+          "explanation": "B demonstrates a missed removal requirement with continuing protected access. A demonstrates the intended permission boundary, not a repair need."
+        },
+        {
+          "id": "fdb89abf36",
+          "text": "Prioritize removing A's denial because every denial is a failure",
+          "explanation": "A's denied action is explicitly prohibited; changing it would weaken the approved boundary."
+        },
+        {
+          "id": "144c59b004",
+          "text": "Close B because central deactivation would normally be enough",
+          "explanation": "The observed continuing target access contradicts closure of the stated immediate-cutoff requirement."
+        },
+        {
+          "id": "e78ff28366",
+          "text": "Treat both as equivalent authentication failures",
+          "explanation": "A is an expected authorization result; B concerns continuing access after removal. Neither supports that combined diagnosis."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Prioritize by the supplied impact"
+      }
+    },
+    {
+      "id": "L15-Q16",
+      "topic": "Challenge: A complete correction record",
+      "prompt": "An integration repair addresses wrong audience configuration and inconsistent node trust. Which verification record most strongly supports closing those defects?",
+      "evidence": [
+        "Service: two active SP nodes; approved key K15 and audience urn:projects:prod",
+        "Requirements: intended users enter; wrong-audience responses remain rejected; local reader limits remain"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "9f90df0ad6",
+      "options": [
+        {
+          "id": "9f90df0ad6",
+          "text": "Verify fresh per-node behavior, intended entry and required rejection cases",
+          "explanation": "This tests deployment consistency, the repaired boundary and relevant authorization behavior. Name the attempt, node and outcome rather than relying on one service-wide success label."
+        },
+        {
+          "id": "07bc351a46",
+          "text": "Record one successful refresh through whichever node the load balancer chooses",
+          "explanation": "A refresh can use an old session and leaves the second node's new-entry behavior unverified."
+        },
+        {
+          "id": "516e7d46d9",
+          "text": "Record that the key and audience are present in the design document",
+          "explanation": "The document expresses intent; it does not establish effective configuration or runtime results on both nodes."
+        },
+        {
+          "id": "e94cabdf0e",
+          "text": "Record that rejection disappeared after disabling all validation",
+          "explanation": "That avoids the acceptance requirements instead of proving the authorized repair and expected denials."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Close the request without hiding an unknown"
+      }
     }
   ]
 }

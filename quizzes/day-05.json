@@ -402,6 +402,154 @@
         "Direct app assignment: still present",
         "Target account/session state: not yet checked"
       ]
+    },
+    {
+      "id": "L05-Q13",
+      "topic": "Challenge: Rule input is the effective profile",
+      "prompt": "An HR change is correct, but a user is still outside a department-based group. Which conclusion is supported?",
+      "evidence": [
+        "Rule reads current Okta user.department = Finance",
+        "HR now says Finance; effective Okta profile still says Sales; user is not in the group"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "6415230782",
+      "options": [
+        {
+          "id": "6415230782",
+          "text": "The effective rule input is stale; a rule defect is unproven",
+          "explanation": "Follow the value to the profile the rule actually evaluates. Correct the evidenced upstream processing gap before broadening an otherwise appropriate condition."
+        },
+        {
+          "id": "c88a688663",
+          "text": "The rule must use OR instead of an equality condition",
+          "explanation": "The packet does not show a condition defect. Changing the expression can broaden access without correcting the stale input."
+        },
+        {
+          "id": "184ec9a298",
+          "text": "Group membership should already follow the HR value directly",
+          "explanation": "The stated rule reads Okta's current profile, not an unprocessed source value."
+        },
+        {
+          "id": "2ce58c4e3b",
+          "text": "A direct app assignment is the only valid permanent solution",
+          "explanation": "A bypass does not resolve the source-to-profile gap or establish the approved grant design."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Read the current profile, not just the source record"
+      }
+    },
+    {
+      "id": "L05-Q14",
+      "topic": "Challenge: Membership has a maintenance path",
+      "prompt": "A user appears in the intended group after a manual addition. Which fact is still needed before treating that membership as durable?",
+      "evidence": [
+        "Observed membership: user U51 is in Group G51",
+        "Group maintenance owner and membership mechanism: not inspected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "d130168b25",
+      "options": [
+        {
+          "id": "d130168b25",
+          "text": "Whether the group's maintenance process will retain that membership",
+          "explanation": "Current membership is an observation. Its maintenance may depend on a rule, directory or approved manual process that must be identified."
+        },
+        {
+          "id": "74da6a13b7",
+          "text": "Whether U51 currently appears in G51",
+          "explanation": "The packet supplies that observation. Repeating it does not establish ownership or durability."
+        },
+        {
+          "id": "ac6570a0ad",
+          "text": "Whether the manual addition produced an observable membership",
+          "explanation": "That effect is supplied, but its long-term maintenance is not."
+        },
+        {
+          "id": "3ac631fd82",
+          "text": "Whether the group identifier in this packet is G51",
+          "explanation": "The identifier is given; identifying the maintenance path is the unresolved work."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Group membership has an owner too"
+      }
+    },
+    {
+      "id": "L05-Q15",
+      "topic": "Challenge: Two groups with one name",
+      "prompt": "Two groups share the display name Finance Readers. A user belongs to one, while the app is assigned to the other. Which next check is justified?",
+      "evidence": [
+        "User belongs to group ID G52; app grant references group ID G53",
+        "Both group display names: Finance Readers; approved design not yet compared"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "12530f0a2d",
+      "options": [
+        {
+          "id": "12530f0a2d",
+          "text": "Compare the actual group objects with the approved grant design",
+          "explanation": "Names can obscure different objects. Determine which group the design intends, then correct the evidenced relationship rather than assuming the names imply identity."
+        },
+        {
+          "id": "680fc73561",
+          "text": "Treat the user as assigned because both names match",
+          "explanation": "A shared display name does not join two different group objects into one grant path."
+        },
+        {
+          "id": "13829650af",
+          "text": "Delete either group immediately because duplicates are always invalid",
+          "explanation": "The packet does not establish that either object is unnecessary or safe to remove."
+        },
+        {
+          "id": "ca40204d1b",
+          "text": "Change the user's department until both groups include them",
+          "explanation": "That alters correct identity data instead of resolving the intended assignment relationship."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Follow a missing application from the user to the assignment"
+      }
+    },
+    {
+      "id": "L05-Q16",
+      "topic": "Challenge: A negative case distinguishes the logic",
+      "prompt": "A rule was corrected from Sales OR Employee to Sales AND Employee. Which regression set most directly tests that distinction?",
+      "evidence": [
+        "Approved population: Sales employees only",
+        "Positive check already available: Sales Employee matches under both expressions"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "ee5201c98c",
+      "options": [
+        {
+          "id": "ee5201c98c",
+          "text": "Expect Sales Contractor and Finance Employee to be excluded",
+          "explanation": "Each contrast satisfies one condition but not both. Together they reveal the over-broad behavior that the original positive case could not distinguish."
+        },
+        {
+          "id": "d4220e8145",
+          "text": "Test only another Sales employee",
+          "explanation": "That is another positive shared by both expressions, so it does not distinguish the faulty logic."
+        },
+        {
+          "id": "256503f1f5",
+          "text": "Test only a Finance contractor",
+          "explanation": "That person satisfies neither condition and is excluded by both expressions."
+        },
+        {
+          "id": "e85852056d",
+          "text": "Check only whether the rule saved without a syntax error",
+          "explanation": "A syntactically valid OR expression can still violate the intended eligibility."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Predict who matches"
+      }
     }
   ]
 }

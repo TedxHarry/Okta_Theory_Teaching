@@ -402,6 +402,154 @@
         "source": "lessons/day-03-profiles-and-mappings.md",
         "heading": "Recognize a verified correction"
       }
+    },
+    {
+      "id": "L03-Q13",
+      "topic": "Challenge: Read the intermediate boundary",
+      "prompt": "A target department is wrong. Which boundary is the first observed mismatch with the stated contract?",
+      "evidence": [
+        "Source and Okta user department: Finance",
+        "Target requires FIN; effective app-user departmentCode: Finance; target stores SAL"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "29aadc7d17",
+      "options": [
+        {
+          "id": "29aadc7d17",
+          "text": "The app-user representation violates the target code contract",
+          "explanation": "Finance is correct as a business value but not as the required target code. Investigate the app mapping before assuming delivery alone caused the mismatch."
+        },
+        {
+          "id": "494e50b070",
+          "text": "The authoritative source must be wrong because it does not store FIN",
+          "explanation": "Different representations can be correct in different systems. The stated source business value is Finance."
+        },
+        {
+          "id": "808c8c64cf",
+          "text": "The target alone is wrong because the app profile has a value",
+          "explanation": "A populated app profile can still contain the wrong representation; its value violates the supplied contract."
+        },
+        {
+          "id": "fa060682da",
+          "text": "The difference proves that the user should be removed from the app",
+          "explanation": "A representation defect does not establish that the user is ineligible for application access."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Find the first wrong representation"
+      }
+    },
+    {
+      "id": "L03-Q14",
+      "topic": "Challenge: Creation and later updates",
+      "prompt": "A new account received the correct department, but a later department change has not appeared. Which configuration fact is still needed to explain the later behavior?",
+      "evidence": [
+        "Creation mapping: desired code observed on the original target account",
+        "Later source change: correct in Okta; mapping application behavior not inspected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "552567078d",
+      "options": [
+        {
+          "id": "552567078d",
+          "text": "Whether the field mapping applies to existing-account updates",
+          "explanation": "A creation result does not establish later update behavior. Check when the mapping applies and the actual subsequent operation."
+        },
+        {
+          "id": "a0562faa15",
+          "text": "Whether the original create contained the correct code",
+          "explanation": "That result is supplied. It cannot settle how later updates are processed."
+        },
+        {
+          "id": "9c945bd1df",
+          "text": "Whether the later source value reached Okta",
+          "explanation": "The packet states that it is correct in Okta; the remaining path is downstream."
+        },
+        {
+          "id": "38392229ed",
+          "text": "Whether an original target account existed",
+          "explanation": "The original target account is observed. Creation is not the unresolved stage."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Read when a mapping applies"
+      }
+    },
+    {
+      "id": "L03-Q15",
+      "topic": "Challenge: A deliberate blank value",
+      "prompt": "A manager value becomes blank in the authoritative input. What should an engineer establish before allowing the mapping to replace the target value?",
+      "evidence": [
+        "Source manager: blank after an approved organizational change",
+        "Target currently has the previous manager; blank/null update semantics not documented"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "45529dea61",
+      "options": [
+        {
+          "id": "45529dea61",
+          "text": "Confirm the blank's intended meaning and supported target removal semantics",
+          "explanation": "Missing input, intentional clearing and retention can require different behavior. Confirm the business meaning and operation contract before applying a destructive interpretation."
+        },
+        {
+          "id": "0dae82ac92",
+          "text": "Always retain the previous manager because a blank cannot carry meaning",
+          "explanation": "A blank may represent an approved removal. Permanent retention would be an unverified business decision."
+        },
+        {
+          "id": "a5a0131f3d",
+          "text": "Always send the text null as the new manager identifier",
+          "explanation": "A literal string is not automatically a supported null or removal operation."
+        },
+        {
+          "id": "d4f84f249a",
+          "text": "Create a replacement target account without a manager",
+          "explanation": "A field-level uncertainty does not justify creating a second account and abandoning the original association."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Missing data needs a decision"
+      }
+    },
+    {
+      "id": "L03-Q16",
+      "topic": "Challenge: Verify one field without hiding another",
+      "prompt": "A department transformation is repaired. Which verification best tests the intended change and a relevant regression risk?",
+      "evidence": [
+        "Approved change: Finance maps to FIN on existing account P31",
+        "Requirement: preserve P31 and its existing user association"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "4eb6634ccd",
+      "options": [
+        {
+          "id": "4eb6634ccd",
+          "text": "Verify FIN on P31 and preserve the same account association",
+          "explanation": "This checks actual delivery, stored representation and account continuity. A mapping fix should not silently turn into duplicate creation or reassociation."
+        },
+        {
+          "id": "c0660e2df3",
+          "text": "Check the expression preview and declare the target corrected",
+          "explanation": "A calculation result does not show that P31 was updated or that its association stayed correct."
+        },
+        {
+          "id": "e2c73078d3",
+          "text": "Find any target account containing FIN",
+          "explanation": "A different account does not establish the intended resource was updated."
+        },
+        {
+          "id": "e6a7a145aa",
+          "text": "Create a new account with FIN and ignore P31",
+          "explanation": "That avoids testing the required existing-account update and can introduce a duplicate."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Recognize a verified correction"
+      }
     }
   ]
 }

@@ -402,6 +402,154 @@
         "source": "lessons/day-09-oidc.md",
         "heading": "Verify the correction through the remaining stages"
       }
+    },
+    {
+      "id": "L09-Q13",
+      "topic": "Challenge: State belongs to one transaction",
+      "prompt": "An OIDC client receives a code at the correct callback, but the returned state belongs to a different browser transaction. What should it conclude about this return?",
+      "evidence": [
+        "Initiating transaction: expects state S91",
+        "Observed callback: code present, state S92; transaction association fails"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "d8f3c08ea9",
+      "options": [
+        {
+          "id": "d8f3c08ea9",
+          "text": "The return fails the initiating transaction's state association check",
+          "explanation": "A correct endpoint and a code do not repair failed transaction association. Follow the client's rejection handling rather than attributing the result to the pending login."
+        },
+        {
+          "id": "2657936370",
+          "text": "The correct callback URL makes the state mismatch harmless",
+          "explanation": "Endpoint registration and transaction association address different requirements; one does not replace the other."
+        },
+        {
+          "id": "9a10372367",
+          "text": "The code can be attached to whichever pending user has the same email",
+          "explanation": "Unverified email association does not establish that this return belongs to the initiating browser transaction."
+        },
+        {
+          "id": "f3c7c62a72",
+          "text": "A successful token exchange would retroactively prove the browser transaction matched",
+          "explanation": "Token exchange and callback association are separate checks. A later result does not make the supplied state match."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read the request's purpose"
+      }
+    },
+    {
+      "id": "L09-Q14",
+      "topic": "Challenge: A resource call is a separate result",
+      "prompt": "A client completes verified OIDC sign-in and obtains an access token. Which API-access fact remains unknown?",
+      "evidence": [
+        "Client result: intended user identified and local app session created",
+        "Protected API call: not made; access-token audience, scope and API result not inspected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "f3714de644",
+      "options": [
+        {
+          "id": "f3714de644",
+          "text": "Whether the token authorizes the requested API operation",
+          "explanation": "Sign-in establishes the client's identity context. Resource access depends on the API's token and authorization requirements and the actual operation."
+        },
+        {
+          "id": "59ddc35781",
+          "text": "Whether a local client session was created",
+          "explanation": "The packet supplies that result; it does not show API authorization."
+        },
+        {
+          "id": "0776eacc9a",
+          "text": "Whether the client completed verified OIDC sign-in",
+          "explanation": "That narrower result is explicitly supplied."
+        },
+        {
+          "id": "d6d8a814d1",
+          "text": "Whether any access token was obtained",
+          "explanation": "Obtaining a token is supplied. Its suitability for this resource operation is not."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Three artifacts, three purposes"
+      }
+    },
+    {
+      "id": "L09-Q15",
+      "topic": "Challenge: Do not repair PKCE by changing the subject",
+      "prompt": "A backend code exchange fails with evidence that the supplied PKCE verifier does not match the original challenge. Which investigation addresses the demonstrated gap?",
+      "evidence": [
+        "Flow: authorization code with S256 PKCE; code associated with transaction T93",
+        "Backend exchange: wrong transaction's verifier used; no accepted ID token returned"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "775ce31d42",
+      "options": [
+        {
+          "id": "775ce31d42",
+          "text": "Trace T93's stored verifier through the backend token request",
+          "explanation": "The mismatch concerns the code-exchange transaction. Correct verifier association and retest with a fresh transaction rather than changing unrelated identity claims."
+        },
+        {
+          "id": "eded5e36ce",
+          "text": "Change the application's employee-ID matching field",
+          "explanation": "No accepted ID token has reached local account matching. The evidenced failure is earlier."
+        },
+        {
+          "id": "e70346049a",
+          "text": "Disable signature verification for the expected ID token",
+          "explanation": "No accepted ID token was returned, and weakening later verification would not fix the verifier mismatch."
+        },
+        {
+          "id": "ca4040c8cd",
+          "text": "Put the client secret into the verifier field",
+          "explanation": "Client authentication and PKCE have distinct roles; one credential is not a replacement for the transaction's verifier."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "What PKCE adds"
+      }
+    },
+    {
+      "id": "L09-Q16",
+      "topic": "Challenge: Verify the complete corrected journey",
+      "prompt": "A registered redirect mismatch is corrected for a confidential OIDC web app. Which follow-up establishes more than successful browser navigation?",
+      "evidence": [
+        "Original failure: redirect URI was not registered",
+        "Required flow: code with PKCE, backend client authentication, ID-token validation and local account resolution"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "a777578e80",
+      "options": [
+        {
+          "id": "a777578e80",
+          "text": "Trace fresh callback, exchange, validation and intended local account/session results",
+          "explanation": "Registration repair fixes one boundary. A complete fresh flow supplies evidence for the remaining client responsibilities and final outcome."
+        },
+        {
+          "id": "b535f611ca",
+          "text": "Stop when the callback URL appears in the browser",
+          "explanation": "Navigation does not establish backend exchange, token acceptance or local account resolution."
+        },
+        {
+          "id": "1872df454c",
+          "text": "Decode any previously captured ID token and compare the email",
+          "explanation": "An old decoded object does not prove a fresh flow's required checks or correct account association."
+        },
+        {
+          "id": "a20124d0aa",
+          "text": "Use an access token as the ID token to shorten the test",
+          "explanation": "These artifacts serve different recipients and purposes; substituting them does not test the required OIDC sign-in."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Verify the correction through the remaining stages"
+      }
     }
   ]
 }

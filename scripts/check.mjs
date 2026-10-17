@@ -9,7 +9,7 @@ assert.equal(manifest.documents.length, 129);
 assert.equal(manifest.documents.filter((d) => d.kind === "Quizzes").length, 16);
 assert.equal(
   manifest.documents.reduce((n, d) => n + (d.quizzes || 0), 0),
-  192,
+  256,
 );
 assert.equal(
   manifest.documents.reduce((n, d) => n + (d.questions || 0), 0),
@@ -91,7 +91,7 @@ for (const file of pages) {
 }
 assert.equal(diagrams, 35);
 assert.equal(answers, 669);
-assert.equal(quizCards, 552);
+assert.equal(quizCards, 736);
 assert.equal(
   manifest.documents.filter((d) => d.kind === "Mixed review").length,
   3,
@@ -102,7 +102,7 @@ console.log(
       generatedPages: pages.length,
       courseFiles: 129,
       questions: 669,
-      uniqueInteractiveQuizQuestions: 192,
+      uniqueInteractiveQuizQuestions: 256,
       quizCardPlacements: quizCards,
       diagrams,
       localLinksAndAssets: links,

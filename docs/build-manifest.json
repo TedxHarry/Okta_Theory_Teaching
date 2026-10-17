@@ -872,7 +872,7 @@
       "number": 1,
       "title": "Day 1: Quizzes",
       "description": "Independent practice for Day 1: People, identities, and access.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-02.json",
@@ -881,7 +881,7 @@
       "number": 2,
       "title": "Day 2: Quizzes",
       "description": "Independent practice for Day 2: Following a request and reading evidence.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-03.json",
@@ -890,7 +890,7 @@
       "number": 3,
       "title": "Day 3: Quizzes",
       "description": "Independent practice for Day 3: Profiles, attributes, and mappings.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-04.json",
@@ -899,7 +899,7 @@
       "number": 4,
       "title": "Day 4: Quizzes",
       "description": "Independent practice for Day 4: Sources, priority, and ownership.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-05.json",
@@ -908,7 +908,7 @@
       "number": 5,
       "title": "Day 5: Quizzes",
       "description": "Independent practice for Day 5: Groups, rules, and application assignments.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-06.json",
@@ -917,7 +917,7 @@
       "number": 6,
       "title": "Day 6: Quizzes",
       "description": "Independent practice for Day 6: AD imports and password validation.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-07.json",
@@ -926,7 +926,7 @@
       "number": 7,
       "title": "Day 7: Quizzes",
       "description": "Independent practice for Day 7: Authenticators, enrollment, and MFA.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-08.json",
@@ -935,7 +935,7 @@
       "number": 8,
       "title": "Day 8: Quizzes",
       "description": "Independent practice for Day 8: SAML and application sign-in.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-09.json",
@@ -944,7 +944,7 @@
       "number": 9,
       "title": "Day 9: Quizzes",
       "description": "Independent practice for Day 9: OIDC and the authorization code.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-10.json",
@@ -953,7 +953,7 @@
       "number": 10,
       "title": "Day 10: Quizzes",
       "description": "Independent practice for Day 10: SCIM and application accounts.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-11.json",
@@ -962,7 +962,7 @@
       "number": 11,
       "title": "Day 11: Quizzes",
       "description": "Independent practice for Day 11: Imports, matching, and reconciliation.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-12.json",
@@ -971,7 +971,7 @@
       "number": 12,
       "title": "Day 12: Quizzes",
       "description": "Independent practice for Day 12: Joining, moving, and leaving.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-13.json",
@@ -980,7 +980,7 @@
       "number": 13,
       "title": "Day 13: Quizzes",
       "description": "Independent practice for Day 13: Policies, sessions, and another authentication check.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-14.json",
@@ -989,7 +989,7 @@
       "number": 14,
       "title": "Day 14: Quizzes",
       "description": "Independent practice for Day 14: Requirements, responsibility, and recovery.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-15.json",
@@ -998,7 +998,7 @@
       "number": 15,
       "title": "Day 15: Quizzes",
       "description": "Independent practice for Day 15: Investigate Northbridge as a connected system.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "quizzes/day-16.json",
@@ -1007,7 +1007,7 @@
       "number": 16,
       "title": "Day 16: Quizzes",
       "description": "Independent practice for Day 16: Turn understanding into a safe practice plan.",
-      "quizzes": 12
+      "quizzes": 16
     },
     {
       "source": "mixed/5",
@@ -1015,7 +1015,7 @@
       "title": "Foundation mixed review: Days 1 to 5",
       "kind": "Mixed review",
       "description": "Draw a balanced 10-question review across the first 5 days.",
-      "reviewPool": 60
+      "reviewPool": 80
     },
     {
       "source": "mixed/10",
@@ -1023,7 +1023,7 @@
       "title": "Integration mixed review: Days 1 to 10",
       "kind": "Mixed review",
       "description": "Draw a balanced 10-question review across the first 10 days.",
-      "reviewPool": 120
+      "reviewPool": 160
     },
     {
       "source": "mixed/15",
@@ -1031,7 +1031,7 @@
       "title": "Engineering mixed review: Days 1 to 15",
       "kind": "Mixed review",
       "description": "Draw a balanced 15-question review across the first 15 days.",
-      "reviewPool": 180
+      "reviewPool": 240
     }
   ],
   "diagramPlacements": 35

@@ -402,6 +402,154 @@
         "source": "lessons/day-11-imports-and-matching.md",
         "heading": "Reconcile expected and observed records"
       }
+    },
+    {
+      "id": "L11-Q13",
+      "topic": "Challenge: An incomplete search changes the conclusion",
+      "prompt": "An import search finds one candidate on its first page. What is the strongest defensible conclusion before the remaining pages are read?",
+      "evidence": [
+        "First page: one candidate matches the proposed email comparison",
+        "Result includes a continuation link; remaining pages not inspected"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "b11884ea9f",
+      "options": [
+        {
+          "id": "b11884ea9f",
+          "text": "One match is observed; complete-result uniqueness remains unverified",
+          "explanation": "A partial result can establish an observed match without establishing the absence of additional candidates. Complete the supported pagination before a uniqueness decision."
+        },
+        {
+          "id": "05070e0367",
+          "text": "The candidate is unique because it is the only visible row",
+          "explanation": "The supplied continuation link shows that the visible rows are not the whole result."
+        },
+        {
+          "id": "434c3cd3ea",
+          "text": "The candidate must be wrong because more pages exist",
+          "explanation": "Additional pages create uncertainty, not proof that the observed candidate is incorrect."
+        },
+        {
+          "id": "f9be9b8ee8",
+          "text": "Matching should create a new account rather than read the rest",
+          "explanation": "Avoiding reconciliation with new creation can introduce duplicates and does not resolve candidate ownership."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Read the whole result, not just its first page"
+      }
+    },
+    {
+      "id": "L11-Q14",
+      "topic": "Challenge: A shared address is incomplete identity evidence",
+      "prompt": "A target account uses an address shared by two workers. Which fact is still needed before assigning that account to one Okta identity?",
+      "evidence": [
+        "Target account T112: email = shared-team@example.test",
+        "Okta candidates U112 and U113 both share that address; approved ownership evidence absent"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "f3fbb2eb88",
+      "options": [
+        {
+          "id": "f3fbb2eb88",
+          "text": "Which person, if either, the account is authorized to represent",
+          "explanation": "The shared string cannot choose between candidates. Obtain approved discriminating ownership evidence and consider whether this account fits a person-account association at all."
+        },
+        {
+          "id": "5879c9b61a",
+          "text": "Whether the target email matches both candidates",
+          "explanation": "That comparison is supplied and demonstrates ambiguity rather than resolving it."
+        },
+        {
+          "id": "de89f42e6c",
+          "text": "Whether two candidate identities exist",
+          "explanation": "The packet names both candidates. Their existence is not the unresolved ownership fact."
+        },
+        {
+          "id": "16aa64995b",
+          "text": "Whether the target account has any email value",
+          "explanation": "It does. A populated identifier is not necessarily a unique identity key."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Recognize when the evidence is insufficient"
+      }
+    },
+    {
+      "id": "L11-Q15",
+      "topic": "Challenge: Reconcile before accepting removals",
+      "prompt": "An import proposes removing accounts that an owner says should remain. Which next investigation addresses the discrepancy?",
+      "evidence": [
+        "Approved population: 50 active workers",
+        "Import sees 30; 20 removals proposed after a source-filter change; source completeness not verified"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "075fc37825",
+      "options": [
+        {
+          "id": "075fc37825",
+          "text": "Reconcile filter scope and complete results with the approved population",
+          "explanation": "The source-scope change can make records disappear from the import without establishing real departures. Resolve completeness and policy before accepting removals."
+        },
+        {
+          "id": "6c742baac8",
+          "text": "Accept removals because an import proposal is authoritative proof of departure",
+          "explanation": "A proposal depends on observed source scope; it is not independently verified business termination evidence."
+        },
+        {
+          "id": "52e7bed89e",
+          "text": "Create 20 replacement identities immediately",
+          "explanation": "That can duplicate or reassociate existing people without explaining the scope discrepancy."
+        },
+        {
+          "id": "1f91989f5b",
+          "text": "Disable all future imports permanently",
+          "explanation": "The supplied discrepancy requires a scoped investigation, not an unsupported abandonment of the integration."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Treat an unexpected removal count as evidence"
+      }
+    },
+    {
+      "id": "L11-Q16",
+      "topic": "Challenge: Verify a match and its consequences",
+      "prompt": "An approved import match associates an existing target account with a worker. Which follow-up best verifies the complete intended result?",
+      "evidence": [
+        "Approved association: target T114 belongs to worker E114",
+        "Requirement: no duplicate; agreed attribute ownership must remain effective"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "f9232d72c1",
+      "options": [
+        {
+          "id": "f9232d72c1",
+          "text": "Verify the intended link, no duplicate and agreed effective ownership",
+          "explanation": "Association can affect later sourcing and processing. Verify identity continuity and the relevant consequences rather than treating a matching preview as the whole outcome."
+        },
+        {
+          "id": "02a2e2d12b",
+          "text": "Confirm only that a preview selected T114",
+          "explanation": "A proposed match does not show confirmed association or its subsequent effects."
+        },
+        {
+          "id": "de82a12692",
+          "text": "Confirm only that the worker can see an app tile",
+          "explanation": "A launch tile does not establish which target resource is linked or who owns its fields."
+        },
+        {
+          "id": "e4f55647fb",
+          "text": "Confirm that any account with the same display name exists",
+          "explanation": "The requirement concerns an approved exact association and its consequences, not a nonunique label."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Association can affect sourcing"
+      }
     }
   ]
 }

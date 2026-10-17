@@ -402,6 +402,154 @@
         "source": "lessons/day-08-saml.md",
         "heading": "Before moving on"
       }
+    },
+    {
+      "id": "L08-Q13",
+      "topic": "Challenge: A valid signature and a wrong destination",
+      "prompt": "A browser delivers a signed response to the test application, but the response targets production. Which conclusion is justified?",
+      "evidence": [
+        "Test receiver expects its approved test ACS and test audience",
+        "Signature: verified; Destination and Audience identify production; receiver rejects targeting"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "801759667c",
+      "options": [
+        {
+          "id": "801759667c",
+          "text": "Reject the targeting mismatch despite the valid signature",
+          "explanation": "Cryptographic verification does not make a message intended for another receiver acceptable. Compare the environment agreement and actual emitted targeting fields."
+        },
+        {
+          "id": "6d197f0c17",
+          "text": "A valid signature authorizes use at every app from that IdP",
+          "explanation": "Signature verification establishes protection under trust; it does not remove targeting restrictions."
+        },
+        {
+          "id": "4429a19ba8",
+          "text": "Replacing the signing certificate is the demonstrated correction",
+          "explanation": "Verification already succeeded. The supplied defect concerns targeting, not an evidenced bad key."
+        },
+        {
+          "id": "ad4283f199",
+          "text": "Account matching should run before any targeting rejection",
+          "explanation": "A local account match cannot make an improperly targeted response acceptable."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
+    },
+    {
+      "id": "L08-Q14",
+      "topic": "Challenge: Decoded XML leaves a trust question",
+      "prompt": "A copied SAML extract contains the expected NameID and Audience. Which acceptance fact remains unknown from that extract alone?",
+      "evidence": [
+        "Decoded copied XML: expected subject and intended audience visible",
+        "Original signed message, verified protection scope and receiver validation result: absent"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "2025157567",
+      "options": [
+        {
+          "id": "2025157567",
+          "text": "Whether required protected content was verified and consumed under expected trust",
+          "explanation": "Readable XML fields alone do not establish authenticity, protection scope or acceptance. Obtain preserved-message and correlated receiver evidence."
+        },
+        {
+          "id": "e32c21331a",
+          "text": "Whether the copied text displays the expected subject",
+          "explanation": "That observation is supplied. It does not establish trusted consumption of the same object."
+        },
+        {
+          "id": "23827e4f07",
+          "text": "Whether an audience value is present in the extract",
+          "explanation": "The packet supplies the field. Presence does not establish the rest of response acceptance."
+        },
+        {
+          "id": "03d37d48a2",
+          "text": "Whether the analyst has any readable XML at all",
+          "explanation": "The copied extract is supplied; its readability is not the missing trust evidence."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Read a small piece of XML"
+      }
+    },
+    {
+      "id": "L08-Q15",
+      "topic": "Challenge: One setting fixes one demonstrated gap",
+      "prompt": "An SP rejects an assertion audience while its NameID already matches the required account key. What should an engineer investigate before changing configuration?",
+      "evidence": [
+        "Expected Audience: urn:projects:prod; emitted Audience: urn:projects:test",
+        "Verified consumed NameID: E88, matching the approved employee-ID lookup contract"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "4b74f99d69",
+      "options": [
+        {
+          "id": "4b74f99d69",
+          "text": "Compare the audience configuration and environment with the SP agreement",
+          "explanation": "The observed gap is targeting. Investigate the relevant agreement and configuration; changing a correct subject identifier would introduce a different problem."
+        },
+        {
+          "id": "318331709e",
+          "text": "Change NameID from employee ID to email immediately",
+          "explanation": "The supplied account-key contract already matches the current NameID; changing it does not fix audience targeting."
+        },
+        {
+          "id": "071d76feb1",
+          "text": "Turn off audience validation while keeping the same emitted assertion",
+          "explanation": "Disabling the acceptance boundary avoids the required targeting check instead of correcting the integration."
+        },
+        {
+          "id": "d06fb2c280",
+          "text": "Create another account with the same employee ID",
+          "explanation": "A duplicate does not change the assertion's intended audience and can make later matching ambiguous."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Establish the audience defect"
+      }
+    },
+    {
+      "id": "L08-Q16",
+      "topic": "Challenge: Acceptance and expected rejection",
+      "prompt": "An approved SAML audience correction is released to a test integration. Which test set most strongly verifies the intended acceptance boundary?",
+      "evidence": [
+        "Positive case: fresh correctly targeted response under approved trust",
+        "Negative case available: independently generated validly signed response with an unapproved audience"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "99b044a230",
+      "options": [
+        {
+          "id": "99b044a230",
+          "text": "Verify fresh intended entry and rejection of the wrong-audience case",
+          "explanation": "The positive case checks working sign-in; the controlled negative case checks the targeting restriction. Keep other required checks enabled and observe receiver/session results."
+        },
+        {
+          "id": "f08672145a",
+          "text": "Test only that the browser can POST to the ACS",
+          "explanation": "Delivery does not establish acceptance or expected rejection."
+        },
+        {
+          "id": "0c2ef40c8d",
+          "text": "Edit signed XML locally and use its rejection as proof of audience enforcement",
+          "explanation": "Editing protected content can invalidate the signature, so rejection would not isolate the audience check."
+        },
+        {
+          "id": "00b167fccd",
+          "text": "Test only by refreshing a session created before the correction",
+          "explanation": "That may avoid the new exchange entirely and leave both acceptance cases untested."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
     }
   ]
 }

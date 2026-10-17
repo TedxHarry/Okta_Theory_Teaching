@@ -402,6 +402,154 @@
         "source": "lessons/day-04-sources-and-ownership.md",
         "heading": "Tell Devi's and Priya's stories"
       }
+    },
+    {
+      "id": "L04-Q13",
+      "topic": "Challenge: Different owners in the same profile",
+      "prompt": "Two fields in one Okta profile disagree with AD. Which interpretation follows from the explicitly supplied ownership?",
+      "evidence": [
+        "Employee department: owned by HR; HR and Okta both show Finance",
+        "Directory field: owned by AD; AD shows D2 while Okta shows old D1"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "5b95e74f1c",
+      "options": [
+        {
+          "id": "5b95e74f1c",
+          "text": "Investigate the AD-owned field; the HR-owned department agrees with HR",
+          "explanation": "Authority is evaluated per supplied field responsibility. The department agrees with its owner; the directory field does not."
+        },
+        {
+          "id": "6d11256585",
+          "text": "Both fields should be overwritten with AD values",
+          "explanation": "AD owns the directory field in this packet, not every attribute in the profile."
+        },
+        {
+          "id": "3799a4e9f3",
+          "text": "Both fields are correct because HR owns the employee",
+          "explanation": "Profile-level context does not erase the separately stated directory-field ownership."
+        },
+        {
+          "id": "a712bb923d",
+          "text": "The password-validation system should choose both values",
+          "explanation": "Credential validation and profile field ownership are separate responsibilities."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-04-sources-and-ownership.md",
+        "heading": "Then check the particular attribute"
+      }
+    },
+    {
+      "id": "L04-Q14",
+      "topic": "Challenge: A correct value after a local edit",
+      "prompt": "An HR-owned field is correct immediately after a local edit. What remains unknown about whether that was a durable correction?",
+      "evidence": [
+        "HR source department: still incorrect for the approved employee change",
+        "Local Okta edit: desired value observed; next source processing not yet observed"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "4954a79fbd",
+      "options": [
+        {
+          "id": "4954a79fbd",
+          "text": "Whether source processing will overwrite the locally edited value",
+          "explanation": "An immediate local read does not establish durability. The source remains wrong, so inspect the configured ownership and subsequent processing."
+        },
+        {
+          "id": "809bb1c2f3",
+          "text": "Whether the local edit currently displays the desired value",
+          "explanation": "The packet already supplies that observation; it does not establish persistence."
+        },
+        {
+          "id": "129938efbc",
+          "text": "Whether HR still contains the incorrect department",
+          "explanation": "The supplied source read establishes that remaining defect."
+        },
+        {
+          "id": "929bf2d48d",
+          "text": "Whether a local edit action was performed",
+          "explanation": "The action is supplied. The unresolved question is its behavior under later sourcing."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-04-sources-and-ownership.md",
+        "heading": "Investigate a value that comes back"
+      }
+    },
+    {
+      "id": "L04-Q15",
+      "topic": "Challenge: Do not broaden an employee source",
+      "prompt": "A contractor has no HR record and needs an approved department correction. What is the most justified starting point?",
+      "evidence": [
+        "Contractor C41: no HR association; managed in Okta under sponsor approval",
+        "Employee population: HR-led; proposed department correction belongs only to C41"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "d12f1c387e",
+      "options": [
+        {
+          "id": "d12f1c387e",
+          "text": "Use the contractor's actual ownership and sponsor-approved maintenance process",
+          "explanation": "A population-wide source order does not create an HR association for this contractor. Establish and use the actual responsibility for this person."
+        },
+        {
+          "id": "ae867e68b0",
+          "text": "Change employee source priority to make contractor editing easier",
+          "explanation": "That affects a broader population and does not demonstrate a defect in employee source priority."
+        },
+        {
+          "id": "23f5023331",
+          "text": "Create an employee HR record solely to force the same workflow",
+          "explanation": "Inventing an employment record changes business facts rather than following the stated contractor process."
+        },
+        {
+          "id": "13f5bbeb03",
+          "text": "Change the contractor classification to Employee before editing",
+          "explanation": "The requested correction concerns department, not worker classification; falsifying the latter can change eligibility."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-04-sources-and-ownership.md",
+        "heading": "First ask which sources apply to this person"
+      }
+    },
+    {
+      "id": "L04-Q16",
+      "topic": "Challenge: Verify authority after the next cycle",
+      "prompt": "An approved HR-owned department correction has been made at its source. Which follow-up best verifies the source-to-Okta correction?",
+      "evidence": [
+        "Employee U42: correct HR association and department owner confirmed",
+        "HR department: corrected; next applicable source operation is available for observation"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "bda8871be1",
+      "options": [
+        {
+          "id": "bda8871be1",
+          "text": "Trace the applicable source operation and confirm U42's effective value",
+          "explanation": "This follows the corrected owner through actual processing and effective state for the intended identity."
+        },
+        {
+          "id": "a6a138a879",
+          "text": "Confirm only that the source-owner ticket was approved",
+          "explanation": "Approval establishes authorization, not execution or the resulting Okta value."
+        },
+        {
+          "id": "362bacba5d",
+          "text": "Manually force the Okta value again and skip the source operation",
+          "explanation": "That can hide an unresolved source-processing defect and does not test the intended authority path."
+        },
+        {
+          "id": "f676aa9ac7",
+          "text": "Use another employee with the desired department as proof",
+          "explanation": "Another person's value does not establish U42's association or update result."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-04-sources-and-ownership.md",
+        "heading": "Work through the disagreement"
+      }
     }
   ]
 }

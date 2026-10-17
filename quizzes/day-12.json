@@ -402,6 +402,154 @@
         "source": "lessons/day-12-joiners-movers-leavers.md",
         "heading": "Decide what evidence closes the ticket"
       }
+    },
+    {
+      "id": "L12-Q13",
+      "topic": "Challenge: A completed move has multiple boundaries",
+      "prompt": "An employee moves from Sales to Finance. What does the supplied packet establish about completion?",
+      "evidence": [
+        "Effective profile: Finance; Finance app access: verified working",
+        "Sales group membership: removed; direct Sales grant remains; retention not approved"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "bc09789ab3",
+      "options": [
+        {
+          "id": "bc09789ab3",
+          "text": "Finance access works; required Sales removal remains unresolved",
+          "explanation": "A mover can have successful additions and incomplete removals. The surviving direct grant needs an ownership decision and the required downstream verification."
+        },
+        {
+          "id": "5706e9ea21",
+          "text": "The move is complete because the new department and app are correct",
+          "explanation": "That omits the separately required removal of old access."
+        },
+        {
+          "id": "67f5f0cde4",
+          "text": "The Finance addition failed because a Sales grant remains",
+          "explanation": "The packet verifies Finance access. An incomplete removal does not negate that separate success."
+        },
+        {
+          "id": "33e63482cd",
+          "text": "Changing the department back to Sales is the demonstrated fix",
+          "explanation": "The approved move is Finance; reversing the business fact does not resolve the old grant."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Follow Devi's evidence"
+      }
+    },
+    {
+      "id": "L12-Q14",
+      "topic": "Challenge: Unsupported removal leaves an owned task",
+      "prompt": "A leaver is deactivated in Okta, but the target connector cannot perform the required target action. Which required outcome is still unknown?",
+      "evidence": [
+        "Okta deactivation: confirmed for intended leaver",
+        "Target removal: manual alternative assigned to app owner; no completion evidence yet"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "6a3d9d2458",
+      "options": [
+        {
+          "id": "6a3d9d2458",
+          "text": "Whether the owned alternative completed the required target removal",
+          "explanation": "Assigning an owner is progress, not target completion. Track the remaining action and its evidence explicitly."
+        },
+        {
+          "id": "379e59eb2f",
+          "text": "Whether an app owner has been assigned the alternative task",
+          "explanation": "The packet supplies that ownership assignment."
+        },
+        {
+          "id": "02167109c5",
+          "text": "Whether Okta deactivation completed",
+          "explanation": "The central account result is explicitly confirmed; the gap is at the target."
+        },
+        {
+          "id": "4583213bba",
+          "text": "Whether the connector can perform that requested target action",
+          "explanation": "Its inability is supplied. The open outcome is the alternative's execution and effect."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Decide what evidence closes the ticket"
+      }
+    },
+    {
+      "id": "L12-Q15",
+      "topic": "Challenge: Removal must respect effective timing",
+      "prompt": "An approved move takes effect next Monday. What is the justified next action on Friday when planning old-access removal?",
+      "evidence": [
+        "Approved move: Monday 09:00; current Sales duties continue until then",
+        "No emergency revocation or earlier removal approval is supplied"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "66e3bf7781",
+      "options": [
+        {
+          "id": "66e3bf7781",
+          "text": "Plan removal against the approved effective time and continuing duties",
+          "explanation": "The business timing is part of the requirement. Prepare checks and ownership without treating a future move as permission for immediate removal."
+        },
+        {
+          "id": "6021cb72fc",
+          "text": "Remove all Sales access immediately because approval already exists",
+          "explanation": "Approval for a timed change is not automatically authorization to advance the effective date."
+        },
+        {
+          "id": "498257500d",
+          "text": "Keep all Sales access indefinitely to avoid disruption",
+          "explanation": "That ignores the approved removal requirement after the move takes effect."
+        },
+        {
+          "id": "dde89f388d",
+          "text": "Change the authoritative move date locally to match Friday execution",
+          "explanation": "That falsifies the approved timing instead of aligning implementation with it."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Mover: state what should change and what should remain"
+      }
+    },
+    {
+      "id": "L12-Q16",
+      "topic": "Challenge: Verify a leaver across entry paths",
+      "prompt": "A departure requires both new-entry denial and termination of existing target access. Which verification set addresses that requirement?",
+      "evidence": [
+        "Target account removal action: reported complete",
+        "Required deadline: immediate; old session and fresh-entry results not yet observed"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "6a5911e4ef",
+      "options": [
+        {
+          "id": "6a5911e4ef",
+          "text": "Verify target state, fresh-entry denial and old-session access termination",
+          "explanation": "These observations cover the requested account and both access paths. Report any supported-mechanism limitation or unresolved result with an owner."
+        },
+        {
+          "id": "d15a122304",
+          "text": "Check only that the user disappeared from one group",
+          "explanation": "One membership result does not establish every grant, target state or session outcome."
+        },
+        {
+          "id": "fbc06a598e",
+          "text": "Check only the central Okta deactivation event",
+          "explanation": "Central deactivation does not itself demonstrate all target-specific removal and session results."
+        },
+        {
+          "id": "2467966739",
+          "text": "Treat a logout request being sent as proof of every target termination",
+          "explanation": "Delivery intent does not establish participant processing or the next protected access result."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Leaver: verify each outcome"
+      }
     }
   ]
 }

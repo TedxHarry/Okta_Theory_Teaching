@@ -402,6 +402,154 @@
         "source": "lessons/day-16-safe-practice-plan.md",
         "heading": "Begin with a question you can answer"
       }
+    },
+    {
+      "id": "L16-Q13",
+      "topic": "Challenge: A useful failed prediction",
+      "prompt": "In an authorized training experiment, a predicted group result differs from the actual result. What is the most useful learning conclusion?",
+      "evidence": [
+        "Prediction: Sales Contractor excluded by Sales AND Employee",
+        "Observation: test account included; effective workerType observed as Employee"
+      ],
+      "reasoning": "Before selecting, state the last confirmed success and the first evidenced gap. What in the packet supports each?",
+      "correctId": "711d9d7dce",
+      "options": [
+        {
+          "id": "711d9d7dce",
+          "text": "Verify the test input: Employee differs from the predicted Contractor",
+          "explanation": "A prediction depends on its inputs. The supplied result is consistent with an Employee input, so establish the intended test record and effective value first."
+        },
+        {
+          "id": "9d9d7341b3",
+          "text": "The AND operator must be malfunctioning because the prediction was wrong",
+          "explanation": "The actual input does not match the assumed negative case; the packet does not demonstrate a logical evaluation fault."
+        },
+        {
+          "id": "00998dea86",
+          "text": "The observation should be edited to match the original prediction",
+          "explanation": "Changing recorded evidence hides the learning distinction rather than explaining the difference."
+        },
+        {
+          "id": "8b13847cc2",
+          "text": "The intended rule should become OR to make the record easier to interpret",
+          "explanation": "Changing the requirement would broaden membership and would not repair the mistaken test input."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Predict before observing"
+      }
+    },
+    {
+      "id": "L16-Q14",
+      "topic": "Challenge: A plan is different from an execution result",
+      "prompt": "A learner completes a detailed practice plan without tenant access. Which claim remains unsupported?",
+      "evidence": [
+        "Written record: test identities, predicted results, evidence requirements and cleanup plan complete",
+        "Execution: no authorized training environment used; no actual observations collected"
+      ],
+      "reasoning": "Before selecting, name the exact missing outcome. Separate it from facts that the packet already supplies.",
+      "correctId": "5464998ed8",
+      "options": [
+        {
+          "id": "5464998ed8",
+          "text": "That the planned behavior was observed working in a tenant",
+          "explanation": "Planning is useful evidence of reasoning. It is not execution evidence, so keep predictions and unrun tests clearly labelled."
+        },
+        {
+          "id": "c3e81c25ac",
+          "text": "That a cleanup plan has been written",
+          "explanation": "The packet states that it is included; executing cleanup is a different result."
+        },
+        {
+          "id": "d165e506b8",
+          "text": "That expected outcomes have been predicted",
+          "explanation": "The written predictions are explicitly supplied."
+        },
+        {
+          "id": "e090616229",
+          "text": "That the learner identified evidence to collect later",
+          "explanation": "The record includes evidence requirements. It does not contain the later observations themselves."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Write the practice record"
+      }
+    },
+    {
+      "id": "L16-Q15",
+      "topic": "Challenge: Design a discriminating experiment",
+      "prompt": "A learner wants to determine whether a group assignment caused app eligibility. Which experiment plan best isolates the stated relationship?",
+      "evidence": [
+        "Authorized test account: eligible for the intended training app",
+        "Potential confounder: an independent direct app assignment may already exist"
+      ],
+      "reasoning": "Before selecting, explain which uncertainty your next check would resolve and why the other actions are premature.",
+      "correctId": "47ccb7fb9a",
+      "options": [
+        {
+          "id": "47ccb7fb9a",
+          "text": "Control alternative grant paths and compare group and assignment outcomes",
+          "explanation": "A direct grant can keep the app assigned regardless of group membership. Identify confounders and define observations before drawing a causal conclusion from one changed input."
+        },
+        {
+          "id": "6c383ef374",
+          "text": "Leave the direct grant in place and treat continued app visibility as proof of the group grant",
+          "explanation": "The alternative path can explain the result, so this does not isolate the group relationship."
+        },
+        {
+          "id": "845d9b2c8d",
+          "text": "Change department, worker type and several assignments at once",
+          "explanation": "Multiple uncontrolled changes make it harder to attribute the result to the intended relationship."
+        },
+        {
+          "id": "05ecac0c24",
+          "text": "Infer group behavior from a coworker's app tile without inspecting assignments",
+          "explanation": "Another identity's visible launcher does not establish the intended test account's grant path."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Begin with a question you can answer"
+      }
+    },
+    {
+      "id": "L16-Q16",
+      "topic": "Challenge: Verify that the experiment has ended",
+      "prompt": "An authorized exercise created a temporary app grant and target account. Which completion evidence best supports the planned end condition?",
+      "evidence": [
+        "Approved end condition: remove temporary access and test data according to retention rules",
+        "Current record: grant removal submitted; target cleanup and old-session result absent"
+      ],
+      "reasoning": "Before selecting, describe the evidence that would show success and the relevant failure or rejection that should remain.",
+      "correctId": "e6f6d9ffff",
+      "options": [
+        {
+          "id": "e6f6d9ffff",
+          "text": "Verify grant removal, target cleanup and required test-access denial",
+          "explanation": "An experiment ends at its agreed effective state, not when the final request is submitted. Preserve required records while verifying cleanup and access results."
+        },
+        {
+          "id": "124a51e219",
+          "text": "Close the notebook as soon as the removal request is sent",
+          "explanation": "A closed note does not establish target cleanup or access termination."
+        },
+        {
+          "id": "d5fc2c1cf1",
+          "text": "Remove only the group grant and assume the target account and session are gone",
+          "explanation": "Group removal is one boundary. It does not demonstrate the separately required target cleanup or continuing-session result."
+        },
+        {
+          "id": "6ee4cdf5e3",
+          "text": "Keep temporary access indefinitely because it is only training",
+          "explanation": "That conflicts with the supplied end condition and leaves the experiment's access state unresolved."
+        }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Include an end condition"
+      }
     }
   ]
 }
