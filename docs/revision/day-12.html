@@ -6,8 +6,8 @@
 <p><strong>Okta lifecycle status.</strong> Status describes the Okta user's state. <code>STAGED</code> means created before activation is initiated or awaiting administrative action; <code>PROVISIONED</code> means pending user action in this lifecycle context, not that an application account was created. <code>ACTIVE</code> does not guarantee application access. <code>RECOVERY</code> means password recovery, <code>PASSWORD_EXPIRED</code> means the password has expired, and <code>LOCKED_OUT</code> means a lockout condition was reached. None is proof of a target application's state.</p>
 <p><strong>Suspension, deactivation, and deletion.</strong> Suspension (<code>SUSPENDED</code>) blocks Okta access while retaining assignments and groups and does not itself perform the taught SCIM deactivation. Completed Okta deactivation (<code>DEPROVISIONED</code>) removes application assignments and invokes configured deprovisioning, while group memberships are retained. Downstream work can continue in the background or fail; requesting it does not establish the target result. Deletion is a separate, irreversible operation, not a routine fix for incomplete deprovisioning.</p>
 <p><strong>Account state and session state.</strong> A disabled account and an already established application session are separate things to inspect. Here, notice and flag continuing access. Day 13 explains the session mechanisms in more detail.</p>
-<h2 id="follow-mayas-move">Follow Maya's move</h2>
-<p>Maya moves from Sales to Finance. The expected result includes ending Sales access without an approved exception and retaining Projects with department <code>FIN</code>.</p>
+<h2 id="follow-devis-move">Follow Devi's move</h2>
+<p>Devi moves from Sales to Finance. The expected result includes ending Sales access without an approved exception and retaining Projects with department <code>FIN</code>.</p>
 <p>The evidence confirms that her Sales-group membership ends, but a direct Salesforce assignment remains after its approval has ended. A new Salesforce session shows a real remaining access path. The group route ended, but the separate individual assignment survived. A working rule did not remove that independent route.</p>
 <p>Projects shows the confirmed <code>FIN</code> update on the retained account. That verifies the department change. The packet does not establish successful Projects entry, so keep that outcome open rather than writing “Projects works.”</p>
 <h2 id="follow-jordans-departure">Follow Jordan's departure</h2>
@@ -16,10 +16,10 @@
 <h2 id="when-a-request-reaches-you">When a request reaches you</h2>
 <p>Choose activation, unlocking, password recovery, authenticator replacement, suspension, or deactivation according to the actual state and approved event. Keep a separate verified outcome for every affected target.</p>
 <h2 id="check-your-understanding">Check your understanding</h2>
-<p>From memory, give Maya and Jordan separate updates. For each, name a completed change, a remaining discrepancy, and the specific result needed for closure. Include the access Maya must keep, and keep Jordan's Projects and Expense outcomes separate.</p>
+<p>From memory, give Devi and Jordan separate updates. For each, name a completed change, a remaining discrepancy, and the specific result needed for closure. Include the access Devi must keep, and keep Jordan's Projects and Expense outcomes separate.</p>
 <ul>
 <li>Why is receiving the HR event insufficient evidence of lifecycle completion?</li>
-<li>What remained wrong after Maya left the Sales group?</li>
+<li>What remained wrong after Devi left the Sales group?</li>
 <li>If Projects is corrected, what still needs checking for Jordan?</li>
 </ul>
 <details markdown="1">

@@ -10,7 +10,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Maya Rao</td>
+<td>Devi Rao</td>
 <td>Sales employee who later moves to Finance.</td>
 </tr>
 <tr>
@@ -86,14 +86,14 @@
 </code></pre>
 <p>The arrows show logical relationships. They do not mean that every account exists immediately or that every application uses the same protocol.</p>
 <p>Employee information is HR-led. Contractor identities such as Priya's are maintained in Okta following sponsor approval. The detailed source ownership and sign-in decisions become part of the examples as those concepts are introduced.</p>
-<p>Priya's sponsor approves the business change; an authorized operator maintains her Okta-managed identity through that process. Do not invent an employee-source association to make her follow Maya's path. For AD-linked employees, profile ownership, designated AD-owned fields and AD password validation remain separate responsibilities.</p>
+<p>Priya's sponsor approves the business change; an authorized operator maintains her Okta-managed identity through that process. Do not invent an employee-source association to make her follow Devi's path. For AD-linked employees, profile ownership, designated AD-owned fields and AD password validation remain separate responsibilities.</p>
 <p><a href="/Okta_Theory_Teaching/reference/attribute-ownership.html">Source and ownership reference</a> · <a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html">Return to Day 1</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
 <h2 id="follow-the-timeline">Follow the timeline</h2>
-<p>Days 1 to 11 use Maya's Sales employment and Jordan's active employment unless a packet explicitly states a hypothetical variation. In <a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a>, Maya's approved move to Finance and Jordan's departure take effect. Earlier observations remain evidence about their earlier states. Individual case packets state their own account and assignment evidence.</p>
+<p>Days 1 to 11 use Devi's Sales employment and Jordan's active employment unless a packet explicitly states a hypothetical variation. In <a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html">Day 12</a>, Devi's approved move to Finance and Jordan's departure take effect. Earlier observations remain evidence about their earlier states. Individual case packets state their own account and assignment evidence.</p>
 <p>An archived sign-in investigation therefore describes what happened at its earlier point; resolving its cause would not authorize restoring a departed employee's access. Similarly, a later packet with a confirmed account does not resolve an earlier packet that left the account relationship unknown.</p>
 <p>Priya's application approvals are separate decisions. In the final case, her Expense and Projects exceptions are supplied, while her Salesforce exception remains unverified. Approval for one application does not answer another application's ticket. Likewise, Daniel's Finance manager role does not automatically grant Salesforce access or make him an Okta administrator; use the approvals and permissions stated in the packet.</p>
-<p>The <a href="/Okta_Theory_Teaching/reference/onboarding-an-application.html">application-onboarding reference</a> explicitly changes Projects eligibility for a design exercise. In that variant, Maya's Finance move ends ordinary Projects access. In Day 12 and the final case, her approved Projects access continues. Keep each requirement with its own case.</p>
-<h2 id="keep-mayas-identifiers-separate">Keep Maya's identifiers separate</h2>
+<p>The <a href="/Okta_Theory_Teaching/reference/onboarding-an-application.html">application-onboarding reference</a> explicitly changes Projects eligibility for a design exercise. In that variant, Devi's Finance move ends ordinary Projects access. In Day 12 and the final case, her approved Projects access continues. Keep each requirement with its own case.</p>
+<h2 id="keep-devis-identifiers-separate">Keep Devi's identifiers separate</h2>
 <p>Different fields can identify the same person for different purposes. These values appear in the relevant teaching packets:</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
@@ -115,12 +115,12 @@
 </tr>
 <tr>
 <td>Okta login in Day 11's API excerpt</td>
-<td><code>maya.rao@northbridge.example</code></td>
+<td><code>devi.rao@northbridge.example</code></td>
 <td>The login field on the intended Okta user.</td>
 </tr>
 <tr>
 <td>Salesforce username and SAML NameID in Day 8</td>
-<td><code>maya.rao@northbridge.example</code></td>
+<td><code>devi.rao@northbridge.example</code></td>
 <td>The connection's configured username-matching rule.</td>
 </tr>
 <tr>
@@ -129,6 +129,6 @@
 <td>The confirmed association to the intended Projects account.</td>
 </tr>
 </tbody>
-</table></div><p>The work-email field, Okta login, and application username are separate attributes even when some contain identical text. Day 4's email ownership does not define the login or SAML NameID mapping. No example establishes that <code>mrao@northbridge.example</code> and <code>maya.rao@northbridge.example</code> are mailbox aliases. Read the named field and its configured relationship before treating different strings as an error.</p>
+</table></div><p>The work-email field, Okta login, and application username are separate attributes even when some contain identical text. Day 4's email ownership does not define the login or SAML NameID mapping. No example establishes that <code>mrao@northbridge.example</code> and <code>devi.rao@northbridge.example</code> are mailbox aliases. Read the named field and its configured relationship before treating different strings as an error.</p>
 <p>Use an identifier with its system and purpose. An employee number helps compare the stated identity evidence; a Projects resource identifier names a target record; a login or application username participates in its configured operation. Reusing a value in another example does not transfer that example's association, approval or successful outcome. Keep the field, record and packet together in your notes.</p>
 </article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

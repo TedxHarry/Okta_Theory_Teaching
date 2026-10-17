@@ -15,15 +15,15 @@ Use these to check the distinctions in your reasoning. You do not need to repeat
 - Path: `/reports`.
 - Query parameter: `department`, with the value `Finance`.
 
-The query value is information sent with the request. It does not prove the server changed Maya's stored profile or accepted Finance as her department.
+The query value is information sent with the request. It does not prove the server changed Devi's stored profile or accepted Finance as her department.
 
 **Revisit:** [Read the destination before interpreting the result](../lessons/day-02-requests-and-evidence.md#read-the-destination-before-interpreting-the-result) if you treated a query parameter as a confirmed profile update.
 
 ## 2. Follow the redirect
 
-Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in `Location`; Expense is not making that next browser request on Maya's behalf.
+Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in `Location`; Expense is not making that next browser request on Devi's behalf.
 
-The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Maya authenticated or an account was created, we would need evidence of those separate actions.
+The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Devi authenticated or an account was created, we would need evidence of those separate actions.
 
 A provisioning request instead asks the target for an account-management operation. It may be sent directly by the configured integration without using the user's browser. A method such as POST does not, by itself, distinguish these purposes.
 
@@ -31,9 +31,9 @@ A provisioning request instead asks the target for an account-management operati
 
 ## 3. A successful page request
 
-The server did what this request asked: it returned a sign-in form. Maya has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.
+The server did what this request asked: it returned a sign-in form. Devi has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.
 
-Here, `200 OK` describes the page request. We would look for the later authentication result before saying Maya successfully signed in.
+Here, `200 OK` describes the page request. We would look for the later authentication result before saying Devi successfully signed in.
 
 HTTPS protects communication in transit. It does not grant authorization, create an account, or establish that sign-in succeeded.
 
@@ -47,7 +47,7 @@ An incorrect identity message is a possible explanation. A wrong password or mis
 
 Request the detailed application rejection evidence and the relevant sign-in exchange, matched to the same person, application instance, and attempt. These may show a problem originating earlier even though the refusal is observed at the application.
 
-**Revisit:** [Follow Maya's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-mayas-attempt-one-step-at-a-time) if you concluded that the component reporting the error necessarily created the defect.
+**Revisit:** [Follow Devi's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-devis-attempt-one-step-at-a-time) if you concluded that the component reporting the error necessarily created the defect.
 
 ## 5. Cookie, session, and account
 
@@ -63,7 +63,7 @@ An answer distinguishing the three concepts is sufficient. You do not need detai
 
 A sound translation is:
 
-> Okta recorded a successful application SSO event associated with Maya Rao and Northbridge Expense.
+> Okta recorded a successful application SSO event associated with Devi Rao and Northbridge Expense.
 
 - Action category: `eventType`.
 - Actor: the record under `actor`.
@@ -82,13 +82,13 @@ The browser requested Expense, received a redirect, and loaded the identity serv
 
 The first demonstrated failure in the packet is the Expense refusal. The packet does not establish the underlying defect. The application may reject something produced earlier in the flow.
 
-Priya's success is a different person's event. It neither proves Maya's sign-in worked nor disproves her refusal. It could eventually be comparison evidence, but only with relevant context.
+Priya's success is a different person's event. It neither proves Devi's sign-in worked nor disproves her refusal. It could eventually be comparison evidence, but only with relevant context.
 
 Request the detailed refusal and corresponding sign-in-exchange evidence. Explain what each record proves and does not prove before proposing a correction.
 
-A useful handoff could say: “For Maya's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.
+A useful handoff could say: “For Devi's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.
 
-**Revisit:** [Follow Maya's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-mayas-attempt-one-step-at-a-time) if your story jumped from Okta SUCCESS to application success.
+**Revisit:** [Follow Devi's attempt one step at a time](../lessons/day-02-requests-and-evidence.md#follow-devis-attempt-one-step-at-a-time) if your story jumped from Okta SUCCESS to application success.
 
 ## Before-moving-on questions from the lesson
 

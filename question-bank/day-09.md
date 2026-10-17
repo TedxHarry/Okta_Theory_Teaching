@@ -44,14 +44,14 @@ nav_order: 9
 
 ### Q03. A token is not every outcome
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Expense sign-in receives OIDC identity and access tokens from the company identity service. No account-management operation or expense-approval role is supplied. Does receiving those tokens automatically create an application account or grant approval rights?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Expense sign-in receives OIDC identity and access tokens from the company identity service. No account-management operation or expense-approval role is supplied. Does receiving those tokens automatically create an application account or grant approval rights?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. The tokens have defined sign-in and resource-access purposes. Account preparation and business authorization are separate outcomes.</p>
-<p>Expense still needs the intended account association and permissions for Maya's task. A token response is not a creation receipt or approval-role record.</p>
+<p>Expense still needs the intended account association and permissions for Devi's task. A token response is not a creation receipt or approval-role record.</p>
 <p>Report the completed protocol stage accurately. If the request concerns usable access or a particular action, obtain the corresponding application evidence rather than extend the token result beyond its purpose.</p>
 </div>
 </details>
@@ -62,7 +62,7 @@ nav_order: 9
 
 ### Q04. Which client do you mean?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s browser makes HTTP web requests, while Expense’s server-side backend acts as the OIDC application, exchanges a code, and validates identity information. Why can both be called a client in different contexts without referring to Maya’s user account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s browser makes HTTP web requests, while Expense’s server-side backend acts as the OIDC application, exchanges a code, and validates identity information. Why can both be called a client in different contexts without referring to Devi’s user account?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
@@ -84,7 +84,7 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Here, confidential describes Expense's ability to protect its client authentication material on its servers. It does not mean the client ID has to be hidden, and it does not describe Maya's user account.</p>
+<p>Here, confidential describes Expense's ability to protect its client authentication material on its servers. It does not mean the client ID has to be hidden, and it does not describe Devi's user account.</p>
 <p>The backend performs the code exchange and validates the returned identity information. Its configured credential or key stays protected there, outside the browser redirect. The browser carries messages between the services; it does not perform every backend operation.</p>
 <p>Keep this architecture in view when choosing evidence. A code arriving through the browser tells you where the journey has reached. You still need the backend exchange and application results before reporting completed sign-in.</p>
 </div>
@@ -100,7 +100,7 @@ nav_order: 9
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The ID names the application registration. It is not Maya's identity, a password, or an accepted client-authentication result.</p>
+<p>The ID names the application registration. It is not Devi's identity, a password, or an accepted client-authentication result.</p>
 <p>The backend's configured authentication separately proves the client during exchange. Its confidential material should stay protected on the server side.</p>
 <p>Identifying and authenticating the application are different facts. Inspect the actual exchange result rather than infer success from a familiar client identifier in the request.</p>
 </div>
@@ -128,7 +128,7 @@ nav_order: 9
 
 ### Q08. Trace the intended journey
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. Describe the intended browser return, backend exchange, and application decision in order, without treating the design as proof of a completed attempt.</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. Describe the intended browser return, backend exchange, and application decision in order, without treating the design as proof of a completed attempt.</p>
 
 <details class="qb-answer" id="q08-explanation">
 <summary>Read the teaching explanation</summary>
@@ -144,7 +144,7 @@ nav_order: 9
 
 ### Q09. Three locations
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. How do the authorization endpoint, token endpoint, and callback describe different addresses and operations?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. How do the authorization endpoint, token endpoint, and callback describe different addresses and operations?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
@@ -160,7 +160,7 @@ nav_order: 9
 
 ### Q10. The code is an intermediate artifact
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. The browser returns a code, but no exchange response, token validation, or session result is supplied. Why is code receipt an intermediate result rather than completed application sign-in?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. The browser returns a code, but no exchange response, token validation, or session result is supplied. Why is code receipt an intermediate result rather than completed application sign-in?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
@@ -176,7 +176,7 @@ nav_order: 9
 
 ### Q11. Not an MFA code or API credential
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. Is the returned authorization code something Maya types like an MFA code, or a value Expense should use directly to call a protected API?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. Is the returned authorization code something Devi types like an MFA code, or a value Expense should use directly to call a protected API?</p>
 
 <details class="qb-answer" id="q11-explanation">
 <summary>Read the teaching explanation</summary>
@@ -192,7 +192,7 @@ nav_order: 9
 
 ### Q12. Session, code, and token
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. After successful validation the application establishes a session for continued use. Is that session another name for the authorization code or ID token?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. After successful validation the application establishes a session for continued use. Is that session another name for the authorization code or ID token?</p>
 
 <details class="qb-answer" id="q12-explanation">
 <summary>Read the teaching explanation</summary>
@@ -258,7 +258,7 @@ nav_order: 9
 
 ### Q16. Profile is not an approval role
 
-<p class="qb-question"><strong>Question:</strong> Expense uses OIDC sign-in. Maya’s request includes the profile scope and the returned identity information contains her name. No application approval decision or role is supplied. Does that identity detail prove she can approve another person’s expenses?</p>
+<p class="qb-question"><strong>Question:</strong> Expense uses OIDC sign-in. Devi’s request includes the profile scope and the returned identity information contains her name. No application approval decision or role is supplied. Does that identity detail prove she can approve another person’s expenses?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
@@ -456,7 +456,7 @@ nav_order: 9
 
 ### Q28. Read iss, sub, and aud
 
-<p class="qb-question"><strong>Question:</strong> A fictional single-audience OIDC ID token has selected claims <code>iss = https://identity.example</code>, <code>sub = subject-maya</code>, and <code>aud = expense-web</code>. Claims are named statements in returned information. What do these three fields describe, and does reading them establish validity?</p>
+<p class="qb-question"><strong>Question:</strong> A fictional single-audience OIDC ID token has selected claims <code>iss = https://identity.example</code>, <code>sub = subject-devi</code>, and <code>aud = expense-web</code>. Claims are named statements in returned information. What do these three fields describe, and does reading them establish validity?</p>
 
 <details class="qb-answer" id="q28-explanation">
 <summary>Read the teaching explanation</summary>
@@ -604,7 +604,7 @@ nav_order: 9
 
 ### Q37. Follow linked application-entry evidence
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. A new correlated attempt uses the approved callback, verifies returned state, completes authenticated exchange with matching PKCE verifier, validates ID token including nonce, selects Maya’s account, and records Expense entry. No approval-role or provisioning result is supplied. What outcome is verified?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. A new correlated attempt uses the approved callback, verifies returned state, completes authenticated exchange with matching PKCE verifier, validates ID token including nonce, selects Devi’s account, and records Expense entry. No approval-role or provisioning result is supplied. What outcome is verified?</p>
 
 <details class="qb-answer" id="q37-explanation">
 <summary>Read the teaching explanation</summary>
@@ -620,7 +620,7 @@ nav_order: 9
 
 ### Q38. Callback corrected, follow-up incomplete
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. After a proposed correction, the request uses the approved registered callback and is accepted. No returned code, backend exchange, token validation, or session evidence is supplied. Is full sign-in verified?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. After a proposed correction, the request uses the approved registered callback and is accepted. No returned code, backend exchange, token validation, or session evidence is supplied. Is full sign-in verified?</p>
 
 <details class="qb-answer" id="q38-explanation">
 <summary>Read the teaching explanation</summary>
@@ -636,7 +636,7 @@ nav_order: 9
 
 ### Q39. Code returned, exchange failed
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. This flow requires PKCE and backend client authentication. Code and state return correctly, but the exchange fails with no detailed cause supplied. What result should support inspect next?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. This flow requires PKCE and backend client authentication. Code and state return correctly, but the exchange fails with no detailed cause supplied. What result should support inspect next?</p>
 
 <details class="qb-answer" id="q39-explanation">
 <summary>Read the teaching explanation</summary>
@@ -670,7 +670,7 @@ nav_order: 9
 
 ### Q41. Compare agreement and request
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. The application owner and identity-service administrator have registration settings and an actual request. What should they compare before changing a shared connection?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. The application owner and identity-service administrator have registration settings and an actual request. What should they compare before changing a shared connection?</p>
 
 <details class="qb-answer" id="q41-explanation">
 <summary>Read the teaching explanation</summary>
@@ -686,7 +686,7 @@ nav_order: 9
 
 ### Q42. An old session after a fix
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. A callback-setting change is saved, and Maya continues using an older Expense session. No fresh code-flow attempt is recorded. Does the old session’s working page prove the new request and exchange configuration?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. A callback-setting change is saved, and Devi continues using an older Expense session. No fresh code-flow attempt is recorded. Does the old session’s working page prove the new request and exchange configuration?</p>
 
 <details class="qb-answer" id="q42-explanation">
 <summary>Read the teaching explanation</summary>
@@ -702,13 +702,13 @@ nav_order: 9
 
 ### Q43. Repair an overbroad closure
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. A correlated attempt completes the code exchange and ID token validation, identifies Maya’s account, and records entry. No provisioning operation or expense-approval capability is supplied. Improve: “She signed in, so provisioning and approval rights are fixed.”</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. A correlated attempt completes the code exchange and ID token validation, identifies Devi’s account, and records entry. No provisioning operation or expense-approval capability is supplied. Improve: “She signed in, so provisioning and approval rights are fixed.”</p>
 
 <details class="qb-answer" id="q43-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Try: “The checked OIDC flow completed and Maya entered her intended Expense account. A provisioning operation and expense-approval permission were not established by this follow-up.”</p>
+<p>Try: “The checked OIDC flow completed and Devi entered her intended Expense account. A provisioning operation and expense-approval permission were not established by this follow-up.”</p>
 <p>That preserves the sign-in success without adding unrelated account-management or authorization results.</p>
 <p>If those outcomes belong to the request, obtain their relevant evidence separately. One protocol journey can work while another business requirement remains unverified.</p>
 </div>
@@ -716,9 +716,9 @@ nav_order: 9
 
 <a id="q44"></a>
 
-### Q44. Explain Maya’s journey
+### Q44. Explain Devi’s journey
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Maya’s browser carries redirects. First attempt: an obsolete unregistered callback is rejected before code issuance. New follow-up: the approved address, state, authenticated PKCE exchange, ID token checks, intended account, and entry all succeed. Permission results are not supplied. Explain both outcomes to Maya in friendly language.</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application using OIDC with Okta. Its server-side backend exchanges authorization codes and validates ID tokens; Devi’s browser carries redirects. First attempt: an obsolete unregistered callback is rejected before code issuance. New follow-up: the approved address, state, authenticated PKCE exchange, ID token checks, intended account, and entry all succeed. Permission results are not supplied. Explain both outcomes to Devi in friendly language.</p>
 
 <details class="qb-answer" id="q44-explanation">
 <summary>Read the teaching explanation</summary>
@@ -726,7 +726,7 @@ nav_order: 9
 <p><strong>Explanation:</strong></p>
 <p>You could say: 'Expense first asked Okta to send your browser back to an old return address that was not approved. Okta stopped that request before issuing a code, so the application could not continue the sign-in exchange for that attempt.'</p>
 <p>Then describe the checked follow-up: 'The new attempt used the approved return address. Expense checked the browser return, completed its server-side exchange and validated your identity information. It then recognized your intended account and let you in.'</p>
-<p>If Maya needs an approval action, add: 'We still need to check whether your account has permission for that action.' This explains the two observed outcomes without turning the later success into what happened during the first attempt or promising permissions that were not checked.</p>
+<p>If Devi needs an approval action, add: 'We still need to check whether your account has permission for that action.' This explains the two observed outcomes without turning the later success into what happened during the first attempt or promising permissions that were not checked.</p>
 </div>
 </details>
 

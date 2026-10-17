@@ -16,7 +16,7 @@ An import finds an external account and proposes an existing Okta user as its ma
 
 ## 2. Choose from evidence
 
-In M-1, Projects candidate A has NB-1042 and verified ownership by Maya. Candidate B has NB-7788 and verified different ownership, despite sharing her name. Explain the supported decision, what the pending confirmation means, and what M-2 adds.
+In M-1, Projects candidate A has NB-1042 and verified ownership by Devi. Candidate B has NB-7788 and verified different ownership, despite sharing her name. Explain the supported decision, what the pending confirmation means, and what M-2 adds.
 
 ## 3. Handle conflicting identifiers
 
@@ -28,11 +28,11 @@ An AD account exists outside the selected employee OU scope. It is absent from t
 
 ## 5. Revisit profile ownership
 
-Contrast two cases: Maya's confirmed Projects association when Projects is not a profile source, and a hypothetical mistaken AD association against Priya. What source and attribute checks matter? Why is reordering sources for everyone not a justified first correction?
+Contrast two cases: Devi's confirmed Projects association when Projects is not a profile source, and a hypothetical mistaken AD association against Priya. What source and attribute checks matter? Why is reordering sources for everyone not a justified first correction?
 
 ## 6. Read incomplete and denied evidence
 
-The first Okta Users API page contains Maya and Daniel and a next link. Priya is absent from that page. A separate attempt receives 403, with confirmed insufficient caller permission. State a supported conclusion for each. Do either of these results show which Projects account belongs to Priya? What would you need before making a complete-result claim about the Okta read?
+The first Okta Users API page contains Devi and Daniel and a next link. Priya is absent from that page. A separate attempt receives 403, with confirmed insufficient caller permission. State a supported conclusion for each. Do either of these results show which Projects account belongs to Priya? What would you need before making a complete-result claim about the Okta read?
 
 ## 7. Compare import, JIT, and reconciliation
 

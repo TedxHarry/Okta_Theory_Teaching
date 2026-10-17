@@ -26,15 +26,15 @@ Other orderings among B, C, A, and E are defensible if tied to stated impact and
 
 **Case evidence:** [Environment and ownership](../assessments/final-case.md#environment-and-ownership)
 
-## 2. Investigate Maya's move
+## 2. Investigate Devi's move
 
-A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong representation: the fixed outbound mapping produces SAL. A4 confirms that Projects accepted and stored the SAL it was sent. The operation succeeded, but the value is wrong for Maya's approved Finance requirement. A5 adds working entry and a report that places her in Sales. Those findings can coexist; successful sign-in does not make the report correct.
+A1 and A2 agree on the correct Finance value. A3 is the first demonstrated wrong representation: the fixed outbound mapping produces SAL. A4 confirms that Projects accepted and stored the SAL it was sent. The operation succeeded, but the value is wrong for Devi's approved Finance requirement. A5 adds working entry and a report that places her in Sales. Those findings can coexist; successful sign-in does not make the report correct.
 
-Replace the fixed value with the approved department-to-code conversion. Keep correct HR and Okta data unchanged. Verify the saved mapping with Finance and other supported inputs, Maya's app profile, the actual update to prj-1042, the target FIN value, and the corrected report outcome. Preserve her intended existing account and approved access.
+Replace the fixed value with the approved department-to-code conversion. Keep correct HR and Okta data unchanged. Verify the saved mapping with Finance and other supported inputs, Devi's app profile, the actual update to prj-1042, the target FIN value, and the corrected report outcome. Preserve her intended existing account and approved access.
 
 Review the other users sharing the mapping and identify which actually received incorrect values. Recovery needs a known approved configuration and a plan to correct affected target values; reverting configuration alone would not establish that previous writes were reversed. A functioning login neither validates department data nor proves the required reporting result.
 
-**Case evidence:** [Ticket A: Maya's department differs in Projects](../assessments/final-case.md#ticket-a-mayas-department-differs-in-projects)
+**Case evidence:** [Ticket A: Devi's department differs in Projects](../assessments/final-case.md#ticket-a-devis-department-differs-in-projects)
 
 ## 3. Investigate Priya's Salesforce access
 

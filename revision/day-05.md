@@ -24,11 +24,11 @@ A group called “Sales Employees” sounds clear, but its name does not enforce
 
 ## Walk through the people
 
-Maya is a Sales employee, so she meets the normal rule. Priya is a Sales contractor, so she fails the employee condition. Daniel is a Finance employee, so he fails the Sales condition. An OR rule would include all three for different reasons. A hypothetical Finance contractor meets neither condition and would be excluded by both versions. These are predictions about the condition; actual membership also needs rule-state, processing, and exclusion evidence.
+Devi is a Sales employee, so she meets the normal rule. Priya is a Sales contractor, so she fails the employee condition. Daniel is a Finance employee, so he fails the Sales condition. An OR rule would include all three for different reasons. A hypothetical Finance contractor meets neither condition and would be excluded by both versions. These are predictions about the condition; actual membership also needs rule-state, processing, and exclusion evidence.
 
 If Priya nevertheless has a direct application assignment, that does not prove the rule included her. It tells you to inspect a separate access path and its approval. If approval evidence is missing, authorization remains unresolved; the assignment alone does not settle it. Do not change her worker type just to make the normal rule include her.
 
-In the later department-move variation, Maya moves to Finance. Losing Sales-group membership does not by itself prove she lost Salesforce assignment. A direct assignment may remain. Follow membership to assignment and then to the target outcome rather than stopping at the first change.
+In the later department-move variation, Devi moves to Finance. Losing Sales-group membership does not by itself prove she lost Salesforce assignment. A direct assignment may remain. Follow membership to assignment and then to the target outcome rather than stopping at the first change.
 
 ## When a request reaches you
 
@@ -36,7 +36,7 @@ When membership exists but assignment is absent, inspect the actual group-to-app
 
 ## Check your understanding
 
-From memory, follow Maya from her current Okta profile through the rule, actual membership, and Salesforce assignment. Name the separate target evidence still needed. Then explain how Priya could have an individual assignment while the employee-only rule remains correct.
+From memory, follow Devi from her current Okta profile through the rule, actual membership, and Salesforce assignment. Name the separate target evidence still needed. Then explain how Priya could have an individual assignment while the employee-only rule remains correct.
 
 - Which profile supplies the values for the normal Sales rule?
 - Why might Salesforce assignment remain after Sales-group removal?

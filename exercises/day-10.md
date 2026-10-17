@@ -12,11 +12,11 @@ Name the operation, linked target resource, response, and subsequent target obse
 
 ## 1. Locate the missing boundary
 
-Maya is assigned and her Projects app profile contains SAL. No request, response, or target record is supplied. What is established? What would you inspect next before declaring successful provisioning?
+Devi is assigned and her Projects app profile contains SAL. No request, response, or target record is supplied. What is established? What would you inspect next before declaring successful provisioning?
 
 ## 2. Read the create result
 
-A POST to Projects /Users receives 201 Created with id prj-1042. A subsequent read confirms Maya's user name, SAL, and active true. Explain who assigned the id, what the result supports, and what remains unknown about access.
+A POST to Projects /Users receives 201 Created with id prj-1042. A subsequent read confirms Devi's user name, SAL, and active true. Explain who assigned the id, what the result supports, and what remains unknown about access.
 
 ## 3. Investigate the conflict
 
@@ -36,7 +36,7 @@ An approved hypothetical removal generates active false. Projects returns 204; a
 
 ## 7. Distinguish the connections
 
-Maya completed MFA for a sign-in attempt, but the Projects SCIM request receives an authorization rejection from Projects. Explain why successful user authentication does not repair or prove the connector's authorization. Does an Expense ID token belong in that SCIM request?
+Devi completed MFA for a sign-in attempt, but the Projects SCIM request receives an authorization rejection from Projects. Explain why successful user authentication does not repair or prove the connector's authorization. Does an Expense ID token belong in that SCIM request?
 
 [Self-check answers](../self-checks/day-10.md) · [Course home](../index.md)
 

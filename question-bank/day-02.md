@@ -12,7 +12,7 @@ nav_order: 2
 
 ### Q01. Request and response
 
-<p class="qb-question"><strong>Question:</strong> Maya opens Expense, a company application for handling expenses, in her web browser. The browser asks the application for a page, and the application replies with that page. Which message is the request and which is the response?</p>
+<p class="qb-question"><strong>Question:</strong> Devi opens Expense, a company application for handling expenses, in her web browser. The browser asks the application for a page, and the application replies with that page. Which message is the request and which is the response?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
@@ -28,13 +28,13 @@ nav_order: 2
 
 ### Q02. Client and server
 
-<p class="qb-question"><strong>Question:</strong> Maya’s browser sends a web request to Expense, a business application running on company servers. Expense handles the request and replies. Which participant is the client and which is the server? Do those labels describe Maya’s account state?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s browser sends a web request to Expense, a business application running on company servers. Expense handles the request and replies. Which participant is the client and which is the server? Do those labels describe Devi’s account state?</p>
 
 <details class="qb-answer" id="q02-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The browser is the client making this request. The receiving Expense system is the server handling it. These names describe roles in the exchange, not whether Maya's account is enabled.</p>
+<p>The browser is the client making this request. The receiving Expense system is the server handling it. These names describe roles in the exchange, not whether Devi's account is enabled.</p>
 <p>The server might return a page, direct the browser elsewhere, or refuse the operation. Naming the participants helps you follow where the message went and which system produced the result.</p>
 <p>Account state and usable access still need their own evidence. A client/server label does not supply them.</p>
 </div>
@@ -44,14 +44,14 @@ nav_order: 2
 
 ### Q03. A client without a browser
 
-<p class="qb-question"><strong>Question:</strong> A configured software connection sends a request to a business application to update employee Maya’s account. Maya does not open a browser or carry the message. Can this still be a client/server exchange?</p>
+<p class="qb-question"><strong>Question:</strong> A configured software connection sends a request to a business application to update employee Devi’s account. Devi does not open a browser or carry the message. Can this still be a client/server exchange?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>Yes. Software other than a browser can be a client. Here the configured connection sends the request, and the application acts as the receiving server.</p>
-<p>The systems can communicate directly for their supported account-management work. Maya does not need to visit a page for that request to occur.</p>
+<p>The systems can communicate directly for their supported account-management work. Devi does not need to visit a page for that request to occur.</p>
 <p>Identify the sender, destination, and purpose. An account update and a browser sign-in can both use requests and responses while doing different work and needing different result evidence.</p>
 </div>
 </details>
@@ -60,7 +60,7 @@ nav_order: 2
 
 ### Q04. One screen, several exchanges
 
-<p class="qb-question"><strong>Question:</strong> Maya uses a web application that loads a page, retrieves data, and submits a form. The page appears as one screen to her. Is that enough to treat everything she sees as the result of one HTTP request?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses a web application that loads a page, retrieves data, and submits a form. The page appears as one screen to her. Is that enough to treat everything she sees as the result of one HTTP request?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
@@ -68,7 +68,7 @@ nav_order: 2
 <p><strong>Explanation:</strong></p>
 <p>No. HTTP is the protocol used for web requests and responses, and one visible page can involve several of those exchanges.</p>
 <p>The page might load successfully while a later data request or form submission fails. Both observations can be true without contradiction.</p>
-<p>Find the request relevant to the reported problem and the response belonging to it. The screen is Maya's overall experience; the individual exchanges show which parts of that experience worked.</p>
+<p>Find the request relevant to the reported problem and the response belonging to it. The screen is Devi's overall experience; the individual exchanges show which parts of that experience worked.</p>
 </div>
 </details>
 
@@ -76,7 +76,7 @@ nav_order: 2
 
 ### Q05. HTTPS and application access
 
-<p class="qb-question"><strong>Question:</strong> Maya opens a business application using an HTTPS address. No authentication result, application permission, or completed business action is supplied. What does protected communication tell you, and can it establish those other outcomes?</p>
+<p class="qb-question"><strong>Question:</strong> Devi opens a business application using an HTTPS address. No authentication result, application permission, or completed business action is supplied. What does protected communication tell you, and can it establish those other outcomes?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
@@ -102,7 +102,7 @@ nav_order: 2
 <p><strong>Explanation:</strong></p>
 <p>Start at the left. The scheme is https: the browser will use an encrypted HTTP connection. Next comes expenses.northbridge.example, the host it will contact. The /start path names what it requests at that host. After the question mark, view=home supplies a query parameter named view with the value home.</p>
 <p>You can read the address aloud as, 'Contact this host using HTTPS, request /start, and send view set to home.' That describes the request without needing to memorize the whole address.</p>
-<p>Now wait for the reply. Sending directions to a server does not tell us whether it returned the page Maya expected or accepted her sign-in.</p>
+<p>Now wait for the reply. Sending directions to a server does not tell us whether it returned the page Devi expected or accepted her sign-in.</p>
 </div>
 </details>
 
@@ -110,7 +110,7 @@ nav_order: 2
 
 ### Q07. Which host replied?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s company uses an identity service to handle sign-in and a separate Expense application for business work. The identity-service page loads successfully, but Expense later refuses its request. Why must support identify the responding host for each result?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s company uses an identity service to handle sign-in and a separate Expense application for business work. The identity-service page loads successfully, but Expense later refuses its request. Why must support identify the responding host for each result?</p>
 
 <details class="qb-answer" id="q07-explanation">
 <summary>Read the teaching explanation</summary>
@@ -142,13 +142,13 @@ nav_order: 2
 
 ### Q09. A department in the URL
 
-<p class="qb-question"><strong>Question:</strong> Maya’s browser sends a business-application request whose URL includes <code>department=Finance</code>. No update operation, response, or account read is supplied. Does that parameter prove her stored department was changed to Finance?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s browser sends a business-application request whose URL includes <code>department=Finance</code>. No update operation, response, or account read is supplied. Does that parameter prove her stored department was changed to Finance?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It proves that the request carried Finance as query information. It does not establish that the application changed Maya's stored account data.</p>
+<p>It proves that the request carried Finance as query information. It does not establish that the application changed Devi's stored account data.</p>
 <p>The parameter might select a view or have some other supported purpose. Its presence alone does not choose the server's behavior.</p>
 <p>For a stored-change claim, inspect the relevant operation result and intended account afterward. Keep the observation narrow, then ask what evidence would show what the receiving application actually did.</p>
 </div>
@@ -158,14 +158,14 @@ nav_order: 2
 
 ### Q10. A similarly named environment
 
-<p class="qb-question"><strong>Question:</strong> The company keeps separate test and production instances of Expense. Maya reports a failure in production, the live business environment. Support finds a successful response from test but no result for her production attempt. Can the test success settle her report?</p>
+<p class="qb-question"><strong>Question:</strong> The company keeps separate test and production instances of Expense. Devi reports a failure in production, the live business environment. Support finds a successful response from test but no result for her production attempt. Can the test success settle her report?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. It establishes the checked request's result in test. Production has separate configuration, records, and attempt evidence.</p>
-<p>The test success may help with a comparison once the relevant differences are understood. It still cannot replace Maya's production result.</p>
+<p>The test success may help with a comparison once the relevant differences are understood. It still cannot replace Devi's production result.</p>
 <p>Identify the intended instance and actual attempt before using evidence. Similar application names do not make two environments one destination.</p>
 </div>
 </details>
@@ -242,14 +242,14 @@ nav_order: 2
 
 ### Q15. Read a redirect reply
 
-<p class="qb-question"><strong>Question:</strong> Maya’s browser asks Expense, a business application, for its start page. Expense replies <code>302 Found</code> with <code>Location: https://identity.example/signin</code>, a company identity-service address. What instruction does the reply give, and what is not yet verified?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s browser asks Expense, a business application, for its start page. Expense replies <code>302 Found</code> with <code>Location: https://identity.example/signin</code>, a company identity-service address. What instruction does the reply give, and what is not yet verified?</p>
 
 <details class="qb-answer" id="q15-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>It directs the browser to the address in Location. That is a redirect: a response telling the browser where to go next.</p>
-<p>The instruction does not establish that the next page responded, that Maya completed sign-in, or that any account was created. Those are later results to inspect.</p>
+<p>The instruction does not establish that the next page responded, that Devi completed sign-in, or that any account was created. Those are later results to inspect.</p>
 <p>Follow the exchange as a conversation: the browser asks for Expense's page, and Expense supplies another destination. The next request and its reply remain separate evidence.</p>
 </div>
 </details>
@@ -258,15 +258,15 @@ nav_order: 2
 
 ### Q16. Who makes the next request?
 
-<p class="qb-question"><strong>Question:</strong> In a browser-based sign-in journey, Expense replies to Maya’s browser with a redirect to the company’s identity service. In this stated flow, who sends the next web request: Expense or the browser?</p>
+<p class="qb-question"><strong>Question:</strong> In a browser-based sign-in journey, Expense replies to Devi’s browser with a redirect to the company’s identity service. In this stated flow, who sends the next web request: Expense or the browser?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>The browser makes the next request. Expense replies to it with a direction: 'Visit the identity service at this address.' The browser follows that direction.</p>
-<p>Trace three messages: the browser asks Expense, Expense replies to the browser, and the browser asks the identity service. Keeping the browser in the middle helps explain why Maya sees the destination change.</p>
-<p>A separate account-management connection could send a request directly between systems. That is different work. Following this redirect does not show that either system created or updated Maya's account.</p>
+<p>Trace three messages: the browser asks Expense, Expense replies to the browser, and the browser asks the identity service. Keeping the browser in the middle helps explain why Devi sees the destination change.</p>
+<p>A separate account-management connection could send a request directly between systems. That is different work. Following this redirect does not show that either system created or updated Devi's account.</p>
 </div>
 </details>
 
@@ -274,7 +274,7 @@ nav_order: 2
 
 ### Q17. Redirect or provisioning?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s browser follows a redirect from a business application to the company identity service. No account-management operation or target-account record is supplied. Does the successful browser movement prove the application created her account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s browser follows a redirect from a business application to the company identity service. No account-management operation or target-account record is supplied. Does the successful browser movement prove the application created her account?</p>
 
 <details class="qb-answer" id="q17-explanation">
 <summary>Read the teaching explanation</summary>
@@ -308,14 +308,14 @@ nav_order: 2
 
 ### Q19. A successful sign-in form
 
-<p class="qb-question"><strong>Question:</strong> Maya requests a sign-in page from the company’s identity service. It returns HTTP 200 with a form, but she has not submitted credentials or completed another authentication interaction. Did loading the form or authenticating Maya succeed?</p>
+<p class="qb-question"><strong>Question:</strong> Devi requests a sign-in page from the company’s identity service. It returns HTTP 200 with a form, but she has not submitted credentials or completed another authentication interaction. Did loading the form or authenticating Devi succeed?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The form loaded successfully. Maya has not completed authentication in the supplied example.</p>
-<p>Ask what the server was asked to do: return a sign-in page. The 200 response reports success for that request. Returning a form that asks for identity proof is different from checking the proof Maya later provides.</p>
+<p>The form loaded successfully. Devi has not completed authentication in the supplied example.</p>
+<p>Ask what the server was asked to do: return a sign-in page. The 200 response reports success for that request. Returning a form that asks for identity proof is different from checking the proof Devi later provides.</p>
 <p>To say she authenticated, look for the result of that later interaction. The useful reading is 'the sign-in form loaded,' rather than 'every part of sign-in and application access worked.'</p>
 </div>
 </details>
@@ -324,14 +324,14 @@ nav_order: 2
 
 ### Q20. A 200 response with an error page
 
-<p class="qb-question"><strong>Question:</strong> Maya requests a business-application page. The HTTP response is 200, but the returned page describes an application-level problem and her intended task is not completed. Should support ignore the page because the status looks successful?</p>
+<p class="qb-question"><strong>Question:</strong> Devi requests a business-application page. The HTTP response is 200, but the returned page describes an application-level problem and her intended task is not completed. Should support ignore the page because the status looks successful?</p>
 
 <details class="qb-answer" id="q20-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. Read the status and the returned content together. A server can deliver a page successfully while that page reports a problem with the business goal.</p>
-<p>Identify the intended operation and the application-level result. The status supplies information about the particular request, not a guarantee of every outcome Maya wanted.</p>
+<p>Identify the intended operation and the application-level result. The status supplies information about the particular request, not a guarantee of every outcome Devi wanted.</p>
 <p>The response body is evidence too. Disregarding it because of one number can hide the detail needed to explain the user's experience.</p>
 </div>
 </details>
@@ -340,7 +340,7 @@ nav_order: 2
 
 ### Q21. What does 403 explain?
 
-<p class="qb-question"><strong>Question:</strong> Expense, a business application, returns HTTP 403 and “We could not accept the sign-in information” for Maya’s request. No detailed rejection reason is supplied. Are wrong password, missing permission, or malformed sign-in information confirmed causes?</p>
+<p class="qb-question"><strong>Question:</strong> Expense, a business application, returns HTTP 403 and “We could not accept the sign-in information” for Devi’s request. No detailed rejection reason is supplied. Are wrong password, missing permission, or malformed sign-in information confirmed causes?</p>
 
 <details class="qb-answer" id="q21-explanation">
 <summary>Read the teaching explanation</summary>
@@ -374,15 +374,15 @@ nav_order: 2
 
 ### Q23. Read JSON structure
 
-<p class="qb-question"><strong>Question:</strong> An event is stored as JSON, a structured text format. The selected excerpt is <code>{"actor":{"displayName":"Maya Rao"},"target":[{"displayName":"Expense"}]}</code>. What do braces and square brackets tell you, and where do the two display names belong?</p>
+<p class="qb-question"><strong>Question:</strong> An event is stored as JSON, a structured text format. The selected excerpt is <code>{"actor":{"displayName":"Devi Rao"},"target":[{"displayName":"Expense"}]}</code>. What do braces and square brackets tell you, and where do the two display names belong?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Start with actor. Its value is inside braces, so it is an object: a group of related named details. Inside it, displayName has the value Maya Rao.</p>
+<p>Start with actor. Its value is inside braces, so it is an object: a group of related named details. Inside it, displayName has the value Devi Rao.</p>
 <p>Now move to target. The square brackets mean it holds a list. This list contains one object, and that object's displayName is Expense. The same field name appears twice, but its position tells us whether it describes the actor or a target.</p>
-<p>You can read this as, 'The actor shown is Maya Rao, and the target shown is Expense.' The excerpt does not include an action or outcome, so we cannot add 'sign-in succeeded' to that sentence. Reading the structure helps us find information; it does not fill in information that is missing.</p>
+<p>You can read this as, 'The actor shown is Devi Rao, and the target shown is Expense.' The excerpt does not include an action or outcome, so we cannot add 'sign-in succeeded' to that sentence. Reading the structure helps us find information; it does not fill in information that is missing.</p>
 </div>
 </details>
 
@@ -390,14 +390,14 @@ nav_order: 2
 
 ### Q24. Translate the event
 
-<p class="qb-question"><strong>Question:</strong> Okta is the company’s identity service. Its selected event fields show <code>eventType = user.authentication.sso</code>, actor Maya Rao, target Expense, and <code>outcome.result = SUCCESS</code>. SSO means single sign-on. No application acceptance or attempt-correlation evidence is included. Translate the record into one careful sentence.</p>
+<p class="qb-question"><strong>Question:</strong> Okta is the company’s identity service. Its selected event fields show <code>eventType = user.authentication.sso</code>, actor Devi Rao, target Expense, and <code>outcome.result = SUCCESS</code>. SSO means single sign-on. No application acceptance or attempt-correlation evidence is included. Translate the record into one careful sentence.</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Try: “Okta recorded a successful application single-sign-on event associated with Maya Rao and Expense.”</p>
-<p>That names the recorded action, actor, target, and result. It does not add Expense acceptance or identify which of Maya's possible attempts the event belongs to.</p>
+<p>Try: “Okta recorded a successful application single-sign-on event associated with Devi Rao and Expense.”</p>
+<p>That names the recorded action, actor, target, and result. It does not add Expense acceptance or identify which of Devi's possible attempts the event belongs to.</p>
 <p>Next, obtain the identifiers, timing, and relevant application records if the ticket needs those outcomes. A clear sentence makes the record useful without extending its evidence beyond the selected fields.</p>
 </div>
 </details>
@@ -406,15 +406,15 @@ nav_order: 2
 
 ### Q25. Who is the actor?
 
-<p class="qb-question"><strong>Question:</strong> Alex is an administrator who updates employee Maya’s account. The resulting account-maintenance event includes actor and target fields. Must actor name Maya because the support ticket concerns her?</p>
+<p class="qb-question"><strong>Question:</strong> Alex is an administrator who updates employee Devi’s account. The resulting account-maintenance event includes actor and target fields. Must actor name Devi because the support ticket concerns her?</p>
 
 <details class="qb-answer" id="q25-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Actor describes who or what performed the recorded action. In this supplied situation, Alex performs it; Maya's account is the affected record.</p>
+<p>No. Actor describes who or what performed the recorded action. In this supplied situation, Alex performs it; Devi's account is the affected record.</p>
 <p>An automated process could also be an actor in another event. Read the actual entries and surrounding context rather than assigning roles from the ticket title.</p>
-<p>This distinction prevents an administrator's maintenance action from being mistaken for Maya's sign-in. The person with the problem is not always the person or software that acted.</p>
+<p>This distinction prevents an administrator's maintenance action from being mistaken for Devi's sign-in. The person with the problem is not always the person or software that acted.</p>
 </div>
 </details>
 
@@ -454,13 +454,13 @@ nav_order: 2
 
 ### Q28. A selected excerpt is incomplete
 
-<p class="qb-question"><strong>Question:</strong> Maya reports a failed Expense attempt. A selected event excerpt names Maya and Expense but provides no usable time, full identifiers, or request context. Does it independently establish that the event belongs to her reported attempt?</p>
+<p class="qb-question"><strong>Question:</strong> Devi reports a failed Expense attempt. A selected event excerpt names Devi and Expense but provides no usable time, full identifiers, or request context. Does it independently establish that the event belongs to her reported attempt?</p>
 
 <details class="qb-answer" id="q28-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. It supplies selected details, not a verified relationship to this attempt. Maya may have opened the same application more than once.</p>
+<p>No. It supplies selected details, not a verified relationship to this attempt. Devi may have opened the same application more than once.</p>
 <p>Obtain timing, identifiers, and request context that connect the actual records. Display names alone may not uniquely identify either the objects or the activity.</p>
 <p>If a case explicitly supplies correlation, use it. Here that relationship is absent, so leave it unverified instead of building one story from familiar labels.</p>
 </div>
@@ -472,13 +472,13 @@ nav_order: 2
 
 ### Q29. Someone else succeeded
 
-<p class="qb-question"><strong>Question:</strong> Maya reports that Expense refused her sign-in. Support finds a successful event for Priya, a different user, accessing Expense. No result tied to Maya’s attempt is supplied. Does Priya’s success resolve Maya’s complaint?</p>
+<p class="qb-question"><strong>Question:</strong> Devi reports that Expense refused her sign-in. Support finds a successful event for Priya, a different user, accessing Expense. No result tied to Devi’s attempt is supplied. Does Priya’s success resolve Devi’s complaint?</p>
 
 <details class="qb-answer" id="q29-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It supplies a result for Priya, not Maya. It cannot establish Maya's acceptance or disprove her refusal.</p>
+<p>It supplies a result for Priya, not Devi. It cannot establish Devi's acceptance or disprove her refusal.</p>
 <p>The event might be useful comparison evidence once the relevant context and requirements are understood. It still cannot replace records for the affected person and attempt.</p>
 <p>First connect evidence to the intended identity and activity. A search full of successes does not mean every user's request must have worked.</p>
 </div>
@@ -488,7 +488,7 @@ nav_order: 2
 
 ### Q30. Same person, another application
 
-<p class="qb-question"><strong>Question:</strong> Maya reports failed entry to Expense. A successful event names Maya but targets a different business application. Expense’s own result has not been checked. Can the event be used as Expense acceptance evidence?</p>
+<p class="qb-question"><strong>Question:</strong> Devi reports failed entry to Expense. A successful event names Devi but targets a different business application. Expense’s own result has not been checked. Can the event be used as Expense acceptance evidence?</p>
 
 <details class="qb-answer" id="q30-explanation">
 <summary>Read the teaching explanation</summary>
@@ -504,13 +504,13 @@ nav_order: 2
 
 ### Q31. Same person and app, another time
 
-<p class="qb-question"><strong>Question:</strong> Two records mention Maya and Expense. Their displayed clock times look similar, but their time zones, attempt identifiers, and sequence have not been compared. May support treat them as one attempt solely from that appearance?</p>
+<p class="qb-question"><strong>Question:</strong> Two records mention Devi and Expense. Their displayed clock times look similar, but their time zones, attempt identifiers, and sequence have not been compared. May support treat them as one attempt solely from that appearance?</p>
 
 <details class="qb-answer" id="q31-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Maya may have tried Expense more than once. Two familiar names and similar clock displays do not tell us which attempt each record describes.</p>
+<p>No. Devi may have tried Expense more than once. Two familiar names and similar clock displays do not tell us which attempt each record describes.</p>
 <p>Check the time zones as well as the clock times. UTC is a common reference time; UTC+02:00 means two hours ahead of it. For example, 09:00 UTC and 09:00 UTC+02:00 are different moments even though both displays say 09:00. Then compare the available attempt or request identifiers and the sequence of events.</p>
 <p>Correlation means establishing that these records belong to the same activity. If the available evidence does not establish that connection, keep it open. We should not borrow a success from another attempt to explain the one that failed.</p>
 </div>
@@ -552,7 +552,7 @@ nav_order: 2
 
 ### Q34. An empty search
 
-<p class="qb-question"><strong>Question:</strong> Support searches Okta’s System Log for Maya’s reported Expense sign-in and finds no matching event. The time range, time zone, filters, and identifiers have not been verified against the report. Is the attempt proven never to have occurred?</p>
+<p class="qb-question"><strong>Question:</strong> Support searches Okta’s System Log for Devi’s reported Expense sign-in and finds no matching event. The time range, time zone, filters, and identifiers have not been verified against the report. Is the attempt proven never to have occurred?</p>
 
 <details class="qb-answer" id="q34-explanation">
 <summary>Read the teaching explanation</summary>
@@ -618,7 +618,7 @@ nav_order: 2
 
 ### Q38. Two services, two session questions
 
-<p class="qb-question"><strong>Question:</strong> Maya has an accepted session with Okta, the company identity service. Expense is a separate application that can establish its own session after sign-in. No Expense session result is supplied. Does the Okta session alone prove she has an accepted Expense session?</p>
+<p class="qb-question"><strong>Question:</strong> Devi has an accepted session with Okta, the company identity service. Expense is a separate application that can establish its own session after sign-in. No Expense session result is supplied. Does the Okta session alone prove she has an accepted Expense session?</p>
 
 <details class="qb-answer" id="q38-explanation">
 <summary>Read the teaching explanation</summary>
@@ -652,7 +652,7 @@ nav_order: 2
 
 ### Q40. The account request was sent
 
-<p class="qb-question"><strong>Question:</strong> A configured software connection sends a request to create Maya’s account in a business application. The send is recorded, but no application response or target-account read is supplied. What is established, and what is needed before reporting creation succeeded?</p>
+<p class="qb-question"><strong>Question:</strong> A configured software connection sends a request to create Devi’s account in a business application. The send is recorded, but no application response or target-account read is supplied. What is established, and what is needed before reporting creation succeeded?</p>
 
 <details class="qb-answer" id="q40-explanation">
 <summary>Read the teaching explanation</summary>
@@ -666,9 +666,9 @@ nav_order: 2
 
 <a id="q41"></a>
 
-### Q41. Reconstruct Maya’s failed journey
+### Q41. Reconstruct Devi’s failed journey
 
-<p class="qb-question"><strong>Question:</strong> Expense is a business application connected to Okta for single sign-on (SSO). For one explicitly correlated attempt, Maya’s browser follows a redirect, the sign-in form loads, her required interaction succeeds, and Okta records SSO success. Expense then refuses the return request with 403. Where is the first demonstrated failure, and what evidence is needed next?</p>
+<p class="qb-question"><strong>Question:</strong> Expense is a business application connected to Okta for single sign-on (SSO). For one explicitly correlated attempt, Devi’s browser follows a redirect, the sign-in form loads, her required interaction succeeds, and Okta records SSO success. Expense then refuses the return request with 403. Where is the first demonstrated failure, and what evidence is needed next?</p>
 
 <details class="qb-answer" id="q41-explanation">
 <summary>Read the teaching explanation</summary>
@@ -684,7 +684,7 @@ nav_order: 2
 
 ### Q42. Repair a misleading update
 
-<p class="qb-question"><strong>Question:</strong> For Maya’s identified attempt, Okta records successful single sign-on (SSO), but the connected Expense application refuses the corresponding request. No detailed cause, password reset, or successful follow-up is supplied. Rewrite: “Okta says SUCCESS, so Expense worked. We reset Maya’s password and closed the request.”</p>
+<p class="qb-question"><strong>Question:</strong> For Devi’s identified attempt, Okta records successful single sign-on (SSO), but the connected Expense application refuses the corresponding request. No detailed cause, password reset, or successful follow-up is supplied. Rewrite: “Okta says SUCCESS, so Expense worked. We reset Devi’s password and closed the request.”</p>
 
 <details class="qb-answer" id="q42-explanation">
 <summary>Read the teaching explanation</summary>
@@ -702,7 +702,7 @@ nav_order: 2
 
 ### Q43. A browser error before a connection
 
-<p class="qb-question"><strong>Question:</strong> Maya tries to open Expense at a named web address. The browser cannot resolve the host name to a network address and establishes no connection. No application response is obtained. Must the displayed browser error be an HTTP refusal sent by Expense?</p>
+<p class="qb-question"><strong>Question:</strong> Devi tries to open Expense at a named web address. The browser cannot resolve the host name to a network address and establishes no connection. No application response is obtained. Must the displayed browser error be an HTTP refusal sent by Expense?</p>
 
 <details class="qb-answer" id="q43-explanation">
 <summary>Read the teaching explanation</summary>

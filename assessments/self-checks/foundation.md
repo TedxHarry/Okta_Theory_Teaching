@@ -10,7 +10,7 @@ Attempt the [checkpoint](../foundation.md) before reading this explanation. Judg
 
 ## Task 1: Expected access
 
-Maya's applicable sources are Workday and AD, with Workday first. Her department and workerType inherit from that effective source. The correct Sales/Employee values reach Okta, meet both rule conditions, and result in the observed NB-Sales-Employees membership. The group's Salesforce assignment supplies her assignment.
+Devi's applicable sources are Workday and AD, with Workday first. Her department and workerType inherit from that effective source. The correct Sales/Employee values reach Okta, meet both rule conditions, and result in the observed NB-Sales-Employees membership. The group's Salesforce assignment supplies her assignment.
 
 Priya has no applicable external association and her profile is maintained in Okta. Sales/Contractor is correct for her, but it does not meet the Employee condition. Her absence from the group and lack of assignment are consistent with the normal requirement.
 
@@ -22,7 +22,7 @@ The incoming mapping always produces Finance despite the approved Sales input. I
 
 Propose correcting the department mapping to represent the approved source value. Review other users affected by the mapping. Do not change correct HR data or broaden the Sales rule to include Finance.
 
-Verification should establish the saved mapping's correct output, Maya's updated Okta profile, actual rule processing and membership, and resulting Salesforce assignment. Any claim of usable Salesforce access then requires the relevant account, sign-in, and permission evidence.
+Verification should establish the saved mapping's correct output, Devi's updated Okta profile, actual rule processing and membership, and resulting Salesforce assignment. Any claim of usable Salesforce access then requires the relevant account, sign-in, and permission evidence.
 
 The packet demonstrates a current defect, not a complete history of all writes. Do not invent the original operation that put Finance into the profile.
 
@@ -38,7 +38,7 @@ Acceptable next requests can focus on approval or technical outcome, provided th
 
 ## Task 4: Future move
 
-With Finance in the processed Okta profile, Maya no longer meets Sales AND Employee. Under the stated sole-rule assumptions, her Sales-group membership should be removed. Verify the observed removal before treating the prediction as a completed event.
+With Finance in the processed Okta profile, Devi no longer meets Sales AND Employee. Under the stated sole-rule assumptions, her Sales-group membership should be removed. Verify the observed removal before treating the prediction as a completed event.
 
 If there is no other assignment path, the Salesforce assignment through that group should cease once the membership change is applied; confirm the resulting assignment state. If another checked group still assigns Salesforce, that path remains and needs evaluation against the post-move requirement.
 
@@ -48,7 +48,7 @@ Neither outcome alone proves the target account is disabled or an application se
 
 A sound manager-facing explanation might be:
 
-> We use approved identity data to decide normal access. Workday controls Maya's employee data; an authorized process maintains Priya's contractor data in Okta. Mappings represent those values in the profiles that rules use. The Sales employee rule manages a group, and Salesforce is assigned to that group. An individual exception can create another assignment path. We verify the application account and sign-in separately, because neither a group membership nor an Okta success event establishes all application outcomes.
+> We use approved identity data to decide normal access. Workday controls Devi's employee data; an authorized process maintains Priya's contractor data in Okta. Mappings represent those values in the profiles that rules use. The Sales employee rule manages a group, and Salesforce is assigned to that group. An individual exception can create another assignment path. We verify the application account and sign-in separately, because neither a group membership nor an Okta success event establishes all application outcomes.
 
 For B, add that the current mapping is demonstrably wrong and needs correction and verification. For C, add that the individual assignment's business approval remains unknown.
 
@@ -59,7 +59,7 @@ For each row, choose **independent**, **with guidance**, or **needs review**. In
 | Criterion | Evidence of understanding | Revisit if needed |
 |---|---|---|
 | Flow | Connects data, rule, membership, assignment, and target checks. | Day 5: A rule decides membership |
-| Ownership | Explains why Workday controls Maya and Okta controls Priya. | Day 4: applicable associations and inheritance |
+| Ownership | Explains why Workday controls Devi and Okta controls Priya. | Day 4: applicable associations and inheritance |
 | Prediction | Evaluates AND and changes the outcome when department changes. | Day 5: Predict who matches |
 | Evidence | Separates preview, observed profile, membership, assignment, and event results. | Days 2 to 3 |
 | Investigation | Requests evidence that distinguishes explanations or resolves approval. | Notebook: Choose evidence that separates explanations |

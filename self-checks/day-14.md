@@ -16,7 +16,7 @@ Revisit [Turn the request into observable outcomes](../lessons/day-14-requiremen
 
 ## 2. Explain the approved model
 
-Maya qualifies for the normal Finance path but does not gain approval permission merely from department. Daniel uses that path and has separately approved application authority. Priya does not meet the employee condition; an exception requires its own supplied approval and maintenance. Jordan's departure requires access removal regardless of retained attributes or memberships. R-14 does not supply Priya's exception approval. The separate lost-phone scenario supplies approval for that scenario; do not carry it backward as proof that the proposed R-14 exception was decided.
+Devi qualifies for the normal Finance path but does not gain approval permission merely from department. Daniel uses that path and has separately approved application authority. Priya does not meet the employee condition; an exception requires its own supplied approval and maintenance. Jordan's departure requires access removal regardless of retained attributes or memberships. R-14 does not supply Priya's exception approval. The separate lost-phone scenario supplies approval for that scenario; do not carry it backward as proof that the proposed R-14 exception was decided.
 
 The group rule answers which records meet the normal population condition. It does not, by itself, establish what the user can do inside Expense. Effective lifecycle processing, exceptions, app assignment, target readiness, business roles, and sessions require their own controls and evidence.
 
@@ -77,9 +77,9 @@ No. A new implementation capability does not change the approved permission mode
 
 ## Optional onboarding framework: model reasoning
 
-The successful employee case does not establish the other cases. Under this variant, an ordinary Finance employee should lack the Sales entitlement; inspect assignments and any surviving target account or session. Priya needs a separately approved exception with limited permissions and an end condition; inspect its approval and actual assignment without inventing a Workday association. Maya's Finance move ends ordinary Projects access in this variant; inspect all surviving group and direct assignments, the target account and relevant sessions. This differs explicitly from Day 12's requirement to retain her Projects account.
+The successful employee case does not establish the other cases. Under this variant, an ordinary Finance employee should lack the Sales entitlement; inspect assignments and any surviving target account or session. Priya needs a separately approved exception with limited permissions and an end condition; inspect its approval and actual assignment without inventing a Workday association. Devi's Finance move ends ordinary Projects access in this variant; inspect all surviving group and direct assignments, the target account and relevant sessions. This differs explicitly from Day 12's requirement to retain her Projects account.
 
-The supplied facts do not establish any of those target outcomes. A rejected integration credential concerns the service connection; Maya's password reset does not correct that evidence. Identify the caller, endpoint, exact rejection and credential owner. Different evidence may support different hypotheses, but an answer must preserve the approved eligibility and distinguish unknown outcomes from confirmed failures.
+The supplied facts do not establish any of those target outcomes. A rejected integration credential concerns the service connection; Devi's password reset does not correct that evidence. Identify the caller, endpoint, exact rejection and credential owner. Different evidence may support different hypotheses, but an answer must preserve the approved eligibility and distinguish unknown outcomes from confirmed failures.
 
 [Return to Day 14](../lessons/day-14-requirements-and-responsibilities.md) · [Course home](../index.md)
 

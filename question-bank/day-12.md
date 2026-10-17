@@ -12,7 +12,7 @@ nav_order: 12
 
 ### Q01. Join, move, leave
 
-<p class="qb-question"><strong>Question:</strong> An identity team receives three approved events: Maya starts employment, Daniel changes responsibilities while remaining employed, and Jordan leaves. How do joiner, mover, and leaver describe the different access goals for these events?</p>
+<p class="qb-question"><strong>Question:</strong> An identity team receives three approved events: Devi starts employment, Daniel changes responsibilities while remaining employed, and Jordan leaves. How do joiner, mover, and leaver describe the different access goals for these events?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
@@ -76,13 +76,13 @@ nav_order: 12
 
 ### Q05. Active is a scoped state
 
-<p class="qb-question"><strong>Question:</strong> A read of Maya’s Okta user returns status ACTIVE. Her current employment approval, application accounts, actual sign-in, and business permissions have not been reviewed. What does this account status establish, and which conclusions need separate evidence?</p>
+<p class="qb-question"><strong>Question:</strong> A read of Devi’s Okta user returns status ACTIVE. Her current employment approval, application accounts, actual sign-in, and business permissions have not been reviewed. What does this account status establish, and which conclusions need separate evidence?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>ACTIVE establishes that the checked Okta account is enabled. It does not independently establish ongoing employment, successful application entry, or the permissions needed for Maya's work.</p>
+<p>ACTIVE establishes that the checked Okta account is enabled. It does not independently establish ongoing employment, successful application entry, or the permissions needed for Devi's work.</p>
 <p>Authentication requirements may still apply, and each application has its own records and access conditions. Use the status as one finding, then follow the approved requirement to the missing checks. An enabled identity is useful context, rather than proof of every business outcome.</p>
 </div>
 </details>
@@ -137,7 +137,7 @@ nav_order: 12
 
 ### Q09. What suspension retains
 
-<p class="qb-question"><strong>Question:</strong> A company approves a temporary suspension of Maya’s Okta access. Support needs to understand what suspension retains before planning a later return. How do application assignments and group memberships behave, and what still requires target-specific evidence?</p>
+<p class="qb-question"><strong>Question:</strong> A company approves a temporary suspension of Devi’s Okta access. Support needs to understand what suspension retains before planning a later return. How do application assignments and group memberships behave, and what still requires target-specific evidence?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
@@ -199,14 +199,14 @@ nav_order: 12
 
 ### Q13. Connect the joiner chain
 
-<p class="qb-question"><strong>Question:</strong> A company approves Maya’s employment and the point when her work access may begin. It must establish her identity and prepare the applications needed for her job. Which outcomes belong in a reasoned statement that this joiner is ready?</p>
+<p class="qb-question"><strong>Question:</strong> A company approves Devi’s employment and the point when her work access may begin. It must establish her identity and prepare the applications needed for her job. Which outcomes belong in a reasoned statement that this joiner is ready?</p>
 
 <details class="qb-answer" id="q13-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>Start with approved employment and the effective access point. Verify the correct source record, matching and identity, intended activation and authentication readiness, groups and assignments, and required target accounts, sign-in, and permissions.</p>
-<p>These are connected dependencies, not a guaranteed connector execution order. The evidence should show that Maya can perform her intended work. A successful early step helps locate progress, but it cannot supply the later results that readiness still depends on.</p>
+<p>These are connected dependencies, not a guaranteed connector execution order. The evidence should show that Devi can perform her intended work. A successful early step helps locate progress, but it cannot supply the later results that readiness still depends on.</p>
 </div>
 </details>
 
@@ -276,14 +276,14 @@ nav_order: 12
 
 ### Q18. Read the approved move
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Which outcomes should support remove, update, and preserve when evaluating this mover?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Which outcomes should support remove, update, and preserve when evaluating this mover?</p>
 
 <details class="qb-answer" id="q18-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Read the move as three kinds of work. Remove the obsolete Sales membership and Salesforce access. Update the governed department to Finance and Projects' department code to FIN. Preserve Maya's existing identity, intended Projects account and continuing Projects access.</p>
-<p>Those are parts of the same approved outcome. Adding the new department without ending the old access would be incomplete. Disabling everything would also be wrong because Maya must keep working in Projects.</p>
+<p>Read the move as three kinds of work. Remove the obsolete Sales membership and Salesforce access. Update the governed department to Finance and Projects' department code to FIN. Preserve Devi's existing identity, intended Projects account and continuing Projects access.</p>
+<p>Those are parts of the same approved outcome. Adding the new department without ending the old access would be incomplete. Disabling everything would also be wrong because Devi must keep working in Projects.</p>
 <p>Use this requirement to judge each observed result. It tells you what to end, what to change and what to retain; the department name alone does not supply every role or permission decision.</p>
 </div>
 </details>
@@ -292,14 +292,14 @@ nav_order: 12
 
 ### Q19. Finance does not mean manager
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move changes her department to Finance and preserves Projects access. Daniel, another Finance employee, is a manager with Expense approval permissions. No manager role or approval requirement is supplied for Maya. Does her department change establish Daniel’s capabilities for her?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move changes her department to Finance and preserves Projects access. Daniel, another Finance employee, is a manager with Expense approval permissions. No manager role or approval requirement is supplied for Devi. Does her department change establish Daniel’s capabilities for her?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. A department value does not establish every role held by people in that department. Maya's approved responsibilities determine which capabilities she should receive or retain.</p>
-<p>If expense approval is required, obtain that business authorization and relevant application permission evidence. Daniel's access is an example of another person's role, not an authorization rule for Maya. Correct profile data is useful, but it cannot supply an unstated manager entitlement.</p>
+<p>No. A department value does not establish every role held by people in that department. Devi's approved responsibilities determine which capabilities she should receive or retain.</p>
+<p>If expense approval is required, obtain that business authorization and relevant application permission evidence. Daniel's access is an example of another person's role, not an authorization rule for Devi. Correct profile data is useful, but it cannot supply an unstated manager entitlement.</p>
 </div>
 </details>
 
@@ -309,7 +309,7 @@ nav_order: 12
 
 ### Q20. Preserve completed mover outcomes
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Maya’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce access remains unresolved. Does the evidence demonstrate a failed department update or Sales-group rule?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Devi’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce access remains unresolved. Does the evidence demonstrate a failed department update or Sales-group rule?</p>
 
 <details class="qb-answer" id="q20-explanation">
 <summary>Read the teaching explanation</summary>
@@ -324,7 +324,7 @@ nav_order: 12
 
 ### Q21. The remaining assignment path
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Maya’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce remains individually assigned to Maya. Review confirms no group assignment remains and the individual exception ended with her move. What remaining relationship conflicts with the approved move?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Devi’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce remains individually assigned to Devi. Review confirms no group assignment remains and the individual exception ended with her move. What remaining relationship conflicts with the approved move?</p>
 
 <details class="qb-answer" id="q21-explanation">
 <summary>Read the teaching explanation</summary>
@@ -340,7 +340,7 @@ nav_order: 12
 
 ### Q22. Assignment versus demonstrated entry
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Salesforce remains individually assigned to Maya. Review confirms no group assignment remains and the individual exception ended with her move. Salesforce also confirms a new application session for Maya after the move. What does that session observation add beyond a recorded assignment or visible tile?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Salesforce remains individually assigned to Devi. Review confirms no group assignment remains and the individual exception ended with her move. Salesforce also confirms a new application session for Devi after the move. What does that session observation add beyond a recorded assignment or visible tile?</p>
 
 <details class="qb-answer" id="q22-explanation">
 <summary>Read the teaching explanation</summary>
@@ -355,14 +355,14 @@ nav_order: 12
 
 ### Q23. Projects continues: how far verified?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Her Projects app profile contains FIN, the supported update to linked account prj-1042 succeeds, and a later target read shows FIN and active true. No Projects sign-in or permission check is supplied. How far is continuation verified?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Her Projects app profile contains FIN, the supported update to linked account prj-1042 succeeds, and a later target read shows FIN and active true. No Projects sign-in or permission check is supplied. How far is continuation verified?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>The evidence verifies the supplied department update on the intended Projects account and its enabled state at the time of the read. Those are completed account-management outcomes.</p>
-<p>Actual entry and the permissions needed for Maya's work remain unverified. Keep those checks separate while recognizing that the correct target code was stored. The requirement calls for continued Projects access, and reading a correct value is one part of establishing that broader business result.</p>
+<p>Actual entry and the permissions needed for Devi's work remain unverified. Keep those checks separate while recognizing that the correct target code was stored. The requirement calls for continued Projects access, and reading a correct value is one part of establishing that broader business result.</p>
 </div>
 </details>
 
@@ -370,7 +370,7 @@ nav_order: 12
 
 ### Q24. Choose the Salesforce correction scope
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Salesforce remains individually assigned to Maya. Review confirms no group assignment remains and the individual exception ended with her move. Salesforce accepts a new session after the move. Its connector behavior and any corrective results are unknown. What should support address and verify without borrowing another application’s deactivation contract?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Salesforce remains individually assigned to Devi. Review confirms no group assignment remains and the individual exception ended with her move. Salesforce accepts a new session after the move. Its connector behavior and any corrective results are unknown. What should support address and verify without borrowing another application’s deactivation contract?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
@@ -385,13 +385,13 @@ nav_order: 12
 
 ### Q25. Why not deactivate everything?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. A colleague suggests deactivating all of Maya’s accounts so that none of her previous access survives. Would this meet the approved mover requirement?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. A colleague suggests deactivating all of Devi’s accounts so that none of her previous access survives. Would this meet the approved mover requirement?</p>
 
 <details class="qb-answer" id="q25-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It would violate the requirement to preserve Projects and her continuing work. Maya remains employed and keeps her identity and intended account.</p>
+<p>It would violate the requirement to preserve Projects and her continuing work. Devi remains employed and keeps her identity and intended account.</p>
 <p>The approved move removes obsolete Salesforce access while updating and preserving Projects. Apply the action to the relationship that no longer has justification. Removing more access is not automatically a better outcome; the requirement includes keeping the access that her new responsibilities still need.</p>
 </div>
 </details>
@@ -400,7 +400,7 @@ nav_order: 12
 
 ### Q26. Decide whether the move is complete
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Maya’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce remains individually assigned to Maya. Review confirms no group assignment remains and the individual exception ended with her move. Projects has verified FIN and active true, while Salesforce accepts a new session. No corrective Salesforce action is supplied. Can the mover ticket be closed?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved move from Sales to Finance is effective. She remains employed as NB-1042. Sales-group membership and Salesforce access must end with no transition exception, while her existing Projects account and access must continue with department code FIN instead of SAL. Workday HR shows Devi’s effective department as Finance. The correct Workday association is checked, Okta shows Finance and Employee, and the active Sales AND Employee rule has removed its rule-managed Sales membership. Salesforce remains individually assigned to Devi. Review confirms no group assignment remains and the individual exception ended with her move. Projects has verified FIN and active true, while Salesforce accepts a new session. No corrective Salesforce action is supplied. Can the mover ticket be closed?</p>
 
 <details class="qb-answer" id="q26-explanation">
 <summary>Read the teaching explanation</summary>

@@ -4,7 +4,7 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 
 | Question | Learning distinction | Focused lesson explanation | Evidence packet |
 | --- | --- | --- | --- |
-| L01-Q01 | Person and records | Maya is one person; the systems hold different records | No |
+| L01-Q01 | Person and records | Devi is one person; the systems hold different records | No |
 | L01-Q02 | Account state | Start with the right record | Yes |
 | L01-Q03 | Authentication | Signing in and having permission are different | No |
 | L01-Q04 | Authorization | Signing in and having permission are different | No |
@@ -14,8 +14,8 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L01-Q08 | Groups | Why Northbridge uses Okta | No |
 | L01-Q09 | Integrations | Why Northbridge uses Okta | No |
 | L01-Q10 | Visible shortcuts | Being assigned an application is another fact to check | No |
-| L01-Q11 | Multiple systems | Maya is one person; the systems hold different records | No |
-| L01-Q12 | Evidence limits | Investigating Maya's ticket | Yes |
+| L01-Q11 | Multiple systems | Devi is one person; the systems hold different records | No |
+| L01-Q12 | Evidence limits | Investigating Devi's ticket | Yes |
 | L02-Q01 | Request sender | Your browser asks; a server responds | No |
 | L02-Q02 | Responder | Read the destination before interpreting the result | No |
 | L02-Q03 | Redirect status | A response can send the browser elsewhere | No |
@@ -23,10 +23,10 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L02-Q05 | Event association | Match the evidence to the right attempt | Yes |
 | L02-Q06 | Event scope | Read an event as a sentence first | No |
 | L02-Q07 | Empty searches | Choose a search that answers the question | No |
-| L02-Q08 | First failure | Follow Maya's attempt one step at a time | Yes |
+| L02-Q08 | First failure | Follow Devi's attempt one step at a time | Yes |
 | L02-Q09 | Configuration evidence | Read the destination before interpreting the result | No |
 | L02-Q10 | Causal restraint | Match the evidence to the right attempt | No |
-| L02-Q11 | Controlled retest | Follow Maya's attempt one step at a time | No |
+| L02-Q11 | Controlled retest | Follow Devi's attempt one step at a time | No |
 | L02-Q12 | Unknown outcomes | Compare a redirect with account management | Yes |
 | L03-Q01 | Profile roles | There is an Okta user profile and an application user profile | No |
 | L03-Q02 | Mapping direction | A mapping connects a source field to a destination field | No |
@@ -42,7 +42,7 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L03-Q12 | Verification | Recognize a verified correction | No |
 | L04-Q01 | Source association | First ask which sources apply to this person | No |
 | L04-Q02 | Attribute ownership | Then check the particular attribute | No |
-| L04-Q03 | Authoritative correction | What if Maya's Okta department were wrong? | Yes |
+| L04-Q03 | Authoritative correction | What if Devi's Okta department were wrong? | Yes |
 | L04-Q04 | Overwrite behavior | Investigate a value that comes back | No |
 | L04-Q05 | Contractor maintenance | Why Priya can be maintained in Okta | No |
 | L04-Q06 | Business meaning | Why Priya can be maintained in Okta | No |
@@ -51,7 +51,7 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L04-Q09 | Source evidence | First ask which sources apply to this person | No |
 | L04-Q10 | Unknown cause | Work through the disagreement | No |
 | L04-Q11 | Change planning | Field ownership and account lifecycle are separate decisions | No |
-| L04-Q12 | Confirmed outcome | Tell Maya's and Priya's stories | Yes |
+| L04-Q12 | Confirmed outcome | Tell Devi's and Priya's stories | Yes |
 | L05-Q01 | AND conditions | Predict who matches | No |
 | L05-Q02 | OR conditions | Predict who matches | Yes |
 | L05-Q03 | Missing values | Predict who matches | No |
@@ -127,7 +127,7 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L11-Q01 | Discovery versus association | Separate the stages | No |
 | L11-Q02 | Scope | Start with scope and direction | No |
 | L11-Q03 | Matching rules | A matching rule is a comparison, not a biography | No |
-| L11-Q04 | Existing accounts | Work through Maya's existing account | No |
+| L11-Q04 | Existing accounts | Work through Devi's existing account | No |
 | L11-Q05 | Ambiguity | Recognize when the evidence is insufficient | Yes |
 | L11-Q06 | Sourcing effects | Association can affect sourcing | No |
 | L11-Q07 | Pagination | Read the whole result, not just its first page | No |
@@ -138,7 +138,7 @@ The source bank has 192 independent questions. Each row maps a question to a foc
 | L11-Q12 | Verification | Reconcile expected and observed records | No |
 | L12-Q01 | Joiner readiness | Joiner: connect the initial decisions | No |
 | L12-Q02 | Mover timing | Mover: state what should change and what should remain | No |
-| L12-Q03 | Old access paths | Follow Maya's evidence | Yes |
+| L12-Q03 | Old access paths | Follow Devi's evidence | Yes |
 | L12-Q04 | Multiple populations | Leaver: verify each outcome | No |
 | L12-Q05 | Leaver scope | Leaver: verify each outcome | No |
 | L12-Q06 | Deactivation versus deletion | Choose the action for the state you actually found | No |

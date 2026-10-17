@@ -14,7 +14,7 @@ Record your first attempt before opening the model answers or recap. For each ti
 
 Explain Northbridge's employee and contractor sourcing, source priority, the AD email exception, and delegated authentication. Distinguish assignment, SAML/OIDC sign-in, SCIM provisioning, and application sessions. Rank the tickets by the supplied impact, explaining which owners could act in parallel. Give a short overall handoff without claiming unsupplied resolutions.
 
-## 2. Investigate Maya's move
+## 2. Investigate Devi's move
 
 For A, locate the first demonstrated discrepancy, state the supported cause, and propose correction and verification. Explain why neither successful Projects entry nor a successful update response resolves the report issue by itself. Describe the affected-population and recovery checks appropriate to the proposed mapping change.
 

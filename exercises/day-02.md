@@ -16,7 +16,7 @@ For every result, name the request or event it belongs to, say what that result 
 https://expenses.northbridge.example/reports?department=Finance
 ```
 
-Identify the connection scheme, host, path, and query parameter. Does this URL prove Maya's stored department changed to Finance?
+Identify the connection scheme, host, path, and query parameter. Does this URL prove Devi's stored department changed to Finance?
 
 ## 2. Follow the redirect
 
@@ -55,7 +55,7 @@ This is a synthetic excerpt with selected fields, not a complete Okta event:
 {
   "eventType": "user.authentication.sso",
   "actor": {
-    "displayName": "Maya Rao"
+    "displayName": "Devi Rao"
   },
   "target": [
     {
@@ -69,19 +69,19 @@ This is a synthetic excerpt with selected fields, not a complete Okta event:
 }
 ```
 
-Translate it into one sentence. Name what identifies the action, actor, target, and result. Does this excerpt alone prove the application accepted the sign-in or that it belongs to Maya's specific reported attempt?
+Translate it into one sentence. Name what identifies the action, actor, target, and result. Does this excerpt alone prove the application accepted the sign-in or that it belongs to Devi's specific reported attempt?
 
 ## 7. Tell the story using the right evidence
 
-Maya reports an Expense sign-in failure. The evidence packet states:
+Devi reports an Expense sign-in failure. The evidence packet states:
 
 - Expense sent her browser to the identity service with a redirect.
 - The sign-in form loaded successfully.
-- An Okta SSO event for Maya and Expense is connected to this attempt by the supplied investigation record and shows `SUCCESS`.
+- An Okta SSO event for Devi and Expense is connected to this attempt by the supplied investigation record and shows `SUCCESS`.
 - Expense then refused the sign-in return request.
-- A second success event concerns Priya, not Maya.
+- A second success event concerns Priya, not Devi.
 
-Tell the flow in order. Identify the first demonstrated failure, distinguish it from the root cause, explain why Priya's event does not resolve Maya's ticket, and name the next evidence needed.
+Tell the flow in order. Identify the first demonstrated failure, distinguish it from the root cause, explain why Priya's event does not resolve Devi's ticket, and name the next evidence needed.
 
 Compare your reasoning with the [self-check answers](../self-checks/day-02.md) after attempting the questions.
 

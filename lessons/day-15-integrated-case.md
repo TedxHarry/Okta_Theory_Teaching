@@ -18,7 +18,7 @@ Read the [final case evidence](../assessments/final-case.md), then complete the 
 
 Use this sequence: read the evidence, attempt all seven tasks with references as needed, compare your reasoning with the model investigation, use the skills checklist to locate gaps, and attempt the changed-condition questions independently. Keep the answers closed until your first attempt is recorded.
 
-The final case supplies its own investigation snapshots. Maya is now in Finance and Jordan has departed; the archived AD incident explicitly predates his departure. Do not replace a case observation with the result of an earlier lesson's independent example.
+The final case supplies its own investigation snapshots. Devi is now in Finance and Jordan has departed; the archived AD incident explicitly predates his departure. Do not replace a case observation with the result of an earlier lesson's independent example.
 
 Begin with the requirement and observations for one ticket. Name the system and record behind each result, then identify where the next evidence is needed. Keep the current and historical context beside your notes so that a familiar name does not carry an earlier outcome into a different attempt.
 

@@ -2,25 +2,25 @@
 <p>Use the <a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html">lesson</a> and explain your reasoning before opening the <a href="/Okta_Theory_Teaching/self-checks/day-04.html">answers</a>.</p>
 <p>For each person, first identify the applicable source associations, then the effective profile source, then any field-specific exception. Compare the observed values only after establishing those responsibilities. A correct ownership decision still leaves the update result to be checked.</p>
 <h2 id="1-apply-the-order-to-a-person">1. Apply the order to a person</h2>
-<p>The configured external profile-source order is Workday first and Active Directory (AD) second. Maya has a verified source association with both. Priya has neither association and is confirmed Okta-managed.</p>
+<p>The configured external profile-source order is Workday first and Active Directory (AD) second. Devi has a verified source association with both. Priya has neither association and is confirmed Okta-managed.</p>
 <p>Who is the effective profile source for each? What is missing from the claim “Workday is first, so Workday owns Priya”?</p>
 <h2 id="2-separate-profile-and-attribute-authority">2. Separate profile and attribute authority</h2>
-<p>Workday controls Maya's profile and department. AD is explicitly designated for her work email. Workday has one email address and AD has another; Okta contains the AD address.</p>
+<p>Workday controls Devi's profile and department. AD is explicitly designated for her work email. Workday has one email address and AD has another; Okta contains the AD address.</p>
 <p>Is the difference alone proof of an error? What would you check before choosing the correct address?</p>
 <h2 id="3-investigate-the-wrong-department">3. Investigate the wrong department</h2>
-<p>Maya's approved department and Workday record say Sales. Her Okta profile says Finance. Workday is still her checked department source.</p>
+<p>Devi's approved department and Workday record say Sales. Her Okta profile says Finance. Workday is still her checked department source.</p>
 <p>Propose an investigation. Explain why changing Workday to Finance or repeatedly editing Okta is not supported by this evidence.</p>
 <h2 id="4-explain-contractor-maintenance">4. Explain contractor maintenance</h2>
 <p>Priya's sponsor approves a department correction. An authorized administrator maintains it in Okta. A colleague asks why the employee HR process does not apply.</p>
-<p>Explain the source scoping and associations that make this appropriate. How does department inheriting from the profile source support both Maya and Priya? Then explain what changes in your investigation if an unexpected Workday association is discovered.</p>
+<p>Explain the source scoping and associations that make this appropriate. How does department inheriting from the profile source support both Devi and Priya? Then explain what changes in your investigation if an unexpected Workday association is discovered.</p>
 <h2 id="5-challenge-a-fallback-assumption">5. Challenge a fallback assumption</h2>
-<p>An excerpt does not show Maya's Workday department. AD shows Finance. Someone concludes: “Workday has no value, so AD automatically wins.”</p>
+<p>An excerpt does not show Devi's Workday department. AD shows Finance. Someone concludes: “Workday has no value, so AD automatically wins.”</p>
 <p>Identify two unsupported steps in that conclusion. Name the evidence needed next.</p>
 <h2 id="6-keep-architectures-distinct">6. Keep architectures distinct</h2>
 <p>In a separate AD-led company, an employee has AD as the applicable profile source and no applicable Workday source. AD controls department.</p>
-<p>Why can AD control this field there while Workday controls Maya's department? Would this justify changing Northbridge's source order to fix one stale record?</p>
+<p>Why can AD control this field there while Workday controls Devi's department? Would this justify changing Northbridge's source order to fix one stale record?</p>
 <h2 id="7-tell-the-complete-story">7. Tell the complete story</h2>
-<p>Use this separate synthetic case without reopening the worked examples. The observations concern Maya's correctly linked records in the same Projects integration. Her approved department is Sales.</p>
+<p>Use this separate synthetic case without reopening the worked examples. The observations concern Devi's correctly linked records in the same Projects integration. Her approved department is Sales.</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Evidence</th>
@@ -57,7 +57,7 @@
 <td>Not supplied.</td>
 </tr>
 </tbody>
-</table></div><p>Explain the flow and identify the first demonstrated discrepancy along the Workday → Okta → Projects path. Would moving AD above Workday or resetting Maya's password be a supported correction? Explain why work-email ownership does not settle department ownership.</p>
+</table></div><p>Explain the flow and identify the first demonstrated discrepancy along the Workday → Okta → Projects path. Would moving AD above Workday or resetting Devi's password be a supported correction? Explain why work-email ownership does not settle department ownership.</p>
 <p>Choose the next evidence you would request. Say how two different possible findings would change your investigation; do more than ask for “the logs.”</p>
 <h2 id="check-your-understanding">Check your understanding</h2>
 <p>For each answer, distinguish a stated business rule, observed configuration, observed value, and operation result. If a result is absent, say what you still need to establish.</p>

@@ -20,9 +20,9 @@ A lifecycle change is complete only when the required outcomes have been checked
 
 **Account state and session state.** A disabled account and an already established application session are separate things to inspect. Here, notice and flag continuing access. Day 13 explains the session mechanisms in more detail.
 
-## Follow Maya's move
+## Follow Devi's move
 
-Maya moves from Sales to Finance. The expected result includes ending Sales access without an approved exception and retaining Projects with department `FIN`.
+Devi moves from Sales to Finance. The expected result includes ending Sales access without an approved exception and retaining Projects with department `FIN`.
 
 The evidence confirms that her Sales-group membership ends, but a direct Salesforce assignment remains after its approval has ended. A new Salesforce session shows a real remaining access path. The group route ended, but the separate individual assignment survived. A working rule did not remove that independent route.
 
@@ -40,10 +40,10 @@ Choose activation, unlocking, password recovery, authenticator replacement, susp
 
 ## Check your understanding
 
-From memory, give Maya and Jordan separate updates. For each, name a completed change, a remaining discrepancy, and the specific result needed for closure. Include the access Maya must keep, and keep Jordan's Projects and Expense outcomes separate.
+From memory, give Devi and Jordan separate updates. For each, name a completed change, a remaining discrepancy, and the specific result needed for closure. Include the access Devi must keep, and keep Jordan's Projects and Expense outcomes separate.
 
 - Why is receiving the HR event insufficient evidence of lifecycle completion?
-- What remained wrong after Maya left the Sales group?
+- What remained wrong after Devi left the Sales group?
 - If Projects is corrected, what still needs checking for Jordan?
 
 <details markdown="1">

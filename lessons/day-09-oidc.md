@@ -6,9 +6,9 @@ nav_order: 9
 
 # Day 9: OIDC and the authorization code
 
-Maya opens Northbridge Expense. Instead of returning to her expense page, the sign-in journey stops with a message that the return address is not permitted.
+Devi opens Northbridge Expense. Instead of returning to her expense page, the sign-in journey stops with a message that the return address is not permitted.
 
-Maya expected to come back to Expense after the identity checks. Alex needs to understand how Expense tells Okta where that return should go, and why Okta can refuse the requested address before the rest of the journey takes place.
+Devi expected to come back to Expense after the identity checks. Alex needs to understand how Expense tells Okta where that return should go, and why Okta can refuse the requested address before the rest of the journey takes place.
 
 The application uses **OpenID Connect**, or **OIDC**. As with SAML, the application relies on an identity service and must validate what it receives. This time, the browser brings back a temporary code, and Expense's server uses that code in a further exchange. The messages and their purposes are different.
 
@@ -33,15 +33,15 @@ Follow the purpose in each table row to the receiver that checks it. Expense val
 
 ## Fix the client type before tracing the flow
 
-Northbridge Expense is a fictional web application with a server-side **backend**: application software running on its servers, rather than in Maya's browser. The backend processes sign-in responses and can protect its client credentials. This is a **confidential client**. A **client** is the application participating in the OAuth/OIDC exchange; it is not Maya's user account.
+Northbridge Expense is a fictional web application with a server-side **backend**: application software running on its servers, rather than in Devi's browser. The backend processes sign-in responses and can protect its client credentials. This is a **confidential client**. A **client** is the application participating in the OAuth/OIDC exchange; it is not Devi's user account.
 
 Day 2 called the browser an HTTP client because it makes web requests. Here, **OIDC client** identifies Expense's role in the sign-in protocol. The browser carries messages for that flow, but Expense's backend performs the code exchange and validates the ID token. Always name which exchange the word *client* refers to. See [OIDC's client role](https://openid.net/specs/openid-connect-core-1_0.html#Terminology).
 
-Keep this server-side design in view throughout the lesson. Maya's browser carries redirects; Expense's backend performs the exchange and can protect confidential material. The example uses Authorization Code with PKCE and configured backend client authentication. Other client designs exist, but we will use this one consistently so that each message has an identifiable sender and receiver.
+Keep this server-side design in view throughout the lesson. Devi's browser carries redirects; Expense's backend performs the exchange and can protect confidential material. The example uses Authorization Code with PKCE and configured backend client authentication. Other client designs exist, but we will use this one consistently so that each message has an identifiable sender and receiver.
 
 | Participant | Responsibility in this example |
 |---|---|
-| Maya and her browser | Start access and carry redirects. |
+| Devi and her browser | Start access and carry redirects. |
 | Expense backend | Acts as the OIDC client, exchanges the code, validates identity information, and establishes its application session. |
 | Okta | Acts as the OpenID Provider and authorization server, applying requirements and issuing the configured responses. |
 
@@ -49,11 +49,11 @@ An **authorization server** issues OAuth responses and tokens. In this OIDC flow
 
 Okta also needs to know which application is asking. A **client ID** identifies Expense's registration. It is not a password. The identifier names the client; backend client authentication separately proves the client using its configured credential or key. That confidential material stays protected on the backend and does not belong in a browser redirect.
 
-There are two identities to keep apart: "Which application is asking?" and "Which person is signing in?" Expense's client credential belongs to the application. Maya's user identity is established through the sign-in and validated identity information. The client ID alone proves neither.
+There are two identities to keep apart: "Which application is asking?" and "Which person is signing in?" Expense's client credential belongs to the application. Devi's user identity is established through the sign-in and validated identity information. The client ID alone proves neither.
 
 ## Follow one successful journey
 
-Before looking at the failure, trace the intended journey. An **authorization code** is a temporary, single-use value that the client exchanges for tokens. In this architecture, Maya's browser delivers it to Expense, and the backend presents it to Okta under the exchange requirements. Maya does not type it like an MFA code, and Expense does not use it to call a resource API.
+Before looking at the failure, trace the intended journey. An **authorization code** is a temporary, single-use value that the client exchanges for tokens. In this architecture, Devi's browser delivers it to Expense, and the backend presents it to Okta under the exchange requirements. Devi does not type it like an MFA code, and Expense does not use it to call a resource API.
 
 ```mermaid
 sequenceDiagram
@@ -107,7 +107,7 @@ Nonce also begins in the request, but the later comparison uses the nonce inside
 
 **PKCE**, Proof Key for Code Exchange, ties code redemption to a value the client created for that transaction. Expense keeps a secret random **code verifier** for the transaction and sends a derived **code challenge** with the authorization request. During redemption, it supplies the verifier, which the authorization server checks against the earlier challenge.
 
-The two-stage arrangement matters. Sending the derived challenge first lets Okta later check whether the presented verifier belongs with this code. Someone who obtains the code without the required verifier lacks that proof for redemption. This helps protect against code interception or injection. The verifier is a transaction secret, not Maya's password. In this confidential-client example, PKCE complements configured client authentication. Client authentication asks the backend to prove which registered application it is. PKCE asks for the verifier associated with this particular code request. A client credential and a transaction verifier have different jobs.
+The two-stage arrangement matters. Sending the derived challenge first lets Okta later check whether the presented verifier belongs with this code. Someone who obtains the code without the required verifier lacks that proof for redemption. This helps protect against code interception or injection. The verifier is a transaction secret, not Devi's password. In this confidential-client example, PKCE complements configured client authentication. Client authentication asks the backend to prove which registered application it is. PKCE asks for the verifier associated with this particular code request. A client credential and a transaction verifier have different jobs.
 
 The request's `S256` names the method that derives the challenge using SHA-256, a one-way cryptographic calculation, and a URL-safe encoding. The authorization request carries that derived challenge, while the backend retains the verifier for the later exchange. See the [PKCE specification](https://www.rfc-editor.org/rfc/rfc7636.html#section-4.2).
 
@@ -154,7 +154,7 @@ An ID token uses **JWT**, JSON Web Token, to represent claims. A readable decode
 ```json
 {
   "iss": "https://identity.northbridge.example",
-  "sub": "subject-maya-1042",
+  "sub": "subject-devi-1042",
   "aud": "nb-expense-web"
 }
 ```
@@ -169,7 +169,7 @@ The selected claims let you compare what the payload says with Expense's expecta
 
 ## Find the redirect mismatch
 
-Return to Maya's incident O-1. The investigator has matched these observations to the same authorization request and registration:
+Return to Devi's incident O-1. The investigator has matched these observations to the same authorization request and registration:
 
 | Evidence | Observation |
 |---|---|
@@ -182,9 +182,9 @@ Return to Maya's incident O-1. The investigator has matched these observations t
 
 Before proposing a change, compare the approved callback, registered callback, actual requested address, and rejection reason. Which side differs from the agreement? The registration matches the approved design; Expense's request still names the old callback. The report confirms rejection on that basis, and no code was issued. That establishes the first demonstrated defect.
 
-Because the requested callback is not registered, Okta rejects this request before issuing a code. It must not redirect Maya's browser to that unapproved address, even to send back the error. The identity service can display an error instead, and the sign-in journey stops. Expense receives no code for O-1, so its backend has nothing to exchange. Exact redirect matching protects the destination of the response.
+Because the requested callback is not registered, Okta rejects this request before issuing a code. It must not redirect Devi's browser to that unapproved address, even to send back the error. The identity service can display an error instead, and the sign-in journey stops. Expense receives no code for O-1, so its backend has nothing to exchange. Exact redirect matching protects the destination of the response.
 
-The supported proposal is to correct the application configuration that emits the old callback and verify a new request. Adding the obsolete address would expand the agreement to accommodate the wrong request. Broadening destinations indiscriminately would weaken that boundary, while resetting Maya's authenticator would address a different part of the sign-in. Choose the change that repairs the demonstrated discrepancy.
+The supported proposal is to correct the application configuration that emits the old callback and verify a new request. Adding the obsolete address would expand the agreement to accommodate the wrong request. Broadening destinations indiscriminately would weaken that boundary, while resetting Devi's authenticator would address a different part of the sign-in. Choose the change that repairs the demonstrated discrepancy.
 
 O-1 has no issued code or token exchange. Searching for the cause in an ID token from another attempt would cross an evidence boundary. A token-audience problem belongs to a later stage that this attempt did not reach.
 
@@ -195,8 +195,8 @@ For a new attempt O-2, the investigator records:
 1. The request uses the approved registered callback and is accepted.
 2. After the applicable checks, a code returns to that callback; Expense verifies state.
 3. The backend completes the authenticated code exchange with its matching PKCE verifier.
-4. Expense validates the returned ID token, including its expected nonce, and identifies Maya's intended account.
-5. Expense establishes its application session and Maya enters the application.
+4. Expense validates the returned ID token, including its expected nonce, and identifies Devi's intended account.
+5. Expense establishes its application session and Devi enters the application.
 
 Trace each recorded result back to the diagram. O-2 passes the request check, returns a correlated code, completes the backend exchange, validates the ID token, identifies the intended account, and establishes actual Expense entry. This linked follow-up reaches the later stages that O-1 never reached.
 

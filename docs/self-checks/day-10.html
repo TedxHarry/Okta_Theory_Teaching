@@ -4,7 +4,7 @@
 <p>The assignment and prepared app-profile value are established. Check the relevant provisioning capability and configuration, whether an operation was generated and sent, its correlated result, and the correct target record. Neither assignment nor SAL in Okta proves a Projects account exists.</p>
 <p>Revisit <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html#follow-the-account-management-path">Follow the account-management path</a>.</p>
 <h2 id="2-read-the-create-result">2. Read the create result</h2>
-<p>Projects assigned prj-1042. That identifier lets Alex connect the response to the specific record read afterward. The response reports creation; the follow-up confirms Maya's user name, SAL and enabled state in that record. Neither establishes actual application entry or all project permissions. Keep the target resource id distinct from the Okta id and employee number.</p>
+<p>Projects assigned prj-1042. That identifier lets Alex connect the response to the specific record read afterward. The response reports creation; the follow-up confirms Devi's user name, SAL and enabled state in that record. Neither establishes actual application entry or all project permissions. Keep the target resource id distinct from the Okta id and employee number.</p>
 <p>Revisit <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html#read-a-create-operation">Read a create operation</a>.</p>
 <h2 id="3-investigate-the-conflict">3. Investigate the conflict</h2>
 <p>The target reports a conflicting unique value. Ownership and the reason for the lookup/create discrepancy remain unknown. Deleting a possibly valid account is not justified.</p>
@@ -23,8 +23,8 @@
 <p>Removing one group membership answers only the question about that membership. Another assignment path may remain. Check the remaining paths, generated operation, response and target state before reporting account deactivation.</p>
 <p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html#deactivation-is-an-account-state-change">Deactivation is an account-state change</a></p>
 <h2 id="7-distinguish-the-connections">7. Distinguish the connections</h2>
-<p>Maya's authentication and the connector's service authorization belong to different exchanges. Inspect the receiving Projects instance, configured authorization mechanism, credential validity, and required permission, using the actual rejection detail. Do not infer which one failed from “authorization rejection” alone.</p>
-<p>The Expense ID token answers a sign-in question for Expense. It does not supply the connector's configured authority to manage Projects accounts. Maya's successful MFA can remain a valid result while the separate service request is rejected.</p>
+<p>Devi's authentication and the connector's service authorization belong to different exchanges. Inspect the receiving Projects instance, configured authorization mechanism, credential validity, and required permission, using the actual rejection detail. Do not infer which one failed from “authorization rejection” alone.</p>
+<p>The Expense ID token answers a sign-in question for Expense. It does not supply the connector's configured authority to manage Projects accounts. Devi's successful MFA can remain a valid result while the separate service request is rejected.</p>
 <p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html#follow-the-account-management-path">Follow the account-management path</a></p>
 <h2 id="optional-comparison">Optional comparison</h2>
 <p>Suppose C-3 instead has FIN in both the app profile and sent request, but Projects still reports an invalid department. Does the supplied mapping defect remain demonstrated?</p>

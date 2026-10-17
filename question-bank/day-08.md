@@ -12,7 +12,7 @@ nav_order: 8
 
 ### Q01. Explain federation
 
-<p class="qb-question"><strong>Question:</strong> Maya signs in to Salesforce, a business application, through Okta, her company’s identity service. Their configured SAML connection exchanges identity information under agreed validation rules. Why can Salesforce rely on that information without receiving Maya’s password?</p>
+<p class="qb-question"><strong>Question:</strong> Devi signs in to Salesforce, a business application, through Okta, her company’s identity service. Their configured SAML connection exchanges identity information under agreed validation rules. Why can Salesforce rely on that information without receiving Devi’s password?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
@@ -28,13 +28,13 @@ nav_order: 8
 
 ### Q02. Assign the roles
 
-<p class="qb-question"><strong>Question:</strong> In a SAML connection, Okta checks Maya’s identity and issues sign-in information; Salesforce validates it and decides application entry; Maya’s browser carries messages between them. Which system is the identity provider (IdP), which is the service provider (SP), and what authority does the browser have?</p>
+<p class="qb-question"><strong>Question:</strong> In a SAML connection, Okta checks Devi’s identity and issues sign-in information; Salesforce validates it and decides application entry; Devi’s browser carries messages between them. Which system is the identity provider (IdP), which is the service provider (SP), and what authority does the browser have?</p>
 
 <details class="qb-answer" id="q02-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Okta is the IdP supplying identity information. Salesforce is the SP receiving and validating it. The browser carries the exchange; it does not decide whether Maya should be admitted.</p>
+<p>Okta is the IdP supplying identity information. Salesforce is the SP receiving and validating it. The browser carries the exchange; it does not decide whether Devi should be admitted.</p>
 <p>The application still identifies its account and controls entry and permissions. These roles describe the stated connection rather than permanent labels for every product.</p>
 <p>Name each participant's responsibility before interpreting its result. Delivery by the browser cannot replace the SP's acceptance evidence.</p>
 </div>
@@ -44,13 +44,13 @@ nav_order: 8
 
 ### Q03. What is not sent?
 
-<p class="qb-question"><strong>Question:</strong> Active Directory (AD) accepts Maya’s password during an earlier credential check. Okta then provides SAML identity information to Salesforce through her browser. In this configured federation flow, does Salesforce receive that AD password?</p>
+<p class="qb-question"><strong>Question:</strong> Active Directory (AD) accepts Devi’s password during an earlier credential check. Okta then provides SAML identity information to Salesforce through her browser. In this configured federation flow, does Salesforce receive that AD password?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. It receives an assertion about identity and authentication, not Maya's directory password.</p>
+<p>No. It receives an assertion about identity and authentication, not Devi's directory password.</p>
 <p>An assertion is a set of statements the application evaluates under its trusted connection. The earlier credential check and the later message exchange are different steps.</p>
 <p>Knowing AD accepted a password does not show Salesforce accepted the assertion. Follow the received information and validation result instead of treating the federation message as another copy of the password.</p>
 </div>
@@ -78,7 +78,7 @@ nav_order: 8
 
 ### Q05. Protocol success and SP rejection
 
-<p class="qb-question"><strong>Question:</strong> Okta returns a SAML response with protocol-level success, but Salesforce reports that the contained assertion fails an application validation requirement. Can both results be correct, and does the success force Salesforce to admit Maya?</p>
+<p class="qb-question"><strong>Question:</strong> Okta returns a SAML response with protocol-level success, but Salesforce reports that the contained assertion fails an application validation requirement. Can both results be correct, and does the success force Salesforce to admit Devi?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
@@ -94,7 +94,7 @@ nav_order: 8
 
 ### Q06. A readable claim
 
-<p class="qb-question"><strong>Question:</strong> A support analyst reads Maya’s name in a SAML assertion, a statement supplied for federated sign-in. No signature verification, intended-audience, time, or acceptance result is supplied. What remains unknown before the application can trust that statement?</p>
+<p class="qb-question"><strong>Question:</strong> A support analyst reads Devi’s name in a SAML assertion, a statement supplied for federated sign-in. No signature verification, intended-audience, time, or acceptance result is supplied. What remains unknown before the application can trust that statement?</p>
 
 <details class="qb-answer" id="q06-explanation">
 <summary>Read the teaching explanation</summary>
@@ -112,7 +112,7 @@ nav_order: 8
 
 ### Q07. Trace an SP-initiated flow
 
-<p class="qb-question"><strong>Question:</strong> Maya begins at Salesforce, a business application configured to use Okta for SAML identity checks. Salesforce starts by sending an authentication request through her browser. Describe the simplified service-provider-initiated journey and where the application decides entry.</p>
+<p class="qb-question"><strong>Question:</strong> Devi begins at Salesforce, a business application configured to use Okta for SAML identity checks. Salesforce starts by sending an authentication request through her browser. Describe the simplified service-provider-initiated journey and where the application decides entry.</p>
 
 <details class="qb-answer" id="q07-explanation">
 <summary>Read the teaching explanation</summary>
@@ -128,14 +128,14 @@ nav_order: 8
 
 ### Q08. Who carries the final message?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s SAML sign-in uses browser HTTP POST delivery from Okta to Salesforce. Okta can return an HTML form containing the encoded response in a hidden SAMLResponse field. How does the message travel, and must Maya type the assertion herself?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s SAML sign-in uses browser HTTP POST delivery from Okta to Salesforce. Okta can return an HTML form containing the encoded response in a hidden SAMLResponse field. How does the message travel, and must Devi type the assertion herself?</p>
 
 <details class="qb-answer" id="q08-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maya normally does not type the SAML response. In this example, Okta provides a web page with a form. A hidden field named SAMLResponse holds the response, and the browser submits the form to the application's receiving address using HTTP POST, often automatically.</p>
-<p>That explains how information travels back even though Maya does not fill in a visible message box. The browser carries the response; it does not decide whether the application should trust it.</p>
+<p>Devi normally does not type the SAML response. In this example, Okta provides a web page with a form. A hidden field named SAMLResponse holds the response, and the browser submits the form to the application's receiving address using HTTP POST, often automatically.</p>
+<p>That explains how information travels back even though Devi does not fill in a visible message box. The browser carries the response; it does not decide whether the application should trust it.</p>
 <p>The application must still validate what arrives and match the user. A completed form submission establishes delivery, not successful validation, account creation, or permission to perform every action.</p>
 </div>
 </details>
@@ -160,7 +160,7 @@ nav_order: 8
 
 ### Q10. POST is not account creation
 
-<p class="qb-question"><strong>Question:</strong> Maya already has an active Salesforce account. In her configured SAML sign-in, the browser POSTs a response to the application’s ACS receiving endpoint; no account creation occurs in this stated example. Does the HTTP POST itself prove a new account was created?</p>
+<p class="qb-question"><strong>Question:</strong> Devi already has an active Salesforce account. In her configured SAML sign-in, the browser POSTs a response to the application’s ACS receiving endpoint; no account creation occurs in this stated example. Does the HTTP POST itself prove a new account was created?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
@@ -258,7 +258,7 @@ nav_order: 8
 
 ### Q16. Right address, wrong audience
 
-<p class="qb-question"><strong>Question:</strong> Maya’s SAML response reaches Salesforce’s production ACS. Its assertion instead names the test service as audience, where production is expected. Audience identifies which service may use the assertion. Can delivery be correct while that separate acceptance condition is wrong?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s SAML response reaches Salesforce’s production ACS. Its assertion instead names the test service as audience, where production is expected. Audience identifies which service may use the assertion. Can delivery be correct while that separate acceptance condition is wrong?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
@@ -308,13 +308,13 @@ nav_order: 8
 
 ### Q19. Read a named element
 
-<p class="qb-question"><strong>Question:</strong> A selected fictional SAML XML element is <code>&lt;saml:NameID&gt;maya.rao@northbridge.example&lt;/saml:NameID&gt;</code>. XML uses opening and closing tags to surround values. What user identifier does this element claim, and what does reading it leave unverified?</p>
+<p class="qb-question"><strong>Question:</strong> A selected fictional SAML XML element is <code>&lt;saml:NameID&gt;devi.rao@northbridge.example&lt;/saml:NameID&gt;</code>. XML uses opening and closing tags to surround values. What user identifier does this element claim, and what does reading it leave unverified?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Its value is maya.rao@northbridge.example. The tags name the element as NameID in the declared SAML vocabulary.</p>
+<p>Its value is devi.rao@northbridge.example. The tags name the element as NameID in the declared SAML vocabulary.</p>
 <p>Compare that claim with the connection's chosen account-matching rule and approved identifier. Reading the text does not establish that the full message was authentic or accepted.</p>
 <p>Content inspection is useful for locating values. It is not the same job as application validation.</p>
 </div>
@@ -472,7 +472,7 @@ nav_order: 8
 
 ### Q29. What establishes the audience cause?
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. How does the expected configuration, full-message value, and rejection report establish more than a selected field difference alone?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. How does the expected configuration, full-message value, and rejection report establish more than a selected field difference alone?</p>
 
 <details class="qb-answer" id="q29-explanation">
 <summary>Read the teaching explanation</summary>
@@ -488,7 +488,7 @@ nav_order: 8
 
 ### Q30. Keep accepted checks
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Issuer, required signature, and validity pass; her active target account has the correct username matching NameID. Would changing that username repair the failed audience requirement?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Issuer, required signature, and validity pass; her active target account has the correct username matching NameID. Would changing that username repair the failed audience requirement?</p>
 
 <details class="qb-answer" id="q30-explanation">
 <summary>Read the teaching explanation</summary>
@@ -504,7 +504,7 @@ nav_order: 8
 
 ### Q31. Do not bypass the failed check
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Would turning off audience validation be a correction that satisfies the intended production agreement?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Would turning off audience validation be a correction that satisfies the intended production agreement?</p>
 
 <details class="qb-answer" id="q31-explanation">
 <summary>Read the teaching explanation</summary>
@@ -520,7 +520,7 @@ nav_order: 8
 
 ### Q32. A shared connection change
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. An audience-setting correction is proposed after a production/test mismatch, and other users share that integration. Why review more than Maya’s account before applying the change?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. An audience-setting correction is proposed after a production/test mismatch, and other users share that integration. Why review more than Devi’s account before applying the change?</p>
 
 <details class="qb-answer" id="q32-explanation">
 <summary>Read the teaching explanation</summary>
@@ -536,13 +536,13 @@ nav_order: 8
 
 ### Q33. Saved is not verified
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. After a confirmed test-versus-production audience defect, support saves a proposed setting correction. No new message or application result is supplied. What evidence would verify the fix rather than just the action?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. After a confirmed test-versus-production audience defect, support saves a proposed setting correction. No new message or application result is supplied. What evidence would verify the fix rather than just the action?</p>
 
 <details class="qb-answer" id="q33-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>A fresh attempt should emit the expected production audience, receive application acceptance, and identify Maya's intended account.</p>
+<p>A fresh attempt should emit the expected production audience, receive application acceptance, and identify Devi's intended account.</p>
 <p>Saving a setting establishes an action, not what the next message contained or how Salesforce treated it. An old identity-service success cannot verify a new attempt.</p>
 <p>Specify those follow-up checks and leave them unverified until supplied. The proposal becomes a demonstrated correction only through its actual result.</p>
 </div>
@@ -552,13 +552,13 @@ nav_order: 8
 
 ### Q34. Repair a closure note
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Okta records success, and Maya’s active account exists with NameID matching the approved username. No correction is supplied. Improve: “Okta succeeded, so Salesforce worked; her account must be missing.”</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Okta records success, and Devi’s active account exists with NameID matching the approved username. No correction is supplied. Improve: “Okta succeeded, so Salesforce worked; her account must be missing.”</p>
 
 <details class="qb-answer" id="q34-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Try: “Okta recorded success for the checked attempt, but Salesforce rejected the assertion because its audience named test rather than production. Maya's intended account exists and has the expected identifier. The responsible connection settings need correction and fresh verification.”</p>
+<p>Try: “Okta recorded success for the checked attempt, but Salesforce rejected the assertion because its audience named test rather than production. Devi's intended account exists and has the expected identifier. The responsible connection settings need correction and fresh verification.”</p>
 <p>That preserves both services' outcomes and the known account facts.</p>
 <p>Do not invent a missing record or completed fix. The supplied discrepancy is the rejected audience, not failed credentials or absence of the application account.</p>
 </div>
@@ -570,7 +570,7 @@ nav_order: 8
 
 ### Q35. A demonstrated user-matching discrepancy
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. This connection matches NameID against username. The approved account username is maya.rao@app.example, but the assertion carries maya.old@app.example. Audience and required validation pass; the application reports no matching user. Where should support investigate?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. This connection matches NameID against username. The approved account username is devi.rao@app.example, but the assertion carries devi.old@app.example. Audience and required validation pass; the application reports no matching user. Where should support investigate?</p>
 
 <details class="qb-answer" id="q35-explanation">
 <summary>Read the teaching explanation</summary>
@@ -586,7 +586,7 @@ nav_order: 8
 
 ### Q36. Do not create another account first
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Her intended account exists as maya.rao@app.example, but NameID sends maya.old@app.example under username matching. The receiver rejects the match and other required checks pass. Why investigate the identifier and association before creating another account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Her intended account exists as devi.rao@app.example, but NameID sends devi.old@app.example under username matching. The receiver rejects the match and other required checks pass. Why investigate the identifier and association before creating another account?</p>
 
 <details class="qb-answer" id="q36-explanation">
 <summary>Read the teaching explanation</summary>
@@ -636,7 +636,7 @@ nav_order: 8
 
 ### Q39. Accepted sign-in, denied action
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. The application accepts the response and selects her intended account. A later business action is denied, but its approval and role requirements are unknown. Does that denial automatically demonstrate an audience defect?</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. The application accepts the response and selects her intended account. A later business action is denied, but its approval and role requirements are unknown. Does that denial automatically demonstrate an audience defect?</p>
 
 <details class="qb-answer" id="q39-explanation">
 <summary>Read the teaching explanation</summary>
@@ -652,7 +652,7 @@ nav_order: 8
 
 ### Q40. Keep independent attempts separate
 
-<p class="qb-question"><strong>Question:</strong> Support reviews two independent Salesforce attempts for Maya. The earlier report leaves assignment and account existence uninspected. A separate later case supplies an assignment and active account but no evidence linking those facts to the earlier point. Do they retroactively resolve the earlier unknowns?</p>
+<p class="qb-question"><strong>Question:</strong> Support reviews two independent Salesforce attempts for Devi. The earlier report leaves assignment and account existence uninspected. A separate later case supplies an assignment and active account but no evidence linking those facts to the earlier point. Do they retroactively resolve the earlier unknowns?</p>
 
 <details class="qb-answer" id="q40-explanation">
 <summary>Read the teaching explanation</summary>
@@ -702,7 +702,7 @@ nav_order: 8
 
 ### Q43. An old session after a signing change
 
-<p class="qb-question"><strong>Question:</strong> Maya continues using an existing Salesforce session after a proposed SAML certificate change. No fresh sign-in response under the new signing choice is supplied. Does continued use of that old session verify the changed signing relationship?</p>
+<p class="qb-question"><strong>Question:</strong> Devi continues using an existing Salesforce session after a proposed SAML certificate change. No fresh sign-in response under the new signing choice is supplied. Does continued use of that old session verify the changed signing relationship?</p>
 
 <details class="qb-answer" id="q43-explanation">
 <summary>Read the teaching explanation</summary>
@@ -716,17 +716,17 @@ nav_order: 8
 
 <a id="q44"></a>
 
-### Q44. Explain the investigation to Maya
+### Q44. Explain the investigation to Devi
 
-<p class="qb-question"><strong>Question:</strong> Maya uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Her applicable Okta checks succeed and her active Salesforce account exists. No corrected attempt is supplied. Explain the failure and required follow-up to Maya in friendly language.</p>
+<p class="qb-question"><strong>Question:</strong> Devi uses Okta, an identity service, for SAML sign-in to Salesforce, a separate business application. Production expects the audience /entity/prod, but the full assertion names /entity/test; the correlated application report rejects that mismatch. Her applicable Okta checks succeed and her active Salesforce account exists. No corrected attempt is supplied. Explain the failure and required follow-up to Devi in friendly language.</p>
 
 <details class="qb-answer" id="q44-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>You could tell Maya: 'You completed the Okta checks, but Salesforce also checks the information it receives. For the attempt we reviewed, that information named the test Salesforce connection even though you were entering production. Salesforce rejected that mismatch. Your intended account exists and is active.'</p>
+<p>You could tell Devi: 'You completed the Okta checks, but Salesforce also checks the information it receives. For the attempt we reviewed, that information named the test Salesforce connection even though you were entering production. Salesforce rejected that mismatch. Your intended account exists and is active.'</p>
 <p>Then explain what happens next: 'We need to correct the connection value responsible for that mismatch, after checking who shares the setting. A fresh sign-in must then show the production audience and successful entry into your intended account before we call the correction verified.'</p>
-<p>This explains the known failure without blaming Maya's password or promising a repair that has not yet been tested. Any permissions needed after entry remain a separate application question.</p>
+<p>This explains the known failure without blaming Devi's password or promising a repair that has not yet been tested. Any permissions needed after entry remain a separate application question.</p>
 </div>
 </details>
 

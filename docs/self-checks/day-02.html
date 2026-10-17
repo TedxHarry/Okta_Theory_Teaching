@@ -7,23 +7,23 @@
 <li>Path: <code>/reports</code>.</li>
 <li>Query parameter: <code>department</code>, with the value <code>Finance</code>.</li>
 </ul>
-<p>The query value is information sent with the request. It does not prove the server changed Maya's stored profile or accepted Finance as her department.</p>
+<p>The query value is information sent with the request. It does not prove the server changed Devi's stored profile or accepted Finance as her department.</p>
 <p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#read-the-destination-before-interpreting-the-result">Read the destination before interpreting the result</a> if you treated a query parameter as a confirmed profile update.</p>
 <h2 id="2-follow-the-redirect">2. Follow the redirect</h2>
-<p>Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in <code>Location</code>; Expense is not making that next browser request on Maya's behalf.</p>
-<p>The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Maya authenticated or an account was created, we would need evidence of those separate actions.</p>
+<p>Expense is saying to the browser, 'Go to this sign-in address next.' The browser then makes the request to the address in <code>Location</code>; Expense is not making that next browser request on Devi's behalf.</p>
+<p>The reply gives us the instruction. To say the sign-in page loaded, we would need the next response. To say Devi authenticated or an account was created, we would need evidence of those separate actions.</p>
 <p>A provisioning request instead asks the target for an account-management operation. It may be sent directly by the configured integration without using the user's browser. A method such as POST does not, by itself, distinguish these purposes.</p>
 <p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#a-response-can-send-the-browser-elsewhere">A response can send the browser elsewhere</a> and <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#compare-a-redirect-with-account-management">Compare a redirect with account management</a> if you equated browser movement with provisioning.</p>
 <h2 id="3-a-successful-page-request">3. A successful page request</h2>
-<p>The server did what this request asked: it returned a sign-in form. Maya has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.</p>
-<p>Here, <code>200 OK</code> describes the page request. We would look for the later authentication result before saying Maya successfully signed in.</p>
+<p>The server did what this request asked: it returned a sign-in form. Devi has not used that form yet. Think of being handed a blank form at a reception desk: receiving it is different from completing the check it is used for.</p>
+<p>Here, <code>200 OK</code> describes the page request. We would look for the later authentication result before saying Devi successfully signed in.</p>
 <p>HTTPS protects communication in transit. It does not grant authorization, create an account, or establish that sign-in succeeded.</p>
 <p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#a-status-code-describes-a-requests-result">A status code describes a request's result</a> if you treated 200 as a universal sign-in success indicator.</p>
 <h2 id="4-an-application-refusal">4. An application refusal</h2>
 <p>We know where the problem became visible: the application refused this request and said it could not accept the sign-in information. We do not yet know why. Finding where a failure is reported and finding what caused it are different parts of the investigation.</p>
 <p>An incorrect identity message is a possible explanation. A wrong password or missing role is not established by the status code either. Do not choose a correction from those possibilities alone.</p>
 <p>Request the detailed application rejection evidence and the relevant sign-in exchange, matched to the same person, application instance, and attempt. These may show a problem originating earlier even though the refusal is observed at the application.</p>
-<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-mayas-attempt-one-step-at-a-time">Follow Maya's attempt one step at a time</a> if you concluded that the component reporting the error necessarily created the defect.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-devis-attempt-one-step-at-a-time">Follow Devi's attempt one step at a time</a> if you concluded that the component reporting the error necessarily created the defect.</p>
 <h2 id="5-cookie-session-and-account">5. Cookie, session, and account</h2>
 <p>Daniel removed something stored in his browser. His Expense account is a separate record kept by the application. Deleting the cookie does not send an instruction to delete that account.</p>
 <p>If Expense used the cookie to recognize his session, removing it can affect that browser's next visit. Keeping it is no guarantee either: the browser can still hold a value after the service stops accepting the associated session. The service's response tells us more than the stored value alone. Not every cookie is used for sign-in.</p>
@@ -32,7 +32,7 @@
 <h2 id="6-read-the-event">6. Read the event</h2>
 <p>A sound translation is:</p>
 <blockquote>
-<p>Okta recorded a successful application SSO event associated with Maya Rao and Northbridge Expense.</p>
+<p>Okta recorded a successful application SSO event associated with Devi Rao and Northbridge Expense.</p>
 </blockquote>
 <ul>
 <li>Action category: <code>eventType</code>.</li>
@@ -46,10 +46,10 @@
 <h2 id="7-tell-the-story-using-the-right-evidence">7. Tell the story using the right evidence</h2>
 <p>The browser requested Expense, received a redirect, and loaded the identity service's sign-in form. The related Okta SSO event recorded success. Expense then refused the sign-in return request.</p>
 <p>The first demonstrated failure in the packet is the Expense refusal. The packet does not establish the underlying defect. The application may reject something produced earlier in the flow.</p>
-<p>Priya's success is a different person's event. It neither proves Maya's sign-in worked nor disproves her refusal. It could eventually be comparison evidence, but only with relevant context.</p>
+<p>Priya's success is a different person's event. It neither proves Devi's sign-in worked nor disproves her refusal. It could eventually be comparison evidence, but only with relevant context.</p>
 <p>Request the detailed refusal and corresponding sign-in-exchange evidence. Explain what each record proves and does not prove before proposing a correction.</p>
-<p>A useful handoff could say: “For Maya's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.</p>
-<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-mayas-attempt-one-step-at-a-time">Follow Maya's attempt one step at a time</a> if your story jumped from Okta SUCCESS to application success.</p>
+<p>A useful handoff could say: “For Devi's supplied Expense attempt, Okta recorded SSO success, then Expense refused the return request. Please provide the application's detailed rejection record and corresponding sign-in-exchange evidence for that attempt.” This asks the application owner to investigate the observed refusal without claiming that the owner's system caused the defect.</p>
+<p><strong>Revisit:</strong> <a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html#follow-devis-attempt-one-step-at-a-time">Follow Devi's attempt one step at a time</a> if your story jumped from Okta SUCCESS to application success.</p>
 <h2 id="before-moving-on-questions-from-the-lesson">Before-moving-on questions from the lesson</h2>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>

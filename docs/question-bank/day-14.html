@@ -59,13 +59,13 @@
 </details>
 <p><a id="q06"></a></p>
 <h3 id="q06-separate-submission-from-approval">Q06. Separate submission from approval</h3>
-<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Maya is a Finance employee with no approver approval. Daniel has a separately approved approver role. Should normal Finance membership give Maya Daniel’s approval capability?</p>
+<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Devi is a Finance employee with no approver approval. Daniel has a separately approved approver role. Should normal Finance membership give Devi Daniel’s approval capability?</p>
 <details class="qb-answer" id="q06-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Submitting an expense and approving one are different business capabilities. Maya's normal membership supports submission, while approval requires the separate decision explicitly supplied for Daniel.</p>
-<p>Verify the distinction in Expense's local permissions. A group assignment or successful login checks only part of the requirement. Neither Maya's department nor Daniel's title can supply an absent approval decision for her.</p>
+<p>No. Submitting an expense and approving one are different business capabilities. Devi's normal membership supports submission, while approval requires the separate decision explicitly supplied for Daniel.</p>
+<p>Verify the distinction in Expense's local permissions. A group assignment or successful login checks only part of the requirement. Neither Devi's department nor Daniel's title can supply an absent approval decision for her.</p>
 </div>
 </details>
 <p><a id="q07"></a></p>
@@ -263,7 +263,7 @@
 <h2 id="define-acceptance-evidence">Define acceptance evidence</h2>
 <p><a id="q24"></a></p>
 <h3 id="q24-test-the-eligible-outcome">Q24. Test the eligible outcome</h3>
-<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Maya meets the approved normal eligibility. No implementation or test results are supplied. What evidence would establish her intended submission outcome beyond a successful login?</p>
+<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Devi meets the approved normal eligibility. No implementation or test results are supplied. What evidence would establish her intended submission outcome beyond a successful login?</p>
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
@@ -274,14 +274,14 @@
 </details>
 <p><a id="q25"></a></p>
 <h3 id="q25-test-the-unapproved-capability">Q25. Test the unapproved capability</h3>
-<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Maya can enter and submit an expense, but has no approver approval. Why also test that she cannot approve another person’s expense?</p>
+<p class="qb-question"><strong>Question:</strong> The approved Expense model gives effective Finance employees ordinary expense-submission access. Approval rights require separate named Finance-owner approval. Moving out of Finance ends normal eligibility; exceptions need independent review, and departure requires access removal. Devi can enter and submit an expense, but has no approver approval. Why also test that she cannot approve another person’s expense?</p>
 <details class="qb-answer" id="q25-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maya's successful submission proves a capability she should have. It does not establish the absence of a different capability she should not have: approving another person's expense without approval.</p>
+<p>Devi's successful submission proves a capability she should have. It does not establish the absence of a different capability she should not have: approving another person's expense without approval.</p>
 <p>That is the purpose of this negative case. Verify inside Expense that the unapproved action is unavailable under her actual permissions. The group rule and login result cannot supply that application permission finding.</p>
-<p>The intended outcome has both sides: Maya can submit, and she does not receive unapproved approver authority. Testing only what should succeed would leave the second part unchecked.</p>
+<p>The intended outcome has both sides: Devi can submit, and she does not receive unapproved approver authority. Testing only what should succeed would leave the second part unchecked.</p>
 </div>
 </details>
 <p><a id="q26"></a></p>

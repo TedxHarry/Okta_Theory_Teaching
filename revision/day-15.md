@@ -24,7 +24,7 @@ You now have several ways to explain an access problem. The skill is choosing th
 
 Use this recap after attempting the case. The tickets supply separate investigation snapshots; their proposed corrections are not completed results. Keep the remaining approval, ownership, failure-cause, and verification questions open where the packet leaves them open.
 
-**Maya's Projects department.** Workday and Okta show Finance, but a fixed mapping sends `SAL`, which Projects stores. The update stored the value it was sent, and entry works, while the report is wrong. Those successes do not establish that the supplied value met Maya's requirement. Correct the mapping, check who else it affects, and verify the target value and reporting outcome. If the mapping were already correct, the investigation would instead need delivery and target evidence.
+**Devi's Projects department.** Workday and Okta show Finance, but a fixed mapping sends `SAL`, which Projects stores. The update stored the value it was sent, and entry works, while the report is wrong. Those successes do not establish that the supplied value met Devi's requirement. Correct the mapping, check who else it affects, and verify the target value and reporting outcome. If the mapping were already correct, the investigation would instead need delivery and target evidence.
 
 **Priya's Salesforce access.** The normal employee rule excludes her, but a direct assignment permits entry. The packet does not supply its exception approval. Review that path promptly without declaring it unauthorized solely because the approval is missing from the packet. Her separately approved Expense access does not approve Salesforce or Projects. Ticket E supplies its own Projects exception; that approval does not resolve Ticket B's missing Salesforce decision.
 
@@ -55,7 +55,7 @@ Close the model answers and choose one current ticket and the archived AD ticket
 
 2. For Jordan, verify the corrected Projects account state and the end of Expense protected access separately. For other cases, verify the approved outcome at the affected boundary, such as the corrected department and report or a newly accepted SAML attempt.
 
-3. For Maya: expected department FIN; observed fixed mapping sends SAL and Projects stores it; the mapping defect is supported. Check its shared impact, correct it, and verify the target value and report. Successful entry does not close the reporting problem.
+3. For Devi: expected department FIN; observed fixed mapping sends SAL and Projects stores it; the mapping defect is supported. Check its shared impact, correct it, and verify the target value and report. Successful entry does not close the reporting problem.
 
 </details>
 

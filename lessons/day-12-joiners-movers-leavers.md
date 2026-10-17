@@ -6,11 +6,11 @@ nav_order: 12
 
 # Day 12: Joining, moving, and leaving
 
-Maya's move to Finance has taken effect. Jordan's employment has ended. Alex receives two tickets: “Maya still has Sales access” and “Jordan's application session still works.”
+Devi's move to Finance has taken effect. Jordan's employment has ended. Alex receives two tickets: “Devi still has Sales access” and “Jordan's application session still works.”
 
-Both concern a change in someone's relationship with Northbridge, but the required outcomes differ. Maya needs to keep working with the access her new role requires. Jordan's workforce access must end. Alex starts with those approved requirements before deciding which account action fits. Neither ticket can be resolved by checking only one profile field or one green event.
+Both concern a change in someone's relationship with Northbridge, but the required outcomes differ. Devi needs to keep working with the access her new role requires. Jordan's workforce access must end. Alex starts with those approved requirements before deciding which account action fits. Neither ticket can be resolved by checking only one profile field or one green event.
 
-Follow the business event into the correct identity, then inspect the affected assignments, target accounts and access results. We will use Maya's remaining Salesforce assignment and Jordan's two outstanding application issues to see where an otherwise successful change can remain incomplete. By the end, trace an approved employment change across the affected systems and distinguish completed outcomes from access that still needs attention.
+Follow the business event into the correct identity, then inspect the affected assignments, target accounts and access results. We will use Devi's remaining Salesforce assignment and Jordan's two outstanding application issues to see where an otherwise successful change can remain incomplete. By the end, trace an approved employment change across the affected systems and distinguish completed outcomes from access that still needs attention.
 
 **Joiner, mover, and leaver**, often shortened to **JML**, describes the identity and access changes associated with starting work, changing responsibilities, and leaving. The business event defines the intended outcome; configured systems must carry it through to the relevant accounts and access paths.
 
@@ -56,7 +56,7 @@ Target behavior requires its own verification. For example, Okta's [outbound SCI
 
 ## Joiner: connect the initial decisions
 
-Think back to Maya's initial arrival in Sales. A sound joiner explanation connects:
+Think back to Devi's initial arrival in Sales. A sound joiner explanation connects:
 
 ```mermaid
 flowchart TD
@@ -73,20 +73,20 @@ If an existing account is found, use Day 11's ownership and matching checks rath
 
 ## Mover: state what should change and what should remain
 
-Maya's approved move now takes effect in the course story. She remains employed and her identity remains NB-1042. Earlier Sales examples describe the earlier state.
+Devi's approved move now takes effect in the course story. She remains employed and her identity remains NB-1042. Earlier Sales examples describe the earlier state.
 
 Northbridge's approved outcome for packet M-12 is:
 
 - Department becomes Finance in the governed employee profile.
 - Normal Sales-group membership and Salesforce access end; no transition exception remains approved.
 - Projects access continues, with its department code changed from SAL to FIN.
-- Maya retains her existing identity and intended existing Projects account.
+- Devi retains her existing identity and intended existing Projects account.
 
-Read the approved outcomes together. Projects must continue on Maya's intended account, while the obsolete Sales access must end. Ask "What should Maya stop using?" alongside "What must she still be able to use?" Salesforce must end; Projects must continue with the updated department. A move needs both outcomes. Finance department alone does not make Maya a Finance manager or grant Daniel's approval permissions. The business requirement decides what should remain; a department name alone cannot answer every permission question.
+Read the approved outcomes together. Projects must continue on Devi's intended account, while the obsolete Sales access must end. Ask "What should Devi stop using?" alongside "What must she still be able to use?" Salesforce must end; Projects must continue with the updated department. A move needs both outcomes. Finance department alone does not make Devi a Finance manager or grant Daniel's approval permissions. The business requirement decides what should remain; a department name alone cannot answer every permission question.
 
-## Follow Maya's evidence
+## Follow Devi's evidence
 
-All observations below are synthetic, correlated to Maya's move, and listed in their observed order. They are investigation summaries, not literal product event names.
+All observations below are synthetic, correlated to Devi's move, and listed in their observed order. They are investigation summaries, not literal product event names.
 
 | Order | Evidence |
 |---|---|
@@ -94,16 +94,16 @@ All observations below are synthetic, correlated to Maya's move, and listed in t
 | M2 | The correct Workday association is confirmed. Okta department is Finance and workerType is Employee. Okta remains Active. |
 | M3 | The active Sales AND Employee rule processes the updated profile. Its rule-managed NB-Sales-Employees membership is removed. |
 | M4 | Salesforce remains individually assigned. Review confirms this is the surviving assignment source; no group assignment remains. Its exception approval ended with the move. |
-| M5 | The Projects app profile contains FIN. The supported update succeeds for Maya's linked prj-1042 account, and a later target read confirms FIN and active true. |
-| M6 | Salesforce confirms a new application session for Maya after the move. |
+| M5 | The Projects app profile contains FIN. The supported update succeeds for Devi's linked prj-1042 account, and a later target read confirms FIN and active true. |
+| M6 | Salesforce confirms a new application session for Devi after the move. |
 
 Before choosing a correction, compare M1 to M4 with the approved requirement. Does the evidence show a failed department update, a failed group rule, or an assignment that survives both successful changes?
 
-M1 to M3 show that the source, profile, and Sales rule processed the intended change. M4 establishes the remaining assignment path and its expired business justification. M6 establishes actual retained Salesforce access, not merely a visible tile. The group gave Maya one route to the Salesforce assignment. She was also assigned Salesforce individually, separately from the group. Removing the group membership ended its route, but the individual assignment remained. The rule can therefore have worked correctly while Salesforce access still needs removal.
+M1 to M3 show that the source, profile, and Sales rule processed the intended change. M4 establishes the remaining assignment path and its expired business justification. M6 establishes actual retained Salesforce access, not merely a visible tile. The group gave Devi one route to the Salesforce assignment. She was also assigned Salesforce individually, separately from the group. Removing the group membership ended its route, but the individual assignment remained. The rule can therefore have worked correctly while Salesforce access still needs removal.
 
 Do not change correct Finance data back to Sales or weaken the rule. Address the remaining individual assignment under the approved removal requirement, then verify the resulting Okta assignment, the applicable Salesforce account-management action, target access, and relevant sessions. Salesforce's connector behavior must be checked; do not substitute the Projects SCIM contract for it.
 
-M5 confirms the department update and an active Projects account. It supplies no Projects sign-in or permission result, so actual entry remains unverified. Deactivating all of Maya's accounts would violate the requirement to keep her working in Projects. A department update also does not prove that any specific project permission was added or removed.
+M5 confirms the department update and an active Projects account. It supplies no Projects sign-in or permission result, so actual entry remains unverified. Deactivating all of Devi's accounts would violate the requirement to keep her working in Projects. A department update also does not prove that any specific project permission was added or removed.
 
 Alex can distinguish the completed work from the remaining discrepancy: Finance is correct, the normal Sales membership ended, and Projects received FIN, but Salesforce still has an unjustified assignment and accepted a new session. No corrective Salesforce follow-up is supplied here. The ticket remains unresolved at M6, with a demonstrated cause and a supported next action.
 
@@ -154,15 +154,15 @@ Read the user's current status, source relationship, and approved business event
 
 Unlocking addresses a lockout condition; it does not establish a new password or restore withdrawn employment approval. Password recovery concerns the password. Replacing an authenticator concerns its enrollment. Suspending Okta access is not a substitute for verifying a required departure across target applications and sessions.
 
-For a sourced identity, also check whether the authoritative lifecycle process would repeat or reverse a manual action. If Jordan is still departed, a historical successful sign-in is no reason to reactivate him. If Maya is transferring, preserve the account and access that the new role still requires while ending the obsolete paths.
+For a sourced identity, also check whether the authoritative lifecycle process would repeat or reverse a manual action. If Jordan is still departed, a historical successful sign-in is no reason to reactivate him. If Devi is transferring, preserve the account and access that the new role still requires while ending the obsolete paths.
 
 Write a separate outcome for each target. If a later Projects correction were verified while Expense remained open, “Okta deactivated; Projects correction verified; Expense session outcome awaiting owner” would be an honest handoff. It is an example of how to report that later condition, not a supplied correction to Jordan's packet. “User disabled, ticket closed” would hide unfinished work.
 
-For both Maya and Jordan, begin with the approved change, keep the identity relationship intact, and verify each required outcome. Maya's move preserves some access and ends another path; Jordan's departure ends access across the required scope. The account action is part of that work, while the evidence determines what is complete.
+For both Devi and Jordan, begin with the approved change, keep the identity relationship intact, and verify each required outcome. Devi's move preserves some access and ends another path; Jordan's departure ends access across the required scope. The account action is part of that work, while the evidence determines what is complete.
 
 ## Before moving on
 
-Can you distinguish employment data, Okta status, target status, and session observations? Explain why Maya's correct group removal did not end her individual assignment, why Jordan's completed Okta deactivation did not close every target ticket, and what evidence would establish the required corrections.
+Can you distinguish employment data, Okta status, target status, and session observations? Explain why Devi's correct group removal did not end her individual assignment, why Jordan's completed Okta deactivation did not close every target ticket, and what evidence would establish the required corrections.
 
 You do not need to explain Expense's session mechanism yet. Recognizing its observed retained access and requesting a separate check is the correct conclusion here.
 

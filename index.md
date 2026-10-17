@@ -7,7 +7,7 @@ nav_order: 1
 
 A person can sign in and still be unable to use an application. A department can be correct in one system and wrong in another. An employee can leave while an application continues accepting an existing session. Understanding these situations begins with knowing which system is responsible for each part of the journey.
 
-This 15-day theory course follows Northbridge Services, a fictional company, through those questions. Alongside Maya, Daniel, Priya, Jordan and Alex, you will trace identity data, application assignments, authentication, account management and changing access. Each situation asks you to explain what the evidence establishes and what needs checking next.
+This 15-day theory course follows Northbridge Services, a fictional company, through those questions. Alongside Devi, Daniel, Priya, Jordan and Alex, you will trace identity data, application assignments, authentication, account management and changing access. Each situation asks you to explain what the evidence establishes and what needs checking next.
 
 This is a reading-and-reasoning course. It builds understanding and evidence-based troubleshooting habits. It does not require an Okta tenant, and it does not claim to replace hands-on configuration experience.
 

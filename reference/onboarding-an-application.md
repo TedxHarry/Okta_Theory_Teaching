@@ -60,14 +60,14 @@ A direct assignment or a governed exception group can represent an approved exce
 
 ## 6. Compare several evidence cases
 
-For this fictional design variant, Northbridge Projects is intended for Sales employees. A contractor needs a separately approved, limited exception. Maya's move to Finance would end ordinary access under this variant; this does not change the different approved Projects outcome in Day 12.
+For this fictional design variant, Northbridge Projects is intended for Sales employees. A contractor needs a separately approved, limited exception. Devi's move to Finance would end ordinary access under this variant; this does not change the different approved Projects outcome in Day 12.
 
 | Case | Required reasoning |
 |---|---|
 | Eligible Sales employee | Explain assignment, intended account, successful sign-in and permitted actions with separate evidence. |
 | Ineligible Finance employee | Explain why the ordinary assignment is absent and why an old account or session still needs checking. |
 | Priya's contractor exception | Establish sponsor approval, limited permission, assignment path and end condition; preserve her Okta-managed source model. |
-| Maya moves out of Sales | Inspect every surviving assignment, target account and relevant session against the variant's removal requirement. |
+| Devi moves out of Sales | Inspect every surviving assignment, target account and relevant session against the variant's removal requirement. |
 | Existing account or rehire | Verify ownership and intended reuse before assuming a new account is needed. |
 | Departure or exception expiry | Explain the Okta action, per-app removal results and separate session outcome. |
 
@@ -80,7 +80,7 @@ Identify other apps or users affected by shared groups and policies. State who o
 Two short comparisons help locate a maintenance failure:
 
 - **SAML credential or field mismatch:** a reported expired or untrusted signing certificate calls for comparing the received signature's credential, validity and configured trust. A reported audience mismatch calls for comparing the audience with the intended application identifier. Both can reject sign-in; they require different evidence and owners. Keep validation enabled.
-- **Service credential or user authentication:** a provisioning API's rejected integration credential concerns the connection acting on accounts. It does not establish that Maya's password or authenticator is wrong. Identify the caller, endpoint and exact error before proposing a credential change.
+- **Service credential or user authentication:** a provisioning API's rejected integration credential concerns the connection acting on accounts. It does not establish that Devi's password or authenticator is wrong. Identify the caller, endpoint and exact error before proposing a credential change.
 
 Record owners for certificate and service-credential maintenance, expected expiry or rotation events, and the supported recovery process. No secret values belong in the learning notes.
 

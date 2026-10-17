@@ -32,15 +32,15 @@ A similar name is insufficient for a link. A future HR record is insufficient fo
 
 **Revisit:** [Joiner: connect the initial decisions](../lessons/day-12-joiners-movers-leavers.md#joiner-connect-the-initial-decisions)
 
-## 4. Investigate Maya's old access
+## 4. Investigate Devi's old access
 
 M1 to M3 demonstrate the intended department and Sales-group changes. M4 shows the remaining individual Salesforce assignment whose approval has ended; M6 confirms actual retained entry. The group route ended as intended, but the separate individual assignment survived. That is the demonstrated access discrepancy; the supplied evidence gives no reason to repair the Sales rule.
 
-Address that remaining assignment under the approved removal requirement, check other paths as appropriate, and verify the relevant Salesforce account-management and access outcomes. Do not assume Salesforce uses SCIM. Preserve Maya's employee identity and continuing Projects access, whose department update is confirmed. Being in Finance does not automatically grant management permissions.
+Address that remaining assignment under the approved removal requirement, check other paths as appropriate, and verify the relevant Salesforce account-management and access outcomes. Do not assume Salesforce uses SCIM. Preserve Devi's employee identity and continuing Projects access, whose department update is confirmed. Being in Finance does not automatically grant management permissions.
 
 M5 confirms FIN and an active Projects account. It does not show a Projects sign-in or the required application permissions. Continuing access is the approved requirement; actual entry still needs separate evidence.
 
-Revisit [Follow Maya's evidence](../lessons/day-12-joiners-movers-leavers.md#follow-mayas-evidence). No supplied follow-up proves the Salesforce correction is complete. A complete Maya handoff therefore keeps two goals visible: end the obsolete Salesforce access and preserve her approved Projects access. Do not turn an unresolved Projects entry check into a reason to deactivate its correctly retained account.
+Revisit [Follow Devi's evidence](../lessons/day-12-joiners-movers-leavers.md#follow-devis-evidence). No supplied follow-up proves the Salesforce correction is complete. A complete Devi handoff therefore keeps two goals visible: end the obsolete Salesforce access and preserve her approved Projects access. Do not turn an unresolved Projects entry check into a reason to deactivate its correctly retained account.
 
 ## 5. Separate Jordan's completed and failed outcomes
 
@@ -60,7 +60,7 @@ Revisit [Leaver: verify each outcome](../lessons/day-12-joiners-movers-leavers.m
 
 ## 7. Write the handoff
 
-An acceptable Maya handoff:
+An acceptable Devi handoff:
 
 > Her Finance profile and Sales-group removal are confirmed. Projects has FIN and an active account; actual Projects entry is not supplied. The individual Salesforce assignment remains after its exception approval expired, and Salesforce accepted a new session. The IAM and application owners must remove the remaining Salesforce access, preserve the approved Projects access, and verify the relevant account, sign-in, permission, and session outcomes.
 
@@ -74,7 +74,7 @@ A successful Projects deactivation resolves only that account-state issue. Expen
 
 ## Optional changed condition
 
-Suppose Maya's individual Salesforce assignment has a newly supplied, valid transition approval that explicitly permits continued access at the checked point. Her Finance profile and removed Sales-group membership are unchanged. How does your conclusion change?
+Suppose Devi's individual Salesforce assignment has a newly supplied, valid transition approval that explicitly permits continued access at the checked point. Her Finance profile and removed Sales-group membership are unchanged. How does your conclusion change?
 
 <details markdown="1">
 <summary>Check the reasoning</summary>

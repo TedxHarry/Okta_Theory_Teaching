@@ -26,7 +26,7 @@ The checked production Salesforce connection expects audience `https://salesforc
 
 ## Packet B: Expense accepts OIDC
 
-For Maya's attempt B-1, Expense uses Day 9's confidential backend client. Selected authorization-request fields are:
+For Devi's attempt B-1, Expense uses Day 9's confidential backend client. Selected authorization-request fields are:
 
 | Field | Value |
 |---|---|
@@ -40,18 +40,18 @@ The callback is registered. The backend verifies state, completes the authentica
 ```json
 {
   "iss": "https://identity.northbridge.example",
-  "sub": "subject-maya-1042",
+  "sub": "subject-devi-1042",
   "aud": "nb-expense-web"
 }
 ```
 
-The application confirms Maya's intended pre-existing Expense account, establishes its session, and displays her expense page. Expense-approval permission has not been tested.
+The application confirms Devi's intended pre-existing Expense account, establishes its session, and displays her expense page. Expense-approval permission has not been tested.
 
 **Task 2:** Categorize the exchange. Explain the browser/backend distinction and why the supplied validation report matters beyond the readable claims. State the precise successful outcome. Did this prove account creation?
 
 ## Packet C: Projects rejects a create
 
-Maya is also assigned to Projects. Her app profile contains the correct userName and SAL department code. The authorized connector sends a POST to the checked Projects `/scim/v2/Users` endpoint with those values and active true. Projects replies HTTP 409 with:
+Devi is also assigned to Projects. Her app profile contains the correct userName and SAL department code. The authorized connector sends a POST to the checked Projects `/scim/v2/Users` endpoint with those values and active true. Projects replies HTTP 409 with:
 
 ```json
 {
@@ -64,11 +64,11 @@ Maya is also assigned to Projects. Her app profile contains the correct userName
 
 No conflicting record, ownership confirmation, successful association, or follow-up account read is supplied.
 
-**Task 3:** Categorize the exchange and locate its failure. What does the response report, and what remains unknown about Maya's target account? Explain why Packet B does not settle this incident. Request specific evidence before choosing a correction.
+**Task 3:** Categorize the exchange and locate its failure. What does the response report, and what remains unknown about Devi's target account? Explain why Packet B does not settle this incident. Request specific evidence before choosing a correction.
 
 ## Packet D: Same user, different identity evidence
 
-A colleague suggests using Maya's Expense ID token to authorize the Projects connector, then removing the uniqueness check if the create still fails.
+A colleague suggests using Devi's Expense ID token to authorize the Projects connector, then removing the uniqueness check if the create still fails.
 
 **Task 4:** Explain both errors in that proposal. Name a justified next action using Packet C, without writing a configuration procedure.
 
@@ -78,7 +78,7 @@ A colleague suggests using Maya's Expense ID token to authorize the Projects con
 
 ## Packet E: Password accepted, another requirement unresolved
 
-This is an independent Expense attempt E-1 for Jordan, who is still employed. Do not carry Maya's successful Packet B outcome into it.
+This is an independent Expense attempt E-1 for Jordan, who is still employed. Do not carry Devi's successful Packet B outcome into it.
 
 | Evidence | Observation |
 |---|---|

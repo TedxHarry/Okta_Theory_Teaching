@@ -6,9 +6,9 @@ nav_order: 11
 
 # Day 11: Imports, matching, and reconciliation
 
-“There is already a Projects account called Maya Rao. Should we link it or create another?”
+“There is already a Projects account called Devi Rao. Should we link it or create another?”
 
-Alex cannot answer from the name alone. The application may contain an account that belongs to Maya, a record for another person with the same name, or information that needs correction before any relationship is accepted.
+Alex cannot answer from the name alone. The application may contain an account that belongs to Devi, a record for another person with the same name, or information that needs correction before any relationship is accepted.
 
 Linking the wrong account could direct later updates or access decisions at someone else's record. Creating another account without checking could leave one person with two unmanaged paths.
 
@@ -20,7 +20,7 @@ Follow the discovered record, the comparison that proposes a match, and the conf
 
 An account can be visible to an import before Okta has established who it belongs to. An **import** reads records or changes from a connected system into Okta for processing. **Discovery** means the record was found within that operation's scope. **Matching** compares it with existing Okta identities. **Confirmation** accepts the proposed match or new-user outcome through the configured process.
 
-Keep one account in view as you read the table. "We found this Projects record" is discovery. "Its data meets the comparison for Maya" is a proposed match. "The proposed outcome was accepted" is confirmation. The resulting association identifies the linked records.
+Keep one account in view as you read the table. "We found this Projects record" is discovery. "Its data meets the comparison for Devi" is a proposed match. "The proposed outcome was accepted" is confirmation. The resulting association identifies the linked records.
 
 These statements describe progress, but they answer different questions. Alex still needs to check the relevant account state and actual application entry before reporting those outcomes.
 
@@ -50,7 +50,7 @@ If an expected AD record is missing, Alex first compares its location with the s
 
 ## A matching rule is a comparison, not a biography
 
-Imagine that someone accidentally copies Maya's employee number onto another person's account. The two numbers can agree exactly while the proposed relationship is wrong. The system compares the information it has; it does not independently know the account's history. An **exact match** means a record meets the configured exact-match criteria. It does not mean the system independently proved the person's real-world identity. A **partial match** is a candidate meeting the configured weaker comparison, such as matching names where identifiers differ.
+Imagine that someone accidentally copies Devi's employee number onto another person's account. The two numbers can agree exactly while the proposed relationship is wrong. The system compares the information it has; it does not independently know the account's history. An **exact match** means a record meets the configured exact-match criteria. It does not mean the system independently proved the person's real-world identity. A **partial match** is a candidate meeting the configured weaker comparison, such as matching names where identifiers differ.
 
 Okta supports [matching on mapped attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-matching-imported-users.htm). The selected criteria and confirmation behavior must be inspected for the specific integration. A business review rule is not automatically a built-in Okta feature.
 
@@ -64,32 +64,32 @@ Keep the two responsibilities distinct. The configured employeeNumber comparison
 
 Email can change or be reused. Names can be shared. Even an employee number can be copied incorrectly. A reliable matching decision depends on both the comparison and the quality of the values compared.
 
-## Work through Maya's existing account
+## Work through Devi's existing account
 
-Packet M-1 is an independent account-review scenario. It does not claim to resolve Day 10's conflict history. Maya remains a Sales employee with existing Workday and AD associations and an approved Projects assignment. Her Projects association is unconfirmed in this packet.
+Packet M-1 is an independent account-review scenario. It does not claim to resolve Day 10's conflict history. Devi remains a Sales employee with existing Workday and AD associations and an approved Projects assignment. Her Projects association is unconfirmed in this packet.
 
 | Evidence | Observation |
 |---|---|
-| Authoritative employee record | Maya Rao, NB-1042, Sales. |
-| Existing Okta identity | Maya Rao, employeeNumber NB-1042. |
-| Projects candidate A | id prj-1042; name Maya Rao; employeeNumber NB-1042. |
-| Projects candidate B | id prj-7788; name Maya Rao; employeeNumber NB-7788. |
+| Authoritative employee record | Devi Rao, NB-1042, Sales. |
+| Existing Okta identity | Devi Rao, employeeNumber NB-1042. |
+| Projects candidate A | id prj-1042; name Devi Rao; employeeNumber NB-1042. |
+| Projects candidate B | id prj-7788; name Devi Rao; employeeNumber NB-7788. |
 | Ownership evidence | Projects owner confirms A belongs to NB-1042 and B belongs to a different person. |
 | Comparison coverage | Relevant candidates and identifier uniqueness checked in the stated Projects instance. |
-| Proposed match | A to Maya's existing Okta identity. |
+| Proposed match | A to Devi's existing Okta identity. |
 | Confirmation | Pending. |
 
 Before reading the decision, compare A and B against both parts of the review: the employeeNumber comparison and the ownership evidence. Which candidate meets them, and which stage is still pending?
 
 Candidate A meets the comparison and the supplied ownership checks. Candidate B's similar name does not override its different employee number and confirmed different ownership. The evidence supports confirming A through the approved process, not creating another Okta identity or deleting B. Here Okta supplies the configured comparison result; Northbridge's additional review supplies the ownership justification for accepting it. Pending confirmation means Alex can explain the supported proposal, but cannot yet report that the records are linked.
 
-Now use an explicit follow-up M-2: confirmation succeeds, and an association check links Maya's existing Okta identity to prj-1042 in the intended Projects integration. A read of that target confirms NB-1042, SAL, and active true. No sign-in is supplied.
+Now use an explicit follow-up M-2: confirmation succeeds, and an association check links Devi's existing Okta identity to prj-1042 in the intended Projects integration. A read of that target confirms NB-1042, SAL, and active true. No sign-in is supplied.
 
-M-2 adds the outcome M-1 lacked: accepted confirmation and a checked link to the intended Projects resource. The target read also establishes the supplied account values and state. It does not establish Maya's Projects entry. Nor does it make Projects her profile source: that integration is not configured as one. Workday still controls her employee profile under the existing source model. Linking identifies an account; sourcing determines which system governs the profile.
+M-2 adds the outcome M-1 lacked: accepted confirmation and a checked link to the intended Projects resource. The target read also establishes the supplied account values and state. It does not establish Devi's Projects entry. Nor does it make Projects her profile source: that integration is not configured as one. Workday still controls her employee profile under the existing source model. Linking identifies an account; sourcing determines which system governs the profile.
 
 ## Recognize when the evidence is insufficient
 
-Now examine a different packet M-3: both Projects candidates contain NB-1042, and neither has verified ownership. This replaces M-1's candidate and ownership evidence for the separate scenario. The original review's uniqueness condition is no longer met. Both records answer "Does this field equal NB-1042?" with yes. That leaves the important question unanswered: "Which account belongs to Maya?" Choosing the first result would use list order to make an ownership decision.
+Now examine a different packet M-3: both Projects candidates contain NB-1042, and neither has verified ownership. This replaces M-1's candidate and ownership evidence for the separate scenario. The original review's uniqueness condition is no longer met. Both records answer "Does this field equal NB-1042?" with yes. That leaves the important question unanswered: "Which account belongs to Devi?" Choosing the first result would use list order to make an ownership decision.
 
 Do not choose the first result. Request account-creation records, the accountable application owner's evidence, and the authoritative identifier history. If a value was copied incorrectly, correct it through the responsible process before rerunning the comparison. If one person has duplicate accounts, the business owner must decide their intended use and consolidation; a duplicate-looking name alone does not authorize deletion.
 
@@ -97,9 +97,9 @@ A missing employeeNumber is also unresolved. It is not evidence that the person 
 
 ## Association can affect sourcing
 
-The consequence of a link depends on the integration it belongs to. An application-account association and an applicable profile-source association are related concepts, but not interchangeable. The integration's source settings matter. Ask both “Which records are linked?” and “Does this connection have a configured sourcing role?” before predicting which values may change. A link can tell Okta "this is Maya's Projects account" without telling it "let Projects govern Maya's employee profile." The source configuration determines that separate responsibility.
+The consequence of a link depends on the integration it belongs to. An application-account association and an applicable profile-source association are related concepts, but not interchangeable. The integration's source settings matter. Ask both “Which records are linked?” and “Does this connection have a configured sourcing role?” before predicting which values may change. A link can tell Okta "this is Devi's Projects account" without telling it "let Projects govern Devi's employee profile." The source configuration determines that separate responsibility.
 
-Recall Northbridge's order: Workday above AD. Maya already has both associations; matching a Projects account does not move Projects into that order. Department inherits Workday ownership, while her designated AD-owned email remains a field-level exception.
+Recall Northbridge's order: Workday above AD. Devi already has both associations; matching a Projects account does not move Projects into that order. Department inherits Workday ownership, while her designated AD-owned email remains a field-level exception.
 
 Consider a separate hypothetical error: an AD record is accidentally confirmed against Priya's Okta-managed contractor identity. This violates her intended exclusion from employee imports. Because AD is a configured profile source, the new association may affect her source applicability and governed values. Inspect the resulting source, attribute settings, and actual writes. Do not assume the contractor label prevents the effect or that Workday applies to her without an association.
 
@@ -135,7 +135,7 @@ Selected fields from that page's two user objects are:
 
 ```json
 [
-  {"id": "OKTA_MAYA_PLACEHOLDER", "profile": {"login": "maya.rao@northbridge.example"}},
+  {"id": "OKTA_DEVI_PLACEHOLDER", "profile": {"login": "devi.rao@northbridge.example"}},
   {"id": "OKTA_DANIEL_PLACEHOLDER", "profile": {"login": "daniel.brooks@northbridge.example"}}
 ]
 ```

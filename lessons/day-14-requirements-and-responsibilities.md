@@ -45,7 +45,7 @@ Packet R-14 supplies a fictional approved requirement for Northbridge Expense. I
 - The Expense owner maintains local business roles and handles target-account readiness and removal through its approved process. No SCIM or other automated provisioning capability is assumed.
 - The existing approved Expense authentication policy continues to apply. An access exception is not an authentication-policy exception.
 
-The owner has also confirmed the current people: Maya is now Finance, Daniel is a Finance manager with a separately approved approver role, Priya remains a Sales contractor, and Jordan has departed. Daniel's approval authority is explicitly supplied here; his manager title alone did not establish it in the earlier lessons. These answers give Alex something concrete to design against, but they are not deployment results.
+The owner has also confirmed the current people: Devi is now Finance, Daniel is a Finance manager with a separately approved approver role, Priya remains a Sales contractor, and Jordan has departed. Daniel's approval authority is explicitly supplied here; his manager title alone did not establish it in the earlier lessons. These answers give Alex something concrete to design against, but they are not deployment results.
 
 ## Translate the requirement without changing its meaning
 
@@ -59,16 +59,16 @@ This is an **access model**: a description of how eligibility, exceptions, assig
 
 | Person | Expected result under R-14 |
 |---|---|
-| Maya | Normal Finance assignment path and submission access; no approval permission inferred. |
+| Devi | Normal Finance assignment path and submission access; no approval permission inferred. |
 | Daniel | Normal path plus his separately approved application approver role. |
 | Priya | No normal employee path. A contractor exception remains undecided unless its approval is supplied. |
 | Jordan | No usable access under the effective departure requirement. Retained attributes or group membership do not reverse deactivation. |
 
-Before reading the model as an access result, compare Maya and Priya. Maya fits the normal population; Priya does not. What additional decision would justify a contractor path? The requirement names the approvers and end condition, but the model has not supplied Priya's exception approval.
+Before reading the model as an access result, compare Devi and Priya. Devi fits the normal population; Priya does not. What additional decision would justify a contractor path? The requirement names the approvers and end condition, but the model has not supplied Priya's exception approval.
 
 Day 12 established that deactivation can retain group memberships. Therefore, a membership report alone cannot certify Jordan's current access or whether he should regain it later. A return to work requires fresh decisions.
 
-Reconcile existing assignments before applying the model. An old direct Expense assignment could survive removal from the proposed normal group, just as Maya's Salesforce assignment survived in Day 12. Existing target accounts require matching, and existing target roles require the application owner's review.
+Reconcile existing assignments before applying the model. An old direct Expense assignment could survive removal from the proposed normal group, just as Devi's Salesforce assignment survived in Day 12. Existing target accounts require matching, and existing target roles require the application owner's review.
 
 ## Separate approval from technical authority
 
@@ -107,7 +107,7 @@ Day 11's permission-denied API read illustrates the same boundary. A rejected op
 | Employee moves out of Finance | Normal path ends; surviving exceptions and direct assignments are evaluated. |
 | Employee departs | Required account and session outcomes verified across the affected systems. |
 
-These are positive, negative, and change cases: who should succeed, who should not, and what should happen when eligibility changes. Maya's expected submission access and absence of inferred approval permission test different parts of the requirement. A contractor exception also needs its own removal outcome, not just a successful first entry. A successful Finance login tests only part of the model. Define these checks before applying the design so that “works” has an agreed meaning.
+These are positive, negative, and change cases: who should succeed, who should not, and what should happen when eligibility changes. Devi's expected submission access and absence of inferred approval permission test different parts of the requirement. A contractor exception also needs its own removal outcome, not just a successful first entry. A successful Finance login tests only part of the model. Define these checks before applying the design so that “works” has an agreed meaning.
 
 ## Plan recovery from an incorrect change
 

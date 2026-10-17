@@ -512,7 +512,7 @@ nav_order: 16
 
 ### Q33. Separate training from Northbridge tickets
 
-<p class="qb-question"><strong>Question:</strong> Casey’s group membership succeeds in a separate synthetic training environment. In an independent business environment, Maya has an uncorrected department mapping and Jordan has retained application access. Does the training success resolve either business incident?</p>
+<p class="qb-question"><strong>Question:</strong> Casey’s group membership succeeds in a separate synthetic training environment. In an independent business environment, Devi has an uncorrected department mapping and Jordan has retained application access. Does the training success resolve either business incident?</p>
 
 <details class="qb-answer" id="q33-explanation">
 <summary>Read the teaching explanation</summary>

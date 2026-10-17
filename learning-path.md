@@ -50,7 +50,7 @@ Read [Okta at a glance](overview.md) before Day 1. Use the [cheat sheets](refere
 
 ## Read the examples consistently
 
-Maya is in Sales through Day 11; her approved Finance move takes effect in Day 12. Jordan's departure also takes effect in Day 12, while explicitly archived incidents describe his earlier employed state. Daniel is already a Finance manager, but his title alone does not establish a permission. An explicitly labelled alternative packet changes the evidence for a question; it does not silently change everyone's history.
+Devi is in Sales through Day 11; her approved Finance move takes effect in Day 12. Jordan's departure also takes effect in Day 12, while explicitly archived incidents describe his earlier employed state. Daniel is already a Finance manager, but his title alone does not establish a permission. An explicitly labelled alternative packet changes the evidence for a question; it does not silently change everyone's history.
 
 A lesson or exercise may state that an account exists even when an earlier ticket left its existence unknown. Use the facts of that labelled scenario. Do not treat a hypothetical account or a supplied follow-up as proof of an unshown production event.
 

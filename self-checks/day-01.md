@@ -10,11 +10,11 @@ The important part is your reasoning. Different wording is fine if you keep the 
 
 ## 1. One person, several records
 
-Think of each team opening the record it needs for its own work. HR opens Maya's Workday employment record. The directory team checks her AD workplace account. Alex checks her Okta user and application assignments. The Salesforce owner checks the account she uses inside Salesforce. They are all looking at records about Maya, but each record answers a different question.
+Think of each team opening the record it needs for its own work. HR opens Devi's Workday employment record. The directory team checks her AD workplace account. Alex checks her Okta user and application assignments. The Salesforce owner checks the account she uses inside Salesforce. They are all looking at records about Devi, but each record answers a different question.
 
-A disabled Salesforce account establishes a Salesforce account-state fact. It does not, by itself, establish whether Maya's Okta user or AD account is enabled or disabled. You need their state evidence separately.
+A disabled Salesforce account establishes a Salesforce account-state fact. It does not, by itself, establish whether Devi's Okta user or AD account is enabled or disabled. You need their state evidence separately.
 
-**Revisit:** [Maya is one person; the systems hold different records](../lessons/day-01-people-identities-access.md#maya-is-one-person-the-systems-hold-different-records) if you treated all account states as one state.
+**Revisit:** [Devi is one person; the systems hold different records](../lessons/day-01-people-identities-access.md#devi-is-one-person-the-systems-hold-different-records) if you treated all account states as one state.
 
 ## 2. Sign-in works; an action fails
 
@@ -36,7 +36,7 @@ An SSO connection does not prove that automatic account provisioning is availabl
 
 ## 4. A value is correct in one system
 
-We can say, 'Workday shows Sales.' To say, 'Salesforce also shows Sales,' someone needs to open Maya's Salesforce record and check. Even if an information-sharing connection is configured, we still need to check what this record holds now.
+We can say, 'Workday shows Sales.' To say, 'Salesforce also shows Sales,' someone needs to open Devi's Salesforce record and check. Even if an information-sharing connection is configured, we still need to check what this record holds now.
 
 Compare the department in Workday, Okta and the intended Salesforce account. If they differ, follow how that department is maintained between those places. If they agree, keep that successful finding. We do not have to assume something is wrong just because it has not been checked yet.
 
@@ -52,7 +52,7 @@ Possible explanations include:
 
 - The required Salesforce assignment is missing.
 - The expected account-management process has not completed or failed.
-- An existing account has a different identifier and has not been correctly associated with Maya.
+- An existing account has a different identifier and has not been correctly associated with Devi.
 
 These are alternatives, not three facts established by the packet.
 
@@ -62,7 +62,7 @@ For example, inspecting the expected assignment can distinguish an absent assign
 
 Avoid creating a duplicate account, granting access without approval, or changing a working sign-in credential before establishing the cause. A correction becomes justified when the evidence identifies the relevant gap and the requirement is clear.
 
-**Revisit:** [Investigating Maya's ticket](../lessons/day-01-people-identities-access.md#investigating-mayas-ticket) if you treated "not inspected" as "missing" or presented a possible cause as confirmed.
+**Revisit:** [Investigating Devi's ticket](../lessons/day-01-people-identities-access.md#investigating-devis-ticket) if you treated "not inspected" as "missing" or presented a possible cause as confirmed.
 
 ## 6. Assignment and a tile
 
@@ -76,7 +76,7 @@ Inspect the target account state and the relevant account-management outcome. If
 
 A sound explanation might be:
 
-> HR records Maya's employee information. Okta has a user representing her. Northbridge must establish her Salesforce assignment and a corresponding account in Salesforce through the applicable process. Sign-in must succeed through the configured connection, and the application must give her the permissions needed for her work. These are connected steps, but one successful observation does not prove all of them.
+> HR records Devi's employee information. Okta has a user representing her. Northbridge must establish her Salesforce assignment and a corresponding account in Salesforce through the applicable process. Sign-in must succeed through the configured connection, and the application must give her the permissions needed for her work. These are connected steps, but one successful observation does not prove all of them.
 
 If the Salesforce account exists but is disabled, its existence is now known and its state may prevent use. The reason for the disabled state still needs investigation. Check whether it should be enabled, how account state is controlled, and whether assignment and sign-in information are correct. Do not enable it merely because someone reports an access problem.
 

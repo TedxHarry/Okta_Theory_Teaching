@@ -10,7 +10,7 @@ With SAML, Salesforce does not simply take Okta's word for it because a message 
 
 ## The concepts to keep with you
 
-**Identity provider and service provider.** Okta is the identity provider, or IdP, in this example. Salesforce is the service provider, or SP. The browser carries messages between them. The flow does not send Maya's AD password to Salesforce.
+**Identity provider and service provider.** Okta is the identity provider, or IdP, in this example. Salesforce is the service provider, or SP. The browser carries messages between them. The flow does not send Devi's AD password to Salesforce.
 
 **Assertion.** A SAML assertion contains statements about the subject, meaning the person identified in this example, and authentication. It travels within the response in the lesson's flow. Reading its XML lets you inspect supplied information; reading it is not the same as validating it.
 

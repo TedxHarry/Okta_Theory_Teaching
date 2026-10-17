@@ -2,15 +2,15 @@
 <p>Use the fictional configuration in the <a href="/Okta_Theory_Teaching/lessons/day-08-saml.html">lesson</a>. These excerpts and reports are teaching evidence, not material to submit to a live system.</p>
 <p>Keep the expected connection settings, observed message fields, and application validation report separate. When you say a check passed or failed, name which evidence supports that conclusion.</p>
 <h2 id="1-follow-the-participants">1. Follow the participants</h2>
-<p>Maya starts at Salesforce, travels to Okta, completes required checks, and returns with a SAML response. Name the IdP and SP, explain the browser's role, and distinguish the authentication request from the assertion. Does Salesforce receive Maya's AD password in this flow?</p>
+<p>Devi starts at Salesforce, travels to Okta, completes required checks, and returns with a SAML response. Name the IdP and SP, explain the browser's role, and distinguish the authentication request from the assertion. Does Salesforce receive Devi's AD password in this flow?</p>
 <h2 id="2-address-or-identity">2. Address or identity?</h2>
 <p>The ACS is <code>https://salesforce.northbridge.example/saml/acs</code>. The expected audience is <code>https://salesforce.northbridge.example/entity/prod</code>.</p>
 <p>Why are these different? If the browser reaches the ACS successfully, does that prove the audience is correct?</p>
 <h2 id="3-read-the-assertion">3. Read the assertion</h2>
 <p>In S-1's XML, identify issuer, NameID, and audience. Compare the audience with the expected value. Which important validation checks cannot be performed from this shortened excerpt?</p>
 <h2 id="4-explain-the-supported-correction">4. Explain the supported correction</h2>
-<p>The S-1 application report explicitly rejects the test audience in the production connection. Its signature and validity checks passed. Maya's intended active account has the correct username.</p>
-<p>What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Maya's username or disabling audience validation is not supported. What affected users or connection scope should be reviewed before changing a shared setting?</p>
+<p>The S-1 application report explicitly rejects the test audience in the production connection. Its signature and validity checks passed. Devi's intended active account has the correct username.</p>
+<p>What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Devi's username or disabling audience validation is not supported. What affected users or connection scope should be reviewed before changing a shared setting?</p>
 <h2 id="5-a-different-identity-rule">5. A different identity rule</h2>
 <p>In a separate connection, the SP is configured to match NameID to Federation ID. The target username differs from NameID, but the approved Federation ID matches it.</p>
 <p>Does the username difference establish a matching defect? What additional evidence is needed before claiming successful application access?</p>
@@ -18,7 +18,7 @@
 <p>A colleague can read an assertion and sees a Signature element. They conclude it is encrypted and trustworthy.</p>
 <p>Explain separately what being able to read the assertion shows and what seeing a Signature element shows. Why do trusted signing configuration and actual verification matter? Would successful signature verification alone settle audience, validity, and account matching?</p>
 <h2 id="7-describe-the-limit-of-success">7. Describe the limit of success</h2>
-<p>A new correlated attempt S-3 has accepted application validation and confirmed entry into Maya's intended existing account. She is denied a particular Salesforce action.</p>
+<p>A new correlated attempt S-3 has accepted application validation and confirmed entry into Devi's intended existing account. She is denied a particular Salesforce action.</p>
 <p>What succeeded, and what question remains? Does the evidence show that SAML created her account? Explain how a separately configured JIT capability would differ from that assumption.</p>
 <p><a href="/Okta_Theory_Teaching/self-checks/day-08.html">Self-check answers</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
 <p><a href="/Okta_Theory_Teaching/question-bank/day-08.html">Practice questions with explanations</a> · <a href="/Okta_Theory_Teaching/revision/day-08.html">Day 8 recap</a></p>

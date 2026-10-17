@@ -57,7 +57,7 @@ nav_order: 15
 
 ### Q04. Current and archived context
 
-<p class="qb-question"><strong>Question:</strong> Jordan has departed in current access-removal tickets. An archived password incident explicitly concerns a separate time when he was employed. Maya is now Finance, although older examples describe Sales. How should an investigator use these current and historical facts?</p>
+<p class="qb-question"><strong>Question:</strong> Jordan has departed in current access-removal tickets. An archived password incident explicitly concerns a separate time when he was employed. Devi is now Finance, although older examples describe Sales. How should an investigator use these current and historical facts?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
@@ -74,13 +74,13 @@ nav_order: 15
 
 ### Q05. Locate the wrong outgoing representation
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Where is the first demonstrated wrong representation, and did the target reject the transmitted value?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Where is the first demonstrated wrong representation, and did the target reject the transmitted value?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Start with the approved meaning: Maya is in Finance, so Projects needs FIN. Workday and Okta already hold the correct department. The fixed-SAL outgoing mapping is the first supplied step that turns it into the wrong representation.</p>
+<p>Start with the approved meaning: Devi is in Finance, so Projects needs FIN. Workday and Okta already hold the correct department. The fixed-SAL outgoing mapping is the first supplied step that turns it into the wrong representation.</p>
 <p>The preview and app profile show that result, and the correlated update and later read show SAL was sent and stored. Projects accepted the request; it did not reject the value.</p>
 <p>The operation can therefore succeed while the business outcome is wrong. Correct the conversion rather than change the correct source data or invent a failed target update. Verification must follow the corrected value through to the intended account and reporting result.</p>
 </div>
@@ -90,7 +90,7 @@ nav_order: 15
 
 ### Q06. A functioning login, wrong report
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Maya can enter Projects, but the allocation report places her in Sales. No failed sign-in or approval-role issue is supplied. What problem is demonstrated despite the successful entry?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Devi can enter Projects, but the allocation report places her in Sales. No failed sign-in or approval-role issue is supplied. What problem is demonstrated despite the successful entry?</p>
 
 <details class="qb-answer" id="q06-explanation">
 <summary>Read the teaching explanation</summary>
@@ -105,13 +105,13 @@ nav_order: 15
 
 ### Q07. Preserve the approved move
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. A colleague suggests changing Maya’s source department back to Sales or deactivating Projects. Why would these shortcuts conflict with the approved outcome?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. A colleague suggests changing Devi’s source department back to Sales or deactivating Projects. Why would these shortcuts conflict with the approved outcome?</p>
 
 <details class="qb-answer" id="q07-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Finance is the approved department, and Projects must continue on Maya's existing account. Changing HR back or removing required access would violate those requirements.</p>
+<p>Finance is the approved department, and Projects must continue on Devi's existing account. Changing HR back or removing required access would violate those requirements.</p>
 <p>Repair the conversion from Finance to FIN instead. The correction must preserve both legitimate work and correct allocation data. Eliminating the visible mismatch by changing a correct business fact is different from fixing the demonstrated outgoing representation defect.</p>
 </div>
 </details>
@@ -120,15 +120,15 @@ nav_order: 15
 
 ### Q08. Verify a proposed mapping correction
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. No correction has been performed. What evidence would verify a proposed mapping repair through to Maya’s allocation-report outcome?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. No correction has been performed. What evidence would verify a proposed mapping repair through to Devi’s allocation-report outcome?</p>
 
 <details class="qb-answer" id="q08-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Follow the proposed correction through several questions. Does the saved conversion produce FIN for Finance and the correct codes for other supported inputs? Does Maya's stored app profile contain the intended value? What does the actual update send to prj-1042, and what does Projects store afterward?</p>
+<p>Follow the proposed correction through several questions. Does the saved conversion produce FIN for Finance and the correct codes for other supported inputs? Does Devi's stored app profile contain the intended value? What does the actual update send to prj-1042, and what does Projects store afterward?</p>
 <p>Then check the allocation report. That is the business result the ticket asks to correct; a preview or successful update alone cannot supply it.</p>
-<p>No correction or retest is supplied here. Describe these as required follow-up findings, preserve Maya's intended account and continuing access, and report the repair as verified only when its relevant results are available.</p>
+<p>No correction or retest is supplied here. Describe these as required follow-up findings, preserve Devi's intended account and continuing access, and report the repair as verified only when its relevant results are available.</p>
 </div>
 </details>
 
@@ -136,14 +136,14 @@ nav_order: 15
 
 ### Q09. A shared rule’s wider effects
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Other users share the same fixed-SAL mapping, but their target effects have not been inspected. Why does a future successful Maya retest not complete the wider recovery?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Finance department must reach her existing Projects application account as FIN, while access continues. Workday HR and correctly sourced Okta data show Finance. The outgoing departmentCode mapping is fixed at SAL, preview and app profile show SAL, and a correlated successful update stores SAL on linked account prj-1042. Projects uses this value for allocation reporting. Other users share the same fixed-SAL mapping, but their target effects have not been inspected. Why does a future successful Devi retest not complete the wider recovery?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>A shared mapping can affect other users. Identify the relevant population and which target records actually received incorrect values.</p>
-<p>Restoring the approved conversion does not automatically reverse previous writes. Verify configuration recovery and appropriate target cleanup separately. Maya's test can establish her outcome, but it cannot certify every account using the mapping. The shared configuration's scope determines the wider review needed.</p>
+<p>Restoring the approved conversion does not automatically reverse previous writes. Verify configuration recovery and appropriate target cleanup separately. Devi's test can establish her outcome, but it cannot certify every account using the mapping. The shared configuration's scope determines the wider review needed.</p>
 </div>
 </details>
 
@@ -151,13 +151,13 @@ nav_order: 15
 
 ### Q10. Make the evidence request specific
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Projects allocation report needs FIN, but the preview, app profile, transmitted update, and later target read all show SAL. The investigator must distinguish calculation, delivery, and storage before and after correction. Replace the vague request “Check the logs” with a specific evidence request.</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Projects allocation report needs FIN, but the preview, app profile, transmitted update, and later target read all show SAL. The investigator must distinguish calculation, delivery, and storage before and after correction. Replace the vague request “Check the logs” with a specific evidence request.</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Try: “Compare the prepared departmentCode with the transmitted department, operation response, and later read of Maya's linked account. After the mapping correction, verify FIN at those boundaries and check the allocation report.”</p>
+<p>Try: “Compare the prepared departmentCode with the transmitted department, operation response, and later read of Devi's linked account. After the mapping correction, verify FIN at those boundaries and check the allocation report.”</p>
 <p>That names which records answer which questions. A useful request explains the result it would distinguish instead of asking for an unspecified pile of events. Keep the intended account and operation correlated throughout the comparison.</p>
 </div>
 </details>

@@ -26,7 +26,7 @@
 </table></div><p>The checked production Salesforce connection expects audience <code>https://salesforce.northbridge.example/entity/prod</code>. Its correlated validation report accepts the signature and validity window but rejects the audience. No Salesforce session is established for A-1.</p>
 <p><strong>Task 1:</strong> Categorize the exchange, trace the successful boundary followed by failure, and identify the demonstrated mismatch. Does an existing account or successful Okta response prove application entry? Propose a correction and verification.</p>
 <h2 id="packet-b-expense-accepts-oidc">Packet B: Expense accepts OIDC</h2>
-<p>For Maya's attempt B-1, Expense uses Day 9's confidential backend client. Selected authorization-request fields are:</p>
+<p>For Devi's attempt B-1, Expense uses Day 9's confidential backend client. Selected authorization-request fields are:</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Field</th>
@@ -54,14 +54,14 @@
 </table></div><p>The callback is registered. The backend verifies state, completes the authenticated PKCE code exchange, and validates the ID token, including nonce and the required time and cryptographic checks. These are selected decoded claims, not independent validation evidence:</p>
 <pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
   &quot;iss&quot;: &quot;https://identity.northbridge.example&quot;,
-  &quot;sub&quot;: &quot;subject-maya-1042&quot;,
+  &quot;sub&quot;: &quot;subject-devi-1042&quot;,
   &quot;aud&quot;: &quot;nb-expense-web&quot;
 }
 </code></pre>
-<p>The application confirms Maya's intended pre-existing Expense account, establishes its session, and displays her expense page. Expense-approval permission has not been tested.</p>
+<p>The application confirms Devi's intended pre-existing Expense account, establishes its session, and displays her expense page. Expense-approval permission has not been tested.</p>
 <p><strong>Task 2:</strong> Categorize the exchange. Explain the browser/backend distinction and why the supplied validation report matters beyond the readable claims. State the precise successful outcome. Did this prove account creation?</p>
 <h2 id="packet-c-projects-rejects-a-create">Packet C: Projects rejects a create</h2>
-<p>Maya is also assigned to Projects. Her app profile contains the correct userName and SAL department code. The authorized connector sends a POST to the checked Projects <code>/scim/v2/Users</code> endpoint with those values and active true. Projects replies HTTP 409 with:</p>
+<p>Devi is also assigned to Projects. Her app profile contains the correct userName and SAL department code. The authorized connector sends a POST to the checked Projects <code>/scim/v2/Users</code> endpoint with those values and active true. Projects replies HTTP 409 with:</p>
 <pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
   &quot;schemas&quot;: [&quot;urn:ietf:params:scim:api:messages:2.0:Error&quot;],
   &quot;status&quot;: &quot;409&quot;,
@@ -70,14 +70,14 @@
 }
 </code></pre>
 <p>No conflicting record, ownership confirmation, successful association, or follow-up account read is supplied.</p>
-<p><strong>Task 3:</strong> Categorize the exchange and locate its failure. What does the response report, and what remains unknown about Maya's target account? Explain why Packet B does not settle this incident. Request specific evidence before choosing a correction.</p>
+<p><strong>Task 3:</strong> Categorize the exchange and locate its failure. What does the response report, and what remains unknown about Devi's target account? Explain why Packet B does not settle this incident. Request specific evidence before choosing a correction.</p>
 <h2 id="packet-d-same-user-different-identity-evidence">Packet D: Same user, different identity evidence</h2>
-<p>A colleague suggests using Maya's Expense ID token to authorize the Projects connector, then removing the uniqueness check if the create still fails.</p>
+<p>A colleague suggests using Devi's Expense ID token to authorize the Projects connector, then removing the uniqueness check if the create still fails.</p>
 <p><strong>Task 4:</strong> Explain both errors in that proposal. Name a justified next action using Packet C, without writing a configuration procedure.</p>
 <h2 id="give-a-useful-handoff">Give a useful handoff</h2>
 <p><strong>Task 5:</strong> Using Packets A–C, write a short handoff for each application's owner: demonstrated outcome, first proven failure if any, next evidence or action, and what would confirm resolution. For every application, state whether the supplied evidence establishes the intended account's existence and actual entry.</p>
 <h2 id="packet-e-password-accepted-another-requirement-unresolved">Packet E: Password accepted, another requirement unresolved</h2>
-<p>This is an independent Expense attempt E-1 for Jordan, who is still employed. Do not carry Maya's successful Packet B outcome into it.</p>
+<p>This is an independent Expense attempt E-1 for Jordan, who is still employed. Do not carry Devi's successful Packet B outcome into it.</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Evidence</th>

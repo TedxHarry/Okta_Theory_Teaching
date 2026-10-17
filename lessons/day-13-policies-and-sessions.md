@@ -122,7 +122,7 @@ Read the summary from the policy decision to the protected request. The Okta rec
 
 The labels above are teaching identifiers, not raw Okta event values. The investigator has correlated the operations and application records; their identifiers are not assumed to be identical across systems.
 
-A nearby success for Maya, another app, or an earlier Daniel attempt is not a substitute. Likewise, a search returning no event may reflect incomplete coverage rather than proof that nothing happened. Day 2's evidence boundaries and Day 11's completeness checks still apply.
+A nearby success for Devi, another app, or an earlier Daniel attempt is not a substitute. Likewise, a search returning no event may reflect incomplete coverage rather than proof that nothing happened. Day 2's evidence boundaries and Day 11's completeness checks still apply.
 
 ## Explain why two sessions matter
 

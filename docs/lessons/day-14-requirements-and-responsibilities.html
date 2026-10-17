@@ -55,7 +55,7 @@
 <li>The Expense owner maintains local business roles and handles target-account readiness and removal through its approved process. No SCIM or other automated provisioning capability is assumed.</li>
 <li>The existing approved Expense authentication policy continues to apply. An access exception is not an authentication-policy exception.</li>
 </ul>
-<p>The owner has also confirmed the current people: Maya is now Finance, Daniel is a Finance manager with a separately approved approver role, Priya remains a Sales contractor, and Jordan has departed. Daniel's approval authority is explicitly supplied here; his manager title alone did not establish it in the earlier lessons. These answers give Alex something concrete to design against, but they are not deployment results.</p>
+<p>The owner has also confirmed the current people: Devi is now Finance, Daniel is a Finance manager with a separately approved approver role, Priya remains a Sales contractor, and Jordan has departed. Daniel's approval authority is explicitly supplied here; his manager title alone did not establish it in the earlier lessons. These answers give Alex something concrete to design against, but they are not deployment results.</p>
 <h2 id="translate-the-requirement-without-changing-its-meaning">Translate the requirement without changing its meaning</h2>
 <p>Alex proposes an Okta-managed group, <code>NB-Finance-Employees</code>, populated by the condition department equals Finance AND workerType equals Employee. That is the normal assignment population. The approved employee lifecycle process handles effective starts and departures; these two attributes alone are not a complete employment-state control.</p>
 <p>Expense would be assigned to that group. Contractor exceptions would use a separately maintained assignment path, such as a dedicated exception group, backed by approved records. The group's name does not enforce approval or automatically expire membership. An end date records when access should end; it does not perform the removal. The named owner must arrange the supported action and verify the relevant assignment and target outcomes when that condition is reached.</p>
@@ -69,7 +69,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Maya</td>
+<td>Devi</td>
 <td>Normal Finance assignment path and submission access; no approval permission inferred.</td>
 </tr>
 <tr>
@@ -85,9 +85,9 @@
 <td>No usable access under the effective departure requirement. Retained attributes or group membership do not reverse deactivation.</td>
 </tr>
 </tbody>
-</table></div><p>Before reading the model as an access result, compare Maya and Priya. Maya fits the normal population; Priya does not. What additional decision would justify a contractor path? The requirement names the approvers and end condition, but the model has not supplied Priya's exception approval.</p>
+</table></div><p>Before reading the model as an access result, compare Devi and Priya. Devi fits the normal population; Priya does not. What additional decision would justify a contractor path? The requirement names the approvers and end condition, but the model has not supplied Priya's exception approval.</p>
 <p>Day 12 established that deactivation can retain group memberships. Therefore, a membership report alone cannot certify Jordan's current access or whether he should regain it later. A return to work requires fresh decisions.</p>
-<p>Reconcile existing assignments before applying the model. An old direct Expense assignment could survive removal from the proposed normal group, just as Maya's Salesforce assignment survived in Day 12. Existing target accounts require matching, and existing target roles require the application owner's review.</p>
+<p>Reconcile existing assignments before applying the model. An old direct Expense assignment could survive removal from the proposed normal group, just as Devi's Salesforce assignment survived in Day 12. Existing target accounts require matching, and existing target roles require the application owner's review.</p>
 <h2 id="separate-approval-from-technical-authority">Separate approval from technical authority</h2>
 <p>The Finance owner decides who may approve expenses. An Okta administrator's ability to assign an application does not grant authority to invent that business decision. Likewise, Daniel's Expense approver role does not make him an Okta administrator.</p>
 <p><strong>Least privilege</strong> means granting the administrative permissions and scope needed for a defined responsibility, rather than broad authority for convenience. Ask &quot;Which action must this operator perform, and on which resources?&quot; Then compare that responsibility with the role's actual permissions and limits. A familiar role name alone cannot answer either question.</p>
@@ -158,7 +158,7 @@
 <td>Required account and session outcomes verified across the affected systems.</td>
 </tr>
 </tbody>
-</table></div><p>These are positive, negative, and change cases: who should succeed, who should not, and what should happen when eligibility changes. Maya's expected submission access and absence of inferred approval permission test different parts of the requirement. A contractor exception also needs its own removal outcome, not just a successful first entry. A successful Finance login tests only part of the model. Define these checks before applying the design so that “works” has an agreed meaning.</p>
+</table></div><p>These are positive, negative, and change cases: who should succeed, who should not, and what should happen when eligibility changes. Devi's expected submission access and absence of inferred approval permission test different parts of the requirement. A contractor exception also needs its own removal outcome, not just a successful first entry. A successful Finance login tests only part of the model. Define these checks before applying the design so that “works” has an agreed meaning.</p>
 <h2 id="plan-recovery-from-an-incorrect-change">Plan recovery from an incorrect change</h2>
 <p>Suppose a proposed rule mistakenly uses Finance OR Employee. Before choosing a recovery action, compare that condition with the intended Finance AND Employee population. A Sales employee with no other approved path meets Employee alone. A Finance contractor without an exception meets Finance alone. OR would include each in the normal population; AND would exclude both. An eligible Finance employee meets both and would qualify either way, so testing only that person would miss the mistake.</p>
 <p>The condition shows who could qualify. Alex still needs the actual membership, assignment and target history to establish what happened before deciding how to recover.</p>

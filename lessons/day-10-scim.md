@@ -6,7 +6,7 @@ nav_order: 10
 
 # Day 10: SCIM and application accounts
 
-Maya needs Northbridge Projects for her work. Her assignment in Okta is approved, yet the support ticket says, “Assigned, but no usable Projects account.” Alex can see the assignment. He still needs to find out what happened in Projects itself.
+Devi needs Northbridge Projects for her work. Her assignment in Okta is approved, yet the support ticket says, “Assigned, but no usable Projects account.” Alex can see the assignment. He still needs to find out what happened in Projects itself.
 
 The earlier sign-in lessons followed information that helps an application recognize a person. Here the question is about the account itself: does Projects have the intended account, with the required information and state? An assignment establishes a relationship in Okta. A separate account-management operation must reach Projects and be accepted. The target may reject it, or an account may already exist and need careful identification.
 
@@ -23,9 +23,9 @@ flowchart TD
   A["Approved assignment and configured provisioning behavior"] --> B["Projects app user profile in Okta"] --> C["Okta connector to Projects SCIM endpoint"] --> D["Request result and Projects account state"]
 ```
 
-Read the diagram from the approved assignment toward the target result. In the successful C-1 example below, Okta prepares Maya's user name and department code in the Projects app user profile. The configured connector sends a create request to Projects. Projects creates the account and returns its identifier; Alex then checks that record's values and state. The last box matters: preparation and transmission still need a response and a check of the intended account.
+Read the diagram from the approved assignment toward the target result. In the successful C-1 example below, Okta prepares Devi's user name and department code in the Projects app user profile. The configured connector sends a create request to Projects. Projects creates the account and returns its identifier; Alex then checks that record's values and state. The last box matters: preparation and transmission still need a response and a check of the intended account.
 
-This is a backend exchange, not Maya's browser sign-in. The connector needs its own configured authorization to call Projects. Maya successfully completing MFA does not prove that this connection works. Nor is an Expense ID token a credential for this connection. Alex investigates the service connection separately from Maya's authentication.
+This is a backend exchange, not Devi's browser sign-in. The connector needs its own configured authorization to call Projects. Devi successfully completing MFA does not prove that this connection works. Nor is an Expense ID token a credential for this connection. Alex investigates the service connection separately from Devi's authentication.
 
 The destination is Projects' SCIM interface. It is not an Okta management API endpoint. Naming both the caller and receiving system helps you interpret an HTTP response correctly.
 
@@ -57,7 +57,7 @@ Create and ordinary profile updates use POST and PUT in this example. The chosen
 
 Before creating an account, the connector asks Projects whether an account with the intended user name already exists. This lookup helps avoid creating another account where one already exists. A matching result can lead to the supported existing-account handling; a no-match result can lead to creation. The lookup result is evidence for that operation, not a guarantee that no later create can conflict.
 
-Start with a successful teaching example C-1. It is separate from the later failure packets. Maya is still a Sales employee. Her approved assignment and Projects app profile are present; the preceding username lookup found no matching account.
+Start with a successful teaching example C-1. It is separate from the later failure packets. Devi is still a Sales employee. Her approved assignment and Projects app profile are present; the preceding username lookup found no matching account.
 
 The request goes to `/scim/v2/Users` using POST. Its content type is `application/scim+json`, a label telling the receiver that the body uses SCIM's JSON representation. Below is the complete illustrative resource body for this small contract; transport and authorization headers are omitted. This is synthetic evidence to read, not a command to execute.
 
@@ -67,7 +67,7 @@ The request goes to `/scim/v2/Users` using POST. Its content type is `applicatio
     "urn:ietf:params:scim:schemas:core:2.0:User",
     "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
   ],
-  "userName": "maya.rao@northbridge.example",
+  "userName": "devi.rao@northbridge.example",
   "active": true,
   "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
     "department": "SAL"
@@ -75,7 +75,7 @@ The request goes to `/scim/v2/Users` using POST. Its content type is `applicatio
 }
 ```
 
-Read the familiar information inside the structure before studying its longer names: Maya's user name, the requested active state, and Sales represented as SAL. This is what Okta asks Projects to create; the request alone cannot tell Alex whether Projects did so. No `id` is supplied because Projects assigns it.
+Read the familiar information inside the structure before studying its longer names: Devi's user name, the requested active state, and Sales represented as SAL. This is what Okta asks Projects to create; the request alone cannot tell Alex whether Projects did so. No `id` is supplied because Projects assigns it.
 
 The `schemas` list names the definitions used by this resource. The long enterprise identifier appears again as a field name whose nested object holds `department`. You need to locate that object and read SAL; you do not need to memorize the identifier. The JSON Boolean `true` is a true-or-false value, written without quotation marks. Here it requests an enabled Projects account under the stated contract. It does not describe the separate Okta user's account status.
 
@@ -92,7 +92,7 @@ Projects returns HTTP **201 Created**, content type `application/scim+json`, and
     "resourceType": "User",
     "location": "https://projects.northbridge.example/scim/v2/Users/prj-1042"
   },
-  "userName": "maya.rao@northbridge.example",
+  "userName": "devi.rao@northbridge.example",
   "active": true,
   "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
     "department": "SAL"
@@ -100,23 +100,23 @@ Projects returns HTTP **201 Created**, content type `application/scim+json`, and
 }
 ```
 
-The response also contains **meta**, metadata supplied by Projects. **resourceType** names this as a User resource; **location** gives its address, matching the Location header. The account identifier tells the connector which record it is, while that address tells it where the resource can be read. These are response details from Projects, not extra instructions Maya must enter.
+The response also contains **meta**, metadata supplied by Projects. **resourceType** names this as a User resource; **location** gives its address, matching the Location header. The account identifier tells the connector which record it is, while that address tells it where the resource can be read. These are response details from Projects, not extra instructions Devi must enter.
 
-Compare the response with the request. The target reports creation of prj-1042 and returns the account information. A subsequent read of that same resource confirms Maya's user name, SAL, and active state. The response reports the operation's result; the separate read checks the destination state. Together these support creation and the checked target state. They do not demonstrate an actual sign-in or project permissions.
+Compare the response with the request. The target reports creation of prj-1042 and returns the account information. A subsequent read of that same resource confirms Devi's user name, SAL, and active state. The response reports the operation's result; the separate read checks the destination state. Together these support creation and the checked target state. They do not demonstrate an actual sign-in or project permissions.
 
-Alex can now report more than “Maya is assigned.” For C-1, Projects created the account, and the checked record has the expected values. Whether Maya can enter Projects and perform her work remains a further question.
+Alex can now report more than “Devi is assigned.” For C-1, Projects created the account, and the checked record has the expected values. Whether Devi can enter Projects and perform her work remains a further question.
 
 Here `Location` identifies the created resource; the `201` response is not Day 2's `302` browser redirect. A later read is a separate GET request for that resource. Interpret the header with its response status and operation. See [SCIM resource creation](https://www.rfc-editor.org/rfc/rfc7644.html#section-3.3).
 
 Keep two questions apart: "What is this account's user name?" and "Which Projects record are we managing?" `userName` answers the first. Projects' assigned `id`, prj-1042 in C-1, identifies the resource used for later operations.
 
-That target ID is not interchangeable with Maya's email, Okta object ID, or employee number. The connector's association connects the appropriate records. Similar-looking identifiers do not establish that relationship by themselves. See [SCIM's core schema](https://www.rfc-editor.org/rfc/rfc7643.html).
+That target ID is not interchangeable with Devi's email, Okta object ID, or employee number. The connector's association connects the appropriate records. Similar-looking identifiers do not establish that relationship by themselves. See [SCIM's core schema](https://www.rfc-editor.org/rfc/rfc7643.html).
 
 ## A conflict requires an ownership decision
 
 Now use independent packet C-2. C-1 showed the successful path; it does not supply account history for this different investigation. Do not carry C-1's created account into this packet.
 
-Maya is assigned, and a create request with her expected user name reaches Projects. The earlier lookup returned no match. Projects' subsequent create response is HTTP **409 Conflict** with this synthetic body:
+Devi is assigned, and a create request with her expected user name reaches Projects. The earlier lookup returned no match. Projects' subsequent create response is HTTP **409 Conflict** with this synthetic body:
 
 ```json
 {
@@ -127,13 +127,13 @@ Maya is assigned, and a create request with her expected user name reaches Proje
 }
 ```
 
-Pause before choosing a retry. Projects says the user name is already in use. What would Alex need to know before deciding whether the existing account should be associated with Maya?
+Pause before choosing a retry. Projects says the user name is already in use. What would Alex need to know before deciding whether the existing account should be associated with Devi?
 
 The response establishes a reported uniqueness conflict, not who owns the conflicting record. It also does not establish why the earlier lookup and later create result differ. Another process might have created the account after the lookup. Or the lookup might have missed an existing record. These are possible explanations, not findings supplied by C-2. Compare the exact search, receiving instance and operation sequence before choosing between them. Neither possibility establishes who owns the account or justifies removing it.
 
-Alex requests the existing record's identifier, ownership evidence, the exact lookup and response, and the correlated operation sequence. The record evidence addresses whose account it is. The lookup and sequence address why the create encountered something the lookup did not find. He should not delete the existing record, invent a different username, or link it to Maya solely to clear the error. Those actions could make the error disappear while leaving the identity relationship wrong.
+Alex requests the existing record's identifier, ownership evidence, the exact lookup and response, and the correlated operation sequence. The record evidence addresses whose account it is. The lookup and sequence address why the create encountered something the lookup did not find. He should not delete the existing record, invent a different username, or link it to Devi solely to clear the error. Those actions could make the error disappear while leaving the identity relationship wrong.
 
-If the account belongs to Maya, approved existing-account handling may be appropriate. If it belongs to someone else, the naming or identity data needs a different correction. Day 11 examines matching. Here the key is that the error locates a boundary without deciding the business resolution.
+If the account belongs to Devi, approved existing-account handling may be appropriate. If it belongs to someone else, the naming or identity data needs a different correction. Day 11 examines matching. Here the key is that the error locates a boundary without deciding the business resolution.
 
 ## A rejected value points to a different correction
 
@@ -174,7 +174,7 @@ If the app profile contains FIN but no request is supplied, investigate whether 
 
 ## Deactivation is an account-state change
 
-Use a hypothetical approved removal of Maya's Projects access, independent of her actual course timeline. Her linked resource is prj-1042, all assignment paths requiring Projects have been reviewed, and the connector has generated this PATCH to `/scim/v2/Users/prj-1042`:
+Use a hypothetical approved removal of Devi's Projects access, independent of her actual course timeline. Her linked resource is prj-1042, all assignment paths requiring Projects have been reviewed, and the connector has generated this PATCH to `/scim/v2/Users/prj-1042`:
 
 ```json
 {
@@ -191,7 +191,7 @@ Use a hypothetical approved removal of Maya's Projects access, independent of he
 
 Read the PATCH as a selected change to the linked account: replace its active value with false. The request asks for that change; it does not yet establish the result.
 
-Projects returns HTTP **204 No Content**: success without a response body. Projects has answered: the status reports success, and this response type has no body to read. That is different from a timeout, where Alex received no result and does not yet know what happened. A subsequent read confirms `active: false` and that the account record still exists. Under the stated Projects contract, the account is disabled for new access. This is not deletion of its history or proof that every existing session has ended. For Maya's access removal, Alex can report the checked account state and keep the existing-session question open.
+Projects returns HTTP **204 No Content**: success without a response body. Projects has answered: the status reports success, and this response type has no body to read. That is different from a timeout, where Alex received no result and does not yet know what happened. A subsequent read confirms `active: false` and that the account record still exists. Under the stated Projects contract, the account is disabled for new access. This is not deletion of its history or proof that every existing session has ended. For Devi's access removal, Alex can report the checked account state and keep the existing-session question open.
 
 SCIM defines deletion, but Okta's documented outbound SCIM user deprovisioning sets active to false rather than issuing DELETE. Supported and enabled behavior matters. Do not assume that removing a group membership always generated this operation: another assignment path may remain.
 

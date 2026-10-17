@@ -5,19 +5,19 @@
 <p><strong>URL.</strong> The scheme names the communication method, such as HTTPS; the host names the destination; the path identifies a resource or operation; and the query carries parameters after a question mark. HTTPS protects communication in transit. It does not prove that the user is entitled to access the destination.</p>
 <p><strong>HTTP methods and status codes.</strong> <code>GET</code> generally retrieves a resource; <code>POST</code> submits information for processing. Read the destination and message content to understand the actual operation. An <strong>endpoint</strong> is an address for a particular operation. A <code>200</code> response can simply deliver a sign-in form. A <code>302</code> with a <code>Location</code> header directs the browser elsewhere. A <code>403</code> tells you the request was refused, but you still need evidence of the reason.</p>
 <p><strong>JSON and log fields.</strong> JSON organizes data into named values, objects, and lists. Read a field in its context: an event's <code>outcome.result</code> describes that event, not every later step. The actor, target, event type, and time help establish what happened.</p>
-<p><strong>Correlation.</strong> This means connecting records that belong to the same attempt. Compare the person, application instance, timestamps and time zones, and relevant identifiers. Two records mentioning Maya are not automatically part of the same sign-in.</p>
-<p><strong>Cookies and sessions.</strong> A cookie is data the browser stores and sends according to its rules. A session lets a system recognize an ongoing interaction across requests, such as Maya moving between pages after signing in. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.</p>
-<h2 id="follow-mayas-evidence">Follow Maya's evidence</h2>
+<p><strong>Correlation.</strong> This means connecting records that belong to the same attempt. Compare the person, application instance, timestamps and time zones, and relevant identifiers. Two records mentioning Devi are not automatically part of the same sign-in.</p>
+<p><strong>Cookies and sessions.</strong> A cookie is data the browser stores and sends according to its rules. A session lets a system recognize an ongoing interaction across requests, such as Devi moving between pages after signing in. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.</p>
+<h2 id="follow-devis-evidence">Follow Devi's evidence</h2>
 <p>This is a separate Expense attempt; Day 1's Salesforce account findings do not explain it. In the supplied Expense example, the browser follows a redirect, receives a sign-in form, and completes authentication. An Okta SSO event, connected to this attempt by the training packet, reports success. Expense then returns a refusal about the sign-in information.</p>
 <p>That sequence places the first observed failure at Expense. It does not yet identify the root cause. A password reset would be a guess when the supplied evidence already shows authentication completed.</p>
 <p>Build your explanation around the last confirmed successful step and the next observed failure. Then request evidence from that boundary. This is more useful than collecting unrelated success and failure messages.</p>
 <h2 id="when-a-request-reaches-you">When a request reaches you</h2>
 <p>Choose a log window and time zone, then correlate the person and application. Keep successful preceding steps in view. An empty filtered search does not prove that no attempt occurred.</p>
 <h2 id="check-your-understanding">Check your understanding</h2>
-<p>Without looking back, tell Maya's Expense story in order. Name a successful step, the first demonstrated failure, and one piece of evidence still needed. Then use the questions below to check your explanation.</p>
+<p>Without looking back, tell Devi's Expense story in order. Name a successful step, the first demonstrated failure, and one piece of evidence still needed. Then use the questions below to check your explanation.</p>
 <ul>
 <li>Why does receiving a page with status <code>200</code> not prove authentication succeeded?</li>
-<li>What does the Okta success event establish in Maya's sequence, and what remains unknown?</li>
+<li>What does the Okta success event establish in Devi's sequence, and what remains unknown?</li>
 <li>What would you compare before joining two log records into one story?</li>
 </ul>
 <details markdown="1">

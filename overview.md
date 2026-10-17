@@ -24,11 +24,11 @@ flowchart TD
   Q --> T["Target accounts: verify each outcome"]
 ```
 
-At Northbridge, Workday is the profile source for employees such as Maya and Daniel. Okta provisions their AD accounts through the configured employee process; AD returns designated directory-owned values such as work email. Priya is an Okta-managed contractor, maintained after sponsor approval and outside employee import scope. A sponsor approves the change; the sponsor is not another technical source integration.
+At Northbridge, Workday is the profile source for employees such as Devi and Daniel. Okta provisions their AD accounts through the configured employee process; AD returns designated directory-owned values such as work email. Priya is an Okta-managed contractor, maintained after sponsor approval and outside employee import scope. A sponsor approves the change; the sponsor is not another technical source integration.
 
 Read the diagram from the people records toward the target accounts. The employee and contractor paths both reach Okta, but their data is maintained through different processes. The return arrow from AD concerns designated attributes; it does not make AD the owner of every employee field. Follow the direction and purpose of an arrow before assuming what it changed.
 
-Workday is first and AD second in external profile-source priority. That order applies to a user's actual source associations, not to every user merely because both integrations exist. A separately scoped AD-led example teaches users whose profile source is AD; it does not change Maya's Workday-led model. [Day 4](lessons/day-04-sources-and-ownership.md) explains source priority and attribute ownership.
+Workday is first and AD second in external profile-source priority. That order applies to a user's actual source associations, not to every user merely because both integrations exist. A separately scoped AD-led example teaches users whose profile source is AD; it does not change Devi's Workday-led model. [Day 4](lessons/day-04-sources-and-ownership.md) explains source priority and attribute ownership.
 
 Group rules are one way to maintain membership. Approved group or direct assignments establish intended application access. A supported, configured provisioning process can then manage the target account; otherwise another accountable process must do so. Assignment alone does not prove account creation.
 

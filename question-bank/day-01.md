@@ -12,14 +12,14 @@ nav_order: 1
 
 ### Q01. One person, several records
 
-<p class="qb-question"><strong>Question:</strong> Maya is an employee. Her company uses Workday for HR information, Active Directory (AD) for directory accounts, Okta for identity and access management, and Salesforce for customer-management work. Each system has a record representing her. Why can one person need several records?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is an employee. Her company uses Workday for HR information, Active Directory (AD) for directory accounts, Okta for identity and access management, and Salesforce for customer-management work. Each system has a record representing her. Why can one person need several records?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Think of HR opening Maya's employment record and the Sales team opening Salesforce. They need different information for different work. Workday records her employment details; AD holds a workplace directory account; Okta represents her for identity and access decisions; Salesforce holds the account she uses there.</p>
-<p>The records all refer to Maya. Having several records does not create several people. Each system keeps the representation it needs.</p>
+<p>Think of HR opening Devi's employment record and the Sales team opening Salesforce. They need different information for different work. Workday records her employment details; AD holds a workplace directory account; Okta represents her for identity and access decisions; Salesforce holds the account she uses there.</p>
+<p>The records all refer to Devi. Having several records does not create several people. Each system keeps the representation it needs.</p>
 <p>That is why 'her account exists' needs a system name beside it. Finding her Workday record tells you about HR's record. You would still check Salesforce to find out whether her application account is ready.</p>
 </div>
 </details>
@@ -28,14 +28,14 @@ nav_order: 1
 
 ### Q02. Identity and account
 
-<p class="qb-question"><strong>Question:</strong> Maya is an employee identified by her name and employee number. She also has a Salesforce account for using that business application. The account is later disabled, but Maya remains employed. How does this illustrate the difference between an identity and an account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is an employee identified by her name and employee number. She also has a Salesforce account for using that business application. The account is later disabled, but Devi remains employed. How does this illustrate the difference between an identity and an account?</p>
 
 <details class="qb-answer" id="q02-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>An identity represents who someone is. An account is a record in a particular system through which that person may sign in or receive access.</p>
-<p>Maya's name and employee number help represent her identity. Her Salesforce account represents her in Salesforce and has its own state and permissions. Disabling it changes that application's account state, not the existence of Maya as a person.</p>
+<p>Devi's name and employee number help represent her identity. Her Salesforce account represents her in Salesforce and has its own state and permissions. Disabling it changes that application's account state, not the existence of Devi as a person.</p>
 <p>This is why an account investigation should name the system. A problem with one representation does not automatically mean every other record or access path changed.</p>
 </div>
 </details>
@@ -44,14 +44,14 @@ nav_order: 1
 
 ### Q03. An account exists
 
-<p class="qb-question"><strong>Question:</strong> Salesforce is a business application that keeps a separate account for each user. A support analyst finds an account belonging to employee Maya but does not inspect its state, test sign-in, or check permissions. Which conclusion is supported: the account exists, it is enabled, or Maya can perform her required work?</p>
+<p class="qb-question"><strong>Question:</strong> Salesforce is a business application that keeps a separate account for each user. A support analyst finds an account belonging to employee Devi but does not inspect its state, test sign-in, or check permissions. Which conclusion is supported: the account exists, it is enabled, or Devi can perform her required work?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>Only existence is established. Finding the account tells us the record is there; it does not tell us whether it is enabled or usable.</p>
-<p>Imagine a disabled account. It can still appear in a search while refusing access. Even an enabled account needs a successful sign-in and the permissions for Maya's particular work.</p>
+<p>Imagine a disabled account. It can still appear in a search while refusing access. Even an enabled account needs a successful sign-in and the permissions for Devi's particular work.</p>
 <p>Treat existence, state, and usable access as separate checks. That lets you describe progress accurately instead of asking one successful lookup to prove several outcomes.</p>
 </div>
 </details>
@@ -60,14 +60,14 @@ nav_order: 1
 
 ### Q04. Two different account states
 
-<p class="qb-question"><strong>Question:</strong> A company uses Okta to manage identities and Salesforce as a separate business application. Maya’s Okta user is Active, but her Salesforce account is disabled. Are those states contradictory, and what should support clarify before changing either?</p>
+<p class="qb-question"><strong>Question:</strong> A company uses Okta to manage identities and Salesforce as a separate business application. Devi’s Okta user is Active, but her Salesforce account is disabled. Are those states contradictory, and what should support clarify before changing either?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>They can both be true because they describe different records. Active concerns Maya's Okta account; disabled concerns her account inside Salesforce.</p>
-<p>Next, establish whether Maya is approved to use Salesforce now and which owner or process manages that account state. A disabled account may need a justified correction, but the two labels alone do not explain why it was disabled.</p>
+<p>They can both be true because they describe different records. Active concerns Devi's Okta account; disabled concerns her account inside Salesforce.</p>
+<p>Next, establish whether Devi is approved to use Salesforce now and which owner or process manages that account state. A disabled account may need a justified correction, but the two labels alone do not explain why it was disabled.</p>
 <p>The goal is the appropriate state in each system. Changing a correct Okta record just to make the labels agree would not answer the Salesforce requirement.</p>
 </div>
 </details>
@@ -76,15 +76,15 @@ nav_order: 1
 
 ### Q05. Do the identifiers have to match?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s company identifies her employment record with employee number NB-1042, her Okta identity with a login, and her Salesforce account with an application username. Must those three identifiers contain identical text to represent the same person?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s company identifies her employment record with employee number NB-1042, her Okta identity with a login, and her Salesforce account with an application username. Must those three identifiers contain identical text to represent the same person?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. NB-1042 can identify Maya's employment record while a different login or username identifies her in another system. The text does not have to be identical.</p>
+<p>No. NB-1042 can identify Devi's employment record while a different login or username identifies her in another system. The text does not have to be identical.</p>
 <p>Imagine looking up a person by employee number in HR and by username in an application. Both searches can lead to the same person if the company has established which record belongs to them. 'Approved value' means the identifier the company expects for that particular lookup or connection.</p>
-<p>Before choosing an account, check the intended system, the identifier it uses, and evidence that the record belongs to Maya. Different text is not automatically a mistake, and a familiar-looking email address is not enough to prove a match.</p>
+<p>Before choosing an account, check the intended system, the identifier it uses, and evidence that the record belongs to Devi. Different text is not automatically a mistake, and a familiar-looking email address is not enough to prove a match.</p>
 </div>
 </details>
 
@@ -92,7 +92,7 @@ nav_order: 1
 
 ### Q06. A familiar display name
 
-<p class="qb-question"><strong>Question:</strong> A support analyst must find employee Maya Rao’s account in a business application. The search returns two records displaying “Maya Rao,” but account ownership has not been verified. Is it appropriate to select the first result? What evidence is needed?</p>
+<p class="qb-question"><strong>Question:</strong> A support analyst must find employee Devi Rao’s account in a business application. The search returns two records displaying “Devi Rao,” but account ownership has not been verified. Is it appropriate to select the first result? What evidence is needed?</p>
 
 <details class="qb-answer" id="q06-explanation">
 <summary>Read the teaching explanation</summary>
@@ -108,13 +108,13 @@ nav_order: 1
 
 ### Q07. The wrong environment
 
-<p class="qb-question"><strong>Question:</strong> Maya needs access to the company’s live Salesforce environment, called production. Support searches a separate Salesforce test environment and finds no account under her expected test identifier. What does that result establish about production?</p>
+<p class="qb-question"><strong>Question:</strong> Devi needs access to the company’s live Salesforce environment, called production. Support searches a separate Salesforce test environment and finds no account under her expected test identifier. What does that result establish about production?</p>
 
 <details class="qb-answer" id="q07-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It does not establish whether Maya has an account in production. It establishes only what that test-environment search found under its identifier and scope.</p>
+<p>It does not establish whether Devi has an account in production. It establishes only what that test-environment search found under its identifier and scope.</p>
 <p>The next check belongs in the intended production environment using the approved production identifier. If Okta is connected to Salesforce, verify that you are inspecting the integration for that same instance.</p>
 <p>“No match in test” is a useful scoped finding. Expanding it to “no Salesforce account exists” would discard the context needed to make the next search accurate.</p>
 </div>
@@ -142,13 +142,13 @@ nav_order: 1
 
 ### Q09. Attribute or profile?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Okta profile contains firstName Maya, employeeNumber NB-1042, department Sales, and workerType Employee. A profile is a collection of user details. Which named details are attributes, and which parts are their values?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Okta profile contains firstName Devi, employeeNumber NB-1042, department Sales, and workerType Employee. A profile is a collection of user details. Which named details are attributes, and which parts are their values?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Each named detail is an attribute. Department is an attribute, and Sales is its value; workerType is another attribute, with Employee as its value. The collection of those details is Maya's profile.</p>
+<p>Each named detail is an attribute. Department is an attribute, and Sales is its value; workerType is another attribute, with Employee as its value. The collection of those details is Devi's profile.</p>
 <p>This vocabulary helps you make a precise observation. “Her profile is wrong” leaves the affected field unclear. “Her Okta department is Sales” identifies the record, field, and observed value.</p>
 <p>That statement is easier to compare with another system and avoids changing unrelated information when only one detail needs attention.</p>
 </div>
@@ -158,7 +158,7 @@ nav_order: 1
 
 ### Q10. A correct value at the source
 
-<p class="qb-question"><strong>Question:</strong> Workday is the company’s HR system, and Salesforce is a separate business application with its own user records. Support confirms that Maya’s approved department is Sales and Workday stores Sales. No Salesforce department check has been made. Can support report that Salesforce also stores Sales?</p>
+<p class="qb-question"><strong>Question:</strong> Workday is the company’s HR system, and Salesforce is a separate business application with its own user records. Support confirms that Devi’s approved department is Sales and Workday stores Sales. No Salesforce department check has been made. Can support report that Salesforce also stores Sales?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
@@ -190,14 +190,14 @@ nav_order: 1
 
 ### Q12. A configured connection
 
-<p class="qb-question"><strong>Question:</strong> An integration (a configured connection for supported tasks) links the company’s Workday HR system to Okta. It is enabled. Maya’s department recently changed in Workday, but support has not checked the update result or her current Okta profile. Is the enabled integration proof the latest value arrived?</p>
+<p class="qb-question"><strong>Question:</strong> An integration (a configured connection for supported tasks) links the company’s Workday HR system to Okta. It is enabled. Devi’s department recently changed in Workday, but support has not checked the update result or her current Okta profile. Is the enabled integration proof the latest value arrived?</p>
 
 <details class="qb-answer" id="q12-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. The connection identifies a way the information can move. This person's latest update is a separate result to verify.</p>
-<p>Check Maya's current destination value and the relevant update evidence if it differs from the approved source. The integration's existence does not show that this particular change was processed.</p>
+<p>Check Devi's current destination value and the relevant update evidence if it differs from the approved source. The integration's existence does not show that this particular change was processed.</p>
 <p>Keep two questions apart: how is information intended to move, and what happened to this update? The first locates the investigation; the second needs actual observations.</p>
 </div>
 </details>
@@ -206,7 +206,7 @@ nav_order: 1
 
 ### Q13. The contractor’s record
 
-<p class="qb-question"><strong>Question:</strong> At a company, employee Maya’s HR information comes from Workday. Contractor Priya’s profile is instead maintained in Okta by an authorized administrator after her sponsor approves it. Both work with Sales. Must Priya also have a Workday record just because Maya does?</p>
+<p class="qb-question"><strong>Question:</strong> At a company, employee Devi’s HR information comes from Workday. Contractor Priya’s profile is instead maintained in Okta by an authorized administrator after her sponsor approves it. Both work with Sales. Must Priya also have a Workday record just because Devi does?</p>
 
 <details class="qb-answer" id="q13-explanation">
 <summary>Read the teaching explanation</summary>
@@ -214,7 +214,7 @@ nav_order: 1
 <p><strong>Explanation:</strong></p>
 <p>No. This question supplies different maintenance processes for employees and contractors. Sharing a department does not make their source relationships identical.</p>
 <p>For Priya, follow her approved Okta-maintenance process and the records relevant to her request. Her sponsor's approval is a business decision, not another software integration.</p>
-<p>That approval also does not automatically authorize every application. Identify the person, applicable maintenance model, and particular access requirement rather than copying Maya's employee path.</p>
+<p>That approval also does not automatically authorize every application. Identify the person, applicable maintenance model, and particular access requirement rather than copying Devi's employee path.</p>
 </div>
 </details>
 
@@ -256,14 +256,14 @@ nav_order: 1
 
 ### Q16. Two access complaints
 
-<p class="qb-question"><strong>Question:</strong> Maya signs in to Okta, the company’s identity service, but cannot enter Salesforce; her Salesforce assignment and account have not been checked. Daniel enters a separate Expense application but cannot approve an item; his approval requirement is unknown. Why do these reports need different next checks?</p>
+<p class="qb-question"><strong>Question:</strong> Devi signs in to Okta, the company’s identity service, but cannot enter Salesforce; her Salesforce assignment and account have not been checked. Daniel enters a separate Expense application but cannot approve an item; his approval requirement is unknown. Why do these reports need different next checks?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maya's report leaves application entry and account facts unresolved. Daniel's report already establishes entry and places the problem at a specific action.</p>
-<p>For Maya, inspect the intended Salesforce assignment and target account, then the relevant sign-in result. For Daniel, establish the approval requirement and inspect his application permission and denial.</p>
+<p>Devi's report leaves application entry and account facts unresolved. Daniel's report already establishes entry and places the problem at a specific action.</p>
+<p>For Devi, inspect the intended Salesforce assignment and target account, then the relevant sign-in result. For Daniel, establish the approval requirement and inspect his application permission and denial.</p>
 <p>Both are access complaints, but that phrase does not name one universal failure. Locate what worked and where the requested outcome remains unverified before choosing a correction.</p>
 </div>
 </details>
@@ -272,13 +272,13 @@ nav_order: 1
 
 ### Q17. Clarify the requested outcome
 
-<p class="qb-question"><strong>Question:</strong> A support ticket says only “Give Maya access.” It names no application instance, action, or approval. What should support clarify before changing an account or permission?</p>
+<p class="qb-question"><strong>Question:</strong> A support ticket says only “Give Devi access.” It names no application instance, action, or approval. What should support clarify before changing an account or permission?</p>
 
 <details class="qb-answer" id="q17-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Ask which application and environment Maya needs, what she must do there, and who approves that capability. Entering an application, viewing records, and performing a restricted action are different outcomes.</p>
+<p>Ask which application and environment Devi needs, what she must do there, and who approves that capability. Entering an application, viewing records, and performing a restricted action are different outcomes.</p>
 <p>She may already have the intended account and need only an approved permission, or an account may still need preparation. The vague request does not choose between those conditions.</p>
 <p>A clear requirement supplies a test for success. It also keeps a configuration change from becoming an access decision nobody actually authorized.</p>
 </div>
@@ -290,15 +290,15 @@ nav_order: 1
 
 ### Q18. SSO and provisioning
 
-<p class="qb-question"><strong>Question:</strong> Maya needs a Salesforce account and a way to sign in to it through the company’s Okta identity service. How do provisioning and single sign-on (SSO) address those different needs?</p>
+<p class="qb-question"><strong>Question:</strong> Devi needs a Salesforce account and a way to sign in to it through the company’s Okta identity service. How do provisioning and single sign-on (SSO) address those different needs?</p>
 
 <details class="qb-answer" id="q18-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Start with two ordinary questions: 'Does Maya have the right Salesforce account?' and 'Can she sign in to it through Okta?' Provisioning helps create or maintain the account. SSO supports the connected sign-in.</p>
-<p>Imagine the Salesforce owner has prepared her account, but nobody has checked her sign-in through Okta. The account work can be complete while sign-in still needs checking. Now reverse it: setting up the sign-in connection does not show that anyone created Maya's account.</p>
-<p>For Maya to use Salesforce, follow both results. Check the intended account and its state, then check whether Salesforce accepts her actual sign-in. Permissions for her work remain another application decision.</p>
+<p>Start with two ordinary questions: 'Does Devi have the right Salesforce account?' and 'Can she sign in to it through Okta?' Provisioning helps create or maintain the account. SSO supports the connected sign-in.</p>
+<p>Imagine the Salesforce owner has prepared her account, but nobody has checked her sign-in through Okta. The account work can be complete while sign-in still needs checking. Now reverse it: setting up the sign-in connection does not show that anyone created Devi's account.</p>
+<p>For Devi to use Salesforce, follow both results. Check the intended account and its state, then check whether Salesforce accepts her actual sign-in. Permissions for her work remain another application decision.</p>
 </div>
 </details>
 
@@ -354,7 +354,7 @@ nav_order: 1
 
 ### Q22. Does SSO remove every future check?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s company uses single sign-on (SSO) to connect application sign-ins with Okta. A colleague promises that this means she will never face another authentication check. Is that a reliable promise?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s company uses single sign-on (SSO) to connect application sign-ins with Okta. A colleague promises that this means she will never face another authentication check. Is that a reliable promise?</p>
 
 <details class="qb-answer" id="q22-explanation">
 <summary>Read the teaching explanation</summary>
@@ -372,7 +372,7 @@ nav_order: 1
 
 ### Q23. Assignment without a target result
 
-<p class="qb-question"><strong>Question:</strong> Maya is assigned to the intended Salesforce integration in Okta, meaning an application-access relationship is recorded there. No target-account creation, state, or sign-in evidence has been checked. Can support report that her Salesforce account is ready?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is assigned to the intended Salesforce integration in Okta, meaning an application-access relationship is recorded there. No target-account creation, state, or sign-in evidence has been checked. Can support report that her Salesforce account is ready?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
@@ -388,14 +388,14 @@ nav_order: 1
 
 ### Q24. A visible tile
 
-<p class="qb-question"><strong>Question:</strong> Maya sees a Salesforce tile (a clickable shortcut) on her Okta dashboard. No Salesforce account, entry, or permission checks are supplied. Does the visible shortcut prove any of those three outcomes?</p>
+<p class="qb-question"><strong>Question:</strong> Devi sees a Salesforce tile (a clickable shortcut) on her Okta dashboard. No Salesforce account, entry, or permission checks are supplied. Does the visible shortcut prove any of those three outcomes?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>The tile alone proves none of them. It helps locate and launch the application, but it is not a receipt for target-account existence, accepted entry, or permissions.</p>
-<p>Inspect the actual application relationship and relevant destination evidence. Maya could click the shortcut and still be refused by Salesforce.</p>
+<p>Inspect the actual application relationship and relevant destination evidence. Devi could click the shortcut and still be refused by Salesforce.</p>
 <p>A visible interface element is useful context, not the complete access result. Name what the observation shows and keep the untested application outcomes separate.</p>
 </div>
 </details>
@@ -404,15 +404,15 @@ nav_order: 1
 
 ### Q25. No visible tile
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Okta dashboard shows no Salesforce shortcut. The application connection can hide tiles, and nobody has inspected her actual Salesforce assignment. Is assignment absence established?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Okta dashboard shows no Salesforce shortcut. The application connection can hide tiles, and nobody has inspected her actual Salesforce assignment. Is assignment absence established?</p>
 
 <details class="qb-answer" id="q25-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. A hidden shortcut can coexist with an assignment. The question explicitly supplies that visibility option and leaves the relationship uninspected.</p>
-<p>Check Maya's actual assignment to the intended Salesforce integration. If it is absent, compare that finding with the approved requirement. If it is present, investigate the visible shortcut and reported application outcome separately.</p>
-<p>The missing tile is a symptom. It cannot answer the relationship question merely because it is the first thing Maya notices.</p>
+<p>Check Devi's actual assignment to the intended Salesforce integration. If it is absent, compare that finding with the approved requirement. If it is present, investigate the visible shortcut and reported application outcome separately.</p>
+<p>The missing tile is a symptom. It cannot answer the relationship question merely because it is the first thing Devi notices.</p>
 </div>
 </details>
 
@@ -420,7 +420,7 @@ nav_order: 1
 
 ### Q26. Select the supported findings
 
-<p class="qb-question"><strong>Question:</strong> Okta is the company’s identity service and Salesforce its business application. Support confirms Maya’s Okta account is Active and Salesforce is assigned in Okta. Nothing is supplied about her Salesforce account or use. Select every supported claim: A. Okta account Active. B. Salesforce assigned. C. Salesforce account enabled. D. Salesforce sign-in succeeded. E. Required Salesforce permissions ready.</p>
+<p class="qb-question"><strong>Question:</strong> Okta is the company’s identity service and Salesforce its business application. Support confirms Devi’s Okta account is Active and Salesforce is assigned in Okta. Nothing is supplied about her Salesforce account or use. Select every supported claim: A. Okta account Active. B. Salesforce assigned. C. Salesforce account enabled. D. Salesforce sign-in succeeded. E. Required Salesforce permissions ready.</p>
 
 <details class="qb-answer" id="q26-explanation">
 <summary>Read the teaching explanation</summary>
@@ -438,7 +438,7 @@ nav_order: 1
 
 ### Q27. Finding, hypothesis, or missing evidence?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Classify these statements: A. The checked Okta sign-in succeeded. B. Salesforce assignment is missing. C. An account under another identifier may exist. D. Account-management history is uninspected.</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Classify these statements: A. The checked Okta sign-in succeeded. B. Salesforce assignment is missing. C. An account under another identifier may exist. D. Account-management history is uninspected.</p>
 
 <details class="qb-answer" id="q27-explanation">
 <summary>Read the teaching explanation</summary>
@@ -454,7 +454,7 @@ nav_order: 1
 
 ### Q28. What a no-match result means
 
-<p class="qb-question"><strong>Question:</strong> Support searches the intended Salesforce environment using employee Maya’s approved application identifier and finds no matching account. No other identifier or environment has been searched. Is the precise finding “no match within this check” or “no Salesforce account exists anywhere”?</p>
+<p class="qb-question"><strong>Question:</strong> Support searches the intended Salesforce environment using employee Devi’s approved application identifier and finds no matching account. No other identifier or environment has been searched. Is the precise finding “no match within this check” or “no Salesforce account exists anywhere”?</p>
 
 <details class="qb-answer" id="q28-explanation">
 <summary>Read the teaching explanation</summary>
@@ -470,14 +470,14 @@ nav_order: 1
 
 ### Q29. A possible identifier mismatch
 
-<p class="qb-question"><strong>Question:</strong> A search of the intended Salesforce environment finds no account under Maya’s approved identifier. Account ownership and other identifiers have not been checked. Does the search prove an identifier mismatch, and what evidence would support that explanation?</p>
+<p class="qb-question"><strong>Question:</strong> A search of the intended Salesforce environment finds no account under Devi’s approved identifier. Account ownership and other identifiers have not been checked. Does the search prove an identifier mismatch, and what evidence would support that explanation?</p>
 
 <details class="qb-answer" id="q29-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>It makes a mismatch one possible explanation, not a confirmed cause. A missing account or incomplete preparation could also fit the supplied result.</p>
-<p>To support a mismatch, find a record reliably shown to belong to Maya, establish its actual identifier, and compare it with the approved value for the intended relationship. A similar display name is not enough.</p>
+<p>To support a mismatch, find a record reliably shown to belong to Devi, establish its actual identifier, and compare it with the approved value for the intended relationship. A similar display name is not enough.</p>
 <p>The comparison could demonstrate a specific discrepancy. Until then, keep it as a hypothesis and request evidence that distinguishes alternatives.</p>
 </div>
 </details>
@@ -486,14 +486,14 @@ nav_order: 1
 
 ### Q30. Choose the next evidence
 
-<p class="qb-question"><strong>Question:</strong> Maya is approved to use production Salesforce. Her checked Okta sign-in works, but Salesforce entry is not established. The production search finds no account under her approved identifier; assignment and account-management history are unknown. Name two focused evidence requests and what each would answer.</p>
+<p class="qb-question"><strong>Question:</strong> Devi is approved to use production Salesforce. Her checked Okta sign-in works, but Salesforce entry is not established. The production search finds no account under her approved identifier; assignment and account-management history are unknown. Name two focused evidence requests and what each would answer.</p>
 
 <details class="qb-answer" id="q30-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Ask first, 'Can you show Maya's assignment to the production Salesforce integration in Okta?' That answers whether the expected application relationship is actually recorded. We currently have no result for that check.</p>
-<p>Then ask, 'Who or what prepares accounts in this Salesforce environment, and what happened to Maya's account request?' If an automated connection does the work, inspect its relevant result. If an application owner creates accounts manually, ask for that preparation record instead.</p>
+<p>Ask first, 'Can you show Devi's assignment to the production Salesforce integration in Okta?' That answers whether the expected application relationship is actually recorded. We currently have no result for that check.</p>
+<p>Then ask, 'Who or what prepares accounts in this Salesforce environment, and what happened to Devi's account request?' If an automated connection does the work, inspect its relevant result. If an application owner creates accounts manually, ask for that preparation record instead.</p>
 <p>These requests give us a way forward. If the approved assignment is absent, we have found one gap to address. If it is present, we still need to understand the account search: was preparation completed, and could an existing account use another identifier? Check the intended account before creating a new one.</p>
 </div>
 </details>
@@ -502,7 +502,7 @@ nav_order: 1
 
 ### Q31. Evaluate the password reset
 
-<p class="qb-question"><strong>Question:</strong> Maya’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. A colleague proposes resetting her Okta password to fix the Salesforce complaint. Does the evidence justify that correction?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. A colleague proposes resetting her Okta password to fix the Salesforce complaint. Does the evidence justify that correction?</p>
 
 <details class="qb-answer" id="q31-explanation">
 <summary>Read the teaching explanation</summary>
@@ -518,13 +518,13 @@ nav_order: 1
 
 ### Q32. Should Alex create another account?
 
-<p class="qb-question"><strong>Question:</strong> Maya’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Why is creating a new Salesforce account immediately premature?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Why is creating a new Salesforce account immediately premature?</p>
 
 <details class="qb-answer" id="q32-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The search did not find the expected match, but it did not establish that no existing account belongs to Maya. The intended preparation process and assignment are still unknown.</p>
+<p>The search did not find the expected match, but it did not establish that no existing account belongs to Devi. The intended preparation process and assignment are still unknown.</p>
 <p>Creating another account could duplicate an existing record or bypass the approved process. First identify the correct relationship, account-management approach, and ownership evidence.</p>
 <p>Creation can become appropriate when the requirement and findings support it. The aim is the correct account outcome, not simply an additional record that makes one search succeed.</p>
 </div>
@@ -536,7 +536,7 @@ nav_order: 1
 
 ### Q33. The account exists but is disabled
 
-<p class="qb-question"><strong>Question:</strong> Maya is an employee requesting Salesforce use. Support has verified the intended account belongs to her and is disabled. Her current access approval, the reason for disabling it, and the supported re-enabling process are not supplied. What is known, and what should be checked before enabling or creating an account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is an employee requesting Salesforce use. Support has verified the intended account belongs to her and is disabled. Her current access approval, the reason for disabling it, and the supported re-enabling process are not supplied. What is known, and what should be checked before enabling or creating an account?</p>
 
 <details class="qb-answer" id="q33-explanation">
 <summary>Read the teaching explanation</summary>
@@ -552,7 +552,7 @@ nav_order: 1
 
 ### Q34. An absent assignment is now confirmed
 
-<p class="qb-question"><strong>Question:</strong> The approved requirement says Maya should receive production Salesforce. Support confirms her assignment to that integration is absent, but no Salesforce target-account evidence is supplied. What discrepancy is established, and what remains unverified?</p>
+<p class="qb-question"><strong>Question:</strong> The approved requirement says Devi should receive production Salesforce. Support confirms her assignment to that integration is absent, but no Salesforce target-account evidence is supplied. What discrepancy is established, and what remains unverified?</p>
 
 <details class="qb-answer" id="q34-explanation">
 <summary>Read the teaching explanation</summary>
@@ -568,14 +568,14 @@ nav_order: 1
 
 ### Q35. An existing assignment, a manual process
 
-<p class="qb-question"><strong>Question:</strong> Maya is assigned Salesforce in Okta. The Salesforce owner confirms accounts are created manually, but neither a creation record nor Maya’s target account has been checked. Can support diagnose failed automated provisioning?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is assigned Salesforce in Okta. The Salesforce owner confirms accounts are created manually, but neither a creation record nor Devi’s target account has been checked. Can support diagnose failed automated provisioning?</p>
 
 <details class="qb-answer" id="q35-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No automated operation is supplied in this design. The stated account-preparation mechanism is manual.</p>
-<p>Ask the responsible owner whether Maya's approved account request was received and completed, then inspect the intended Salesforce account. That follows the process actually used.</p>
+<p>Ask the responsible owner whether Devi's approved account request was received and completed, then inspect the intended Salesforce account. That follows the process actually used.</p>
 <p>Assignment is useful evidence but not the owner's preparation result. A precise update says the relationship is present and the manual target-account outcome remains unverified, instead of inventing a failed automation.</p>
 </div>
 </details>
@@ -584,7 +584,7 @@ nav_order: 1
 
 ### Q36. Account creation is verified
 
-<p class="qb-question"><strong>Question:</strong> Support verifies Maya’s intended Salesforce account was created and is enabled. No attempt to enter Salesforce or perform her required business action has been checked. What can be reported as complete, and what needs further evidence?</p>
+<p class="qb-question"><strong>Question:</strong> Support verifies Devi’s intended Salesforce account was created and is enabled. No attempt to enter Salesforce or perform her required business action has been checked. What can be reported as complete, and what needs further evidence?</p>
 
 <details class="qb-answer" id="q36-explanation">
 <summary>Read the teaching explanation</summary>
@@ -592,7 +592,7 @@ nav_order: 1
 <p><strong>Explanation:</strong></p>
 <p>Report the confirmed account creation and enabled state. Those are meaningful completed account-management outcomes.</p>
 <p>Application sign-in and the permissions for her required work remain unverified. A correctly prepared account can still encounter another condition when the person uses it.</p>
-<p>Tell Maya the account preparation is confirmed and the next check concerns actual use. Keep the successful work without stretching it into a claim that every business capability is ready.</p>
+<p>Tell Devi the account preparation is confirmed and the next check concerns actual use. Keep the successful work without stretching it into a claim that every business capability is ready.</p>
 </div>
 </details>
 
@@ -600,7 +600,7 @@ nav_order: 1
 
 ### Q37. A narrowly verified success
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved task is reading Sales records in Salesforce. Support verifies the intended assignment and enabled account, then observes a new sign-in to that account and successful reading of the approved records. Does this verify her task, and does it establish every Salesforce action?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved task is reading Sales records in Salesforce. Support verifies the intended assignment and enabled account, then observes a new sign-in to that account and successful reading of the approved records. Does this verify her task, and does it establish every Salesforce action?</p>
 
 <details class="qb-answer" id="q37-explanation">
 <summary>Read the teaching explanation</summary>
@@ -618,7 +618,7 @@ nav_order: 1
 
 ### Q38. Explain the employee journey
 
-<p class="qb-question"><strong>Question:</strong> A company uses Workday for employee HR data, Okta for identity and access management, and Salesforce for business work. Describe the intended journey for employee Maya and the separate outcomes to verify, allowing that her Salesforce account may already exist.</p>
+<p class="qb-question"><strong>Question:</strong> A company uses Workday for employee HR data, Okta for identity and access management, and Salesforce for business work. Describe the intended journey for employee Devi and the separate outcomes to verify, allowing that her Salesforce account may already exist.</p>
 
 <details class="qb-answer" id="q38-explanation">
 <summary>Read the teaching explanation</summary>
@@ -634,31 +634,31 @@ nav_order: 1
 
 ### Q39. Repair an unsupported closure
 
-<p class="qb-question"><strong>Question:</strong> Maya’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. No correction or follow-up is supplied. Rewrite this note: “Maya has no Salesforce account anywhere. Provisioning failed, so we reset her password and closed the ticket.”</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. No correction or follow-up is supplied. Rewrite this note: “Devi has no Salesforce account anywhere. Provisioning failed, so we reset her password and closed the ticket.”</p>
 
 <details class="qb-answer" id="q39-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>The note invents an unlimited absence, a cause, an action, and a successful closure. The facts support a scoped search result and unanswered process questions.</p>
-<p>Try: “Maya's checked Okta sign-in succeeded. No Salesforce account matched her approved identifier in the intended environment. Assignment and account-management history remain uninspected. Support will obtain those records and the relevant target-account evidence before proposing a correction.”</p>
+<p>Try: “Devi's checked Okta sign-in succeeded. No Salesforce account matched her approved identifier in the intended environment. Assignment and account-management history remain uninspected. Support will obtain those records and the relevant target-account evidence before proposing a correction.”</p>
 <p>That update leaves the case open for a concrete reason. It provides the next owner with findings and evidence requests rather than unsupported certainty.</p>
 </div>
 </details>
 
 <a id="q40"></a>
 
-### Q40. Explain the issue to Maya
+### Q40. Explain the issue to Devi
 
-<p class="qb-question"><strong>Question:</strong> Maya’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Maya asks why support is not simply resetting her password again. Give her a friendly update explaining what works and the next justified checks.</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s checked Okta sign-in succeeded. In the intended Salesforce environment, support found no account matching her approved identifier. Her Salesforce assignment and account-management history have not been inspected. Devi asks why support is not simply resetting her password again. Give her a friendly update explaining what works and the next justified checks.</p>
 
 <details class="qb-answer" id="q40-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>You could say: 'Your Okta sign-in worked in the attempt we checked. Salesforce keeps a separate account for you, and we have not yet found the expected match there. We are checking whether Okta assigns Salesforce to you and how your Salesforce account is prepared. Those checks will help us choose the right fix.'</p>
-<p>If Maya asks about the password, connect the explanation to what she already experienced: 'You were able to sign in to Okta. Changing that password would not tell us whether your Salesforce account is ready.'</p>
-<p>This gives Maya a clear update without asking her to learn investigation terminology. It explains what worked, what support is doing next, and why the proposed password reset does not address the unanswered account questions.</p>
+<p>If Devi asks about the password, connect the explanation to what she already experienced: 'You were able to sign in to Okta. Changing that password would not tell us whether your Salesforce account is ready.'</p>
+<p>This gives Devi a clear update without asking her to learn investigation terminology. It explains what worked, what support is doing next, and why the proposed password reset does not address the unanswered account questions.</p>
 </div>
 </details>
 

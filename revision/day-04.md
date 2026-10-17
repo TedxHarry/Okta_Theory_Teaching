@@ -22,7 +22,7 @@ When two systems disagree about a person, the first question is who owns the fie
 
 The employee flow is Workday to Okta, then onward to AD and applications. Workday comes before AD in the configured profile-source order. For an employee associated with both, Workday leads the profile, with the documented attribute exceptions.
 
-This explains why Maya's Workday department can remain authoritative even if AD holds a different department. It also explains why her AD-sourced work email can legitimately differ from her login. A difference is something to evaluate against ownership and purpose, not an automatic error.
+This explains why Devi's Workday department can remain authoritative even if AD holds a different department. It also explains why her AD-sourced work email can legitimately differ from her login. A difference is something to evaluate against ownership and purpose, not an automatic error.
 
 Priya is an Okta-managed contractor. She has no Workday association or AD assignment in this model and is outside employee import scope. Her sponsor supplies business approval; the sponsor is not a technical profile-source integration. Calling her a contractor does not itself prevent an accidental match to a sourced record.
 
@@ -32,7 +32,7 @@ The AD-led teaching example is a separate arrangement. If AD is the applicable s
 
 Check the user's source associations, the effective source, any field-specific source, and the mapping direction. Editing an externally owned field in Okta may be restricted or overwritten by a later source update. Choose a correction only after identifying the demonstrated gap. If the authoritative value already matches the approved requirement, investigate the mapping or update path rather than changing that correct value. An ownership-design change needs its own justification and a review of affected users.
 
-Profile ownership also does not tell you who validates a password. That is a separate sign-in path. In the supplied Northbridge example, Workday can own Maya's department while AD validates her password through the agent. Success on that password path does not verify delivery of a department update.
+Profile ownership also does not tell you who validates a password. That is a separate sign-in path. In the supplied Northbridge example, Workday can own Devi's department while AD validates her password through the agent. Success on that password path does not verify delivery of a department update.
 
 ## When a request reaches you
 
@@ -40,7 +40,7 @@ If a corrected value returns to its old state, inspect the field owner and inter
 
 ## Check your understanding
 
-From memory, explain who controls Maya's department, Maya's work email, and Priya's department. For each, name the association or field setting that supports your answer. Then explain why those answers do not establish a target update or password result.
+From memory, explain who controls Devi's department, Devi's work email, and Priya's department. For each, name the association or field setting that supports your answer. Then explain why those answers do not establish a target update or password result.
 
 - Why does Workday's first position not make Priya Workday-managed?
 - How can AD own work email while Workday leads an employee's profile?

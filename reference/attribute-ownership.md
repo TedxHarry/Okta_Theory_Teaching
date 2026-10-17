@@ -14,7 +14,7 @@ Start with the person, named field and operation you are investigating. A questi
 
 | Person or field | Source or responsibility | Boundary |
 |---|---|---|
-| Maya and Daniel's profiles | Workday; both have Workday and AD associations | One effective profile source per user. |
+| Devi and Daniel's profiles | Workday; both have Workday and AD associations | One effective profile source per user. |
 | Department | Inherits from the effective profile source | Workday for these employees; Okta for Priya. |
 | workerType | Inherits from the effective profile source | Workday supplies Employee for the employee examples; approved Okta maintenance supplies Contractor for Priya. This classification is separate from account status. |
 | AD-linked employee work email | Explicit AD attribute source | Avoid a competing outbound write back over this AD-owned field. |
@@ -25,7 +25,7 @@ Start with the person, named field and operation you are investigating. A questi
 | AD password validation | AD through the Okta AD agent on that sign-in path | Separate from HR profile ownership and import success. |
 | Projects department code | Okta-to-Projects mapping | Sales → SAL; Finance → FIN; IT → IT. Target delivery needs its own evidence. |
 
-For Maya and Daniel, Workday's profile ownership can coexist with AD's ownership of the designated work-email field and its separate password-validation role. AD returning an email value or accepting a password does not transfer department ownership to AD. Conversely, a successful employee import does not establish an accepted password or an application session.
+For Devi and Daniel, Workday's profile ownership can coexist with AD's ownership of the designated work-email field and its separate password-validation role. AD returning an email value or accepting a password does not transfer department ownership to AD. Conversely, a successful employee import does not establish an accepted password or an application session.
 
 Priya follows the approved Okta-managed contractor process. Workday's higher priority does not make it her source when she has no applicable association. Her sponsor provides business approval; the authorized administrator maintains the data. Alex's administrative identity is also outside the employee import population. Keep those stated relationships rather than forcing every person through the employee path.
 

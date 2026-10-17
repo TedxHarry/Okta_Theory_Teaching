@@ -10,7 +10,7 @@ Try the [exercises](../exercises/day-05.md) first. Equivalent explanations are w
 
 ## 1. Predict the population
 
-Ask two questions for each person: 'Sales?' and 'Employee?' Maya answers yes to both. Priya answers yes only to Sales, and Daniel answers yes only to Employee. AND requires both answers, so only Maya qualifies.
+Ask two questions for each person: 'Sales?' and 'Employee?' Devi answers yes to both. Priya answers yes only to Sales, and Daniel answers yes only to Employee. AND requires both answers, so only Devi qualifies.
 
 Changing the condition to OR makes one yes enough. All three would qualify, including a contractor and a Finance employee. The logic change would therefore change the approved access population; it would not merely fix one person's assignment.
 
@@ -24,15 +24,15 @@ Revisit [Predict who matches](../lessons/day-05-groups-and-assignments.md#predic
 
 The group-to-Salesforce assignment is missing. Membership alone does not define which applications the group supplies. Renaming changes the label, not that relationship.
 
-A justified proposal is to establish the approved group assignment after checking its affected members and required application settings. Verify Maya's resulting assignment separately from target account creation or sign-in.
+A justified proposal is to establish the approved group assignment after checking its affected members and required application settings. Verify Devi's resulting assignment separately from target account creation or sign-in.
 
 Revisit [Manage a shared need through a group](../lessons/day-05-groups-and-assignments.md#manage-a-shared-need-through-a-group) if you treated the group name as configuration.
 
 ## 3. Right source, wrong rule input
 
-The rule reads Finance/Employee from Okta, so its Sales AND Employee test returns false. That calculation is consistent with the input it received. The first demonstrated discrepancy is earlier: Maya's approved Workday department is Sales, while her Okta department says Finance.
+The rule reads Finance/Employee from Okta, so its Sales AND Employee test returns false. That calculation is consistent with the input it received. The first demonstrated discrepancy is earlier: Devi's approved Workday department is Sales, while her Okta department says Finance.
 
-Inspect Maya's source association, incoming department mapping, and import/update results. A mapping error or an unapplied update is possible; the packet does not select between them. Broadening the rule to include Finance would change who receives access and conceal the data problem.
+Inspect Devi's source association, incoming department mapping, and import/update results. A mapping error or an unapplied update is possible; the packet does not select between them. Broadening the rule to include Finance would change who receives access and conceal the data problem.
 
 Revisit [Read the current profile, not just the source record](../lessons/day-05-groups-and-assignments.md#read-the-current-profile-not-just-the-source-record), then Day 3's mapping discussion.
 
@@ -42,7 +42,7 @@ Packet A demonstrates a rule that has not been activated. Review the approved lo
 
 Packet B supplies a different explanation: an explicit user exclusion. Investigate why it exists and whether it remains approved before proposing removal. A previous manual removal can create such an exclusion, but that history is not established by this packet.
 
-Neither case justifies changing correct HR data. The difference is between an unactivated membership mechanism and an explicit exception for Maya, not between two different department values.
+Neither case justifies changing correct HR data. The difference is between an unactivated membership mechanism and an explicit exception for Devi, not between two different department values.
 
 **Revisit:** [A matching condition is not observed membership](../lessons/day-05-groups-and-assignments.md#a-matching-condition-is-not-observed-membership)
 
@@ -60,7 +60,7 @@ Revisit [An individual assignment is a separate path](../lessons/day-05-groups-a
 
 The checked second group still provides a Salesforce assignment. Removing the Sales-group path does not remove that other path.
 
-Compare the second group's purpose and Maya's membership with the approved post-move access requirement. Then check target account state, relevant account-management results, sign-in, and application permissions as needed. The packet does not establish those outcomes.
+Compare the second group's purpose and Devi's membership with the approved post-move access requirement. Then check target account state, relevant account-management results, sign-in, and application permissions as needed. The packet does not establish those outcomes.
 
 Revisit [Removing one path does not settle every path](../lessons/day-05-groups-and-assignments.md#removing-one-path-does-not-settle-every-path) if you inferred complete removal from one membership change.
 

@@ -12,19 +12,19 @@ For each person, first identify the applicable source associations, then the eff
 
 ## 1. Apply the order to a person
 
-The configured external profile-source order is Workday first and Active Directory (AD) second. Maya has a verified source association with both. Priya has neither association and is confirmed Okta-managed.
+The configured external profile-source order is Workday first and Active Directory (AD) second. Devi has a verified source association with both. Priya has neither association and is confirmed Okta-managed.
 
 Who is the effective profile source for each? What is missing from the claim “Workday is first, so Workday owns Priya”?
 
 ## 2. Separate profile and attribute authority
 
-Workday controls Maya's profile and department. AD is explicitly designated for her work email. Workday has one email address and AD has another; Okta contains the AD address.
+Workday controls Devi's profile and department. AD is explicitly designated for her work email. Workday has one email address and AD has another; Okta contains the AD address.
 
 Is the difference alone proof of an error? What would you check before choosing the correct address?
 
 ## 3. Investigate the wrong department
 
-Maya's approved department and Workday record say Sales. Her Okta profile says Finance. Workday is still her checked department source.
+Devi's approved department and Workday record say Sales. Her Okta profile says Finance. Workday is still her checked department source.
 
 Propose an investigation. Explain why changing Workday to Finance or repeatedly editing Okta is not supported by this evidence.
 
@@ -32,11 +32,11 @@ Propose an investigation. Explain why changing Workday to Finance or repeatedly 
 
 Priya's sponsor approves a department correction. An authorized administrator maintains it in Okta. A colleague asks why the employee HR process does not apply.
 
-Explain the source scoping and associations that make this appropriate. How does department inheriting from the profile source support both Maya and Priya? Then explain what changes in your investigation if an unexpected Workday association is discovered.
+Explain the source scoping and associations that make this appropriate. How does department inheriting from the profile source support both Devi and Priya? Then explain what changes in your investigation if an unexpected Workday association is discovered.
 
 ## 5. Challenge a fallback assumption
 
-An excerpt does not show Maya's Workday department. AD shows Finance. Someone concludes: “Workday has no value, so AD automatically wins.”
+An excerpt does not show Devi's Workday department. AD shows Finance. Someone concludes: “Workday has no value, so AD automatically wins.”
 
 Identify two unsupported steps in that conclusion. Name the evidence needed next.
 
@@ -44,11 +44,11 @@ Identify two unsupported steps in that conclusion. Name the evidence needed next
 
 In a separate AD-led company, an employee has AD as the applicable profile source and no applicable Workday source. AD controls department.
 
-Why can AD control this field there while Workday controls Maya's department? Would this justify changing Northbridge's source order to fix one stale record?
+Why can AD control this field there while Workday controls Devi's department? Would this justify changing Northbridge's source order to fix one stale record?
 
 ## 7. Tell the complete story
 
-Use this separate synthetic case without reopening the worked examples. The observations concern Maya's correctly linked records in the same Projects integration. Her approved department is Sales.
+Use this separate synthetic case without reopening the worked examples. The observations concern Devi's correctly linked records in the same Projects integration. Her approved department is Sales.
 
 | Evidence | Observation |
 |---|---|
@@ -60,7 +60,7 @@ Use this separate synthetic case without reopening the worked examples. The obse
 | Password validation for the identified sign-in attempt | AD returned a successful result through the agent. |
 | Projects account-update evidence | Not supplied. |
 
-Explain the flow and identify the first demonstrated discrepancy along the Workday → Okta → Projects path. Would moving AD above Workday or resetting Maya's password be a supported correction? Explain why work-email ownership does not settle department ownership.
+Explain the flow and identify the first demonstrated discrepancy along the Workday → Okta → Projects path. Would moving AD above Workday or resetting Devi's password be a supported correction? Explain why work-email ownership does not settle department ownership.
 
 Choose the next evidence you would request. Say how two different possible findings would change your investigation; do more than ask for “the logs.”
 

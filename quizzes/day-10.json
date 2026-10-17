@@ -69,7 +69,7 @@
     {
       "id": "L10-Q03",
       "topic": "Target identifiers",
-      "prompt": "SCIM returns target id 8f21 while the user's email is maya@example.test. How should the ID be treated?",
+      "prompt": "SCIM returns target id 8f21 while the user's email is devi@example.test. How should the ID be treated?",
       "correctId": "bb70cc2495",
       "options": [
         {

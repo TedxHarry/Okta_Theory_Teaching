@@ -1,13 +1,13 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Foundation checkpoint: From identity data to access. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Foundation checkpoint: From identity data to access | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/assessments/foundation.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=64f84bcb7765"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=64f84bcb7765"><script src="/Okta_Theory_Teaching/assets/app.js?v=64f84bcb7765" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="foundation-checkpoint-from-identity-data-to-access">Foundation checkpoint: From identity data to access</h1>
 <p>Explain Northbridge's access decisions using Days 1 to 5. Write your reasoning before opening the <a href="/Okta_Theory_Teaching/assessments/self-checks/foundation.html">separate debrief</a>. You may use your notebook and references; record where you needed help. When a task asks you to predict a result, label it as expected until the packet supplies an observation. Support findings with the packet and evidence row rather than an earlier lesson's outcome.</p>
-<p>All packets are synthetic. B, C, and D are independent variations on A, not consecutive incidents. Maya remains a Sales employee except in D's explicitly hypothetical move.</p>
+<p>All packets are synthetic. B, C, and D are independent variations on A, not consecutive incidents. Devi remains a Sales employee except in D's explicitly hypothetical move.</p>
 <p>Treat a <strong>packet</strong> as a small set of supplied case facts. For B, start with A and replace only the stated facts. For C, start from A again, without carrying over B's error. For D, start from A again and apply the hypothetical move. This keeps separate questions from accidentally becoming one changing story.</p>
 <h2 id="packet-a-expected-access">Packet A: Expected access</h2>
 <p>Northbridge assigns Salesforce automatically to Sales employees through NB-Sales-Employees. Contractors require a separately approved exception. The rule is active, both users are Active and processed, neither is excluded, and no other membership mechanism supplies this group.</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Evidence</th>
-<th>Maya</th>
+<th>Devi</th>
 <th>Priya</th>
 </tr>
 </thead>
@@ -60,7 +60,7 @@
 </tbody>
 </table></div><p><strong>Task 1:</strong> Tell each person's source-to-assignment story. Explain the different result and what remains unknown beyond assignment.</p>
 <h2 id="packet-b-a-correct-rule-receives-the-wrong-value">Packet B: A correct rule receives the wrong value</h2>
-<p>Replace only Maya's data and result observations with these:</p>
+<p>Replace only Devi's data and result observations with these:</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Evidence</th>
@@ -74,7 +74,7 @@
 </tr>
 <tr>
 <td>Checked source association and department owner</td>
-<td>Correct Maya record; Workday controls department</td>
+<td>Correct Devi record; Workday controls department</td>
 </tr>
 <tr>
 <td>Current incoming department mapping</td>
@@ -90,7 +90,7 @@
 </tr>
 <tr>
 <td>Rule processing and membership</td>
-<td>Rule processed that profile; Maya absent</td>
+<td>Rule processed that profile; Devi absent</td>
 </tr>
 <tr>
 <td>Salesforce assignment</td>
@@ -103,7 +103,7 @@
 <p>An Okta SSO event concerning Priya and Salesforce records SUCCESS for a specified attempt. No application-side acceptance or permission evidence is included.</p>
 <p><strong>Task 3:</strong> Explain why her assignment does not demonstrate a rule failure. Identify the missing business decision and the limits of the event. Name a specific next evidence request and explain how different findings would change your conclusion.</p>
 <h2 id="packet-d-predict-a-future-change">Packet D: Predict a future change</h2>
-<p>Starting from A, suppose Maya later has an approved move to Finance. Workday and Okta both receive Finance, and the active rule processes her updated profile. Assume this rule is the sole membership mechanism for NB-Sales-Employees and there is no individual exclusion.</p>
+<p>Starting from A, suppose Devi later has an approved move to Finance. Workday and Okta both receive Finance, and the active rule processes her updated profile. Assume this rule is the sole membership mechanism for NB-Sales-Employees and there is no individual exclusion.</p>
 <p><strong>Task 4:</strong> Predict her Sales-group membership. Contrast two assignment states: no other Salesforce path exists, or another checked group still assigns Salesforce. What target and session evidence would you need before claiming the end of all Salesforce access? Identify the separate checks using Day 2's account/session distinction; you do not need to explain session-expiry mechanisms.</p>
 <h2 id="explain-the-architecture">Explain the architecture</h2>
 <p><strong>Task 5:</strong> Explain why none of these are interchangeable: profile source, mapping, group rule, application assignment, provisioning result, and SSO event. Use at least one observation above for each relevant boundary. Explain your next action to a manager without relying on menu names.</p>

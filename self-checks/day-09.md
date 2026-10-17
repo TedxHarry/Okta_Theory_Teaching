@@ -16,9 +16,9 @@ Revisit [OAuth and OIDC answer related questions](../lessons/day-09-oidc.md#oaut
 
 ## 2. Trace the participants
 
-Expense's backend exchanges the code at the token endpoint, using its configured client authentication and PKCE verifier. Confidential client material stays protected on the backend, not embedded in a browser request. The public client ID names the application registration. The protected credential or key helps the backend prove Expense's application identity; it is not Maya's password or the ID token describing her authentication.
+Expense's backend exchanges the code at the token endpoint, using its configured client authentication and PKCE verifier. Confidential client material stays protected on the backend, not embedded in a browser request. The public client ID names the application registration. The protected credential or key helps the backend prove Expense's application identity; it is not Devi's password or the ID token describing her authentication.
 
-When the browser returns the code, it hands the next step to Expense's backend. The backend still needs a successful exchange, and Expense must validate the identity information, associate the intended account and establish its session. Receiving the code is progress through the journey; it does not show Maya has entered Expense.
+When the browser returns the code, it hands the next step to Expense's backend. The backend still needs a successful exchange, and Expense must validate the identity information, associate the intended account and establish its session. Receiving the code is progress through the journey; it does not show Devi has entered Expense.
 
 **Revisit:** [Fix the client type before tracing the flow](../lessons/day-09-oidc.md#fix-the-client-type-before-tracing-the-flow)
 
@@ -54,7 +54,7 @@ Read issuer and subject together: "this subject, as identified by this issuer." 
 
 ## 7. State the successful outcome precisely
 
-O-2 completed the stated OIDC sign-in and reached Maya's intended Expense account. It does not establish an expense-approval permission or account-provisioning operation.
+O-2 completed the stated OIDC sign-in and reached Devi's intended Expense account. It does not establish an expense-approval permission or account-provisioning operation.
 
 The SAML example carried an assertion inside a browser-delivered response. This OIDC example carries a code through the browser and returns tokens to the backend in a separate exchange. Both require application-side validation and account interpretation. In O-2, the successful exchange is one recorded step; the supplied ID token validation, account association, and actual entry support the broader sign-in conclusion. Without those later observations, a successful exchange alone would be insufficient.
 

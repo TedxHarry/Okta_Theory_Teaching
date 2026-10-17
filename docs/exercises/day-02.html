@@ -4,7 +4,7 @@
 <h2 id="1-read-the-destination">1. Read the destination</h2>
 <pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">https://expenses.northbridge.example/reports?department=Finance
 </code></pre>
-<p>Identify the connection scheme, host, path, and query parameter. Does this URL prove Maya's stored department changed to Finance?</p>
+<p>Identify the connection scheme, host, path, and query parameter. Does this URL prove Devi's stored department changed to Finance?</p>
 <h2 id="2-follow-the-redirect">2. Follow the redirect</h2>
 <p>The browser requests a page from Northbridge Expense. Its response is:</p>
 <pre tabindex="0" role="region" aria-label="Code example"><code class="language-http">HTTP/1.1 302 Found
@@ -25,7 +25,7 @@ Location: https://identity.northbridge.example/signin
 <pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
   &quot;eventType&quot;: &quot;user.authentication.sso&quot;,
   &quot;actor&quot;: {
-    &quot;displayName&quot;: &quot;Maya Rao&quot;
+    &quot;displayName&quot;: &quot;Devi Rao&quot;
   },
   &quot;target&quot;: [
     {
@@ -38,17 +38,17 @@ Location: https://identity.northbridge.example/signin
   }
 }
 </code></pre>
-<p>Translate it into one sentence. Name what identifies the action, actor, target, and result. Does this excerpt alone prove the application accepted the sign-in or that it belongs to Maya's specific reported attempt?</p>
+<p>Translate it into one sentence. Name what identifies the action, actor, target, and result. Does this excerpt alone prove the application accepted the sign-in or that it belongs to Devi's specific reported attempt?</p>
 <h2 id="7-tell-the-story-using-the-right-evidence">7. Tell the story using the right evidence</h2>
-<p>Maya reports an Expense sign-in failure. The evidence packet states:</p>
+<p>Devi reports an Expense sign-in failure. The evidence packet states:</p>
 <ul>
 <li>Expense sent her browser to the identity service with a redirect.</li>
 <li>The sign-in form loaded successfully.</li>
-<li>An Okta SSO event for Maya and Expense is connected to this attempt by the supplied investigation record and shows <code>SUCCESS</code>.</li>
+<li>An Okta SSO event for Devi and Expense is connected to this attempt by the supplied investigation record and shows <code>SUCCESS</code>.</li>
 <li>Expense then refused the sign-in return request.</li>
-<li>A second success event concerns Priya, not Maya.</li>
+<li>A second success event concerns Priya, not Devi.</li>
 </ul>
-<p>Tell the flow in order. Identify the first demonstrated failure, distinguish it from the root cause, explain why Priya's event does not resolve Maya's ticket, and name the next evidence needed.</p>
+<p>Tell the flow in order. Identify the first demonstrated failure, distinguish it from the root cause, explain why Priya's event does not resolve Devi's ticket, and name the next evidence needed.</p>
 <p>Compare your reasoning with the <a href="/Okta_Theory_Teaching/self-checks/day-02.html">self-check answers</a> after attempting the questions.</p>
 <p><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html">Return to Day 2</a> · <a href="/Okta_Theory_Teaching/">Course home</a></p>
 <p><a href="/Okta_Theory_Teaching/question-bank/day-02.html">Practice questions with explanations</a> · <a href="/Okta_Theory_Teaching/revision/day-02.html">Day 2 recap</a></p>

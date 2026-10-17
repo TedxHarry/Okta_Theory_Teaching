@@ -12,7 +12,7 @@ Keep the expected connection settings, observed message fields, and application 
 
 ## 1. Follow the participants
 
-Maya starts at Salesforce, travels to Okta, completes required checks, and returns with a SAML response. Name the IdP and SP, explain the browser's role, and distinguish the authentication request from the assertion. Does Salesforce receive Maya's AD password in this flow?
+Devi starts at Salesforce, travels to Okta, completes required checks, and returns with a SAML response. Name the IdP and SP, explain the browser's role, and distinguish the authentication request from the assertion. Does Salesforce receive Devi's AD password in this flow?
 
 ## 2. Address or identity?
 
@@ -26,9 +26,9 @@ In S-1's XML, identify issuer, NameID, and audience. Compare the audience with t
 
 ## 4. Explain the supported correction
 
-The S-1 application report explicitly rejects the test audience in the production connection. Its signature and validity checks passed. Maya's intended active account has the correct username.
+The S-1 application report explicitly rejects the test audience in the production connection. Its signature and validity checks passed. Devi's intended active account has the correct username.
 
-What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Maya's username or disabling audience validation is not supported. What affected users or connection scope should be reviewed before changing a shared setting?
+What defect is established? Propose the correction and the evidence needed from a new attempt. Explain why changing Devi's username or disabling audience validation is not supported. What affected users or connection scope should be reviewed before changing a shared setting?
 
 ## 5. A different identity rule
 
@@ -44,7 +44,7 @@ Explain separately what being able to read the assertion shows and what seeing a
 
 ## 7. Describe the limit of success
 
-A new correlated attempt S-3 has accepted application validation and confirmed entry into Maya's intended existing account. She is denied a particular Salesforce action.
+A new correlated attempt S-3 has accepted application validation and confirmed entry into Devi's intended existing account. She is denied a particular Salesforce action.
 
 What succeeded, and what question remains? Does the evidence show that SAML created her account? Explain how a separately configured JIT capability would differ from that assumption.
 

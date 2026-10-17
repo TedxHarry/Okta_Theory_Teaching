@@ -6,7 +6,7 @@ nav_order: 12
 
 # Day 12: Reasoning exercises
 
-Use the [lesson's](../lessons/day-12-joiners-movers-leavers.md) approved requirements and synthetic timelines. Maya's move and Jordan's departure have now taken effect.
+Use the [lesson's](../lessons/day-12-joiners-movers-leavers.md) approved requirements and synthetic timelines. Devi's move and Jordan's departure have now taken effect.
 
 For each affected system, compare the approved outcome with the observed result. Name what is complete, what remains unresolved, and the evidence needed to close that part of the case.
 
@@ -22,7 +22,7 @@ Explain suspension, deactivation, and deletion. Which retains Okta application a
 
 An approved future employee record exists in HR. An existing application account is also found with a similar name. No match confirmation, effective access approval, activation result, or application-entry evidence is supplied. What decisions and evidence are needed before claiming the person is ready to work?
 
-## 4. Investigate Maya's old access
+## 4. Investigate Devi's old access
 
 Use M1 to M6. Find the first demonstrated access discrepancy against the approved move requirement. Explain why changing the Sales rule or reverting Finance would be the wrong correction. What should happen next, and what must remain available?
 
@@ -38,7 +38,7 @@ L6 shows a new authenticated Expense response through Jordan's existing session 
 
 ## 7. Write the handoff
 
-Write one short handoff for Maya and one for Jordan. Each should state the approved outcome, completed changes, remaining discrepancy, responsible owner or next action, and closure evidence. Then explain why a later successful Projects deactivation would not close Jordan's entire case by itself. Keep any proposed correction separate from a result actually supplied by the packet.
+Write one short handoff for Devi and one for Jordan. Each should state the approved outcome, completed changes, remaining discrepancy, responsible owner or next action, and closure evidence. Then explain why a later successful Projects deactivation would not close Jordan's entire case by itself. Keep any proposed correction separate from a result actually supplied by the packet.
 
 [Self-check answers](../self-checks/day-12.md) · [Course home](../index.md)
 

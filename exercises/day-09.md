@@ -16,7 +16,7 @@ A colleague says an access token is all Expense needs to establish an OIDC sign-
 
 ## 2. Trace the participants
 
-The browser has returned a code to Expense's callback. Which participant performs the next exchange in this architecture? Where should confidential client credentials be kept, and whose identity do they help the backend prove: Expense's or Maya's? Does receiving the code establish application entry?
+The browser has returned a code to Expense's callback. Which participant performs the next exchange in this architecture? Where should confidential client credentials be kept, and whose identity do they help the backend prove: Expense's or Devi's? Does receiving the code establish application entry?
 
 ## 3. Read the request
 

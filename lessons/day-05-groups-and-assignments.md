@@ -6,13 +6,13 @@ nav_order: 5
 
 # Day 5: Groups, rules, and application assignments
 
-Maya and Priya both work with Sales at Northbridge Services. Maya is an employee; Priya is a contractor. Their manager asks:
+Devi and Priya both work with Sales at Northbridge Services. Devi is an employee; Priya is a contractor. Their manager asks:
 
-> They have the same department. Why does Maya receive Salesforce automatically while Priya does not?
+> They have the same department. Why does Devi receive Salesforce automatically while Priya does not?
 
 Northbridge's requirement is more specific than “give Sales access.” Sales employees receive Salesforce through the normal access process. Sales contractors do not receive it automatically; a separately approved exception may be considered.
 
-Today, follow how that requirement becomes a group membership and an application assignment. Remember Day 4: Maya's employee information comes from Workday, while Priya's profile is maintained in Okta through an approved process.
+Today, follow how that requirement becomes a group membership and an application assignment. Remember Day 4: Devi's employee information comes from Workday, while Priya's profile is maintained in Okta through an approved process.
 
 Alex needs to turn the approved requirement into relationships Okta can manage, then verify what happened. Follow three questions: does this person meet the condition, are they actually in the group, and does that group provide their application assignment? Each question has its own evidence. You can follow the examples without a tenant or writing expression code.
 
@@ -26,12 +26,12 @@ There are two distinct relationships:
 
 ```mermaid
 flowchart TD
-  A["Maya belongs to NB-Sales-Employees"] -->|"Salesforce is assigned to this group"| B["Maya receives a Salesforce assignment through the group"]
+  A["Devi belongs to NB-Sales-Employees"] -->|"Salesforce is assigned to this group"| B["Devi receives a Salesforce assignment through the group"]
 ```
 
 **Membership** means a user belongs to the group. **Group-based application assignment** means members receive an application assignment through that group's connection to the application.
 
-Read the diagram as two checks. First, open the group and check whether Maya is a member. Then check whether Salesforce is actually assigned to that group. Maya could belong to the group while the application connection is missing, or Salesforce could be assigned to a group she does not belong to. The name `NB-Sales-Employees` is a label, not an instruction. Naming a group does not define its members or connect it to Salesforce. Both relationships need configuration and evidence.
+Read the diagram as two checks. First, open the group and check whether Devi is a member. Then check whether Salesforce is actually assigned to that group. Devi could belong to the group while the application connection is missing, or Salesforce could be assigned to a group she does not belong to. The name `NB-Sales-Employees` is a label, not an instruction. Naming a group does not define its members or connect it to Salesforce. Both relationships need configuration and evidence.
 
 ## A rule decides membership; an assignment connects the application
 
@@ -61,13 +61,13 @@ flowchart TD
   D -->|"configured account-management and sign-in processes"| E["Target account, sign-in, and application permissions"]
 ```
 
-Read the diagram from the approved data toward the application outcome. The profile supplies the inputs, the rule determines qualifying membership, and the group's application connection supplies an assignment. Account management and sign-in still have work of their own. This is a conceptual dependency flow, not a guarantee that all steps complete immediately or successfully. The last box contains three separate outcomes to verify: the target account, sign-in, and application permissions. Maya can have a Salesforce assignment while any of those outcomes still needs investigation.
+Read the diagram from the approved data toward the application outcome. The profile supplies the inputs, the rule determines qualifying membership, and the group's application connection supplies an assignment. Account management and sign-in still have work of their own. This is a conceptual dependency flow, not a guarantee that all steps complete immediately or successfully. The last box contains three separate outcomes to verify: the target account, sign-in, and application permissions. Devi can have a Salesforce assignment while any of those outcomes still needs investigation.
 
 ## Predict who matches
 
 All three users below are Active in Okta. The example rule is active, has no individual exclusions for them, and has processed the supplied profiles. There are no other membership mechanisms for this example group.
 
-There are two different uses of *active* here. **Active user** describes the account's state. **Active rule** means the rule is enabled to operate. 'Maya's account is Active' does not answer 'Has this rule added Maya to the group?' An **exclusion** is a specific exception preventing the rule from adding a user, even when their profile matches.
+There are two different uses of *active* here. **Active user** describes the account's state. **Active rule** means the rule is enabled to operate. 'Devi's account is Active' does not answer 'Has this rule added Devi to the group?' An **exclusion** is a specific exception preventing the rule from adding a user, even when their profile matches.
 
 Account state also affects rule processing. For this rule, which does not specify a user-status condition, Okta includes active users. With the account state, rule state, processing and lack of exclusions established, we can compare the two profile conditions in the table. In an investigation, check those facts rather than assume them.
 
@@ -75,11 +75,11 @@ Before reading the explanation, predict the result for each person:
 
 | Person | Okta department | Okta workerType |
 |---|---|---|
-| Maya | Sales | Employee |
+| Devi | Sales | Employee |
 | Priya | Sales | Contractor |
 | Daniel | Finance | Employee |
 
-For Maya, both answers are yes: she is in Sales and is an employee. Priya shares her department but has a different workforce classification. Daniel is an employee but belongs to Finance. Only Maya meets both conditions. The different outcomes follow the approved requirement; sharing one detail is not enough.
+For Devi, both answers are yes: she is in Sales and is an employee. Priya shares her department but has a different workforce classification. Daniel is an employee but belongs to Finance. Only Devi meets both conditions. The different outcomes follow the approved requirement; sharing one detail is not enough.
 
 Changing AND to OR would produce a different business rule: a person could qualify by being in Sales or by being an employee. That would include Priya and Daniel in this table. It would not implement Northbridge's employee-only Sales requirement.
 
@@ -91,9 +91,9 @@ A missing or unfamiliar `workerType` does not establish Employee status. Investi
 
 For this attribute-based rule, the inputs are department and workerType in the central Okta user profile. Evaluating that condition does not ask Workday for a fresh department. The external values must first reach the Okta fields that the rule actually reads.
 
-Suppose Workday correctly says Sales, but Maya's Okta profile says Finance. The rule can correctly evaluate the supplied Okta value and still produce an outcome that conflicts with the business requirement.
+Suppose Workday correctly says Sales, but Devi's Okta profile says Finance. The rule can correctly evaluate the supplied Okta value and still produce an outcome that conflicts with the business requirement.
 
-Alex therefore compares the approved source value with the actual rule input before broadening the condition. Including Finance to compensate for Maya's stale profile would change the access requirement for other Finance users too. Day 3's mapping and delivery investigation may be needed before membership can be correct.
+Alex therefore compares the approved source value with the actual rule input before broadening the condition. Including Finance to compensate for Devi's stale profile would change the access requirement for other Finance users too. Day 3's mapping and delivery investigation may be needed before membership can be correct.
 
 Also keep the profile layers distinct. A Salesforce app user profile value or a department displayed inside Salesforce is not the same evidence as the central Okta user attribute this rule evaluates.
 
@@ -114,13 +114,13 @@ Here is a separate synthetic incident:
 
 | Observation | Evidence |
 |---|---|
-| Maya's Okta profile | Sales / Employee; Active account. |
+| Devi's Okta profile | Sales / Employee; Active account. |
 | Rule condition | Sales AND Employee; targets NB-Sales-Employees. |
 | Rule state | Inactive; never activated. |
-| Existing group membership | Maya absent; no other membership mechanism configured. |
+| Existing group membership | Devi absent; no other membership mechanism configured. |
 | Group-to-application relationship | Salesforce assigned to NB-Sales-Employees. |
 
-The condition matches, and the group already has its Salesforce connection. The gap is earlier: this rule has never been activated, so the intended automatic membership mechanism has not operated. The packet demonstrates that configuration gap, not a defect in Maya's HR department.
+The condition matches, and the group already has its Salesforce connection. The gap is earlier: this rule has never been activated, so the intended automatic membership mechanism has not operated. The packet demonstrates that configuration gap, not a defect in Devi's HR department.
 
 Alex can propose activating the approved rule after reviewing its full affected population and exclusions. Verification would check actual membership and the resulting Salesforce assignment, followed separately by the required account and sign-in evidence.
 
@@ -132,11 +132,11 @@ Return to the normal scenario. This synthetic follow-up confirms the rule is act
 
 | Person | NB-Sales-Employees membership | Salesforce assignment |
 |---|---|---|
-| Maya | Present through the rule | Present through NB-Sales-Employees |
+| Devi | Present through the rule | Present through NB-Sales-Employees |
 | Priya | Absent | Absent; no other assignment path in this snapshot |
 | Daniel | Absent | Absent; no other assignment path in this snapshot |
 
-Read each row as two results. Maya is present through the rule, and her Salesforce assignment comes through the group. Priya and Daniel are absent, with other assignment paths explicitly absent in this snapshot. Maya's automatic assignment is demonstrated; Priya's lack of automatic assignment is expected under the stated requirement, rather than evidence of a malfunction.
+Read each row as two results. Devi is present through the rule, and her Salesforce assignment comes through the group. Priya and Daniel are absent, with other assignment paths explicitly absent in this snapshot. Devi's automatic assignment is demonstrated; Priya's lack of automatic assignment is expected under the stated requirement, rather than evidence of a malfunction.
 
 The packet does not provide Salesforce account state, a provisioning result, a completed Salesforce sign-in, or application permissions. Those are still separate facts. An assignment may start a configured account-management operation; it is not a receipt showing that the target accepted it.
 
@@ -154,13 +154,13 @@ The phrase **assignment source** answers 'Which relationship gives this user the
 
 ## Removing one path does not settle every path
 
-Imagine a future variation in which Maya's approved department changes to Finance. This is a prediction, not a change to her current Sales story.
+Imagine a future variation in which Devi's approved department changes to Finance. This is a prediction, not a change to her current Sales story.
 
 Once the new value reaches her Okta profile and the active rule processes it, she no longer meets the Sales condition. In the simple rule-managed group described above, her membership should be removed.
 
 Then investigate application assignment separately. Another assigned group or a separately maintained individual assignment can still provide a path. Even confirmed removal of the final Okta assignment does not, by itself, prove the target account's state or the end of an existing application session.
 
-Ask which relationship ended and which ones remain. For example, if the Sales group no longer includes Maya but a second group still assigns Salesforce to her, the second path remains. Inspect that relationship rather than treating the first removal as a result for every path. Existing application sessions are another outcome to check. Use evidence in this order: updated profile, processed rule/membership result, remaining assignment paths, then relevant target outcomes. Day 12 develops the full department-move case.
+Ask which relationship ended and which ones remain. For example, if the Sales group no longer includes Devi but a second group still assigns Salesforce to her, the second path remains. Inspect that relationship rather than treating the first removal as a result for every path. Existing application sessions are another outcome to check. Use evidence in this order: updated profile, processed rule/membership result, remaining assignment paths, then relevant target outcomes. Day 12 develops the full department-move case.
 
 ## Group membership has an owner too
 
@@ -176,7 +176,7 @@ The name alone does not establish the owner. Keep two locations separate as well
 
 Start with the intended application instance and the user's assignment list. Then inspect the group and its membership mechanism. The Groups area helps answer who is actually a member; the application integration's assignments show whether that group provides this application.
 
-Consider this separate observation: Maya has Sales and Employee in her Okta profile, the rule is enabled, but the expected group membership is absent. The condition appears to match, yet membership is not established. Exclusion and processing checks help distinguish a deliberate exception from a membership operation that needs further investigation; the packet does not establish either explanation. A direct assignment may make a tile appear while leaving the normal membership problem unresolved.
+Consider this separate observation: Devi has Sales and Employee in her Okta profile, the rule is enabled, but the expected group membership is absent. The condition appears to match, yet membership is not established. Exclusion and processing checks help distinguish a deliberate exception from a membership operation that needs further investigation; the packet does not establish either explanation. A direct assignment may make a tile appear while leaving the normal membership problem unresolved.
 
 If an urgent exception is approved, record its owner and removal condition separately. After correcting the normal path, review whether the exception is still needed. Verify membership and assignment first, then check the target account and intended application use. A visible tile is a useful observation, not the complete acceptance test.
 
@@ -184,7 +184,7 @@ Keep the business requirement, the rule's input, and the observed relationships 
 
 ## Tell the access story
 
-Explain Maya's flow from Workday-owned attributes to the Okta profile, the two-condition rule, group membership, and Salesforce assignment. Name the point where the packet stops proving the outcome.
+Explain Devi's flow from Workday-owned attributes to the Okta profile, the two-condition rule, group membership, and Salesforce assignment. Name the point where the packet stops proving the outcome.
 
 Then explain Priya's two cases: no assignment under the normal rule, and an individual assignment needing separate approval evidence. A group rule determines membership; it is not a universal instruction to deny every nonmember access by every other path.
 
@@ -193,7 +193,7 @@ Then explain Priya's two cases: no assignment under the normal rule, and an indi
 Can you explain:
 
 - Why a group name does not determine membership or assignments?
-- Why Maya matches while Priya and Daniel do not?
+- Why Devi matches while Priya and Daniel do not?
 - Which profile the example rule reads?
 - Why condition, rule state, membership, and assignment are separate checks?
 - How an individual assignment changes the investigation?

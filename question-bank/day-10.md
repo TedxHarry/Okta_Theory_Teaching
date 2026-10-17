@@ -12,7 +12,7 @@ nav_order: 10
 
 ### Q01. Assigned, but what exists?
 
-<p class="qb-question"><strong>Question:</strong> Maya is approved for Projects, a business application, and its assignment is present in Okta, her company’s identity service. No account-management result or record inside Projects has been checked. Does the assignment establish a usable target account?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is approved for Projects, a business application, and its assignment is present in Okta, her company’s identity service. No account-management result or record inside Projects has been checked. Does the assignment establish a usable target account?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
@@ -60,13 +60,13 @@ nav_order: 10
 
 ### Q04. MFA and connector access
 
-<p class="qb-question"><strong>Question:</strong> Maya completes multifactor authentication (MFA) at her company identity service. Separately, an Okta connector needs service authorization to create her account through Projects’ SCIM interface. No connector result is supplied. Does her authentication prove that backend operation is permitted or successful?</p>
+<p class="qb-question"><strong>Question:</strong> Devi completes multifactor authentication (MFA) at her company identity service. Separately, an Okta connector needs service authorization to create her account through Projects’ SCIM interface. No connector result is supplied. Does her authentication prove that backend operation is permitted or successful?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maya has completed a check about her own identity. The connector needs a different result: permission to perform the account-management operation at Projects through its configured service connection.</p>
+<p>Devi has completed a check about her own identity. The connector needs a different result: permission to perform the account-management operation at Projects through its configured service connection.</p>
 <p>Those are separate exchanges. Her MFA result does not show that Projects accepted the connector's authorization or created an account. Inspect the actual connection and operation result rather than repeat her sign-in checks to explain a backend failure.</p>
 <p>No connector result is supplied here, so keep its outcome unknown. A token issued for a different application's sign-in is not automatically a credential for this service connection either.</p>
 </div>
@@ -76,7 +76,7 @@ nav_order: 10
 
 ### Q05. Preparation and transmission
 
-<p class="qb-question"><strong>Question:</strong> Projects is a separate business application. Okta holds the app user profile, meaning the information prepared for Maya’s Projects assignment. Its values appear correct, but no SCIM request has been inspected. Has correct transmission been shown?</p>
+<p class="qb-question"><strong>Question:</strong> Projects is a separate business application. Okta holds the app user profile, meaning the information prepared for Devi’s Projects assignment. Its values appear correct, but no SCIM request has been inspected. Has correct transmission been shown?</p>
 
 <details class="qb-answer" id="q05-explanation">
 <summary>Read the teaching explanation</summary>
@@ -176,7 +176,7 @@ nav_order: 10
 
 ### Q11. The lookup’s purpose
 
-<p class="qb-question"><strong>Question:</strong> Before creating Maya’s Projects account, a configured connector searches the intended instance for her approved userName. A match can follow supported existing-account handling; no match can lead to create. Why perform this lookup, and can its result guarantee no later conflict?</p>
+<p class="qb-question"><strong>Question:</strong> Before creating Devi’s Projects account, a configured connector searches the intended instance for her approved userName. A match can follow supported existing-account handling; no match can lead to create. Why perform this lookup, and can its result guarantee no later conflict?</p>
 
 <details class="qb-answer" id="q11-explanation">
 <summary>Read the teaching explanation</summary>
@@ -192,13 +192,13 @@ nav_order: 10
 
 ### Q12. Read a create request
 
-<p class="qb-question"><strong>Question:</strong> Projects is a fictional SCIM application where SAL means Sales and active true requests an enabled user account. A create request carries userName maya.rao@app.example, active true, and enterprise department SAL. Projects assigns id, so none is supplied. What is requested and what is not yet proven?</p>
+<p class="qb-question"><strong>Question:</strong> Projects is a fictional SCIM application where SAL means Sales and active true requests an enabled user account. A create request carries userName devi.rao@app.example, active true, and enterprise department SAL. Projects assigns id, so none is supplied. What is requested and what is not yet proven?</p>
 
 <details class="qb-answer" id="q12-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The request asks for Maya's intended account with that username, enabled state, and Sales code. It does not establish creation until the receiver supplies its result.</p>
+<p>The request asks for Devi's intended account with that username, enabled state, and Sales code. It does not establish creation until the receiver supplies its result.</p>
 <p>No target id is included because this application assigns it. Inspect the response and intended record afterward.</p>
 <p>Read the business information within the structure first. A valid-looking body is a request for work, not evidence the destination completed that work.</p>
 </div>
@@ -208,7 +208,7 @@ nav_order: 10
 
 ### Q13. Two different active fields
 
-<p class="qb-question"><strong>Question:</strong> Maya has an Okta user account. A separate SCIM create request to Projects includes JSON <code>"active": true</code> for the application resource; no target response is supplied. Is this the same field as the Okta account status, and is the target state verified?</p>
+<p class="qb-question"><strong>Question:</strong> Devi has an Okta user account. A separate SCIM create request to Projects includes JSON <code>"active": true</code> for the application resource; no target response is supplied. Is this the same field as the Okta account status, and is the target state verified?</p>
 
 <details class="qb-answer" id="q13-explanation">
 <summary>Read the teaching explanation</summary>
@@ -272,7 +272,7 @@ nav_order: 10
 
 ### Q17. Why read the same resource?
 
-<p class="qb-question"><strong>Question:</strong> Projects returns id prj-1042 after creating Maya’s requested account. Support also sees another account with a similar display name. Why verify prj-1042 rather than assume the similarly named record is the create result?</p>
+<p class="qb-question"><strong>Question:</strong> Projects returns id prj-1042 after creating Devi’s requested account. Support also sees another account with a similar display name. Why verify prj-1042 rather than assume the similarly named record is the create result?</p>
 
 <details class="qb-answer" id="q17-explanation">
 <summary>Read the teaching explanation</summary>
@@ -288,7 +288,7 @@ nav_order: 10
 
 ### Q18. Scope of verified account creation
 
-<p class="qb-question"><strong>Question:</strong> A correlated Projects SCIM create returns 201 for Maya, and a later read of the same resource confirms the expected username, department code, and enabled state. No sign-in or project-permission test is supplied. Is “All her Projects work is ready” established?</p>
+<p class="qb-question"><strong>Question:</strong> A correlated Projects SCIM create returns 201 for Devi, and a later read of the same resource confirms the expected username, department code, and enabled state. No sign-in or project-permission test is supplied. Is “All her Projects work is ready” established?</p>
 
 <details class="qb-answer" id="q18-explanation">
 <summary>Read the teaching explanation</summary>
@@ -306,13 +306,13 @@ nav_order: 10
 
 ### Q19. Interpret a uniqueness conflict
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. What finding is established, and does it identify whose account conflicts?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. What finding is established, and does it identify whose account conflicts?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The target reports a uniqueness conflict. It does not identify the owner or establish whether the record should be linked to Maya.</p>
+<p>The target reports a uniqueness conflict. It does not identify the owner or establish whether the record should be linked to Devi.</p>
 <p>Request the existing resource and reliable ownership evidence, along with the lookup details. A familiar username cannot justify deleting or adopting the record.</p>
 <p>The refusal locates the failed operation. The correct business resolution still depends on the missing identity relationship and search history.</p>
 </div>
@@ -322,7 +322,7 @@ nav_order: 10
 
 ### Q20. No match, then conflict
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Does the difference prove another process created the account between the search and create?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Does the difference prove another process created the account between the search and create?</p>
 
 <details class="qb-answer" id="q20-explanation">
 <summary>Read the teaching explanation</summary>
@@ -330,7 +330,7 @@ nav_order: 10
 <p><strong>Explanation:</strong></p>
 <p>It could have happened that way, but the two results do not prove it. Someone else might have created the account after the search. The search might also have missed a record that was already there.</p>
 <p>Compare the exact lookup and response, the Projects instance queried, and the timing and sequence of operations. Relevant account history can help distinguish those possibilities. Keep both observations while their explanation remains unresolved.</p>
-<p>The conflict also leaves ownership unknown. Even if you establish why the search and create disagreed, you still need to establish whose account it is before deciding whether to associate it with Maya.</p>
+<p>The conflict also leaves ownership unknown. Even if you establish why the search and create disagreed, you still need to establish whose account it is before deciding whether to associate it with Devi.</p>
 </div>
 </details>
 
@@ -338,7 +338,7 @@ nav_order: 10
 
 ### Q21. Request conflict evidence
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Which evidence would address account ownership separately from why the lookup and create disagreed?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Which evidence would address account ownership separately from why the lookup and create disagreed?</p>
 
 <details class="qb-answer" id="q21-explanation">
 <summary>Read the teaching explanation</summary>
@@ -354,7 +354,7 @@ nav_order: 10
 
 ### Q22. Do not clear the error blindly
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Why not delete the existing record, invent a different username, or link it to Maya merely to clear the error?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Why not delete the existing record, invent a different username, or link it to Devi merely to clear the error?</p>
 
 <details class="qb-answer" id="q22-explanation">
 <summary>Read the teaching explanation</summary>
@@ -370,13 +370,13 @@ nav_order: 10
 
 ### Q23. Two possible owners
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. If later review verifies Maya ownership versus ownership by another person, how would the next decision differ?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. If later review verifies Devi ownership versus ownership by another person, how would the next decision differ?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>For Maya's own account, evaluate approved supported existing-account handling. For another person's record, route the naming or identity-data problem through its responsible owner.</p>
+<p>For Devi's own account, evaluate approved supported existing-account handling. For another person's record, route the naming or identity-data problem through its responsible owner.</p>
 <p>These are conditional paths, not results already provided by the conflict. Do not select either before the ownership evidence arrives.</p>
 <p>The status identifies an operation problem, while business and record evidence justify its resolution. Keep those responsibilities separate.</p>
 </div>
@@ -386,7 +386,7 @@ nav_order: 10
 
 ### Q24. Retrying the same create
 
-<p class="qb-question"><strong>Question:</strong> A connector tries to create Maya’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Would repeatedly submitting the unchanged create resolve the unknown owner and lookup discrepancy?</p>
+<p class="qb-question"><strong>Question:</strong> A connector tries to create Devi’s SCIM account in Projects. The prior username lookup reports no match, but the create returns 409 Conflict with scimType uniqueness and detail that userName is already in use. The conflicting record’s owner is unknown. Would repeatedly submitting the unchanged create resolve the unknown owner and lookup discrepancy?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
@@ -552,7 +552,7 @@ nav_order: 10
 
 ### Q34. Read the selected state change
 
-<p class="qb-question"><strong>Question:</strong> An approved Projects removal targets Maya’s correctly linked SCIM resource prj-1042. Under its contract, active false disables new access while retaining the account. A PATCH contains op replace, path active, value false. No response is supplied. What is requested and what is not yet established?</p>
+<p class="qb-question"><strong>Question:</strong> An approved Projects removal targets Devi’s correctly linked SCIM resource prj-1042. Under its contract, active false disables new access while retaining the account. A PATCH contains op replace, path active, value false. No response is supplied. What is requested and what is not yet established?</p>
 
 <details class="qb-answer" id="q34-explanation">
 <summary>Read the teaching explanation</summary>
@@ -584,7 +584,7 @@ nav_order: 10
 
 ### Q36. Inactive is not deleted
 
-<p class="qb-question"><strong>Question:</strong> Projects’ supplied contract says active false disables new access, retains the account, and leaves existing sessions for a separate check. A read confirms Maya’s account exists with active false. What result is supported, and what is not?</p>
+<p class="qb-question"><strong>Question:</strong> Projects’ supplied contract says active false disables new access, retains the account, and leaves existing sessions for a separate check. A read confirms Devi’s account exists with active false. What result is supported, and what is not?</p>
 
 <details class="qb-answer" id="q36-explanation">
 <summary>Read the teaching explanation</summary>
@@ -616,7 +616,7 @@ nav_order: 10
 
 ### Q38. One group removed
 
-<p class="qb-question"><strong>Question:</strong> Maya is removed from one Okta group that supplies a Projects assignment. Other assignment paths and the generated account operation have not been inspected. Does that one membership removal prove a SCIM deactivation was sent?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is removed from one Okta group that supplies a Projects assignment. Other assignment paths and the generated account operation have not been inspected. Does that one membership removal prove a SCIM deactivation was sent?</p>
 
 <details class="qb-answer" id="q38-explanation">
 <summary>Read the teaching explanation</summary>
@@ -632,7 +632,7 @@ nav_order: 10
 
 ### Q39. Account off, session unknown
 
-<p class="qb-question"><strong>Question:</strong> Projects accepts Maya’s deactivation and a linked read confirms active false with the record retained. Its contract disables new access but requires separate session verification. No session result is supplied. Improve: “Everything is deleted and every session ended.”</p>
+<p class="qb-question"><strong>Question:</strong> Projects accepts Devi’s deactivation and a linked read confirms active false with the record retained. Its contract disables new access but requires separate session verification. No session result is supplied. Improve: “Everything is deleted and every session ended.”</p>
 
 <details class="qb-answer" id="q39-explanation">
 <summary>Read the teaching explanation</summary>
@@ -650,7 +650,7 @@ nav_order: 10
 
 ### Q40. Connection success has a scope
 
-<p class="qb-question"><strong>Question:</strong> A connection test for an Okta-to-application provisioning service passes. Later requests may use different operations, account values, and relevant authorization checks. No result for Maya’s update is supplied. Does the connection success prove that update is accepted and valid?</p>
+<p class="qb-question"><strong>Question:</strong> A connection test for an Okta-to-application provisioning service passes. Later requests may use different operations, account values, and relevant authorization checks. No result for Devi’s update is supplied. Does the connection success prove that update is accepted and valid?</p>
 
 <details class="qb-answer" id="q40-explanation">
 <summary>Read the teaching explanation</summary>
@@ -698,7 +698,7 @@ nav_order: 10
 
 ### Q43. The task disappears
 
-<p class="qb-question"><strong>Question:</strong> A support task for creating Maya’s application account disappears from Okta’s display. No final operation response or intended target-account verification is supplied. Does the changed task display establish the required account outcome?</p>
+<p class="qb-question"><strong>Question:</strong> A support task for creating Devi’s application account disappears from Okta’s display. No final operation response or intended target-account verification is supplied. Does the changed task display establish the required account outcome?</p>
 
 <details class="qb-answer" id="q43-explanation">
 <summary>Read the teaching explanation</summary>

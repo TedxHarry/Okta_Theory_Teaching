@@ -10,7 +10,7 @@ Compare the reasoning, not exact wording. Return to the [exercises](../exercises
 
 ## 1. Apply the order to a person
 
-For Maya, we have two checked links: one to Workday and one to AD. The priority list is relevant because both sources apply, and Workday comes first. That explains her effective profile source.
+For Devi, we have two checked links: one to Workday and one to AD. The priority list is relevant because both sources apply, and Workday comes first. That explains her effective profile source.
 
 For Priya, those external links are absent and the supplied configuration says she is Okta-managed. There is no Workday association for the ranking to select. The missing step in the claim is checking whether Workday actually applies to her.
 
@@ -18,7 +18,7 @@ Revisit [First ask which sources apply to this person](../lessons/day-04-sources
 
 ## 2. Separate profile and attribute authority
 
-For this field, follow the specific AD designation rather than Maya's usual Workday profile source. Okta contains the address supplied by the chosen email source, so the different Workday address alone does not show that Okta is wrong.
+For this field, follow the specific AD designation rather than Devi's usual Workday profile source. Okta contains the address supplied by the chosen email source, so the different Workday address alone does not show that Okta is wrong.
 
 Check the approved address requirement, the correct linked AD account, the field's source configuration, and the relevant mapping and update evidence. A designated source can itself contain a business error; authority is not proof that every value is correct.
 
@@ -32,11 +32,11 @@ Workday already contains the approved Sales value. Changing it to Finance would 
 
 The packet establishes a mismatch, not a particular failed operation. A mapping defect, stale import, or incorrect association remains a hypothesis until supporting evidence is found.
 
-Revisit [What if Maya's Okta department were wrong?](../lessons/day-04-sources-and-ownership.md#what-if-mayas-okta-department-were-wrong) if your answer names a root cause without evidence.
+Revisit [What if Devi's Okta department were wrong?](../lessons/day-04-sources-and-ownership.md#what-if-devis-okta-department-were-wrong) if your answer names a root cause without evidence.
 
 ## 4. Explain contractor maintenance
 
-Priya has no Workday association or AD account assignment, is outside employee imports, and has an Okta-managed profile under the sponsor-approved maintenance process. Department inherits from each user's profile source: Workday for Maya and Okta for Priya. It is not a field universally fixed to Workday. The administrator's authority to perform the approved edit is separate from the sponsor's business approval.
+Priya has no Workday association or AD account assignment, is outside employee imports, and has an Okta-managed profile under the sponsor-approved maintenance process. Department inherits from each user's profile source: Workday for Devi and Okta for Priya. It is not a field universally fixed to Workday. The administrator's authority to perform the approved edit is separate from the sponsor's business approval.
 
 An unexpected Workday association calls the actual source configuration into question. Review how the link arose, which source now applies, and what data or lifecycle effects occurred. Do not assume the contractor label prevents matching or immediately remove links without understanding their effects.
 
@@ -52,7 +52,7 @@ Revisit [First ask which sources apply to this person](../lessons/day-04-sources
 
 ## 6. Keep architectures distinct
 
-The applicable sources differ. The AD-led employee has AD as their profile source without an applicable Workday source. Maya has both associations with Workday first, and her department follows Workday.
+The applicable sources differ. The AD-led employee has AD as their profile source without an applicable Workday source. Devi has both associations with Workday first, and her department follows Workday.
 
 The variation does not justify reordering Northbridge's sources. That would change an ownership decision for potentially many users, while a stale record might concern a mapping or update operation instead.
 
@@ -60,7 +60,7 @@ Revisit [Keep the AD-led variation separate](../lessons/day-04-sources-and-owner
 
 ## 7. Tell the complete story
 
-Workday controls Maya's profile and her inherited department field. Sales is the approved value; SAL is its intended Projects representation. The Okta user and app user profile agree with that requirement. The Projects account is the first demonstrated discrepancy on the specified path: it contains FIN instead of SAL. AD's Finance department is a separate disagreement, not the authoritative input for that path.
+Workday controls Devi's profile and her inherited department field. Sales is the approved value; SAL is its intended Projects representation. The Okta user and app user profile agree with that requirement. The Projects account is the first demonstrated discrepancy on the specified path: it contains FIN instead of SAL. AD's Finance department is a separate disagreement, not the authoritative input for that path.
 
 The explicit AD work-email source applies to that field. It does not make AD the department source. Moving AD above Workday would change source authority instead of explaining the current target discrepancy. Resetting a password is also unsupported: password validation succeeded and is separate from a department update.
 
@@ -69,7 +69,7 @@ A useful next request is the relevant Projects account-update record, including 
 - If the configuration shows department updates are disabled and the relevant history confirms no update occurred, investigate whether updates should be enabled under the approved requirement. That differs from troubleshooting a target rejection.
 - If a recorded operation sent SAL and Projects rejected it, inspect the stated rejection and target requirements. Do not change the correct HR department to work around the rejection.
 
-A concise handoff could say: “Maya's Workday department and Okta user profile contain Sales; the saved Projects mapping evaluates to SAL and the app user profile contains SAL. Her linked Projects account contains FIN. Please provide the relevant department-update record, including the value sent and the target response.” This identifies the discrepancy without inventing a failed operation.
+A concise handoff could say: “Devi's Workday department and Okta user profile contain Sales; the saved Projects mapping evaluates to SAL and the app user profile contains SAL. Her linked Projects account contains FIN. Please provide the relevant department-update record, including the value sent and the target response.” This identifies the discrepancy without inventing a failed operation.
 
 Neither finding is supplied by the initial packet. Other evidence requests are acceptable if you explain what competing explanations they distinguish. A success response would still need comparison with target state, sequence, and possible later writes, as Day 3 shows.
 

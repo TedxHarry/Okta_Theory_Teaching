@@ -12,7 +12,7 @@ nav_order: 4
 
 ### Q01. Visible is not owned
 
-<p class="qb-question"><strong>Question:</strong> Maya’s company uses Workday for HR data and Okta for identity management. Workday is designated to control her profile, and department follows that source. Support can read department in Okta. Does visibility make Okta the place responsible for maintaining the value?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s company uses Workday for HR data and Okta for identity management. Workday is designated to control her profile, and department follows that source. Support can read department in Okta. Does visibility make Okta the place responsible for maintaining the value?</p>
 
 <details class="qb-answer" id="q01-explanation">
 <summary>Read the teaching explanation</summary>
@@ -28,7 +28,7 @@ nav_order: 4
 
 ### Q02. Authority and accuracy
 
-<p class="qb-question"><strong>Question:</strong> A company designates its Workday HR system as the authoritative owner of employee department. Maya’s approved department is Sales, but Workday incorrectly records Finance. Can the authoritative source be wrong, and where should the business-data correction be handled?</p>
+<p class="qb-question"><strong>Question:</strong> A company designates its Workday HR system as the authoritative owner of employee department. Devi’s approved department is Sales, but Workday incorrectly records Finance. Can the authoritative source be wrong, and where should the business-data correction be handled?</p>
 
 <details class="qb-answer" id="q02-explanation">
 <summary>Read the teaching explanation</summary>
@@ -44,7 +44,7 @@ nav_order: 4
 
 ### Q03. One profile, an attribute exception
 
-<p class="qb-question"><strong>Question:</strong> For employee Maya, Workday is the effective profile source in Okta. The company separately designates Active Directory (AD), its directory service, to control her work-email attribute. Does this give her two effective profile sources?</p>
+<p class="qb-question"><strong>Question:</strong> For employee Devi, Workday is the effective profile source in Okta. The company separately designates Active Directory (AD), its directory service, to control her work-email attribute. Does this give her two effective profile sources?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
@@ -142,13 +142,13 @@ nav_order: 4
 
 ### Q09. Priority needs applicability
 
-<p class="qb-question"><strong>Question:</strong> Okta’s configured external profile-source order puts Workday HR first and Active Directory (AD) second. Maya has both source associations; Priya has neither and is confirmed Okta-managed. Does Workday’s first position make it the owner of every identity?</p>
+<p class="qb-question"><strong>Question:</strong> Okta’s configured external profile-source order puts Workday HR first and Active Directory (AD) second. Devi has both source associations; Priya has neither and is confirmed Okta-managed. Does Workday’s first position make it the owner of every identity?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Start with Maya, not the top of the list. She has checked associations with both Workday and AD, so the configured Workday-first order matters to her. Workday is the selected profile source in this example.</p>
+<p>Start with Devi, not the top of the list. She has checked associations with both Workday and AD, so the configured Workday-first order matters to her. Workday is the selected profile source in this example.</p>
 <p>Now look at Priya. Neither external association is present, and her checked configuration says Okta manages her profile. Workday's first position does not create a connection to her record.</p>
 <p>The useful sequence is 'Which sources apply to this user?' and then 'Which of those has priority?' The same list can support different maintenance processes because different people have different source relationships.</p>
 </div>
@@ -158,7 +158,7 @@ nav_order: 4
 
 ### Q10. Architecture is not delivery
 
-<p class="qb-question"><strong>Question:</strong> A company’s architecture says Workday HR data should reach Maya’s Okta profile. Her department recently changed, but no current profile read or import/update result is supplied. Does the intended Workday-to-Okta flow establish that her latest department arrived?</p>
+<p class="qb-question"><strong>Question:</strong> A company’s architecture says Workday HR data should reach Devi’s Okta profile. Her department recently changed, but no current profile read or import/update result is supplied. Does the intended Workday-to-Okta flow establish that her latest department arrived?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
@@ -222,9 +222,9 @@ nav_order: 4
 
 <a id="q14"></a>
 
-### Q14. Choose Maya’s effective source
+### Q14. Choose Devi’s effective source
 
-<p class="qb-question"><strong>Question:</strong> Employee Maya’s Workday HR and Active Directory (AD) source associations are verified. Both are designated sources, Workday ranks first, and her checked effective profile source is Workday. What explains that result, and is it enough to identify every field’s owner?</p>
+<p class="qb-question"><strong>Question:</strong> Employee Devi’s Workday HR and Active Directory (AD) source associations are verified. Both are designated sources, Workday ranks first, and her checked effective profile source is Workday. What explains that result, and is it enough to identify every field’s owner?</p>
 
 <details class="qb-answer" id="q14-explanation">
 <summary>Read the teaching explanation</summary>
@@ -256,7 +256,7 @@ nav_order: 4
 
 ### Q16. No value, no new owner
 
-<p class="qb-question"><strong>Question:</strong> Workday HR controls Maya’s department in Okta. Active Directory (AD) is another connected source, but no fallback or ownership change is shown. Workday’s department is empty. Does that alone establish AD as the new owner?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR controls Devi’s department in Okta. Active Directory (AD) is another connected source, but no fallback or ownership change is shown. Workday’s department is empty. Does that alone establish AD as the new owner?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
@@ -274,15 +274,15 @@ nav_order: 4
 
 ### Q17. Follow inheritance for two people
 
-<p class="qb-question"><strong>Question:</strong> A department field is configured to inherit from each user’s effective profile source. Maya’s verified source is Workday HR; Priya’s is Okta under an approved contractor-maintenance process. Why can the same setting lead to different edit locations?</p>
+<p class="qb-question"><strong>Question:</strong> A department field is configured to inherit from each user’s effective profile source. Devi’s verified source is Workday HR; Priya’s is Okta under an approved contractor-maintenance process. Why can the same setting lead to different edit locations?</p>
 
 <details class="qb-answer" id="q17-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>Read the setting as 'use this user's effective profile source.' It does not say 'use Workday for every user.'</p>
-<p>For Maya, the selected source is Workday, so department follows Workday. For Priya, the selected source is Okta, so department follows her approved Okta-maintenance process. One inherited field setting can therefore lead to two appropriate edit locations.</p>
-<p>Check the person-level source before interpreting the field setting. Copying Maya's HR maintenance route to Priya would ignore the different source relationship supplied for her.</p>
+<p>For Devi, the selected source is Workday, so department follows Workday. For Priya, the selected source is Okta, so department follows her approved Okta-maintenance process. One inherited field setting can therefore lead to two appropriate edit locations.</p>
+<p>Check the person-level source before interpreting the field setting. Copying Devi's HR maintenance route to Priya would ignore the different source relationship supplied for her.</p>
 </div>
 </details>
 
@@ -306,13 +306,13 @@ nav_order: 4
 
 ### Q19. Workday first, email from AD
 
-<p class="qb-question"><strong>Question:</strong> Workday HR is Maya’s effective profile source in Okta. The company explicitly designates Active Directory (AD), its directory, as the source for her work email. Why can Okta use AD’s email without AD becoming the overall profile owner?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR is Devi’s effective profile source in Okta. The company explicitly designates Active Directory (AD), its directory, as the source for her work email. Why can Okta use AD’s email without AD becoming the overall profile owner?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Workday is Maya's usual profile source, but work email has its own explicit AD designation. Follow that specific setting when deciding where the email value comes from.</p>
+<p>Workday is Devi's usual profile source, but work email has its own explicit AD designation. Follow that specific setting when deciding where the email value comes from.</p>
 <p>That is a field-level exception, not a second overall profile source. AD can supply work email while department continues to follow Workday. Reading only 'Workday first' would miss the exception.</p>
 <p>Keep the scope of the decision: this setting concerns work email. It does not tell us her Okta login, every application's username, or which process handles her departure. Those need their own relevant settings and evidence.</p>
 </div>
@@ -338,7 +338,7 @@ nav_order: 4
 
 ### Q21. No supplied email fallback
 
-<p class="qb-question"><strong>Question:</strong> Active Directory (AD) explicitly controls Maya’s work email in Okta. Workday HR has another email value, but AD’s value is missing and no substitution rule is supplied. Can support assume Workday’s email becomes the replacement?</p>
+<p class="qb-question"><strong>Question:</strong> Active Directory (AD) explicitly controls Devi’s work email in Okta. Workday HR has another email value, but AD’s value is missing and no substitution rule is supplied. Can support assume Workday’s email becomes the replacement?</p>
 
 <details class="qb-answer" id="q21-explanation">
 <summary>Read the teaching explanation</summary>
@@ -356,7 +356,7 @@ nav_order: 4
 
 ### Q22. Read the department disagreement
 
-<p class="qb-question"><strong>Question:</strong> For Maya’s correctly linked records, Workday HR owns department and Sales is the approved value. Workday and Okta show Sales; Active Directory (AD) shows Finance. No intended AD department-maintenance process is supplied. Which Okta value agrees with its owner, and what should be checked next?</p>
+<p class="qb-question"><strong>Question:</strong> For Devi’s correctly linked records, Workday HR owns department and Sales is the approved value. Workday and Okta show Sales; Active Directory (AD) shows Finance. No intended AD department-maintenance process is supplied. Which Okta value agrees with its owner, and what should be checked next?</p>
 
 <details class="qb-answer" id="q22-explanation">
 <summary>Read the teaching explanation</summary>
@@ -372,7 +372,7 @@ nav_order: 4
 
 ### Q23. Does disagreement prove sync failure?
 
-<p class="qb-question"><strong>Question:</strong> Workday HR and Okta contain Maya’s approved Sales department, while her linked Active Directory (AD) record contains Finance. No AD synchronization requirement or write history is supplied. Do these snapshots prove a synchronization operation failed?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR and Okta contain Devi’s approved Sales department, while her linked Active Directory (AD) record contains Finance. No AD synchronization requirement or write history is supplied. Do these snapshots prove a synchronization operation failed?</p>
 
 <details class="qb-answer" id="q23-explanation">
 <summary>Read the teaching explanation</summary>
@@ -388,7 +388,7 @@ nav_order: 4
 
 ### Q24. Read the email disagreement
 
-<p class="qb-question"><strong>Question:</strong> Active Directory (AD) explicitly owns Maya’s work email. AD and Okta store mrao@northbridge.example, while Workday HR stores maya.rao@northbridge.example. The approved email requirement has not been compared. Does the different Workday address prove Okta’s work email is wrong?</p>
+<p class="qb-question"><strong>Question:</strong> Active Directory (AD) explicitly owns Devi’s work email. AD and Okta store mrao@northbridge.example, while Workday HR stores devi.rao@northbridge.example. The approved email requirement has not been compared. Does the different Workday address prove Okta’s work email is wrong?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
@@ -404,7 +404,7 @@ nav_order: 4
 
 ### Q25. Separate the identifiers
 
-<p class="qb-question"><strong>Question:</strong> A company designates Active Directory (AD) to control employee Maya’s work email. Her Okta login and separate application usernames have not been read. Does identifying the email owner establish those identifiers’ exact values too?</p>
+<p class="qb-question"><strong>Question:</strong> A company designates Active Directory (AD) to control employee Devi’s work email. Her Okta login and separate application usernames have not been read. Does identifying the email owner establish those identifiers’ exact values too?</p>
 
 <details class="qb-answer" id="q25-explanation">
 <summary>Read the teaching explanation</summary>
@@ -412,7 +412,7 @@ nav_order: 4
 <p><strong>Explanation:</strong></p>
 <p>No. Work email, Okta login, and each application username are distinct fields. Their values may differ under the relevant requirements and mappings.</p>
 <p>The supplied ownership decision concerns work email only. Obtain the actual identifier evidence for the system and operation being investigated.</p>
-<p>Calling everything Maya's email can hide which field was checked. Name both the record and field so a maintenance decision does not become an unsupported sign-in-name claim.</p>
+<p>Calling everything Devi's email can hide which field was checked. Name both the record and field so a maintenance decision does not become an unsupported sign-in-name claim.</p>
 </div>
 </details>
 
@@ -422,7 +422,7 @@ nav_order: 4
 
 ### Q26. Correct source, wrong receiver
 
-<p class="qb-question"><strong>Question:</strong> Workday HR owns Maya’s department and correctly records the approved value Sales. Her correctly identified Okta profile instead shows Finance. The import/update history and incoming mapping have not been inspected. What should support investigate before changing correct HR data?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR owns Devi’s department and correctly records the approved value Sales. Her correctly identified Okta profile instead shows Finance. The import/update history and incoming mapping have not been inspected. What should support investigate before changing correct HR data?</p>
 
 <details class="qb-answer" id="q26-explanation">
 <summary>Read the teaching explanation</summary>
@@ -454,7 +454,7 @@ nav_order: 4
 
 ### Q28. The tempting direct edit
 
-<p class="qb-question"><strong>Question:</strong> Maya’s department is externally controlled by Workday HR and represented in Okta. A receiving value appears stale. Editability and the later source-update behavior have not been checked. Why is a direct local edit not a durable general correction?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s department is externally controlled by Workday HR and represented in Okta. A receiving value appears stale. Editability and the later source-update behavior have not been checked. Why is a direct local edit not a durable general correction?</p>
 
 <details class="qb-answer" id="q28-explanation">
 <summary>Read the teaching explanation</summary>
@@ -554,7 +554,7 @@ nav_order: 4
 
 ### Q34. Email and leaving
 
-<p class="qb-question"><strong>Question:</strong> Workday employment events drive a company’s configured employee lifecycle processing, while Active Directory (AD) separately owns Maya’s work-email attribute. Does the email designation make AD responsible for her joining and departure actions?</p>
+<p class="qb-question"><strong>Question:</strong> Workday employment events drive a company’s configured employee lifecycle processing, while Active Directory (AD) separately owns Devi’s work-email attribute. Does the email designation make AD responsible for her joining and departure actions?</p>
 
 <details class="qb-answer" id="q34-explanation">
 <summary>Read the teaching explanation</summary>
@@ -586,7 +586,7 @@ nav_order: 4
 
 ### Q36. A global fix for one field
 
-<p class="qb-question"><strong>Question:</strong> Workday HR is Maya’s approved profile source, with Active Directory (AD) lower in the configured order. Her correct HR department appears stale in Okta. Both associations exist, but no ownership-change requirement is approved. Why is moving AD above Workday a poor quick fix?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR is Devi’s approved profile source, with Active Directory (AD) lower in the configured order. Her correct HR department appears stale in Okta. Both associations exist, but no ownership-change requirement is approved. Why is moving AD above Workday a poor quick fix?</p>
 
 <details class="qb-answer" id="q36-explanation">
 <summary>Read the teaching explanation</summary>
@@ -602,7 +602,7 @@ nav_order: 4
 
 ### Q37. Who checks the password?
 
-<p class="qb-question"><strong>Question:</strong> Workday HR controls Maya’s employee profile. On her configured directory-password sign-in path, Okta asks Active Directory (AD) to validate credentials through an AD agent. Can these responsibilities coexist, and what is the agent’s role?</p>
+<p class="qb-question"><strong>Question:</strong> Workday HR controls Devi’s employee profile. On her configured directory-password sign-in path, Okta asks Active Directory (AD) to validate credentials through an AD agent. Can these responsibilities coexist, and what is the agent’s role?</p>
 
 <details class="qb-answer" id="q37-explanation">
 <summary>Read the teaching explanation</summary>

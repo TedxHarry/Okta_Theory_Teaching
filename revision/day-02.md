@@ -18,11 +18,11 @@ When someone says “Okta worked, but the app failed,” slow the story down. Wh
 
 **JSON and log fields.** JSON organizes data into named values, objects, and lists. Read a field in its context: an event's `outcome.result` describes that event, not every later step. The actor, target, event type, and time help establish what happened.
 
-**Correlation.** This means connecting records that belong to the same attempt. Compare the person, application instance, timestamps and time zones, and relevant identifiers. Two records mentioning Maya are not automatically part of the same sign-in.
+**Correlation.** This means connecting records that belong to the same attempt. Compare the person, application instance, timestamps and time zones, and relevant identifiers. Two records mentioning Devi are not automatically part of the same sign-in.
 
-**Cookies and sessions.** A cookie is data the browser stores and sends according to its rules. A session lets a system recognize an ongoing interaction across requests, such as Maya moving between pages after signing in. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.
+**Cookies and sessions.** A cookie is data the browser stores and sends according to its rules. A session lets a system recognize an ongoing interaction across requests, such as Devi moving between pages after signing in. Neither is the user's account record. Keeping those ideas separate will help when we later examine logout and access removal.
 
-## Follow Maya's evidence
+## Follow Devi's evidence
 
 This is a separate Expense attempt; Day 1's Salesforce account findings do not explain it. In the supplied Expense example, the browser follows a redirect, receives a sign-in form, and completes authentication. An Okta SSO event, connected to this attempt by the training packet, reports success. Expense then returns a refusal about the sign-in information.
 
@@ -36,10 +36,10 @@ Choose a log window and time zone, then correlate the person and application. Ke
 
 ## Check your understanding
 
-Without looking back, tell Maya's Expense story in order. Name a successful step, the first demonstrated failure, and one piece of evidence still needed. Then use the questions below to check your explanation.
+Without looking back, tell Devi's Expense story in order. Name a successful step, the first demonstrated failure, and one piece of evidence still needed. Then use the questions below to check your explanation.
 
 - Why does receiving a page with status `200` not prove authentication succeeded?
-- What does the Okta success event establish in Maya's sequence, and what remains unknown?
+- What does the Okta success event establish in Devi's sequence, and what remains unknown?
 - What would you compare before joining two log records into one story?
 
 <details markdown="1">

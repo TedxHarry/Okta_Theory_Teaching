@@ -14,7 +14,7 @@ Keep one picture in mind: the browser brings a code back to Expense, and Expense
 
 **Client.** Expense is the OIDC client. Its backend can protect client credentials, which help prove the application's identity rather than the person's. The browser is an HTTP client while carrying requests, but that does not make it the OIDC client in this design.
 
-**Authorization code.** This is a short-lived, single-use value returned through the browser to the configured callback. Expense receives it at its callback, then its backend sends it to Okta's token endpoint for exchange. Maya does not type it like an MFA code, and it is not an access token for an API request.
+**Authorization code.** This is a short-lived, single-use value returned through the browser to the configured callback. Expense receives it at its callback, then its backend sends it to Okta's token endpoint for exchange. Devi does not type it like an MFA code, and it is not an access token for an API request.
 
 **Request parameters.** `client_id` identifies the client and is not a secret. `response_type=code` requests this flow. `scope=openid` requests OIDC behavior; requesting `profile` does not guarantee every conceivable profile claim. The redirect URI must match an approved registration.
 

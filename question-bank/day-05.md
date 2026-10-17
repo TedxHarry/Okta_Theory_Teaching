@@ -44,15 +44,15 @@ nav_order: 5
 
 ### Q03. Two relationships
 
-<p class="qb-question"><strong>Question:</strong> Okta manages a group called Sales-Employees. Maya’s membership is recorded, and a separate configuration assigns the Salesforce application to that group. How do those two relationships differ, and why inspect both?</p>
+<p class="qb-question"><strong>Question:</strong> Okta manages a group called Sales-Employees. Devi’s membership is recorded, and a separate configuration assigns the Salesforce application to that group. How do those two relationships differ, and why inspect both?</p>
 
 <details class="qb-answer" id="q03-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>The first relationship says, 'Maya belongs to this group.' The second says, 'Salesforce is assigned to this group.' Together, they provide her group-based assignment path.</p>
-<p>Check what happens if either part is missing. Maya could be a member of a group with no Salesforce assignment. Or Salesforce could be assigned to a group Maya is not in. In either situation, this path would be incomplete for her.</p>
-<p>Inspect both relationships and the resulting assignment for the intended Salesforce integration. That confirms how the assignment reaches Maya; the account and sign-in inside Salesforce still need their own checks.</p>
+<p>The first relationship says, 'Devi belongs to this group.' The second says, 'Salesforce is assigned to this group.' Together, they provide her group-based assignment path.</p>
+<p>Check what happens if either part is missing. Devi could be a member of a group with no Salesforce assignment. Or Salesforce could be assigned to a group Devi is not in. In either situation, this path would be incomplete for her.</p>
+<p>Inspect both relationships and the resulting assignment for the intended Salesforce integration. That confirms how the assignment reaches Devi; the account and sign-in inside Salesforce still need their own checks.</p>
 </div>
 </details>
 
@@ -60,14 +60,14 @@ nav_order: 5
 
 ### Q04. Membership without the application
 
-<p class="qb-question"><strong>Question:</strong> Maya is a verified member of an Okta group intended to provide Salesforce, but the group has no Salesforce application assignment. No other path is supplied. Does this membership alone establish the expected group-based application assignment?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is a verified member of an Okta group intended to provide Salesforce, but the group has no Salesforce application assignment. No other path is supplied. Does this membership alone establish the expected group-based application assignment?</p>
 
 <details class="qb-answer" id="q04-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
 <p>No. The user-to-group relationship is present, but the group-to-Salesforce connection is missing.</p>
-<p>Compare that gap with the approved requirement and inspect the intended application instance. A membership rule that already placed Maya correctly is not the demonstrated problem.</p>
+<p>Compare that gap with the approved requirement and inspect the intended application instance. A membership rule that already placed Devi correctly is not the demonstrated problem.</p>
 <p>Other paths and target outcomes need their own evidence if relevant. This question establishes one absent connection rather than every possible access result.</p>
 </div>
 </details>
@@ -144,13 +144,13 @@ nav_order: 5
 
 ### Q09. Predict three people
 
-<p class="qb-question"><strong>Question:</strong> An active Okta rule uses Sales AND Employee. Maya is Sales/Employee, Priya Sales/Contractor, and Daniel Finance/Employee. All three accounts are Active, processing is complete, no exclusion applies, and no other membership mechanism exists. Who qualifies for this rule-managed group?</p>
+<p class="qb-question"><strong>Question:</strong> An active Okta rule uses Sales AND Employee. Devi is Sales/Employee, Priya Sales/Contractor, and Daniel Finance/Employee. All three accounts are Active, processing is complete, no exclusion applies, and no other membership mechanism exists. Who qualifies for this rule-managed group?</p>
 
 <details class="qb-answer" id="q09-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Only Maya meets both conditions. Priya meets Sales but not Employee. Daniel meets Employee but not Sales.</p>
+<p>Only Devi meets both conditions. Priya meets Sales but not Employee. Daniel meets Employee but not Sales.</p>
 <p>The supplied processing conditions let the example connect those inputs to the expected rule-managed membership. Sharing one detail is not enough when AND requires both.</p>
 <p>Those results implement the employee-only Sales population. Application assignment and actual use remain separate outcomes unless their evidence is also supplied.</p>
 </div>
@@ -160,15 +160,15 @@ nav_order: 5
 
 ### Q10. Change AND to OR
 
-<p class="qb-question"><strong>Question:</strong> The approved population is Sales employees only. Maya’s profile is Sales/Employee, Priya’s Sales/Contractor, and Daniel’s Finance/Employee. If a proposed condition changes Sales AND Employee to Sales OR Employee, who qualifies and how does the requirement change?</p>
+<p class="qb-question"><strong>Question:</strong> The approved population is Sales employees only. Devi’s profile is Sales/Employee, Priya’s Sales/Contractor, and Daniel’s Finance/Employee. If a proposed condition changes Sales AND Employee to Sales OR Employee, who qualifies and how does the requirement change?</p>
 
 <details class="qb-answer" id="q10-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>All three qualify under OR. Maya meets both conditions, Priya meets Sales, and Daniel meets Employee. OR asks for at least one true condition; it does not exclude someone who meets both.</p>
+<p>All three qualify under OR. Devi meets both conditions, Priya meets Sales, and Daniel meets Employee. OR asks for at least one true condition; it does not exclude someone who meets both.</p>
 <p>Compare that with the approved requirement: Sales employees only. Priya is a contractor, and Daniel works in Finance. Including them would broaden this rule beyond that requirement.</p>
-<p>So changing AND to OR is a different access decision, not just a different way to write the same decision. Work out the affected people before applying it rather than test only whether Maya now appears.</p>
+<p>So changing AND to OR is a different access decision, not just a different way to write the same decision. Work out the affected people before applying it rather than test only whether Devi now appears.</p>
 </div>
 </details>
 
@@ -176,13 +176,13 @@ nav_order: 5
 
 ### Q11. Two meanings of Active
 
-<p class="qb-question"><strong>Question:</strong> In Okta, Maya’s user account is Active and a group rule is also active. The rule’s inputs, exclusions, processing result, and actual membership have not been inspected. How do those two uses of active differ, and is membership proven?</p>
+<p class="qb-question"><strong>Question:</strong> In Okta, Devi’s user account is Active and a group rule is also active. The rule’s inputs, exclusions, processing result, and actual membership have not been inspected. How do those two uses of active differ, and is membership proven?</p>
 
 <details class="qb-answer" id="q11-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Active user describes account state. Active rule means the rule is enabled to operate. Neither alone establishes membership for Maya.</p>
+<p>Active user describes account state. Active rule means the rule is enabled to operate. Neither alone establishes membership for Devi.</p>
 <p>Read the relevant inputs, any exclusion, and processing and membership evidence. Account state is also a meaningful condition for rule behavior, not a synonym for qualification.</p>
 <p>Keep the two facts separate. The same word appears in their labels while describing different objects and leaving the intended relationship unverified.</p>
 </div>
@@ -226,13 +226,13 @@ nav_order: 5
 
 ### Q14. Correct rule, stale input
 
-<p class="qb-question"><strong>Question:</strong> Maya’s approved Workday HR department is Sales, but her central Okta profile says Finance/Employee. The configured group condition correctly tests Sales AND Employee against that Okta input. Can its false result be logically correct while the business outcome is unwanted?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s approved Workday HR department is Sales, but her central Okta profile says Finance/Employee. The configured group condition correctly tests Sales AND Employee against that Okta input. Can its false result be logically correct while the business outcome is unwanted?</p>
 
 <details class="qb-answer" id="q14-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Yes. The rule is being given Finance/Employee. Employee is true, but Sales is false, so the AND condition is false. The rule can make that calculation correctly even though Maya's real approved department is Sales.</p>
+<p>Yes. The rule is being given Finance/Employee. Employee is true, but Sales is false, so the AND condition is false. The rule can make that calculation correctly even though Devi's real approved department is Sales.</p>
 <p>The disagreement is between the source value and the field the rule actually reads. Follow how Sales should reach her central Okta profile: check the linked records, incoming mapping and relevant import or update results.</p>
 <p>Those checks can explain the discrepancy. Broadening the access rule would not repair the inaccurate input and could include other Finance users. Preserve the approved condition while investigating the demonstrated data gap.</p>
 </div>
@@ -242,13 +242,13 @@ nav_order: 5
 
 ### Q15. Do not broaden around stale data
 
-<p class="qb-question"><strong>Question:</strong> The approved normal group is Sales AND Employee. Maya is legitimately Sales in Workday HR but stale as Finance in Okta, which the rule reads. No change allowing Finance users is approved. Why not add Finance to the group condition to include Maya?</p>
+<p class="qb-question"><strong>Question:</strong> The approved normal group is Sales AND Employee. Devi is legitimately Sales in Workday HR but stale as Finance in Okta, which the rule reads. No change allowing Finance users is approved. Why not add Finance to the group condition to include Devi?</p>
 
 <details class="qb-answer" id="q15-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>It would change the qualifying population and could include other Finance employees. That exceeds correcting Maya's stale input.</p>
+<p>It would change the qualifying population and could include other Finance employees. That exceeds correcting Devi's stale input.</p>
 <p>Investigate why the approved Sales value is not represented in the central profile and preserve the employee-only Sales requirement.</p>
 <p>A workaround can remove one symptom while creating unrelated assignments. Choose the correction at the demonstrated data discrepancy instead of changing the business access decision to accommodate it.</p>
 </div>
@@ -258,7 +258,7 @@ nav_order: 5
 
 ### Q16. A target value is another layer
 
-<p class="qb-question"><strong>Question:</strong> A group rule reads Maya’s central department in Okta. Salesforce, a separate business application, displays Sales, but the central field has not been inspected. Does the application display establish the rule’s actual input?</p>
+<p class="qb-question"><strong>Question:</strong> A group rule reads Devi’s central department in Okta. Salesforce, a separate business application, displays Sales, but the central field has not been inspected. Does the application display establish the rule’s actual input?</p>
 
 <details class="qb-answer" id="q16-explanation">
 <summary>Read the teaching explanation</summary>
@@ -292,7 +292,7 @@ nav_order: 5
 
 ### Q18. A demonstrated inactive-rule gap
 
-<p class="qb-question"><strong>Question:</strong> Maya is Sales/Employee with an Active Okta account. The approved rule tests Sales AND Employee, targets the intended group, and has never been activated. Maya is absent and no other membership mechanism exists. Salesforce is assigned to the group. What gap is demonstrated?</p>
+<p class="qb-question"><strong>Question:</strong> Devi is Sales/Employee with an Active Okta account. The approved rule tests Sales AND Employee, targets the intended group, and has never been activated. Devi is absent and no other membership mechanism exists. Salesforce is assigned to the group. What gap is demonstrated?</p>
 
 <details class="qb-answer" id="q18-explanation">
 <summary>Read the teaching explanation</summary>
@@ -308,13 +308,13 @@ nav_order: 5
 
 ### Q19. Review before activation
 
-<p class="qb-question"><strong>Question:</strong> A company proposes activating an approved but inactive Okta rule for all Sales employees. Maya’s missing membership led to the investigation, but the rule can affect other users. What should be reviewed before activation, and why?</p>
+<p class="qb-question"><strong>Question:</strong> A company proposes activating an approved but inactive Okta rule for all Sales employees. Devi’s missing membership led to the investigation, but the rule can affect other users. What should be reviewed before activation, and why?</p>
 
 <details class="qb-answer" id="q19-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Review the actual condition, designated group, affected population, and exclusions against the approved requirement. The shared rule is not private to Maya's account.</p>
+<p>Review the actual condition, designated group, affected population, and exclusions against the approved requirement. The shared rule is not private to Devi's account.</p>
 <p>Activation is a configuration change with wider consequences. A single matching profile does not establish that every included user is intended.</p>
 <p>After the appropriate change, compare actual membership and assignments with the predicted population. The investigation's initiating ticket and the change's scope can differ.</p>
 </div>
@@ -324,15 +324,15 @@ nav_order: 5
 
 ### Q20. Matching but excluded
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Active Okta profile is Sales/Employee. A rule requiring Sales AND Employee has an explicit exclusion for her, preventing this rule from adding her. The exclusion’s business justification is unknown. Does matching input prove the rule will include her?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Active Okta profile is Sales/Employee. A rule requiring Sales AND Employee has an explicit exclusion for her, preventing this rule from adding her. The exclusion’s business justification is unknown. Does matching input prove the rule will include her?</p>
 
 <details class="qb-answer" id="q20-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>No. Maya's profile meets the condition, but the rule also has an explicit exclusion for her. That exclusion prevents this rule from adding her; the two findings are not contradictory.</p>
+<p>No. Devi's profile meets the condition, but the rule also has an explicit exclusion for her. That exclusion prevents this rule from adding her; the two findings are not contradictory.</p>
 <p>Before removing the exclusion, ask why it exists and whether that exception remains approved. Knowing how it affects membership does not tell us whether it should be changed.</p>
-<p>Keep the scope of the finding. It explains why this rule does not add Maya. It does not tell us whether another group or a direct assignment gives her the application by a separate path.</p>
+<p>Keep the scope of the finding. It explains why this rule does not add Devi. It does not tell us whether another group or a direct assignment gives her the application by a separate path.</p>
 </div>
 </details>
 
@@ -340,7 +340,7 @@ nav_order: 5
 
 ### Q21. Enabled but absent
 
-<p class="qb-question"><strong>Question:</strong> Maya’s central Okta profile is Sales/Employee, which matches an enabled Sales AND Employee rule. She is absent from the expected group. Her account-state context, applicable exclusions, and processing result are not supplied. Is a specific cause established?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s central Okta profile is Sales/Employee, which matches an enabled Sales AND Employee rule. She is absent from the expected group. Her account-state context, applicable exclusions, and processing result are not supplied. Is a specific cause established?</p>
 
 <details class="qb-answer" id="q21-explanation">
 <summary>Read the teaching explanation</summary>
@@ -356,7 +356,7 @@ nav_order: 5
 
 ### Q22. A preview is not membership
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Sales/Employee input produces true in a preview of an Okta group rule. A preview evaluates the condition, but stored membership and relevant processing have not been checked. What evidence is still required before reporting she belongs to the group?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Sales/Employee input produces true in a preview of an Okta group rule. A preview evaluates the condition, but stored membership and relevant processing have not been checked. What evidence is still required before reporting she belongs to the group?</p>
 
 <details class="qb-answer" id="q22-explanation">
 <summary>Read the teaching explanation</summary>
@@ -390,7 +390,7 @@ nav_order: 5
 
 ### Q24. Read the successful follow-up
 
-<p class="qb-question"><strong>Question:</strong> Support verifies Maya was added by the intended Okta group rule and has Salesforce assigned through that group. No Salesforce account state, account-management result, sign-in, or permission evidence is supplied. Which outcomes are established?</p>
+<p class="qb-question"><strong>Question:</strong> Support verifies Devi was added by the intended Okta group rule and has Salesforce assigned through that group. No Salesforce account state, account-management result, sign-in, or permission evidence is supplied. Which outcomes are established?</p>
 
 <details class="qb-answer" id="q24-explanation">
 <summary>Read the teaching explanation</summary>
@@ -422,7 +422,7 @@ nav_order: 5
 
 ### Q26. Assignment and usable access
 
-<p class="qb-question"><strong>Question:</strong> Maya’s Salesforce assignment is confirmed in Okta, the company identity service. Her requirement is entering the intended application account and performing an approved business action. No target-use evidence is supplied. Which separate outcomes still need verification?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s Salesforce assignment is confirmed in Okta, the company identity service. Her requirement is entering the intended application account and performing an approved business action. No target-use evidence is supplied. Which separate outcomes still need verification?</p>
 
 <details class="qb-answer" id="q26-explanation">
 <summary>Read the teaching explanation</summary>
@@ -506,7 +506,7 @@ nav_order: 5
 
 ### Q31. A future department move
 
-<p class="qb-question"><strong>Question:</strong> Maya moves from Sales to Finance under an approved change. The new Finance/Employee values reach her Active Okta profile, and an active Sales AND Employee rule processes them. In the stated group, that rule is the only membership mechanism and no exclusion issue applies. What membership is expected?</p>
+<p class="qb-question"><strong>Question:</strong> Devi moves from Sales to Finance under an approved change. The new Finance/Employee values reach her Active Okta profile, and an active Sales AND Employee rule processes them. In the stated group, that rule is the only membership mechanism and no exclusion issue applies. What membership is expected?</p>
 
 <details class="qb-answer" id="q31-explanation">
 <summary>Read the teaching explanation</summary>
@@ -522,7 +522,7 @@ nav_order: 5
 
 ### Q32. Another group still assigns
 
-<p class="qb-question"><strong>Question:</strong> Maya’s membership in an Okta Sales group is confirmed removed. A different group still assigns Salesforce to her. No finding about removing that other path is supplied. Has the Sales-group removal ended every Okta Salesforce assignment path?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s membership in an Okta Sales group is confirmed removed. A different group still assigns Salesforce to her. No finding about removing that other path is supplied. Has the Sales-group removal ended every Okta Salesforce assignment path?</p>
 
 <details class="qb-answer" id="q32-explanation">
 <summary>Read the teaching explanation</summary>
@@ -588,7 +588,7 @@ nav_order: 5
 
 ### Q36. Same name, different object
 
-<p class="qb-question"><strong>Question:</strong> Maya belongs to an Okta group that has Salesforce assigned. No configuration or target evidence establishes a group inside Salesforce. Does her Okta membership prove a same-named Salesforce group exists?</p>
+<p class="qb-question"><strong>Question:</strong> Devi belongs to an Okta group that has Salesforce assigned. No configuration or target evidence establishes a group inside Salesforce. Does her Okta membership prove a same-named Salesforce group exists?</p>
 
 <details class="qb-answer" id="q36-explanation">
 <summary>Read the teaching explanation</summary>
@@ -622,7 +622,7 @@ nav_order: 5
 
 ### Q38. A tile appears after a workaround
 
-<p class="qb-question"><strong>Question:</strong> Maya should receive an application through a normal rule-managed group, but that membership remains absent. An approved urgent individual assignment now makes her dashboard shortcut appear. No normal-path repair or target-use test is supplied. Is the membership problem resolved?</p>
+<p class="qb-question"><strong>Question:</strong> Devi should receive an application through a normal rule-managed group, but that membership remains absent. An approved urgent individual assignment now makes her dashboard shortcut appear. No normal-path repair or target-use test is supplied. Is the membership problem resolved?</p>
 
 <details class="qb-answer" id="q38-explanation">
 <summary>Read the teaching explanation</summary>
@@ -638,13 +638,13 @@ nav_order: 5
 
 ### Q39. Ask for the missing evidence
 
-<p class="qb-question"><strong>Question:</strong> Maya’s central Okta profile is Sales/Employee and the enabled rule tests Sales AND Employee. Expected membership is absent, but account-state context, exclusions, processing details, and other assignment paths are unknown. What focused evidence should support request before choosing a workaround?</p>
+<p class="qb-question"><strong>Question:</strong> Devi’s central Okta profile is Sales/Employee and the enabled rule tests Sales AND Employee. Expected membership is absent, but account-state context, exclusions, processing details, and other assignment paths are unknown. What focused evidence should support request before choosing a workaround?</p>
 
 <details class="qb-answer" id="q39-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Request the intended group's actual members, the rule's target and exclusions, Maya's account state, and relevant processing results. Inspect the intended application instance and assignment sources too.</p>
+<p>Request the intended group's actual members, the rule's target and exclusions, Devi's account state, and relevant processing results. Inspect the intended application instance and assignment sources too.</p>
 <p>Those facts distinguish possible explanations instead of assuming a failed rule or total assignment absence.</p>
 <p>If an urgent exception is approved, track it separately with its end condition. Its existence does not supply the missing normal-path result or application verification.</p>
 </div>
@@ -654,13 +654,13 @@ nav_order: 5
 
 ### Q40. Explain both access stories
 
-<p class="qb-question"><strong>Question:</strong> A company’s active Okta rule manages a group using Sales AND Employee. Maya is Sales/Employee and verified as a rule-managed member with Salesforce assigned through the group. Priya is Sales/Contractor, correctly excluded, and no other assignment path is supplied. Explain the different normal outcomes and what application-use evidence is still missing.</p>
+<p class="qb-question"><strong>Question:</strong> A company’s active Okta rule manages a group using Sales AND Employee. Devi is Sales/Employee and verified as a rule-managed member with Salesforce assigned through the group. Priya is Sales/Contractor, correctly excluded, and no other assignment path is supplied. Explain the different normal outcomes and what application-use evidence is still missing.</p>
 
 <details class="qb-answer" id="q40-explanation">
 <summary>Read the teaching explanation</summary>
 <div class="qb-explanation">
 <p><strong>Explanation:</strong></p>
-<p>Maya meets both conditions, and the verified group relationship supplies her normal Salesforce assignment. Priya does not meet Employee, so she does not qualify for that normal path.</p>
+<p>Devi meets both conditions, and the verified group relationship supplies her normal Salesforce assignment. Priya does not meet Employee, so she does not qualify for that normal path.</p>
 <p>A separately approved exception could use another path if supplied; the rule alone does not describe every possible assignment. Here no such path is established for Priya.</p>
 <p>The relationships explain normal assignments, not target-account readiness, completed sign-in, or business permissions. Those outcomes still need their own checks.</p>
 </div>

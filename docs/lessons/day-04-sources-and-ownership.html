@@ -1,26 +1,26 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Day 4: Sources, priority, and ownership. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Day 4: Sources, priority, and ownership | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=64f84bcb7765"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=64f84bcb7765"><script src="/Okta_Theory_Teaching/assets/app.js?v=64f84bcb7765" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html" aria-current="page"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><nav class="reading-modes" aria-label="Lesson material"><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html" aria-current="page">Lesson 4</a><a href="/Okta_Theory_Teaching/question-bank/day-04.html">Questions (40)</a><a href="/Okta_Theory_Teaching/quizzes/day-04.html">Quizzes (12)</a></nav><article class="prose lesson-page"><h1 id="day-4-sources-priority-and-ownership">Day 4: Sources, priority, and ownership</h1>
-<p>Maya Rao is a Sales employee at Northbridge Services. Workday, the HR system, says Sales, but Active Directory (<strong>AD</strong>), the company's directory, says Finance. Priya Shah is a Sales contractor whose department is maintained in Okta after her sponsor, the employee confirming her business need, approves it.</p>
+<p>Devi Rao is a Sales employee at Northbridge Services. Workday, the HR system, says Sales, but Active Directory (<strong>AD</strong>), the company's directory, says Finance. Priya Shah is a Sales contractor whose department is maintained in Okta after her sponsor, the employee confirming her business need, approves it.</p>
 <p>Alex receives two questions:</p>
 <blockquote>
-<p>Can we fix Maya's department directly in Okta? And why can we maintain Priya's department there if Workday is our source?</p>
+<p>Can we fix Devi's department directly in Okta? And why can we maintain Priya's department there if Workday is our source?</p>
 </blockquote>
 <p>The answer starts with which source applies to each person and which source controls the particular field. A value being visible in Okta does not make Okta its owner.</p>
 <p>Alex can see both people's departments in Okta, but visibility alone does not tell him where an edit belongs. He needs to identify the person, find the sources linked to that person, and then check who controls the particular field.</p>
-<p>Your goal is to explain why Maya and Priya can follow different maintenance processes in the same Okta environment, and why Maya's department and work email can have different owners. You can reason through those decisions without changing any settings or having a tenant.</p>
+<p>Your goal is to explain why Devi and Priya can follow different maintenance processes in the same Okta environment, and why Devi's department and work email can have different owners. You can reason through those decisions without changing any settings or having a tenant.</p>
 <h2 id="start-with-authority">Start with authority</h2>
-<p>Day 3 followed a value through profiles and mappings. Now imagine two connected systems supply different departments for Maya. A rule that copies each value cannot, by itself, tell Alex which department the company intends to maintain. A mapping describes where a value goes and how it changes format; ownership identifies which system controls it.</p>
+<p>Day 3 followed a value through profiles and mappings. Now imagine two connected systems supply different departments for Devi. A rule that copies each value cannot, by itself, tell Alex which department the company intends to maintain. A mapping describes where a value goes and how it changes format; ownership identifies which system controls it.</p>
 <p>A <strong>profile source</strong> is the system designated to control a user's profile. Older material may call this a profile master. A user has one <strong>effective profile source</strong> at a time: the source currently selected to control that user's profile. Individual attributes can have separately designated sources. Okta's <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-profile-sourcing.htm">profile sourcing documentation</a> makes this distinction important when several sources are connected.</p>
 <p>Think of two questions:</p>
 <ul>
 <li>Who normally controls this person's profile?</li>
 <li>Does this particular attribute follow that source, or have an explicit source of its own?</li>
 </ul>
-<p>For example, 'Workday controls Maya's profile' gives us the usual maintenance route. 'AD controls her work email' gives us a specific exception. We need both facts before choosing where to investigate an email correction.</p>
+<p>For example, 'Workday controls Devi's profile' gives us the usual maintenance route. 'AD controls her work email' gives us a specific exception. We need both facts before choosing where to investigate an email correction.</p>
 <p>Those answers can lead to different actions. An employee department correction may belong in HR, while a field explicitly controlled by AD follows its directory maintenance process. Before editing either, Alex checks the approved business value and the actual evidence. The source decision tells him where responsibility sits; it does not prove an update worked.</p>
 <p>Here, <strong>authority</strong> means the responsibility to control the data; it does not mean every value in that system is correct. A wrongly recorded department can still need correction in its authoritative system. <strong>Topology</strong>, in the next section, means the arrangement of systems and the directions information travels between them.</p>
 <h2 id="northbridges-employee-topology">Northbridge's employee topology</h2>
 <p>For employees, Northbridge uses this arrangement:</p>
-<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/4324963498357bc5.svg" alt="Day 4: Sources, priority, and ownership: diagram 1" width="573" height="404" loading="lazy"><figcaption><span>Day 4: Sources, priority, and ownership: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/4324963498357bc5.svg" data-diagram="Day 4: Sources, priority, and ownership: diagram 1">Open full diagram</a></figcaption></figure><p>The diagram groups AD accounts and business application accounts in one box to simplify the picture. They are separate destinations: Maya's AD account belongs to the directory, while an account in an application such as Salesforce belongs to that application. The box does not place business application accounts inside AD.</p>
+<figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/4324963498357bc5.svg" alt="Day 4: Sources, priority, and ownership: diagram 1" width="573" height="404" loading="lazy"><figcaption><span>Day 4: Sources, priority, and ownership: diagram 1</span><a href="/Okta_Theory_Teaching/assets/diagrams/4324963498357bc5.svg" data-diagram="Day 4: Sources, priority, and ownership: diagram 1">Open full diagram</a></figcaption></figure><p>The diagram groups AD accounts and business application accounts in one box to simplify the picture. They are separate destinations: Devi's AD account belongs to the directory, while an account in an application such as Salesforce belongs to that application. The box does not place business application accounts inside AD.</p>
 <p>Follow the diagram one responsibility at a time. Workday supplies employee HR information to the Okta profile. Okta connects onward for supported account provisioning and updates. A separate arrow brings specifically designated directory-owned attributes from AD into Okta. AD can therefore be a destination for some account operations and a source for particular attributes. Workday remains the employee profile source in Northbridge's model.</p>
 <p>This diagram is a statement of Northbridge's architecture. It does not mean every field moves both ways or that an account operation has succeeded. Each arrow needs its own supported configuration and evidence.</p>
 <p>Northbridge's external profile-source order is:</p>
@@ -41,10 +41,10 @@
 </tr>
 </tbody>
 </table></div><p><strong>Source priority</strong> is the configured order used when more than one designated source applies to a user. Okta supports ordering designated apps and directories on its <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-prioritize-profile-source.htm">Profile Sources page</a>.</p>
-<p>The list tells Alex the configured order, but it does not yet tell him which sources apply to Maya or Priya. Being first on the list does not make Workday the owner of every identity in Okta.</p>
+<p>The list tells Alex the configured order, but it does not yet tell him which sources apply to Devi or Priya. Being first on the list does not make Workday the owner of every identity in Okta.</p>
 <h2 id="first-ask-which-sources-apply-to-this-person">First ask which sources apply to this person</h2>
 <p>Consider an employee record arriving from Workday. Bringing that record or its changes into Okta for processing is an <strong>import</strong>. Okta must also determine whether it represents a user already known there; that decision is <strong>matching</strong>. The resulting link between the Okta user and the record in that source integration is a <strong>source association</strong>.</p>
-<p>For Maya, the association lets Alex follow her Okta user to the Workday record linked to it. Finding a Workday record with a familiar name is not enough to establish that link. Information arriving, the matching decision, and the resulting association are separate things to check. Detailed matching rules come later; use the checked associations in the next table.</p>
+<p>For Devi, the association lets Alex follow her Okta user to the Workday record linked to it. Finding a Workday record with a familiar name is not enough to establish that link. Information arriving, the matching decision, and the resulting association are separate things to check. Detailed matching rules come later; use the checked associations in the next table.</p>
 <p><strong>Import scope</strong> is the set of records the integration is configured to include. Think of choosing which records go into the incoming batch. Matching then asks whether an included record belongs to an existing Okta user. Selecting employees for import does not establish that every contractor or administrative identity is included too.</p>
 <p>For the following fictional evidence, the associations have been checked:</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
@@ -57,7 +57,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Maya, employee</td>
+<td>Devi, employee</td>
 <td>Present</td>
 <td>Present</td>
 <td>Workday</td>
@@ -81,7 +81,7 @@
 <td>Okta</td>
 </tr>
 </tbody>
-</table></div><p>Start with Maya's row: both associations are present. Now use the priority list to choose between those applicable sources; Workday comes first, so it controls her profile. For Priya, neither external association is present, and the checked configuration says her source is Okta. Workday's position on the list does not create a Workday link for her.</p>
+</table></div><p>Start with Devi's row: both associations are present. Now use the priority list to choose between those applicable sources; Workday comes first, so it controls her profile. For Priya, neither external association is present, and the checked configuration says her source is Okta. Workday's position on the list does not create a Workday link for her.</p>
 <p>For an investigation, read the association evidence before applying the priority list. Do not infer an association from a department, a contractor label, or the fact that a connector is enabled.</p>
 <p>Suppose an employee import fails. That is evidence about an operation, not proof that Workday stopped controlling the employee's profile. Likewise, an empty field does not establish a new owner. AD's second position is not evidence of automatic emergency substitution. Check the actual associations and sourcing settings before claiming ownership changed.</p>
 <h2 id="then-check-the-particular-attribute">Then check the particular attribute</h2>
@@ -89,7 +89,7 @@
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Attribute</th>
-<th>Controlling source for Maya</th>
+<th>Controlling source for Devi</th>
 <th>Intended flow</th>
 </tr>
 </thead>
@@ -111,9 +111,9 @@
 </tr>
 </tbody>
 </table></div><p><strong>Attribute-level sourcing</strong> lets a field have a designated source different from the overall profile source. Okta's <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-attribute-sourcing.htm">attribute sourcing documentation</a> describes a Workday/AD/Okta example of this kind. The sourcing decision concerns the Okta user profile; an app user profile still has its own mapping and delivery considerations.</p>
-<p>Think of Maya's profile source as the usual owner and her work-email setting as a specific exception. For department, Alex follows the Workday-led profile decision. For work email, he follows the explicit AD designation. “Workday first” cannot replace that field-level check.</p>
+<p>Think of Devi's profile source as the usual owner and her work-email setting as a specific exception. For department, Alex follows the Workday-led profile decision. For work email, he follows the explicit AD designation. “Workday first” cannot replace that field-level check.</p>
 <p>The field's source setting explains the mechanism. <strong>Inherit from profile source</strong> means the field follows the user's effective profile source. <strong>Inherit from Okta</strong> designates Okta for the field. <strong>Override profile source</strong> designates another source for that field. These are ownership choices, not mapping formulas. See <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-define-attribute-profile-source.htm">Okta's attribute source definitions</a>.</p>
-<p>Read <strong>inherit from profile source</strong> as 'use the profile source selected for this user.' For Maya, that means Workday supplies department. For Priya, it means approved Okta maintenance supplies department. The setting is the same; the person-level source is different. It does not mean 'use Workday for everybody,' and Maya's explicit AD work-email setting remains a separate exception.</p>
+<p>Read <strong>inherit from profile source</strong> as 'use the profile source selected for this user.' For Devi, that means Workday supplies department. For Priya, it means approved Okta maintenance supplies department. The setting is the same; the person-level source is different. It does not mean 'use Workday for everybody,' and Devi's explicit AD work-email setting remains a separate exception.</p>
 <p>Now follow the possible write back toward AD. If AD controls email but a competing Okta-to-AD mapping writes an older email over it, the systems can undo the intended maintenance. Northbridge avoids that competing write for the AD-owned field. Arrows in both directions describe different supported responsibilities; they do not authorize both systems to overwrite the same attribute.</p>
 <p>When asking which source wins, identify the field's sourcing configuration and the applicable source order. Do not collapse all those decisions into a single global ranking.</p>
 <p>For Northbridge's work email, the evidence explicitly designates AD. We have not specified a rule that substitutes Workday's email when AD has no value. That behavior would need separate configuration evidence.</p>
@@ -121,8 +121,8 @@
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Question</th>
-<th>Maya's department</th>
-<th>Maya's work email</th>
+<th>Devi's department</th>
+<th>Devi's work email</th>
 <th>Priya's department</th>
 </tr>
 </thead>
@@ -154,7 +154,7 @@
 </tbody>
 </table></div><p>That sequence identifies the expected owner. Comparing the actual values and operation results is the next step; ownership alone does not prove delivery.</p>
 <h2 id="work-through-the-disagreement">Work through the disagreement</h2>
-<p>Alex collects this synthetic packet for the same linked Maya records. Workday's Sales department is confirmed as the approved business value; no department move has occurred.</p>
+<p>Alex collects this synthetic packet for the same linked Devi records. Workday's Sales department is confirmed as the approved business value; no department move has occurred.</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Field</th>
@@ -172,7 +172,7 @@
 </tr>
 <tr>
 <td>Work email</td>
-<td><code>maya.rao@northbridge.example</code></td>
+<td><code>devi.rao@northbridge.example</code></td>
 <td><code>mrao@northbridge.example</code></td>
 <td><code>mrao@northbridge.example</code></td>
 </tr>
@@ -180,9 +180,9 @@
 </table></div><p>The addresses are fictional. Pause before deciding which value is wrong: for each row, which source is meant to control this field, and does Okta reflect that source? Different text is not enough to establish an error.</p>
 <p>For department, Okta reflects the designated Workday value. AD disagrees, but its lower-priority department value does not override Workday in this configuration. Alex first confirms whether Northbridge expects department to be synchronized to AD. If it does, he checks the relevant mapping, update configuration, and operation results. A difference alone does not establish a synchronization failure. Do not change the correct Okta value to Finance just to make the records agree.</p>
 <p>For work email, Okta reflects the explicitly designated AD value. The different Workday address does not, by itself, show a defect. First compare the value against the approved email requirement and attribute ownership.</p>
-<p>Work email is also distinct from the Okta login and an application's username. Those fields may use different values under their own mappings. The <a href="/Okta_Theory_Teaching/reference/northbridge-company.html#keep-mayas-identifiers-separate">company's identifier comparison</a> keeps the later examples separate from this email-ownership decision.</p>
+<p>Work email is also distinct from the Okta login and an application's username. Those fields may use different values under their own mappings. The <a href="/Okta_Theory_Teaching/reference/northbridge-company.html#keep-devis-identifiers-separate">company's identifier comparison</a> keeps the later examples separate from this email-ownership decision.</p>
 <p>The department snapshots locate a disagreement, but they establish neither the intended AD maintenance process nor the history of writes. If an AD department update is expected, its operation evidence can help distinguish an update that never occurred, a rejected update, or a later write. Alex does not choose among those explanations from the current values alone.</p>
-<h2 id="what-if-mayas-okta-department-were-wrong">What if Maya's Okta department were wrong?</h2>
+<h2 id="what-if-devis-okta-department-were-wrong">What if Devi's Okta department were wrong?</h2>
 <p>Consider a separate packet: Workday says Sales, Okta says Finance, and the checked ownership still says Workday controls department.</p>
 <p>This changes the next investigation: the controlling source is correct, but the profile meant to receive its department disagrees. Alex checks whether the intended records are linked, what the incoming mapping prepares, and whether the applicable import or update occurred and succeeded. Each check distinguishes a different possible gap. A source designation expresses authority; it does not prove the latest value arrived successfully.</p>
 <p>If HR itself had the wrong approved value, the correction should follow the HR maintenance process. If HR is correct but Okta is stale, changing HR to compensate would damage the authoritative record.</p>
@@ -191,23 +191,23 @@
 <p>Northbridge's contractor process is deliberately different:</p>
 <figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/94d1393d7b601ea2.svg" alt="Day 4: Sources, priority, and ownership: diagram 2" width="276" height="374" loading="lazy"><figcaption><span>Day 4: Sources, priority, and ownership: diagram 2</span><a href="/Okta_Theory_Teaching/assets/diagrams/94d1393d7b601ea2.svg" data-diagram="Day 4: Sources, priority, and ownership: diagram 2">Open full diagram</a></figcaption></figure><p>Priya has no Workday association and no AD account assignment. Employee imports exclude her population. Her profile and department are Okta-managed under Northbridge's maintenance rules.</p>
 <p>The sponsor's approval is a business decision. The sponsor is not another technical profile-source integration, and approval does not imply permission to edit Okta directly.</p>
-<p>Follow Priya's diagram from the business decision to the administrator's maintenance, then to the configured downstream operations. Sponsor approval establishes the approved information; the authorized administrator records it in her Okta-managed profile. Application delivery still needs its own evidence. This explains why the same administrator can maintain Priya's department in Okta while routing a correction to Maya's authoritative employee data through HR.</p>
+<p>Follow Priya's diagram from the business decision to the administrator's maintenance, then to the configured downstream operations. Sponsor approval establishes the approved information; the authorized administrator records it in her Okta-managed profile. Application delivery still needs its own evidence. This explains why the same administrator can maintain Priya's department in Okta while routing a correction to Devi's authoritative employee data through HR.</p>
 <p>The contractor label alone does not enforce separation. Alex must be able to establish import scope and actual associations. If an imported record is accidentally matched to Priya, her intended architecture is no longer enough to explain the observed configuration. Review the unexpected link and its effects before changing priorities or data. Detailed matching comes later.</p>
 <h2 id="field-ownership-and-account-lifecycle-are-separate-decisions">Field ownership and account lifecycle are separate decisions</h2>
 <p>A user's <strong>lifecycle</strong> includes joining, changing responsibilities, and leaving. Workday employment events drive Northbridge's configured employee account-state changes. Priya's engagement changes follow the sponsor-approved Okta maintenance process.</p>
-<p>Giving AD ownership of Maya's email does not give it authority over her employee lifecycle. Lifecycle settings must support the intended architecture separately from attribute sourcing. Source priority alone also does not prove which accounts or sessions have been disabled. Day 12 examines those outcomes.</p>
+<p>Giving AD ownership of Devi's email does not give it authority over her employee lifecycle. Lifecycle settings must support the intended architecture separately from attribute sourcing. Source priority alone also does not prove which accounts or sessions have been disabled. Day 12 examines those outcomes.</p>
 <h2 id="keep-the-ad-led-variation-separate">Keep the AD-led variation separate</h2>
 <p>Another company might use an AD-led arrangement:</p>
 <figure class="diagram"><img src="/Okta_Theory_Teaching/assets/diagrams/3479bc0bb76cb39b.svg" alt="Day 4: Sources, priority, and ownership: diagram 3" width="646" height="70" loading="lazy"><figcaption><span>Day 4: Sources, priority, and ownership: diagram 3</span><a href="/Okta_Theory_Teaching/assets/diagrams/3479bc0bb76cb39b.svg" data-diagram="Day 4: Sources, priority, and ownership: diagram 3">Open full diagram</a></figcaption></figure><p>In this variation, AD is the applicable profile source and there is no applicable Workday source for the employee. AD can therefore control department through the configured incoming mapping.</p>
 <p>That does not contradict Northbridge's Workday-led model. The source associations and ownership decisions differ. Always name the architecture before carrying conclusions from one example into another.</p>
 <p>Do not reorder Northbridge's sources to imitate this variation as a quick fix for one stale field. Changing priority is an ownership decision that may affect many associated users.</p>
 <h2 id="profile-ownership-does-not-identify-the-password-validator">Profile ownership does not identify the password validator</h2>
-<p>Maya can have a Workday-sourced profile while AD validates her password on Northbridge's configured AD password sign-in path. The <strong>Okta AD agent</strong> is software running in the company's environment that connects Okta to AD for supported operations.</p>
+<p>Devi can have a Workday-sourced profile while AD validates her password on Northbridge's configured AD password sign-in path. The <strong>Okta AD agent</strong> is software running in the company's environment that connects Okta to AD for supported operations.</p>
 <p>Those facts answer separate questions:</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
 <tr>
 <th>Question</th>
-<th>Northbridge answer for Maya</th>
+<th>Northbridge answer for Devi</th>
 </tr>
 </thead>
 <tbody>
@@ -228,14 +228,14 @@
 <td>AD, reached through Okta's AD agent</td>
 </tr>
 </tbody>
-</table></div><p>When Maya uses the stated password path, AD checks her credential through the agent. That answers a sign-in question, while Workday's ownership answers a data-maintenance question. The password validator does not thereby own her HR department. Likewise, a successful profile update does not establish that the password path is healthy. You only need to keep these responsibilities separate today; Day 6 follows that path in detail.</p>
+</table></div><p>When Devi uses the stated password path, AD checks her credential through the agent. That answers a sign-in question, while Workday's ownership answers a data-maintenance question. The password validator does not thereby own her HR department. Likewise, a successful profile update does not establish that the password path is healthy. You only need to keep these responsibilities separate today; Day 6 follows that path in detail.</p>
 <h2 id="investigate-a-value-that-comes-back">Investigate a value that comes back</h2>
 <p>Imagine Alex changes an employee's department in Okta and later sees the old value again. Before repeating the edit, inspect the user's source associations, the field's owner, and the intervening source update. A later authoritative write is a possible explanation, but the timing and event evidence must establish it.</p>
 <p>Use the user's profile and the integration's sourcing and mapping settings together. The user view shows the observed value; the configuration explains which source is meant to supply it. Neither view alone reconstructs every write.</p>
 <p>If Workday contains an incorrect approved employee record, the HR owner handles that correction. If Workday is correct but the incoming mapping is wrong, investigate the mapping instead. Reordering sources for one person's discrepancy can change ownership for other associated users. Priya's approved Okta-managed maintenance follows her own source model, not a workaround for the employee model.</p>
 <p>Carry the sequence into the next ticket: identify the linked sources for this person, determine the effective profile source, check the particular field's owner, then compare values and operation results. This prevents a configuration decision from being mistaken for proof that the expected data arrived.</p>
-<h2 id="tell-mayas-and-priyas-stories">Tell Maya's and Priya's stories</h2>
-<p>Explain why Maya's Workday association and source order matter before interpreting her department. Then explain why AD can supply her work email without becoming her overall profile source.</p>
+<h2 id="tell-devis-and-priyas-stories">Tell Devi's and Priya's stories</h2>
+<p>Explain why Devi's Workday association and source order matter before interpreting her department. Then explain why AD can supply her work email without becoming her overall profile source.</p>
 <p>For Priya, name the missing external associations, the employee import exclusion, and the authorized Okta maintenance process. “She is a contractor” is a description, not the complete mechanism.</p>
 <p>Finally, add Day 3's delivery distinction: even a correctly owned and mapped value must still be verified in its destination.</p>
 <h2 id="before-moving-on">Before moving on</h2>
@@ -243,7 +243,7 @@
 <ul>
 <li>Why source priority must be read alongside a user's associations?</li>
 <li>How one profile source can coexist with a different source for a particular attribute?</li>
-<li>Why AD's department does not win for Maya in the supplied packet?</li>
+<li>Why AD's department does not win for Devi in the supplied packet?</li>
 <li>Why Priya's profile can be maintained in Okta?</li>
 <li>Why a missing value does not establish automatic fallback?</li>
 <li>Why a mapping and a password validator are different from a profile source?</li>

@@ -7,7 +7,7 @@
 <p>This is OIDC sign-in through Authorization Code with PKCE. The browser returns a code; the backend exchanges it for tokens. Decoded claims provide readable values, while the supplied validation report establishes the stated checks for this attempt.</p>
 <p>The intended account already exists, and actual entry and an application session are demonstrated. Creation is not: the packet explicitly describes a pre-existing account. Expense-approval permission remains untested.</p>
 <h2 id="task-3-projects">Task 3: Projects</h2>
-<p>This is a SCIM account-create exchange. The request reached Projects and received a reported uniqueness conflict. No successful create is established. Projects reports a value already in use, but the packet does not identify its owner or establish a correctly associated Maya account.</p>
+<p>This is a SCIM account-create exchange. The request reached Projects and received a reported uniqueness conflict. No successful create is established. Projects reports a value already in use, but the packet does not identify its owner or establish a correctly associated Devi account.</p>
 <p>Request the conflicting resource and reliable ownership identifiers, the matching/lookup evidence, and the correlated operation history. Use those to decide approved existing-account handling or a data correction. Do not automatically delete, rename, or link a record. Successful Expense sign-in concerns a different application and operation.</p>
 <h2 id="task-4-proposed-shortcut">Task 4: Proposed shortcut</h2>
 <p>The Expense ID token supplies authentication information for Expense's client validation. It is not a service credential granting the Projects connector account-management authority. Projects' uniqueness constraint also protects its account model; bypassing it would not resolve the identity question.</p>
@@ -28,7 +28,7 @@
 </tr>
 <tr>
 <td>Expense</td>
-<td>Maya's pre-existing account and B-1 entry are confirmed.</td>
+<td>Devi's pre-existing account and B-1 entry are confirmed.</td>
 <td>No sign-in defect is shown. Check approval permission separately if the business requirement includes approving expenses.</td>
 </tr>
 <tr>
@@ -41,7 +41,7 @@
 <h2 id="task-6-jordans-remaining-authentication-requirement">Task 6: Jordan's remaining authentication requirement</h2>
 <p>The AD credential result for E-1 establishes password acceptance. The earlier import establishes a different data operation; it cannot supply that authentication result. Enrollment establishes the account/device registration, while an issued challenge establishes that Push was requested.</p>
 <p>The first unverified requirement is an accepted Push response. A notification that did not reach the device and a delivered notification that Jordan denied are two possible explanations. Request the selected-device delivery evidence and challenge response/outcome for E-1 to distinguish them. Neither explanation is established by the supplied packet.</p>
-<p>No evidence supports changing a working password or a federation setting as the correction. After the required authentication evidence is accepted, application-side acceptance, account state and permissions still need their own evidence. Packet B concerns Maya's different attempt and cannot fill those gaps. Revisit Day 6's operation distinction and Day 7's enrollment/challenge distinction if your answer treats import or enrollment as a completed sign-in.</p>
+<p>No evidence supports changing a working password or a federation setting as the correction. After the required authentication evidence is accepted, application-side acceptance, account state and permissions still need their own evidence. Packet B concerns Devi's different attempt and cannot fill those gaps. Revisit Day 6's operation distinction and Day 7's enrollment/challenge distinction if your answer treats import or enrollment as a completed sign-in.</p>
 <h2 id="assess-your-reasoning">Assess your reasoning</h2>
 <p>For each criterion, mark <strong>independent</strong>, <strong>with guidance</strong>, or <strong>needs review</strong>. Independent means you explained that point without consulting an explanation or reference for it; with guidance means a reference helped; needs review means the distinction remains unclear.</p>
 <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
@@ -94,7 +94,7 @@
 </tr>
 </tbody>
 </table></div><h2 id="try-a-changed-condition">Try a changed condition</h2>
-<p>Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Maya, SAL, and active true. No Projects sign-in is supplied. What changes?</p>
+<p>Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Devi, SAL, and active true. No Projects sign-in is supplied. What changes?</p>
 <details markdown="1">
 <summary>Check the changed-condition reasoning</summary>
 <p>Creation and the checked account state are now supported, so the uniqueness investigation no longer follows from this packet. Projects sign-in and project permissions remain unverified. Expense success still cannot establish those outcomes for Projects.</p>

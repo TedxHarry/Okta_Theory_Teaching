@@ -10,7 +10,7 @@ All records, identifiers, and operation summaries are synthetic. These are inves
 
 Record your investigation before opening the model answers or recap. For each ticket, use its evidence labels to distinguish confirmed findings, possible explanations, proposed actions, and outcomes still awaiting verification.
 
-Use this packet with the [Day 15 tasks](../exercises/day-15.md). The current case follows Maya's effective move to Finance and Jordan's departure. Each ticket supplies its own observations; it does not claim that every earlier example occurred in one production history. Ticket F is an archived incident before Jordan departed.
+Use this packet with the [Day 15 tasks](../exercises/day-15.md). The current case follows Devi's effective move to Finance and Jordan's departure. Each ticket supplies its own observations; it does not claim that every earlier example occurred in one production history. Ticket F is an archived incident before Jordan departed.
 
 ## Environment and ownership
 
@@ -20,7 +20,7 @@ Use this packet with the [Day 15 tasks](../exercises/day-15.md). The current cas
 | Source priority | Workday first, AD second, applied to each user's actual source associations. |
 | Employee fields | Department and workerType inherit the effective profile source; employee department is Workday-owned here. |
 | Work email | Explicitly sourced from AD for AD-linked employees; no competing outbound write to that field. |
-| Maya and Daniel | Correct Workday and AD associations. Maya is Finance, NB-1042; Daniel is a Finance manager, NB-1020. |
+| Devi and Daniel | Correct Workday and AD associations. Devi is Finance, NB-1042; Daniel is a Finance manager, NB-1020. |
 | Priya | Sales contractor, maintained in Okta after sponsor approval; no Workday association or AD assignment and excluded from employee imports. |
 | Alex | IAM administrator; administrative identity is Okta-managed and excluded from employee imports. Actual role authority must be checked for each change. |
 | Jordan | Departed employee in current tickets; correctly linked accounts. F supplies an earlier employed state. |
@@ -30,17 +30,17 @@ Use this packet with the [Day 15 tasks](../exercises/day-15.md). The current cas
 
 For current sign-in tickets, use the supplied policy and authentication findings; do not invent another MFA requirement. Application permissions and account-management results remain separate checks.
 
-## Ticket A: Maya's department differs in Projects
+## Ticket A: Devi's department differs in Projects
 
-**Requirement:** Maya's effective Finance department must reach her existing Projects account as FIN. Projects access continues. The application uses this department value in an internal allocation report; approval permission is controlled separately.
+**Requirement:** Devi's effective Finance department must reach her existing Projects account as FIN. Projects access continues. The application uses this department value in an internal allocation report; approval permission is controlled separately.
 
 | Evidence | Observation |
 |---|---|
 | A1 | Workday department Finance; employeeNumber NB-1042. |
 | A2 | Okta department Finance and workerType Employee; correct Workday association and ownership confirmed. |
-| A3 | Current outgoing departmentCode mapping is a fixed SAL value. Preview with Maya's Finance input produces SAL. Projects app profile contains SAL. |
+| A3 | Current outgoing departmentCode mapping is a fixed SAL value. Preview with Devi's Finance input produces SAL. Projects app profile contains SAL. |
 | A4 | A correlated update sends SAL to linked Projects id prj-1042; target reports success. A subsequent read of that account shows SAL and active true. |
-| A5 | Maya can enter Projects, but the allocation report places her in Sales. No failed sign-in or approval-role problem is supplied. |
+| A5 | Devi can enter Projects, but the allocation report places her in Sales. No failed sign-in or approval-role problem is supplied. |
 
 No evidence says that HR should be changed or that the target rejected the value.
 

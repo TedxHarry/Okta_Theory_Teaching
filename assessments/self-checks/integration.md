@@ -22,7 +22,7 @@ The intended account already exists, and actual entry and an application session
 
 ## Task 3: Projects
 
-This is a SCIM account-create exchange. The request reached Projects and received a reported uniqueness conflict. No successful create is established. Projects reports a value already in use, but the packet does not identify its owner or establish a correctly associated Maya account.
+This is a SCIM account-create exchange. The request reached Projects and received a reported uniqueness conflict. No successful create is established. Projects reports a value already in use, but the packet does not identify its owner or establish a correctly associated Devi account.
 
 Request the conflicting resource and reliable ownership identifiers, the matching/lookup evidence, and the correlated operation history. Use those to decide approved existing-account handling or a data correction. Do not automatically delete, rename, or link a record. Successful Expense sign-in concerns a different application and operation.
 
@@ -37,7 +37,7 @@ The supplied create reached the target through an authorized connector. The next
 | Application | Supported outcome | Next action and resolution evidence |
 |---|---|---|
 | Salesforce | Daniel's account exists; A-1 failed audience validation and did not establish a session. | Correct the emitted audience for the approved production connection, then verify a new correlated exchange and application entry. |
-| Expense | Maya's pre-existing account and B-1 entry are confirmed. | No sign-in defect is shown. Check approval permission separately if the business requirement includes approving expenses. |
+| Expense | Devi's pre-existing account and B-1 entry are confirmed. | No sign-in defect is shown. Check approval permission separately if the business requirement includes approving expenses. |
 | Projects | Create rejected; ownership and correct association of the conflicting record are unknown. | Establish record ownership and lookup history, choose the approved correction, then verify association, applicable operation result, and target state. Entry requires separate evidence. |
 
 A good handoff distinguishes observed facts from proposed actions. “All provisioning works because SSO succeeded” would cross both a protocol boundary and an application boundary.
@@ -48,7 +48,7 @@ The AD credential result for E-1 establishes password acceptance. The earlier im
 
 The first unverified requirement is an accepted Push response. A notification that did not reach the device and a delivered notification that Jordan denied are two possible explanations. Request the selected-device delivery evidence and challenge response/outcome for E-1 to distinguish them. Neither explanation is established by the supplied packet.
 
-No evidence supports changing a working password or a federation setting as the correction. After the required authentication evidence is accepted, application-side acceptance, account state and permissions still need their own evidence. Packet B concerns Maya's different attempt and cannot fill those gaps. Revisit Day 6's operation distinction and Day 7's enrollment/challenge distinction if your answer treats import or enrollment as a completed sign-in.
+No evidence supports changing a working password or a federation setting as the correction. After the required authentication evidence is accepted, application-side acceptance, account state and permissions still need their own evidence. Packet B concerns Devi's different attempt and cannot fill those gaps. Revisit Day 6's operation distinction and Day 7's enrollment/challenge distinction if your answer treats import or enrollment as a completed sign-in.
 
 ## Assess your reasoning
 
@@ -67,7 +67,7 @@ For each criterion, mark **independent**, **with guidance**, or **needs review**
 
 ## Try a changed condition
 
-Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Maya, SAL, and active true. No Projects sign-in is supplied. What changes?
+Replace Packet C's conflict with a 201 response containing the new resource id and a subsequent target read confirming Devi, SAL, and active true. No Projects sign-in is supplied. What changes?
 
 <details markdown="1">
 <summary>Check the changed-condition reasoning</summary>

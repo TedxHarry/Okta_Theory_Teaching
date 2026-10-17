@@ -16,11 +16,11 @@ Revisit [Separate the stages](../lessons/day-11-imports-and-matching.md#separate
 
 ## 2. Choose from evidence
 
-A meets the selected employeeNumber comparison and Northbridge's additional ownership and uniqueness checks. B is a different person's record. The supported proposal is to confirm A against Maya's existing identity through the approved process; M-1 alone does not prove that confirmation happened.
+A meets the selected employeeNumber comparison and Northbridge's additional ownership and uniqueness checks. B is a different person's record. The supported proposal is to confirm A against Devi's existing identity through the approved process; M-1 alone does not prove that confirmation happened.
 
 M-2 supplies successful confirmation, the checked association, and the target's current account state. It still supplies no sign-in. M-2 is an explicit follow-up to M-1. Its confirmed link is useful evidence for that investigation; it does not supply ownership for M-3's separate candidates or reconstruct Day 10's create-conflict history.
 
-**Revisit:** [Work through Maya's existing account](../lessons/day-11-imports-and-matching.md#work-through-mayas-existing-account)
+**Revisit:** [Work through Devi's existing account](../lessons/day-11-imports-and-matching.md#work-through-devis-existing-account)
 
 ## 3. Handle conflicting identifiers
 
@@ -40,7 +40,7 @@ The second record was found, but the employee-number comparison lacks a value to
 
 ## 5. Revisit profile ownership
 
-Maya's Projects association identifies a downstream account. Projects is not a configured profile source, so the association does not replace Workday ownership. Workday and AD associations, priority, and the AD email exception retain their stated roles.
+Devi's Projects association identifies a downstream account. Projects is not a configured profile source, so the association does not replace Workday ownership. Workday and AD associations, priority, and the AD email exception retain their stated roles.
 
 An erroneous Priya-to-AD association is different because AD is a configured source and Priya is meant to be excluded. Inspect the resulting effective source, attribute ownership, actual writes, and the confirmation history. Do not invent a Workday association or assume the contractor label blocks sourcing.
 
@@ -66,7 +66,7 @@ Revisit [Reconcile expected and observed records](../lessons/day-11-imports-and-
 
 ## Optional changed condition
 
-In M-1, candidate A's email now differs from Maya's current email. The employee number, authoritative ownership history, and uniqueness checks remain valid. Must Alex create a new account?
+In M-1, candidate A's email now differs from Devi's current email. The employee number, authoritative ownership history, and uniqueness checks remain valid. Must Alex create a new account?
 
 <details markdown="1">
 <summary>Check the reasoning</summary>

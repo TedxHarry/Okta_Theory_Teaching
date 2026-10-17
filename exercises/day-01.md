@@ -10,7 +10,7 @@ Use the facts supplied in each question. State what you know, what you do not kn
 
 ## 1. One person, several records
 
-Maya has an employee record in Workday, an Okta user, an AD account, and a Salesforce account.
+Devi has an employee record in Workday, an Okta user, an AD account, and a Salesforce account.
 
 Explain why these are separate records for one person. If the Salesforce account is disabled, does that tell you the state of her Okta user or AD account?
 
@@ -28,13 +28,13 @@ Is that arrangement contradictory? Explain SSO and provisioning using this examp
 
 ## 4. A value is correct in one system
 
-Workday shows Maya's department as Sales. Someone says: "Then the Sales value must be correct in every connected application."
+Workday shows Devi's department as Sales. Someone says: "Then the Sales value must be correct in every connected application."
 
 Explain what the Workday observation proves, what it does not prove, and what evidence you would compare next. Do not assume the target is wrong either.
 
 ## 5. An incomplete account investigation
 
-Alex confirms that Maya's Okta user is Active and that she completed the required Okta sign-in checks for the reported attempt. No matching Salesforce account is found using her approved identifier in the checked instance. Her Salesforce assignment and account-management history have not been inspected.
+Alex confirms that Devi's Okta user is Active and that she completed the required Okta sign-in checks for the reported attempt. No matching Salesforce account is found using her approved identifier in the checked instance. Her Salesforce assignment and account-management history have not been inspected.
 
 Write:
 
@@ -45,13 +45,13 @@ Write:
 
 ## 6. Assignment and a tile
 
-Alex sees that Maya is assigned Northbridge Projects in Okta and has a tile, a clickable application shortcut, for it. There is no target account or provisioning-result evidence in the packet.
+Alex sees that Devi is assigned Northbridge Projects in Okta and has a tile, a clickable application shortcut, for it. There is no target account or provisioning-result evidence in the packet.
 
 Can Alex conclude that her Projects account was created successfully? Explain what the assignment proves and what else is needed.
 
 ## 7. Tell the whole story
 
-Explain how HR information, an Okta user, an application assignment, an application account, sign-in, and permissions relate to Maya using Salesforce.
+Explain how HR information, an Okta user, an application assignment, an application account, sign-in, and permissions relate to Devi using Salesforce.
 
 Then change the situation: the Salesforce account exists but is disabled. Explain which fact is now known and what remains unanswered.
 

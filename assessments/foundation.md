@@ -8,7 +8,7 @@ nav_order: 1
 
 Explain Northbridge's access decisions using Days 1 to 5. Write your reasoning before opening the [separate debrief](self-checks/foundation.md). You may use your notebook and references; record where you needed help. When a task asks you to predict a result, label it as expected until the packet supplies an observation. Support findings with the packet and evidence row rather than an earlier lesson's outcome.
 
-All packets are synthetic. B, C, and D are independent variations on A, not consecutive incidents. Maya remains a Sales employee except in D's explicitly hypothetical move.
+All packets are synthetic. B, C, and D are independent variations on A, not consecutive incidents. Devi remains a Sales employee except in D's explicitly hypothetical move.
 
 Treat a **packet** as a small set of supplied case facts. For B, start with A and replace only the stated facts. For C, start from A again, without carrying over B's error. For D, start from A again and apply the hypothetical move. This keeps separate questions from accidentally becoming one changing story.
 
@@ -16,7 +16,7 @@ Treat a **packet** as a small set of supplied case facts. For B, start with A an
 
 Northbridge assigns Salesforce automatically to Sales employees through NB-Sales-Employees. Contractors require a separately approved exception. The rule is active, both users are Active and processed, neither is excluded, and no other membership mechanism supplies this group.
 
-| Evidence | Maya | Priya |
+| Evidence | Devi | Priya |
 |---|---|---|
 | Source associations | Workday and AD | Neither |
 | Effective profile source | Workday; above AD in priority | Okta |
@@ -32,16 +32,16 @@ Northbridge assigns Salesforce automatically to Sales employees through NB-Sales
 
 ## Packet B: A correct rule receives the wrong value
 
-Replace only Maya's data and result observations with these:
+Replace only Devi's data and result observations with these:
 
 | Evidence | Observation |
 |---|---|
 | Workday department | Sales, confirmed as the approved value |
-| Checked source association and department owner | Correct Maya record; Workday controls department |
+| Checked source association and department owner | Correct Devi record; Workday controls department |
 | Current incoming department mapping | Always returns Finance |
 | Preview for the Sales input | Finance |
 | Okta department / workerType | Finance / Employee |
-| Rule processing and membership | Rule processed that profile; Maya absent |
+| Rule processing and membership | Rule processed that profile; Devi absent |
 | Salesforce assignment | Absent; other paths checked |
 
 **Task 2:** Identify the demonstrated defect. Propose a correction consistent with the business requirement and specify how to verify it. Does the packet establish the complete history of every field write?
@@ -56,7 +56,7 @@ An Okta SSO event concerning Priya and Salesforce records SUCCESS for a specifie
 
 ## Packet D: Predict a future change
 
-Starting from A, suppose Maya later has an approved move to Finance. Workday and Okta both receive Finance, and the active rule processes her updated profile. Assume this rule is the sole membership mechanism for NB-Sales-Employees and there is no individual exclusion.
+Starting from A, suppose Devi later has an approved move to Finance. Workday and Okta both receive Finance, and the active rule processes her updated profile. Assume this rule is the sole membership mechanism for NB-Sales-Employees and there is no individual exclusion.
 
 **Task 4:** Predict her Sales-group membership. Contrast two assignment states: no other Salesforce path exists, or another checked group still assigns Salesforce. What target and session evidence would you need before claiming the end of all Salesforce access? Identify the separate checks using Day 2's account/session distinction; you do not need to explain session-expiry mechanisms.
 

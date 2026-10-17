@@ -6,7 +6,7 @@ nav_order: 11
 
 # Day 11 revision: Imports and matching
 
-Finding a record that looks like Maya is the start of a decision. Before connecting it to her Okta user, establish that it really belongs to her. A confident-looking match can still connect the wrong people.
+Finding a record that looks like Devi is the start of a decision. Before connecting it to her Okta user, establish that it really belongs to her. A confident-looking match can still connect the wrong people.
 
 ## The concepts to keep with you
 
@@ -16,17 +16,17 @@ Finding a record that looks like Maya is the start of a decision. Before connect
 
 **Identifiers.** A field such as employee number can be useful for matching, but an exact comparison only proves that the values agree. A number copied onto the wrong account can agree exactly with the intended person's number while proposing the wrong relationship. Duplicated, reused, or incorrect identifiers still need investigation. A missing match does not automatically mean a new person or account should be created.
 
-**Import direction and profile ownership.** Reading records from an application does not automatically make it a profile source. Projects remains a downstream account-management target in Northbridge's design, even when the lesson's configured inbound discovery reads its records. "Which account belongs to Maya?" and "Which system governs her employee profile?" are separate questions.
+**Import direction and profile ownership.** Reading records from an application does not automatically make it a profile source. Projects remains a downstream account-management target in Northbridge's design, even when the lesson's configured inbound discovery reads its records. "Which account belongs to Devi?" and "Which system governs her employee profile?" are separate questions.
 
 **Reconciliation.** Reconciliation compares expected identities and account states with what you actually find. Equal totals are not enough. One hundred discovered accounts might still contain the wrong people or incorrect access states.
 
 **Pagination.** An API can return only part of a collection. Follow the supplied next-page link to continue the read. Its opaque cursor is a service-supplied position value to use as provided, rather than a page number to calculate. A person absent from page one is not proven absent from the complete result. A denied read, such as `403`, is also not an empty collection.
 
-## Work through Maya's candidates
+## Work through Devi's candidates
 
-In M-1, two records look like Maya. The evidence confirms that candidate A, with employee number `NB-1042`, belongs to her; candidate B belongs to another person. That supports the proposed choice, but the pending proposal still needs confirmation before you describe it as linked.
+In M-1, two records look like Devi. The evidence confirms that candidate A, with employee number `NB-1042`, belongs to her; candidate B belongs to another person. That supports the proposed choice, but the pending proposal still needs confirmation before you describe it as linked.
 
-The explicit follow-up M-2 confirms the association. Its Projects record showing `SAL` and `active: true` tells you its observed account state. It does not establish that Maya can sign in.
+The explicit follow-up M-2 confirms the association. Its Projects record showing `SAL` and `active: true` tells you its observed account state. It does not establish that Devi can sign in.
 
 In the separate duplicate-identifier packet M-3, ownership is unresolved. M-2's confirmed relationship does not supply ownership evidence for this independent case. Keep it unresolved while obtaining evidence. Choosing the first result would turn uncertainty into an unsupported identity decision. These matching packets also do not establish the history behind Day 10's separate create conflict.
 

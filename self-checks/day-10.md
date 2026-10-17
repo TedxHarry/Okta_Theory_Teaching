@@ -16,7 +16,7 @@ Revisit [Follow the account-management path](../lessons/day-10-scim.md#follow-th
 
 ## 2. Read the create result
 
-Projects assigned prj-1042. That identifier lets Alex connect the response to the specific record read afterward. The response reports creation; the follow-up confirms Maya's user name, SAL and enabled state in that record. Neither establishes actual application entry or all project permissions. Keep the target resource id distinct from the Okta id and employee number.
+Projects assigned prj-1042. That identifier lets Alex connect the response to the specific record read afterward. The response reports creation; the follow-up confirms Devi's user name, SAL and enabled state in that record. Neither establishes actual application entry or all project permissions. Keep the target resource id distinct from the Okta id and employee number.
 
 Revisit [Read a create operation](../lessons/day-10-scim.md#read-a-create-operation).
 
@@ -54,9 +54,9 @@ Removing one group membership answers only the question about that membership. A
 
 ## 7. Distinguish the connections
 
-Maya's authentication and the connector's service authorization belong to different exchanges. Inspect the receiving Projects instance, configured authorization mechanism, credential validity, and required permission, using the actual rejection detail. Do not infer which one failed from “authorization rejection” alone.
+Devi's authentication and the connector's service authorization belong to different exchanges. Inspect the receiving Projects instance, configured authorization mechanism, credential validity, and required permission, using the actual rejection detail. Do not infer which one failed from “authorization rejection” alone.
 
-The Expense ID token answers a sign-in question for Expense. It does not supply the connector's configured authority to manage Projects accounts. Maya's successful MFA can remain a valid result while the separate service request is rejected.
+The Expense ID token answers a sign-in question for Expense. It does not supply the connector's configured authority to manage Projects accounts. Devi's successful MFA can remain a valid result while the separate service request is rejected.
 
 **Revisit:** [Follow the account-management path](../lessons/day-10-scim.md#follow-the-account-management-path)
 
