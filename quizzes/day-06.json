@@ -28,7 +28,11 @@
           "text": "It provisions every app without separate support",
           "explanation": "Each app operation depends on its own supported configuration."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Locate the directory, the server, and the agent"
+      }
     },
     {
       "id": "L06-Q02",
@@ -56,6 +60,15 @@
           "text": "Both must be the same operation under different names",
           "explanation": "They serve distinct data and authentication responsibilities."
         }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Three operations that should not be confused"
+      },
+      "evidence": [
+        "AD import at 09:00: succeeded",
+        "Password attempt at 10:00: failed",
+        "Credential-validation path/result: needs investigation"
       ]
     },
     {
@@ -84,7 +97,11 @@
           "text": "By a SAML audience comparison",
           "explanation": "Audience targeting is a different federation check."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Follow delegated authentication"
+      }
     },
     {
       "id": "L06-Q04",
@@ -112,7 +129,11 @@
           "text": "Only one relationship can be configured for the user",
           "explanation": "Multiple integrations can support separate responsibilities."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Northbridge is still HR-led"
+      }
     },
     {
       "id": "L06-Q05",
@@ -140,7 +161,11 @@
           "text": "Every application signing certificate must be replaced",
           "explanation": "That is unrelated to the stated directory communication gap."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Investigate Jordan's failed attempt"
+      }
     },
     {
       "id": "L06-Q06",
@@ -168,6 +193,15 @@
           "text": "The user's app resource role is wrong",
           "explanation": "A credential rejection occurs before that local authorization question."
         }
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Contrast a credential rejection"
+      },
+      "evidence": [
+        "Agent reached the intended AD service and account",
+        "AD credential verdict for attempt A6: rejected",
+        "Import results: not part of this attempt"
       ]
     },
     {
@@ -196,7 +230,11 @@
           "text": "Whether the app tile is visible",
           "explanation": "A shortcut does not prove the directory relationship."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Follow delegated authentication"
+      }
     },
     {
       "id": "L06-Q08",
@@ -224,7 +262,11 @@
           "text": "The app must accept the user because assignment exists",
           "explanation": "Assignment cannot waive the failed authentication requirement."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Contrast a credential rejection"
+      }
     },
     {
       "id": "L06-Q09",
@@ -252,7 +294,11 @@
           "text": "A claim that AD is always the sole source",
           "explanation": "That overgeneralizes both ownership and authentication."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Locate the directory, the server, and the agent"
+      }
     },
     {
       "id": "L06-Q10",
@@ -286,7 +332,11 @@
         "Directory communication repair: applied",
         "Controlled account/attempt: AD credential validation succeeded",
         "Other users, apps and profile synchronization: not tested"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Know what a successful follow-up proves"
+      }
     },
     {
       "id": "L06-Q11",
@@ -314,7 +364,11 @@
           "text": "Skip target verification because AD is the source",
           "explanation": "Source choice does not prove downstream completion."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Compare the AD-led variation"
+      }
     },
     {
       "id": "L06-Q12",
@@ -343,7 +397,11 @@
           "explanation": "The evidence does not justify a universal credential change."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-06-active-directory.md",
+        "heading": "Hand the directory team a specific question"
+      }
     }
   ]
 }

@@ -5,7 +5,7 @@ const root = path.resolve("docs");
 const manifest = JSON.parse(
   fs.readFileSync(path.join(root, "build-manifest.json"), "utf8"),
 );
-assert.equal(manifest.documents.length, 123);
+assert.equal(manifest.documents.length, 129);
 assert.equal(manifest.documents.filter((d) => d.kind === "Quizzes").length, 16);
 assert.equal(
   manifest.documents.reduce((n, d) => n + (d.quizzes || 0), 0),
@@ -24,7 +24,7 @@ function walk(dir) {
   }
 }
 walk(root);
-assert.equal(pages.length, 125);
+assert.equal(pages.length, 131);
 let links = 0;
 let diagrams = 0;
 let answers = 0;
@@ -33,6 +33,22 @@ const decode = (s) =>
   s.replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#39;", "'");
 for (const file of pages) {
   const text = fs.readFileSync(file, "utf8");
+  const payload = text.match(/id="quiz-data">(.*?)<\/script>/s);
+  if (payload) {
+    for (const question of JSON.parse(payload[1]).questions) {
+      const target = new URL(question.review.url, "https://example.test");
+      const local = path.join(
+        root,
+        target.pathname.slice(manifest.base.length),
+      );
+      assert(
+        fs
+          .readFileSync(local, "utf8")
+          .includes(`id="${decodeURIComponent(target.hash.slice(1))}"`),
+        `Invalid concept link for ${question.id}`,
+      );
+    }
+  }
   assert.equal((text.match(/<h1\b/g) || []).length, 1, file);
   assert(!text.includes("portable-canonical-v2:"));
   assert(!text.includes("\u2014"));
@@ -75,14 +91,19 @@ for (const file of pages) {
 }
 assert.equal(diagrams, 35);
 assert.equal(answers, 669);
-assert.equal(quizCards, 192);
+assert.equal(quizCards, 552);
+assert.equal(
+  manifest.documents.filter((d) => d.kind === "Mixed review").length,
+  3,
+);
 console.log(
   JSON.stringify(
     {
       generatedPages: pages.length,
-      courseFiles: 123,
+      courseFiles: 129,
       questions: 669,
-      interactiveQuizQuestions: quizCards,
+      uniqueInteractiveQuizQuestions: 192,
+      quizCardPlacements: quizCards,
       diagrams,
       localLinksAndAssets: links,
       independentExpandableAnswers: answers,

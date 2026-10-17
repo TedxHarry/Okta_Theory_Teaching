@@ -28,7 +28,11 @@
           "text": "Every application accepts the resulting assurance",
           "explanation": "App requirements must still be evaluated."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Separate availability, enrollment, and use"
+      }
     },
     {
       "id": "L07-Q02",
@@ -56,6 +60,15 @@
           "text": "Whether every enrolled method meets every policy",
           "explanation": "Policy requirements can distinguish methods and contexts."
         }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Enrollment does not answer a challenge"
+      },
+      "evidence": [
+        "User enrollment E7: active",
+        "Current challenge: not completed",
+        "App authentication requirement: must still be satisfied"
       ]
     },
     {
@@ -84,7 +97,11 @@
           "text": "An app policy must erase all enrollments",
           "explanation": "That is not the purpose of an authentication requirement."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Two requirements with different jobs"
+      }
     },
     {
       "id": "L07-Q04",
@@ -112,7 +129,11 @@
           "text": "Every application must implement identical methods",
           "explanation": "Supported requirements and methods vary by policy and integration."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Why a password may not be enough"
+      }
     },
     {
       "id": "L07-Q05",
@@ -140,7 +161,11 @@
           "text": "The app can infer the method from the user's department",
           "explanation": "Profile department does not establish authentication proof."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Okta Verify methods are not interchangeable"
+      }
     },
     {
       "id": "L07-Q06",
@@ -168,7 +193,11 @@
           "text": "Remove app-policy requirements to avoid prompts",
           "explanation": "That weakens the requirement instead of verifying supported satisfaction."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Where FastPass fits"
+      }
     },
     {
       "id": "L07-Q07",
@@ -196,7 +225,11 @@
           "text": "No policy evidence is ever needed",
           "explanation": "The actual selected policy and outcome should still be checked."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Two requirements with different jobs"
+      }
     },
     {
       "id": "L07-Q08",
@@ -224,6 +257,15 @@
           "text": "Change the user's app role first",
           "explanation": "Resource authorization does not repair authentication proof."
         }
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Keep the evidence tied to the question"
+      },
+      "evidence": [
+        "User has an active enrollment",
+        "Current device/method challenge: failed",
+        "Failure detail and recovery scope: not yet established"
       ]
     },
     {
@@ -252,7 +294,11 @@
           "text": "Promise every existing app session will end",
           "explanation": "Enrollment reset does not by itself establish universal session termination."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Read the enrollment before choosing a reset"
+      }
     },
     {
       "id": "L07-Q10",
@@ -286,7 +332,11 @@
         "Authenticator enrollment event: successful",
         "Current app-policy evaluation: not supplied",
         "Current sign-in or target access result: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Follow Daniel's enrollment question"
+      }
     },
     {
       "id": "L07-Q11",
@@ -314,7 +364,11 @@
           "text": "Always weaken the first rule in the list",
           "explanation": "Changes need the actual selected requirement and intended behavior."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Two requirements with different jobs"
+      }
     },
     {
       "id": "L07-Q12",
@@ -343,7 +397,11 @@
           "explanation": "Authentication does not itself perform account provisioning."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-07-authenticators-enrollment-mfa.md",
+        "heading": "Before moving on"
+      }
     }
   ]
 }

@@ -28,7 +28,11 @@
           "text": "A global session makes every app policy irrelevant",
           "explanation": "Application-specific requirements can still apply."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Give each policy a specific job"
+      }
     },
     {
       "id": "L13-Q02",
@@ -56,7 +60,11 @@
           "text": "The user's source profile must be deleted first",
           "explanation": "Profile deletion is unrelated to meeting assurance."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Follow Daniel's expected challenge"
+      }
     },
     {
       "id": "L13-Q03",
@@ -84,6 +92,15 @@
           "text": "Always the oldest policy in the org",
           "explanation": "Age alone does not establish evaluation context."
         }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Identify the policy that actually applies"
+      },
+      "evidence": [
+        "Investigated app: Expense",
+        "Policy with familiar name: not confirmed associated",
+        "Actual selected rule and evaluated context: not yet supplied"
       ]
     },
     {
@@ -112,7 +129,11 @@
           "text": "A new app session proves the provider session is new",
           "explanation": "An existing provider session can support new app entry."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Explain why two sessions matter"
+      }
     },
     {
       "id": "L13-Q05",
@@ -132,15 +153,19 @@
         },
         {
           "id": "3218c5ca2b",
-          "text": "The user's department text becomes the timeout",
-          "explanation": "Profile department is not a session clock."
+          "text": "Only a new MFA challenge; active sessions have no maximum",
+          "explanation": "A challenge requirement and a session maximum are separate controls. Continued activity does not remove an absolute maximum."
         },
         {
           "id": "ff61db5ea4",
-          "text": "The browser's bookmark date controls lifetime",
-          "explanation": "Navigation history does not define the app's policy."
+          "text": "Only the IdP session timeout, because app sessions inherit its lifetime",
+          "explanation": "An app can enforce its own local session maximum independently of the IdP session."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Keep session lifetime and reauthentication separate"
+      }
     },
     {
       "id": "L13-Q06",
@@ -168,7 +193,11 @@
           "text": "No policy or event evidence is needed",
           "explanation": "The applicable rule and actual outcome still need verification."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Keep session lifetime and reauthentication separate"
+      }
     },
     {
       "id": "L13-Q07",
@@ -196,7 +225,11 @@
           "text": "Skip all app validation forever",
           "explanation": "A new exchange still requires the receiving app's checks."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Define what signing out must accomplish"
+      }
     },
     {
       "id": "L13-Q08",
@@ -224,6 +257,15 @@
           "text": "No assessment if the policy name includes the app",
           "explanation": "The actual associations matter more than its label."
         }
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Predict who a rule change will affect"
+      },
+      "evidence": [
+        "Policy P is associated with Expense and App B",
+        "Proposed edit changes P authentication conditions",
+        "Impact on App B and its users: not yet tested"
       ]
     },
     {
@@ -252,7 +294,11 @@
           "text": "Every policy must be reset to default",
           "explanation": "That broad change is not justified by the supplied behavior."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Follow Daniel's expected challenge"
+      }
     },
     {
       "id": "L13-Q10",
@@ -286,7 +332,11 @@
         "Policy test prediction: no challenge",
         "Actual controlled attempt: not supplied",
         "Runtime matching context/result: not observed"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Build a correlated evidence trail"
+      }
     },
     {
       "id": "L13-Q11",
@@ -314,7 +364,11 @@
           "text": "A rule to permanently delete every user record",
           "explanation": "Logout and account deletion have different meanings."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Define what signing out must accomplish"
+      }
     },
     {
       "id": "L13-Q12",
@@ -343,7 +397,11 @@
           "explanation": "Readiness for a method is not the current policy evaluation result."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-13-policies-and-sessions.md",
+        "heading": "Build a correlated evidence trail"
+      }
     }
   ]
 }

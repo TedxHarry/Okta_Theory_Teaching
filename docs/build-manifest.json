@@ -782,6 +782,13 @@
       "description": "A replacement phone and a locked account. Okta workforce identity theory and reasoning practice."
     },
     {
+      "source": "reference/annotated-evidence.md",
+      "route": "reference/annotated-evidence.html",
+      "title": "Read identity evidence with purpose",
+      "kind": "Reference",
+      "description": "Read identity evidence with purpose. Okta workforce identity theory and reasoning practice."
+    },
+    {
       "source": "reference/attribute-ownership.md",
       "route": "reference/attribute-ownership.html",
       "title": "Northbridge's source and ownership reference",
@@ -829,6 +836,20 @@
       "title": "Optional extensions",
       "kind": "Reference",
       "description": "Optional extensions. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/settings-to-outcomes.md",
+      "route": "reference/settings-to-outcomes.html",
+      "title": "Connect a setting to an observed outcome",
+      "kind": "Reference",
+      "description": "Connect a setting to an observed outcome. Okta workforce identity theory and reasoning practice."
+    },
+    {
+      "source": "reference/troubleshooting-comparisons.md",
+      "route": "reference/troubleshooting-comparisons.html",
+      "title": "Similar symptoms, different investigations",
+      "kind": "Reference",
+      "description": "Similar symptoms, different investigations. Okta workforce identity theory and reasoning practice."
     },
     {
       "source": "reference/troubleshooting-playbook.md",
@@ -987,6 +1008,30 @@
       "title": "Day 16: Quizzes",
       "description": "Independent practice for Day 16: Turn understanding into a safe practice plan.",
       "quizzes": 12
+    },
+    {
+      "source": "mixed/5",
+      "route": "quizzes/mixed-5.html",
+      "title": "Foundation mixed review: Days 1 to 5",
+      "kind": "Mixed review",
+      "description": "Draw a balanced 10-question review across the first 5 days.",
+      "reviewPool": 60
+    },
+    {
+      "source": "mixed/10",
+      "route": "quizzes/mixed-10.html",
+      "title": "Integration mixed review: Days 1 to 10",
+      "kind": "Mixed review",
+      "description": "Draw a balanced 10-question review across the first 10 days.",
+      "reviewPool": 120
+    },
+    {
+      "source": "mixed/15",
+      "route": "quizzes/mixed-15.html",
+      "title": "Engineering mixed review: Days 1 to 15",
+      "kind": "Mixed review",
+      "description": "Draw a balanced 15-question review across the first 15 days.",
+      "reviewPool": 180
     }
   ],
   "diagramPlacements": 35

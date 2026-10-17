@@ -5,18 +5,69 @@ import {
   shuffleOptions,
   reshuffleOptions,
   evaluateChoice,
+  selectReviewQuestions,
+  validSavedAnswers,
 } from "../site/quiz.js";
 
 const banks = Array.from({ length: 16 }, (_, i) =>
   loadQuiz(`quizzes/day-${String(i + 1).padStart(2, "0")}.json`, i + 1),
 );
 
+test("mixed reviews balance days without duplicates or modifying the pool", () => {
+  for (const [days, count] of [
+    [5, 10],
+    [10, 10],
+    [15, 15],
+  ]) {
+    const pool = banks.slice(0, days).flatMap((b) => b.questions);
+    const before = structuredClone(pool);
+    const sample = selectReviewQuestions(pool, count, () => 0.49);
+    assert.equal(sample.length, count);
+    assert.equal(new Set(sample.map((q) => q.id)).size, count);
+    const coverage = new Map();
+    for (const q of sample)
+      coverage.set(q.id.slice(0, 3), (coverage.get(q.id.slice(0, 3)) || 0) + 1);
+    assert.equal(coverage.size, days);
+    assert.deepEqual([...coverage.values()], Array(days).fill(count / days));
+    assert.deepEqual(pool, before);
+    assert.notDeepEqual(
+      sample.map((q) => q.id),
+      selectReviewQuestions(pool, count, () => 0.1).map((q) => q.id),
+    );
+  }
+});
+
+test("saved progress accepts current choices and rejects stale or malformed records", () => {
+  const data = { ...banks[0], revision: "current" };
+  const q = data.questions[0];
+  const record = {
+    version: 1,
+    revision: "current",
+    enabled: true,
+    answers: { [q.id]: q.correctId, unknown: "bad" },
+  };
+  assert.deepEqual(validSavedAnswers(record, data), { [q.id]: q.correctId });
+  for (const patch of [
+    { version: 2 },
+    { revision: "old" },
+    { enabled: false },
+    { answers: [] },
+    { answers: null },
+  ])
+    assert.equal(validSavedAnswers({ ...record, ...patch }, data), null);
+  assert.deepEqual(
+    validSavedAnswers({ ...record, answers: { [q.id]: "unknown" } }, data),
+    {},
+  );
+  assert.equal(validSavedAnswers(null, data), null);
+});
+
 test("192 independent questions have four unique options, stable IDs and substantive explanations", () => {
   assert.equal(banks.flatMap((bank) => bank.questions).length, 192);
   const prompts = banks.flatMap((bank) => bank.questions.map((q) => q.prompt));
   assert.equal(new Set(prompts).size, prompts.length);
   const questions = banks.flatMap((bank) => bank.questions);
-  assert.equal(questions.filter((q) => q.evidence).length, 16);
+  assert.equal(questions.filter((q) => q.evidence).length, 48);
   assert.equal(questions.filter((q) => q.reasoning).length, 32);
   for (const bank of banks) {
     assert.equal(new Set(bank.questions.map((q) => q.topic)).size, 12);

@@ -28,7 +28,11 @@
           "text": "The business user's local account row",
           "explanation": "A stored account is not the protocol participant exchanging a code."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Fix the client type before tracing the flow"
+      }
     },
     {
       "id": "L09-Q02",
@@ -56,7 +60,11 @@
           "text": "Grant access solely because the browser reached the callback",
           "explanation": "Arrival does not establish the completed authentication result."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Follow one successful journey"
+      }
     },
     {
       "id": "L09-Q03",
@@ -84,7 +92,11 @@
           "text": "Any external URL the browser prefers",
           "explanation": "Redirect handling is constrained by the registered flow agreement."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read the request's purpose"
+      }
     },
     {
       "id": "L09-Q04",
@@ -112,7 +124,11 @@
           "text": "To define the user's application role by itself",
           "explanation": "Navigation/transaction state is not a local authorization grant."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read the request's purpose"
+      }
     },
     {
       "id": "L09-Q05",
@@ -140,7 +156,11 @@
           "text": "That nonce presence makes the signature optional",
           "explanation": "It does not authenticate arbitrary token content."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read claims without claiming validation"
+      }
     },
     {
       "id": "L09-Q06",
@@ -168,6 +188,15 @@
           "text": "It is sent as the user's password to the API",
           "explanation": "The verifier is protocol transaction material, not an API user password."
         }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "What PKCE adds"
+      },
+      "evidence": [
+        "PKCE method: S256",
+        "Authorization request: derived challenge sent",
+        "Backend retains verifier for token request; client authentication also required"
       ]
     },
     {
@@ -196,7 +225,11 @@
           "text": "A substitute for the application's local permission rules",
           "explanation": "Local authorization still needs its own requirements."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Three artifacts, three purposes"
+      }
     },
     {
       "id": "L09-Q08",
@@ -224,7 +257,11 @@
           "text": "Any readable token text without authenticity checks",
           "explanation": "Readable claims are not automatically trusted authorization evidence."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Three artifacts, three purposes"
+      }
     },
     {
       "id": "L09-Q09",
@@ -252,6 +289,15 @@
           "text": "Ignore all targeting when email matches",
           "explanation": "An email claim cannot override the required recipient check."
         }
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read claims without claiming validation"
+      },
+      "evidence": [
+        "ID-token signature: verified under expected provider trust",
+        "Expected audience: expense-client",
+        "Actual audience: other-client; account matching not reached"
       ]
     },
     {
@@ -286,7 +332,11 @@
         "Browser callback: authorization code received",
         "Backend token exchange: not supplied",
         "Token validation/local session: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Follow one successful journey"
+      }
     },
     {
       "id": "L09-Q11",
@@ -314,7 +364,11 @@
           "text": "Issuer checking is unnecessary when sub exists",
           "explanation": "Subject interpretation remains tied to the expected issuer relationship."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Read claims without claiming validation"
+      }
     },
     {
       "id": "L09-Q12",
@@ -343,7 +397,11 @@
           "explanation": "Code exchange is not the whole application access decision."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-09-oidc.md",
+        "heading": "Verify the correction through the remaining stages"
+      }
     }
   ]
 }

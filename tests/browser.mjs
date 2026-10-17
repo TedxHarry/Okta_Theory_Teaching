@@ -47,7 +47,7 @@ try {
     );
   }
   results.push(
-    "All 124 navigable routes load with one H1, no right outline, no page overflow and no script errors.",
+    "All 130 navigable routes load with one H1, no right outline, no page overflow and no script errors.",
   );
   await page.goto(base);
   await page.evaluate(() => document.fonts.ready);
@@ -133,6 +133,69 @@ try {
     "All 16 quiz banks grade by stable IDs, shuffle across all four answer positions, explain choices and retry missed questions.",
   );
   await page.goto(base + "quizzes/day-01.html");
+  await page.locator("#remember-answers").check();
+  let savedData = JSON.parse(await page.locator("#quiz-data").textContent());
+  const savedQ = savedData.questions[0];
+  await page
+    .locator(`#${savedQ.id} input[value="${savedQ.correctId}"]`)
+    .check();
+  await page.reload();
+  assert.equal(await page.locator(`#${savedQ.id} input:checked`).count(), 1);
+  assert.match(await page.locator("#memory-note").innerText(), /restored/);
+  await page.locator(`#${savedQ.id} .quiz-result a`).click();
+  assert(page.url().includes("day-01-people-identities-access.html#"));
+  await page.goto(base + "quizzes/day-01.html");
+  await page.locator("#reset-quiz").click();
+  assert.equal(await page.locator("input[type=radio]:checked").count(), 0);
+  await page.reload();
+  assert.equal(await page.locator("input[type=radio]:checked").count(), 0);
+  await page.locator("#remember-answers").uncheck();
+  assert.equal(
+    await page.evaluate(() => localStorage.getItem("okta-teaching-quiz-day-1")),
+    null,
+  );
+  for (const [day, count] of [
+    [5, 10],
+    [10, 10],
+    [15, 15],
+  ]) {
+    await page.goto(base + `quizzes/mixed-${day}.html`);
+    assert.equal(await page.locator(".quiz-card:visible").count(), count);
+    assert.equal(await page.locator("#remember-answers").count(), 0);
+    const ids = await page
+      .locator(".quiz-card:visible")
+      .evaluateAll((nodes) => nodes.map((n) => n.id.slice(0, 3)));
+    assert.equal(new Set(ids).size, day);
+    await audit(page, `mixed-${day}`);
+    if (day === 5)
+      await page.screenshot({ path: "test-results/mixed-desktop.png" });
+  }
+  for (const guide of [
+    "annotated-evidence",
+    "settings-to-outcomes",
+    "troubleshooting-comparisons",
+  ]) {
+    await page.goto(base + `reference/${guide}.html`);
+    await audit(page, guide);
+  }
+  const blocked = await browser.newContext();
+  await blocked.addInitScript(() =>
+    Object.defineProperty(window, "localStorage", {
+      get() {
+        throw new Error("blocked");
+      },
+    }),
+  );
+  const blockedPage = await blocked.newPage();
+  await blockedPage.goto(base + "quizzes/day-01.html");
+  assert(await blockedPage.locator("#remember-answers").isDisabled());
+  await blockedPage.locator(".quiz-card input").first().check();
+  assert(await blockedPage.locator(".quiz-feedback").first().isVisible());
+  await blocked.close();
+  results.push(
+    "Optional saved progress restores and resets correctly, opt-out removes storage, blocked storage preserves quizzes; mixed reviews balance earlier days and new guides pass accessibility checks.",
+  );
+  await page.goto(base + "quizzes/day-01.html");
   const data = JSON.parse(await page.locator("#quiz-data").textContent());
   const first = page.locator(".quiz-card").first();
   await first.locator(`input[value="${data.questions[0].correctId}"]`).check();
@@ -162,6 +225,7 @@ try {
   const search = page.getByRole("searchbox", { name: "Search terms" });
   await search.fill("SCIM");
   assert((await page.locator("#search-results li").count()) > 0);
+  assert((await page.locator('#search-results a[href*="#L10-"]').count()) > 0);
   await page.reload();
   assert.equal(await search.inputValue(), "SCIM");
   await search.fill("no-such-topic-xyz");
@@ -183,6 +247,10 @@ try {
     ["scim", "lessons/day-10-scim.html"],
     ["reference", "reference/"],
     ["final-case", "assessments/final-case.html"],
+    ["mixed", "quizzes/mixed-15.html"],
+    ["annotated", "reference/annotated-evidence.html"],
+    ["settings", "reference/settings-to-outcomes.html"],
+    ["comparisons", "reference/troubleshooting-comparisons.html"],
   ]) {
     await page.goto(base + route);
     assert(
@@ -193,7 +261,12 @@ try {
     );
     assert.equal(await page.locator(".course-menu").getAttribute("open"), null);
     await audit(page, name + "-mobile");
-    if (name === "quiz" || name === "lesson")
+    if (
+      name === "quiz" ||
+      name === "lesson" ||
+      name === "mixed" ||
+      name === "annotated"
+    )
       await page.screenshot({ path: `test-results/${name}-mobile.png` });
   }
   await page.setViewportSize({ width: 320, height: 740 });

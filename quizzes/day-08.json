@@ -28,7 +28,11 @@
           "text": "Both systems must share one session cookie",
           "explanation": "Federation does not merge their local sessions."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "The application needs trustworthy identity information"
+      }
     },
     {
       "id": "L08-Q02",
@@ -56,7 +60,11 @@
           "text": "The ACS invents the provider's assertion",
           "explanation": "The IdP issues the assertion under its own trust relationship."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Follow the browser"
+      }
     },
     {
       "id": "L08-Q03",
@@ -84,7 +92,11 @@
           "text": "The final report page in every application",
           "explanation": "The post-login resource and protocol receiver need not be the same URL."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "The two sides need agreed configuration"
+      }
     },
     {
       "id": "L08-Q04",
@@ -112,6 +124,15 @@
           "text": "Ignore targeting when the user has an account",
           "explanation": "Account existence does not cancel assertion restrictions."
         }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Establish the audience defect"
+      },
+      "evidence": [
+        "SP expected audience: urn:app:prod",
+        "Assertion audience: urn:app:test",
+        "Signature verified; receiver rejects targeting"
       ]
     },
     {
@@ -140,7 +161,11 @@
           "text": "The browser's successful delivery verifies the signer",
           "explanation": "Transport arrival is not signature verification."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
     },
     {
       "id": "L08-Q06",
@@ -168,6 +193,15 @@
           "text": "Change the audience to the employee ID",
           "explanation": "Audience and subject identifier have different roles."
         }
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "A different NameID calls for a different investigation"
+      },
+      "evidence": [
+        "SP account key: employee ID E1042",
+        "Verified consumed NameID: maya@example.test",
+        "SP account resolution: no match under employee-ID rule"
       ]
     },
     {
@@ -196,7 +230,11 @@
           "text": "Increase tolerance indefinitely until all attempts succeed",
           "explanation": "An unbounded allowance defeats the intended time restriction."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
     },
     {
       "id": "L08-Q08",
@@ -224,7 +262,11 @@
           "text": "The ACS should rename its request to fit the response",
           "explanation": "Incoming data must not redefine the original pending transaction."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
     },
     {
       "id": "L08-Q09",
@@ -252,7 +294,11 @@
           "text": "Grant access if either object names the right audience",
           "explanation": "Target text does not authenticate the consumed identity."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "What the application must validate"
+      }
     },
     {
       "id": "L08-Q10",
@@ -286,7 +332,11 @@
         "Okta SAML issuance: successful",
         "SP validation/session result: not supplied",
         "Target resource result: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "The application needs trustworthy identity information"
+      }
     },
     {
       "id": "L08-Q11",
@@ -314,7 +364,11 @@
           "text": "The user must have no local account",
           "explanation": "An enabled reader account and session are already established."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Authentication does not define the account lifecycle"
+      }
     },
     {
       "id": "L08-Q12",
@@ -343,7 +397,11 @@
           "explanation": "A new exchange can use fresh protocol messages."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-08-saml.md",
+        "heading": "Before moving on"
+      }
     }
   ]
 }

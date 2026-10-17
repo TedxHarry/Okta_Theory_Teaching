@@ -28,7 +28,11 @@
           "text": "Whether the imported data performs browser authentication",
           "explanation": "Import and sign-in are different operations."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Separate the stages"
+      }
     },
     {
       "id": "L11-Q02",
@@ -56,7 +60,11 @@
           "text": "Assume every source record is always included",
           "explanation": "Filters and configured boundaries can limit discovery."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Start with scope and direction"
+      }
     },
     {
       "id": "L11-Q03",
@@ -84,7 +92,11 @@
           "text": "Assume duplicate names imply duplicate people",
           "explanation": "Several records can legitimately describe one person."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "A matching rule is a comparison, not a biography"
+      }
     },
     {
       "id": "L11-Q04",
@@ -112,7 +124,11 @@
           "text": "Treat account existence as proof all permissions match",
           "explanation": "The target's actual state still needs checking."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Work through Maya's existing account"
+      }
     },
     {
       "id": "L11-Q05",
@@ -140,6 +156,15 @@
           "text": "Create a third identity automatically",
           "explanation": "Another record does not resolve the existing ownership question."
         }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Recognize when the evidence is insufficient"
+      },
+      "evidence": [
+        "Candidate identities: user A and user B",
+        "Proposed comparison matches both candidates",
+        "Approved disambiguation evidence: not supplied"
       ]
     },
     {
@@ -168,7 +193,11 @@
           "text": "Matching automatically validates all user passwords",
           "explanation": "Record association is not credential validation."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Association can affect sourcing"
+      }
     },
     {
       "id": "L11-Q07",
@@ -196,7 +225,11 @@
           "text": "That target IDs can identify returned resources",
           "explanation": "Object IDs remain useful within their supported scope."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Read the whole result, not just its first page"
+      }
     },
     {
       "id": "L11-Q08",
@@ -224,7 +257,11 @@
           "text": "Only whether every discovered record should be deleted",
           "explanation": "Discovery does not authorize a universal destructive action."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Reconcile expected and observed records"
+      }
     },
     {
       "id": "L11-Q09",
@@ -252,6 +289,15 @@
           "text": "Delete duplicates in unrelated apps immediately",
           "explanation": "That broad action is unsupported by the supplied observation."
         }
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Treat an unexpected removal count as evidence"
+      },
+      "evidence": [
+        "Expected proposal: two removals",
+        "Actual import proposal: 200 removals",
+        "Import filters, source scope and availability: not yet checked"
       ]
     },
     {
@@ -286,7 +332,11 @@
         "Matching preview: one candidate proposed",
         "Association confirmation: not supplied",
         "Effective source/lifecycle changes: not verified"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Compare import with just-in-time creation"
+      }
     },
     {
       "id": "L11-Q11",
@@ -314,7 +364,11 @@
           "text": "Whether an account's display name must be globally unique",
           "explanation": "Display names are not a universal identity uniqueness guarantee."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "A matching rule is a comparison, not a biography"
+      }
     },
     {
       "id": "L11-Q12",
@@ -343,7 +397,11 @@
           "explanation": "Department resemblance is not sufficient ownership evidence."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-11-imports-and-matching.md",
+        "heading": "Reconcile expected and observed records"
+      }
     }
   ]
 }

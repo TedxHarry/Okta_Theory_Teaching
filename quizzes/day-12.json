@@ -28,7 +28,11 @@
           "text": "Only the user's display name matters",
           "explanation": "Readiness includes state, relationships and actual application outcomes."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Joiner: connect the initial decisions"
+      }
     },
     {
       "id": "L12-Q02",
@@ -56,7 +60,11 @@
           "text": "The new job title alone grants all Finance permissions",
           "explanation": "Business context is not a complete permission contract."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Mover: state what should change and what should remain"
+      }
     },
     {
       "id": "L12-Q03",
@@ -84,6 +92,15 @@
           "text": "Change the department back to Sales",
           "explanation": "The correct move should not be falsified to fit leftover access."
         }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Follow Maya's evidence"
+      },
+      "evidence": [
+        "Mover no longer belongs to Sales Group A",
+        "Direct Sales app grant: remains",
+        "Retention approval for direct grant: not supplied"
       ]
     },
     {
@@ -112,7 +129,11 @@
           "text": "The same display label guarantees the same lifecycle behavior",
           "explanation": "Labels do not establish ownership and connector contracts."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Leaver: verify each outcome"
+      }
     },
     {
       "id": "L12-Q05",
@@ -140,7 +161,11 @@
           "text": "No downstream checks are needed once the source is updated",
           "explanation": "Each relevant target outcome still matters."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Leaver: verify each outcome"
+      }
     },
     {
       "id": "L12-Q06",
@@ -168,7 +193,11 @@
           "text": "Deactivation always ends every session automatically",
           "explanation": "Session termination scope must be verified separately."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Choose the action for the state you actually found"
+      }
     },
     {
       "id": "L12-Q07",
@@ -196,6 +225,15 @@
           "text": "Changing the HR manager automatically ends the session",
           "explanation": "That field change does not establish a revocation operation."
         }
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Leaver: verify each outcome"
+      },
+      "evidence": [
+        "New SSO attempt: blocked after assignment removal",
+        "Old local app session: still authorizes a request",
+        "Immediate target revocation mechanism: not yet established"
       ]
     },
     {
@@ -224,7 +262,11 @@
           "text": "The employee has no identity in any system",
           "explanation": "A queued operation does not erase all records."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Decide what evidence closes the ticket"
+      }
     },
     {
       "id": "L12-Q09",
@@ -252,7 +294,11 @@
           "text": "Give the user a different department to suppress the ticket",
           "explanation": "That falsifies facts instead of resolving access termination."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Decide what evidence closes the ticket"
+      }
     },
     {
       "id": "L12-Q10",
@@ -286,7 +332,11 @@
         "HR departure: effective",
         "Okta user: deactivated",
         "Target account and existing-session results: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Decide what evidence closes the ticket"
+      }
     },
     {
       "id": "L12-Q11",
@@ -314,7 +364,11 @@
           "text": "As an application outage for all users",
           "explanation": "One intended rejection does not establish a universal outage."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Leaver: verify each outcome"
+      }
     },
     {
       "id": "L12-Q12",
@@ -343,7 +397,11 @@
           "explanation": "A proposal is not an execution and verification record."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-12-joiners-movers-leavers.md",
+        "heading": "Decide what evidence closes the ticket"
+      }
     }
   ]
 }

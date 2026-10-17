@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Read identity evidence with purpose. Okta workforce identity theory and reasoning practice."><meta name="color-scheme" content="light"><title>Read identity evidence with purpose | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io/Okta_Theory_Teaching/reference/annotated-evidence.html"><link rel="icon" href="/Okta_Theory_Teaching/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/tokens.css?v=64f84bcb7765"><link rel="stylesheet" href="/Okta_Theory_Teaching/assets/style.css?v=64f84bcb7765"><script src="/Okta_Theory_Teaching/assets/app.js?v=64f84bcb7765" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="/Okta_Theory_Teaching/"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="/Okta_Theory_Teaching/">Course</a><a href="/Okta_Theory_Teaching/reference/" aria-current="page">Reference</a><a href="/Okta_Theory_Teaching/search/">Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav"><li><a href="/Okta_Theory_Teaching/lessons/day-01-people-identities-access.html"><span class="lesson-number">01</span><span>People, identities, and access</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-02-requests-and-evidence.html"><span class="lesson-number">02</span><span>Following a request and reading evidence</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html"><span class="lesson-number">03</span><span>Profiles, attributes, and mappings</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-04-sources-and-ownership.html"><span class="lesson-number">04</span><span>Sources, priority, and ownership</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-05-groups-and-assignments.html"><span class="lesson-number">05</span><span>Groups, rules, and application assignments</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-06-active-directory.html"><span class="lesson-number">06</span><span>AD imports and password validation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-07-authenticators-enrollment-mfa.html"><span class="lesson-number">07</span><span>Authenticators, enrollment, and MFA</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-08-saml.html"><span class="lesson-number">08</span><span>SAML and application sign-in</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html"><span class="lesson-number">09</span><span>OIDC and the authorization code</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-10-scim.html"><span class="lesson-number">10</span><span>SCIM and application accounts</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-11-imports-and-matching.html"><span class="lesson-number">11</span><span>Imports, matching, and reconciliation</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-12-joiners-movers-leavers.html"><span class="lesson-number">12</span><span>Joining, moving, and leaving</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-13-policies-and-sessions.html"><span class="lesson-number">13</span><span>Policies, sessions, and another authentication check</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-14-requirements-and-responsibilities.html"><span class="lesson-number">14</span><span>Requirements, responsibility, and recovery</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-15-integrated-case.html"><span class="lesson-number">15</span><span>Investigate Northbridge as a connected system</span></a></li><li><a href="/Okta_Theory_Teaching/lessons/day-16-safe-practice-plan.html"><span class="lesson-number">16</span><span>Turn understanding into a safe practice plan (optional)</span></a></li></ol></nav><a class="side-ref" href="/Okta_Theory_Teaching/learning-path.html">Learning path →</a><a class="side-ref" href="/Okta_Theory_Teaching/reference/">Reference library →</a></details></aside><main class="main" id="main"><div class="reading-layout"><section><article class="prose lesson-page"><h1 id="read-identity-evidence-with-purpose">Read identity evidence with purpose</h1>
+<p>Start with the operation, the system and the question. A profile value, SAML assertion, OIDC token and SCIM resource can all contain a username, but they establish different facts. These independent fictional packets show how to read those differences. They do not extend Northbridge's main story or represent real vendor logs.</p>
+<p>Use the profile example after Day 3 and the protocol examples after Days 8 to 10. Each selected extract is incomplete teaching evidence, not an executable request or a production validation recipe. Preserve original messages securely when cryptographic investigation requires them; editing a signed object prevents the edited copy from proving the original signature.</p>
+<h2 id="a-profile-value-travels-through-several-boundaries">A profile value travels through several boundaries</h2>
+<p>The app contract requires department code <code>FIN</code>. The authoritative employee record says Finance. This packet describes an employee whose department is owned by that source.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">HR employee E1042: department = Finance
+Okta user 00u-example: department = Finance
+Mapping direction: Okta user -&gt; Projects app user
+Effective Projects app-user profile: departmentCode = FIN
+Outbound target update: queued; no completion result supplied
+Target resource prj-1042: current value not inspected
+</code></pre>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Observation</th>
+<th>What it establishes</th>
+<th>What remains open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR and Okta both say Finance</td>
+<td>The observed central representation agrees with this source</td>
+<td>Whether every other field is correct</td>
+</tr>
+<tr>
+<td>App profile says FIN</td>
+<td>This intermediate representation fits the target code contract</td>
+<td>Whether an update was delivered and accepted</td>
+</tr>
+<tr>
+<td>Update is queued</td>
+<td>Work has been requested</td>
+<td>Execution and current target state</td>
+</tr>
+</tbody>
+</table></div><p>Explain why changing the correct HR value would be the wrong first correction here.</p>
+<details><summary>Reveal the reasoning</summary>
+<p>The source, central profile and app profile agree with their stated responsibilities. The first unverified boundary is outbound completion and target state. Inspect the correlated operation result and read the intended resource before changing correct upstream data. A queued task is neither a successful update nor proof of failure.</p>
+</details>
+<p>Continue with <a href="/Okta_Theory_Teaching/lessons/day-03-profiles-and-mappings.html#a-preview-is-a-calculation-not-delivery-evidence">mapping direction and target verification</a>.</p>
+<h2 id="saml-read-subject-and-receiver-separately">SAML: read subject and receiver separately</h2>
+<p>Atlas test expects audience <code>urn:atlas:test</code>, an approved provider, and employee-ID account matching. These are selected fields from an assertion; the enclosing response, subject confirmation and signature are omitted.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-xml">&lt;saml:Assertion xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;&gt;
+  &lt;saml:Issuer&gt;urn:example:approved-idp&lt;/saml:Issuer&gt;
+  &lt;saml:Subject&gt;
+    &lt;saml:NameID&gt;E1042&lt;/saml:NameID&gt;
+  &lt;/saml:Subject&gt;
+  &lt;saml:Conditions NotOnOrAfter=&quot;2026-10-17T10:05:00Z&quot;&gt;
+    &lt;saml:AudienceRestriction&gt;
+      &lt;saml:Audience&gt;urn:atlas:test&lt;/saml:Audience&gt;
+    &lt;/saml:AudienceRestriction&gt;
+  &lt;/saml:Conditions&gt;
+&lt;/saml:Assertion&gt;
+</code></pre>
+<p><code>Issuer</code> reports who issued the assertion. <code>NameID</code> reports the subject identifier. <code>Audience</code> restricts which relying party may consume it. <code>NotOnOrAfter</code> is an exclusive upper time bound for those Conditions. None of those strings proves that a signature verified or an account was selected.</p>
+<p>Suppose a preserved original reaches Atlas at 10:01 UTC. A correlated receiver record reports that required signature, target, time, request and replay checks passed, but <code>account_match=none</code>. What can you conclude?</p>
+<details><summary>Reveal the reasoning</summary>
+<p>The supplied receiver record establishes acceptance for that original attempt, while account resolution stopped entry. Investigate the exact consumed subject, approved lookup rule and intended local account. The sanitized extract alone would not establish acceptance. It also cannot prove that every displayed field was inside the verified protection scope.</p>
+</details>
+<p>See <a href="/Okta_Theory_Teaching/lessons/day-08-saml.html#what-the-application-must-validate">SAML receiving requirements</a> and the <a href="https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf">OASIS browser SSO profile</a>.</p>
+<h2 id="oidc-distinguish-a-returned-code-from-verified-identity">OIDC: distinguish a returned code from verified identity</h2>
+<p>Expense is a confidential backend client using authorization code flow with PKCE. The backend retained the transaction's state, nonce and verifier. Its decoded authorization request includes:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-text">client_id = expense-test
+response_type = code
+scope = openid profile
+redirect_uri = https://expense.example/callback
+state = opaque-transaction-handle
+nonce = request-specific-nonce
+code_challenge_method = S256
+code_challenge = derived-challenge-value
+</code></pre>
+<p>The callback identifies Expense's receiving endpoint. State associates the return with the initiating context. Nonce connects the ID token to the relevant request when used. The PKCE challenge is derived from the verifier retained for the later code exchange; it is not the user's password.</p>
+<p>The browser returns a code and state. The backend exchanges the code using the required verifier and client authentication. The following is an unverified, selected ID-token claim view, not a complete token:</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;iss&quot;: &quot;https://identity.example&quot;,
+  &quot;aud&quot;: &quot;expense-test&quot;,
+  &quot;sub&quot;: &quot;subject-4821&quot;,
+  &quot;nonce&quot;: &quot;request-specific-nonce&quot;,
+  &quot;exp&quot;: 1792231800
+}
+</code></pre>
+<div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0"><table><thead>
+<tr>
+<th>Claim</th>
+<th>Read it as</th>
+<th>Do not assume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iss</td>
+<td>Reported issuer</td>
+<td>That any familiar URL is trusted</td>
+</tr>
+<tr>
+<td>aud</td>
+<td>Intended token recipient</td>
+<td>That this ID token is an API credential for every resource</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>Subject within the issuer relationship</td>
+<td>That it equals email or an unrelated target resource ID</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>Request association value</td>
+<td>That a match replaces signature and other token checks</td>
+</tr>
+<tr>
+<td>exp</td>
+<td>Expiration as a NumericDate in seconds</td>
+<td>That it defines every app session's lifetime</td>
+</tr>
+</tbody>
+</table></div><p>Readable claims do not establish verification. The client still applies its flow's required checks and local account rules. An access token serves the resource-server authorization relationship; it is not interchangeable with the ID token. See <a href="/Okta_Theory_Teaching/lessons/day-09-oidc.html#three-artifacts-three-purposes">Day 9's artifact comparison</a> and <a href="https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation">OIDC ID-token validation</a>.</p>
+<h2 id="scim-read-the-operation-and-target-result-together">SCIM: read the operation and target result together</h2>
+<p>Projects requires department code <code>FIN</code>. A supported SCIM PATCH targets its existing resource <code>prj-1042</code>. Authentication credentials and unrelated fields are omitted.</p>
+<pre tabindex="0" role="region" aria-label="Code example"><code class="language-json">{
+  &quot;schemas&quot;: [&quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;],
+  &quot;Operations&quot;: [{
+    &quot;op&quot;: &quot;replace&quot;,
+    &quot;path&quot;: &quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department&quot;,
+    &quot;value&quot;: &quot;Finance&quot;
+  }]
+}
+</code></pre>
+<p>A correlated target result is HTTP 400, with <code>scimType=invalidValue</code> and detail saying that department must be <code>FIN</code> or <code>SAL</code>. This packet demonstrates a representation mismatch: the actual sent value is Finance. A generic 400 without the payload and detail would not establish that cause.</p>
+<p>Before proposing a repair, distinguish this from a 409 uniqueness conflict, which calls for inspecting the conflicting field and account ownership. Do not create another account to repair an invalid department value. After correcting the authorized transformation, verify the new operation and the stored field on <code>prj-1042</code>; a mapping preview alone does not show delivery. See <a href="/Okta_Theory_Teaching/lessons/day-10-scim.html#a-rejected-value-points-to-a-different-correction">Day 10's rejected-value example</a> and <a href="https://www.rfc-editor.org/rfc/rfc7644.html">SCIM protocol operations</a>.</p>
+<h2 id="bring-the-evidence-into-an-investigation">Bring the evidence into an investigation</h2>
+<p>For each packet, finish four sentences: “This source establishes ___. The next unverified boundary is ___. I would inspect ___. A verified correction would show ___.” Compare your choices with <a href="/Okta_Theory_Teaching/reference/troubleshooting-comparisons.html">similar symptoms and different causes</a>. Use the existing <a href="/Okta_Theory_Teaching/assessments/final-case.html">final case</a> to combine the distinctions independently.</p>
+</article></section></div><footer class="page-footer">Okta workforce identity · <a href="/Okta_Theory_Teaching/assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>

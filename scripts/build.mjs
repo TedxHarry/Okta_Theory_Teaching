@@ -103,6 +103,50 @@ for (const lesson of lessons) {
   });
 }
 const quizzes = documents.filter((d) => d.kind === "Quizzes");
+for (const d of quizzes) {
+  const lesson = lessons[d.number - 1];
+  const headings = [...lesson.text.matchAll(/^## (.+)$/gm)].map(
+    (match) => match[1],
+  );
+  const slugger = new GithubSlugger();
+  const anchors = new Map(
+    headings.map((heading) => [heading, slugger.slug(heading)]),
+  );
+  for (const q of d.data.questions) {
+    if (!q.review || !anchors.has(q.review.heading))
+      throw new Error(`Missing concept review for ${q.id}`);
+    q.review = {
+      title: q.review.heading,
+      url: base + lesson.route + "#" + anchors.get(q.review.heading),
+    };
+  }
+  d.data.revision = hash(JSON.stringify(d.data));
+}
+for (const [lastDay, sampleSize, label] of [
+  [5, 10, "Foundation"],
+  [10, 10, "Integration"],
+  [15, 15, "Engineering"],
+]) {
+  const pool = quizzes
+    .filter((d) => d.number <= lastDay)
+    .flatMap((d) => d.data.questions);
+  documents.push({
+    source: `mixed/${lastDay}`,
+    route: `quizzes/mixed-${lastDay}.html`,
+    title: `${label} mixed review: Days 1 to ${lastDay}`,
+    kind: "Mixed review",
+    description: `Draw a balanced ${sampleSize}-question review across the first ${lastDay} days.`,
+    text: pool.map((q) => q.prompt).join(" "),
+    data: {
+      schemaVersion: 1,
+      lesson: 0,
+      mode: "mixed",
+      lastDay,
+      sampleSize,
+      questions: pool,
+    },
+  });
+}
 const bySource = new Map(documents.map((d) => [d.source, d]));
 const countQuestions = (d) =>
   (d.text.match(/class="qb-question"/g) || []).length;
@@ -113,7 +157,9 @@ function link(target, current) {
     path.posix.join(path.posix.dirname(current), file),
   );
   const d =
-    bySource.get(source) || bySource.get(source.replace(/\.html$/, ".md"));
+    bySource.get(source) ||
+    bySource.get(source.replace(/\.html$/, ".md")) ||
+    documents.find((document) => document.route === source);
   if (!d) throw new Error(`Unmapped link ${current} -> ${target}`);
   return base + d.route + (fragment ? "#" + fragment : "");
 }
@@ -177,7 +223,7 @@ function shell(d, body) {
         `<li><a href="${base + l.route}"${d.number === l.number ? ' aria-current="page"' : ""}><span class="lesson-number">${String(l.number).padStart(2, "0")}</span><span>${escape(l.title.replace(/^Day \d+: /, ""))}${l.number === 16 ? " (optional)" : ""}</span></a></li>`,
     )
     .join("");
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(d.description || d.title)}"><meta name="color-scheme" content="light"><title>${escape(d.title)} | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io${base + route}"><link rel="icon" href="${base}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${base}assets/tokens.css?v=${version}"><link rel="stylesheet" href="${base}assets/style.css?v=${version}"><script src="${base}assets/app.js?v=${version}" defer></script>${d.kind === "Quizzes" ? `<script type="module" src="${base}assets/quiz.js?v=${version}"></script>` : ""}</head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="${base}"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="${base}"${active("")}>Course</a><a href="${base}reference/"${route.startsWith("reference/") ? ' aria-current="page"' : ""}>Reference</a><a href="${base}search/"${active("search/")}>Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav">${nav}</ol></nav><a class="side-ref" href="${base}learning-path.html">Learning path →</a><a class="side-ref" href="${base}reference/">Reference library →</a></details></aside><main class="main" id="main">${body}<footer class="page-footer">Okta workforce identity · <a href="${base}assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(d.description || d.title)}"><meta name="color-scheme" content="light"><title>${escape(d.title)} | Okta Theory Teaching</title><link rel="canonical" href="https://tedxharry.github.io${base + route}"><link rel="icon" href="${base}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${base}assets/tokens.css?v=${version}"><link rel="stylesheet" href="${base}assets/style.css?v=${version}"><script src="${base}assets/app.js?v=${version}" defer></script>${d.data ? `<script type="module" src="${base}assets/quiz.js?v=${version}"></script>` : ""}</head><body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="${base}"><span class="brand-mark" aria-hidden="true"></span>Okta Theory</a><nav class="toplinks" aria-label="Primary"><a href="${base}"${active("")}>Course</a><a href="${base}reference/"${route.startsWith("reference/") ? ' aria-current="page"' : ""}>Reference</a><a href="${base}search/"${active("search/")}>Search</a><a class="repo-link" href="https://github.com/TedxHarry/Okta_Theory_Teaching">GitHub ↗</a></nav></header><div class="shell"><aside class="sidebar"><details class="course-menu" open><summary title="Expand or collapse lessons"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Browse lessons</span></summary><p class="nav-label">Okta workforce identity</p><nav aria-label="Lessons"><ol class="lesson-nav">${nav}</ol></nav><a class="side-ref" href="${base}learning-path.html">Learning path →</a><a class="side-ref" href="${base}reference/">Reference library →</a></details></aside><main class="main" id="main">${body}<footer class="page-footer">Okta workforce identity · <a href="${base}assessments/">Checkpoints and final case</a> · <a href="https://github.com/TedxHarry/Okta_Theory_Teaching">Course source</a></footer></main></div><dialog id="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-head"><h2 id="diagram-title">Full diagram</h2><form method="dialog" novalidate><button type="submit" id="close-diagram">Close diagram</button></form></div><div class="diagram-scroll"><img id="full-diagram" alt=""></div></dialog></body></html>`;
 }
 function write(route, html) {
   const file = path.join(
@@ -207,10 +253,16 @@ for (const d of documents) {
           "",
         )}<a href="${base}assessments/">Checkpoints and final case</a><a href="${base}requests/">Working through requests</a></aside>`
     : "";
+  const checkpoint = [5, 10, 15].includes(n)
+    ? `<aside class="checkpoint-callout" aria-label="Learning checkpoint"><h2>${n === 5 ? "Check your foundations" : n === 10 ? "Connect sign-in and account management" : "Defend an engineering investigation"}</h2><p>Attempt the evidence and explain your reasoning before opening the model answers. Use the debrief to identify what you can explain independently and what needs another look.</p><a href="${base}assessments/${n === 5 ? "foundation" : n === 10 ? "integration" : "final-case"}.html">${n === 15 ? "Open the final case" : "Open the checkpoint"}</a> · <a href="${base}quizzes/mixed-${n}.html">Try mixed review</a> · <a href="${base}assessments/self-checks/${n === 5 ? "foundation" : n === 10 ? "integration" : "final-case"}.html">Debrief and skills checklist</a></aside>`
+    : "";
+  const guides = n
+    ? `<aside class="learning-links" aria-label="Evidence and investigation guides"><strong>Connect the concepts</strong><a href="${base}reference/annotated-evidence.html">Annotated evidence</a><a href="${base}reference/settings-to-outcomes.html">Settings to outcomes</a><a href="${base}reference/troubleshooting-comparisons.html">Compare investigations</a><a href="${base}quizzes/mixed-${n <= 5 ? 5 : n <= 10 ? 10 : 15}.html">Mixed review</a></aside>`
+    : "";
   const next = n
     ? `<nav class="page-navigation" aria-label="Lesson sequence">${n > 1 ? `<a href="${base + lessons[n - 2].route}"><small>← Previous lesson</small>${escape(lessons[n - 2].title)}</a>` : "<span></span>"}${n < lessons.length ? `<a href="${base + lessons[n].route}"><small>${n === 15 ? "Optional practice →" : "Next lesson →"}</small>${escape(lessons[n].title)}</a>` : `<a href="${base}reference/">Reference library →</a>`}</nav>`
     : "";
-  let html = d.kind === "Quizzes" ? renderQuiz(d.data, d.title) : render(d);
+  let html = d.data ? renderQuiz(d.data, d.title) : render(d);
   if (d.route === "")
     html =
       html.replace(
@@ -222,7 +274,7 @@ for (const d of documents) {
     d.route,
     shell(
       d,
-      `<div class="reading-layout"><section>${modes}<article class="prose ${d.kind === "Quizzes" ? "quiz-page" : d.kind === "Questions" ? "questions-page" : "lesson-page"}">${html}</article>${tools}${next}</section></div>`,
+      `<div class="reading-layout"><section>${modes}<article class="prose ${d.data ? "quiz-page" : d.kind === "Questions" ? "questions-page" : "lesson-page"}">${html}</article>${checkpoint}${tools}${guides}${next}</section></div>`,
     ),
   );
 }
@@ -236,11 +288,50 @@ const index = documents.map((d) => ({
     .replace(/<[^>]*>/g, " ")
     .replace(/\s+/g, " "),
 }));
+const plain = (text) =>
+  text
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&[^;]+;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+for (const d of questions) {
+  for (const match of d.text.matchAll(
+    /<a id="(q\d+)"><\/a>[\s\S]*?<p class="qb-question">([\s\S]*?)<\/p>/g,
+  )) {
+    const text = plain(match[2]);
+    index.push({
+      title: `Day ${d.number} ${match[1].toUpperCase()}: ${text.slice(0, 85)}`,
+      kind: "Question",
+      question: true,
+      url: base + d.route + "#" + match[1],
+      description: text.slice(0, 180),
+      text,
+    });
+  }
+}
+for (const d of quizzes)
+  for (const q of d.data.questions)
+    index.push({
+      title: `Day ${d.number} quiz: ${q.topic}`,
+      kind: "Quiz question",
+      question: true,
+      url: base + d.route + "#" + q.id,
+      description: q.prompt,
+      text: `${q.id} ${q.prompt} ${(q.evidence || []).join(" ")}`,
+    });
 write(
   "search/",
   shell(
     { title: "Search the course", route: "search/" },
-    `<div class="home"><div class="prose"><h1>Search the course</h1><p>Find lessons, questions, quizzes, recaps and reference material.</p></div><label for="course-search" class="search-label">Search terms</label><div class="search-controls"><input type="search" id="course-search" autocomplete="off" placeholder="Search Okta concepts"><button id="clear-search" type="button" onclick="document.querySelector('#course-search').value='';document.querySelector('#course-search').dispatchEvent(new Event('input'));document.querySelector('#course-search').focus()" hidden>Clear search</button></div><p id="search-count" role="status">Browse all ${index.length} course pages below.</p><div id="no-results" class="empty" hidden>No matching pages. Try a shorter term.</div><ul id="search-results" class="search-results">${index.map((d) => `<li><small>${d.kind}</small><a href="${d.url}">${escape(d.title)}</a><p>${escape(d.description)}</p></li>`).join("")}</ul><script type="application/json" id="search-data">${JSON.stringify(index).replaceAll("<", "\\u003c")}</script><noscript><p>Search filtering needs JavaScript. All course links remain available above.</p></noscript></div>`,
+    `<div class="home"><div class="prose"><h1>Search the course</h1><p>Find lessons, questions, quizzes, recaps and reference material.</p></div><label for="course-search" class="search-label">Search terms</label><div class="search-controls"><input type="search" id="course-search" autocomplete="off" placeholder="Search Okta concepts"><button id="clear-search" type="button" onclick="document.querySelector('#course-search').value='';document.querySelector('#course-search').dispatchEvent(new Event('input'));document.querySelector('#course-search').focus()" hidden>Clear search</button></div><p id="search-count" role="status">Browse all ${documents.length} course pages below.</p><div id="no-results" class="empty" hidden>No matching pages. Try a shorter term.</div><ul id="search-results" class="search-results">${index
+      .filter((d) => !d.question)
+      .map(
+        (d) =>
+          `<li><small>${d.kind}</small><a href="${d.url}">${escape(d.title)}</a><p>${escape(d.description)}</p></li>`,
+      )
+      .join(
+        "",
+      )}</ul><script type="application/json" id="search-data">${JSON.stringify(index).replaceAll("<", "\\u003c")}</script><noscript><p>Search filtering needs JavaScript. All course links remain available above.</p></noscript></div>`,
   ),
 );
 write(
@@ -274,7 +365,9 @@ fs.writeFileSync(
           d.kind === "Questions"
             ? countQuestions(bySource.get(d.source))
             : undefined,
-        quizzes: data?.questions.length,
+        quizzes: d.kind === "Quizzes" ? data.questions.length : undefined,
+        reviewPool:
+          d.kind === "Mixed review" ? data.questions.length : undefined,
       })),
       diagramPlacements: documents.reduce(
         (n, d) => n + (d.text.match(/```mermaid/g) || []).length,

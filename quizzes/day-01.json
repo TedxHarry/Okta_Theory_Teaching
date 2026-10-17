@@ -28,7 +28,11 @@
           "text": "The records must share one database identifier",
           "explanation": "Each system can use its own identifiers and supported associations."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Maya is one person; the systems hold different records"
+      }
     },
     {
       "id": "L01-Q02",
@@ -56,6 +60,15 @@
           "text": "A recent Okta sign-in succeeded",
           "explanation": "Finding a target record is not an authentication event."
         }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Start with the right record"
+      },
+      "evidence": [
+        "Observed record: target app account A-1042 exists",
+        "Account status: not inspected",
+        "Sign-in and resource permission: not tested"
       ]
     },
     {
@@ -84,7 +97,11 @@
           "text": "Every business action is permitted",
           "explanation": "Authentication does not replace resource authorization."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Signing in and having permission are different"
+      }
     },
     {
       "id": "L01-Q04",
@@ -112,7 +129,11 @@
           "text": "The account must be absent because one action failed",
           "explanation": "The observed report access contradicts that conclusion."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Signing in and having permission are different"
+      }
     },
     {
       "id": "L01-Q05",
@@ -140,7 +161,11 @@
           "text": "The latest provisioning update succeeded",
           "explanation": "A configured relationship is not a completed operation result."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Being assigned an application is another fact to check"
+      }
     },
     {
       "id": "L01-Q06",
@@ -168,6 +193,15 @@
           "text": "Grant the first application's permissions automatically",
           "explanation": "Access decisions in one app do not define another app's permissions."
         }
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "SSO helps with sign-in; provisioning manages accounts"
+      },
+      "evidence": [
+        "Provider session: acceptable",
+        "Second app local session: absent",
+        "New federation exchange: starts; app acceptance not yet observed"
       ]
     },
     {
@@ -196,7 +230,11 @@
           "text": "Only authenticator enrollment",
           "explanation": "Enrollment prepares authentication methods rather than target accounts."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "SSO helps with sign-in; provisioning manages accounts"
+      }
     },
     {
       "id": "L01-Q08",
@@ -224,7 +262,11 @@
           "text": "A group replaces the need for an identity record",
           "explanation": "Membership associates identities rather than eliminating them."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Why Northbridge uses Okta"
+      }
     },
     {
       "id": "L01-Q09",
@@ -252,7 +294,11 @@
           "text": "Whether sign-in and provisioning are the same operation",
           "explanation": "They are distinct responsibilities regardless of this connection's state."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Why Northbridge uses Okta"
+      }
     },
     {
       "id": "L01-Q10",
@@ -281,7 +327,11 @@
           "explanation": "Additional evidence is precisely what is needed."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Being assigned an application is another fact to check"
+      }
     },
     {
       "id": "L01-Q11",
@@ -309,7 +359,11 @@
           "text": "Okta authentication is necessarily impossible",
           "explanation": "The question states the Okta record remains active."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Maya is one person; the systems hold different records"
+      }
     },
     {
       "id": "L01-Q12",
@@ -343,7 +397,11 @@
         "Okta authentication: successful",
         "App receiver/session result: not supplied",
         "Requested business resource: not yet tested"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-01-people-identities-access.md",
+        "heading": "Investigating Maya's ticket"
+      }
     }
   ]
 }

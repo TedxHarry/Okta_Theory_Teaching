@@ -1151,3 +1151,30 @@ dialog::backdrop {
     padding: 0.85rem;
   }
 }
+.remember-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  font-family: var(--font-ui, sans-serif);
+  cursor: pointer;
+}
+.remember-choice input {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+.checkpoint-callout {
+  margin-block: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #c9d4ec;
+  border-left: 4px solid #405ec4;
+  border-radius: 0.5rem;
+  background: #f0f4fc;
+}
+.checkpoint-callout h2 {
+  margin-top: 0;
+}
+.quiz-tools button {
+  margin: 0.35rem 0.5rem 0.35rem 0;
+}

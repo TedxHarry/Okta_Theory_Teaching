@@ -28,7 +28,11 @@
           "text": "Every Sales user must receive the app regardless of classification",
           "explanation": "That contradicts the supplied approved rule."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Predict who matches"
+      }
     },
     {
       "id": "L05-Q02",
@@ -56,6 +60,15 @@
           "text": "It changes the authoritative department values",
           "explanation": "The rule selects members; it does not inherently rewrite profile facts."
         }
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Predict who matches"
+      },
+      "evidence": [
+        "Approved eligibility: Sales AND Employee",
+        "Candidate: Finance Employee",
+        "Proposed expression: Sales OR Employee"
       ]
     },
     {
@@ -84,7 +97,11 @@
           "text": "Remove the workerType requirement without review",
           "explanation": "The business restriction needs an authorized decision before change."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Predict who matches"
+      }
     },
     {
       "id": "L05-Q04",
@@ -112,7 +129,11 @@
           "text": "That all groups must be assigned to apps",
           "explanation": "Membership and application assignment are separate relationships."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "A matching condition is not observed membership"
+      }
     },
     {
       "id": "L05-Q05",
@@ -140,7 +161,11 @@
           "text": "The user's identity must be deleted",
           "explanation": "An assignment-path change does not imply identity deletion."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Removing one path does not settle every path"
+      }
     },
     {
       "id": "L05-Q06",
@@ -168,7 +193,11 @@
           "text": "The group rule must have created the direct assignment",
           "explanation": "That causal claim requires evidence and is not supplied."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "An individual assignment is a separate path"
+      }
     },
     {
       "id": "L05-Q07",
@@ -196,7 +225,11 @@
           "text": "Treat the group name as proof of its source",
           "explanation": "A label does not establish the actual managing relationship."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Group membership has an owner too"
+      }
     },
     {
       "id": "L05-Q08",
@@ -224,7 +257,11 @@
           "text": "Declare every nonmembership a technical error",
           "explanation": "A rule can correctly exclude ineligible users."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Predict who matches"
+      }
     },
     {
       "id": "L05-Q09",
@@ -252,7 +289,11 @@
           "text": "Whether every app automatically supports SCIM",
           "explanation": "Provisioning support is integration-specific and cannot be presumed."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Follow a successful assignment as far as the evidence goes"
+      }
     },
     {
       "id": "L05-Q10",
@@ -286,7 +327,11 @@
         "Required eligibility: Sales AND Employee; user satisfies both",
         "Effective membership: Group A",
         "Actual app assignment: Group B only"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Follow a missing application from the user to the assignment"
+      }
     },
     {
       "id": "L05-Q11",
@@ -314,7 +359,11 @@
           "text": "No review if the rule is short",
           "explanation": "A short expression can still have broad access consequences."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Tell the access story"
+      }
     },
     {
       "id": "L05-Q12",
@@ -343,7 +392,16 @@
           "explanation": "Visibility is not a substitute for target access evidence."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-05-groups-and-assignments.md",
+        "heading": "Removing one path does not settle every path"
+      },
+      "evidence": [
+        "Group A grant: removed",
+        "Direct app assignment: still present",
+        "Target account/session state: not yet checked"
+      ]
     }
   ]
 }

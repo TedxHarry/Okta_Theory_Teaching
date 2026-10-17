@@ -28,7 +28,11 @@
           "text": "Okta creates the incoming browser request",
           "explanation": "The browser initiates the redirected request to the provider."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Your browser asks; a server responds"
+      }
     },
     {
       "id": "L02-Q02",
@@ -56,7 +60,11 @@
           "text": "The responder is irrelevant once a status exists",
           "explanation": "Source and operation context are essential to interpretation."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Read the destination before interpreting the result"
+      }
     },
     {
       "id": "L02-Q03",
@@ -84,7 +92,11 @@
           "text": "Assume every later step succeeded",
           "explanation": "A redirect is only one step in a longer exchange."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "A response can send the browser elsewhere"
+      }
     },
     {
       "id": "L02-Q04",
@@ -112,7 +124,11 @@
           "text": "Nothing; every 200 means full application access",
           "explanation": "Status meaning depends on the operation and returned result."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "A status code describes a request's result"
+      }
     },
     {
       "id": "L02-Q05",
@@ -140,6 +156,15 @@
           "text": "Use only the application's display name",
           "explanation": "A shared name does not identify one attempt or instance."
         }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Match the evidence to the right attempt"
+      },
+      "evidence": [
+        "User A and user B both act at 10:00:00 UTC",
+        "Relevant ticket: user A, app instance X, request R71",
+        "Nearby event: user B, app instance Y, request R72"
       ]
     },
     {
@@ -168,7 +193,11 @@
           "text": "Whether all source profiles are synchronized",
           "explanation": "Issuance does not establish unrelated source-data operations."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Read an event as a sentence first"
+      }
     },
     {
       "id": "L02-Q07",
@@ -196,7 +225,11 @@
           "text": "Assume the target application must be working",
           "explanation": "An empty issuer query proves no target outcome."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Choose a search that answers the question"
+      }
     },
     {
       "id": "L02-Q08",
@@ -224,6 +257,15 @@
           "text": "The browser never delivered the response",
           "explanation": "The receiver's rejection establishes it processed a return."
         }
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Follow Maya's attempt one step at a time"
+      },
+      "evidence": [
+        "Provider issuance: succeeded for request R81",
+        "Browser return: reaches the intended app ACS",
+        "Receiver result: audience mismatch; local session not created"
       ]
     },
     {
@@ -252,7 +294,11 @@
           "text": "That a target result should be checked",
           "explanation": "Checking the target is the appropriate next boundary."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Read the destination before interpreting the result"
+      }
     },
     {
       "id": "L02-Q10",
@@ -281,7 +327,11 @@
           "explanation": "Similar messages can hide different failure boundaries."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Match the evidence to the right attempt"
+      }
     },
     {
       "id": "L02-Q11",
@@ -309,7 +359,11 @@
           "text": "Reuse an old app session without checking new messages",
           "explanation": "Existing session access can bypass the changed federation path."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Follow Maya's attempt one step at a time"
+      }
     },
     {
       "id": "L02-Q12",
@@ -343,7 +397,11 @@
         "Provisioning operation: submitted",
         "Target response: not supplied",
         "Correlated target read: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-02-requests-and-evidence.md",
+        "heading": "Compare a redirect with account management"
+      }
     }
   ]
 }

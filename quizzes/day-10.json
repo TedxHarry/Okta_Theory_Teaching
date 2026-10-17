@@ -28,7 +28,11 @@
           "text": "Creating an Okta browser session on every API call",
           "explanation": "SCIM is not a browser sign-in mechanism."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Follow the account-management path"
+      }
     },
     {
       "id": "L10-Q02",
@@ -56,7 +60,11 @@
           "text": "Every future update must succeed",
           "explanation": "A successful creation says nothing universal about later operations."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Read a create operation"
+      }
     },
     {
       "id": "L10-Q03",
@@ -84,7 +92,11 @@
           "text": "Use it as the user's password",
           "explanation": "A resource ID is not a user authentication secret."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Read a create operation"
+      }
     },
     {
       "id": "L10-Q04",
@@ -112,6 +124,15 @@
           "text": "Assume the user has successfully signed in",
           "explanation": "The operation concerns account creation, not browser entry."
         }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "A conflict requires an ownership decision"
+      },
+      "evidence": [
+        "Operation: POST create user",
+        "Target result: 409, uniqueness conflict",
+        "Conflicting field and resource owner: not yet established"
       ]
     },
     {
@@ -140,6 +161,15 @@
           "text": "The account necessarily belongs to a different person",
           "explanation": "No ownership conflict is established by this value rejection."
         }
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "A rejected value points to a different correction"
+      },
+      "evidence": [
+        "Request value: department Finance",
+        "Target contract: department must be FIN",
+        "Response: 400 invalidValue, department representation rejected"
       ]
     },
     {
@@ -168,7 +198,11 @@
           "text": "PATCH makes authorization unnecessary",
           "explanation": "The API still enforces its supported access and operation requirements."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Updating is not creating again"
+      }
     },
     {
       "id": "L10-Q07",
@@ -196,7 +230,11 @@
           "text": "Use a browser refresh as proof of the request body",
           "explanation": "The actual operation and target state need inspection."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Updating is not creating again"
+      }
     },
     {
       "id": "L10-Q08",
@@ -224,7 +262,11 @@
           "text": "That app accounts have state",
           "explanation": "The update itself concerns a state field."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Deactivation is an account-state change"
+      }
     },
     {
       "id": "L10-Q09",
@@ -252,7 +294,11 @@
           "text": "That assignment and creation differ",
           "explanation": "They are distinct relationships and operations."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Check the enabled operation before retrying"
+      }
     },
     {
       "id": "L10-Q10",
@@ -286,7 +332,11 @@
         "Account-management task: queued",
         "Target response: not supplied",
         "Target current state: not verified"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Check the enabled operation before retrying"
+      }
     },
     {
       "id": "L10-Q11",
@@ -314,7 +364,11 @@
           "text": "Only confirm an unrelated user's login",
           "explanation": "That does not verify this resource update."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "Read a create operation"
+      }
     },
     {
       "id": "L10-Q12",
@@ -343,7 +397,11 @@
           "explanation": "A technical conflict does not justify falsifying identity data."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-10-scim.md",
+        "heading": "A conflict requires an ownership decision"
+      }
     }
   ]
 }

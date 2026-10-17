@@ -28,7 +28,11 @@
           "text": "A familiar product removes the need to define scope",
           "explanation": "Familiarity does not establish authorization or safe boundaries."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Define the environment before the action"
+      }
     },
     {
       "id": "L16-Q02",
@@ -56,7 +60,11 @@
           "text": "Can I call it successful before observing anything?",
           "explanation": "A conclusion needs actual results under the chosen scope."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Begin with a question you can answer"
+      }
     },
     {
       "id": "L16-Q03",
@@ -84,7 +92,11 @@
           "text": "A user with workerType missing",
           "explanation": "Missing data does not establish the required classification."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Predict before observing"
+      }
     },
     {
       "id": "L16-Q04",
@@ -112,6 +124,15 @@
           "text": "The test should change their business facts to make them match",
           "explanation": "That removes the contrast the experiment needs."
         }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Predict before observing"
+      },
+      "evidence": [
+        "Intended rule: Sales AND Employee",
+        "Positive candidate: Sales Employee",
+        "Negative contrasts: Sales Contractor and Finance Employee"
       ]
     },
     {
@@ -140,7 +161,11 @@
           "text": "Completed application removal",
           "explanation": "The prediction concerns rule membership, not target lifecycle."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Predict before observing"
+      }
     },
     {
       "id": "L16-Q06",
@@ -165,10 +190,14 @@
         },
         {
           "id": "3be4db3106",
-          "text": "Only the target app's logo",
-          "explanation": "Branding does not identify the relationship."
+          "text": "Only a successful sign-in to Okta by the same user",
+          "explanation": "Okta authentication does not prove that this group grants this particular application instance."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Add the application boundary separately"
+      }
     },
     {
       "id": "L16-Q07",
@@ -196,7 +225,11 @@
           "text": "Whether all target apps must use the same provisioning protocol",
           "explanation": "Support varies and cannot be assumed universally."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Add the application boundary separately"
+      }
     },
     {
       "id": "L16-Q08",
@@ -224,6 +257,15 @@
           "text": "The reader account should be removed as a repair",
           "explanation": "The supplied results show no defect in the stated permission boundary."
         }
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Test entry and permission as different outcomes"
+      },
+      "evidence": [
+        "Training role: reader",
+        "Observed reading: allowed",
+        "Observed deletion: denied; approved requirement forbids deletion"
       ]
     },
     {
@@ -252,7 +294,11 @@
           "text": "A predicted cleanup counts as verified removal",
           "explanation": "Actual end-state evidence is still needed after execution."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Include an end condition"
+      }
     },
     {
       "id": "L16-Q10",
@@ -286,7 +332,11 @@
         "Intended condition: Sales AND Employee",
         "Only test case: Sales Employee",
         "Both AND and OR would include this case"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Predict before observing"
+      }
     },
     {
       "id": "L16-Q11",
@@ -314,7 +364,11 @@
           "text": "Only the proposed setup steps",
           "explanation": "A setup proposal does not document execution or end state."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Write the practice record"
+      }
     },
     {
       "id": "L16-Q12",
@@ -343,7 +397,11 @@
           "explanation": "The written planning tasks do not require real configuration changes."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-16-safe-practice-plan.md",
+        "heading": "Begin with a question you can answer"
+      }
     }
   ]
 }

@@ -69,3 +69,11 @@ When you are ready to plan practice, use the optional [Day 16: Safe practice pla
 For a later review, choose a day in the [Revision Guide](revision/index.md). Each recap explains the key concepts and connects them to the day's example.
 
 [Working through requests](requests/index.md) follows missing access, changed departments, recovery, and connection maintenance. Each situation names the lessons to read first and keeps the reasoning hidden until you choose your checks.
+
+## Revisit earlier topics
+
+Use a short mixed review before each written checkpoint. Explain your reasoning before selecting an option, then use the feedback link to revisit a specific concept. These sets reuse day quizzes in a new combination; they do not replace the written investigation.
+
+- [Foundation mixed review: Days 1 to 5](quizzes/mixed-5.html)
+- [Integration mixed review: Days 1 to 10](quizzes/mixed-10.html)
+- [Engineering mixed review: Days 1 to 15](quizzes/mixed-15.html)

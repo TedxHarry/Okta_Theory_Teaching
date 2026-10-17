@@ -28,7 +28,11 @@
           "text": "Either profile proves target runtime state",
           "explanation": "Target processing still needs its own evidence."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "There is an Okta user profile and an application user profile"
+      }
     },
     {
       "id": "L03-Q02",
@@ -56,7 +60,11 @@
           "text": "Application session cookie to Okta authentication",
           "explanation": "This mapping concerns profile data, not session transport."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "A mapping connects a source field to a destination field"
+      }
     },
     {
       "id": "L03-Q03",
@@ -84,7 +92,11 @@
           "text": "Grant an app role without checking the mapped output",
           "explanation": "Mapping and permission outcomes require their own verification."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "A correct mapping can change the value"
+      }
     },
     {
       "id": "L03-Q04",
@@ -112,6 +124,15 @@
           "text": "Assume the target changed the authoritative source",
           "explanation": "No target-to-source operation is supplied."
         }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Find the first wrong representation"
+      },
+      "evidence": [
+        "Authoritative department: Finance",
+        "Configured forward mapping evaluation: Sales",
+        "Destination read: not supplied"
       ]
     },
     {
@@ -132,15 +153,19 @@
         },
         {
           "id": "7dc8a84c8e",
-          "text": "Whether the value has attractive formatting",
-          "explanation": "Appearance does not establish runtime propagation."
+          "text": "Whether the Okta profile already contains the desired value",
+          "explanation": "A correct Okta value still does not demonstrate delivery to the downstream account."
         },
         {
           "id": "3c869325b0",
           "text": "Nothing; preview always updates production targets",
           "explanation": "Preview is not a target mutation result."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "A preview is a calculation, not delivery evidence"
+      }
     },
     {
       "id": "L03-Q06",
@@ -168,7 +193,11 @@
           "text": "The app must be reconfigured to accept all strings",
           "explanation": "Any contract change needs justification and supported behavior."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "A correct mapping can change the value"
+      }
     },
     {
       "id": "L03-Q07",
@@ -196,7 +225,11 @@
           "text": "Blank handling can be ignored if another field is correct",
           "explanation": "Each required field has its own output and target constraints."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Missing data needs a decision"
+      }
     },
     {
       "id": "L03-Q08",
@@ -224,7 +257,11 @@
           "text": "A stable target ID proves all attributes are current",
           "explanation": "Object identity does not establish every stored value."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Start with one piece of information"
+      }
     },
     {
       "id": "L03-Q09",
@@ -252,7 +289,11 @@
           "text": "Treat the saved expression as proof the old value disappeared",
           "explanation": "Observed stored state remains relevant evidence."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Read when a mapping applies"
+      }
     },
     {
       "id": "L03-Q10",
@@ -286,7 +327,11 @@
         "Okta app-user departmentCode: FIN",
         "Target update outcome: not supplied",
         "Target stored departmentCode: not inspected"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "A preview is a calculation, not delivery evidence"
+      }
     },
     {
       "id": "L03-Q11",
@@ -314,6 +359,15 @@
           "text": "Assume all target accounts are missing",
           "explanation": "The packet does not establish account absence."
         }
+      ],
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Find the first wrong representation"
+      },
+      "evidence": [
+        "Authoritative input: Finance; app profile output: FIN",
+        "Target update: rejected; error detail not yet supplied",
+        "Target field: not verified after the operation"
       ]
     },
     {
@@ -343,7 +397,11 @@
           "explanation": "A different path does not verify the changed mapping for this case."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-03-profiles-and-mappings.md",
+        "heading": "Recognize a verified correction"
+      }
     }
   ]
 }

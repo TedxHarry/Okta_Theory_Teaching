@@ -28,7 +28,11 @@
           "text": "Every hypothetical proposal has already executed",
           "explanation": "Proposed work and observed outcomes differ."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Work from the packet"
+      }
     },
     {
       "id": "L15-Q02",
@@ -56,6 +60,15 @@
           "text": "The successful node proves all users are healthy",
           "explanation": "A node's acceptance does not establish every account outcome."
         }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      },
+      "evidence": [
+        "Node A trusts K2, accepts SAML, then finds no account for the emitted identity",
+        "Node B lacks approved K2 and rejects verification",
+        "Both are fresh attempts with distinct request IDs"
       ]
     },
     {
@@ -84,7 +97,11 @@
           "text": "In every source relationship",
           "explanation": "One demonstrated mismatch does not establish universal sourcing failure."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Explain the architecture in ordinary language"
+      }
     },
     {
       "id": "L15-Q04",
@@ -112,7 +129,11 @@
           "text": "The audience check should be removed to restore service",
           "explanation": "That would discard the intended trust boundary."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Work from the packet"
+      }
     },
     {
       "id": "L15-Q05",
@@ -140,6 +161,15 @@
           "text": "Treat both as the same browser POST",
           "explanation": "The delivery and operation types differ."
         }
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      },
+      "evidence": [
+        "Separate SAML attempt: accepted and local session created",
+        "SCIM account update: rejected by target",
+        "No later successful target update is supplied"
       ]
     },
     {
@@ -168,7 +198,11 @@
           "text": "Create a duplicate to avoid investigation",
           "explanation": "Another record does not resolve the ambiguity."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Work from the packet"
+      }
     },
     {
       "id": "L15-Q07",
@@ -196,7 +230,11 @@
           "text": "Delete the user's app account",
           "explanation": "No account-eligibility problem is established."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      }
     },
     {
       "id": "L15-Q08",
@@ -224,7 +262,11 @@
           "text": "No issue can exist until a cause is known",
           "explanation": "An open required outcome matters even before its cause is established."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Close the request without hiding an unknown"
+      }
     },
     {
       "id": "L15-Q09",
@@ -252,7 +294,11 @@
           "text": "Disable the entire identity platform permanently",
           "explanation": "The packet supports a specific mismatch, not universal failure."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      }
     },
     {
       "id": "L15-Q10",
@@ -286,7 +332,11 @@
         "Approved plan: node B should trust K2",
         "Effective node B inventory: K1 only",
         "Reason for missing adoption: not supplied"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Write a defensible investigation"
+      }
     },
     {
       "id": "L15-Q11",
@@ -314,7 +364,11 @@
           "text": "Only confirm the app's public home page loads",
           "explanation": "Public availability is not identity acceptance evidence."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Prioritize by the supplied impact"
+      }
     },
     {
       "id": "L15-Q12",
@@ -343,7 +397,11 @@
           "explanation": "Execution and retest evidence are still required."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-15-integrated-case.md",
+        "heading": "Close the request without hiding an unknown"
+      }
     }
   ]
 }

@@ -10,6 +10,9 @@ Choose a reference for the question you are answering. The company and ownership
 
 | Use | Reference |
 |---|---|
+| Read selected profile, SAML, OIDC and SCIM evidence | [Annotated evidence](annotated-evidence.md) |
+| Connect configuration to observable results | [Settings to outcomes](settings-to-outcomes.md) |
+| Compare similar symptoms with different causes | [Troubleshooting comparisons](troubleshooting-comparisons.md) |
 | Identify the people, systems, and scenario timeline | [Northbridge Services](northbridge-company.md) |
 | Recall the stated sourcing decisions after Day 4 | [Source and ownership](attribute-ownership.md) |
 | Look up a term while reading | [Course glossary](glossary.md) |

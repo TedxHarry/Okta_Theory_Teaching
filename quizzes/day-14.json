@@ -25,10 +25,14 @@
         },
         {
           "id": "67338de83e",
-          "text": "Configure only the app logo",
-          "explanation": "Branding does not define identity and access behavior."
+          "text": "Copy the assignment and permissions from an app with a similar name",
+          "explanation": "Similar branding does not establish the new application's approved population, permissions, matching or removal behavior."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Turn the request into observable outcomes"
+      }
     },
     {
       "id": "L14-Q02",
@@ -56,7 +60,11 @@
           "text": "Use assignment as proof target removal is automatic",
           "explanation": "Assignment and downstream lifecycle outcomes differ."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Translate the requirement without changing its meaning"
+      }
     },
     {
       "id": "L14-Q03",
@@ -84,7 +92,11 @@
           "text": "No app owner is needed for federated access",
           "explanation": "The app still controls important local outcomes."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Separate approval from technical authority"
+      }
     },
     {
       "id": "L14-Q04",
@@ -112,7 +124,11 @@
           "text": "Move extra fields into navigation context instead",
           "explanation": "Relocating unnecessary information does not resolve the need question."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Use the owner's answers"
+      }
     },
     {
       "id": "L14-Q05",
@@ -140,7 +156,11 @@
           "text": "Ignore mapping because the assertion will be signed",
           "explanation": "A signature does not make every local lookup rule correct."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Translate the requirement without changing its meaning"
+      }
     },
     {
       "id": "L14-Q06",
@@ -168,7 +188,11 @@
           "text": "To prove every system shares one policy implementation",
           "explanation": "Different systems enforce different responsibilities."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Make verification part of the requirement"
+      }
     },
     {
       "id": "L14-Q07",
@@ -196,6 +220,15 @@
           "text": "A promise that familiar products cannot lock out users",
           "explanation": "Product familiarity does not eliminate configuration risks."
         }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Plan recovery from an incorrect change"
+      },
+      "evidence": [
+        "Change affects app administrator sign-in",
+        "Primary administrator uses the same federated path",
+        "Authorized alternative recovery route: not yet verified"
       ]
     },
     {
@@ -224,7 +257,11 @@
           "text": "No recovery plan because the edit is small",
           "explanation": "A small edit can have large access consequences."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Agree on who finishes each part"
+      }
     },
     {
       "id": "L14-Q09",
@@ -252,7 +289,11 @@
           "text": "Whether every normal user must be an administrator",
           "explanation": "That is not a consequence of connection testing."
         }
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Make verification part of the requirement"
+      }
     },
     {
       "id": "L14-Q10",
@@ -286,7 +327,11 @@
         "Handover identifies environment, approved values and owners",
         "Controlled test results and limitations are recorded",
         "Recovery criteria and procedure are included"
-      ]
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Record the decision clearly"
+      }
     },
     {
       "id": "L14-Q11",
@@ -314,6 +359,15 @@
           "text": "Delete the requirement from the record silently",
           "explanation": "That hides an unresolved obligation rather than resolving it."
         }
+      ],
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Agree on who finishes each part"
+      },
+      "evidence": [
+        "Business removal requirement: immediate target termination",
+        "Connector: does not support that requested operation",
+        "Approved alternative and owner: not yet established"
       ]
     },
     {
@@ -343,7 +397,11 @@
           "explanation": "Different operation evidence does not verify this correction."
         }
       ],
-      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown."
+      "reasoning": "Before choosing, explain which fact supports your conclusion and what the supplied evidence leaves unknown.",
+      "review": {
+        "source": "lessons/day-14-requirements-and-responsibilities.md",
+        "heading": "Make verification part of the requirement"
+      }
     }
   ]
 }

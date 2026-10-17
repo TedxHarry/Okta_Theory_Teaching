@@ -50,13 +50,15 @@ if (input) {
   function search() {
     const query = input.value.trim();
     const terms = query.toLocaleLowerCase("en").split(/\s+/).filter(Boolean);
-    const matches = data.filter((d) =>
-      terms.every((t) =>
-        `${d.title} ${d.description} ${d.text}`
-          .toLocaleLowerCase("en")
-          .includes(t),
-      ),
-    );
+    const matches = data
+      .filter((d) => query || !d.question)
+      .filter((d) =>
+        terms.every((t) =>
+          `${d.title} ${d.description} ${d.text}`
+            .toLocaleLowerCase("en")
+            .includes(t),
+        ),
+      );
     results.replaceChildren();
     for (const d of matches) {
       const row = document.createElement("li");
@@ -73,8 +75,8 @@ if (input) {
     clear.hidden = !query;
     document.querySelector("#no-results").hidden = matches.length !== 0;
     status.textContent = query
-      ? `${matches.length} ${matches.length === 1 ? "page" : "pages"} found for “${query}”.`
-      : `Browse all ${data.length} course pages below.`;
+      ? `${matches.length} ${matches.length === 1 ? "result" : "results"} found for “${query}”.`
+      : `Browse all ${data.filter((d) => !d.question).length} course pages below.`;
     const url = new URL(location.href);
     if (query) url.searchParams.set("q", query);
     else url.searchParams.delete("q");

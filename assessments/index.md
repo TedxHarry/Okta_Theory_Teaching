@@ -19,3 +19,11 @@ Use the packet's stated facts and keep independent variations separate. Referenc
 Keep your first attempt so you can see which conclusions changed during review. After the debrief, try a changed-condition question before opening its explanation. Mark a point as independent only if you explained it without help for that point; using a reference is useful practice and belongs under with guidance.
 
 [Learning path](../learning-path.md) · [Course home](../index.md)
+
+## Revisit earlier topics
+
+Use a short mixed review before each written checkpoint. Explain your reasoning before selecting an option, then use the feedback link to revisit a specific concept. These sets reuse day quizzes in a new combination; they do not replace the written investigation.
+
+- [Foundation mixed review: Days 1 to 5](../quizzes/mixed-5.html)
+- [Integration mixed review: Days 1 to 10](../quizzes/mixed-10.html)
+- [Engineering mixed review: Days 1 to 15](../quizzes/mixed-15.html)
